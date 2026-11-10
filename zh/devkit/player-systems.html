@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>玩家系统 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/player-systems.html">English</option><option value="../../es/devkit/player-systems.html">Español</option><option value="../../pt/devkit/player-systems.html">Português</option><option value="player-systems.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html" class="on" aria-current="page">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>玩家系统</h1><p>如何为每个玩家添加你自己的系统：在玩家模型预制体上放一个 <code>NetworkBehaviour</code>，包含同步状态、所有者发送的命令、回复、保存，以及让它在线上保持正确的规则。</p>
+<h2 id="when-you-need-one"><a class="anchor" href="#when-you-need-one" aria-hidden="true">#</a>什么时候需要</h2>
+<p>套件的玩家功能都是玩家预制体上的组件：<code>PlayerInventory</code>、<code>PlayerSkills</code>、<code>PlayerQuests</code>、<code>PlayerProgress</code>、<code>PlayerChat</code>、<code>PlayerGuild</code>、<code>PlayerMail</code> 等等。当你的功能需要以下内容时，添加一个你自己的组件：</p>
+<ul>
+<li>其他代码经常读取的状态，在服务器或客户端上（声望值、宠物、制作队列），</li>
+<li>界面显示的、或其他玩家能看到的同步值，</li>
+<li>来自所有者、有自己规则的请求。</li>
+</ul>
+<p>如果你只需要一个请求和一个回答，玩家身上不需要状态，<a href="network-messages.html">网络消息</a>更轻量，也不用改预制体。如果你只需要保存几个数字，<a href="saving-data.html">角色标记</a>完全不需要代码。</p>
+<p><strong>文件放在哪里：</strong><code>Game</code> 程序集。同一个组件同时在服务器和客户端上运行。</p>
+<h2 id="start-from-the-template"><a class="anchor" href="#start-from-the-template" aria-hidden="true">#</a>从模板开始</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Player System</strong> 会生成 <code>PlayerNewSystem</code>。完整代码见<a href="templates.html#player-system">模板</a>。它展示了每个玩家系统都有的部分：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>部分</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[RequireComponent(typeof(PlayerCharacter))]</code></td>
+<td>它只在玩家身上才有意义。</td>
+</tr>
+<tr>
+<td><code>[SyncVar] public int points</code></td>
+<td>由服务器设置、客户端接收的值。</td>
+</tr>
+<tr>
+<td><code>static event Action&lt;int&gt; Changed</code></td>
+<td>值变化时通知所有者的界面。</td>
+</tr>
+<tr>
+<td><code>static PlayerNewSystem Local</code></td>
+<td>本地玩家的那一份，供窗口使用。在 <code>OnStartAuthority</code> 中设置。</td>
+</tr>
+<tr>
+<td><code>SubsystemRegistration</code> 中的 <code>ResetStatics</code></td>
+<td>在不重新加载域的情况下，两次 Play 之间清空静态变量。</td>
+</tr>
+<tr>
+<td><code>OnStartServer</code></td>
+<td>玩家在服务器上生成时加载保存的状态。</td>
+</tr>
+<tr>
+<td><code>public void Earn() =&gt; CmdEarn()</code></td>
+<td>窗口调用的客户端方法。</td>
+</tr>
+<tr>
+<td><code>[Command] void CmdEarn()</code></td>
+<td>请求，在服务器上运行。先用 <code>CommandPacing.Allow</code> 消耗连接的额度，再检查一切。</td>
+</tr>
+<tr>
+<td><code>[TargetRpc] void TargetTold(string)</code></td>
+<td>只发给所有者的回答。</td>
+</tr>
+<tr>
+<td><code>OnPointsChanged</code> 钩子</td>
+<td>在所有者的客户端上触发 <code>Changed</code>。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="adding-it-to-the-player-prefabs"><a class="anchor" href="#adding-it-to-the-player-prefabs" aria-hidden="true">#</a>添加到玩家预制体</h2>
+<p>每个玩家模型都有自己的预制体，列在游戏数据库中（<strong>KitARPG &gt; Game Database &gt; Models</strong>，字段 <code>GameDatabase.playerModels</code>）。把你的组件添加到每一个预制体上：</p>
+<ol>
+<li>打开 <strong>KitARPG &gt; Game Database &gt; Models</strong> 并选择一个模型。它的页面链接到它的预制体。</li>
+<li>打开预制体并添加你的组件。</li>
+<li>对每个模型重复以上步骤。</li>
+</ol>
+<p>之后用 <strong>+ New player model</strong> 添加的模型会带有套件的系统，但没有你的系统。要自动把你的组件添加到每个模型上，包括以后创建的模型，请发布一个<a href="kit-updates-in-code.html">套件更新</a>，在缺少该组件的地方添加它。那一页有完整代码。</p>
+<div class="callout warning"><div class="callout-title">警告</div><p>Mirror 按组件在对象上的顺序匹配网络组件。客户端和服务器构建中，每个玩家预制体上的 <code>NetworkBehaviour</code> 必须完全相同。绝不要在运行时添加你的组件，也不要只在某一种构建中添加。</p>
+</div>
+<h2 id="synced-state"><a class="anchor" href="#synced-state" aria-hidden="true">#</a>同步状态</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>送达</th>
+<th>用于</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字段上的 <code>[SyncVar]</code></td>
+<td>能看到该玩家的客户端（或只有所有者，见下文）</td>
+<td>单个值</td>
+</tr>
+<tr>
+<td><code>SyncList&lt;T&gt;</code>、<code>SyncDictionary&lt;K,V&gt;</code>、<code>SyncHashSet&lt;T&gt;</code>（作为 <code>readonly</code> 字段）</td>
+<td>同上</td>
+<td>集合</td>
+</tr>
+<tr>
+<td><code>[TargetRpc]</code></td>
+<td>只有所有者</td>
+<td>一次性的回答和事件</td>
+</tr>
+<tr>
+<td><code>[ClientRpc]</code></td>
+<td>每个能看到该玩家的客户端</td>
+<td>其他人必须看到的效果</td>
+</tr>
+</tbody>
+</table></div>
+<p>每个 <code>NetworkBehaviour</code> 都有一个 <em>Sync Mode</em>（同步模式）：<strong>Observers</strong>（每个能看到该玩家的人都会收到这些值）或 <strong>Owner</strong>（只有所有者收到）。套件的私有系统（<code>PlayerQuests</code>、<code>PlayerProgress</code>、<code>PlayerInventory</code> 的背包内容）在 <code>Reset()</code> 中设置为 Owner：</p>
+<pre class="code"><code class="language-csharp"><span class="k">void</span><span class="w"> </span><span class="nf">Reset</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">syncMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SyncMode</span><span class="p">.</span><span class="n">Owner</span><span class="p">;</span>
+</code></pre>
+<p><code>Reset</code> 在你于编辑器中添加组件时运行。任何其他玩家不应读取的数据都选 Owner：被篡改的客户端能读取它收到的每一个值。</p>
+<p>谁能看到某个玩家由套件的兴趣管理（空间网格）决定。远处的玩家，或在地下城另一个副本中的玩家，不会收到你的值或 <code>[ClientRpc]</code>。</p>
+<h2 id="commands-the-owner-asks"><a class="anchor" href="#commands-the-owner-asks" aria-hidden="true">#</a>命令：所有者发出请求</h2>
+<p><code>[Command]</code> 在服务器上运行，并且知道调用者的身份：只有所有者的客户端能对自己的玩家调用命令。在命令内部：</p>
+<ol>
+<li><strong>从连接的配额中扣除。</strong><code>CommandPacing.Allow(connectionToClient)</code> 给每个连接每秒 30 个命令、突发 60 个，由所有组件共享，并断开刷屏的连接。对于最终会变成 Central 工作的命令，使用 <code>CommandPacing.AllowCentral</code>（每秒 2 个，突发 10 个）。</li>
+<li>**校验每个参数。**长度、范围、有限的数字、数据库中存在的 id。</li>
+<li>**检查玩家的状态。**活着、已加载（<code>player.State != null</code>）、不忙、在其操作对象的范围内。</li>
+<li>**通过套件的系统修改状态。**物品和金币通过 <code>PlayerInventory</code>，标记通过 <code>PlayerProgress</code>，任务通过 <code>PlayerQuests</code>。</li>
+</ol>
+<h2 id="a-complete-example-reputation"><a class="anchor" href="#a-complete-example-reputation" aria-hidden="true">#</a>完整示例：声望</h2>
+<p>每个阵营一个声望值，通过击杀获得，在窗口中显示，在 NPC 处消耗。它通过 <code>IPlayerSave</code> 用 <code>PlayerData</code> 保存自己，并且只同步给所有者。</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Characters</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RequireComponent(typeof(PlayerCharacter))]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerReputation</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span><span class="p">,</span><span class="w"> </span><span class="n">IPlayerSave</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mygame.reputation&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[Serializable]</span>
+<span class="w">        </span><span class="k">class</span><span class="w"> </span><span class="nc">Saved</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Faction id to reputation. Owner only.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">SyncDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">standing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SyncDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Owner&#39;s client: something changed.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="n">Changed</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Owner&#39;s client: a message for the reputation window.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Told</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">PlayerReputation</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Told</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Reset</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">syncMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SyncMode</span><span class="p">.</span><span class="n">Owner</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">.</span><span class="n">OnChange</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">__</span><span class="p">,</span><span class="w"> </span><span class="n">___</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Changed</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStartAuthority</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStopAuthority</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Of</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">standing</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Saving: loaded as the character enters a map, written before every save.</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerLoad</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Saved</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">Saved</span><span class="o">&gt;</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">factions</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="n">standing</span><span class="p">[</span><span class="n">saved</span><span class="p">.</span><span class="n">factions</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Saved</span><span class="p">();</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">KeyValuePair</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pair</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">standing</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">saved</span><span class="p">.</span><span class="n">factions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">Key</span><span class="p">);</span>
+<span class="w">                </span><span class="n">saved</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">saved</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Server only. Called by your own rules, never from a client&#39;s word.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="na">[Server]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerAdd</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">[</span><span class="n">faction</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp</span><span class="p">(</span><span class="n">Of</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">Max</span><span class="p">,</span><span class="w"> </span><span class="n">Max</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Spending: the owner asks, the server checks everything.</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Spend</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">CmdSpend</span><span class="p">(</span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+
+<span class="w">        </span><span class="na">[Command]</span>
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">CmdSpend</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">connectionToClient</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">IsDead</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">faction</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">32</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Max</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Npc</span><span class="p">.</span><span class="n">TryFind</span><span class="p">(</span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">npc</span><span class="p">.</span><span class="n">InReach</span><span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Of</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">TargetTold</span><span class="p">(</span><span class="s">&quot;Not enough reputation.&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">[</span><span class="n">faction</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Of</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">            </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;mygame.reputation_spent&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">:</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">detail</span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;{faction} at {npc.Id}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">TargetTold</span><span class="p">(</span><span class="s">$&quot;Spent {amount} reputation with {faction}.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Runs on the owner&#39;s client: hand it to the interface.</span>
+<span class="w">        </span><span class="na">[TargetRpc]</span>
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">TargetTold</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Told</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>你自己的窗口订阅 <code>PlayerReputation.Told</code> 和 <code>PlayerReputation.Local.Changed</code>，并在按钮中调用 <code>PlayerReputation.Local.Spend(...)</code>。</p>
+<p>获得声望的服务器规则可以放在 <code>Game</code> 程序集中的任何地方：</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReputationRules</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnKilled</span><span class="p">(</span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">Data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerReputation</span><span class="w"> </span><span class="n">reputation</span><span class="p">))</span><span class="w"> </span><span class="n">reputation</span><span class="p">.</span><span class="n">ServerAdd</span><span class="p">(</span><span class="s">&quot;forest_wardens&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="loading-and-saving"><a class="anchor" href="#loading-and-saving" aria-hidden="true">#</a>加载和保存</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>如何加载</th>
+<th>何时保存</th>
+<th>客户端能否看到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角色标记（<code>PlayerProgress.SetFlag</code>、<code>IPlayerActor.SetFlag</code>）</td>
+<td>随角色加载，在生成之前</td>
+<td>随角色保存</td>
+<td>所有者，已同步</td>
+</tr>
+<tr>
+<td>带 <code>IPlayerSave</code> 的 <code>PlayerData</code></td>
+<td>你的 <code>ServerLoad</code>，在生成之前</td>
+<td>你的 <code>WriteTo</code>，在每次保存之前</td>
+<td>永远看不到；需要的部分自行同步</td>
+</tr>
+</tbody>
+</table></div>
+<p>角色进入时地图服务器上的顺序：</p>
+<ol>
+<li>实例化玩家预制体。</li>
+<li><code>PlayerCharacter.ServerSetup</code> 加载套件的系统（背包、银行、技能、带标记的进度、任务），然后对每个 <code>IPlayerSave</code> 组件调用 <code>ServerLoad</code>。</li>
+<li>生成玩家：每个组件上运行 <code>OnStartServer</code>，然后触发 <code>PlayerCharacter.ServerSpawned</code>。</li>
+</ol>
+<p>所以 <code>OnStartServer</code> 可以读取标记，模板就是这样做的。在 <code>ServerLoad</code> 中对象还没有生成：<code>isServer</code> 仍为 false，所以 <code>PlayerData.Set</code> 会拒绝写入，<code>[Server]</code> 方法在那里会记录一条警告。在 <code>ServerLoad</code> 中读取；稍后再写入。</p>
+<p>保存发生在每隔 <em>Save Interval Seconds</em>（<code>saveIntervalSeconds</code>，地图服务器上为 60）、玩家离开或切换地图时，以及服务器停止时。参见<a href="saving-data.html">保存数据</a>。</p>
+<h2 id="turning-your-system-off-with-a-module"><a class="anchor" href="#turning-your-system-off-with-a-module" aria-hidden="true">#</a>用模块关闭你的系统</h2>
+<p><code>GameInstance.Has(KitModule.X)</code> 告诉你套件的某个模块是否开启。对于你自己的开关，在你的某个资源中添加一个字段，并在每个命令中于服务器上检查它。绝不要改为移除组件：预制体在每种构建中都必须保留相同的网络组件。</p>
+<h2 id="overriding-instead-of-adding"><a class="anchor" href="#overriding-instead-of-adding" aria-hidden="true">#</a>覆写而不是添加</h2>
+<p>要修改套件的某个玩家系统而不是添加新系统，请继承它并在预制体上替换该组件。参见<a href="overriding-kit-behaviour.html">重写套件的行为</a>。</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>服务器和客户端</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>服务器</th>
+<th>所有者的客户端</th>
+<th>其他客户端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Command]</code> 方法体</td>
+<td>运行</td>
+<td>调用它</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>[TargetRpc]</code> 方法体</td>
+<td>调用它</td>
+<td>运行</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>[ClientRpc]</code> 方法体</td>
+<td>调用它</td>
+<td>运行</td>
+<td>如果能看到该玩家则运行</td>
+</tr>
+<tr>
+<td><code>[SyncVar]</code>（Observers）</td>
+<td>设置</td>
+<td>接收</td>
+<td>接收</td>
+</tr>
+<tr>
+<td><code>[SyncVar]</code>（Owner）</td>
+<td>设置</td>
+<td>接收</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>OnStartServer</code>、<code>IPlayerSave</code></td>
+<td>运行</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>OnStartAuthority</code>、<code>OnStartLocalPlayer</code></td>
+<td>否</td>
+<td>运行</td>
+<td>否</td>
+</tr>
+</tbody>
+</table></div>
+<p>在单人模式中，主机同时是服务器和所有者：命令在同一进程中运行，<code>CommandPacing</code> 放行主机自己的连接，<code>OnStartServer</code> 和 <code>OnStartAuthority</code> 都在同一个对象上运行。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li>**<code>[Command]</code> 中没有 <code>CommandPacing</code>。**被修改的客户端可以每秒调用它数千次。</li>
+<li>**因为发送参数的按钮被隐藏就信任该参数。**客户端可以发送任何东西。</li>
+<li>**客户端和服务器构建中的组件不同。**Mirror 会读错组件，连接中断。</li>
+<li>**静态变量没有重置。**上一次 Play 留下的 <code>Local</code> 指向一个已销毁的对象。参见<a href="domain-reload.html">不重新加载域的 Play</a>。</li>
+<li>**私有数据使用 Observers 同步模式。**附近的每个客户端都会收到它。</li>
+<li>**在 <code>ServerLoad</code> 中写入 <code>PlayerData</code>。**玩家还没有生成；写入会被拒绝。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="network-messages.html">网络消息</a></li>
+<li><a href="saving-data.html">保存数据</a></li>
+<li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li>
+<li><a href="security-rules.html">安全规则</a></li>
+<li><a href="kit-updates-in-code.html">代码中的套件更新</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="npc-options.html"><span>上一页</span>NPC 选项</a><a class="next" href="network-messages.html"><span>下一页</span>网络消息</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fplayer-systems.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#when-you-need-one">什么时候需要</a></li><li class="l2"><a href="#start-from-the-template">从模板开始</a></li><li class="l2"><a href="#adding-it-to-the-player-prefabs">添加到玩家预制体</a></li><li class="l2"><a href="#synced-state">同步状态</a></li><li class="l2"><a href="#commands-the-owner-asks">命令：所有者发出请求</a></li><li class="l2"><a href="#a-complete-example-reputation">完整示例：声望</a></li><li class="l2"><a href="#loading-and-saving">加载和保存</a></li><li class="l2"><a href="#turning-your-system-off-with-a-module">用模块关闭你的系统</a></li><li class="l2"><a href="#overriding-instead-of-adding">覆写而不是添加</a></li><li class="l2"><a href="#server-and-client">服务器和客户端</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

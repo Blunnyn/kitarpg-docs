@@ -1,404 +1,404 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Combat · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Combate · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/combat.html">English</option><option value="../../es/gameplay/combat.html">Español</option><option value="combat.html" selected>Português</option><option value="../../zh/gameplay/combat.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de jogo</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html" class="on" aria-current="page">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Sistemas de jogo</div><h1>Combat</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>How fighting works in KitARPG: basic attacks, the damage and healing formulas, critical hits, elements and resistances, line of sight, threat, kill credit and experience, summons and stealth. It also lists every setting that changes combat and what the server checks.</p>
-<h2 id="what-combat-is"><a class="anchor" href="#what-combat-is" aria-hidden="true">#</a>What combat is</h2>
-<p>Combat in KitARPG is real time and fully decided by the server. The client only asks (&quot;attack that monster&quot;, &quot;cast this skill at that point&quot;). The map server checks the request, plays the attack on the animation's hit frames, rolls the damage with the combat formula and tells every client nearby what happened. A modified client can't hit harder, faster, farther or through walls.</p>
-<p>Players and monsters share the same rules. Both are <em>fighters</em> (<code>ICombatant</code>): they have a stat sheet, statuses, health, and take damage and healing the same way. Players are on team 0 and monsters on team 1. Different teams fight each other. Two players only fight where PvP or a duel allows it (see <a href="pvp-and-duels.html">PvP and duels</a>).</p>
-<p>Combat is made of three parts:</p>
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section" open><summary>Sistemas de jogo</summary><ul><li><a href="control-modes.html">Modos de controle</a></li><li><a href="touch-controls.html">Controles de toque</a></li><li><a href="combat.html" class="on" aria-current="page">Combate</a></li><li><a href="recovery-and-death.html">Recuperação e morte</a></li><li><a href="inventory-and-bank.html">Inventário e banco</a></li><li><a href="trade.html">Troca</a></li><li><a href="forge.html">Forja</a></li><li><a href="market.html">Mercado</a></li><li><a href="mail.html">Correio</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Amigos e grupos</a></li><li><a href="guilds.html">Guildas</a></li><li><a href="tax-collectors.html">Coletores de impostos</a></li><li><a href="pvp-and-duels.html">PvP e duelos</a></li><li><a href="dungeons.html">Masmorras</a></li><li><a href="day-and-night.html">Dia e noite</a></li><li><a href="bestiary.html">Bestiário</a></li><li><a href="cash-shop.html">Loja premium</a></li><li><a href="gm-tools.html">Ferramentas de GM</a></li><li><a href="game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="hud-and-windows.html">HUD e janelas</a></li><li><a href="player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Visão geral do DevKit</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Efeitos de habilidades</a></li><li><a href="../devkit/item-effects.html">Efeitos de itens</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de missão</a></li><li><a href="../devkit/npc-options.html">Opções de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas do jogador</a></li><li><a href="../devkit/network-messages.html">Mensagens de rede</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Salvando dados</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="../devkit/editor-extensions.html">Extensões do editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="../devkit/talking-to-central.html">Falando com o Central</a></li><li><a href="../devkit/service-modules.html">Módulos de serviço</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="../devkit/example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sem domain reload</a></li><li><a href="../devkit/security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de jogo</div><h1>Combate</h1><p>Como funciona a luta no KitARPG: ataques básicos, as fórmulas de dano e cura, acertos críticos, elementos e resistências, linha de visão, ameaça, crédito do abate e experiência, invocações e furtividade. Também lista cada configuração que muda o combate e o que o servidor verifica.</p>
+<h2 id="what-combat-is"><a class="anchor" href="#what-combat-is" aria-hidden="true">#</a>O que é o combate</h2>
+<p>O combate no KitARPG é em tempo real e decidido inteiramente pelo servidor. O cliente só pede (&quot;atacar aquele monstro&quot;, &quot;lançar esta habilidade naquele ponto&quot;). O servidor de mapa verifica o pedido, executa o ataque nos quadros de acerto da animação, sorteia o dano com a fórmula de combate e conta a todo cliente próximo o que aconteceu. Um cliente modificado não pode bater mais forte, mais rápido, mais longe nem através de paredes.</p>
+<p>Jogadores e monstros seguem as mesmas regras. Os dois são <em>combatentes</em> (<code>ICombatant</code>): têm uma ficha de atributos, estados, vida, e recebem dano e cura do mesmo jeito. Os jogadores ficam na equipe 0 e os monstros na equipe 1. Equipes diferentes lutam entre si. Dois jogadores só lutam onde o PvP ou um duelo permite (veja <a href="pvp-and-duels.html">PvP e duelos</a>).</p>
+<p>O combate tem três partes:</p>
 <ul>
-<li><strong>Basic attacks</strong> with the weapon in hand (or bare hands).</li>
-<li><strong>Skills</strong>, with their own costs, cooldowns, areas and effects (see <a href="../content/skills.html">Skills</a>).</li>
-<li><strong>Statuses</strong>: buffs, debuffs, damage over time, shields, stuns and the like (see <a href="../content/statuses-and-buffs.html">Statuses and buffs</a>).</li>
+<li><strong>Ataques básicos</strong> com a arma na mão (ou de mãos vazias).</li>
+<li><strong>Habilidades</strong>, com custos, recargas, áreas e efeitos próprios (veja <a href="../content/skills.html">Habilidades</a>).</li>
+<li><strong>Estados</strong>: buffs, debuffs, dano ao longo do tempo, escudos, atordoamentos e afins (veja <a href="../content/statuses-and-buffs.html">Estados e buffs</a>).</li>
 </ul>
-<h2 id="fighting-as-a-player"><a class="anchor" href="#fighting-as-a-player" aria-hidden="true">#</a>Fighting as a player</h2>
-<p>How the player starts a fight depends on the control mode (see <a href="control-modes.html">Control modes</a>).</p>
+<h2 id="fighting-as-a-player"><a class="anchor" href="#fighting-as-a-player" aria-hidden="true">#</a>Lutar como jogador</h2>
+<p>Como o jogador começa uma luta depende do modo de controle (veja <a href="control-modes.html">Modos de controle</a>).</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>Basic attack</th>
-<th>Skills</th>
+<th>Modo</th>
+<th>Ataque básico</th>
+<th>Habilidades</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Top-down, mouse</td>
-<td>Click a monster. The character walks into range and keeps attacking until the target dies or you give another order. Clicking the same target again doesn't restart the swing.</td>
-<td>Hotbar key or click on the skill, then click the target or the ground. The character walks into range and casts once.</td>
+<td>Clique em um monstro. O personagem anda até ficar ao alcance e continua atacando até o alvo morrer ou você dar outra ordem. Clicar de novo no mesmo alvo não reinicia o golpe.</td>
+<td>Tecla da barra rápida ou clique na habilidade, depois clique no alvo ou no chão. O personagem anda até ficar ao alcance e lança uma vez.</td>
 </tr>
 <tr>
-<td>Top-down, keys</td>
-<td><code>Space</code> attacks the nearest enemy within 10 m, slightly favoring the one ahead. Held down, it moves on to the next enemy when one falls.</td>
-<td>Same hotbar keys.</td>
+<td>Top-down, teclas</td>
+<td><code>Space</code> ataca o inimigo mais próximo dentro de 10 m, favorecendo um pouco o que está à frente. Segurado, passa para o próximo inimigo quando um cai.</td>
+<td>As mesmas teclas da barra rápida.</td>
 </tr>
 <tr>
-<td>Third person</td>
-<td>Left mouse button swings toward the crosshair and keeps swinging while held. A melee weapon hits the enemy in a cone in front, a ranged weapon (range over 3 m) the first enemy along the aimed line. No enemy there: the swing hits the air.</td>
-<td>Skills go toward the aim point. They don't need a target.</td>
+<td>Terceira pessoa</td>
+<td>O botão esquerdo do mouse golpeia em direção à mira e continua golpeando enquanto segurado. Uma arma corpo a corpo acerta o inimigo em um cone à frente, uma arma à distância (alcance acima de 3 m) o primeiro inimigo ao longo da linha mirada. Sem inimigo ali: o golpe acerta o ar.</td>
+<td>As habilidades vão em direção ao ponto mirado. Não precisam de alvo.</td>
 </tr>
 <tr>
-<td>Free camera</td>
-<td>Same as third person, aiming with the mouse pointer.</td>
-<td>Same as third person.</td>
+<td>Câmera livre</td>
+<td>Igual à terceira pessoa, mirando com o ponteiro do mouse.</td>
+<td>Igual à terceira pessoa.</td>
 </tr>
 <tr>
-<td>Touch</td>
-<td>The Attack button does what <code>Space</code> or the left button does. Skill buttons can be dragged to aim.</td>
-<td>See <a href="touch-controls.html">Touch controls</a>.</td>
+<td>Toque</td>
+<td>O botão Attack faz o que <code>Space</code> ou o botão esquerdo fazem. Os botões de habilidade podem ser arrastados para mirar.</td>
+<td>Veja <a href="touch-controls.html">Controles de toque</a>.</td>
 </tr>
 </tbody>
 </table></div>
-<p>In top-down, a new order (walk somewhere, click another monster, pick up loot, talk) stops the swing in progress and interrupts a skill that is still casting. A projectile already flying still lands.</p>
-<p>In third person and free camera, nothing walks on its own: an attack on an enemy out of range is refused with &quot;Too far&quot;, and one behind a wall with &quot;Not in sight&quot;. <code>Space</code> dodges a few meters instead of attacking.</p>
-<p>The hotbar has 10 keys, <code>1</code> to <code>0</code>, holding skills and items. Its slots show the cooldown as a radial shadow with the seconds left, and gray out a skill you don't have the mana for.</p>
-<h2 id="what-the-player-sees"><a class="anchor" href="#what-the-player-sees" aria-hidden="true">#</a>What the player sees</h2>
+<p>No top-down, uma ordem nova (andar até algum lugar, clicar em outro monstro, pegar espólio, conversar) para o golpe em andamento e interrompe uma habilidade que ainda está sendo lançada. Um projétil que já está voando ainda acerta.</p>
+<p>Em terceira pessoa e câmera livre, nada anda sozinho: um ataque em um inimigo fora de alcance é recusado com &quot;Too far&quot;, e um atrás de uma parede com &quot;Not in sight&quot;. <code>Space</code> esquiva alguns metros em vez de atacar.</p>
+<p>A barra rápida tem 10 teclas, de <code>1</code> a <code>0</code>, com habilidades e itens. Os espaços mostram a recarga como uma sombra radial com os segundos restantes e ficam cinza quando você não tem mana para a habilidade.</p>
+<h2 id="what-the-player-sees"><a class="anchor" href="#what-the-player-sees" aria-hidden="true">#</a>O que o jogador vê</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>On screen</th>
-<th>Meaning</th>
+<th>Na tela</th>
+<th>Significado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>White or element-colored number rising over a target</td>
-<td>Damage dealt. The color is the element that did most of the damage (<code>DamageElement.color</code>).</td>
+<td>Número branco ou da cor do elemento subindo sobre um alvo</td>
+<td>Dano causado. A cor é a do elemento que causou a maior parte do dano (<code>DamageElement.color</code>).</td>
 </tr>
 <tr>
-<td>Larger orange number ending in <code>!</code></td>
-<td>A critical hit.</td>
+<td>Número laranja maior terminado em <code>!</code></td>
+<td>Um acerto crítico.</td>
 </tr>
 <tr>
-<td>Red number over your own character</td>
-<td>Damage you took.</td>
+<td>Número vermelho sobre o seu próprio personagem</td>
+<td>Dano que você recebeu.</td>
 </tr>
 <tr>
-<td>Green <code>+number</code></td>
-<td>Healing.</td>
+<td><code>+número</code> verde</td>
+<td>Cura.</td>
 </tr>
 <tr>
-<td>&quot;Absorbed&quot; (light blue)</td>
-<td>A shield soaked the whole hit.</td>
+<td>&quot;Absorbed&quot; (azul claro)</td>
+<td>Um escudo absorveu o golpe inteiro.</td>
 </tr>
 <tr>
-<td>&quot;Immune&quot; (light blue)</td>
-<td>The target is invulnerable, or immune to the status you tried to put on it. Shown at most once per second per target.</td>
+<td>&quot;Immune&quot; (azul claro)</td>
+<td>O alvo está invulnerável, ou imune ao estado que você tentou aplicar. Mostrado no máximo uma vez por segundo por alvo.</td>
 </tr>
 <tr>
 <td>&quot;Not in sight&quot;</td>
-<td>You reached the spot but a wall is still in the way.</td>
+<td>Você chegou ao lugar, mas uma parede ainda está no caminho.</td>
 </tr>
 <tr>
 <td>&quot;Too far&quot; / &quot;Out of range&quot;</td>
-<td>The target or point is out of reach (third person and free camera).</td>
+<td>O alvo ou o ponto está fora de alcance (terceira pessoa e câmera livre).</td>
 </tr>
 <tr>
 <td>&quot;You are out of ammo.&quot; / &quot;That ammo doesn't fit your weapon.&quot;</td>
-<td>Chat message, at most every 3 seconds, when a bow or crossbow has nothing to shoot.</td>
+<td>Mensagem no chat, no máximo a cada 3 segundos, quando um arco ou besta não tem o que disparar.</td>
 </tr>
 <tr>
 <td>&quot;You're stunned&quot;, &quot;You're silenced&quot;, &quot;Not enough mana&quot;, &quot;Already casting&quot;, &quot;No target&quot;</td>
-<td>Why a skill was refused, over your character.</td>
+<td>Por que uma habilidade foi recusada, sobre o seu personagem.</td>
 </tr>
 <tr>
 <td><code>+12 XP</code>, &quot;Level 5!&quot;</td>
-<td>Experience and level ups.</td>
+<td>Experiência e subidas de nível.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Damage numbers can be turned off by each player in <strong>Settings &gt; Interface &gt; Damage numbers</strong>, and monster health bars in <strong>Settings &gt; Interface &gt; Monster health bars</strong> (see <a href="player-settings.html">Player settings</a>).</p>
-<p>Other combat feedback on the HUD:</p>
+<p>Cada jogador pode desligar os números de dano em <strong>Settings &gt; Interface &gt; Damage numbers</strong>, e as barras de vida dos monstros em <strong>Settings &gt; Interface &gt; Monster health bars</strong> (veja <a href="player-settings.html">Configurações do jogador</a>).</p>
+<p>Outras respostas de combate no HUD:</p>
 <ul>
-<li><strong>Health and mana orbs</strong> and the experience bar at the bottom.</li>
-<li><strong>Cast bar</strong> with the skill's name while you cast or channel.</li>
-<li><strong>Status icons</strong> above the hotbar, with stacks or the shield left and the seconds remaining. Monsters show a row of icons over their plate.</li>
-<li><strong>Monster plates</strong> with name, level and health. Elites and bosses are marked, and a summon shows its owner's name with a green bar.</li>
-<li><strong>Boss bar</strong> at the top for the nearest boss in a fight: name, health, its buffs and its last shout (see <a href="../content/bosses.html">Bosses</a>).</li>
-<li><strong>Death screen</strong> when you fall (see <a href="recovery-and-death.html">Recovery and death</a>).</li>
+<li><strong>Orbes de vida e mana</strong> e a barra de experiência embaixo.</li>
+<li><strong>Barra de lançamento</strong> com o nome da habilidade enquanto você lança ou canaliza.</li>
+<li><strong>Ícones de estado</strong> acima da barra rápida, com acúmulos ou o escudo restante e os segundos que faltam. Os monstros mostram uma fileira de ícones sobre a placa.</li>
+<li><strong>Placas dos monstros</strong> com nome, nível e vida. Elites e chefes são marcados, e uma invocação mostra o nome do dono com uma barra verde.</li>
+<li><strong>Barra do chefe</strong> no topo para o chefe mais próximo em luta: nome, vida, buffs e o último grito (veja <a href="../content/bosses.html">Chefes</a>).</li>
+<li><strong>Tela de morte</strong> quando você cai (veja <a href="recovery-and-death.html">Recuperação e morte</a>).</li>
 </ul>
-<h2 id="basic-attacks"><a class="anchor" href="#basic-attacks" aria-hidden="true">#</a>Basic attacks</h2>
-<p>The basic attack uses the weapon in the main hand. Its weapon type (<strong>Game Database &gt; Weapon Types</strong>) sets how it behaves:</p>
+<h2 id="basic-attacks"><a class="anchor" href="#basic-attacks" aria-hidden="true">#</a>Ataques básicos</h2>
+<p>O ataque básico usa a arma da mão principal. O tipo da arma (<strong>Game Database &gt; Weapon Types</strong>) define como ela se comporta:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Attack Range</em> (<code>attackRange</code>)</td>
-<td>Meters the weapon reaches. Over 3 m counts as ranged in third person.</td>
+<td>Metros que a arma alcança. Acima de 3 m conta como à distância em terceira pessoa.</td>
 <td>2</td>
 </tr>
 <tr>
 <td><em>Attacks Per Second</em> (<code>attacksPerSecond</code>)</td>
-<td>Base attack speed before the <code>attackSpeed</code> stat.</td>
+<td>Velocidade de ataque base antes do atributo <code>attackSpeed</code>.</td>
 <td>1</td>
 </tr>
 <tr>
 <td><em>Effects</em> (<code>effects</code>)</td>
-<td>Launch effect, projectile and impact effect. A projectile delays the damage until it arrives.</td>
-<td>Empty</td>
+<td>Efeito de saída, projétil e efeito de impacto. Um projétil atrasa o dano até chegar.</td>
+<td>Vazio</td>
 </tr>
 </tbody>
 </table></div>
-<p>The weapon itself gives the damage rolls, one per element (<code>WeaponData.damages</code>), grown by its upgrade level (see <a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a>). With no weapon the character fights bare handed: 1 to 2 damage of the default element, range 1.5 m, 1 attack per second.</p>
-<h3 id="attack-speed"><a class="anchor" href="#attack-speed" aria-hidden="true">#</a>Attack speed</h3>
-<p>The time between attacks is:</p>
+<p>A própria arma dá as faixas de dano, uma por elemento (<code>WeaponData.damages</code>), aumentadas pelo nível de melhoria (veja <a href="../content/sets-upgrades-and-sockets.html">Conjuntos, melhorias e engastes</a>). Sem arma, o personagem luta de mãos vazias: 1 a 2 de dano do elemento padrão, alcance de 1,5 m, 1 ataque por segundo.</p>
+<h3 id="attack-speed"><a class="anchor" href="#attack-speed" aria-hidden="true">#</a>Velocidade de ataque</h3>
+<p>O tempo entre ataques é:</p>
 <pre class="code"><code class="language-">interval = 1 / max(0.1, attacksPerSecond × (1 + attackSpeed))
 </code></pre>
-<p><code>attackSpeed</code> is a percent bonus (the stat field stores 0.25 for +25%, and the character window shows +25%). A weapon with 1 attack per second and +25% attack speed attacks every 0.8 s. When the attack animation is longer than the interval, it plays faster to fit.</p>
-<h3 id="hit-frames"><a class="anchor" href="#hit-frames" aria-hidden="true">#</a>Hit frames</h3>
-<p>The damage lands on the hit frames of the attack animation (<code>CharacterAnimations</code> on the character prefab, <em>Hits at</em> from 0 to 1), not when the request arrives. With several hit frames, the weapon roll is split between them and each frame rolls on its own. A step out of reach during the swing still lands (up to 1 m past the range); running away doesn't. A ranged attack spawns its projectile on each hit frame and deals damage when the projectile reaches the target.</p>
-<h3 id="dual-wield-and-ammo"><a class="anchor" href="#dual-wield-and-ammo" aria-hidden="true">#</a>Dual wield and ammo</h3>
+<p><code>attackSpeed</code> é um bônus percentual (o campo do atributo guarda 0.25 para +25%, e a janela do personagem mostra +25%). Uma arma com 1 ataque por segundo e +25% de velocidade de ataque ataca a cada 0,8 s. Quando a animação de ataque é mais longa que o intervalo, ela toca mais rápido para caber.</p>
+<h3 id="hit-frames"><a class="anchor" href="#hit-frames" aria-hidden="true">#</a>Quadros de acerto</h3>
+<p>O dano cai nos quadros de acerto da animação de ataque (<code>CharacterAnimations</code> no prefab do personagem, <em>Hits at</em> de 0 a 1), não quando o pedido chega. Com vários quadros de acerto, a faixa da arma é dividida entre eles e cada quadro sorteia por conta própria. Um passo para fora do alcance durante o golpe ainda acerta (até 1 m além do alcance); fugir correndo não. Um ataque à distância cria o projétil em cada quadro de acerto e causa dano quando o projétil chega ao alvo.</p>
+<h3 id="dual-wield-and-ammo"><a class="anchor" href="#dual-wield-and-ammo" aria-hidden="true">#</a>Duas armas e munição</h3>
 <ul>
-<li>With a weapon in each hand (weapon types with <code>dualWield</code>), attacks take turns: main hand, off hand, main hand.</li>
-<li>A weapon that uses ammo spends one from the Ammo position for every attack. With no fitting ammo the attack doesn't start.</li>
+<li>Com uma arma em cada mão (tipos de arma com <code>dualWield</code>), os ataques se alternam: mão principal, mão secundária, mão principal.</li>
+<li>Uma arma que usa munição gasta uma da posição Ammo a cada ataque. Sem munição que sirva, o ataque não começa.</li>
 </ul>
-<p>See <a href="../content/equipment.html">Equipment</a> for weapon types, dual wield and ammo.</p>
-<h2 id="skills-in-combat"><a class="anchor" href="#skills-in-combat" aria-hidden="true">#</a>Skills in combat</h2>
-<p>Skills follow the same timing rules as attacks. The server checks, in order: the character is alive, not stunned or silenced (or rooted for a dash or leap), knows the skill, isn't already casting, the cooldown is over, there is enough mana, the weapon is allowed, the target fits the skill (enemy, ally, fallen ally, ground), and it is in range with a 0.6 m margin (<code>PlayerSkills.rangeTolerance</code>). Mana and cooldown are paid when the cast time ends, so an interrupted cast costs nothing. Moving, attacking or picking something up interrupts a cast; so does a stun or silence landing on you.</p>
-<p>Areas (circle, cone, line) are measured flat, ignoring height. Harmful effects land on enemies in the area, the rest on the caster and allies. Details, shapes, bounces, zones and channeling are on the <a href="../content/skills.html">Skills</a> page.</p>
-<h2 id="the-damage-formula"><a class="anchor" href="#the-damage-formula" aria-hidden="true">#</a>The damage formula</h2>
-<p>Every hit, from a weapon, a skill or a monster, goes through the combat formula (<code>CombatFormula</code>). A hit has one or more <em>rolls</em>, each with an element and a minimum and maximum. Each roll is worked out on its own:</p>
+<p>Veja <a href="../content/equipment.html">Equipamento</a> para tipos de arma, duas armas e munição.</p>
+<h2 id="skills-in-combat"><a class="anchor" href="#skills-in-combat" aria-hidden="true">#</a>Habilidades em combate</h2>
+<p>As habilidades seguem as mesmas regras de tempo que os ataques. O servidor verifica, em ordem: o personagem está vivo, não está atordoado nem silenciado (nem enraizado, para uma investida ou um salto), conhece a habilidade, não está lançando outra, a recarga terminou, há mana suficiente, a arma é permitida, o alvo serve para a habilidade (inimigo, aliado, aliado caído, chão) e está ao alcance com uma margem de 0,6 m (<code>PlayerSkills.rangeTolerance</code>). Mana e recarga são pagas quando o tempo de lançamento termina, então um lançamento interrompido não custa nada. Mover-se, atacar ou pegar algo interrompe um lançamento; um atordoamento ou silêncio que caia em você também.</p>
+<p>As áreas (círculo, cone, linha) são medidas no plano, ignorando a altura. Os efeitos nocivos caem nos inimigos da área, o resto no lançador e nos aliados. Detalhes, formas, ricochetes, zonas e canalização estão na página <a href="../content/skills.html">Habilidades</a>.</p>
+<h2 id="the-damage-formula"><a class="anchor" href="#the-damage-formula" aria-hidden="true">#</a>A fórmula de dano</h2>
+<p>Todo golpe, de uma arma, uma habilidade ou um monstro, passa pela fórmula de combate (<code>CombatFormula</code>). Um golpe tem uma ou mais <em>faixas</em>, cada uma com um elemento e um mínimo e máximo. Cada faixa é calculada por conta própria:</p>
 <pre class="code"><code class="language-">element damage = (roll + attacker&#39;s damage for that element) × (1 + power)
                  − defender&#39;s flat resistance to that element
                  × (1 − min(defender&#39;s resistance % to that element, element&#39;s cap))
 </code></pre>
-<p>Then:</p>
+<p>Depois:</p>
 <ol>
-<li>The elements are added together. Negative results count as 0.</li>
-<li>A critical hit (chance <code>critChance</code>) multiplies the total by <code>1 + critDamage</code>.</li>
-<li>The total is rounded and is never less than 1.</li>
+<li>Os elementos são somados. Resultados negativos contam como 0.</li>
+<li>Um acerto crítico (chance <code>critChance</code>) multiplica o total por <code>1 + critDamage</code>.</li>
+<li>O total é arredondado e nunca é menor que 1.</li>
 </ol>
-<p>The element that dealt the most picks the color of the number and the impact effect.</p>
+<p>O elemento que causou mais dano escolhe a cor do número e o efeito de impacto.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Stat</th>
-<th>What it does</th>
-<th>Notes</th>
+<th>Atributo</th>
+<th>O que faz</th>
+<th>Notas</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Element damage</td>
-<td>Flat damage added to every roll of that element.</td>
-<td>From attributes, gear and buffs.</td>
+<td>Dano de elemento</td>
+<td>Dano fixo somado a toda faixa daquele elemento.</td>
+<td>De atributos, equipamento e buffs.</td>
 </tr>
 <tr>
 <td><code>power</code></td>
-<td>Percent more damage of every element.</td>
-<td>0.2 is +20%.</td>
+<td>Porcentagem a mais de dano de todo elemento.</td>
+<td>0.2 é +20%.</td>
 </tr>
 <tr>
-<td>Flat resistance</td>
-<td>Taken off each roll of that element.</td>
-<td>Per element.</td>
+<td>Resistência fixa</td>
+<td>Tirada de cada faixa daquele elemento.</td>
+<td>Por elemento.</td>
 </tr>
 <tr>
-<td>Resistance %</td>
-<td>Percent less damage of that element.</td>
-<td>Capped by the element's <em>Max Resistance</em> (<code>maxResistance</code>, default 50%). Negative values make the target take more.</td>
+<td>Resistência %</td>
+<td>Porcentagem a menos de dano daquele elemento.</td>
+<td>Limitada pelo <em>Max Resistance</em> do elemento (<code>maxResistance</code>, padrão 50%). Valores negativos fazem o alvo receber mais.</td>
 </tr>
 <tr>
 <td><code>critChance</code></td>
-<td>Chance of a critical hit.</td>
-<td>0.05 is 5%.</td>
+<td>Chance de acerto crítico.</td>
+<td>0.05 é 5%.</td>
 </tr>
 <tr>
 <td><code>critDamage</code></td>
-<td>Extra damage on a critical.</td>
-<td>0.5 is +50%, the class default.</td>
+<td>Dano extra em um crítico.</td>
+<td>0.5 é +50%, o padrão das classes.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="worked-example"><a class="anchor" href="#worked-example" aria-hidden="true">#</a>Worked example</h3>
-<p>A warrior hits with a sword that rolls 10 to 14 Neutral. The roll comes out 12. The warrior has +3 Neutral damage and 20% power. The slime has 2 flat Neutral resistance and 25% Neutral resistance.</p>
+<h3 id="worked-example"><a class="anchor" href="#worked-example" aria-hidden="true">#</a>Exemplo calculado</h3>
+<p>Um guerreiro golpeia com uma espada de faixa 10 a 14 Neutral. O sorteio dá 12. O guerreiro tem +3 de dano Neutral e 20% de power. O slime tem 2 de resistência fixa Neutral e 25% de resistência Neutral.</p>
 <ol>
-<li>(12 + 3) × 1.2 = 18</li>
+<li>(12 + 3) × 1,2 = 18</li>
 <li>18 − 2 = 16</li>
-<li>16 × (1 − 0.25) = 12</li>
-<li>Critical with +50%: 12 × 1.5 = 18. Without it: 12.</li>
+<li>16 × (1 − 0,25) = 12</li>
+<li>Crítico com +50%: 12 × 1,5 = 18. Sem ele: 12.</li>
 </ol>
-<p>Rolls without an element use the default element (<strong>Game Database</strong>, <em>Default Element</em>, or the first element in the list). The elements themselves, with their colors, icons and resistance caps, are set up in the Game Database (see <a href="../content/attributes-and-stats.html">Attributes and stats</a>).</p>
-<h3 id="damage-over-time"><a class="anchor" href="#damage-over-time" aria-hidden="true">#</a>Damage over time</h3>
-<p>Ticks of a status (poison, burning, bleeding) go through the same element formula with the caster's stats saved when the status landed and the holder's current resistances. They are never critical and deal at least 1. See <a href="../content/statuses-and-buffs.html">Statuses and buffs</a>.</p>
-<h3 id="healing"><a class="anchor" href="#healing" aria-hidden="true">#</a>Healing</h3>
+<p>Faixas sem elemento usam o elemento padrão (<strong>Game Database</strong>, <em>Default Element</em>, ou o primeiro elemento da lista). Os próprios elementos, com cores, ícones e limites de resistência, são configurados no Game Database (veja <a href="../content/attributes-and-stats.html">Atributos e stats</a>).</p>
+<h3 id="damage-over-time"><a class="anchor" href="#damage-over-time" aria-hidden="true">#</a>Dano ao longo do tempo</h3>
+<p>Os pulsos de um estado (veneno, queimadura, sangramento) passam pela mesma fórmula de elemento, com os atributos do lançador guardados quando o estado caiu e as resistências atuais de quem o carrega. Nunca são críticos e causam pelo menos 1. Veja <a href="../content/statuses-and-buffs.html">Estados e buffs</a>.</p>
+<h3 id="healing"><a class="anchor" href="#healing" aria-hidden="true">#</a>Cura</h3>
 <pre class="code"><code class="language-">heal = (amount + healer&#39;s healing) × (1 + healingBonus)
 </code></pre>
-<p><code>healing</code> (Heals) is added to every heal the character casts, and <code>healingBonus</code> is a percent. Heals are never critical.</p>
-<h3 id="every-bonus-is-a-whole-number"><a class="anchor" href="#every-bonus-is-a-whole-number" aria-hidden="true">#</a>Every bonus is a whole number</h3>
-<p>Stats, bonuses and percentages are always whole numbers: 7%, never 7.5%. Each source is rounded before it is added up. See <a href="../content/attributes-and-stats.html">Attributes and stats</a>.</p>
-<h2 id="what-happens-when-a-hit-lands"><a class="anchor" href="#what-happens-when-a-hit-lands" aria-hidden="true">#</a>What happens when a hit lands</h2>
-<p>On the target, in this order:</p>
+<p><code>healing</code> (Heals) é somado a toda cura que o personagem lança, e <code>healingBonus</code> é uma porcentagem. Curas nunca são críticas.</p>
+<h3 id="every-bonus-is-a-whole-number"><a class="anchor" href="#every-bonus-is-a-whole-number" aria-hidden="true">#</a>Todo bônus é um número inteiro</h3>
+<p>Atributos, bônus e porcentagens são sempre números inteiros: 7%, nunca 7,5%. Cada fonte é arredondada antes de ser somada. Veja <a href="../content/attributes-and-stats.html">Atributos e stats</a>.</p>
+<h2 id="what-happens-when-a-hit-lands"><a class="anchor" href="#what-happens-when-a-hit-lands" aria-hidden="true">#</a>O que acontece quando um golpe acerta</h2>
+<p>No alvo, nesta ordem:</p>
 <ol>
-<li>A player only takes damage from another player where PvP or a duel allows it. A player with GM god mode (<code>/god</code>) takes none.</li>
-<li>The hit puts the target in combat, and the attacker too (or the owner of the summon that hit). See <a href="recovery-and-death.html#in-combat">Recovery and death</a>.</li>
-<li>Invulnerability takes the whole hit (&quot;Immune&quot;).</li>
-<li>Shields soak what they can and end when used up. A hit fully soaked shows &quot;Absorbed&quot;.</li>
-<li>Statuses that end on damage (sleep, freeze) end.</li>
-<li>In a duel, a hit that would kill stops at 1 health and ends the duel.</li>
-<li>Health goes down. At 0 the fighter dies.</li>
+<li>Um jogador só recebe dano de outro jogador onde o PvP ou um duelo permite. Um jogador com o modo deus de GM (<code>/god</code>) não recebe nenhum.</li>
+<li>O golpe põe o alvo em combate, e o atacante também (ou o dono da invocação que acertou). Veja <a href="recovery-and-death.html#in-combat">Recuperação e morte</a>.</li>
+<li>A invulnerabilidade absorve o golpe inteiro (&quot;Immune&quot;).</li>
+<li>Os escudos absorvem o que podem e terminam quando se esgotam. Um golpe totalmente absorvido mostra &quot;Absorbed&quot;.</li>
+<li>Os estados que terminam com dano (sono, congelamento) terminam.</li>
+<li>Em um duelo, um golpe que mataria para em 1 de vida e encerra o duelo.</li>
+<li>A vida diminui. Em 0, o combatente morre.</li>
 </ol>
-<p>Statuses also cut actions short: a stun or silence landing interrupts a cast, and a stun or disarm cancels a basic attack in progress.</p>
+<p>Os estados também cortam ações: um atordoamento ou silêncio que cai interrompe um lançamento, e um atordoamento ou desarme cancela um ataque básico em andamento.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Flag</th>
-<th>Stops</th>
+<th>Marca</th>
+<th>Impede</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Stun</td>
-<td>Moving, attacking and casting</td>
+<td>Mover-se, atacar e lançar</td>
 </tr>
 <tr>
 <td>Root</td>
-<td>Moving, dashing and leaping (teleport still works)</td>
+<td>Mover-se, investir e saltar (o teletransporte ainda funciona)</td>
 </tr>
 <tr>
 <td>Silence</td>
-<td>Casting</td>
+<td>Lançar</td>
 </tr>
 <tr>
 <td>Disarm</td>
-<td>Basic attacks</td>
+<td>Ataques básicos</td>
 </tr>
 <tr>
 <td>Invisible</td>
-<td>Monsters lose you, enemy players don't receive you</td>
+<td>Os monstros perdem você, os jogadores inimigos não recebem você</td>
 </tr>
 <tr>
 <td>Invulnerable</td>
-<td>All damage and harmful statuses</td>
+<td>Todo dano e estados nocivos</td>
 </tr>
 <tr>
 <td>Unstoppable</td>
-<td>Control statuses and being pushed</td>
+<td>Estados de controle e ser empurrado</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="line-of-sight"><a class="anchor" href="#line-of-sight" aria-hidden="true">#</a>Line of sight</h2>
-<p>Attacks, skills and monsters can't see through walls. <em>Line Of Sight</em> (<code>lineOfSight</code>) in <strong>KitARPG &gt; Game Settings</strong>, section Combat, picks how:</p>
+<h2 id="line-of-sight"><a class="anchor" href="#line-of-sight" aria-hidden="true">#</a>Linha de visão</h2>
+<p>Ataques, habilidades e monstros não enxergam através de paredes. <em>Line Of Sight</em> (<code>lineOfSight</code>) em <strong>KitARPG &gt; Game Settings</strong>, seção Combat, escolhe como:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>What blocks</th>
-<th>Setup</th>
+<th>Modo</th>
+<th>O que bloqueia</th>
+<th>Configuração</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>NavMesh</code> (default)</td>
-<td>Holes in the NavMesh: walls, houses, trunks.</td>
-<td>Nothing to add. Scenery doesn't need colliders, so clicks still reach the ground.</td>
+<td><code>NavMesh</code> (padrão)</td>
+<td>Buracos no NavMesh: paredes, casas, troncos.</td>
+<td>Nada a adicionar. O cenário não precisa de colliders, então os cliques ainda chegam ao chão.</td>
 </tr>
 <tr>
 <td><code>Colliders</code></td>
-<td>Colliders on the layers in <em>Sight Blockers</em> (<code>sightBlockers</code>), tested at chest height.</td>
-<td>Put colliders on what should block and set the layers. Anything with a <code>NetworkIdentity</code> (players, monsters, NPCs) never blocks.</td>
+<td>Colliders nas camadas de <em>Sight Blockers</em> (<code>sightBlockers</code>), testados na altura do peito.</td>
+<td>Ponha colliders no que deve bloquear e defina as camadas. Nada com um <code>NetworkIdentity</code> (jogadores, monstros, NPCs) bloqueia.</td>
 </tr>
 <tr>
 <td><code>Off</code></td>
-<td>Nothing.</td>
-<td>Attacks and skills go through everything.</td>
+<td>Nada.</td>
+<td>Ataques e habilidades atravessam tudo.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Two fighters closer than 1.2 m always see each other, so fighting around a corner doesn't stall. Off the NavMesh (a map with no NavMesh, something flying) the NavMesh test always passes.</p>
-<p>Where it applies:</p>
+<p>Dois combatentes a menos de 1,2 m sempre se veem, para que lutar em volta de uma esquina não trave. Fora do NavMesh (um mapa sem NavMesh, algo voando), o teste do NavMesh sempre passa.</p>
+<p>Onde se aplica:</p>
 <ul>
-<li><strong>Players:</strong> in top-down, an attack or skill on a target behind a wall walks on until the target comes into view. If the character gets there and still can't see it, &quot;Not in sight&quot; appears. In third person and free camera the request is refused.</li>
-<li><strong>Monsters</strong> only notice players they see, and walk around a wall instead of hitting through it.</li>
-<li><strong>Areas and lines</strong> don't reach anyone hidden from the area's center. Bounces only jump to targets they see. Revive areas only reach fallen allies in sight.</li>
+<li><strong>Jogadores:</strong> no top-down, um ataque ou habilidade em um alvo atrás de uma parede segue andando até o alvo ficar à vista. Se o personagem chega lá e ainda não o vê, aparece &quot;Not in sight&quot;. Em terceira pessoa e câmera livre, o pedido é recusado.</li>
+<li><strong>Monstros</strong> só notam jogadores que veem, e contornam uma parede em vez de bater através dela.</li>
+<li><strong>Áreas e linhas</strong> não alcançam ninguém escondido do centro da área. Os ricochetes só pulam para alvos que veem. As áreas de reviver só alcançam aliados caídos à vista.</li>
 </ul>
-<h2 id="monsters-in-combat"><a class="anchor" href="#monsters-in-combat" aria-hidden="true">#</a>Monsters in combat</h2>
-<p>Each monster's data (<strong>Game Database &gt; Monsters</strong>) sets how it fights. The full list is on <a href="../content/monsters.html">Monsters</a>; these are the combat parts.</p>
+<h2 id="monsters-in-combat"><a class="anchor" href="#monsters-in-combat" aria-hidden="true">#</a>Monstros em combate</h2>
+<p>Os dados de cada monstro (<strong>Game Database &gt; Monsters</strong>) definem como ele luta. A lista completa está em <a href="../content/monsters.html">Monstros</a>; estas são as partes de combate.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Aggression</em></td>
-<td><code>Passive</code> fights back only when hit. <code>Aggressive</code> attacks any player in sight. <code>Pack</code> also joins when a monster of the same kind within its sight range is attacked.</td>
+<td><code>Passive</code> só revida quando é atingido. <code>Aggressive</code> ataca qualquer jogador à vista. <code>Pack</code> também entra quando um monstro do mesmo tipo dentro do seu alcance de visão é atacado.</td>
 <td>Aggressive</td>
 </tr>
 <tr>
 <td><em>Sight Range</em></td>
-<td>Meters at which it notices players.</td>
+<td>Metros em que nota jogadores.</td>
 <td>8</td>
 </tr>
 <tr>
 <td><em>Leash Range</em></td>
-<td>Meters from home it follows a player before giving up.</td>
+<td>Metros a partir de casa que segue um jogador antes de desistir.</td>
 <td>18</td>
 </tr>
 <tr>
 <td><em>Attack Range</em></td>
-<td>Reach of its basic attack. It closes in to this plus 0.3 m.</td>
-<td>1.4</td>
+<td>Alcance do ataque básico. Ele se aproxima até isso mais 0,3 m.</td>
+<td>1,4</td>
 </tr>
 <tr>
 <td><em>Attacks Per Second</em></td>
-<td>Speed of its basic attack. Its skills share this turn.</td>
-<td>0.8</td>
+<td>Velocidade do ataque básico. As habilidades dividem esse turno.</td>
+<td>0,8</td>
 </tr>
 <tr>
 <td><em>Attack</em></td>
-<td>Damage rolls of its basic attack, one per element.</td>
-<td>1 to 3, default element</td>
+<td>Faixas de dano do ataque básico, uma por elemento.</td>
+<td>1 a 3, elemento padrão</td>
 </tr>
 <tr>
 <td><em>Skills</em></td>
-<td>Cast at rank 1, with no cast time, when ready and in reach.</td>
-<td>Empty</td>
+<td>Lançadas no nível 1, sem tempo de lançamento, quando prontas e ao alcance.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Status Defense</em></td>
-<td>Statuses it ignores or that last less on it.</td>
-<td>Empty</td>
+<td>Estados que ele ignora ou que duram menos nele.</td>
+<td>Vazio</td>
 </tr>
 </tbody>
 </table></div>
-<p>When a monster is pulled past its leash range it walks home, forgets everyone and heals to full. A boss going home also resets its phases and enrage (see <a href="../content/bosses.html">Bosses</a>).</p>
-<h3 id="threat"><a class="anchor" href="#threat" aria-hidden="true">#</a>Threat</h3>
-<p>Each monster keeps a threat table, apart from the damage that decides the kill:</p>
+<p>Quando um monstro é puxado além do seu alcance de guia, ele volta para casa, esquece todos e se cura totalmente. Um chefe voltando para casa também reinicia as fases e a fúria (veja <a href="../content/bosses.html">Chefes</a>).</p>
+<h3 id="threat"><a class="anchor" href="#threat" aria-hidden="true">#</a>Ameaça</h3>
+<p>Cada monstro mantém uma tabela de ameaça, separada do dano que decide o abate:</p>
 <ul>
-<li>Damage dealt to it adds that much threat.</li>
-<li>Healing someone it is fighting adds <em>Heal Threat</em> (<code>healThreat</code>) threat per point healed to the healer. Default 0.5.</li>
-<li>Being seen first is worth 1 point, so the first hit from elsewhere doesn't pull it away at once.</li>
-<li>It switches target only when another fighter's threat passes the current target's by <em>Threat Switch</em> (<code>threatSwitch</code>), default 1.1 (10% more). Values under 1 count as 1.</li>
-<li>Summons earn their own threat.</li>
+<li>O dano causado a ele soma essa mesma ameaça.</li>
+<li>Curar alguém com quem ele está lutando soma <em>Heal Threat</em> (<code>healThreat</code>) de ameaça por ponto curado ao curador. Padrão 0,5.</li>
+<li>Ser visto primeiro vale 1 ponto, para que o primeiro golpe vindo de outro lugar não o tire na hora.</li>
+<li>Ele só troca de alvo quando a ameaça de outro combatente passa a do alvo atual por <em>Threat Switch</em> (<code>threatSwitch</code>), padrão 1,1 (10% a mais). Valores abaixo de 1 contam como 1.</li>
+<li>As invocações ganham a própria ameaça.</li>
 </ul>
-<h3 id="sleeping-monsters"><a class="anchor" href="#sleeping-monsters" aria-hidden="true">#</a>Sleeping monsters</h3>
-<p>With <em>Monsters Sleep Unseen</em> (<code>monstersSleepUnseen</code>, on by default), a monster that no client sees, with no target and out of a fight, stops thinking until someone comes close. It still respawns on time. This saves server time on big maps and changes nothing a player can see.</p>
-<h2 id="kill-credit-and-experience"><a class="anchor" href="#kill-credit-and-experience" aria-hidden="true">#</a>Kill credit and experience</h2>
-<p>The kill goes to the player who dealt the most damage to the monster, not the last hit. Hits from a summon count for its owner. That player gets the rewards: experience, gold and loot (see <a href="../content/loot.html">Loot</a>).</p>
-<p>Experience for a kill:</p>
+<h3 id="sleeping-monsters"><a class="anchor" href="#sleeping-monsters" aria-hidden="true">#</a>Monstros dormindo</h3>
+<p>Com <em>Monsters Sleep Unseen</em> (<code>monstersSleepUnseen</code>, ligado por padrão), um monstro que nenhum cliente vê, sem alvo e fora de luta, para de pensar até alguém se aproximar. Ele ainda renasce no tempo certo. Isso economiza tempo do servidor em mapas grandes e não muda nada que um jogador possa ver.</p>
+<h2 id="kill-credit-and-experience"><a class="anchor" href="#kill-credit-and-experience" aria-hidden="true">#</a>Crédito do abate e experiência</h2>
+<p>O abate vai para o jogador que causou mais dano ao monstro, não para o último golpe. Os golpes de uma invocação contam para o dono. Esse jogador recebe as recompensas: experiência, ouro e espólio (veja <a href="../content/loot.html">Espólio</a>).</p>
+<p>Experiência por abate:</p>
 <pre class="code"><code class="language-">base = monster experience × scale
 scale = 1 when the player is at most 3 levels above the monster,
         otherwise max(0.1, 1 − (levels above − 3) × 0.2)
@@ -407,13 +407,13 @@ experience = base × (1 + experienceGain) × experience rate
 <div class="table"><table>
 <thead>
 <tr>
-<th>Player above the monster by</th>
-<th>Experience</th>
+<th>Jogador acima do monstro por</th>
+<th>Experiência</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>3 levels or less (or below it)</td>
+<td>3 níveis ou menos (ou abaixo dele)</td>
 <td>100%</td>
 </tr>
 <tr>
@@ -433,221 +433,221 @@ experience = base × (1 + experienceGain) × experience rate
 <td>20%</td>
 </tr>
 <tr>
-<td>8 or more</td>
+<td>8 ou mais</td>
 <td>10%</td>
 </tr>
 </tbody>
 </table></div>
 <ul>
-<li><code>experienceGain</code> is a stat (0.1 is +10%) from gear, buffs or attributes.</li>
-<li>The experience rate is <em>Experience Rate</em> (<code>experienceRate</code>) in <strong>Game Settings &gt; Rates</strong>, default 1, times any rate event a GM starts with <code>/rates</code> (see <a href="gm-tools.html">GM tools</a>).</li>
-<li><strong>Parties:</strong> members alive on the same map within 40 m of the monster split the experience. Each gets <code>(1 + 0.1 × (members − 1)) / members</code> of the experience their own level would earn (<code>PlayerParty.shareRange</code> and <code>bonusPerMember</code>). See <a href="friends-and-parties.html">Friends and parties</a>.</li>
-<li>A guild tax collector nearby can take its share first (see <a href="tax-collectors.html">Tax collectors</a>).</li>
+<li><code>experienceGain</code> é um atributo (0.1 é +10%) vindo de equipamento, buffs ou atributos.</li>
+<li>A taxa de experiência é <em>Experience Rate</em> (<code>experienceRate</code>) em <strong>Game Settings &gt; Rates</strong>, padrão 1, vezes qualquer evento de taxa que um GM inicie com <code>/rates</code> (veja <a href="gm-tools.html">Ferramentas de GM</a>).</li>
+<li><strong>Grupos:</strong> os membros vivos no mesmo mapa a até 40 m do monstro dividem a experiência. Cada um recebe <code>(1 + 0.1 × (members − 1)) / members</code> da experiência que o próprio nível ganharia (<code>PlayerParty.shareRange</code> e <code>bonusPerMember</code>). Veja <a href="friends-and-parties.html">Amigos e grupos</a>.</li>
+<li>Um coletor de impostos de guilda por perto pode pegar a sua parte primeiro (veja <a href="tax-collectors.html">Coletores de impostos</a>).</li>
 </ul>
-<h2 id="summons"><a class="anchor" href="#summons" aria-hidden="true">#</a>Summons</h2>
-<p>A skill with a summon effect (see <a href="../content/skills.html">Skills</a>) calls monsters that fight for the caster:</p>
+<h2 id="summons"><a class="anchor" href="#summons" aria-hidden="true">#</a>Invocações</h2>
+<p>Uma habilidade com um efeito de invocação (veja <a href="../content/skills.html">Habilidades</a>) chama monstros que lutam pelo lançador:</p>
 <ul>
-<li>They follow their owner and attack enemies close by. They return to the owner past their leash range.</li>
-<li>They go away when their time runs out, when they die, when the owner dies or leaves. Past the effect's maximum, the oldest goes.</li>
-<li>Their hits count for the owner (kill and experience). They drop no loot.</li>
-<li>Wild monsters attack them. You can't attack your own.</li>
+<li>Eles seguem o dono e atacam inimigos próximos. Voltam para o dono além do alcance de guia.</li>
+<li>Eles vão embora quando o tempo acaba, quando morrem, quando o dono morre ou sai. Passando do máximo do efeito, o mais antigo vai embora.</li>
+<li>Os golpes deles contam para o dono (abate e experiência). Não deixam espólio.</li>
+<li>Os monstros selvagens os atacam. Você não pode atacar os seus.</li>
 </ul>
-<h2 id="stealth"><a class="anchor" href="#stealth" aria-hidden="true">#</a>Stealth</h2>
-<p>The Invisible flag (from a status such as the sample's Vanish) hides a fighter:</p>
+<h2 id="stealth"><a class="anchor" href="#stealth" aria-hidden="true">#</a>Furtividade</h2>
+<p>A marca Invisible (de um estado como o Vanish da amostra) esconde um combatente:</p>
 <ul>
-<li>Monsters lose an invisible target and don't pick it.</li>
-<li>Enemy players don't receive it at all: <code>KitInterestManagement</code> leaves it out of their view, so a modified client can't show it either. Allies and the fighter itself still see it.</li>
-<li>A request that names an invisible enemy is ignored, and an attack in progress on one stops.</li>
-<li>Statuses with <em>Ends On Action</em> end when the holder attacks or casts, which is how invisibility breaks.</li>
+<li>Os monstros perdem um alvo invisível e não o escolhem.</li>
+<li>Os jogadores inimigos não o recebem: <code>KitInterestManagement</code> o deixa fora da visão deles, então um cliente modificado também não pode mostrá-lo. Os aliados e o próprio combatente ainda o veem.</li>
+<li>Um pedido que indica um inimigo invisível é ignorado, e um ataque em andamento contra ele para.</li>
+<li>Estados com <em>Ends On Action</em> terminam quando quem os carrega ataca ou lança, e é assim que a invisibilidade se quebra.</li>
 </ul>
-<p>The network prefab must use <code>KitInterestManagement</code> (the sample does) for stealth to hide anything on the network.</p>
-<h2 id="protection-on-arrival"><a class="anchor" href="#protection-on-arrival" aria-hidden="true">#</a>Protection on arrival</h2>
-<p>A player entering a map, respawning or being revived gets the <em>Arrival Status</em> (<code>arrivalStatus</code>) of the Game Database for <em>Arrival Seconds</em> (<code>arrivalSeconds</code>, default 4). In the sample it is &quot;Protected&quot;: invulnerable, and it ends on attacking or casting. See <a href="recovery-and-death.html#protection-after-coming-back">Recovery and death</a>.</p>
-<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
+<p>O prefab de rede precisa usar <code>KitInterestManagement</code> (a amostra usa) para que a furtividade esconda algo na rede.</p>
+<h2 id="protection-on-arrival"><a class="anchor" href="#protection-on-arrival" aria-hidden="true">#</a>Proteção ao chegar</h2>
+<p>Um jogador que entra em um mapa, renasce ou é revivido recebe o <em>Arrival Status</em> (<code>arrivalStatus</code>) do Game Database por <em>Arrival Seconds</em> (<code>arrivalSeconds</code>, padrão 4). Na amostra é &quot;Protected&quot;: invulnerável, e termina ao atacar ou lançar. Veja <a href="recovery-and-death.html#protection-after-coming-back">Recuperação e morte</a>.</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Configurações</h2>
 <h3 id="game-settings-combat"><a class="anchor" href="#game-settings-combat" aria-hidden="true">#</a>Game Settings, Combat</h3>
-<p>In <strong>KitARPG &gt; Game Settings</strong> (the <code>GameInstance</code> on the <code>KitNetwork</code> prefab), section Combat:</p>
+<p>Em <strong>KitARPG &gt; Game Settings</strong> (o <code>GameInstance</code> no prefab <code>KitNetwork</code>), seção Combat:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Line Of Sight</em> (<code>lineOfSight</code>)</td>
-<td>What stops attacks, skills and monsters from seeing through walls: <code>Off</code>, <code>NavMesh</code> or <code>Colliders</code>.</td>
+<td>O que impede ataques, habilidades e monstros de ver através de paredes: <code>Off</code>, <code>NavMesh</code> ou <code>Colliders</code>.</td>
 <td>NavMesh</td>
 </tr>
 <tr>
 <td><em>Sight Blockers</em> (<code>sightBlockers</code>)</td>
-<td>Colliders mode only: the layers that block sight.</td>
-<td>Default layer</td>
+<td>Só no modo Colliders: as camadas que bloqueiam a visão.</td>
+<td>Camada Default</td>
 </tr>
 <tr>
 <td><em>Heal Threat</em> (<code>healThreat</code>)</td>
-<td>Threat a healer earns per point healed on someone a monster fights.</td>
-<td>0.5</td>
+<td>Ameaça que um curador ganha por ponto curado em alguém com quem um monstro luta.</td>
+<td>0,5</td>
 </tr>
 <tr>
 <td><em>Threat Switch</em> (<code>threatSwitch</code>)</td>
-<td>How much more threat another fighter needs to take a monster's attention.</td>
-<td>1.1</td>
+<td>Quanto mais ameaça outro combatente precisa para tomar a atenção de um monstro.</td>
+<td>1,1</td>
 </tr>
 <tr>
 <td><em>Monsters Sleep Unseen</em> (<code>monstersSleepUnseen</code>)</td>
-<td>Monsters no player can see stop thinking.</td>
-<td>On</td>
+<td>Monstros que nenhum jogador pode ver param de pensar.</td>
+<td>Ligado</td>
 </tr>
 </tbody>
 </table></div>
-<p>Related sections on the same page: <strong>Recovery</strong> and <strong>Death</strong> (see <a href="recovery-and-death.html">Recovery and death</a>) and <strong>Rates</strong> (<em>Experience Rate</em>, <em>Loot Rate</em>, <em>Gold Rate</em>, all 1).</p>
-<h3 id="components"><a class="anchor" href="#components" aria-hidden="true">#</a>Components</h3>
+<p>Seções relacionadas na mesma página: <strong>Recovery</strong> e <strong>Death</strong> (veja <a href="recovery-and-death.html">Recuperação e morte</a>) e <strong>Rates</strong> (<em>Experience Rate</em>, <em>Loot Rate</em>, <em>Gold Rate</em>, todos 1).</p>
+<h3 id="components"><a class="anchor" href="#components" aria-hidden="true">#</a>Componentes</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Where</th>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Onde</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>PlayerSkills</code> (player prefab)</td>
+<td><code>PlayerSkills</code> (prefab do jogador)</td>
 <td><em>Range Tolerance</em> (<code>rangeTolerance</code>)</td>
-<td>Meters a target may be past a skill's range, for the time the request takes to arrive.</td>
-<td>0.6</td>
+<td>Metros que um alvo pode estar além do alcance de uma habilidade, pelo tempo que o pedido leva para chegar.</td>
+<td>0,6</td>
 </tr>
 <tr>
 <td><code>TopDownServer</code></td>
 <td><em>Max Move Distance</em> (<code>maxMoveDistance</code>)</td>
-<td>Attack, skill and talk requests farther than this are ignored.</td>
+<td>Pedidos de ataque, habilidade e conversa mais longe que isso são ignorados.</td>
 <td>40</td>
 </tr>
 <tr>
 <td><code>TopDownServer</code></td>
 <td><em>Max Messages Per Second</em> (<code>maxMessagesPerSecond</code>)</td>
-<td>Requests per second before the connection is dropped as flooding.</td>
+<td>Pedidos por segundo antes de a conexão ser derrubada por flood.</td>
 <td>20</td>
 </tr>
 <tr>
 <td><code>TopDownServer</code></td>
 <td><em>Chase Repath</em> (<code>chaseRepath</code>)</td>
-<td>Seconds between path updates while chasing a target.</td>
-<td>0.25</td>
+<td>Segundos entre atualizações do caminho ao perseguir um alvo.</td>
+<td>0,25</td>
 </tr>
 <tr>
 <td><code>TopDownInput</code></td>
 <td><em>Attack Key</em> (<code>attackKey</code>)</td>
-<td>Attacks the nearest enemy.</td>
+<td>Ataca o inimigo mais próximo.</td>
 <td><code>Space</code></td>
 </tr>
 <tr>
 <td><code>TopDownInput</code></td>
 <td><em>Key Attack Range</em> (<code>keyAttackRange</code>)</td>
-<td>Meters around the player in which the attack key looks for an enemy.</td>
+<td>Metros ao redor do jogador em que a tecla de ataque procura um inimigo.</td>
 <td>10</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
 <td><em>Reach Slack</em> (<code>reachSlack</code>)</td>
-<td>Meters past the attack or skill range still accepted.</td>
-<td>0.6</td>
+<td>Metros além do alcance do ataque ou da habilidade ainda aceitos.</td>
+<td>0,6</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
 <td><em>Melee Arc</em> (<code>meleeArc</code>)</td>
-<td>Half the angle, in degrees, in which a melee swing finds its enemy.</td>
+<td>Metade do ângulo, em graus, em que um golpe corpo a corpo encontra o inimigo.</td>
 <td>60</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
 <td><em>Aim Width</em> (<code>aimWidth</code>)</td>
-<td>Meters to either side of the aimed line in which a ranged attack or single-target skill finds its enemy.</td>
-<td>0.9</td>
+<td>Metros para cada lado da linha mirada em que um ataque à distância ou uma habilidade de alvo único encontra o inimigo.</td>
+<td>0,9</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
 <td><em>Dodge Distance</em>, <em>Dodge Seconds</em>, <em>Dodge Cooldown</em></td>
-<td>The <code>Space</code> dodge.</td>
-<td>4, 0.3, 1.2</td>
+<td>A esquiva com <code>Space</code>.</td>
+<td>4, 0,3, 1,2</td>
 </tr>
 <tr>
 <td><code>ThirdPersonInput</code></td>
 <td><em>Swing Repeat</em> (<code>swingRepeat</code>)</td>
-<td>Seconds between swing requests while the button is held. The server keeps the real attack speed.</td>
-<td>0.25</td>
+<td>Segundos entre pedidos de golpe enquanto o botão está segurado. O servidor mantém a velocidade de ataque real.</td>
+<td>0,25</td>
 </tr>
 <tr>
-<td><code>FighterStatus</code> (player and monster prefabs)</td>
+<td><code>FighterStatus</code> (prefabs de jogador e monstro)</td>
 <td><em>Immune Text</em>, <em>Absorbed Text</em></td>
-<td>The words shown when a hit does nothing.</td>
+<td>As palavras mostradas quando um golpe não faz nada.</td>
 <td>&quot;Immune&quot;, &quot;Absorbed&quot;</td>
 </tr>
 <tr>
 <td><code>FloatingText</code> (HUD)</td>
-<td>Colors, size, lifetime</td>
-<td>Look of the damage numbers.</td>
+<td>Cores, tamanho, duração</td>
+<td>Aparência dos números de dano.</td>
 <td></td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>What the server checks</h2>
+<h2 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>O que o servidor verifica</h2>
 <ul>
-<li><strong>Targets:</strong> a request naming a target by network id is only accepted if that client is meant to see it: in its view, not an invisible enemy, not an event monster brought for someone else. The target must be alive and an enemy.</li>
-<li><strong>Distance:</strong> top-down ignores targets more than 40 m away; third person refuses targets out of reach plus 0.6 m.</li>
-<li><strong>Line of sight</strong> for attacks, skills, areas and monster targeting.</li>
-<li><strong>Timing:</strong> attacks wait for the attack interval, skills for their cooldown and cast time, both for the hit frames. The client never decides when damage lands.</li>
-<li><strong>State:</strong> dead characters, stunned or disarmed attackers, silenced casters and characters busy casting can't act.</li>
-<li><strong>Rate:</strong> every combat request counts against the mode's flood limit and the per-connection command pacing; a flood disconnects the client.</li>
-<li><strong>Damage</strong> is rolled only on the server, with the server's stats.</li>
+<li><strong>Alvos:</strong> um pedido que indica um alvo por id de rede só é aceito se aquele cliente deve vê-lo: na sua visão, não é um inimigo invisível, não é um monstro de evento trazido para outra pessoa. O alvo precisa estar vivo e ser inimigo.</li>
+<li><strong>Distância:</strong> o top-down ignora alvos a mais de 40 m; a terceira pessoa recusa alvos fora do alcance mais 0,6 m.</li>
+<li><strong>Linha de visão</strong> para ataques, habilidades, áreas e escolha de alvo dos monstros.</li>
+<li><strong>Tempo:</strong> os ataques esperam o intervalo de ataque, as habilidades a recarga e o tempo de lançamento, os dois os quadros de acerto. O cliente nunca decide quando o dano cai.</li>
+<li><strong>Estado:</strong> personagens mortos, atacantes atordoados ou desarmados, lançadores silenciados e personagens ocupados lançando não podem agir.</li>
+<li><strong>Ritmo:</strong> todo pedido de combate conta para o limite de flood do modo e para o ritmo de comandos por conexão; um flood desconecta o cliente.</li>
+<li><strong>Dano</strong> é sorteado só no servidor, com os atributos do servidor.</li>
 </ul>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>The rules are the same in both, because the same map code runs. In single player your game is the host: it runs the server side, so the formula, threat, line of sight and timing all work as in MMO. Stealth still applies on the host: an invisible monster is hidden from you. In single player, <em>Single Player Commands</em> gives you every GM command, so <code>/god</code> and <code>/heal</code> work as cheats (see <a href="gm-tools.html">GM tools</a>).</p>
-<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
-<h3 id="make-combat-faster-or-slower"><a class="anchor" href="#make-combat-faster-or-slower" aria-hidden="true">#</a>Make combat faster or slower</h3>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Um jogador e MMO</h2>
+<p>As regras são as mesmas nos dois, porque roda o mesmo código de mapa. Em um jogador, o seu jogo é o host: ele roda o lado do servidor, então a fórmula, a ameaça, a linha de visão e o tempo funcionam como em MMO. A furtividade ainda vale no host: um monstro invisível fica escondido de você. Em um jogador, <em>Single Player Commands</em> dá a você todos os comandos de GM, então <code>/god</code> e <code>/heal</code> funcionam como trapaças (veja <a href="gm-tools.html">Ferramentas de GM</a>).</p>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Passo a passo</h2>
+<h3 id="make-combat-faster-or-slower"><a class="anchor" href="#make-combat-faster-or-slower" aria-hidden="true">#</a>Deixar o combate mais rápido ou mais lento</h3>
 <ol>
-<li>Open <strong>KitARPG &gt; Game Database &gt; Weapon Types</strong> and change <em>Attacks Per Second</em> on each type.</li>
-<li>For monsters, change <em>Attacks Per Second</em> on each monster.</li>
-<li>Give classes or gear <code>attackSpeed</code> for players who should attack faster.</li>
-<li>Check the attack animations: if a clip is longer than the interval it plays faster; clips much longer than the interval look rushed.</li>
+<li>Abra <strong>KitARPG &gt; Game Database &gt; Weapon Types</strong> e mude <em>Attacks Per Second</em> em cada tipo.</li>
+<li>Para monstros, mude <em>Attacks Per Second</em> em cada monstro.</li>
+<li>Dê <code>attackSpeed</code> a classes ou equipamento para jogadores que devem atacar mais rápido.</li>
+<li>Confira as animações de ataque: se um clipe é mais longo que o intervalo, ele toca mais rápido; clipes muito mais longos que o intervalo parecem apressados.</li>
 </ol>
-<h3 id="block-attacks-with-buildings-using-colliders"><a class="anchor" href="#block-attacks-with-buildings-using-colliders" aria-hidden="true">#</a>Block attacks with buildings using colliders</h3>
+<h3 id="block-attacks-with-buildings-using-colliders"><a class="anchor" href="#block-attacks-with-buildings-using-colliders" aria-hidden="true">#</a>Bloquear ataques com construções usando colliders</h3>
 <ol>
-<li>Put the walls on their own layer, for example <code>SightBlock</code>, with colliders.</li>
-<li>In <strong>KitARPG &gt; Game Settings</strong>, Combat, set <em>Line Of Sight</em> to <code>Colliders</code> and <em>Sight Blockers</em> to that layer.</li>
-<li>Make sure the ground isn't on that layer, or every shot gets blocked.</li>
-<li>Play and attack a monster across a wall: the character walks around until it sees the target.</li>
+<li>Ponha as paredes em uma camada própria, por exemplo <code>SightBlock</code>, com colliders.</li>
+<li>Em <strong>KitARPG &gt; Game Settings</strong>, Combat, defina <em>Line Of Sight</em> como <code>Colliders</code> e <em>Sight Blockers</em> como essa camada.</li>
+<li>Garanta que o chão não esteja nessa camada, ou todo disparo será bloqueado.</li>
+<li>Dê Play e ataque um monstro do outro lado de uma parede: o personagem contorna até ver o alvo.</li>
 </ol>
-<h3 id="change-the-damage-formula"><a class="anchor" href="#change-the-damage-formula" aria-hidden="true">#</a>Change the damage formula</h3>
-<p>Subclass <code>CombatFormula</code>, override <code>Attack</code>, <code>Element</code>, <code>Heal</code>, <code>AttackInterval</code> or <code>Experience</code>, and set <code>GameInstance.Combat</code> to your class when the game starts. Only the server calls it. See <a href="../devkit/formulas.html">Formulas</a>.</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h3 id="change-the-damage-formula"><a class="anchor" href="#change-the-damage-formula" aria-hidden="true">#</a>Mudar a fórmula de dano</h3>
+<p>Crie uma subclasse de <code>CombatFormula</code>, sobrescreva <code>Attack</code>, <code>Element</code>, <code>Heal</code>, <code>AttackInterval</code> ou <code>Experience</code> e defina <code>GameInstance.Combat</code> com a sua classe quando o jogo começa. Só o servidor a chama. Veja <a href="../devkit/formulas.html">Fórmulas</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Erros comuns</h2>
 <ul>
-<li><strong>Monsters hit through walls or attacks pass through houses.</strong> The map has no NavMesh holes where the walls are, so <code>NavMesh</code> mode can't see them. Bake the NavMesh with the walls as obstacles, or switch to <code>Colliders</code> and set <em>Sight Blockers</em>.</li>
-<li><strong>Every attack says &quot;Not in sight&quot; in Colliders mode.</strong> The ground or the character is on a sight blocker layer. Keep only walls on those layers.</li>
-<li><strong>A ranged weapon does nothing.</strong> It needs ammo in the Ammo position that fits its weapon type; the chat says &quot;You are out of ammo.&quot;</li>
-<li><strong>Resistances seem to stop at 50%.</strong> That is the element's <em>Max Resistance</em>. Raise it on the element asset.</li>
-<li><strong>Damage numbers are white.</strong> The element has no color set, or the hit has no element and the default element is white.</li>
-<li><strong>Damage lands at the wrong moment.</strong> An attack with no hit moments lands halfway through its clip. Set the moments on <code>CharacterAnimations</code> so the number appears when the blade connects.</li>
-<li><strong>Invisible players still show up for enemies.</strong> The network prefab isn't using <code>KitInterestManagement</code>.</li>
-<li><strong>Players don't hurt each other.</strong> That is the default. Turn on PvP on the map or start a duel (see <a href="pvp-and-duels.html">PvP and duels</a>).</li>
+<li><strong>Monstros batem através de paredes ou ataques atravessam casas.</strong> O mapa não tem buracos no NavMesh onde estão as paredes, então o modo <code>NavMesh</code> não as vê. Asse o NavMesh com as paredes como obstáculos, ou mude para <code>Colliders</code> e defina <em>Sight Blockers</em>.</li>
+<li><strong>Todo ataque diz &quot;Not in sight&quot; no modo Colliders.</strong> O chão ou o personagem está em uma camada que bloqueia a visão. Deixe só paredes nessas camadas.</li>
+<li><strong>Uma arma à distância não faz nada.</strong> Ela precisa de munição na posição Ammo que sirva para o seu tipo de arma; o chat diz &quot;You are out of ammo.&quot;</li>
+<li><strong>As resistências parecem parar em 50%.</strong> Esse é o <em>Max Resistance</em> do elemento. Aumente-o no asset do elemento.</li>
+<li><strong>Os números de dano são brancos.</strong> O elemento não tem cor definida, ou o golpe não tem elemento e o elemento padrão é branco.</li>
+<li><strong>O dano cai no momento errado.</strong> Um ataque sem momentos de acerto cai na metade do clipe. Defina os momentos em <code>CharacterAnimations</code> para que o número apareça quando a lâmina encosta.</li>
+<li><strong>Jogadores invisíveis ainda aparecem para inimigos.</strong> O prefab de rede não está usando <code>KitInterestManagement</code>.</li>
+<li><strong>Os jogadores não se ferem.</strong> Esse é o padrão. Ligue o PvP no mapa ou comece um duelo (veja <a href="pvp-and-duels.html">PvP e duelos</a>).</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
-<li><a href="../content/skills.html">Skills</a></li>
-<li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li>
-<li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li>
-<li><a href="../content/monsters.html">Monsters</a> and <a href="../content/bosses.html">Bosses</a></li>
-<li><a href="../content/loot.html">Loot</a></li>
-<li><a href="recovery-and-death.html">Recovery and death</a></li>
-<li><a href="pvp-and-duels.html">PvP and duels</a></li>
-<li><a href="control-modes.html">Control modes</a></li>
-<li><a href="../devkit/formulas.html">Formulas</a></li>
+<li><a href="../content/skills.html">Habilidades</a></li>
+<li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li>
+<li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li>
+<li><a href="../content/monsters.html">Monstros</a> e <a href="../content/bosses.html">Chefes</a></li>
+<li><a href="../content/loot.html">Espólio</a></li>
+<li><a href="recovery-and-death.html">Recuperação e morte</a></li>
+<li><a href="pvp-and-duels.html">PvP e duelos</a></li>
+<li><a href="control-modes.html">Modos de controle</a></li>
+<li><a href="../devkit/formulas.html">Fórmulas</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="touch-controls.html"><span>Anterior</span>Touch controls</a><a class="next" href="recovery-and-death.html"><span>Próximo</span>Recovery and death</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fgameplay%2Fcombat.html">Relatar um problema nesta página</a></div></main>
-  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-combat-is">What combat is</a></li><li class="l2"><a href="#fighting-as-a-player">Fighting as a player</a></li><li class="l2"><a href="#what-the-player-sees">What the player sees</a></li><li class="l2"><a href="#basic-attacks">Basic attacks</a></li><li class="l3"><a href="#attack-speed">Attack speed</a></li><li class="l3"><a href="#hit-frames">Hit frames</a></li><li class="l3"><a href="#dual-wield-and-ammo">Dual wield and ammo</a></li><li class="l2"><a href="#skills-in-combat">Skills in combat</a></li><li class="l2"><a href="#the-damage-formula">The damage formula</a></li><li class="l3"><a href="#worked-example">Worked example</a></li><li class="l3"><a href="#damage-over-time">Damage over time</a></li><li class="l3"><a href="#healing">Healing</a></li><li class="l3"><a href="#every-bonus-is-a-whole-number">Every bonus is a whole number</a></li><li class="l2"><a href="#what-happens-when-a-hit-lands">What happens when a hit lands</a></li><li class="l2"><a href="#line-of-sight">Line of sight</a></li><li class="l2"><a href="#monsters-in-combat">Monsters in combat</a></li><li class="l3"><a href="#threat">Threat</a></li><li class="l3"><a href="#sleeping-monsters">Sleeping monsters</a></li><li class="l2"><a href="#kill-credit-and-experience">Kill credit and experience</a></li><li class="l2"><a href="#summons">Summons</a></li><li class="l2"><a href="#stealth">Stealth</a></li><li class="l2"><a href="#protection-on-arrival">Protection on arrival</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#game-settings-combat">Game Settings, Combat</a></li><li class="l3"><a href="#components">Components</a></li><li class="l2"><a href="#what-the-server-checks">What the server checks</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#make-combat-faster-or-slower">Make combat faster or slower</a></li><li class="l3"><a href="#block-attacks-with-buildings-using-colliders">Block attacks with buildings using colliders</a></li><li class="l3"><a href="#change-the-damage-formula">Change the damage formula</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="touch-controls.html"><span>Anterior</span>Controles de toque</a><a class="next" href="recovery-and-death.html"><span>Próximo</span>Recuperação e morte</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fgameplay%2Fcombat.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-combat-is">O que é o combate</a></li><li class="l2"><a href="#fighting-as-a-player">Lutar como jogador</a></li><li class="l2"><a href="#what-the-player-sees">O que o jogador vê</a></li><li class="l2"><a href="#basic-attacks">Ataques básicos</a></li><li class="l3"><a href="#attack-speed">Velocidade de ataque</a></li><li class="l3"><a href="#hit-frames">Quadros de acerto</a></li><li class="l3"><a href="#dual-wield-and-ammo">Duas armas e munição</a></li><li class="l2"><a href="#skills-in-combat">Habilidades em combate</a></li><li class="l2"><a href="#the-damage-formula">A fórmula de dano</a></li><li class="l3"><a href="#worked-example">Exemplo calculado</a></li><li class="l3"><a href="#damage-over-time">Dano ao longo do tempo</a></li><li class="l3"><a href="#healing">Cura</a></li><li class="l3"><a href="#every-bonus-is-a-whole-number">Todo bônus é um número inteiro</a></li><li class="l2"><a href="#what-happens-when-a-hit-lands">O que acontece quando um golpe acerta</a></li><li class="l2"><a href="#line-of-sight">Linha de visão</a></li><li class="l2"><a href="#monsters-in-combat">Monstros em combate</a></li><li class="l3"><a href="#threat">Ameaça</a></li><li class="l3"><a href="#sleeping-monsters">Monstros dormindo</a></li><li class="l2"><a href="#kill-credit-and-experience">Crédito do abate e experiência</a></li><li class="l2"><a href="#summons">Invocações</a></li><li class="l2"><a href="#stealth">Furtividade</a></li><li class="l2"><a href="#protection-on-arrival">Proteção ao chegar</a></li><li class="l2"><a href="#settings">Configurações</a></li><li class="l3"><a href="#game-settings-combat">Game Settings, Combat</a></li><li class="l3"><a href="#components">Componentes</a></li><li class="l2"><a href="#what-the-server-checks">O que o servidor verifica</a></li><li class="l2"><a href="#single-player-and-mmo">Um jogador e MMO</a></li><li class="l2"><a href="#step-by-step">Passo a passo</a></li><li class="l3"><a href="#make-combat-faster-or-slower">Deixar o combate mais rápido ou mais lento</a></li><li class="l3"><a href="#block-attacks-with-buildings-using-colliders">Bloquear ataques com construções usando colliders</a></li><li class="l3"><a href="#change-the-damage-formula">Mudar a fórmula de dano</a></li><li class="l2"><a href="#common-mistakes">Erros comuns</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
 <script src="../../assets/search-pt.js"></script>

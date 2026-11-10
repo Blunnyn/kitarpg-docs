@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Player systems · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="player-systems.html" selected>English</option><option value="../../es/devkit/player-systems.html">Español</option><option value="../../pt/devkit/player-systems.html">Português</option><option value="../../zh/devkit/player-systems.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li><li><a href="npc-options.html">NPC options</a></li><li><a href="player-systems.html" class="on" aria-current="page">Player systems</a></li><li><a href="network-messages.html">Network messages</a></li><li><a href="gm-commands-in-code.html">GM commands in code</a></li><li><a href="formulas.html">Formulas</a></li><li><a href="saving-data.html">Saving data</a></li><li><a href="events.html">Events</a></li><li><a href="overriding-kit-behaviour.html">Overriding kit behaviour</a></li><li><a href="menus-and-settings-options.html">Menus and settings options</a></li><li><a href="editor-extensions.html">Editor extensions</a></li><li><a href="kit-updates-in-code.html">Kit updates in code</a></li><li><a href="talking-to-central.html">Talking to Central</a></li><li><a href="service-modules.html">Service modules</a></li><li><a href="game-modes-in-code.html">Game modes in code</a></li><li><a href="example-bounty-board.html">Example: bounty board</a></li><li><a href="domain-reload.html">Play without domain reload</a></li><li><a href="security-rules.html">Security rules</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/faq.html">FAQ</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li><li><a href="../reference/glossary.html">Glossary</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Player systems</h1><p>How to add a system of your own to every player: a <code>NetworkBehaviour</code> on the player model prefabs with synced state, commands the owner sends, replies, saving, and the rules that keep it correct online.</p>
+<h2 id="when-you-need-one"><a class="anchor" href="#when-you-need-one" aria-hidden="true">#</a>When you need one</h2>
+<p>The kit's player features are components on the player prefab: <code>PlayerInventory</code>, <code>PlayerSkills</code>, <code>PlayerQuests</code>, <code>PlayerProgress</code>, <code>PlayerChat</code>, <code>PlayerGuild</code>, <code>PlayerMail</code> and the rest. Add a component of your own when your feature needs:</p>
+<ul>
+<li>state that other code reads often, on the server or on the client (a reputation value, a pet, a crafting queue),</li>
+<li>synced values that the interface shows, or that other players see,</li>
+<li>requests from the owner with their own rules.</li>
+</ul>
+<p>If you only need a request and an answer, without state on the player, <a href="network-messages.html">network messages</a> are lighter and need no prefab change. If you only need to save a few numbers, <a href="saving-data.html">character flags</a> need no code at all.</p>
+<p><strong>Where the file goes:</strong> the <code>Game</code> assembly. The same component runs on the server and the clients.</p>
+<h2 id="start-from-the-template"><a class="anchor" href="#start-from-the-template" aria-hidden="true">#</a>Start from the template</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Player System</strong> makes <code>PlayerNewSystem</code>. The full code is on <a href="templates.html#player-system">Templates</a>. It shows the pieces every player system has:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it is for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[RequireComponent(typeof(PlayerCharacter))]</code></td>
+<td>It only makes sense on a player.</td>
+</tr>
+<tr>
+<td><code>[SyncVar] public int points</code></td>
+<td>A value the server sets and clients receive.</td>
+</tr>
+<tr>
+<td><code>static event Action&lt;int&gt; Changed</code></td>
+<td>Tells the owner's interface when the value changes.</td>
+</tr>
+<tr>
+<td><code>static PlayerNewSystem Local</code></td>
+<td>The local player's copy, for windows. Set in <code>OnStartAuthority</code>.</td>
+</tr>
+<tr>
+<td><code>ResetStatics</code> in <code>SubsystemRegistration</code></td>
+<td>Clears the statics between Plays without domain reload.</td>
+</tr>
+<tr>
+<td><code>OnStartServer</code></td>
+<td>Loads saved state when the player spawns on the server.</td>
+</tr>
+<tr>
+<td><code>public void Earn() =&gt; CmdEarn()</code></td>
+<td>The client-side method windows call.</td>
+</tr>
+<tr>
+<td><code>[Command] void CmdEarn()</code></td>
+<td>The request, run on the server. Spends from the connection's budget with <code>CommandPacing.Allow</code>, then checks everything.</td>
+</tr>
+<tr>
+<td><code>[TargetRpc] void TargetTold(string)</code></td>
+<td>An answer to the owner only.</td>
+</tr>
+<tr>
+<td><code>OnPointsChanged</code> hook</td>
+<td>Raises <code>Changed</code> on the owner's client.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="adding-it-to-the-player-prefabs"><a class="anchor" href="#adding-it-to-the-player-prefabs" aria-hidden="true">#</a>Adding it to the player prefabs</h2>
+<p>Every player model has its own prefab, listed in the game database (<strong>KitARPG &gt; Game Database &gt; Models</strong>, field <code>GameDatabase.playerModels</code>). Add your component to every one of them:</p>
+<ol>
+<li>Open <strong>KitARPG &gt; Game Database &gt; Models</strong> and pick a model. Its page links its prefab.</li>
+<li>Open the prefab and add your component.</li>
+<li>Repeat for every model.</li>
+</ol>
+<p>A model added later with <strong>+ New player model</strong> gets the kit's systems but not yours. To add your component to every model automatically, and to models made later, ship a <a href="kit-updates-in-code.html">kit update</a> that adds it where it is missing. That page has the full code for it.</p>
+<div class="callout warning"><div class="callout-title">Warning</div><p>Mirror matches network components by their order on the object. Client and server builds must have exactly the same <code>NetworkBehaviour</code>s on each player prefab. Never add your component at runtime, or only in one kind of build.</p>
+</div>
+<h2 id="synced-state"><a class="anchor" href="#synced-state" aria-hidden="true">#</a>Synced state</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Reaches</th>
+<th>Use for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[SyncVar]</code> on a field</td>
+<td>Clients that see the player (or only the owner, see below)</td>
+<td>Single values</td>
+</tr>
+<tr>
+<td><code>SyncList&lt;T&gt;</code>, <code>SyncDictionary&lt;K,V&gt;</code>, <code>SyncHashSet&lt;T&gt;</code> (as <code>readonly</code> fields)</td>
+<td>Same</td>
+<td>Collections</td>
+</tr>
+<tr>
+<td><code>[TargetRpc]</code></td>
+<td>The owner only</td>
+<td>One-off answers and events</td>
+</tr>
+<tr>
+<td><code>[ClientRpc]</code></td>
+<td>Every client that sees the player</td>
+<td>Effects others must see</td>
+</tr>
+</tbody>
+</table></div>
+<p>Each <code>NetworkBehaviour</code> has a <em>Sync Mode</em>: <strong>Observers</strong> (everyone who sees the player gets the values) or <strong>Owner</strong> (only the owner does). The kit's private systems (<code>PlayerQuests</code>, <code>PlayerProgress</code>, <code>PlayerInventory</code> bag contents) set Owner in <code>Reset()</code>:</p>
+<pre class="code"><code class="language-csharp"><span class="k">void</span><span class="w"> </span><span class="nf">Reset</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">syncMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SyncMode</span><span class="p">.</span><span class="n">Owner</span><span class="p">;</span>
+</code></pre>
+<p><code>Reset</code> runs when you add the component in the editor. Pick Owner for anything other players shouldn't read: a hacked client can read every value it receives.</p>
+<p>Who sees a player is decided by the kit's interest management (a spatial grid). Players far away, or in another copy of a dungeon, don't receive your values or <code>[ClientRpc]</code>s.</p>
+<h2 id="commands-the-owner-asks"><a class="anchor" href="#commands-the-owner-asks" aria-hidden="true">#</a>Commands: the owner asks</h2>
+<p>A <code>[Command]</code> runs on the server with the caller's identity known: only the owner's client can call commands on its own player. Inside a command:</p>
+<ol>
+<li><strong>Spend from the connection's budget.</strong> <code>CommandPacing.Allow(connectionToClient)</code> gives each connection 30 commands a second with a burst of 60, shared by every component, and disconnects floods. Use <code>CommandPacing.AllowCentral</code> for commands that end up as work for Central (2 a second, burst 10).</li>
+<li><strong>Validate every argument.</strong> Lengths, ranges, finite numbers, ids that exist in the database.</li>
+<li><strong>Check the player's state.</strong> Alive, loaded (<code>player.State != null</code>), not busy, in range of what they act on.</li>
+<li><strong>Change state through the kit's systems.</strong> Items and gold through <code>PlayerInventory</code>, flags through <code>PlayerProgress</code>, quests through <code>PlayerQuests</code>.</li>
+</ol>
+<h2 id="a-complete-example-reputation"><a class="anchor" href="#a-complete-example-reputation" aria-hidden="true">#</a>A complete example: reputation</h2>
+<p>A reputation value per faction, earned from kills, shown in a window, and spent at an NPC. It saves itself with <code>PlayerData</code> through <code>IPlayerSave</code> and syncs only to the owner.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Characters</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RequireComponent(typeof(PlayerCharacter))]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerReputation</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span><span class="p">,</span><span class="w"> </span><span class="n">IPlayerSave</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mygame.reputation&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[Serializable]</span>
+<span class="w">        </span><span class="k">class</span><span class="w"> </span><span class="nc">Saved</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Faction id to reputation. Owner only.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">SyncDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">standing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SyncDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Owner&#39;s client: something changed.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="n">Changed</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Owner&#39;s client: a message for the reputation window.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Told</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">PlayerReputation</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Told</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Reset</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">syncMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SyncMode</span><span class="p">.</span><span class="n">Owner</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">.</span><span class="n">OnChange</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">__</span><span class="p">,</span><span class="w"> </span><span class="n">___</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Changed</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStartAuthority</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStopAuthority</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Of</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">standing</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Saving: loaded as the character enters a map, written before every save.</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerLoad</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Saved</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">Saved</span><span class="o">&gt;</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">factions</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="n">standing</span><span class="p">[</span><span class="n">saved</span><span class="p">.</span><span class="n">factions</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Saved</span><span class="p">();</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">KeyValuePair</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pair</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">standing</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">saved</span><span class="p">.</span><span class="n">factions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">Key</span><span class="p">);</span>
+<span class="w">                </span><span class="n">saved</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">saved</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Server only. Called by your own rules, never from a client&#39;s word.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="na">[Server]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerAdd</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">[</span><span class="n">faction</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp</span><span class="p">(</span><span class="n">Of</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">Max</span><span class="p">,</span><span class="w"> </span><span class="n">Max</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Spending: the owner asks, the server checks everything.</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Spend</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">CmdSpend</span><span class="p">(</span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+
+<span class="w">        </span><span class="na">[Command]</span>
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">CmdSpend</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">faction</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">connectionToClient</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">IsDead</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">faction</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">32</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Max</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Npc</span><span class="p">.</span><span class="n">TryFind</span><span class="p">(</span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">npc</span><span class="p">.</span><span class="n">InReach</span><span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Of</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">TargetTold</span><span class="p">(</span><span class="s">&quot;Not enough reputation.&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">standing</span><span class="p">[</span><span class="n">faction</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Of</span><span class="p">(</span><span class="n">faction</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">            </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;mygame.reputation_spent&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">:</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">detail</span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;{faction} at {npc.Id}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">TargetTold</span><span class="p">(</span><span class="s">$&quot;Spent {amount} reputation with {faction}.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Runs on the owner&#39;s client: hand it to the interface.</span>
+<span class="w">        </span><span class="na">[TargetRpc]</span>
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">TargetTold</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Told</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>A window of yours subscribes to <code>PlayerReputation.Told</code> and to <code>PlayerReputation.Local.Changed</code>, and calls <code>PlayerReputation.Local.Spend(...)</code> from its button.</p>
+<p>And the server rule that earns reputation, anywhere in the <code>Game</code> assembly:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReputationRules</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnKilled</span><span class="p">(</span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">Data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerReputation</span><span class="w"> </span><span class="n">reputation</span><span class="p">))</span><span class="w"> </span><span class="n">reputation</span><span class="p">.</span><span class="n">ServerAdd</span><span class="p">(</span><span class="s">&quot;forest_wardens&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="loading-and-saving"><a class="anchor" href="#loading-and-saving" aria-hidden="true">#</a>Loading and saving</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Way</th>
+<th>How it loads</th>
+<th>When it saves</th>
+<th>Seen by clients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Character flags (<code>PlayerProgress.SetFlag</code>, <code>IPlayerActor.SetFlag</code>)</td>
+<td>With the character, before spawn</td>
+<td>With the character</td>
+<td>The owner, synced</td>
+</tr>
+<tr>
+<td><code>PlayerData</code> with <code>IPlayerSave</code></td>
+<td>Your <code>ServerLoad</code>, before spawn</td>
+<td>Your <code>WriteTo</code>, before every save</td>
+<td>Never; sync what you need</td>
+</tr>
+</tbody>
+</table></div>
+<p>The order on the map server when a character enters:</p>
+<ol>
+<li>The player prefab is instantiated.</li>
+<li><code>PlayerCharacter.ServerSetup</code> loads the kit's systems (inventory, bank, skills, progress with its flags, quests), then calls <code>ServerLoad</code> on every <code>IPlayerSave</code> component.</li>
+<li>The player is spawned: <code>OnStartServer</code> runs on every component, then <code>PlayerCharacter.ServerSpawned</code> is raised.</li>
+</ol>
+<p>So <code>OnStartServer</code> can read flags, as the template does. In <code>ServerLoad</code> the object isn't spawned yet: <code>isServer</code> is still false, so <code>PlayerData.Set</code> refuses and <code>[Server]</code> methods log a warning there. Read in <code>ServerLoad</code>; write later.</p>
+<p>Saves happen every <em>Save Interval Seconds</em> (<code>saveIntervalSeconds</code>, 60 on the map server), when the player leaves or changes map, and when the server stops. See <a href="saving-data.html">Saving data</a>.</p>
+<h2 id="turning-your-system-off-with-a-module"><a class="anchor" href="#turning-your-system-off-with-a-module" aria-hidden="true">#</a>Turning your system off with a module</h2>
+<p><code>GameInstance.Has(KitModule.X)</code> tells whether one of the kit's modules is on. For a switch of your own, add a field to an asset of yours and check it on the server in every command. Never remove the component instead: the prefab must keep the same network components in every build.</p>
+<h2 id="overriding-instead-of-adding"><a class="anchor" href="#overriding-instead-of-adding" aria-hidden="true">#</a>Overriding instead of adding</h2>
+<p>To change one of the kit's player systems rather than add a new one, subclass it and swap the component on the prefabs. See <a href="overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Server</th>
+<th>Owner's client</th>
+<th>Other clients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Command]</code> body</td>
+<td>Runs</td>
+<td>Calls it</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>[TargetRpc]</code> body</td>
+<td>Calls it</td>
+<td>Runs</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>[ClientRpc]</code> body</td>
+<td>Calls it</td>
+<td>Runs</td>
+<td>Runs if they see the player</td>
+</tr>
+<tr>
+<td><code>[SyncVar]</code> (Observers)</td>
+<td>Sets</td>
+<td>Receives</td>
+<td>Receive</td>
+</tr>
+<tr>
+<td><code>[SyncVar]</code> (Owner)</td>
+<td>Sets</td>
+<td>Receives</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>OnStartServer</code>, <code>IPlayerSave</code></td>
+<td>Runs</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>OnStartAuthority</code>, <code>OnStartLocalPlayer</code></td>
+<td>No</td>
+<td>Runs</td>
+<td>No</td>
+</tr>
+</tbody>
+</table></div>
+<p>In single player the host is server and owner at once: commands run in the same process, <code>CommandPacing</code> lets the host's own connection through, and both <code>OnStartServer</code> and <code>OnStartAuthority</code> run on the same object.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>No <code>CommandPacing</code> in a <code>[Command]</code>.</strong> A modified client can call it thousands of times a second.</li>
+<li><strong>Trusting an argument because the button that sends it is hidden.</strong> Clients can send anything.</li>
+<li><strong>Different components in client and server builds.</strong> Mirror reads the wrong component and the connection breaks.</li>
+<li><strong>Statics without a reset.</strong> <code>Local</code> from the last Play points at a destroyed object. See <a href="domain-reload.html">Play without domain reload</a>.</li>
+<li><strong>Observers sync mode for private data.</strong> Every nearby client receives it.</li>
+<li><strong>Writing <code>PlayerData</code> in <code>ServerLoad</code>.</strong> The player isn't spawned yet; the write is refused.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="network-messages.html">Network messages</a></li>
+<li><a href="saving-data.html">Saving data</a></li>
+<li><a href="overriding-kit-behaviour.html">Overriding kit behaviour</a></li>
+<li><a href="security-rules.html">Security rules</a></li>
+<li><a href="kit-updates-in-code.html">Kit updates in code</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="npc-options.html"><span>Previous</span>NPC options</a><a class="next" href="network-messages.html"><span>Next</span>Network messages</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Fplayer-systems.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#when-you-need-one">When you need one</a></li><li class="l2"><a href="#start-from-the-template">Start from the template</a></li><li class="l2"><a href="#adding-it-to-the-player-prefabs">Adding it to the player prefabs</a></li><li class="l2"><a href="#synced-state">Synced state</a></li><li class="l2"><a href="#commands-the-owner-asks">Commands: the owner asks</a></li><li class="l2"><a href="#a-complete-example-reputation">A complete example: reputation</a></li><li class="l2"><a href="#loading-and-saving">Loading and saving</a></li><li class="l2"><a href="#turning-your-system-off-with-a-module">Turning your system off with a module</a></li><li class="l2"><a href="#overriding-instead-of-adding">Overriding instead of adding</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GM commands in code · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="gm-commands-in-code.html" selected>English</option><option value="../../es/devkit/gm-commands-in-code.html">Español</option><option value="../../pt/devkit/gm-commands-in-code.html">Português</option><option value="../../zh/devkit/gm-commands-in-code.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li><li><a href="npc-options.html">NPC options</a></li><li><a href="player-systems.html">Player systems</a></li><li><a href="network-messages.html">Network messages</a></li><li><a href="gm-commands-in-code.html" class="on" aria-current="page">GM commands in code</a></li><li><a href="formulas.html">Formulas</a></li><li><a href="saving-data.html">Saving data</a></li><li><a href="events.html">Events</a></li><li><a href="overriding-kit-behaviour.html">Overriding kit behaviour</a></li><li><a href="menus-and-settings-options.html">Menus and settings options</a></li><li><a href="editor-extensions.html">Editor extensions</a></li><li><a href="kit-updates-in-code.html">Kit updates in code</a></li><li><a href="talking-to-central.html">Talking to Central</a></li><li><a href="service-modules.html">Service modules</a></li><li><a href="game-modes-in-code.html">Game modes in code</a></li><li><a href="example-bounty-board.html">Example: bounty board</a></li><li><a href="domain-reload.html">Play without domain reload</a></li><li><a href="security-rules.html">Security rules</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/faq.html">FAQ</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li><li><a href="../reference/glossary.html">Glossary</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>GM commands in code</h1><p>How to add slash commands of your own: registering a <code>GmCommand</code>, reading arguments with <code>GmContext</code>, picking a level, how the audit works, and complete examples.</p>
+<h2 id="what-a-command-is"><a class="anchor" href="#what-a-command-is" aria-hidden="true">#</a>What a command is</h2>
+<p>Players type commands in the chat, starting with <code>/</code>. The chat sends the line to the map server, which looks the command up, checks the player's level against the command's level, runs it and shows the answer as a system line in the chat. The GM panel (F8 or <code>/gm</code>) runs the same commands. The kit's own commands are listed on <a href="../reference/gm-commands.html">GM commands</a>.</p>
+<p>Commands are registered from code with <code>GmCommands.Register</code>. <code>GmCommands</code> lives in <code>KitARPG.Server</code> (namespace <code>Blunnyn.KitARPG.Server</code>), which online clients never carry.</p>
+<p><strong>Where the file goes:</strong> the <code>Game.Server</code> assembly (see <a href="assemblies.html">Assemblies</a>). Commands then exist in map servers, in single player and in the editor, and never in an online client build.</p>
+<h2 id="registering-a-command"><a class="anchor" href="#registering-a-command" aria-hidden="true">#</a>Registering a command</h2>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Server</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCommands</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;refresh&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">aliases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;fill&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Moderator</span><span class="p">,</span>
+<span class="w">                </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;refresh [player]&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fills a player&#39;s health.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Target</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nobody by that name here.&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">target</span><span class="p">.</span><span class="n">ServerHeal</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">maxHealth</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Healed {target.characterName}.&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>The kit clears and registers its own commands in <code>SubsystemRegistration</code> on every Play, so register yours in <code>AfterSceneLoad</code> (or <code>AfterAssembliesLoaded</code>). Registering a name that already exists replaces the old command, the kit's included. That is how you change a kit command; it is also how you break one by accident, so pick names of your own.</p>
+<h3 id="gmcommand-fields"><a class="anchor" href="#gmcommand-fields" aria-hidden="true">#</a>GmCommand fields</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it is</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>What players type after <code>/</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td>Other names for the same command.</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>rank</code></td>
+<td>The level it asks for by default (see below).</td>
+<td><code>GmRank.Admin</code></td>
+</tr>
+<tr>
+<td><code>usage</code></td>
+<td>Shown by <code>/help</code>, like <code>&quot;item id [amount] [player]&quot;</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>One line for <code>/help</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td><code>Func&lt;GmContext, string&gt;</code>: does it and returns the answer to show, or null for none.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="levels"><a class="anchor" href="#levels" aria-hidden="true">#</a>Levels</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th><code>GmRank</code></th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Player</code></td>
+<td>1</td>
+<td>Anyone.</td>
+</tr>
+<tr>
+<td><code>Moderator</code></td>
+<td>2</td>
+<td>Chat and player moderation.</td>
+</tr>
+<tr>
+<td><code>GameMaster</code></td>
+<td>3</td>
+<td>Game changes: items, teleports, monsters.</td>
+</tr>
+<tr>
+<td><code>Admin</code></td>
+<td>4</td>
+<td>Everything, including roles.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The level a command asks for is <code>GmCommands.LevelOf(command)</code>: the level set for its name in <strong>Game Settings &gt; GM commands</strong> (<code>GameInstance.gmCommandLevels</code>) when there is one, otherwise its <code>rank</code>. Designers can move any command, yours included, up or down without code. <code>/role</code> always asks for Admin.</p>
+<p>A player's level is <code>GmCommands.RankOf(player)</code>: the account's role from the database (<code>accounts.Role</code>), or <code>GmCommands.EveryoneRank</code> if that is higher. In single player, <em>Single Player Commands</em> (<code>singlePlayerCommands</code>, on by default) makes <code>EveryoneRank</code> Admin, so every command works as a cheat. Online it is Player.</p>
+<p>A player below the command's level gets &quot;Unknown command&quot;, as if it didn't exist.</p>
+<h2 id="gmcontext"><a class="anchor" href="#gmcontext" aria-hidden="true">#</a>GmContext</h2>
+<p>What <code>run</code> receives:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerCharacter player</code></td>
+<td>Who typed it.</td>
+</tr>
+<tr>
+<td><code>string[] args</code></td>
+<td>The words after the name, split on spaces.</td>
+</tr>
+<tr>
+<td><code>string rest</code></td>
+<td>Everything after the name, as typed. Use it for free text.</td>
+</tr>
+<tr>
+<td><code>int level</code></td>
+<td>The level this command asks for. Pass it to Central for commands that Central checks again.</td>
+</tr>
+<tr>
+<td><code>string Arg(int i)</code></td>
+<td>Word <code>i</code>, or null.</td>
+</tr>
+<tr>
+<td><code>int Int(int i, int fallback)</code></td>
+<td>Word <code>i</code> as an integer, or <code>fallback</code>.</td>
+</tr>
+<tr>
+<td><code>long Long(int i, long fallback)</code></td>
+<td>Same, as a long.</td>
+</tr>
+<tr>
+<td><code>float Float(int i, float fallback)</code></td>
+<td>Same, as a float. Refuses NaN and infinity.</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter Target(int i)</code></td>
+<td>The player named by word <code>i</code> on this map, or the one who typed it when the word is missing. Null when the name isn't on this map.</td>
+</tr>
+<tr>
+<td><code>T Data&lt;T&gt;(int i)</code></td>
+<td>The game data of type <code>T</code> whose id is word <code>i</code>, or null.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Numbers are parsed with the invariant culture, so <code>1.5</code> works on every machine.</p>
+<h2 id="auditing"><a class="anchor" href="#auditing" aria-hidden="true">#</a>Auditing</h2>
+<p>Every command whose level is above Player (2 or more) is staff work and is recorded:</p>
+<ul>
+<li>Each use, allowed or refused for its level, goes to the GM audit (<code>gm_audit</code> table online, the save in single player) with the account, character, level, command, line, target and result.</li>
+<li>Each use that ran also writes a game log line of kind <code>gm.command</code> with the answer.</li>
+<li>When the audit can't be recorded (Central unreachable), staff commands pause and answer &quot;GM commands are paused&quot;. Nothing staff-level runs without its record.</li>
+</ul>
+<p>Player-level commands are not audited.</p>
+<p><code>GmCommands.ServerUsed</code> (<code>PlayerCharacter, string line</code>) is raised for every command that runs, before it runs. <code>GmAudit.Recorded</code> (<code>GmAuditEntry</code>) is raised for every audit line. See <a href="events.html">Events</a>.</p>
+<h2 id="limits"><a class="anchor" href="#limits" aria-hidden="true">#</a>Limits</h2>
+<p><code>GmCommands</code> has caps that the kit's commands respect, so a typo or a stolen staff account can't flood the economy. Respect them in your own commands that hand things out:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MaxItems</code></td>
+<td>9,999</td>
+</tr>
+<tr>
+<td><code>MaxGold</code></td>
+<td>1,000,000,000</td>
+</tr>
+<tr>
+<td><code>MaxExperience</code></td>
+<td>1,000,000,000</td>
+</tr>
+<tr>
+<td><code>MaxPoints</code></td>
+<td>1,000</td>
+</tr>
+<tr>
+<td><code>MaxStatusSeconds</code></td>
+<td>3,600</td>
+</tr>
+<tr>
+<td><code>MaxKillRange</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>MaxMuteMinutes</code></td>
+<td>525,600</td>
+</tr>
+</tbody>
+</table></div>
+<p>They are static fields, reset on every Play. Change them from your own <code>AfterSceneLoad</code> method if your game needs other limits.</p>
+<h2 id="examples"><a class="anchor" href="#examples" aria-hidden="true">#</a>Examples</h2>
+<h3 id="give-attribute-points-capped"><a class="anchor" href="#give-attribute-points-capped" aria-hidden="true">#</a>Give attribute points, capped</h3>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;points&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">GameMaster</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;points amount [player]&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gives attribute points.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Usage: /points amount [player]&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Min</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">GmCommands</span><span class="p">.</span><span class="n">MaxPoints</span><span class="p">);</span>
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Target</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nobody by that name here.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">target</span><span class="p">.</span><span class="n">GainPoints</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;{target.characterName} got {amount} attribute points.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<h3 id="look-up-game-data-by-id"><a class="anchor" href="#look-up-game-data-by-id" aria-hidden="true">#</a>Look up game data by id</h3>
+<p><code>Data&lt;T&gt;</code> finds game data by id:</p>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;where monster_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Maps where a monster lives.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Data</span><span class="o">&lt;</span><span class="n">MonsterData</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">monster</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;No monster with that id.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">MapData</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">maps</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">map</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Array</span><span class="p">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">monsters</span><span class="p">,</span><span class="w"> </span><span class="n">monster</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">maps</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">DisplayName</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">maps</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">$&quot;{monster.DisplayName} lives nowhere listed.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;{monster.DisplayName}: {string.Join(&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;, maps)}&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<h3 id="a-command-for-players"><a class="anchor" href="#a-command-for-players" aria-hidden="true">#</a>A command for players</h3>
+<p>Player-level commands are a quick way to add chat features. The bounty example's <code>/hunters</code> asks Central for a ranking:</p>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hunters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hunters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;The best bounty hunters on every map, and your last hunts.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">mine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Last</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">player</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Online</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;The hunters board is kept online.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span>
+<span class="w">        </span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyBoardAsk</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">characterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Asking the guild of hunters...&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<p>Central's answer arrives later and is shown with <code>SocialHub.Notice</code>. See <a href="talking-to-central.html">Talking to Central</a>.</p>
+<h3 id="free-text"><a class="anchor" href="#free-text" aria-hidden="true">#</a>Free text</h3>
+<p><code>rest</code> keeps the spaces:</p>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;notice&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Moderator</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;notice text&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sets the notice board.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">rest</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Usage: /notice text&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SetNotice</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">rest</span><span class="p">),</span>
+<span class="p">});</span>
+</code></pre>
+<p>Clean any text that other players will see with <code>PlayerText.Clean(text, maxLength)</code>.</p>
+<h2 id="help"><a class="anchor" href="#help" aria-hidden="true">#</a>/help</h2>
+<p><code>/help</code> lists the chat commands, then every command the player's level allows, player-level ones included, each with its usage and description. Commands above Player level end with their level in brackets, like <code>[3]</code>; player-level ones show without it.</p>
+<h2 id="errors"><a class="anchor" href="#errors" aria-hidden="true">#</a>Errors</h2>
+<p>An exception inside <code>run</code> is caught: it is logged on the server and the player sees &quot;/name failed: message&quot;. Return a sentence instead of throwing for anything the player did wrong.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<p>Commands run only on the map server (or the single player host). The client sends the typed line; the line is cut at 300 characters and paced like chat. Nothing in your <code>run</code> can be reached by a client except through that line, and the level check happens before it runs.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Putting commands in the <code>Game</code> assembly.</strong> It doesn't see <code>KitARPG.Server</code>, and if it did, clients would carry the command code.</li>
+<li><strong>Registering in <code>SubsystemRegistration</code>.</strong> The kit clears the list there; the order between those methods is undefined.</li>
+<li><strong>Reusing a kit command's name.</strong> Yours replaces it.</li>
+<li><strong>Uncapped amounts.</strong> Use the <code>Max...</code> fields.</li>
+<li><strong>Acting on a name without <code>Target</code>.</strong> <code>Target</code> only finds players on this map; for players elsewhere, go through Central.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../gameplay/gm-tools.html">GM tools</a></li>
+<li><a href="../reference/gm-commands.html">GM commands</a></li>
+<li><a href="assemblies.html">Assemblies</a></li>
+<li><a href="talking-to-central.html">Talking to Central</a></li>
+<li><a href="events.html">Events</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="network-messages.html"><span>Previous</span>Network messages</a><a class="next" href="formulas.html"><span>Next</span>Formulas</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Fgm-commands-in-code.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#what-a-command-is">What a command is</a></li><li class="l2"><a href="#registering-a-command">Registering a command</a></li><li class="l3"><a href="#gmcommand-fields">GmCommand fields</a></li><li class="l3"><a href="#levels">Levels</a></li><li class="l2"><a href="#gmcontext">GmContext</a></li><li class="l2"><a href="#auditing">Auditing</a></li><li class="l2"><a href="#limits">Limits</a></li><li class="l2"><a href="#examples">Examples</a></li><li class="l3"><a href="#give-attribute-points-capped">Give attribute points, capped</a></li><li class="l3"><a href="#look-up-game-data-by-id">Look up game data by id</a></li><li class="l3"><a href="#a-command-for-players">A command for players</a></li><li class="l3"><a href="#free-text">Free text</a></li><li class="l2"><a href="#help">/help</a></li><li class="l2"><a href="#errors">Errors</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

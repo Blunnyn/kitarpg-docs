@@ -1,290 +1,290 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Performance · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>性能 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/performance.html">English</option><option value="../../es/servers/performance.html">Español</option><option value="../../pt/servers/performance.html">Português</option><option value="performance.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html" class="on" aria-current="page">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">服务器与部署</div><h1>Performance</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>The performance targets KitARPG is designed for, what has been measured, the settings that decide how much a map server can carry (tick rate, visibility grid, connections, saves) and how to watch and plan the capacity of your own servers.</p>
-<h2 id="targets"><a class="anchor" href="#targets" aria-hidden="true">#</a>Targets</h2>
-<p>These are the design targets for one map server. Measure your own game against them: your maps, monsters and skills change the numbers.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">架构</a></li><li><a href="services.html">服务</a></li><li><a href="launcher.html">启动器</a></li><li><a href="database.html">数据库</a></li><li><a href="configuration.html">配置</a></li><li><a href="builds.html">构建</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">安全</a></li><li><a href="shop-service.html">Shop 服务</a></li><li><a href="performance.html" class="on" aria-current="page">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">服务器与部署</div><h1>性能</h1><p>KitARPG 设计所针对的性能目标、已经测得的数据、决定一个地图服务器能承载多少的设置（tick 频率、可见性网格、连接数、存档），以及如何监控和规划你自己服务器的容量。</p>
+<h2 id="targets"><a class="anchor" href="#targets" aria-hidden="true">#</a>目标</h2>
+<p>这些是单个地图服务器的设计目标。请用它们来衡量你自己的游戏：你的地图、怪物和技能会改变这些数字。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Metric</th>
-<th>Target</th>
+<th>指标</th>
+<th>目标</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Players on one open map (a town)</td>
+<td>一张开放地图（城镇）上的玩家数</td>
 <td>200</td>
 </tr>
 <tr>
-<td>Players in one dungeon copy</td>
-<td>1 to 4, several copies in the same map server</td>
+<td>一个地下城副本中的玩家数</td>
+<td>1 到 4，同一地图服务器中可有多个副本</td>
 </tr>
 <tr>
-<td>Server simulation</td>
-<td>30 ticks per second</td>
+<td>服务器模拟</td>
+<td>每秒 30 tick</td>
 </tr>
 <tr>
-<td>Server upload per player</td>
-<td>Under 10 KB/s on average</td>
+<td>每个玩家的服务器上行流量</td>
+<td>平均低于 10 KB/s</td>
 </tr>
 <tr>
-<td>Memory per map server process</td>
-<td>Under 1 GB</td>
+<td>每个地图服务器进程的内存</td>
+<td>低于 1 GB</td>
 </tr>
 <tr>
-<td>Character saves</td>
-<td>Every 60 seconds, on leaving and on changing maps</td>
+<td>角色存档</td>
+<td>每 60 秒一次，以及离开和切换地图时</td>
 </tr>
 <tr>
-<td>Login response</td>
-<td>Under 300 ms</td>
+<td>Login 响应</td>
+<td>低于 300 ms</td>
 </tr>
 <tr>
-<td>Client</td>
-<td>60 FPS on a mid-range PC</td>
+<td>客户端</td>
+<td>中端 PC 上 60 FPS</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="what-has-been-measured"><a class="anchor" href="#what-has-been-measured" aria-hidden="true">#</a>What has been measured</h2>
-<p>The load test uses a map server with 300 monsters and headless bots that connect, walk at random and use an area skill every few seconds, with the same server build and Mirror settings the kit uses.</p>
+<h2 id="what-has-been-measured"><a class="anchor" href="#what-has-been-measured" aria-hidden="true">#</a>已经测得的数据</h2>
+<p>负载测试使用一个有 300 只怪物的地图服务器，以及无界面的机器人，它们连接、随机行走并每隔几秒使用一次范围技能，所用的服务器构建和 Mirror 设置与套件相同。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Test</th>
-<th>Bots</th>
-<th>Ticks per second</th>
-<th>KB/s per player</th>
-<th>Memory</th>
-<th>Notes</th>
+<th>测试</th>
+<th>机器人</th>
+<th>每秒 tick 数</th>
+<th>每个玩家的 KB/s</th>
+<th>内存</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Local, Mac</td>
-<td>50 for 75 s</td>
-<td>30, steady</td>
-<td>0.8 to 0.9</td>
-<td>Bot process: about 175 MB</td>
-<td>Server and bots on the same computer, 300 monsters</td>
+<td>本地，Mac</td>
+<td>50 个，持续 75 秒</td>
+<td>30，稳定</td>
+<td>0.8 到 0.9</td>
+<td>机器人进程：约 175 MB</td>
+<td>服务器和机器人在同一台电脑上，300 只怪物</td>
 </tr>
 <tr>
-<td>Docker on a Mac (x86 emulated)</td>
-<td>50 for 90 s</td>
-<td>28 to 29</td>
+<td>Mac 上的 Docker（x86 仿真）</td>
+<td>50 个，持续 90 秒</td>
+<td>28 到 29</td>
 <td>0.9</td>
-<td>Server: 243 MB</td>
-<td>Checks the image; ticks aren't representative under emulation</td>
+<td>服务器：243 MB</td>
+<td>用于检查镜像；仿真下的 tick 数不具代表性</td>
 </tr>
 </tbody>
 </table></div>
-<p>The KB/s figures are Mirror's payload, without KCP, UDP and IP headers. Measure real traffic with <code>docker stats</code> or your host's network graphs.</p>
-<h2 id="how-the-work-is-split"><a class="anchor" href="#how-the-work-is-split" aria-hidden="true">#</a>How the work is split</h2>
-<p>Knowing where the load goes tells you what to scale.</p>
+<p>KB/s 数据是 Mirror 的有效载荷，不含 KCP、UDP 和 IP 头。请用 <code>docker stats</code> 或你主机的网络图表测量真实流量。</p>
+<h2 id="how-the-work-is-split"><a class="anchor" href="#how-the-work-is-split" aria-hidden="true">#</a>工作如何分配</h2>
+<p>了解负载落在哪里，就知道该扩展什么。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Piece</th>
-<th>Load grows with</th>
-<th>Scales by</th>
+<th>部分</th>
+<th>负载随什么增长</th>
+<th>如何扩展</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Map server</td>
-<td>Players and monsters on that map, how many see each other, skills and effects</td>
-<td>One process per map. Move busy maps to their own machine</td>
+<td>地图服务器</td>
+<td>该地图上的玩家和怪物、有多少人能互相看到、技能和特效</td>
+<td>每张地图一个进程。把繁忙的地图迁移到它自己的机器上</td>
 </tr>
 <tr>
-<td>Dungeon copies</td>
-<td>Copies open at once, each a full copy of the scene</td>
-<td>They share their map server's process; an empty copy unloads after <code>emptyMinutes</code> (5)</td>
+<td>地下城副本</td>
+<td>同时打开的副本数，每个都是场景的完整副本</td>
+<td>它们共用所在地图服务器的进程；空副本在 <code>emptyMinutes</code>（5）分钟后卸载</td>
 </tr>
 <tr>
 <td>Central</td>
-<td>Saves, map changes, chat, guild, mail and market traffic</td>
-<td>One instance. Its database queries are the main cost</td>
+<td>存档、切换地图、聊天、公会、邮件和市场的流量</td>
+<td>一个实例。主要开销是它的数据库查询</td>
 </tr>
 <tr>
 <td>Login</td>
-<td>Sign ins (Argon2id uses 19 MiB and some CPU per attempt)</td>
-<td>Several instances behind the proxy</td>
+<td>登录（Argon2id 每次尝试使用 19 MiB 内存和一些 CPU）</td>
+<td>在代理之后运行多个实例</td>
 </tr>
 <tr>
-<td>Database</td>
-<td>Saves from every map, item moves, logs</td>
-<td>PostgreSQL on fast disks; a bigger instance</td>
+<td>数据库</td>
+<td>来自每张地图的存档、物品转移、日志</td>
+<td>使用快速磁盘的 PostgreSQL；更大的实例</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="the-server-tick"><a class="anchor" href="#the-server-tick" aria-hidden="true">#</a>The server tick</h2>
-<p>The map server runs Mirror's loop at <em>Send Rate</em> (<code>sendRate</code>) on <code>KitNetworkManager</code>, <strong>30</strong> per second in the kit. A headless server runs one frame per tick, so this is both the simulation rate and the network update rate.</p>
+<h2 id="the-server-tick"><a class="anchor" href="#the-server-tick" aria-hidden="true">#</a>服务器 tick</h2>
+<p>地图服务器以 <code>KitNetworkManager</code> 上的 <em>Send Rate</em>（<code>sendRate</code>）运行 Mirror 的循环，套件中为每秒 <strong>30</strong> 次。无界面服务器每个 tick 运行一帧，所以这既是模拟频率，也是网络更新频率。</p>
 <ul>
-<li><strong>The sign of overload</strong> is the tick rate dropping below 30. Frame times near 33 ms are normal at 30 ticks: they include the wait for the next tick.</li>
-<li>Raising it makes movement smoother and costs CPU and bandwidth in proportion. Lowering it to 20 saves both at the cost of responsiveness. Keep the client and server on the same value (both read the same prefab).</li>
+<li><strong>过载的迹象</strong>是 tick 频率降到 30 以下。在 30 tick 时帧时间接近 33 ms 是正常的：其中包括等待下一个 tick 的时间。</li>
+<li>提高它会让移动更平滑，但 CPU 和带宽开销会按比例增加。降到 20 可以同时节省两者，代价是响应性。让客户端和服务器保持相同的值（两者读取同一个预制体）。</li>
 </ul>
-<h2 id="interest-management"><a class="anchor" href="#interest-management" aria-hidden="true">#</a>Interest management</h2>
-<p><code>KitInterestManagement</code>, on the <code>KitNetwork</code> prefab, decides what each player receives. It is Mirror's spatial hashing grid with the kit's rules on top:</p>
+<h2 id="interest-management"><a class="anchor" href="#interest-management" aria-hidden="true">#</a>兴趣管理</h2>
+<p><code>KitNetwork</code> 预制体上的 <code>KitInterestManagement</code> 决定每个玩家接收什么。它是 Mirror 的空间哈希网格，加上套件自己的规则：</p>
 <ul>
-<li>the world is split into square cells of half <code>visRange</code> (20 meters with the kit's 40), and each player gets what is in their cell and the eight cells around it;</li>
-<li>invisible enemies (the stealth status) are hidden from their foes;</li>
-<li>event monsters brought for one player are sent to that player only.</li>
+<li>世界被划分为边长为 <code>visRange</code> 一半的正方形格子（套件的 40 对应 20 米），每个玩家接收自己所在格子以及周围八个格子中的内容；</li>
+<li>隐身的敌人（潜行状态）对其敌人隐藏；</li>
+<li>为某个玩家召来的事件怪物只发送给该玩家。</li>
 </ul>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Kit value</th>
+<th>字段</th>
+<th>作用</th>
+<th>套件的值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>visRange</code></td>
-<td>Meters a player sees. The grid's cells are half this size</td>
+<td>玩家可见的米数。网格的格子是它的一半大小</td>
 <td>40</td>
 </tr>
 <tr>
 <td><code>rebuildInterval</code></td>
-<td>Seconds between visibility rebuilds</td>
+<td>两次可见性重建之间的秒数</td>
 <td>1</td>
 </tr>
 </tbody>
 </table></div>
-<p>Bandwidth grows with how many entities each player sees, not with the players on the map. A town of 200 players spread out costs far less than 200 players in one square.</p>
+<p>带宽随每个玩家看到的实体数量增长，而不是随地图上的玩家数增长。200 个分散开的玩家所在的城镇，开销远低于 200 个玩家挤在一个广场上。</p>
 <ul>
-<li>Lower <code>visRange</code> to send less in crowded maps. The camera must not show farther than this, or players see things pop in.</li>
-<li>Raise <code>rebuildInterval</code> to spend less CPU on rebuilds; new things then appear a little later.</li>
+<li>在拥挤的地图中降低 <code>visRange</code> 以减少发送量。镜头显示的距离不能超过这个值，否则玩家会看到东西突然冒出来。</li>
+<li>提高 <code>rebuildInterval</code> 可以减少重建所花的 CPU；新出现的东西会稍晚一些显示。</li>
 </ul>
-<p>The same rules decide what a player can target: the server never accepts a target the connection doesn't see.</p>
-<h2 id="connections-per-map"><a class="anchor" href="#connections-per-map" aria-hidden="true">#</a>Connections per map</h2>
-<p><em>Max Connections</em> (<code>maxConnections</code>) on <code>KitNetworkManager</code> is the most players one map server accepts. The kit ships it at <strong>100</strong>. To reach the 200 player target on a map, raise it on the <code>KitNetwork</code> prefab and rebuild the map servers, then load test.</p>
-<h2 id="transport"><a class="anchor" href="#transport" aria-hidden="true">#</a>Transport</h2>
-<p>The kit uses KCP over UDP with these values on <code>KcpTransport</code>:</p>
+<p>同样的规则也决定玩家可以选中什么目标：服务器从不接受该连接看不到的目标。</p>
+<h2 id="connections-per-map"><a class="anchor" href="#connections-per-map" aria-hidden="true">#</a>每张地图的连接数</h2>
+<p><code>KitNetworkManager</code> 上的 <em>Max Connections</em>（<code>maxConnections</code>）是一个地图服务器接受的最多玩家数。套件出厂设置为 <strong>100</strong>。要在一张地图上达到 200 名玩家的目标，请在 <code>KitNetwork</code> 预制体上提高它并重新构建地图服务器，然后进行负载测试。</p>
+<h2 id="transport"><a class="anchor" href="#transport" aria-hidden="true">#</a>传输层</h2>
+<p>套件使用基于 UDP 的 KCP，<code>KcpTransport</code> 上的值如下：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Kit value</th>
-<th>What it does</th>
+<th>字段</th>
+<th>套件的值</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>NoDelay</code></td>
-<td>On</td>
-<td>Sends at once instead of waiting to batch</td>
+<td>开</td>
+<td>立即发送，而不是等待批量发送</td>
 </tr>
 <tr>
 <td><code>Interval</code></td>
 <td>10 ms</td>
-<td>KCP's internal update interval</td>
+<td>KCP 的内部更新间隔</td>
 </tr>
 <tr>
 <td><code>Timeout</code></td>
 <td>10000 ms</td>
-<td>A silent connection is dropped after this</td>
+<td>静默的连接在此时间后被断开</td>
 </tr>
 <tr>
-<td><code>SendWindowSize</code>, <code>ReceiveWindowSize</code></td>
+<td><code>SendWindowSize</code>、<code>ReceiveWindowSize</code></td>
 <td>4096</td>
-<td>Packets in flight; enough for a busy map</td>
+<td>在途的数据包数；足以应对繁忙的地图</td>
 </tr>
 <tr>
 <td><code>MaxRetransmit</code></td>
 <td>40</td>
-<td>Retries before a connection is considered dead</td>
+<td>判定连接失效之前的重试次数</td>
 </tr>
 <tr>
 <td><code>MaximizeSocketBuffers</code></td>
-<td>On</td>
-<td>Asks the OS for large socket buffers</td>
+<td>开</td>
+<td>向操作系统请求较大的套接字缓冲区</td>
 </tr>
 </tbody>
 </table></div>
-<p>Leave them unless a load test points at them.</p>
-<h2 id="saves"><a class="anchor" href="#saves" aria-hidden="true">#</a>Saves</h2>
+<p>除非负载测试指向它们，否则不要修改。</p>
+<h2 id="saves"><a class="anchor" href="#saves" aria-hidden="true">#</a>存档</h2>
 <ul>
-<li>Each player is saved every <em>Save Interval Seconds</em> (<code>saveIntervalSeconds</code> on <code>MapServer</code>), <strong>60</strong>, plus when they leave and when they change maps. Central also writes at once for anything it handles itself: trades, mail, the market, guild storage.</li>
-<li>One save per character is in flight at a time; a newer one waits for it.</li>
-<li>A longer interval lowers database writes; a crash then loses up to that many seconds of progress (experience, loot picked up). A shorter one is safer and costs more writes.</li>
+<li>每个玩家每 <em>Save Interval Seconds</em>（<code>MapServer</code> 上的 <code>saveIntervalSeconds</code>）秒保存一次，即 <strong>60</strong> 秒，此外在离开和切换地图时也会保存。对于 Central 自己处理的任何事情，它也会立即写入：交易、邮件、市场、公会仓库。</li>
+<li>每个角色同一时间只有一个存档在途；更新的存档会等待它完成。</li>
+<li>更长的间隔可以减少数据库写入；但崩溃时最多会丢失这么多秒的进度（经验、拾取的掉落）。更短的间隔更安全，但写入更多。</li>
 </ul>
-<h2 id="command-limits"><a class="anchor" href="#command-limits" aria-hidden="true">#</a>Command limits</h2>
-<p>Every client command counts against a budget of 30 per second with bursts of 60; a client far above that is disconnected as flooding. Commands that go on to Central get 2 per second with bursts of 10. These protect the server from modified clients and keep one player from using everyone's CPU. They are fixed in code (<code>CommandPacing</code>).</p>
-<h2 id="planning-capacity"><a class="anchor" href="#planning-capacity" aria-hidden="true">#</a>Planning capacity</h2>
-<p>Concurrent users (CCU) for the whole game are the sum over maps. Work it out map by map:</p>
+<h2 id="command-limits"><a class="anchor" href="#command-limits" aria-hidden="true">#</a>命令限制</h2>
+<p>每个客户端命令都计入每秒 30 条、突发 60 条的配额；远超配额的客户端会被视为刷屏而断开。转发到 Central 的命令配额为每秒 2 条、突发 10 条。这些限制保护服务器免受修改过的客户端影响，并防止一个玩家占用所有人的 CPU。它们在代码中是固定的（<code>CommandPacing</code>）。</p>
+<h2 id="planning-capacity"><a class="anchor" href="#planning-capacity" aria-hidden="true">#</a>容量规划</h2>
+<p>整个游戏的同时在线用户数（CCU）是所有地图之和。请逐张地图计算：</p>
 <ol>
-<li><strong>List your maps</strong> and where players gather. Towns and event areas hold most players; field maps fewer; dungeons only their parties.</li>
-<li><strong>Load test the busiest map</strong> on the machine you will rent, with your monsters and skills. Raise players until the tick rate drops below 30, then keep a margin below that.</li>
-<li><strong>Add the dungeon load</strong> to its map server: each open copy costs like a small map with its monsters.</li>
-<li><strong>Give each busy map its own machine</strong> when one machine can't hold them all, connected to Central over a private network. See <a href="docker.html#adding-map-servers">Docker</a>.</li>
-<li><strong>Check the database.</strong> With many players, saves every 60 seconds and the game log add up; watch PostgreSQL's CPU and disk.</li>
+<li><strong>列出你的地图</strong>以及玩家聚集的地方。城镇和活动区域容纳大部分玩家；野外地图较少；地下城只有其中的队伍。</li>
+<li><strong>对最繁忙的地图进行负载测试</strong>，在你将要租用的机器上，使用你的怪物和技能。不断增加玩家，直到 tick 频率降到 30 以下，然后在此之下留出余量。</li>
+<li><strong>把地下城负载加到</strong>其地图服务器上：每个打开的副本的开销相当于一张带怪物的小地图。</li>
+<li><strong>当一台机器容纳不下所有繁忙的地图时，给每张繁忙的地图分配它自己的机器</strong>，通过私有网络连接到 Central。见 <a href="docker.html#adding-map-servers">Docker</a>。</li>
+<li><strong>检查数据库。</strong> 玩家很多时，每 60 秒一次的存档和游戏日志会累积起来；请关注 PostgreSQL 的 CPU 和磁盘。</li>
 </ol>
-<h2 id="watching-your-servers"><a class="anchor" href="#watching-your-servers" aria-hidden="true">#</a>Watching your servers</h2>
+<h2 id="watching-your-servers"><a class="anchor" href="#watching-your-servers" aria-hidden="true">#</a>监控你的服务器</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>What</th>
-<th>Where</th>
+<th>内容</th>
+<th>位置</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Players per map</td>
-<td><code>GET /api/maps</code> on Central: <code>curl http://127.0.0.1:5200/api/maps</code> on the server</td>
+<td>每张地图的玩家数</td>
+<td>Central 上的 <code>GET /api/maps</code>：在服务器上执行 <code>curl http://127.0.0.1:5200/api/maps</code></td>
 </tr>
 <tr>
-<td>CPU, memory, network per container</td>
+<td>每个容器的 CPU、内存、网络</td>
 <td><code>docker stats</code></td>
 </tr>
 <tr>
-<td>A map server's log</td>
-<td><code>docker compose logs map-town</code>, or <code>data/logs/map-&lt;id&gt;.log</code> from the launcher</td>
+<td>地图服务器的日志</td>
+<td><code>docker compose logs map-town</code>，或启动器下的 <code>data/logs/map-&lt;id&gt;.log</code></td>
 </tr>
 <tr>
-<td>Service health</td>
-<td><code>GET /health</code> on Login, Central and the Shop</td>
+<td>服务健康状况</td>
+<td>Login、Central 和 Shop 上的 <code>GET /health</code></td>
 </tr>
 <tr>
-<td>Slow or failed saves</td>
-<td>Central's log (<code>Save of character ... refused</code>) and the map log (<code>... was not saved</code>)</td>
+<td>缓慢或失败的存档</td>
+<td>Central 的日志（<code>Save of character ... refused</code>）和地图日志（<code>... was not saved</code>）</td>
 </tr>
 <tr>
-<td>Game activity</td>
-<td><code>/logs</code> in game, or the <code>game_logs</code> table</td>
+<td>游戏活动</td>
+<td>游戏中的 <code>/logs</code>，或 <code>game_logs</code> 表</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>提示</h2>
 <ul>
-<li>Load test on the same kind of machine you will run on. A laptop, or x86 emulated on Apple silicon, tells you little about a VPS.</li>
-<li>The Linux map server is built with IL2CPP: native code costs less CPU per tick than Mono.</li>
-<li>Spread NPCs, vendors and spawn points so players don't all stand in one grid cell.</li>
-<li>Many monsters awake far from players cost CPU for nothing; place spawners where players go.</li>
-<li>Keep <code>Logs:Days</code> reasonable on busy servers; the game log grows with every action.</li>
+<li>在与你将要运行的同类机器上进行负载测试。笔记本电脑，或在 Apple 芯片上仿真的 x86，对 VPS 的参考价值很小。</li>
+<li>Linux 地图服务器使用 IL2CPP 构建：原生代码每个 tick 消耗的 CPU 比 Mono 少。</li>
+<li>把 NPC、商人和刷新点分散开，避免玩家全都站在同一个网格格子中。</li>
+<li>远离玩家却处于活动状态的大量怪物白白消耗 CPU；把刷怪器放在玩家会去的地方。</li>
+<li>在繁忙的服务器上把 <code>Logs:Days</code> 保持在合理的值；游戏日志随每个操作增长。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="architecture.html#scaling-model">Architecture</a></li>
-<li><a href="configuration.html#map-server-components">Configuration</a></li>
+<li><a href="architecture.html#scaling-model">架构</a></li>
+<li><a href="configuration.html#map-server-components">配置</a></li>
 <li><a href="docker.html">Docker</a></li>
-<li><a href="../gameplay/dungeons.html">Dungeons</a></li>
+<li><a href="../gameplay/dungeons.html">地下城</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="shop-service.html"><span>上一页</span>Shop service</a><a class="next" href="../devkit/devkit-overview.html"><span>下一页</span>DevKit overview</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Fperformance.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#targets">Targets</a></li><li class="l2"><a href="#what-has-been-measured">What has been measured</a></li><li class="l2"><a href="#how-the-work-is-split">How the work is split</a></li><li class="l2"><a href="#the-server-tick">The server tick</a></li><li class="l2"><a href="#interest-management">Interest management</a></li><li class="l2"><a href="#connections-per-map">Connections per map</a></li><li class="l2"><a href="#transport">Transport</a></li><li class="l2"><a href="#saves">Saves</a></li><li class="l2"><a href="#command-limits">Command limits</a></li><li class="l2"><a href="#planning-capacity">Planning capacity</a></li><li class="l2"><a href="#watching-your-servers">Watching your servers</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="shop-service.html"><span>上一页</span>Shop 服务</a><a class="next" href="../devkit/devkit-overview.html"><span>下一页</span>DevKit 概览</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Fperformance.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#targets">目标</a></li><li class="l2"><a href="#what-has-been-measured">已经测得的数据</a></li><li class="l2"><a href="#how-the-work-is-split">工作如何分配</a></li><li class="l2"><a href="#the-server-tick">服务器 tick</a></li><li class="l2"><a href="#interest-management">兴趣管理</a></li><li class="l2"><a href="#connections-per-map">每张地图的连接数</a></li><li class="l2"><a href="#transport">传输层</a></li><li class="l2"><a href="#saves">存档</a></li><li class="l2"><a href="#command-limits">命令限制</a></li><li class="l2"><a href="#planning-capacity">容量规划</a></li><li class="l2"><a href="#watching-your-servers">监控你的服务器</a></li><li class="l2"><a href="#tips">提示</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

@@ -1,391 +1,391 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Player models · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Modelos de jogador · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/player-models.html">English</option><option value="../../es/content/player-models.html">Español</option><option value="player-models.html" selected>Português</option><option value="../../zh/content/player-models.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>Conteúdo do jogo</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html" class="on" aria-current="page">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Conteúdo do jogo</div><h1>Player models</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>A player model is a player prefab: a body players pick when they make a character, with the classes that body can be, its hair styles, how gear shows on it and its animations. This page covers the <code>PlayerModel</code> component, modular bodies and gear pieces, hair, animations, and the <strong>New player model</strong> wizard.</p>
-<h2 id="what-a-player-model-is"><a class="anchor" href="#what-a-player-model-is" aria-hidden="true">#</a>What a player model is</h2>
-<p>Every playable character is spawned from a player prefab. The prefab carries:</p>
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>Conteúdo do jogo</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Atributos e stats</a></li><li><a href="player-models.html" class="on" aria-current="page">Modelos de jogador</a></li><li><a href="items.html">Itens</a></li><li><a href="equipment.html">Equipamento</a></li><li><a href="sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="currencies.html">Moedas</a></li><li><a href="skills.html">Habilidades</a></li><li><a href="statuses-and-buffs.html">Estados e buffs</a></li><li><a href="monsters.html">Monstros</a></li><li><a href="bosses.html">Chefes</a></li><li><a href="loot.html">Saque</a></li><li><a href="maps.html">Mapas</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">Lojas de NPC</a></li><li><a href="quests.html">Missões</a></li><li><a href="conditions-and-actions.html">Condições e ações</a></li><li><a href="dialogues.html">Diálogos</a></li><li><a href="world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Visão geral do DevKit</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Efeitos de habilidades</a></li><li><a href="../devkit/item-effects.html">Efeitos de itens</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de missão</a></li><li><a href="../devkit/npc-options.html">Opções de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas do jogador</a></li><li><a href="../devkit/network-messages.html">Mensagens de rede</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Salvando dados</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="../devkit/editor-extensions.html">Extensões do editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="../devkit/talking-to-central.html">Falando com o Central</a></li><li><a href="../devkit/service-modules.html">Módulos de serviço</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="../devkit/example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sem domain reload</a></li><li><a href="../devkit/security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Conteúdo do jogo</div><h1>Modelos de jogador</h1><p>Um modelo de jogador é um prefab de jogador: um corpo que os jogadores escolhem ao criar um personagem, com as classes que esse corpo pode ter, seus estilos de cabelo, como o equipamento aparece nele e suas animações. Esta página cobre o componente <code>PlayerModel</code>, os corpos modulares e as peças de equipamento, o cabelo, as animações e o assistente <strong>New player model</strong>.</p>
+<h2 id="what-a-player-model-is"><a class="anchor" href="#what-a-player-model-is" aria-hidden="true">#</a>O que é um modelo de jogador</h2>
+<p>Todo personagem jogável surge a partir de um prefab de jogador. O prefab leva:</p>
 <ul>
-<li><strong>Player Model</strong> (<code>PlayerModel</code>): the id saved with characters, the name on the creation screen, the classes this body can take and the hand bones.</li>
-<li>Every player system: networking, movement, inventory, stats, skills, quests, chat, friends, party, trade, guild, bank, forge, mail, market, shop, PvP.</li>
-<li><strong>Modular Character</strong> (<code>ModularCharacter</code>): swaps body regions for gear pieces and bakes them into one mesh.</li>
-<li><strong>Equipment View</strong> (<code>EquipmentView</code>): shows worn gear, armor on the body and weapons in the hands.</li>
-<li><strong>Character Appearance View</strong> (<code>CharacterAppearanceView</code>): applies the hair style picked at creation.</li>
-<li><strong>Character Animations</strong> (<code>CharacterAnimations</code>): every clip and its hit timings.</li>
-<li><strong>Nameplate</strong> (<code>Nameplate</code>): the name over the head.</li>
+<li><strong>Player Model</strong> (<code>PlayerModel</code>): o id salvo com os personagens, o nome na tela de criação, as classes que esse corpo pode ter e os ossos das mãos.</li>
+<li>Todos os sistemas do jogador: rede, movimento, inventário, stats, habilidades, missões, chat, amigos, grupo, troca, guilda, banco, forja, correio, mercado, loja, PvP.</li>
+<li><strong>Modular Character</strong> (<code>ModularCharacter</code>): troca regiões do corpo por peças de equipamento e as junta em uma só malha.</li>
+<li><strong>Equipment View</strong> (<code>EquipmentView</code>): mostra o equipamento vestido, a armadura no corpo e as armas nas mãos.</li>
+<li><strong>Character Appearance View</strong> (<code>CharacterAppearanceView</code>): aplica o estilo de cabelo escolhido na criação.</li>
+<li><strong>Character Animations</strong> (<code>CharacterAnimations</code>): todos os clipes e os momentos dos seus golpes.</li>
+<li><strong>Nameplate</strong> (<code>Nameplate</code>): o nome sobre a cabeça.</li>
 </ul>
-<p>A character saves its model id (<code>appearance.model</code>) and its class id. The sample has three models: a male body, a female body (both can be Warrior, Hunter or Mage) and a panda body (<code>voxel_panda</code>) that can only be a Monk.</p>
-<h2 id="where-models-are-in-the-editor"><a class="anchor" href="#where-models-are-in-the-editor" aria-hidden="true">#</a>Where models are in the editor</h2>
-<p><strong>Game Database &gt; Characters &gt; Models</strong> lists every player prefab in the database. Selecting one shows a preview (double click opens the prefab), its id, name and classes, and the <strong>Animations</strong> cards. If a prefab has no Character Animations component, the page offers <strong>Add Character Animations</strong>.</p>
-<p>The database's <em>Player Models</em> (<code>playerModels</code>) field holds the prefabs. Whatever they reference is collected on its own: classes from the models, skills and start items from the classes, and so on.</p>
-<h2 id="the-player-model-component"><a class="anchor" href="#the-player-model-component" aria-hidden="true">#</a>The Player Model component</h2>
+<p>Um personagem salva o id do seu modelo (<code>appearance.model</code>) e o id da sua classe. A amostra tem três modelos: um corpo masculino, um corpo feminino (os dois podem ser Warrior, Hunter ou Mage) e um corpo de panda (<code>voxel_panda</code>) que só pode ser Monk.</p>
+<h2 id="where-models-are-in-the-editor"><a class="anchor" href="#where-models-are-in-the-editor" aria-hidden="true">#</a>Onde ficam os modelos no editor</h2><figure class="shot"><a href="../../assets/img/editor/db-characters-models.png" target="_blank"><img src="../../assets/img/editor/db-characters-models.png" alt="Modelos de jogador na Game Database." loading="lazy"></a><figcaption>Modelos de jogador na Game Database.</figcaption></figure>
+<p><strong>Game Database &gt; Characters &gt; Models</strong> lista todos os prefabs de jogador do banco de dados. Selecionar um mostra uma prévia (clique duplo abre o prefab), seu id, nome e classes, e os cartões <strong>Animations</strong>. Se um prefab não tem o componente Character Animations, a página oferece <strong>Add Character Animations</strong>.</p>
+<p>O campo <em>Player Models</em> (<code>playerModels</code>) do banco de dados guarda os prefabs. Tudo o que eles referenciam é reunido sozinho: as classes a partir dos modelos, as habilidades e os itens iniciais a partir das classes, e assim por diante.</p>
+<h2 id="the-player-model-component"><a class="anchor" href="#the-player-model-component" aria-hidden="true">#</a>O componente Player Model</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Model Id</em> (<code>modelId</code>)</td>
-<td>Saved with characters. Filled from the GameObject's name the first time. Changing it later makes existing characters of this model appear with the first model in the list instead.</td>
-<td>From the name</td>
+<td>Salvo com os personagens. Preenchido a partir do nome do GameObject na primeira vez. Mudá-lo depois faz os personagens existentes deste modelo aparecerem com o primeiro modelo da lista.</td>
+<td>Do nome</td>
 </tr>
 <tr>
 <td><em>Display Name</em> (<code>displayName</code>)</td>
-<td>Shown on the creation screen. Empty uses the GameObject's name.</td>
-<td>Empty</td>
+<td>Mostrado na tela de criação. Vazio usa o nome do GameObject.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Classes</em> (<code>classes</code>)</td>
-<td>Classes a character with this model can be. The first one is the default on the creation screen.</td>
-<td>Empty</td>
+<td>Classes que um personagem com este modelo pode ter. A primeira é a padrão na tela de criação.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Own Hair Only</em> (<code>ownHairOnly</code>)</td>
-<td>Keeps the body's own hair, ears or horns. The creation screen offers no hair styles for this model. The panda uses it for its ears.</td>
-<td>Off</td>
+<td>Mantém o próprio cabelo, orelhas ou chifres do corpo. A tela de criação não oferece estilos de cabelo para este modelo. O panda usa isso para as orelhas.</td>
+<td>Desligado</td>
 </tr>
 <tr>
 <td><em>Right Hand Bone</em> (<code>rightHandBone</code>)</td>
-<td>Name of the bone that holds main hand weapons.</td>
+<td>Nome do osso que segura as armas da mão principal.</td>
 <td><code>mixamorig:RightHand</code></td>
 </tr>
 <tr>
 <td><em>Left Hand Bone</em> (<code>leftHandBone</code>)</td>
-<td>Name of the bone that holds shields, off hand weapons and bows.</td>
+<td>Nome do osso que segura escudos, armas da mão secundária e arcos.</td>
 <td><code>mixamorig:LeftHand</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>The server (Login in MMO, the game itself in single player) refuses a class the chosen model doesn't list. A model with no classes shows up as a problem in the database's problem list.</p>
-<p>If you remove a model from the database, characters made with it are not locked out: they appear with the first model in the list.</p>
-<h2 id="modular-bodies"><a class="anchor" href="#modular-bodies" aria-hidden="true">#</a>Modular bodies</h2>
-<p>Gear changes how a character looks by swapping whole body regions. A body is split into regions, each one its own skinned mesh on a shared skeleton:</p>
+<p>O servidor (o Login no MMO, o próprio jogo no modo de um jogador) recusa uma classe que o modelo escolhido não lista. Um modelo sem classes aparece como um problema na lista de problemas do banco de dados.</p>
+<p>Se você remove um modelo do banco de dados, os personagens criados com ele não ficam bloqueados: aparecem com o primeiro modelo da lista.</p>
+<h2 id="modular-bodies"><a class="anchor" href="#modular-bodies" aria-hidden="true">#</a>Corpos modulares</h2>
+<p>O equipamento muda a aparência de um personagem trocando regiões inteiras do corpo. Um corpo é dividido em regiões, cada uma sua própria malha com skin sobre um esqueleto compartilhado:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Region</th>
-<th>Body mesh name</th>
-<th>Gear that replaces it</th>
+<th>Região</th>
+<th>Nome da malha do corpo</th>
+<th>Equipamento que a substitui</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Head</td>
 <td><code>Body_Head</code></td>
-<td>Head slot</td>
+<td>Espaço Head</td>
 </tr>
 <tr>
 <td>Chest</td>
 <td><code>Body_Chest</code></td>
-<td>Chest slot</td>
+<td>Espaço Chest</td>
 </tr>
 <tr>
 <td>Hands</td>
 <td><code>Body_Hands</code></td>
-<td>Hands slot</td>
+<td>Espaço Hands</td>
 </tr>
 <tr>
 <td>Legs</td>
 <td><code>Body_Legs</code></td>
-<td>Legs slot</td>
+<td>Espaço Legs</td>
 </tr>
 <tr>
 <td>Feet</td>
 <td><code>Body_Feet</code></td>
-<td>Feet slot</td>
+<td>Espaço Feet</td>
 </tr>
 <tr>
 <td>Hair</td>
 <td><code>Body_Hair</code></td>
-<td>Hair style</td>
+<td>Estilo de cabelo</td>
 </tr>
 <tr>
 <td>Back</td>
-<td>none</td>
-<td>Back slot (capes, packs, wings)</td>
+<td>nenhuma</td>
+<td>Espaço Back (capas, mochilas, asas)</td>
 </tr>
 </tbody>
 </table></div>
-<p>A gear piece is the whole region remade with the gear on, named <code>&lt;Set&gt;_&lt;Region&gt;</code>: <code>Knight_Chest</code>, <code>Short_Hair</code>, <code>Wizard_Head</code>. Since the piece replaces the region, the skin under the armor doesn't exist and nothing is drawn twice. The body has nothing on its back, so a back piece only adds.</p>
-<p>A body may ship without some regions (a bald body has no hair); gear can still go there.</p>
+<p>Uma peça de equipamento é a região inteira refeita com o equipamento, chamada <code>&lt;Set&gt;_&lt;Region&gt;</code>: <code>Knight_Chest</code>, <code>Short_Hair</code>, <code>Wizard_Head</code>. Como a peça substitui a região, a pele sob a armadura não existe e nada é desenhado duas vezes. O corpo não tem nada nas costas, então uma peça de costas só adiciona.</p>
+<p>Um corpo pode vir sem algumas regiões (um corpo careca não tem cabelo); o equipamento ainda pode ir ali.</p>
 <h3 id="modular-character"><a class="anchor" href="#modular-character" aria-hidden="true">#</a>Modular Character</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Combine Meshes</em> (<code>combineMeshes</code>)</td>
-<td>Bakes every region into a single mesh: one skinning pass and one draw call per character. Needs Read/Write turned on in the import settings of every mesh. Characters with the same gear share the same baked mesh. If a mesh is not readable, the kit logs a warning and draws the regions apart.</td>
-<td>On</td>
+<td>Junta todas as regiões em uma só malha: uma passada de skinning e uma draw call por personagem. Precisa de Read/Write ligado nas configurações de importação de todas as malhas. Personagens com o mesmo equipamento compartilham a mesma malha combinada. Se uma malha não é legível, o kit registra um aviso e desenha as regiões separadas.</td>
+<td>Ligado</td>
 </tr>
 <tr>
 <td><em>Head Gear Hides Hair</em> (<code>headGearHidesHair</code>)</td>
-<td>Helmets and hats hide the hair. Turn it off if your head gear is modeled to sit over the hair. Single pieces can keep the hair with <em>Keeps Hair</em> on the item.</td>
-<td>On</td>
+<td>Elmos e chapéus escondem o cabelo. Desligue se o seu equipamento de cabeça for modelado para ficar sobre o cabelo. Peças soltas podem manter o cabelo com <em>Keeps Hair</em> no item.</td>
+<td>Ligado</td>
 </tr>
 </tbody>
 </table></div>
-<p>Gear pieces must use the same bone names as the body. The piece's bones are matched by name, so a piece rigged to a different skeleton won't follow the body.</p>
-<h3 id="gear-per-body"><a class="anchor" href="#gear-per-body" aria-hidden="true">#</a>Gear per body</h3>
-<p>An item has one <em>Model</em> and optional <em>Model Variants</em>: a different piece per player model id. The sample's armor has a male piece as the default and a <code>voxel_female</code> variant, and every body piece has a <code>_Panda</code> copy assigned as the <code>voxel_panda</code> variant. See <a href="equipment.html#look-and-wear">Look and wear</a>.</p>
-<h3 id="weapons-and-shields"><a class="anchor" href="#weapons-and-shields" aria-hidden="true">#</a>Weapons and shields</h3>
-<p>Items in the main hand and off hand slots are not body regions. They are props hung from the hand bones named on the Player Model. Each item sets which hand holds it and its offset (<em>Left Hand</em>, <em>Hold Position</em>, <em>Hold Rotation</em>). A second one-handed weapon in the off hand is shown mirrored.</p>
-<p>Equipment View also has <em>Model Id</em>, <em>Right Hand Bone</em> and <em>Left Hand Bone</em> fields. On a player prefab they are taken from the Player Model, so you don't set them.</p>
-<h3 id="fixed-outfits"><a class="anchor" href="#fixed-outfits" aria-hidden="true">#</a>Fixed outfits</h3>
-<p>For a character that never changes gear, like an NPC, add <strong>Character Outfit</strong> (<code>CharacterOutfit</code>) next to a Modular Character and list models in <em>Outfits</em> (<code>outfits</code>). Every piece named <code>&lt;Set&gt;_&lt;Region&gt;</code> in those models goes on the body when it starts.</p>
-<h2 id="hair-styles"><a class="anchor" href="#hair-styles" aria-hidden="true">#</a>Hair styles</h2>
-<p>Hair styles are in an <strong>Appearance Catalog</strong> asset (<strong>Create &gt; KitARPG &gt; Appearance Catalog</strong>), set on each player prefab's Character Appearance View in <em>Catalog</em> (<code>catalog</code>).</p>
+<p>As peças de equipamento precisam usar os mesmos nomes de ossos do corpo. Os ossos da peça são casados pelo nome, então uma peça com rig em outro esqueleto não acompanha o corpo.</p>
+<h3 id="gear-per-body"><a class="anchor" href="#gear-per-body" aria-hidden="true">#</a>Equipamento por corpo</h3>
+<p>Um item tem um <em>Model</em> e <em>Model Variants</em> opcionais: uma peça diferente por id de modelo de jogador. A armadura da amostra tem uma peça masculina como padrão e uma variante <code>voxel_female</code>, e toda peça de corpo tem uma cópia <code>_Panda</code> atribuída como a variante <code>voxel_panda</code>. Veja <a href="equipment.html#look-and-wear">Aparência e uso</a>.</p>
+<h3 id="weapons-and-shields"><a class="anchor" href="#weapons-and-shields" aria-hidden="true">#</a>Armas e escudos</h3>
+<p>Os itens nos espaços de mão principal e mão secundária não são regiões do corpo. São objetos pendurados nos ossos das mãos indicados no Player Model. Cada item define qual mão o segura e seu deslocamento (<em>Left Hand</em>, <em>Hold Position</em>, <em>Hold Rotation</em>). Uma segunda arma de uma mão na mão secundária aparece espelhada.</p>
+<p>O Equipment View também tem os campos <em>Model Id</em>, <em>Right Hand Bone</em> e <em>Left Hand Bone</em>. Em um prefab de jogador eles vêm do Player Model, então você não os define.</p>
+<h3 id="fixed-outfits"><a class="anchor" href="#fixed-outfits" aria-hidden="true">#</a>Trajes fixos</h3>
+<p>Para um personagem que nunca troca de equipamento, como um NPC, adicione <strong>Character Outfit</strong> (<code>CharacterOutfit</code>) ao lado de um Modular Character e liste modelos em <em>Outfits</em> (<code>outfits</code>). Toda peça chamada <code>&lt;Set&gt;_&lt;Region&gt;</code> nesses modelos vai para o corpo quando ele começa.</p>
+<h2 id="hair-styles"><a class="anchor" href="#hair-styles" aria-hidden="true">#</a>Estilos de cabelo</h2>
+<p>Os estilos de cabelo ficam em um asset <strong>Appearance Catalog</strong> (<strong>Create &gt; KitARPG &gt; Appearance Catalog</strong>), definido no Character Appearance View de cada prefab de jogador em <em>Catalog</em> (<code>catalog</code>).</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Hair Styles</em> (<code>hairStyles</code>)</td>
-<td>The styles players can pick on the creation screen.</td>
-<td>Empty</td>
+<td>Os estilos que os jogadores podem escolher na tela de criação.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Id</em> (<code>id</code>)</td>
-<td>Saved with characters. Changing it changes the look of characters that use it.</td>
-<td>Empty</td>
+<td>Salvo com os personagens. Mudá-lo muda a aparência dos personagens que o usam.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Display Name</em> (<code>displayName</code>)</td>
-<td>Shown in the hair list.</td>
-<td>Empty</td>
+<td>Mostrado na lista de cabelos.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Model</em> (<code>model</code>)</td>
-<td>A model whose mesh is named <code>&lt;Something&gt;_Hair</code>.</td>
-<td>None</td>
+<td>Um modelo cuja malha se chama <code>&lt;Something&gt;_Hair</code>.</td>
+<td>Nenhum</td>
 </tr>
 </tbody>
 </table></div>
-<p>The creation screen's hair list starts with <strong>Body default</strong>, which keeps the body's own hair. A model with <em>Own Hair Only</em> disables the list.</p>
-<h2 id="animations"><a class="anchor" href="#animations" aria-hidden="true">#</a>Animations</h2>
-<p>Character Animations lists every clip a character plays and when each attack and skill lands. The Animator needs no setup: every character uses the kit's controller (<code>KitARPG/KitCharacter</code>, in <code>Runtime/Resources</code>) and this component swaps its clips in. Don't edit that controller.</p>
-<p>The server reads the hit timings from here, so damage lands when the animation strikes. A clip left empty is not played, but its timing still counts.</p>
+<p>A lista de cabelos da tela de criação começa com <strong>Body default</strong>, que mantém o próprio cabelo do corpo. Um modelo com <em>Own Hair Only</em> desativa a lista.</p>
+<h2 id="animations"><a class="anchor" href="#animations" aria-hidden="true">#</a>Animações</h2>
+<p>Character Animations lista todos os clipes que um personagem toca e quando cada ataque e habilidade acerta. O Animator não precisa de configuração: todo personagem usa o controller do kit (<code>KitARPG/KitCharacter</code>, em <code>Runtime/Resources</code>) e este componente troca os clipes dele. Não edite esse controller.</p>
+<p>O servidor lê daqui os momentos dos golpes, então o dano cai quando a animação acerta. Um clipe deixado vazio não é tocado, mas seu momento continua contando.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Animator</em> (<code>animator</code>)</td>
-<td>The Animator to drive. Found in the children when empty. Without one nothing plays, but hits still land on time.</td>
-<td>None</td>
+<td>O Animator a controlar. Procurado nos filhos quando vazio. Sem um, nada toca, mas os golpes continuam caindo na hora.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Idle</em> (<code>idle</code>)</td>
-<td>Standing still.</td>
-<td>None</td>
+<td>Parado.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Walk</em> (<code>walk</code>)</td>
-<td>Walking. Empty uses the run.</td>
-<td>None</td>
+<td>Caminhando. Vazio usa a corrida.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Run</em> (<code>run</code>)</td>
-<td>Running.</td>
-<td>None</td>
+<td>Correndo.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Run Speed</em> (<code>runSpeed</code>)</td>
-<td>Meters per second the run clip is made for. Faster or slower movement plays it faster or slower.</td>
-<td>3.5</td>
+<td>Metros por segundo para os quais o clipe de corrida foi feito. Um movimento mais rápido ou mais lento o toca mais rápido ou mais devagar.</td>
+<td>3,5</td>
 </tr>
 <tr>
 <td><em>Hit</em> (<code>hit</code>)</td>
-<td>When taking damage, unless attacking or casting.</td>
-<td>None</td>
+<td>Ao levar dano, salvo quando ataca ou lança.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Death</em> (<code>death</code>)</td>
-<td>Dying.</td>
-<td>None</td>
+<td>Morrendo.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Stunned</em> (<code>stunned</code>)</td>
-<td>Looped while stunned.</td>
-<td>None</td>
+<td>Em loop enquanto atordoado.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Attack</em> (<code>attack</code>)</td>
-<td>Bare handed, or with a weapon type not listed in <em>Weapons</em>.</td>
-<td>One hit at 0.5</td>
+<td>De mãos vazias, ou com um tipo de arma que não está em <em>Weapons</em>.</td>
+<td>Um golpe em 0,5</td>
 </tr>
 <tr>
 <td><em>Weapons</em> (<code>weapons</code>)</td>
-<td>One attack per <a href="equipment.html#weapon-types">weapon type</a>: <em>Weapon Type</em> and <em>Attack</em>.</td>
-<td>Empty</td>
+<td>Um ataque por <a href="equipment.html#weapon-types">tipo de arma</a>: <em>Weapon Type</em> e <em>Attack</em>.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Cast</em> (<code>cast</code>)</td>
-<td>Looped while casting or channeling a skill not listed in <em>Skills</em>.</td>
-<td>None</td>
+<td>Em loop enquanto lança ou canaliza uma habilidade que não está em <em>Skills</em>.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Skill</em> (<code>skill</code>)</td>
-<td>Using a skill not listed in <em>Skills</em>. Skills with <em>Use Weapon Attack</em> play the weapon's attack instead.</td>
-<td>One hit at 0.5</td>
+<td>Ao usar uma habilidade que não está em <em>Skills</em>. As habilidades com <em>Use Weapon Attack</em> tocam o ataque da arma no lugar.</td>
+<td>Um golpe em 0,5</td>
 </tr>
 <tr>
 <td><em>Skills</em> (<code>skills</code>)</td>
-<td>Per skill: <em>Skill</em>, <em>Cast</em> (looped while casting; empty uses the default cast) and <em>Use</em> (when the cast ends; its effects land on the hit frames).</td>
-<td>Empty</td>
+<td>Por habilidade: <em>Skill</em>, <em>Cast</em> (em loop enquanto lança; vazio usa o lançamento padrão) e <em>Use</em> (quando o lançamento termina; seus efeitos caem nos quadros de golpe).</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Upper Body Mask</em> (<code>upperBodyMask</code>)</td>
-<td>The bones attacks, skills and casts move while the legs keep walking: usually spine, arms and head. Create one with <strong>Create &gt; Avatar Mask</strong>. Empty plays actions on the whole body.</td>
-<td>None</td>
+<td>Os ossos que ataques, habilidades e lançamentos movem enquanto as pernas continuam andando: em geral coluna, braços e cabeça. Crie uma com <strong>Create &gt; Avatar Mask</strong>. Vazio toca as ações no corpo inteiro.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Mask Only While Moving</em> (<code>maskOnlyWhileMoving</code>)</td>
-<td>Use the mask only for actions that start while moving; standing still they play on the whole body. Off: always masked, so the legs keep their idle.</td>
-<td>On</td>
+<td>Usa a máscara só para ações que começam em movimento; parado, elas tocam no corpo inteiro. Desligado: sempre com máscara, então as pernas mantêm o idle.</td>
+<td>Ligado</td>
 </tr>
 <tr>
 <td><em>Mask Casts</em> (<code>maskCasts</code>)</td>
-<td>Casts and channels use the mask too.</td>
-<td>On</td>
+<td>Lançamentos e canalizações também usam a máscara.</td>
+<td>Ligado</td>
 </tr>
 <tr>
 <td><em>Moving Speed</em> (<code>movingSpeed</code>)</td>
-<td>Meters per second from which the character counts as moving.</td>
-<td>0.3</td>
+<td>Metros por segundo a partir dos quais o personagem conta como em movimento.</td>
+<td>0,3</td>
 </tr>
 </tbody>
 </table></div>
-<p>Each attack and skill use is an <strong>action animation</strong>:</p>
+<p>Cada uso de ataque e de habilidade é uma <strong>animação de ação</strong>:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Clip</em> (<code>clip</code>)</td>
-<td>Played on characters with an Animator.</td>
-<td>None</td>
+<td>Tocado em personagens com Animator.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Duration</em> (<code>duration</code>)</td>
-<td>Seconds it lasts at normal speed. <code>0</code> uses the clip's length (0.6 seconds without a clip).</td>
+<td>Segundos que dura em velocidade normal. <code>0</code> usa a duração do clipe (0,6 segundo sem clipe).</td>
 <td>0</td>
 </tr>
 <tr>
 <td><em>Hits</em> (<code>hits</code>)</td>
-<td>When each hit lands, from 0 (start) to 1 (end). Damage is split between them: two hits at 0.3 and 0.7 each deal half.</td>
-<td>One at 0.5</td>
+<td>Quando cada golpe cai, de 0 (início) a 1 (fim). O dano é dividido entre eles: dois golpes em 0,3 e 0,7 causam metade cada.</td>
+<td>Um em 0,5</td>
 </tr>
 <tr>
 <td><em>Sound</em> (<code>sound</code>)</td>
-<td>Played when it starts.</td>
-<td>None</td>
+<td>Tocado quando começa.</td>
+<td>Nenhum</td>
 </tr>
 <tr>
 <td><em>Full Body</em> (<code>fullBody</code>)</td>
-<td>Plays on the whole body even while moving, for jumps and spins. Only matters with an upper body mask.</td>
-<td>Off</td>
+<td>Toca no corpo inteiro mesmo em movimento, para saltos e giros. Só importa com uma máscara de parte superior do corpo.</td>
+<td>Desligado</td>
 </tr>
 </tbody>
 </table></div>
-<p>When attack speed makes attacks faster than the clip, the clip speeds up to fit. Moving cuts an attack or a cast; a projectile already launched still arrives.</p>
-<h2 id="make-a-new-player-model"><a class="anchor" href="#make-a-new-player-model" aria-hidden="true">#</a>Make a new player model</h2>
-<p>The <strong>New player model</strong> wizard turns a 3D model into a playable body in four steps.</p>
+<p>Quando a velocidade de ataque deixa os ataques mais rápidos que o clipe, o clipe acelera para caber. Mover-se interrompe um ataque ou um lançamento; um projétil já lançado continua chegando.</p>
+<h2 id="make-a-new-player-model"><a class="anchor" href="#make-a-new-player-model" aria-hidden="true">#</a>Criar um modelo de jogador novo</h2>
+<p>O assistente <strong>New player model</strong> transforma um modelo 3D em um corpo jogável em quatro passos.</p>
 <ol>
 <li>
-<p>Open <strong>Game Database &gt; Models</strong> and press <strong>+ New player model</strong>. The wizard opens on the right.</p>
+<p>Abra <strong>Game Database &gt; Models</strong> e pressione <strong>+ New player model</strong>. O assistente abre à direita.</p>
 </li>
 <li>
-<p><strong>Model.</strong> Drop an FBX or a prefab from the Project window into the field. The wizard tells you:</p>
+<p><strong>Model.</strong> Solte um FBX ou um prefab da janela Project no campo. O assistente informa:</p>
 <ul>
-<li>whether it has an Animator (&quot;No Animator&quot; means it won't animate);</li>
-<li>whether the rig is <strong>Humanoid</strong> (weapons go in its hands and it can share the kit's animations) or <strong>Generic</strong> (use animations made for that rig and set the hand bones afterwards);</li>
-<li>if it has no skinned meshes (gear then can't swap body parts).</li>
+<li>se ele tem um Animator (&quot;No Animator&quot; significa que não vai se animar);</li>
+<li>se o rig é <strong>Humanoid</strong> (as armas vão nas mãos dele e ele pode compartilhar as animações do kit) ou <strong>Generic</strong> (use animações feitas para esse rig e defina os ossos das mãos depois);</li>
+<li>se ele não tem malhas com skin (então o equipamento não consegue trocar partes do corpo).</li>
 </ul>
-<p>Give it a <strong>Display name</strong> and an <strong>Id</strong>. The id is saved with characters; changing it later breaks the characters made with it. Tick <strong>Own hair only</strong> if the body has its own hair, ears or horns.</p>
+<p>Dê a ele um <strong>Display name</strong> e um <strong>Id</strong>. O id é salvo com os personagens; mudá-lo depois quebra os personagens criados com ele. Marque <strong>Own hair only</strong> se o corpo tem o próprio cabelo, orelhas ou chifres.</p>
 </li>
 <li>
-<p><strong>Classes.</strong> Tick the classes this body can be. The first ticked is the default. Under <strong>New classes</strong>, <strong>+ New class</strong> adds a class made with this model, empty or as a <strong>copy of</strong> another class. Each new class needs a unique name.</p>
+<p><strong>Classes.</strong> Marque as classes que este corpo pode ter. A primeira marcada é a padrão. Em <strong>New classes</strong>, <strong>+ New class</strong> adiciona uma classe criada com este modelo, vazia ou como <strong>copy of</strong> outra classe. Cada classe nova precisa de um nome único.</p>
 </li>
 <li>
-<p><strong>Animations.</strong> In <strong>Start from a model</strong>, pick an existing model to copy its animations (clips, hit timings, per weapon and per skill) and its appearance catalog. <strong>Copy its animations</strong> and <strong>Copy the game's own components on it (not the kit's)</strong> are both on by default. The wizard warns when one model is humanoid and the other isn't, since the clips may not play. With <strong>Nothing, start empty</strong> you fill the clips in afterwards; hits still land on time. For a humanoid rig, <strong>Use an upper body mask</strong> (on by default) lets it attack and cast while walking; leave the mask field empty to use the kit's.</p>
+<p><strong>Animations.</strong> Em <strong>Start from a model</strong>, escolha um modelo existente para copiar suas animações (clipes, momentos dos golpes, por arma e por habilidade) e seu catálogo de aparência. <strong>Copy its animations</strong> e <strong>Copy the game's own components on it (not the kit's)</strong> vêm ligados por padrão. O assistente avisa quando um modelo é humanoid e o outro não, já que os clipes podem não tocar. Com <strong>Nothing, start empty</strong> você preenche os clipes depois; os golpes continuam caindo na hora. Para um rig humanoid, <strong>Use an upper body mask</strong> (ligado por padrão) permite atacar e lançar enquanto anda; deixe o campo da máscara vazio para usar a do kit.</p>
 </li>
 <li>
-<p><strong>Create.</strong> Check the <strong>Prefab folder</strong> (inside <code>Assets</code>, by default a <code>Prefabs</code> folder next to your database's data folder), read the summary of what will be made, and press <strong>Create player</strong>.</p>
+<p><strong>Create.</strong> Confira a <strong>Prefab folder</strong> (dentro de <code>Assets</code>, por padrão uma pasta <code>Prefabs</code> ao lado da pasta de dados do seu banco de dados), leia o resumo do que será criado e pressione <strong>Create player</strong>.</p>
 </li>
 </ol>
-<p>The prefab is made with every player system, added to the database's <em>Player Models</em>, new classes are created in a <code>Classes</code> folder next to the database and added to <em>Classes</em>, and the new model opens in the Game Database to edit.</p>
-<p>If you built a player prefab by hand, drag it into <strong>Add prefab</strong> on the Models page instead.</p>
-<h3 id="making-gear-fit-a-new-body"><a class="anchor" href="#making-gear-fit-a-new-body" aria-hidden="true">#</a>Making gear fit a new body</h3>
-<p>For gear to swap on your body:</p>
+<p>O prefab é criado com todos os sistemas do jogador e adicionado às <em>Player Models</em> do banco de dados, as classes novas são criadas em uma pasta <code>Classes</code> ao lado do banco de dados e adicionadas a <em>Classes</em>, e o modelo novo abre no Game Database para edição.</p>
+<p>Se você montou um prefab de jogador à mão, arraste-o para <strong>Add prefab</strong> na página Models.</p>
+<h3 id="making-gear-fit-a-new-body"><a class="anchor" href="#making-gear-fit-a-new-body" aria-hidden="true">#</a>Fazer o equipamento servir em um corpo novo</h3>
+<p>Para que o equipamento troque no seu corpo:</p>
 <ol>
-<li>Split the body into skinned meshes named <code>Body_Head</code>, <code>Body_Chest</code>, <code>Body_Hands</code>, <code>Body_Legs</code>, <code>Body_Feet</code> and optionally <code>Body_Hair</code>.</li>
-<li>Make each gear piece as the full region with the gear on, rigged to the same skeleton (same bone names), named <code>&lt;Set&gt;_&lt;Region&gt;</code>.</li>
-<li>Turn on Read/Write in the import settings of every mesh, or turn off <em>Combine Meshes</em>.</li>
-<li>On each item, set <em>Model</em> to the model that holds the piece, or add a <em>Model Variants</em> entry with your model id if the default model is fitted to another body.</li>
+<li>Divida o corpo em malhas com skin chamadas <code>Body_Head</code>, <code>Body_Chest</code>, <code>Body_Hands</code>, <code>Body_Legs</code>, <code>Body_Feet</code> e, opcionalmente, <code>Body_Hair</code>.</li>
+<li>Faça cada peça de equipamento como a região inteira com o equipamento, com rig no mesmo esqueleto (mesmos nomes de ossos), chamada <code>&lt;Set&gt;_&lt;Region&gt;</code>.</li>
+<li>Ligue Read/Write nas configurações de importação de todas as malhas, ou desligue <em>Combine Meshes</em>.</li>
+<li>Em cada item, defina <em>Model</em> como o modelo que contém a peça, ou adicione uma entrada em <em>Model Variants</em> com o id do seu modelo se o modelo padrão estiver ajustado a outro corpo.</li>
 </ol>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>Models work the same in both modes. In MMO, the Login service creates characters without Unity, so it reads the models and their class lists from <code>gamedata.json</code>, exported from your database (automatically by <strong>Play &amp; Servers</strong> when it starts the services, or with <strong>KitARPG &gt; Export Game Data for Services</strong> for builds). A new model, or a class added to a model, needs a fresh export before Login accepts it.</p>
-<p>A headless map server doesn't draw anything, so Equipment View turns itself off there; the gear ids still travel to every client, which draws them.</p>
-<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Um jogador e MMO</h2>
+<p>Os modelos funcionam igual nos dois modos. No MMO, o serviço Login cria personagens sem Unity, então ele lê os modelos e suas listas de classes do <code>gamedata.json</code>, exportado do seu banco de dados (automaticamente pelo <strong>Play &amp; Servers</strong> quando inicia os serviços, ou com <strong>KitARPG &gt; Export Game Data for Services</strong> para builds). Um modelo novo, ou uma classe adicionada a um modelo, precisa de uma exportação nova antes que o Login a aceite.</p>
+<p>Um servidor de mapa sem tela não desenha nada, então o Equipment View se desliga ali; os ids do equipamento continuam viajando para cada cliente, que os desenha.</p>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Dicas</h2>
 <ul>
-<li>Copy animations from a sample model when your rig is humanoid. You get every attack and skill timing at once and can swap clips later.</li>
-<li>Keep <em>Combine Meshes</em> on. It is the biggest saving in crowded towns.</li>
-<li>One model per body type, with the same skeleton, lets every set work on every body with only a fitted variant per piece.</li>
+<li>Copie as animações de um modelo da amostra quando seu rig for humanoid. Você ganha todos os momentos de ataque e de habilidade de uma vez e pode trocar os clipes depois.</li>
+<li>Mantenha <em>Combine Meshes</em> ligado. É a maior economia em cidades cheias.</li>
+<li>Um modelo por tipo de corpo, com o mesmo esqueleto, permite que todo conjunto funcione em todo corpo com só uma variante ajustada por peça.</li>
 </ul>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Erros comuns</h2>
 <ul>
-<li><strong>Gear appears white or doesn't swap.</strong> The piece's mesh name doesn't end in a region name (<code>_Chest</code>, <code>_Head</code>...), or its bones have different names from the body's.</li>
-<li><strong>&quot;is not readable&quot; warning in the Console.</strong> Turn on Read/Write in the mesh's import settings.</li>
-<li><strong>Weapons float next to the hand.</strong> The hand bone names on the Player Model don't match the rig, or the item's <em>Hold Position</em> is off.</li>
-<li><strong>Characters changed body after an update.</strong> The model id was changed or the model was removed; they fall back to the first model.</li>
+<li><strong>O equipamento aparece branco ou não troca.</strong> O nome da malha da peça não termina em um nome de região (<code>_Chest</code>, <code>_Head</code>...), ou seus ossos têm nomes diferentes dos do corpo.</li>
+<li><strong>Aviso &quot;is not readable&quot; no Console.</strong> Ligue Read/Write nas configurações de importação da malha.</li>
+<li><strong>As armas flutuam ao lado da mão.</strong> Os nomes dos ossos das mãos no Player Model não batem com o rig, ou o <em>Hold Position</em> do item está errado.</li>
+<li><strong>Os personagens mudaram de corpo depois de uma atualização.</strong> O id do modelo foi mudado ou o modelo foi removido; eles voltam para o primeiro modelo.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
 <li><a href="classes.html">Classes</a></li>
-<li><a href="equipment.html">Equipment</a></li>
-<li><a href="skills.html">Skills</a></li>
+<li><a href="equipment.html">Equipamento</a></li>
+<li><a href="skills.html">Habilidades</a></li>
 <li><a href="../editor/game-database.html">Game Database</a></li>
-<li><a href="../gameplay/combat.html">Combat</a></li>
+<li><a href="../gameplay/combat.html">Combate</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="attributes-and-stats.html"><span>Anterior</span>Attributes and stats</a><a class="next" href="items.html"><span>Próximo</span>Items</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fcontent%2Fplayer-models.html">Relatar um problema nesta página</a></div></main>
-  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-a-player-model-is">What a player model is</a></li><li class="l2"><a href="#where-models-are-in-the-editor">Where models are in the editor</a></li><li class="l2"><a href="#the-player-model-component">The Player Model component</a></li><li class="l2"><a href="#modular-bodies">Modular bodies</a></li><li class="l3"><a href="#modular-character">Modular Character</a></li><li class="l3"><a href="#gear-per-body">Gear per body</a></li><li class="l3"><a href="#weapons-and-shields">Weapons and shields</a></li><li class="l3"><a href="#fixed-outfits">Fixed outfits</a></li><li class="l2"><a href="#hair-styles">Hair styles</a></li><li class="l2"><a href="#animations">Animations</a></li><li class="l2"><a href="#make-a-new-player-model">Make a new player model</a></li><li class="l3"><a href="#making-gear-fit-a-new-body">Making gear fit a new body</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="attributes-and-stats.html"><span>Anterior</span>Atributos e stats</a><a class="next" href="items.html"><span>Próximo</span>Itens</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fcontent%2Fplayer-models.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-a-player-model-is">O que é um modelo de jogador</a></li><li class="l2"><a href="#where-models-are-in-the-editor">Onde ficam os modelos no editor</a></li><li class="l2"><a href="#the-player-model-component">O componente Player Model</a></li><li class="l2"><a href="#modular-bodies">Corpos modulares</a></li><li class="l3"><a href="#modular-character">Modular Character</a></li><li class="l3"><a href="#gear-per-body">Equipamento por corpo</a></li><li class="l3"><a href="#weapons-and-shields">Armas e escudos</a></li><li class="l3"><a href="#fixed-outfits">Trajes fixos</a></li><li class="l2"><a href="#hair-styles">Estilos de cabelo</a></li><li class="l2"><a href="#animations">Animações</a></li><li class="l2"><a href="#make-a-new-player-model">Criar um modelo de jogador novo</a></li><li class="l3"><a href="#making-gear-fit-a-new-body">Fazer o equipamento servir em um corpo novo</a></li><li class="l2"><a href="#single-player-and-mmo">Um jogador e MMO</a></li><li class="l2"><a href="#tips">Dicas</a></li><li class="l2"><a href="#common-mistakes">Erros comuns</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
 <script src="../../assets/search-pt.js"></script>

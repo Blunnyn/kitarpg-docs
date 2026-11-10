@@ -1,206 +1,206 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Skill effects · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Efectos de skills · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/skill-effects.html">English</option><option value="skill-effects.html" selected>Español</option><option value="../../pt/devkit/skill-effects.html">Português</option><option value="../../zh/devkit/skill-effects.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html" class="on" aria-current="page">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">DevKit</div><h1>Skill effects</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>How to write your own skill effects: the <code>SkillEffect</code> base class, what a cast hands you, how targets are chosen, and complete examples that follow the game's damage rules.</p>
-<h2 id="what-a-skill-effect-is"><a class="anchor" href="#what-a-skill-effect-is" aria-hidden="true">#</a>What a skill effect is</h2>
-<p>A skill is a target, an area and a list of effects (<code>SkillData.effects</code>). When the skill lands, the server works out who it reached and calls each effect once per target. The kit ships effects for damage, heals, stat buffs, statuses, cleanse and dispel, knockback, revive and summons. Anything else a skill should do is a new effect class.</p>
-<p>Effects are <code>[Serializable]</code> classes held by reference (<code>[SerializeReference, PickType]</code>). Once your class compiles, it appears in the <strong>+</strong> type menu of every skill's <em>Effects</em> list in <strong>KitARPG &gt; Game Database &gt; Skills</strong>. There is nothing to register.</p>
-<p><strong>Where the file goes:</strong> the <code>Game</code> assembly. Effects are data that both builds load (the client shows them in tooltips), even though only the server applies them.</p>
-<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h2>
-<p><code>SkillEffect</code> lives in <code>Blunnyn.KitARPG.Data</code>.</p>
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html" class="on" aria-current="page">Efectos de skills</a></li><li><a href="item-effects.html">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html">Hablar con Central</a></li><li><a href="service-modules.html">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Efectos de skills</h1><p>Cómo escribir tus propios efectos de skill: la clase base <code>SkillEffect</code>, qué te entrega un lanzamiento, cómo se eligen los objetivos y ejemplos completos que siguen las reglas de daño del juego.</p>
+<h2 id="what-a-skill-effect-is"><a class="anchor" href="#what-a-skill-effect-is" aria-hidden="true">#</a>Qué es un efecto de skill</h2>
+<p>Un skill es un objetivo, un área y una lista de efectos (<code>SkillData.effects</code>). Cuando el skill impacta, el servidor calcula a quién alcanzó y llama a cada efecto una vez por objetivo. El kit trae efectos de daño, curación, mejoras de stats, estados, limpiar y disipar, empuje, revivir e invocaciones. Cualquier otra cosa que deba hacer un skill es una clase de efecto nueva.</p>
+<p>Los efectos son clases <code>[Serializable]</code> que se guardan por referencia (<code>[SerializeReference, PickType]</code>). En cuanto tu clase compila, aparece en el menú de tipos <strong>+</strong> de la lista <em>Effects</em> de cada skill en <strong>KitARPG &gt; Game Database &gt; Skills</strong>. No hay nada que registrar.</p>
+<p><strong>Dónde va el archivo:</strong> en el ensamblado <code>Game</code>. Los efectos son datos que cargan las dos builds (el cliente los muestra en los tooltips), aunque solo el servidor los aplica.</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>La clase base</h2>
+<p><code>SkillEffect</code> vive en <code>Blunnyn.KitARPG.Data</code>.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Miembro</th>
+<th>Qué hace</th>
+<th>Por defecto</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>string Summary</code></td>
-<td>Short text shown in the skill editor's effect list and used as the default tooltip line.</td>
-<td>The class name</td>
+<td>Texto corto que se muestra en la lista de efectos del editor de skills y que se usa como línea de tooltip por defecto.</td>
+<td>El nombre de la clase</td>
 </tr>
 <tr>
 <td><code>bool Harmful</code></td>
-<td><code>true</code>: the effect lands on enemies the skill reaches. <code>false</code>: on the caster and allies it reaches.</td>
+<td><code>true</code>: el efecto cae sobre los enemigos que alcanza el skill. <code>false</code>: sobre el lanzador y los aliados que alcanza.</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>bool OnCaster</code></td>
-<td><code>true</code>: the effect runs once per cast with the caster as the target, whoever else the skill reaches. Used by summons.</td>
+<td><code>true</code>: el efecto corre una vez por lanzamiento con el lanzador como objetivo, sin importar a quién más alcance el skill. Lo usan las invocaciones.</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>void Apply(SkillCast cast, IFighter target)</code></td>
-<td><strong>Server only.</strong> Called once per target. Required.</td>
+<td><strong>Solo servidor.</strong> Se llama una vez por objetivo. Obligatorio.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>void Describe(ItemDescription description, int level, DamageElement fallback)</code></td>
-<td>Lines for the skill's card at a rank. Runs on the client. <code>fallback</code> is the element to name when yours is empty.</td>
-<td>Adds <code>Summary</code></td>
+<td>Líneas para la ficha del skill en un rango. Corre en el cliente. <code>fallback</code> es el elemento que se nombra cuando el tuyo está vacío.</td>
+<td>Agrega <code>Summary</code></td>
 </tr>
 <tr>
 <td><code>void Visit(Action&lt;GameData&gt; visit)</code></td>
-<td>Hands the game database every asset the effect points at, so they get registered.</td>
-<td>Nothing</td>
+<td>Entrega a la base de datos del juego cada asset al que apunta el efecto, para que se registren.</td>
+<td>Nada</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="how-targets-are-picked"><a class="anchor" href="#how-targets-are-picked" aria-hidden="true">#</a>How targets are picked</h3>
-<p>The server's <code>SkillRunner</code> gathers enemies and allies in the skill's area, then for each effect in order:</p>
+<h3 id="how-targets-are-picked"><a class="anchor" href="#how-targets-are-picked" aria-hidden="true">#</a>Cómo se eligen los objetivos</h3>
+<p>El <code>SkillRunner</code> del servidor junta los enemigos y aliados del área del skill y luego, para cada efecto en orden:</p>
 <ul>
-<li><code>OnCaster</code> effects run once with <code>target</code> set to the caster.</li>
-<li><code>Harmful</code> effects run on every enemy reached; the others run on every ally reached (the caster counts as an ally when the area includes it).</li>
-<li>On skills with <em>Targets Dead</em> set, only dead fighters are reached; otherwise only living ones.</li>
+<li>Los efectos <code>OnCaster</code> corren una vez con <code>target</code> puesto en el lanzador.</li>
+<li>Los efectos <code>Harmful</code> corren sobre cada enemigo alcanzado; los demás corren sobre cada aliado alcanzado (el lanzador cuenta como aliado cuando el área lo incluye).</li>
+<li>En skills con <em>Targets Dead</em> activado, solo se alcanza a combatientes muertos; si no, solo a los vivos.</li>
 </ul>
-<p>A skill can land several times in one cast:</p>
+<p>Un skill puede impactar varias veces en un mismo lanzamiento:</p>
 <ul>
-<li><strong>Multi-hit animations</strong> split one cast across several hit moments. Each landing carries a share of the damage in <code>cast.scale</code>, and only the first has <code>cast.firstHit</code> true.</li>
-<li><strong>Zones</strong> left on the ground land again every tick, each tick as a fresh cast with <code>firstHit</code> true.</li>
-<li><strong>Piercing lines</strong> hit each target as the projectile passes.</li>
-<li><strong>Bounces</strong> jump to the next target with <code>cast.scale</code> reduced by the skill's <em>Bounce Keep</em>.</li>
+<li>Las <strong>animaciones de varios golpes</strong> reparten un lanzamiento en varios momentos de golpe. Cada impacto lleva una parte del daño en <code>cast.scale</code>, y solo el primero tiene <code>cast.firstHit</code> en true.</li>
+<li>Las <strong>zonas</strong> que quedan en el suelo impactan otra vez en cada tick, y cada tick es un lanzamiento nuevo con <code>firstHit</code> en true.</li>
+<li>Las <strong>líneas que perforan</strong> golpean a cada objetivo cuando pasa el proyectil.</li>
+<li>Los <strong>rebotes</strong> saltan al siguiente objetivo con <code>cast.scale</code> reducido según el <em>Bounce Keep</em> del skill.</li>
 </ul>
-<p>Two rules follow. Scale damage and healing by <code>cast.scale</code>. Put buffs, statuses and other one-time effects behind <code>if (!cast.firstHit) return;</code> so they go on once per cast.</p>
-<h2 id="what-a-cast-hands-you"><a class="anchor" href="#what-a-cast-hands-you" aria-hidden="true">#</a>What a cast hands you</h2>
+<p>De ahí salen dos reglas. Escala el daño y la curación por <code>cast.scale</code>. Pon los buffs, los estados y otros efectos de una sola vez detrás de <code>if (!cast.firstHit) return;</code> para que se apliquen una vez por lanzamiento.</p>
+<h2 id="what-a-cast-hands-you"><a class="anchor" href="#what-a-cast-hands-you" aria-hidden="true">#</a>Qué te entrega un lanzamiento</h2>
 <p><code>SkillCast</code>:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it is</th>
+<th>Campo</th>
+<th>Qué es</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>IFighter caster</code></td>
-<td>Who cast it: a player or a monster.</td>
+<td>Quién lo lanzó: un jugador o un monstruo.</td>
 </tr>
 <tr>
 <td><code>SkillData skill</code></td>
-<td>The skill.</td>
+<td>El skill.</td>
 </tr>
 <tr>
 <td><code>int level</code></td>
-<td>The rank it was cast at, gear bonuses included. Use it with <code>LevelValue.At(level)</code>.</td>
+<td>El rango con que se lanzó, con las bonificaciones del equipo incluidas. Úsalo con <code>LevelValue.At(level)</code>.</td>
 </tr>
 <tr>
 <td><code>IReadOnlyList&lt;ElementDamage&gt; weapon</code></td>
-<td>Rolls of the caster's weapon, for effects that scale with it. May be empty or null.</td>
+<td>Tiradas del arma del lanzador, para efectos que escalan con ella. Puede estar vacío o ser null.</td>
 </tr>
 <tr>
 <td><code>IFighter target</code></td>
-<td>The aimed target, if the skill has one.</td>
+<td>El objetivo apuntado, si el skill tiene uno.</td>
 </tr>
 <tr>
 <td><code>Vector3 point</code></td>
-<td>Where it was aimed: the target's position or a point on the ground.</td>
+<td>Hacia dónde se apuntó: la posición del objetivo o un punto en el suelo.</td>
 </tr>
 <tr>
 <td><code>float scale</code></td>
-<td>Share of damage and healing this landing carries. <code>1</code> for a single landing.</td>
+<td>La parte del daño y la curación que lleva este impacto. <code>1</code> para un impacto único.</td>
 </tr>
 <tr>
 <td><code>bool firstHit</code></td>
-<td>False on the later landings of one cast.</td>
+<td>False en los impactos posteriores de un mismo lanzamiento.</td>
 </tr>
 <tr>
 <td><code>float projectileSpeed</code></td>
-<td>Meters per second of the skill's projectile, 0 without one.</td>
+<td>Metros por segundo del proyectil del skill, 0 si no tiene.</td>
 </tr>
 <tr>
 <td><code>SkillCast Copy()</code></td>
-<td>A copy, for effects that land later.</td>
+<td>Una copia, para efectos que impactan más tarde.</td>
 </tr>
 </tbody>
 </table></div>
-<p><code>IFighter</code> is anything a skill can touch, on the server:</p>
+<p><code>IFighter</code> es cualquier cosa que un skill puede tocar, en el servidor:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
+<th>Miembro</th>
+<th>Qué hace</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Transform transform</code>, <code>bool IsDead</code>, <code>int Level</code></td>
-<td>Position, state, level.</td>
+<td>Posición, estado, nivel.</td>
 </tr>
 <tr>
 <td><code>int Team</code></td>
-<td>Players are 0, monsters 1. Different teams are enemies.</td>
+<td>Los jugadores son 0, los monstruos 1. Equipos distintos son enemigos.</td>
 </tr>
 <tr>
 <td><code>StatSheet CombatStats</code></td>
-<td>Stats and elements for attacking and defending. Server only.</td>
+<td>Stats y elementos para atacar y defenderse. Solo servidor.</td>
 </tr>
 <tr>
 <td><code>void ServerDamage(Hit hit, IFighter source)</code></td>
-<td>Deals a hit. Shields, immunities and death are handled inside.</td>
+<td>Aplica un golpe. Los escudos, las inmunidades y la muerte se resuelven dentro.</td>
 </tr>
 <tr>
 <td><code>void ServerHeal(int amount, IFighter source, GameData cause = null)</code></td>
-<td>Heals. The amount is final: the healer's stats are not added again. <code>cause</code> picks the effect clients show.</td>
+<td>Cura. La cantidad es final: no se vuelven a sumar las stats del que cura. <code>cause</code> elige el efecto que muestran los clientes.</td>
 </tr>
 <tr>
 <td><code>bool ServerAddBuff(Buff buff)</code></td>
-<td>Adds a buff or status. False when it didn't take (immunity, dead).</td>
+<td>Agrega un buff o un estado. False si no se aplicó (inmunidad, muerto).</td>
 </tr>
 <tr>
 <td><code>int ServerRemoveBuffs(Predicate&lt;Buff&gt; match, int max = 0)</code></td>
-<td>Removes matching buffs, newest first; 0 removes all. Returns how many.</td>
+<td>Quita los buffs que coinciden, del más nuevo al más viejo; 0 quita todos. Devuelve cuántos.</td>
 </tr>
 <tr>
 <td><code>StatusFlags Status</code></td>
-<td>What its statuses stop it from doing now (stunned, rooted, invisible).</td>
+<td>Qué le impiden hacer ahora sus estados (aturdido, inmovilizado, invisible).</td>
 </tr>
 <tr>
 <td><code>bool ServerKnock(Vector3 to, float seconds)</code></td>
-<td>Pushes or pulls it. False when it can't be moved.</td>
+<td>Lo empuja o lo atrae. False si no se puede mover.</td>
 </tr>
 <tr>
 <td><code>bool ServerRevive(float health, float mana, IFighter by)</code></td>
-<td>Brings it back with a share of health and mana.</td>
+<td>Lo revive con una parte de la vida y el maná.</td>
 </tr>
 </tbody>
 </table></div>
-<p>On the server, players are <code>PlayerCharacter</code> and monsters are <code>Monster</code> (both in <code>Blunnyn.KitARPG.Net</code>). Cast to them when you need something <code>IFighter</code> doesn't have, such as health.</p>
-<h3 id="numbers-that-grow-with-rank"><a class="anchor" href="#numbers-that-grow-with-rank" aria-hidden="true">#</a>Numbers that grow with rank</h3>
-<p><code>LevelValue</code> is a value at rank 1 plus an amount per rank after it:</p>
+<p>En el servidor, los jugadores son <code>PlayerCharacter</code> y los monstruos son <code>Monster</code> (los dos en <code>Blunnyn.KitARPG.Net</code>). Convierte a esos tipos cuando necesites algo que <code>IFighter</code> no tiene, como la vida.</p>
+<h3 id="numbers-that-grow-with-rank"><a class="anchor" href="#numbers-that-grow-with-rank" aria-hidden="true">#</a>Números que crecen con el rango</h3>
+<p><code>LevelValue</code> es un valor en el rango 1 más una cantidad por cada rango siguiente:</p>
 <pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">   </span><span class="c1">// 10 at rank 1, 12 at rank 2, 14 at rank 3</span>
 <span class="kt">float</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">);</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">whole</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">AtInt</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">);</span><span class="w">               </span><span class="c1">// rounded</span>
 </code></pre>
-<p>The inspector shows it as <em>Base Value</em> and <em>Per Level</em>.</p>
-<h3 id="hits-and-the-damage-formula"><a class="anchor" href="#hits-and-the-damage-formula" aria-hidden="true">#</a>Hits and the damage formula</h3>
-<p>A <code>Hit</code> is <code>amount</code>, <code>critical</code>, <code>element</code> (the element that did most of it, for its color) and <code>source</code> (the skill, weapon type or monster, which picks the hit effect).</p>
-<p>To follow the game's damage rules (element damage, power, flat and percent resistance, criticals), let the combat formula build the hit:</p>
+<p>El inspector lo muestra como <em>Base Value</em> y <em>Per Level</em>.</p>
+<h3 id="hits-and-the-damage-formula"><a class="anchor" href="#hits-and-the-damage-formula" aria-hidden="true">#</a>Golpes y la fórmula de daño</h3>
+<p>Un <code>Hit</code> es <code>amount</code>, <code>critical</code>, <code>element</code> (el elemento que hizo la mayor parte, por su color) y <code>source</code> (el skill, el tipo de arma o el monstruo, que elige el efecto de impacto).</p>
+<p>Para seguir las reglas de daño del juego (daño de elemento, poder, resistencia fija y porcentual, críticos), deja que la fórmula de combate arme el golpe:</p>
 <pre class="code"><code class="language-csharp"><span class="kt">var</span><span class="w"> </span><span class="n">rolls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementDamage</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">),</span><span class="w"> </span><span class="n">max</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">))</span><span class="w"> </span><span class="p">};</span>
 <span class="n">Hit</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">scale</span><span class="p">);</span>
 <span class="n">hit</span><span class="p">.</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">skill</span><span class="p">;</span>
 <span class="n">target</span><span class="p">.</span><span class="n">ServerDamage</span><span class="p">(</span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">);</span>
 </code></pre>
-<p>For heals, <code>GameInstance.Combat.Heal(cast.caster.CombatStats, amount)</code> adds the caster's heals stat and healing bonus. A game that swapped the formula (see <a href="formulas.html">Formulas</a>) changes your effects too.</p>
-<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
-<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Skill Effect</strong> makes a fixed-damage effect. It skips the formula on purpose to stay short. The <a href="templates.html#skill-effect">Templates</a> page shows it.</p>
-<h2 id="example-life-steal"><a class="anchor" href="#example-life-steal" aria-hidden="true">#</a>Example: life steal</h2>
-<p>Damage that heals the caster for a share of what it dealt.</p>
+<p>Para curaciones, <code>GameInstance.Combat.Heal(cast.caster.CombatStats, amount)</code> suma la stat de curación y la bonificación de curación del lanzador. Un juego que cambió la fórmula (consulta <a href="formulas.html">Fórmulas</a>) también cambia tus efectos.</p>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Ejemplo: la plantilla</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Skill Effect</strong> crea un efecto de daño fijo. Se salta la fórmula a propósito para quedar corto. La página <a href="templates.html#skill-effect">Plantillas</a> lo muestra.</p>
+<h2 id="example-life-steal"><a class="anchor" href="#example-life-steal" aria-hidden="true">#</a>Ejemplo: robo de vida</h2>
+<p>Daño que cura al lanzador con una parte de lo que hizo.</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
@@ -247,9 +247,9 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p>The heal uses the hit's amount before shields soaked any of it. If that matters in your game, compare the target's health before and after (see the next example for reading health).</p>
-<h2 id="example-execute"><a class="anchor" href="#example-execute" aria-hidden="true">#</a>Example: execute</h2>
-<p>Extra damage against targets below a share of their health.</p>
+<p>La curación usa la cantidad del golpe antes de que los escudos absorbieran parte. Si eso importa en tu juego, compara la vida del objetivo antes y después (el siguiente ejemplo muestra cómo leer la vida).</p>
+<h2 id="example-execute"><a class="anchor" href="#example-execute" aria-hidden="true">#</a>Ejemplo: rematar</h2>
+<p>Daño extra contra objetivos por debajo de una proporción de su vida.</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
@@ -301,8 +301,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h2 id="example-mana-refund-on-the-caster"><a class="anchor" href="#example-mana-refund-on-the-caster" aria-hidden="true">#</a>Example: mana refund on the caster</h2>
-<p>An <code>OnCaster</code> effect runs once per cast, with the caster as <code>target</code>. This one gives mana back when the skill reached at least one enemy.</p>
+<h2 id="example-mana-refund-on-the-caster"><a class="anchor" href="#example-mana-refund-on-the-caster" aria-hidden="true">#</a>Ejemplo: devolución de maná al lanzador</h2>
+<p>Un efecto <code>OnCaster</code> corre una vez por lanzamiento, con el lanzador como <code>target</code>. Este devuelve maná en cada lanzamiento, alcance o no el skill a alguien. La revisión de <code>firstHit</code> lo deja en una vez en las animaciones de varios golpes; una zona lo paga otra vez en cada tick, porque cada tick es un lanzamiento nuevo.</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
@@ -330,8 +330,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h2 id="example-a-status-with-a-chance-from-a-field"><a class="anchor" href="#example-a-status-with-a-chance-from-a-field" aria-hidden="true">#</a>Example: a status with a chance, from a field</h2>
-<p>Effects that point at assets (statuses, monsters, items) must hand them to <code>Visit</code>. Without it, an asset only your effect references may be left out of the game database, and the server can't find it by id.</p>
+<h2 id="example-a-status-from-a-field"><a class="anchor" href="#example-a-status-from-a-field" aria-hidden="true">#</a>Ejemplo: un estado desde un campo</h2>
+<p>Los efectos que apuntan a assets (estados, monstruos, ítems) deben entregarlos a <code>Visit</code>. Sin eso, un asset al que solo tu efecto hace referencia puede quedar fuera de la base de datos del juego, y el servidor no lo encuentra por id.</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MarkForDeathEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SkillEffect</span>
 <span class="p">{</span>
@@ -351,53 +351,53 @@
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Visit</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GameData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<p>For most statuses the kit's <code>ApplyStatusEffect</code> already does this, with a chance and stacks. Write your own only when the rule differs.</p>
-<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<p>Para la mayoría de los estados, el <code>ApplyStatusEffect</code> del kit ya hace esto, con probabilidad y acumulaciones. Escribe el tuyo solo cuando la regla sea distinta.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Servidor y cliente</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Runs on</th>
+<th>Corre en</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Apply</code></td>
-<td>Server only: the map server online, the host in single player.</td>
+<td>Solo servidor: el servidor de mapa en línea, el host en un jugador.</td>
 </tr>
 <tr>
 <td><code>Describe</code>, <code>Summary</code></td>
-<td>Wherever a skill card is shown: the client, and the editor.</td>
+<td>Donde se muestre una ficha de skill: el cliente y el editor.</td>
 </tr>
 <tr>
-<td>Field values</td>
-<td>Both: the asset is the same in both builds.</td>
+<td>Valores de los campos</td>
+<td>Los dos: el asset es el mismo en las dos builds.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Clients see the result through the kit's own sync: health bars, damage numbers (<code>CombatEvents.Damaged</code>), buff icons and the skill's effects. Your effect doesn't need to send anything.</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>Nothing changes. In single player the host runs the same <code>Apply</code>. Damage between players only lands where PvP or a duel allows it; that check happens before your effect is called, when targets are gathered.</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<p>Los clientes ven el resultado mediante la sincronización propia del kit: barras de vida, números de daño (<code>CombatEvents.Damaged</code>), íconos de buffs y los efectos del skill. Tu efecto no necesita mandar nada.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Un jugador y MMO</h2>
+<p>No cambia nada. En un jugador, el host corre el mismo <code>Apply</code>. El daño entre jugadores solo se aplica donde lo permite el PvP o un duelo; esa revisión ocurre antes de que se llame a tu efecto, cuando se juntan los objetivos.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
 <ul>
-<li><strong>Applying a buff on every landing.</strong> Multi-hit animations and zones call <code>Apply</code> many times. Guard one-time effects with <code>cast.firstHit</code>.</li>
-<li><strong>Ignoring <code>cast.scale</code>.</strong> A three-hit animation then deals three full hits.</li>
-<li><strong>Using <code>UnityEngine.Random</code> in <code>Describe</code>.</strong> Tooltips must be stable; roll only in <code>Apply</code>.</li>
-<li><strong>Keeping per-cast state in fields.</strong> One effect instance is shared by every cast of that skill, by every player. Store nothing in fields at runtime; use locals, or a dictionary keyed by the fighter in a server-side system.</li>
-<li><strong>Forgetting <code>Visit</code>.</strong> Assets only your effect references may be missing from the database.</li>
-<li><strong>Renaming the class.</strong> Skills store your effect by type name. A rename leaves &quot;missing type&quot; entries that the validator lists. Keep the name, or add <code>[UnityEngine.Scripting.APIUpdating.MovedFrom(...)]</code> with the old name.</li>
-<li><strong>Calling <code>ServerHeal</code> with a raw number and then the formula again.</strong> <code>ServerHeal</code> takes a final amount.</li>
+<li><strong>Aplicar un buff en cada impacto.</strong> Las animaciones de varios golpes y las zonas llaman a <code>Apply</code> muchas veces. Protege los efectos de una sola vez con <code>cast.firstHit</code>.</li>
+<li><strong>Ignorar <code>cast.scale</code>.</strong> Una animación de tres golpes hace entonces tres golpes completos.</li>
+<li><strong>Usar <code>UnityEngine.Random</code> en <code>Describe</code>.</strong> Los tooltips deben ser estables; tira los dados solo en <code>Apply</code>.</li>
+<li><strong>Guardar estado por lanzamiento en campos.</strong> Una misma instancia del efecto la comparten todos los lanzamientos de ese skill, de todos los jugadores. No guardes nada en campos durante el juego; usa variables locales, o un diccionario con el combatiente como clave en un sistema del servidor.</li>
+<li><strong>Olvidar <code>Visit</code>.</strong> Los assets a los que solo tu efecto hace referencia pueden faltar en la base de datos.</li>
+<li><strong>Cambiarle el nombre a la clase.</strong> Los skills guardan tu efecto por nombre de tipo. Un cambio de nombre deja entradas de &quot;missing type&quot; que lista el validador. Mantén el nombre, o agrega <code>[UnityEngine.Scripting.APIUpdating.MovedFrom(...)]</code> con el nombre anterior.</li>
+<li><strong>Llamar a <code>ServerHeal</code> con un número sin procesar y después aplicar la fórmula otra vez.</strong> <code>ServerHeal</code> recibe una cantidad final.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
 <li><a href="../content/skills.html">Skills</a></li>
-<li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li>
-<li><a href="formulas.html">Formulas</a></li>
-<li><a href="item-effects.html">Item effects</a></li>
-<li><a href="templates.html">Templates</a></li>
+<li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li>
+<li><a href="formulas.html">Fórmulas</a></li>
+<li><a href="item-effects.html">Efectos de ítems</a></li>
+<li><a href="templates.html">Plantillas</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="templates.html"><span>Anterior</span>Templates</a><a class="next" href="item-effects.html"><span>Siguiente</span>Item effects</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fskill-effects.html">Reportar un problema en esta página</a></div></main>
-  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-a-skill-effect-is">What a skill effect is</a></li><li class="l2"><a href="#the-base-class">The base class</a></li><li class="l3"><a href="#how-targets-are-picked">How targets are picked</a></li><li class="l2"><a href="#what-a-cast-hands-you">What a cast hands you</a></li><li class="l3"><a href="#numbers-that-grow-with-rank">Numbers that grow with rank</a></li><li class="l3"><a href="#hits-and-the-damage-formula">Hits and the damage formula</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-life-steal">Example: life steal</a></li><li class="l2"><a href="#example-execute">Example: execute</a></li><li class="l2"><a href="#example-mana-refund-on-the-caster">Example: mana refund on the caster</a></li><li class="l2"><a href="#example-a-status-with-a-chance-from-a-field">Example: a status with a chance, from a field</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="templates.html"><span>Anterior</span>Plantillas</a><a class="next" href="item-effects.html"><span>Siguiente</span>Efectos de ítems</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fskill-effects.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-a-skill-effect-is">Qué es un efecto de skill</a></li><li class="l2"><a href="#the-base-class">La clase base</a></li><li class="l3"><a href="#how-targets-are-picked">Cómo se eligen los objetivos</a></li><li class="l2"><a href="#what-a-cast-hands-you">Qué te entrega un lanzamiento</a></li><li class="l3"><a href="#numbers-that-grow-with-rank">Números que crecen con el rango</a></li><li class="l3"><a href="#hits-and-the-damage-formula">Golpes y la fórmula de daño</a></li><li class="l2"><a href="#example-the-template">Ejemplo: la plantilla</a></li><li class="l2"><a href="#example-life-steal">Ejemplo: robo de vida</a></li><li class="l2"><a href="#example-execute">Ejemplo: rematar</a></li><li class="l2"><a href="#example-mana-refund-on-the-caster">Ejemplo: devolución de maná al lanzador</a></li><li class="l2"><a href="#example-a-status-from-a-field">Ejemplo: un estado desde un campo</a></li><li class="l2"><a href="#server-and-client">Servidor y cliente</a></li><li class="l2"><a href="#single-player-and-mmo">Un jugador y MMO</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
 <script src="../../assets/search-es.js"></script>

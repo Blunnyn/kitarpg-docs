@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>不重新加载域的 Play · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/domain-reload.html">English</option><option value="../../es/devkit/domain-reload.html">Español</option><option value="../../pt/devkit/domain-reload.html">Português</option><option value="domain-reload.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html" class="on" aria-current="page">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>不重新加载域的 Play</h1><p>为什么你代码中的静态状态必须手动重置，每个启动方法在什么时候运行，以及套件为了让每次 Play 都干净地开始而使用的做法。</p>
+<h2 id="what-domain-reload-is"><a class="anchor" href="#what-domain-reload-is" aria-hidden="true">#</a>什么是域重新加载</h2>
+<p>按下 Play 时，Unity 可以重新加载脚本域：丢弃所有已加载的程序集和所有静态值，然后重新加载。这样每次 Play 都干净地开始，但在 KitARPG 这么大的项目中要花很多秒。</p>
+<p>套件的项目关闭了它：<em>Project Settings &gt; Editor &gt; Enter Play Mode Settings</em> 中的 <em>Reload Domain</em> 是关闭的（场景仍会重新加载）。于是 Play 在一两秒内就能开始。代价是<strong>静态字段会保留上一次 Play 的值</strong>：</p>
+<ul>
+<li>静态列表仍然保存着上次添加的条目，</li>
+<li>静态事件仍然有上次 Play 的订阅者，它们指向已销毁的对象，</li>
+<li>静态 <code>Local</code> 仍然指向之前的本地玩家，</li>
+<li>静态计数器会继续计数。</li>
+</ul>
+<p>构建版本总是干净地开始。这些问题只会出现在编辑器中，并且只在第二次及之后的 Play 中出现，所以很容易被忽略。你的项目可能开启了 <em>Reload Domain</em>；编写代码时要让它在两种情况下都能工作。</p>
+<h2 id="the-startup-moments"><a class="anchor" href="#the-startup-moments" aria-hidden="true">#</a>启动时机</h2>
+<p><code>[RuntimeInitializeOnLoadMethod]</code> 会在每次 Play（以及每次启动构建版本）的固定时机运行一个静态方法：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>加载类型</th>
+<th>何时</th>
+<th>用来</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SubsystemRegistration</code></td>
+<td>最先，早于一切</td>
+<td>清除你自己的静态值。</td>
+</tr>
+<tr>
+<td><code>AfterAssembliesLoaded</code></td>
+<td>所有程序集加载之后</td>
+<td>订阅其他类的静态事件；添加菜单条目和选项。</td>
+</tr>
+<tr>
+<td><code>BeforeSplashScreen</code></td>
+<td>启动画面之前</td>
+<td>（很少需要）</td>
+</tr>
+<tr>
+<td><code>BeforeSceneLoad</code></td>
+<td>第一个场景加载之前</td>
+<td>安装公式和其他替换。</td>
+</tr>
+<tr>
+<td><code>AfterSceneLoad</code></td>
+<td>第一个场景加载之后</td>
+<td>需要场景对象的东西：<code>KitNetworkManager.Instance</code>、GM 命令。</td>
+</tr>
+</tbody>
+</table></div>
+<p>在同一种加载类型中，Unity 不规定不同类的方法之间的顺序。套件的规则正是由此而来。</p>
+<h2 id="the-kit-s-rules"><a class="anchor" href="#the-kit-s-rules" aria-hidden="true">#</a>套件的规则</h2>
+<ol>
+<li><strong>每个类在 <code>SubsystemRegistration</code> 中清除自己的静态值。</strong> 保存状态的字段、事件、集合和缓存会在一个通常叫 <code>ResetStatics</code> 的方法中恢复到初始值。</li>
+<li><strong>在 <code>AfterAssembliesLoaded</code> 或之后订阅其他类的静态事件。</strong> 那个类会在 <code>SubsystemRegistration</code> 中清除它们；如果你在同一阶段订阅，你的订阅可能会在你订阅之后被清除。</li>
+<li><strong>套件用自己的条目填充的列表会在 <code>SubsystemRegistration</code> 中重建</strong>（<code>ItemMenu.Entries</code>、<code>PlayerMenu.Entries</code>、<code>ClientOptions.All</code>、GM 命令）。在之后添加你的条目。</li>
+<li><strong>套件的公式会在 <code>SubsystemRegistration</code> 中恢复为套件自己的</strong>（<code>GameInstance.Formula</code>、<code>GameInstance.Combat</code>）。在 <code>BeforeSceneLoad</code> 中安装你的公式。</li>
+<li><strong>在 <code>SubsystemRegistration</code> 中注册自己内容的类，在同一个方法中先清除再注册，</strong> 这样它与其他类的顺序就无关紧要（<code>GmCommands</code>）。</li>
+<li><strong>每次使用都会清空的工作缓冲区和始终有效的缓存不需要清除。</strong> 用作临时空间的静态 <code>List</code>，或在会话期间不会改变的计算值，可以保留。</li>
+</ol>
+<p>游戏模式表（<code>GameModes</code>）是个例外：它们从不清除，因此模式程序集可以在 <code>SubsystemRegistration</code> 中以任意顺序注册。</p>
+<h2 id="the-pattern-for-your-code"><a class="anchor" href="#the-pattern-for-your-code" aria-hidden="true">#</a>你代码中的写法</h2>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Kills</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// State of this class.</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ServerCounted</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 1. Clear own state first.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">counts</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<span class="w">            </span><span class="n">ServerCounted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// 2. Subscribe to the kit&#39;s events after the kit cleared them.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnKilled</span><span class="p">(</span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">killer</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">counts</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">killer</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">            </span><span class="n">counts</span><span class="p">[</span><span class="n">killer</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">;</span>
+<span class="w">            </span><span class="n">ServerCounted</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">killer</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>先 <code>-=</code> 再 <code>+=</code>，即使方法运行两次，订阅也是安全的。使用具名方法（而不是 lambda）才能 <code>-=</code>。</p>
+<h3 id="statics-on-components"><a class="anchor" href="#statics-on-components" aria-hidden="true">#</a>组件上的静态成员</h3>
+<p>带有静态成员的 <code>NetworkBehaviour</code> 或 <code>MonoBehaviour</code> 遵循同样的规则：</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerPet</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">PlayerPet</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Told</span><span class="p">;</span>
+
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Told</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStartAuthority</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStopAuthority</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>玩家系统和保存数据的模板已经这样做了。</p>
+<h3 id="things-that-live-on-scene-objects"><a class="anchor" href="#things-that-live-on-scene-objects" aria-hidden="true">#</a>位于场景对象上的东西</h3>
+<p>每次 Play 都会重新创建的对象（网络管理器、HUD 中的窗口）上的事件不需要清除：旧对象连同它的订阅者一起消失了。这就是为什么套件的模板在 <code>AfterSceneLoad</code> 中订阅 <code>KitNetworkManager.ServerStarted</code> 而不取消订阅。</p>
+<h3 id="lazy-caches"><a class="anchor" href="#lazy-caches" aria-hidden="true">#</a>延迟缓存</h3>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="n">AttributeData</span><span class="w"> </span><span class="n">toughness</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">AttributeData</span><span class="w"> </span><span class="n">Toughness</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">get</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toughness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="s">&quot;toughness&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">toughness</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">toughness</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">toughness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</code></pre>
+<p>如果资源不会改变，资源的缓存跨 Play 保留也无害，但清除它没有任何代价，还能覆盖两次 Play 之间所做的修改。</p>
+<h2 id="checklist"><a class="anchor" href="#checklist" aria-hidden="true">#</a>检查清单</h2>
+<p>对于你代码中的每个 <code>static</code>，问一问：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>它是</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>游戏过程中会改变的值（计数器、<code>Local</code>、玩家字典）</td>
+<td>在 <code>SubsystemRegistration</code> 中重置。</td>
+</tr>
+<tr>
+<td>你的类的静态事件</td>
+<td>在 <code>SubsystemRegistration</code> 中设为 null。</td>
+</tr>
+<tr>
+<td>对别人静态事件的订阅</td>
+<td>在 <code>AfterAssembliesLoaded</code> 或之后订阅，先 <code>-=</code>。</td>
+</tr>
+<tr>
+<td>套件列表中的条目（菜单、选项、命令、编辑器中的校验器检查）</td>
+<td>在套件填充列表之后添加。</td>
+</tr>
+<tr>
+<td>从不改变的 <code>const</code> 或 <code>static readonly</code> 值</td>
+<td>什么都不用做。</td>
+</tr>
+<tr>
+<td>每次使用前都会清空的临时缓冲区</td>
+<td>什么都不用做。</td>
+</tr>
+</tbody>
+</table></div>
+<p>仅编辑器的静态值（校验器检查、页面）遵循编辑器自己的生命周期，而不是 Play：在 <code>[InitializeOnLoadMethod]</code> 中注册它们，并在添加前先移除（参见<a href="editor-extensions.html">编辑器扩展</a>）。</p>
+<h2 id="testing-it"><a class="anchor" href="#testing-it" aria-hidden="true">#</a>测试</h2>
+<ol>
+<li>按下 Play，执行你的功能所做的事，然后停止。</li>
+<li>再次按下 Play，再做一遍。</li>
+<li>留意重复的消息、触发两次的事件、没有从零开始的计数，以及来自已销毁对象的 <code>MissingReferenceException</code>。</li>
+</ol>
+<p>套件本身就是这样测试的：在单人模式中连续两次 Play，得到的订阅者、命令和菜单条目都相同。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li><strong>在 <code>SubsystemRegistration</code> 中订阅。</strong> 套件可能在你之后清除该事件。请在 <code>AfterAssembliesLoaded</code> 或之后订阅。</li>
+<li><strong>清除别人的事件。</strong> 每个类只清除自己的。</li>
+<li><strong>在一个启动方法中清除你的事件，又在同一类型的另一个启动方法中订阅它。</strong> 顺序是未定义的：在 <code>SubsystemRegistration</code> 中清除，在之后的阶段订阅。</li>
+<li><strong>在 <code>+=</code> 中使用每次 Play 都会运行的 lambda</strong>，而该事件又不会被清除。</li>
+<li><strong>对场景对象的静态引用</strong>没有重置：它们会变成已销毁的对象，与 null 比较相等，但仍然占用内存。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="events.html">事件</a></li>
+<li><a href="templates.html">模板</a></li>
+<li><a href="formulas.html">公式</a></li>
+<li><a href="menus-and-settings-options.html">菜单和设置选项</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="example-bounty-board.html"><span>上一页</span>示例：悬赏板</a><a class="next" href="security-rules.html"><span>下一页</span>安全规则</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fdomain-reload.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-domain-reload-is">什么是域重新加载</a></li><li class="l2"><a href="#the-startup-moments">启动时机</a></li><li class="l2"><a href="#the-kit-s-rules">套件的规则</a></li><li class="l2"><a href="#the-pattern-for-your-code">你代码中的写法</a></li><li class="l3"><a href="#statics-on-components">组件上的静态成员</a></li><li class="l3"><a href="#things-that-live-on-scene-objects">位于场景对象上的东西</a></li><li class="l3"><a href="#lazy-caches">延迟缓存</a></li><li class="l2"><a href="#checklist">检查清单</a></li><li class="l2"><a href="#testing-it">测试</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

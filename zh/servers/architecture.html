@@ -1,319 +1,319 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Architecture · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>架构 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/architecture.html">English</option><option value="../../es/servers/architecture.html">Español</option><option value="../../pt/servers/architecture.html">Português</option><option value="architecture.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html" class="on" aria-current="page">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">服务器与部署</div><h1>Architecture</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>How an online KitARPG game is put together: the client, the Login, Central and Shop services, the map servers and the database, what each one owns, the ports and protocols between them, and what happens from sign in to changing maps.</p>
-<h2 id="the-pieces"><a class="anchor" href="#the-pieces" aria-hidden="true">#</a>The pieces</h2>
-<p>An online (MMO) game is five kinds of programs. A single player game is one: the client hosts its own map and saves to a local file (see <a href="#single-player">Single player</a>).</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html" class="on" aria-current="page">架构</a></li><li><a href="services.html">服务</a></li><li><a href="launcher.html">启动器</a></li><li><a href="database.html">数据库</a></li><li><a href="configuration.html">配置</a></li><li><a href="builds.html">构建</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">安全</a></li><li><a href="shop-service.html">Shop 服务</a></li><li><a href="performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">服务器与部署</div><h1>架构</h1><p>一款在线 KitARPG 游戏是如何组成的：客户端、Login、Central 和 Shop 服务、地图服务器和数据库，每一部分负责什么，它们之间的端口和协议，以及从登录到切换地图的整个过程。</p>
+<h2 id="the-pieces"><a class="anchor" href="#the-pieces" aria-hidden="true">#</a>组成部分</h2>
+<p>一款在线（MMO）游戏由五类程序组成。单人模式游戏只有一个：客户端自己托管地图，并保存到本地文件（见<a href="#single-player">单人模式</a>）。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Piece</th>
-<th>What it is</th>
-<th>Made with</th>
-<th>Owns</th>
+<th>部分</th>
+<th>是什么</th>
+<th>用什么做的</th>
+<th>负责</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Client</td>
-<td>The game players install</td>
-<td>Unity, Mirror</td>
-<td>Nothing. It only asks; the servers decide</td>
+<td>客户端</td>
+<td>玩家安装的游戏</td>
+<td>Unity、Mirror</td>
+<td>什么都不负责。它只发出请求，由服务器决定</td>
 </tr>
 <tr>
 <td>Login</td>
-<td>Web service for accounts and characters</td>
-<td>.NET 10, ASP.NET Core</td>
-<td>Accounts, passwords, access tokens, &quot;Remember me&quot; tokens, character creation and deletion, the item and skill catalog in the database</td>
+<td>管理账号和角色的 Web 服务</td>
+<td>.NET 10、ASP.NET Core</td>
+<td>账号、密码、访问令牌、&quot;Remember me&quot; 令牌、角色的创建和删除、数据库中的物品和技能目录</td>
 </tr>
 <tr>
 <td>Central</td>
-<td>Web service plus a UDP link for the map servers</td>
-<td>.NET 10, ASP.NET Core, LiteNetLib</td>
-<td>Sessions (one per account), map tickets, the list of running maps, character saves, chat between maps, friends, parties, guilds, alliances, mail, the market, tax collectors, reports, GM audit, every move of an item between owners</td>
+<td>Web 服务，外加一条连接地图服务器的 UDP 链路</td>
+<td>.NET 10、ASP.NET Core、LiteNetLib</td>
+<td>会话（每个账号一个）、地图票据、正在运行的地图列表、角色存档、跨地图聊天、好友、队伍、公会、联盟、邮件、市场、收税官、举报、GM 审计、物品在所有者之间的每一次转移</td>
 </tr>
 <tr>
-<td>Map servers</td>
-<td>One Unity server per map, without graphics</td>
-<td>Unity, Mirror with KCP</td>
-<td>The live world of its map: players, monsters, combat, loot, NPCs, dungeon copies. It never touches the database</td>
+<td>地图服务器</td>
+<td>每张地图一个无图形界面的 Unity 服务器</td>
+<td>Unity、使用 KCP 的 Mirror</td>
+<td>所在地图的实时世界：玩家、怪物、战斗、掉落、NPC、地下城副本。它从不接触数据库</td>
 </tr>
 <tr>
-<td>Shop (optional)</td>
-<td>Web service for the premium shop</td>
-<td>.NET 10, ASP.NET Core</td>
-<td>The shop catalog, premium balances, premium purchases and gifts, real-money payment webhooks</td>
+<td>Shop（可选）</td>
+<td>高级商店的 Web 服务</td>
+<td>.NET 10、ASP.NET Core</td>
+<td>商店目录、高级货币余额、高级购买和赠礼、真实货币支付的 webhook</td>
 </tr>
 <tr>
-<td>Database</td>
-<td>SQLite file or PostgreSQL</td>
+<td>数据库</td>
+<td>SQLite 文件或 PostgreSQL</td>
 <td>EF Core</td>
-<td>Everything that lasts. Login, Central and the Shop share one database</td>
+<td>所有需要持久保存的数据。Login、Central 和 Shop 共用一个数据库</td>
 </tr>
 </tbody>
 </table></div>
-<p>All three services and the map servers are separate processes. On your computer the launcher starts them for you (<a href="launcher.html">Launcher</a>); on a server Docker Compose does (<a href="docker.html">Docker</a>).</p>
-<h2 id="how-they-talk"><a class="anchor" href="#how-they-talk" aria-hidden="true">#</a>How they talk</h2>
+<p>三个服务和各个地图服务器都是独立的进程。在你的电脑上由启动器替你启动它们（<a href="launcher.html">启动器</a>）；在服务器上由 Docker Compose 启动（<a href="docker.html">Docker</a>）。</p>
+<h2 id="how-they-talk"><a class="anchor" href="#how-they-talk" aria-hidden="true">#</a>它们如何通信</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>From</th>
-<th>To</th>
-<th>Protocol</th>
-<th>Default port</th>
-<th>What travels</th>
-<th>Who can reach it</th>
+<th>从</th>
+<th>到</th>
+<th>协议</th>
+<th>默认端口</th>
+<th>传输什么</th>
+<th>谁能访问</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Client</td>
+<td>客户端</td>
 <td>Login</td>
-<td>HTTP (HTTPS in production)</td>
-<td>5100 locally, 443 behind Caddy</td>
-<td>Register, sign in, &quot;Remember me&quot;, character list, create, delete</td>
-<td>Everyone</td>
+<td>HTTP（生产环境为 HTTPS）</td>
+<td>本地 5100，Caddy 之后为 443</td>
+<td>注册、登录、&quot;Remember me&quot;、角色列表、创建、删除</td>
+<td>所有人</td>
 </tr>
 <tr>
-<td>Client</td>
+<td>客户端</td>
 <td>Central</td>
-<td>HTTP (HTTPS in production)</td>
-<td>5200 locally, 443 behind Caddy</td>
-<td><code>POST /api/play</code>: which map, its address and a one-use ticket</td>
-<td>Everyone</td>
+<td>HTTP（生产环境为 HTTPS）</td>
+<td>本地 5200，Caddy 之后为 443</td>
+<td><code>POST /api/play</code>：哪张地图、它的地址和一次性票据</td>
+<td>所有人</td>
 </tr>
 <tr>
-<td>Client</td>
-<td>Map server</td>
-<td>Mirror over KCP (UDP)</td>
-<td>7777 town, 7778 forest, 7779 crypt</td>
-<td>The game itself: the ticket first, then input, world state, chat, windows</td>
-<td>Everyone</td>
+<td>客户端</td>
+<td>地图服务器</td>
+<td>基于 KCP（UDP）的 Mirror</td>
+<td>7777 town、7778 forest、7779 crypt、7780 guild_hall</td>
+<td>游戏本身：先是票据，然后是输入、世界状态、聊天、窗口</td>
+<td>所有人</td>
 </tr>
 <tr>
-<td>Map server</td>
+<td>地图服务器</td>
 <td>Central</td>
-<td>LiteNetLib (UDP), key in the connection request</td>
+<td>LiteNetLib（UDP），密钥放在连接请求中</td>
 <td>7700</td>
-<td>Registration, heartbeats, ticket checks, character saves, map changes, chat, social, guild, mail, market, GM audit, game log</td>
-<td>Only map servers. Never the internet</td>
+<td>注册、心跳、票据校验、角色存档、切换地图、聊天、社交、公会、邮件、市场、GM 审计、游戏日志</td>
+<td>只有地图服务器。绝不对互联网开放</td>
 </tr>
 <tr>
-<td>Map server</td>
+<td>地图服务器</td>
 <td>Shop</td>
-<td>HTTP with the <code>X-Shop-Key</code> header</td>
+<td>带 <code>X-Shop-Key</code> 请求头的 HTTP</td>
 <td>5300</td>
-<td>Catalog, balances, buys, grants</td>
-<td>Only map servers. Never the internet</td>
+<td>目录、余额、购买、发放</td>
+<td>只有地图服务器。绝不对互联网开放</td>
 </tr>
 <tr>
-<td>Payment provider</td>
+<td>支付服务商</td>
 <td>Shop</td>
-<td>HTTPS through Caddy</td>
+<td>经过 Caddy 的 HTTPS</td>
 <td>443</td>
-<td>Signed webhooks on <code>/api/shop/webhooks/{provider}</code></td>
-<td>Everyone, checked by signature</td>
+<td>发往 <code>/api/shop/webhooks/{provider}</code> 的签名 webhook</td>
+<td>所有人，通过签名校验</td>
 </tr>
 <tr>
-<td>Editor or operator</td>
+<td>编辑器或运维人员</td>
 <td>Shop</td>
-<td>HTTP with the <code>X-Admin-Key</code> header</td>
+<td>带 <code>X-Admin-Key</code> 请求头的 HTTP</td>
 <td>5300</td>
-<td>Admin API: publish the catalog, grant, balances, history</td>
-<td>The server itself only (<code>127.0.0.1</code>)</td>
+<td>管理 API：发布目录、发放、余额、历史</td>
+<td>只有服务器本机（<code>127.0.0.1</code>）</td>
 </tr>
 <tr>
-<td>Login, Central, Shop</td>
-<td>Database</td>
-<td>SQLite file or PostgreSQL protocol</td>
-<td>5432 for PostgreSQL</td>
-<td>All lasting data</td>
-<td>The services only</td>
+<td>Login、Central、Shop</td>
+<td>数据库</td>
+<td>SQLite 文件或 PostgreSQL 协议</td>
+<td>PostgreSQL 为 5432</td>
+<td>所有持久数据</td>
+<td>只有这些服务</td>
 </tr>
 </tbody>
 </table></div>
-<p>During play the client holds a single network connection: the one with its map server. Chat, friends, parties and guild messages go through the map, which forwards them to Central over the map link. The client never talks to the Shop: shop windows ask the map, and the map asks the Shop.</p>
-<h3 id="the-picture-in-words"><a class="anchor" href="#the-picture-in-words" aria-hidden="true">#</a>The picture, in words</h3>
-<p>Read it from top to bottom:</p>
+<p>游戏过程中客户端只保持一条网络连接：与其地图服务器的连接。聊天、好友、队伍和公会消息都经过地图，由地图通过地图链路转发给 Central。客户端从不与 Shop 通信：商店窗口向地图请求，再由地图向 Shop 请求。</p>
+<h3 id="the-picture-in-words"><a class="anchor" href="#the-picture-in-words" aria-hidden="true">#</a>用文字描述的示意图</h3>
+<p>从上往下读：</p>
 <ol>
-<li>At the top is the <strong>client</strong>. It has two HTTPS lines going up-left to <strong>Login</strong> and <strong>Central</strong>, and one UDP line going right to its <strong>map server</strong>.</li>
-<li>In the middle row sit <strong>Login</strong>, <strong>Central</strong> and the <strong>map servers</strong>. Central and each map server are joined by a two-way UDP line, the map link, on port 7700. The map servers also have an HTTP line to the <strong>Shop</strong>, which sits next to Central.</li>
-<li>At the bottom is one <strong>database</strong>. Login, Central and the Shop each have a line down to it. The map servers have none.</li>
-<li>In production a <strong>Caddy</strong> box sits in front of Login, Central and the Shop's webhook route, turning HTTPS from the internet into plain HTTP on the private network.</li>
+<li>最上方是<strong>客户端</strong>。它有两条 HTTPS 线向左上连到 <strong>Login</strong> 和 <strong>Central</strong>，还有一条 UDP 线向右连到它的<strong>地图服务器</strong>。</li>
+<li>中间一排是 <strong>Login</strong>、<strong>Central</strong> 和各个<strong>地图服务器</strong>。Central 和每个地图服务器之间由一条双向 UDP 线相连，即端口 7700 上的地图链路。地图服务器还有一条 HTTP 线连到 <strong>Shop</strong>，Shop 位于 Central 旁边。</li>
+<li>最下方是一个<strong>数据库</strong>。Login、Central 和 Shop 各有一条线向下连到它。地图服务器没有。</li>
+<li>在生产环境中，一个 <strong>Caddy</strong> 方框位于 Login、Central 和 Shop 的 webhook 路由前面，把来自互联网的 HTTPS 转换为私有网络上的普通 HTTP。</li>
 </ol>
-<h2 id="what-each-piece-owns"><a class="anchor" href="#what-each-piece-owns" aria-hidden="true">#</a>What each piece owns</h2>
-<p>Each kind of data has one owner, so two programs never fight over it.</p>
+<h2 id="what-each-piece-owns"><a class="anchor" href="#what-each-piece-owns" aria-hidden="true">#</a>每一部分负责什么</h2>
+<p>每类数据只有一个所有者，因此两个程序永远不会争夺同一份数据。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Data</th>
-<th>Owner</th>
-<th>Notes</th>
+<th>数据</th>
+<th>所有者</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Accounts and passwords</td>
+<td>账号和密码</td>
 <td>Login</td>
-<td>Argon2id hashes. Bans are read by every service on each request</td>
+<td>Argon2id 哈希。每个服务在每次请求时都会读取封禁状态</td>
 </tr>
 <tr>
-<td>Access tokens (JWT)</td>
-<td>Login signs, Central validates</td>
-<td>Same signing keys in both. 30 minutes by default</td>
+<td>访问令牌（JWT）</td>
+<td>Login 签发，Central 校验</td>
+<td>两者使用相同的签名密钥。默认 30 分钟</td>
 </tr>
 <tr>
-<td>Characters (creation, deletion)</td>
+<td>角色（创建、删除）</td>
 <td>Login</td>
-<td>Start values come from <code>gamedata.json</code>, exported from your Game Database</td>
+<td>初始值来自 <code>gamedata.json</code>，从你的 Game Database 导出</td>
 </tr>
 <tr>
-<td>Characters (everything after creation)</td>
+<td>角色（创建之后的一切）</td>
 <td>Central</td>
-<td>Saved by the map that holds the character, through Central. A version number refuses old saves</td>
+<td>由持有该角色的地图通过 Central 保存。版本号会拒绝旧的存档</td>
 </tr>
 <tr>
-<td>Sessions and tickets</td>
-<td>Central, in memory</td>
-<td>One session per account. Lost if Central restarts, which ends every session</td>
+<td>会话和票据</td>
+<td>Central，在内存中</td>
+<td>每个账号一个会话。Central 重启时丢失，所有会话随之结束</td>
 </tr>
 <tr>
-<td>Parties</td>
-<td>Central, in memory</td>
-<td>Rebuilt by players after a Central restart</td>
+<td>队伍</td>
+<td>Central，在内存中</td>
+<td>Central 重启后由玩家重新组建</td>
 </tr>
 <tr>
-<td>Item copies changing owner</td>
-<td>Central (<code>ItemLedger</code>)</td>
-<td>Bag, bank, guild storage, letters, collectors and market lots are all rows of one table with exactly one owner</td>
+<td>更换所有者的物品副本</td>
+<td>Central（<code>ItemLedger</code>）</td>
+<td>背包、银行、公会仓库、信件、收税官和市场拍品都是同一张表中的行，每行恰好有一个所有者</td>
 </tr>
 <tr>
-<td>Item and skill catalog</td>
+<td>物品和技能目录</td>
 <td>Login</td>
-<td>Copied from <code>gamedata.json</code> at every start. Manual edits are overwritten</td>
+<td>每次启动时从 <code>gamedata.json</code> 复制。手动修改会被覆盖</td>
 </tr>
 <tr>
-<td>Live world state</td>
-<td>Map server</td>
-<td>Monsters, positions, combat, buffs, dungeon copies. Saved characters are the only part that lasts</td>
+<td>实时世界状态</td>
+<td>地图服务器</td>
+<td>怪物、位置、战斗、增益、地下城副本。只有保存的角色会持久保存</td>
 </tr>
 <tr>
-<td>Premium currency and shop buys</td>
+<td>高级货币和商店购买</td>
 <td>Shop</td>
-<td>A ledger of rows in <code>currency_ledger</code>; the balance is their sum</td>
+<td><code>currency_ledger</code> 中的一条条记录；余额是它们的总和</td>
 </tr>
 <tr>
-<td>Game log, GM audit, reports</td>
-<td>Central (and Login, Shop for their own lines)</td>
-<td>Tables <code>game_logs</code>, <code>gm_audit</code>, <code>reports</code></td>
+<td>游戏日志、GM 审计、举报</td>
+<td>Central（Login 和 Shop 负责各自的记录）</td>
+<td>表 <code>game_logs</code>、<code>gm_audit</code>、<code>reports</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>Details per table are in <a href="database.html#tables">Database</a>.</p>
-<h2 id="from-sign-in-to-playing"><a class="anchor" href="#from-sign-in-to-playing" aria-hidden="true">#</a>From sign in to playing</h2>
+<p>各表的详细信息见<a href="database.html#tables">数据库</a>。</p>
+<h2 id="from-sign-in-to-playing"><a class="anchor" href="#from-sign-in-to-playing" aria-hidden="true">#</a>从登录到开始游戏</h2>
 <ol>
-<li><strong>Sign in.</strong> The client sends the username and password to Login over HTTPS (<code>POST /api/auth/login</code>). Login checks the Argon2id hash and answers with an access token that lives <code>Auth:TokenMinutes</code> (30) and, with &quot;Remember me&quot;, a one-use remember token.</li>
-<li><strong>Pick a character.</strong> The client lists characters (<code>GET /api/characters</code>) and can create one (<code>POST /api/characters</code>). Login creates it with the class, start map, position, health, mana and start items from <code>gamedata.json</code>.</li>
-<li><strong>Ask to play.</strong> The client sends the access token and the character id to Central (<code>POST /api/play</code>). Central:
+<li><strong>登录。</strong> 客户端通过 HTTPS 把用户名和密码发给 Login（<code>POST /api/auth/login</code>）。Login 校验 Argon2id 哈希，返回一个有效期为 <code>Auth:TokenMinutes</code>（30）的访问令牌，勾选 &quot;Remember me&quot; 时还会返回一个一次性的记住令牌。</li>
+<li><strong>选择角色。</strong> 客户端列出角色（<code>GET /api/characters</code>），也可以创建角色（<code>POST /api/characters</code>）。Login 用 <code>gamedata.json</code> 中的职业、初始地图、位置、生命、法力和初始物品创建角色。</li>
+<li><strong>请求进入游戏。</strong> 客户端把访问令牌和角色 id 发给 Central（<code>POST /api/play</code>）。Central 会：
 <ul>
-<li>checks that the character belongs to the account and that the account isn't banned;</li>
-<li>if the account is already in a map, tells that map to save and drop the character, and waits up to <code>Central:KickWaitSeconds</code> (5) for the save (see <a href="#logging-in-twice">Logging in twice</a>);</li>
-<li>makes sure the character's map runs: a running map is used, a map with an executable is launched and waited for up to <code>Central:LaunchTimeoutSeconds</code> (60), and a map without one (Docker, the editor) gets 3 seconds to register;</li>
-<li>opens a session and answers with the map's address, port and a random ticket that expires after <code>Central:TicketSeconds</code> (30).</li>
+<li>检查该角色属于这个账号，并且账号没有被封禁；</li>
+<li>如果账号已经在某张地图中，通知那张地图保存并移除该角色，并最多等待 <code>Central:KickWaitSeconds</code>（5）秒等存档到达（见<a href="#logging-in-twice">重复登录</a>）；</li>
+<li>确保角色所在的地图正在运行：正在运行的地图直接使用，有可执行文件的地图会被启动并最多等待 <code>Central:LaunchTimeoutSeconds</code>（60）秒，没有可执行文件的地图（Docker、编辑器）有 3 秒时间完成注册；</li>
+<li>打开一个会话，返回地图的地址、端口和一个随机票据，票据在 <code>Central:TicketSeconds</code>（30）秒后过期。</li>
 </ul>
 </li>
-<li><strong>Join the map.</strong> The client connects to the map server with Mirror and presents the ticket, its network version and its control mode. The map server sends the ticket to Central over the map link. Central redeems it once, loads the character from the database and sends it back. The map refuses a client built from different network code (<code>version_mismatch</code>) or with another control mode (<code>mode_mismatch</code>).</li>
-<li><strong>Play.</strong> The client sends requests; the map server validates and applies them. The map saves each character every 60 seconds (<code>MapServer.saveIntervalSeconds</code>), when they leave and when they change maps. Each character has one save in flight at a time, and Central refuses a save from a map that doesn't hold the character or with an old version.</li>
-<li><strong>Change maps.</strong> When a player takes a portal, the map saves the character with its destination and sends a transfer request to Central. Central checks the session, starts the target map if needed, saves the new position and returns a ticket for the target. The client shows the loading screen and joins the new map with that ticket.</li>
-<li><strong>Leave.</strong> The map saves the character with <code>leaving</code> set and Central closes the session. If the map server stops or loses Central, every session on it ends and the players go back to the title.</li>
+<li><strong>加入地图。</strong> 客户端用 Mirror 连接地图服务器，并出示票据、网络版本和控制模式。地图服务器通过地图链路把票据发给 Central。Central 只兑现一次票据，从数据库加载角色并发回。地图会拒绝由不同网络代码构建的客户端（<code>version_mismatch</code>）或使用其他控制模式的客户端（<code>mode_mismatch</code>）。</li>
+<li><strong>游戏。</strong> 客户端发送请求；地图服务器校验并执行。地图每 60 秒（<code>MapServer.saveIntervalSeconds</code>）、在角色离开时以及切换地图时保存每个角色。每个角色同一时间只有一个存档在途，Central 会拒绝来自不持有该角色的地图的存档，或版本过旧的存档。</li>
+<li><strong>切换地图。</strong> 玩家进入传送门时，地图保存角色及其目的地，并向 Central 发送转移请求。Central 检查会话，必要时启动目标地图，保存新位置，并返回目标地图的票据。客户端显示加载画面，并用该票据加入新地图。</li>
+<li><strong>离开。</strong> 地图在设置 <code>leaving</code> 的情况下保存角色，Central 关闭会话。如果地图服务器停止或与 Central 断开，其上的所有会话都会结束，玩家回到标题画面。</li>
 </ol>
-<h2 id="logging-in-twice"><a class="anchor" href="#logging-in-twice" aria-hidden="true">#</a>Logging in twice</h2>
-<p>There is one session per account. When an account asks to play while its character is still in a map:</p>
+<h2 id="logging-in-twice"><a class="anchor" href="#logging-in-twice" aria-hidden="true">#</a>重复登录</h2>
+<p>每个账号只有一个会话。当一个账号请求进入游戏而它的角色仍在某张地图中时：</p>
 <ul>
-<li>Central sends that map a kick with the reason <code>logged_in_elsewhere</code>. The map saves the character and drops it.</li>
-<li>Central waits up to <code>Central:KickWaitSeconds</code> (5) for the save to arrive.</li>
-<li>If it arrives, Central reads the character again and hands out the new ticket.</li>
-<li>If it hasn't, <code>/api/play</code> answers HTTP 503 with <code>session_busy</code> and no ticket. The client tries again a moment later. Handing out a ticket before the save lands would load the character from before it, and anything the old session moved (gold, items) would exist twice.</li>
-<li>If the old map is gone, the session is dropped at once.</li>
+<li>Central 向那张地图发送一个原因为 <code>logged_in_elsewhere</code> 的踢出指令。地图保存角色并将其移除。</li>
+<li>Central 最多等待 <code>Central:KickWaitSeconds</code>（5）秒等存档到达。</li>
+<li>如果存档到达，Central 重新读取角色并发放新票据。</li>
+<li>如果没有到达，<code>/api/play</code> 返回 HTTP 503 和 <code>session_busy</code>，不发放票据。客户端稍后重试。如果在存档落地之前就发放票据，加载的会是存档之前的角色，旧会话转移过的任何东西（金币、物品）都会重复存在。</li>
+<li>如果旧地图已经不在，会话会立即被移除。</li>
 </ul>
-<h2 id="scaling-model"><a class="anchor" href="#scaling-model" aria-hidden="true">#</a>Scaling model</h2>
+<h2 id="scaling-model"><a class="anchor" href="#scaling-model" aria-hidden="true">#</a>扩展模型</h2>
 <ul>
-<li><strong>One process per map.</strong> Each map id runs in exactly one map server. Central refuses a second registration of the same map id while the first is connected. More players means more maps (or bigger hardware for a busy map), not copies of the same map.</li>
-<li><strong>Dungeons run inside their map server.</strong> An instanced map (<code>MapData.instanced</code>) gives each party, or each player alone, its own copy of the scene, loaded again inside the same process and moved <code>instanceSpacing</code> (1000) meters away from the others. An empty copy is unloaded after <code>emptyMinutes</code> (5). See <a href="../gameplay/dungeons.html">Dungeons</a>.</li>
-<li><strong>Map servers can run on other machines.</strong> They register with Central over the map link from anywhere Central allows (<code>Central:MapNetworks</code>). The link isn't encrypted, so other machines reach it over a private network or a WireGuard tunnel. See <a href="docker.html#adding-map-servers">Docker</a>.</li>
-<li><strong>Exactly one Central per database.</strong> Sessions, tickets, parties and the item lock live in its memory. Two Centrals on one database could hand out the same item twice.</li>
-<li><strong>Exactly one Shop per database.</strong> Buys are serialized by a lock in its process.</li>
-<li><strong>Login can run several times</strong> behind the proxy, but each copy keeps its own rate limits and failed-login counters.</li>
+<li><strong>每张地图一个进程。</strong> 每个地图 id 恰好在一个地图服务器中运行。当第一个注册者仍连接时，Central 拒绝同一地图 id 的第二次注册。玩家更多意味着更多地图（或为繁忙的地图配更强的硬件），而不是同一地图的多个副本。</li>
+<li><strong>地下城在其地图服务器内运行。</strong> 实例化地图（<code>MapData.instanced</code>）为每个队伍或每个单独的玩家提供场景的独立副本，在同一进程中再次加载，并与其他副本相隔 <code>instanceSpacing</code>（1000）米。空副本在 <code>emptyMinutes</code>（5）分钟后卸载。见<a href="../gameplay/dungeons.html">地下城</a>。</li>
+<li><strong>地图服务器可以运行在其他机器上。</strong> 它们可以从 Central 允许的任何位置（<code>Central:MapNetworks</code>）通过地图链路向 Central 注册。该链路没有加密，因此其他机器要通过私有网络或 WireGuard 隧道访问。见 <a href="docker.html#adding-map-servers">Docker</a>。</li>
+<li><strong>每个数据库恰好一个 Central。</strong> 会话、票据、队伍和物品锁都在它的内存中。同一数据库上的两个 Central 可能把同一件物品发放两次。</li>
+<li><strong>每个数据库恰好一个 Shop。</strong> 购买由其进程内的锁串行处理。</li>
+<li><strong>Login 可以在代理之后运行多个实例</strong>，但每个实例有各自的速率限制和登录失败计数。</li>
 </ul>
-<p>Targets and tuning are in <a href="performance.html">Performance</a>.</p>
-<h2 id="when-something-stops"><a class="anchor" href="#when-something-stops" aria-hidden="true">#</a>When something stops</h2>
+<p>目标和调优见<a href="performance.html">性能</a>。</p>
+<h2 id="when-something-stops"><a class="anchor" href="#when-something-stops" aria-hidden="true">#</a>当某部分停止时</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>What stops</th>
-<th>What players see</th>
-<th>What happens</th>
+<th>停止的部分</th>
+<th>玩家看到什么</th>
+<th>会发生什么</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>A map server</td>
-<td>Everyone on it is disconnected</td>
-<td>Central ends their sessions. The last save stands (at most 60 seconds old by default, newer if they traded, changed map or did something Central handles). Central launches the map again on the next player who needs it, if it has an executable</td>
+<td>一个地图服务器</td>
+<td>其上的所有人都断开连接</td>
+<td>Central 结束他们的会话。最后一次存档有效（默认最多 60 秒前，如果他们交易过、切换过地图或做过 Central 处理的事情则更新）。如果该地图有可执行文件，Central 会在下一个需要它的玩家到来时再次启动它</td>
 </tr>
 <tr>
 <td>Central</td>
-<td>Players stay on their map, but nobody new can get a ticket, and map changes, saves, chat between maps, mail, guilds and the market fail</td>
-<td>Maps retry the link every 3 seconds (<code>CentralLink.retrySeconds</code>). GM commands of level 2 or more don't run while Central can't record them. Game log lines wait in the map (up to 5,000). Sessions and parties live in Central's memory, so after a restart Central refuses the saves of players who were already on a map until they sign in again. Restart Central only with players out</td>
+<td>玩家留在自己的地图上，但没有新玩家能获得票据，切换地图、存档、跨地图聊天、邮件、公会和市场都会失败</td>
+<td>地图每 3 秒重试一次链路（<code>CentralLink.retrySeconds</code>）。当 Central 无法记录时，2 级及以上的 GM 命令不会执行。游戏日志记录在地图中等待（最多 5,000 条）。会话和队伍保存在 Central 的内存中，所以重启后，Central 会拒绝已经在地图上的玩家的存档，直到他们重新登录。只在玩家都离线时重启 Central</td>
 </tr>
 <tr>
 <td>Login</td>
-<td>Nobody can sign in or create characters</td>
-<td>Players already in a map keep playing</td>
+<td>没有人能登录或创建角色</td>
+<td>已经在地图中的玩家继续游戏</td>
 </tr>
 <tr>
 <td>Shop</td>
-<td>The shop window says it can't reach the service</td>
-<td>Everything else keeps working</td>
+<td>商店窗口提示无法连接服务</td>
+<td>其他一切照常运行</td>
 </tr>
 <tr>
-<td>Database</td>
-<td>Services answer errors</td>
-<td>Map servers keep the world running but saves fail until it is back</td>
+<td>数据库</td>
+<td>服务返回错误</td>
+<td>地图服务器继续运行世界，但在数据库恢复之前存档会失败</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="single-player"><a class="anchor" href="#single-player" aria-hidden="true">#</a>Single player</h2>
-<p>A single player game uses the same map code with none of the services:</p>
+<h2 id="single-player"><a class="anchor" href="#single-player" aria-hidden="true">#</a>单人模式</h2>
+<p>单人模式游戏使用同样的地图代码，但不使用任何服务：</p>
 <ul>
-<li>The client starts a Mirror host for the map (<code>MapServer.Host</code>) that takes no outside connections.</li>
-<li>The <code>KitARPG.Local</code> assembly replaces Login and Central with a local backend that saves to a SQLite file in the player's persistent data folder (<code>KitSettings.saveFile</code>, <code>savegame.db</code> by default).</li>
-<li>Each map change restarts the host with the new map, using the same ticket and transfer flow as the MMO.</li>
-<li>There is no shop, no mail between players, no guilds across players and no market.</li>
+<li>客户端为地图启动一个不接受外部连接的 Mirror 主机（<code>MapServer.Host</code>）。</li>
+<li><code>KitARPG.Local</code> 程序集用一个本地后端取代 Login 和 Central，保存到玩家持久数据文件夹中的 SQLite 文件（<code>KitSettings.saveFile</code>，默认为 <code>savegame.db</code>）。</li>
+<li>每次切换地图都会用新地图重启主机，使用与 MMO 相同的票据和转移流程。</li>
+<li>没有商店、没有玩家之间的邮件、没有跨玩家的公会，也没有市场。</li>
 </ul>
-<p>The mode is chosen in <strong>KitARPG &gt; Play and Servers</strong> and stored in <code>Assets/Settings/Resources/KitARPGSettings.asset</code>. See <a href="../editor/play-and-servers.html">Play &amp; Servers</a>.</p>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<p>模式在 <strong>KitARPG &gt; Play and Servers</strong> 中选择，并保存在 <code>Assets/Settings/Resources/KitARPGSettings.asset</code> 中。见 <a href="../editor/play-and-servers.html">Play &amp; Servers</a>。</p>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="services.html">Services</a>: every endpoint and what Login, Central and the Shop do.</li>
-<li><a href="configuration.html">Configuration</a>: every setting and environment variable.</li>
-<li><a href="security.html">Security</a>: the rules that keep this design safe.</li>
-<li><a href="../start/quick-start-mmo.html">Quick start: MMO</a>: run all of it on your computer.</li>
+<li><a href="services.html">服务</a>：每个端点，以及 Login、Central 和 Shop 做什么。</li>
+<li><a href="configuration.html">配置</a>：每项设置和环境变量。</li>
+<li><a href="security.html">安全</a>：保证这套设计安全的规则。</li>
+<li><a href="../start/quick-start-mmo.html">快速开始：MMO</a>：在你的电脑上运行全部内容。</li>
 </ul>
-<nav class="pager"><a class="prev" href="../gameplay/player-settings.html"><span>上一页</span>Player settings</a><a class="next" href="services.html"><span>下一页</span>Services</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Farchitecture.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#the-pieces">The pieces</a></li><li class="l2"><a href="#how-they-talk">How they talk</a></li><li class="l3"><a href="#the-picture-in-words">The picture, in words</a></li><li class="l2"><a href="#what-each-piece-owns">What each piece owns</a></li><li class="l2"><a href="#from-sign-in-to-playing">From sign in to playing</a></li><li class="l2"><a href="#logging-in-twice">Logging in twice</a></li><li class="l2"><a href="#scaling-model">Scaling model</a></li><li class="l2"><a href="#when-something-stops">When something stops</a></li><li class="l2"><a href="#single-player">Single player</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="../gameplay/player-settings.html"><span>上一页</span>玩家设置</a><a class="next" href="services.html"><span>下一页</span>服务</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Farchitecture.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#the-pieces">组成部分</a></li><li class="l2"><a href="#how-they-talk">它们如何通信</a></li><li class="l3"><a href="#the-picture-in-words">用文字描述的示意图</a></li><li class="l2"><a href="#what-each-piece-owns">每一部分负责什么</a></li><li class="l2"><a href="#from-sign-in-to-playing">从登录到开始游戏</a></li><li class="l2"><a href="#logging-in-twice">重复登录</a></li><li class="l2"><a href="#scaling-model">扩展模型</a></li><li class="l2"><a href="#when-something-stops">当某部分停止时</a></li><li class="l2"><a href="#single-player">单人模式</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

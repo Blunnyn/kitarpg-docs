@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Extensiones del editor · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/editor-extensions.html">English</option><option value="editor-extensions.html" selected>Español</option><option value="../../pt/devkit/editor-extensions.html">Português</option><option value="../../zh/devkit/editor-extensions.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html">Efectos de skills</a></li><li><a href="item-effects.html">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html" class="on" aria-current="page">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html">Hablar con Central</a></li><li><a href="service-modules.html">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Extensiones del editor</h1><p>Cómo agregar tus propias páginas a la ventana KitARPG, tus propias revisiones a Project Check y a la revisión antes de las builds, y cómo usar el aspecto del editor del kit en tus herramientas.</p>
+<p><strong>Dónde van los archivos:</strong> el ensamblado <code>Game.Editor</code> (consulta <a href="assemblies.html">Ensamblados</a>). Todo lo de esta página usa <code>KitARPG.Editor</code> y <code>UnityEditor</code>, que nunca entran en una build.</p>
+<h2 id="pages-in-the-kitarpg-window"><a class="anchor" href="#pages-in-the-kitarpg-window" aria-hidden="true">#</a>Páginas en la ventana KitARPG</h2>
+<p>La ventana KitARPG (<strong>KitARPG &gt; Open KitARPG</strong>, <code>Ctrl/Cmd+Shift+K</code>) tiene una barra lateral de páginas: Overview, Play &amp; Servers, Game Database, Game Settings, Shop, Modules y Project Check. Cada subclase no abstracta de <code>KitPage</code> con un constructor sin parámetros la encuentra el <code>TypeCache</code> de Unity y se agrega a la barra lateral. No hay nada que registrar.</p>
+<h3 id="kitpage"><a class="anchor" href="#kitpage" aria-hidden="true">#</a>KitPage</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué hace</th>
+<th>Por defecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abstract string Name</code></td>
+<td>El nombre de la página en la barra lateral.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtual string Group</code></td>
+<td>El encabezado de la barra lateral bajo el que va. El kit usa <code>&quot;&quot;</code> (arriba), <code>&quot;Game&quot;</code> y <code>&quot;Project&quot;</code>, en ese orden; los demás nombres van después.</td>
+<td><code>&quot;Game&quot;</code></td>
+</tr>
+<tr>
+<td><code>virtual int Order</code></td>
+<td>Orden dentro del grupo, los menores primero. Luego por nombre.</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>virtual string IconName</code></td>
+<td>El nombre de un ícono integrado del editor, como <code>&quot;Settings&quot;</code> o <code>&quot;d_Favorite&quot;</code>.</td>
+<td><code>&quot;ScriptableObject Icon&quot;</code></td>
+</tr>
+<tr>
+<td><code>virtual string Badge</code></td>
+<td>Texto corto junto al nombre, como una cantidad de problemas. Null no muestra nada.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>virtual KitGUI.State BadgeState</code></td>
+<td>El color de la insignia.</td>
+<td><code>Off</code></td>
+</tr>
+<tr>
+<td><code>virtual bool FullWidth</code></td>
+<td>True le da a la página toda el área en lugar de una columna centrada con desplazamiento, para páginas con columnas propias.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>virtual void OnEnable()</code>, <code>OnDisable()</code></td>
+<td>Cuando la página se muestra y se oculta.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtual void Tick()</code></td>
+<td>Unas diez veces por segundo mientras la ventana está abierta, para consultar cambios.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>abstract void OnGUI()</code></td>
+<td>Dibuja la página, con IMGUI.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>KitWindow Window</code></td>
+<td>La ventana.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Rect Area</code></td>
+<td>El área en la que dibuja la página.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>void Repaint()</code></td>
+<td>Le pide a la ventana que se vuelva a dibujar.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Las páginas del kit usan estos órdenes: Overview 0 y Play &amp; Servers 1 (grupo <code>&quot;&quot;</code>); Game Database 10, Game Settings 20, Shop 25, Modules 30 (grupo <code>&quot;Game&quot;</code>); Project Check 10 (grupo <code>&quot;Project&quot;</code>).</p>
+<p><code>KitWindow.Show&lt;T&gt;()</code> abre la ventana en una página: <code>KitWindow.Show&lt;GameDatabaseWindow&gt;()</code>, <code>KitWindow.Show&lt;MyGamePage&gt;()</code>.</p>
+<h3 id="example-a-page-for-your-content"><a class="anchor" href="#example-a-page-for-your-content" aria-hidden="true">#</a>Ejemplo: una página para tu contenido</h3>
+<p>Lista cada tablero de recompensas del proyecto, con un botón para seleccionar cada uno y una insignia de advertencia cuando alguno está vacío. El tipo del tablero vive en el ensamblado <code>Game.Bounties</code> del ejemplo, así que el ensamblado de editor que contiene esta página lo referencia.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Game.Bounties</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyBoardsPage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitPage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">BountyBoardData</span><span class="p">[]</span><span class="w"> </span><span class="n">boards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyBoardData</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Bounty Boards&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Order</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">IconName</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;d_Favorite&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">Empty</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">boards</span><span class="p">.</span><span class="n">Count</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Badge</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Empty</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Empty</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="n">BadgeState</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">Warning</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnEnable</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Load</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Load</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">boards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">FindAssets</span><span class="p">(</span><span class="s">&quot;t:BountyBoardData&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">g</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">LoadAssetAtPath</span><span class="o">&lt;</span><span class="n">BountyBoardData</span><span class="o">&gt;</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GUIDToAssetPath</span><span class="p">(</span><span class="n">g</span><span class="p">)))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnGUI</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Header</span><span class="p">(</span><span class="s">&quot;Bounty Boards&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Every board asset in the project and its hunts.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">boards</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Empty</span><span class="p">(</span><span class="s">&quot;No boards yet&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Create one with Create &gt; KitARPG &gt; DevKit Example &gt; Bounty Board.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">BountyBoardData</span><span class="w"> </span><span class="n">board</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">boards</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">Warning</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">Done</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">string</span><span class="w"> </span><span class="n">detail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;No hunts&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;{board.bounties.Length} hunts&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Status</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">detail</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Select&quot;</span><span class="p">))</span><span class="w"> </span><span class="n">Selection</span><span class="p">.</span><span class="n">activeObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Line</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Secondary</span><span class="p">(</span><span class="s">&quot;Refresh&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">))</span><span class="w"> </span><span class="n">Load</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="the-kit-s-editor-look"><a class="anchor" href="#the-kit-s-editor-look" aria-hidden="true">#</a>El aspecto del editor del kit</h2>
+<p><code>KitGUI</code> (namespace <code>Blunnyn.KitARPG.Editor</code>) dibuja las tarjetas, los encabezados, las filas de estado y los botones de las ventanas del kit, con IMGUI simple, para que tus páginas combinen.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué dibuja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Header(text, sub, icon)</code></td>
+<td>Un título de página con una línea debajo.</td>
+</tr>
+<tr>
+<td><code>BeginCard(heading, sub, stripe)</code> / <code>EndCard()</code>, o <code>using (new KitGUI.CardScope(heading))</code></td>
+<td>Una tarjeta con esquinas redondeadas.</td>
+</tr>
+<tr>
+<td><code>Status(state, heading, detail, button, primaryButton)</code></td>
+<td>Una fila de lista de tareas con una luz de color y un botón opcional; devuelve true cuando se presiona.</td>
+</tr>
+<tr>
+<td><code>Primary(text, width, height)</code>, <code>Secondary(...)</code></td>
+<td>Botones; devuelven true cuando se presionan.</td>
+</tr>
+<tr>
+<td><code>Segmented(value, options, height)</code></td>
+<td>Un control segmentado; devuelve el índice elegido.</td>
+</tr>
+<tr>
+<td><code>Switch(rect, on)</code></td>
+<td>Un interruptor de encendido y apagado.</td>
+</tr>
+<tr>
+<td><code>Pill(text, color)</code></td>
+<td>Una etiqueta pequeña de color.</td>
+</tr>
+<tr>
+<td><code>Tile(rect, value, caption, state)</code></td>
+<td>Un número con una leyenda.</td>
+</tr>
+<tr>
+<td><code>Empty(heading, detail)</code></td>
+<td>Un marcador para listas vacías.</td>
+</tr>
+<tr>
+<td><code>Message(text, state)</code></td>
+<td>Una línea de mensaje de color.</td>
+</tr>
+<tr>
+<td><code>Line(space)</code></td>
+<td>Un separador.</td>
+</tr>
+<tr>
+<td><code>Icon(name)</code></td>
+<td>Un ícono integrado del editor.</td>
+</tr>
+<tr>
+<td><code>Accent</code>, <code>Good</code>, <code>Warn</code>, <code>Bad</code>, <code>Of(state)</code></td>
+<td>La paleta, para los temas claro y oscuro del editor.</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>KitGUI.State</code> es <code>Done</code>, <code>Todo</code>, <code>Warning</code>, <code>Error</code>, <code>Off</code> y <code>Busy</code> (una luz que late).</p>
+<h3 id="inspectors-for-your-data"><a class="anchor" href="#inspectors-for-your-data" aria-hidden="true">#</a>Inspectores para tus datos</h3>
+<p>El inspector del kit para los datos del juego (<code>GameDataEditor</code>) dibuja cada asset <code>GameData</code> como tarjetas separadas por sus atributos <code>[Header]</code>, y también se aplica a las subclases. Un tipo <code>GameData</code> tuyo recibe el mismo aspecto sin un editor propio. Usa <code>[Header]</code>, <code>[Tooltip]</code> y <code>[Range]</code> en tus campos y se leerá como los datos del propio kit.</p>
+<h2 id="project-checks"><a class="anchor" href="#project-checks" aria-hidden="true">#</a>Revisiones del proyecto</h2>
+<p><strong>KitARPG &gt; Project Check</strong> (la página Project Check) corre cada revisión de <code>ProjectValidator.Checks</code> y lista lo que encuentran como errores, advertencias y notas, cada uno con un botón para seleccionar aquello a lo que se refiere y, cuando lo hay, un botón para arreglarlo. La misma lista corre antes de cada build, sin abrir escenas, y detiene la build cuando hay errores (<code>BuildCheck</code>, que se puede apagar en la página Project Check).</p>
+<h3 id="projectvalidator"><a class="anchor" href="#projectvalidator" aria-hidden="true">#</a>ProjectValidator</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static List&lt;Action&lt;List&lt;ValidationIssue&gt;&gt;&gt; Checks</code></td>
+<td>Cada revisión, en orden. Cada una agrega lo que encuentra a la lista que recibe. Agrega las tuyas.</td>
+</tr>
+<tr>
+<td><code>static List&lt;ValidationIssue&gt; Run(bool scenes = true)</code></td>
+<td>Las corre todas. Con <code>scenes</code> en false, se saltan las revisiones que abren escenas, como antes de las builds.</td>
+</tr>
+<tr>
+<td><code>static bool IncludeScenes</code></td>
+<td>Si la ejecución en curso abre escenas. Léelo en una revisión que abriría escenas.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="validationissue"><a class="anchor" href="#validationissue" aria-hidden="true">#</a>ValidationIssue</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IssueLevel level</code></td>
+<td><code>Error</code> (detiene las builds), <code>Warning</code> o <code>Info</code>.</td>
+</tr>
+<tr>
+<td><code>string area</code></td>
+<td>Un nombre de grupo corto, como &quot;My game&quot;.</td>
+</tr>
+<tr>
+<td><code>string message</code></td>
+<td>Una línea que dice qué está mal.</td>
+</tr>
+<tr>
+<td><code>Object context</code></td>
+<td>El asset u objeto al que se refiere; el botón Select lo señala.</td>
+</tr>
+<tr>
+<td><code>string fixLabel</code></td>
+<td>El texto del botón de arreglo.</td>
+</tr>
+<tr>
+<td><code>Action fix</code></td>
+<td>Qué hace el botón de arreglo. Null no muestra botón.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="registering-a-check"><a class="anchor" href="#registering-a-check" aria-hidden="true">#</a>Registrar una revisión</h3>
+<p><code>ProjectValidator.Checks</code> es una lista estática que vive lo mismo que el dominio del editor. Registra desde <code>[InitializeOnLoadMethod]</code>, que corre después de cada recarga de scripts, y quita antes de agregar para que una revisión nunca corra dos veces:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[InitializeOnLoadMethod]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-bounty-boards-with-empty-rewards-with-a-fix"><a class="anchor" href="#example-bounty-boards-with-empty-rewards-with-a-fix" aria-hidden="true">#</a>Ejemplo: tablones de recompensas con recompensas vacías, con arreglo</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Game.Bounties</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyChecks</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[InitializeOnLoadMethod]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">            </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ValidationIssue</span><span class="o">&gt;</span><span class="w"> </span><span class="n">issues</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">guid</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">FindAssets</span><span class="p">(</span><span class="s">&quot;t:BountyBoardData&quot;</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">var</span><span class="w"> </span><span class="n">board</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">LoadAssetAtPath</span><span class="o">&lt;</span><span class="n">BountyBoardData</span><span class="o">&gt;</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GUIDToAssetPath</span><span class="p">(</span><span class="n">guid</span><span class="p">));</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">board</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">bounty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="p">.</span><span class="n">monster</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">                        </span><span class="n">issues</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ValidationIssue</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IssueLevel</span><span class="p">.</span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bounties&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;{board.name}: hunt {i + 1} has no monster.&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="p">});</span>
+<span class="w">                    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="p">.</span><span class="n">rewards</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bounty</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">issues</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ValidationIssue</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IssueLevel</span><span class="p">.</span><span class="n">Warning</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bounties&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;{board.name}: hunting {bounty.monster.DisplayName} pays nothing.&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">fixLabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Add 100 gold&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">fix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="n">Undo</span><span class="p">.</span><span class="n">RecordObject</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Add bounty reward&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="n">b</span><span class="p">.</span><span class="n">rewards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameAction</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GiveCurrencyAction</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="w">                                </span><span class="n">EditorUtility</span><span class="p">.</span><span class="n">SetDirty</span><span class="p">(</span><span class="n">board</span><span class="p">);</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">});</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="guidelines-for-checks"><a class="anchor" href="#guidelines-for-checks" aria-hidden="true">#</a>Pautas para las revisiones</h3>
+<ul>
+<li><strong>Los errores detienen las builds.</strong> Usa <code>Error</code> solo para lo que va a fallar en el juego. Usa <code>Warning</code> para errores probables e <code>Info</code> para sugerencias.</li>
+<li><strong>Sé rápido.</strong> Las revisiones corren antes de cada build. Evita abrir escenas salvo que <code>ProjectValidator.IncludeScenes</code> sea true.</li>
+<li><strong>Señala el asset.</strong> Pon <code>context</code> para que funcione el botón Select.</li>
+<li><strong>Los arreglos son seguros.</strong> Un arreglo solo debe agregar lo que falta o corregir una cosa clara, con <code>Undo</code> y <code>SetDirty</code>.</li>
+</ul>
+<h2 id="finding-the-game-s-settings-and-database"><a class="anchor" href="#finding-the-game-s-settings-and-database" aria-hidden="true">#</a>Encontrar los ajustes y la base de datos del juego</h2>
+<p><code>ModulesWindow.Find()</code> devuelve el <code>GameInstance</code> del proyecto (el del prefab <code>KitNetwork</code>), guardado en caché por unos segundos. Su campo <code>database</code> es el <code>GameDatabase</code>:</p>
+<pre class="code"><code class="language-csharp"><span class="n">GameInstance</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">();</span>
+<span class="n">GameDatabase</span><span class="w"> </span><span class="n">database</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">game</span><span class="p">.</span><span class="n">database</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</code></pre>
+<p><code>GameDatabase.All&lt;T&gt;()</code> lista todos los assets de un tipo y <code>TryGet&lt;T&gt;(id, out T)</code> encuentra uno por su id.</p>
+<h2 id="menu-items"><a class="anchor" href="#menu-items" aria-hidden="true">#</a>Elementos de menú</h2>
+<p>Los <code>[MenuItem]</code> comunes de Unity funcionan como siempre. Para poner los tuyos junto a los del kit, usa la raíz <code>KitARPG/</code>, como hace el ejemplo con <strong>KitARPG &gt; DevKit &gt; Add Bounty Board to the Open Scene</strong>:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[MenuItem(&quot;KitARPG/My Game/Rebuild Recipes&quot;, priority = 200)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Rebuild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+</code></pre>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
+<ul>
+<li><strong>Código de editor en <code>Game</code>.</strong> Referencia <code>UnityEditor</code> y la build falla. Usa <code>Game.Editor</code>.</li>
+<li><strong>Registrar una revisión sin quitarla antes.</strong> Corre una vez más después de cada recarga de scripts.</li>
+<li><strong><code>Tick</code> u <code>OnGUI</code> lentos.</strong> Corren seguido; guarda en caché lo que cargas, como hace la página de arriba en <code>OnEnable</code>.</li>
+<li><strong>Una página sin constructor sin parámetros.</strong> No se encuentra.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="../editor/kitarpg-window.html">Ventana KitARPG</a></li>
+<li><a href="../editor/project-check.html">Project Check</a></li>
+<li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li>
+<li><a href="assemblies.html">Ensamblados</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="menus-and-settings-options.html"><span>Anterior</span>Opciones de menús y ajustes</a><a class="next" href="kit-updates-in-code.html"><span>Siguiente</span>Actualizaciones del kit en código</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Feditor-extensions.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#pages-in-the-kitarpg-window">Páginas en la ventana KitARPG</a></li><li class="l3"><a href="#kitpage">KitPage</a></li><li class="l3"><a href="#example-a-page-for-your-content">Ejemplo: una página para tu contenido</a></li><li class="l2"><a href="#the-kit-s-editor-look">El aspecto del editor del kit</a></li><li class="l3"><a href="#inspectors-for-your-data">Inspectores para tus datos</a></li><li class="l2"><a href="#project-checks">Revisiones del proyecto</a></li><li class="l3"><a href="#projectvalidator">ProjectValidator</a></li><li class="l3"><a href="#validationissue">ValidationIssue</a></li><li class="l3"><a href="#registering-a-check">Registrar una revisión</a></li><li class="l3"><a href="#example-bounty-boards-with-empty-rewards-with-a-fix">Ejemplo: tablones de recompensas con recompensas vacías, con arreglo</a></li><li class="l3"><a href="#guidelines-for-checks">Pautas para las revisiones</a></li><li class="l2"><a href="#finding-the-game-s-settings-and-database">Encontrar los ajustes y la base de datos del juego</a></li><li class="l2"><a href="#menu-items">Elementos de menú</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

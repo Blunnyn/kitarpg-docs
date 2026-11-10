@@ -1,295 +1,295 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Inventory and bank · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>背包与银行 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/inventory-and-bank.html">English</option><option value="../../es/gameplay/inventory-and-bank.html">Español</option><option value="../../pt/gameplay/inventory-and-bank.html">Português</option><option value="inventory-and-bank.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html" class="on" aria-current="page">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">游戏系统</div><h1>Inventory and bank</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>How the bag, the worn gear, money, loot pickup and the account bank work for the player, every setting that changes them, the limits the server enforces and how they differ between single player and MMO.</p>
-<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>What it is</h2>
-<p>Every character has a <strong>bag</strong>, a set of <strong>equipment positions</strong> and a <strong>purse</strong> of gold and other currencies. The account also has a <strong>bank</strong>: slots and gold that every character of the account shares, opened at a banker NPC.</p>
-<p>The server owns all of it. The client only sends requests (move, wear, use, split, store) and the server answers with the new slots or an error code. Only the owner receives the contents of the bag and bank; other players see only the worn gear, through the character's appearance.</p>
-<p>The rules live in one shared class, <code>Inventory</code> (<code>Runtime/Shared/Items/Inventory.cs</code>), used by the map server, the single player host and the services alike. On the player prefab the network side is <code>PlayerInventory</code> (bag, gear, money) and <code>PlayerBank</code> (bank).</p>
-<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
-<p>All bag, loot and bank settings are on the <code>GameInstance</code> component of the <code>KitNetwork</code> prefab. Edit them in <strong>KitARPG &gt; Game Settings</strong> (or the Game Settings page of the KitARPG window, <code>Ctrl/Cmd+Shift+K</code>).</p>
-<h3 id="bag"><a class="anchor" href="#bag" aria-hidden="true">#</a>Bag</h3>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">操作模式</a></li><li><a href="touch-controls.html">触控操作</a></li><li><a href="combat.html">战斗</a></li><li><a href="recovery-and-death.html">恢复与死亡</a></li><li><a href="inventory-and-bank.html" class="on" aria-current="page">背包与银行</a></li><li><a href="trade.html">交易</a></li><li><a href="forge.html">锻造</a></li><li><a href="market.html">市场</a></li><li><a href="mail.html">邮件</a></li><li><a href="chat.html">聊天</a></li><li><a href="friends-and-parties.html">好友与队伍</a></li><li><a href="guilds.html">公会</a></li><li><a href="tax-collectors.html">收税官</a></li><li><a href="pvp-and-duels.html">PvP 与决斗</a></li><li><a href="dungeons.html">地下城</a></li><li><a href="day-and-night.html">昼夜</a></li><li><a href="bestiary.html">怪物图鉴</a></li><li><a href="cash-shop.html">商城</a></li><li><a href="gm-tools.html">GM 工具</a></li><li><a href="game-log-and-reports.html">游戏日志与举报</a></li><li><a href="hud-and-windows.html">HUD 与窗口</a></li><li><a href="player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏系统</div><h1>背包与银行</h1><p>本页介绍背包、身上的装备、货币、拾取掉落和账号银行对玩家来说如何运作，改变它们的每项设置，服务器强制执行的限制，以及单人模式和 MMO 之间的区别。</p>
+<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>是什么</h2>
+<p>每个角色都有一个<strong>背包</strong>、一组<strong>装备栏位</strong>和一个装着金币及其他货币的<strong>钱包</strong>。账号还有一个<strong>银行</strong>：账号下所有角色共享的格子和金币，在银行家 NPC 处打开。</p>
+<p>这一切都归服务器所有。客户端只发送请求（移动、穿戴、使用、拆分、存入），服务器用新的格子内容或错误代码回应。只有所有者会收到背包和银行的内容；其他玩家只能通过角色的外观看到身上的装备。</p>
+<p>规则位于一个共享类 <code>Inventory</code>（<code>Runtime/Shared/Items/Inventory.cs</code>）中，地图服务器、单人模式主机和各项服务都使用它。在玩家预制体上，网络部分是 <code>PlayerInventory</code>（背包、装备、货币）和 <code>PlayerBank</code>（银行）。</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>设置</h2>
+<p>所有背包、掉落和银行设置都在 <code>KitNetwork</code> 预制体的 <code>GameInstance</code> 组件上。在 <strong>KitARPG &gt; Game Settings</strong>（或 KitARPG 窗口的 Game Settings 页面，<code>Ctrl/Cmd+Shift+K</code>）中编辑。</p>
+<h3 id="bag"><a class="anchor" href="#bag" aria-hidden="true">#</a>背包</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Bag Mode</em> (<code>bagMode</code>)</td>
-<td><code>Slots</code>: a fixed number of slots. <code>Weight</code>: anything fits up to a weight limit.</td>
+<td><em>Bag Mode</em>（<code>bagMode</code>）</td>
+<td><code>Slots</code>：固定数量的格子。<code>Weight</code>：在负重上限内什么都能放。</td>
 <td><code>Slots</code></td>
 </tr>
 <tr>
-<td><em>Bag Slots</em> (<code>bagSlots</code>)</td>
-<td>Slots in a bag in <code>Slots</code> mode.</td>
+<td><em>Bag Slots</em>（<code>bagSlots</code>）</td>
+<td><code>Slots</code> 模式下背包的格子数。</td>
 <td>40</td>
 </tr>
 <tr>
-<td><em>Weight Mode Slots</em> (<code>weightModeSlots</code>)</td>
-<td>In <code>Weight</code> mode, how many different stacks a bag can hold, so it can't grow forever.</td>
+<td><em>Weight Mode Slots</em>（<code>weightModeSlots</code>）</td>
+<td><code>Weight</code> 模式下，背包能容纳多少个不同的堆叠，以免无限增长。</td>
 <td>200</td>
 </tr>
 <tr>
-<td><em>Carry Weight</em> (<code>carryWeight</code>)</td>
-<td>In <code>Weight</code> mode, what anyone can carry. Gear and attributes add their carry weight stat on top.</td>
+<td><em>Carry Weight</em>（<code>carryWeight</code>）</td>
+<td><code>Weight</code> 模式下，每个人都能背负的重量。装备和属性会额外加上它们的负重数值。</td>
 <td>1,000</td>
 </tr>
 <tr>
-<td><em>Bank Slots</em> (<code>bankSlots</code>)</td>
-<td>Slots in the account bank. The bank has no weight limit.</td>
+<td><em>Bank Slots</em>（<code>bankSlots</code>）</td>
+<td>账号银行的格子数。银行没有负重限制。</td>
 <td>80</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="loot"><a class="anchor" href="#loot" aria-hidden="true">#</a>Loot</h3>
+<h3 id="loot"><a class="anchor" href="#loot" aria-hidden="true">#</a>掉落</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Loot Mode</em> (<code>lootMode</code>)</td>
-<td><code>Ground</code>: each item falls next to the monster. <code>Corpse</code>: items stay in the body and clicking it opens a loot window. <code>Automatic</code>: items go straight to the bag, and what doesn't fit falls on the ground.</td>
+<td><em>Loot Mode</em>（<code>lootMode</code>）</td>
+<td><code>Ground</code>：每个物品落在怪物旁边。<code>Corpse</code>：物品留在尸体中，点击尸体打开拾取窗口。<code>Automatic</code>：物品直接进入背包，放不下的落在地上。</td>
 <td><code>Ground</code></td>
 </tr>
 <tr>
-<td><em>Auto Gold</em> (<code>autoGold</code>)</td>
-<td>Gold goes straight to the player. Off: it drops like the items, on the ground or in the body.</td>
-<td>On</td>
+<td><em>Auto Gold</em>（<code>autoGold</code>）</td>
+<td>金币直接给玩家。关闭：金币像物品一样掉落，在地上或尸体中。</td>
+<td>开启</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="interface-and-economy"><a class="anchor" href="#interface-and-economy" aria-hidden="true">#</a>Interface and economy</h3>
+<h3 id="interface-and-economy"><a class="anchor" href="#interface-and-economy" aria-hidden="true">#</a>界面与经济</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Item Details On Hover</em> (<code>itemDetailsOnHover</code>)</td>
-<td>On: pointing at an item shows its card. Off: click an item to pin its card beside it.</td>
-<td>Off</td>
+<td><em>Item Details On Hover</em>（<code>itemDetailsOnHover</code>）</td>
+<td>开启：指向物品时显示它的卡片。关闭：点击物品，把它的卡片固定在旁边。</td>
+<td>关闭</td>
 </tr>
 <tr>
-<td><em>Players Sell To Npcs</em> (<code>playersSellToNpcs</code>)</td>
-<td>Shops buy what players bring. Off, nothing is sold to NPCs. See <a href="../content/npc-shops.html">NPC shops</a>.</td>
-<td>Off</td>
+<td><em>Players Sell To Npcs</em>（<code>playersSellToNpcs</code>）</td>
+<td>商店收购玩家带来的东西。关闭时，不能向 NPC 出售任何东西。见 <a href="../content/npc-shops.html">NPC 商店</a>。</td>
+<td>关闭</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="modules"><a class="anchor" href="#modules" aria-hidden="true">#</a>Modules</h3>
-<p>The bank is the <strong>Bank</strong> module. Turn it off in <strong>KitARPG &gt; Modules</strong> and the banker option disappears from NPCs and the server refuses to open the bank. The bag itself is not a module; it is always there.</p>
-<h3 id="on-the-player-prefab"><a class="anchor" href="#on-the-player-prefab" aria-hidden="true">#</a>On the player prefab</h3>
+<h3 id="modules"><a class="anchor" href="#modules" aria-hidden="true">#</a>模块</h3>
+<p>银行是 <strong>Bank</strong> 模块。在 <strong>KitARPG &gt; Modules</strong> 中关闭它后，银行家选项会从 NPC 上消失，服务器也会拒绝打开银行。背包本身不是模块，它始终存在。</p>
+<h3 id="on-the-player-prefab"><a class="anchor" href="#on-the-player-prefab" aria-hidden="true">#</a>在玩家预制体上</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Component and field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>组件与字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>PlayerInventory.maxRequestsPerSecond</code></td>
-<td>Bag requests per second before the extra ones are ignored.</td>
+<td>每秒的背包请求数上限，超出的请求会被忽略。</td>
 <td>15</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="on-the-map-server"><a class="anchor" href="#on-the-map-server" aria-hidden="true">#</a>On the map server</h3>
-<p>The <code>Rewards</code> component (on the map server object) decides how long loot stays and how close the player must be.</p>
+<h3 id="on-the-map-server"><a class="anchor" href="#on-the-map-server" aria-hidden="true">#</a>在地图服务器上</h3>
+<p><code>Rewards</code> 组件（在地图服务器对象上）决定掉落物保留多久以及玩家必须离多近。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>dropLifetime</code></td>
-<td>Seconds a drop stays before it disappears.</td>
+<td>掉落物消失前保留的秒数。</td>
 <td>90</td>
 </tr>
 <tr>
 <td><code>pickupRange</code></td>
-<td>Meters from the drop to pick it up.</td>
+<td>距离掉落物多少米以内可以拾取。</td>
 <td>2</td>
 </tr>
 <tr>
 <td><code>scatter</code></td>
-<td>Ground drops land within this many meters of the monster.</td>
+<td>地面掉落物落在距离怪物这么多米以内。</td>
 <td>1.2</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="the-inventory-window"><a class="anchor" href="#the-inventory-window" aria-hidden="true">#</a>The inventory window</h2>
-<p>Press <code>I</code> to open or close the inventory. <code>Esc</code> first puts away a pinned item card, then closes the window. The HUD has a bag button that does the same.</p>
-<p>The window has two parts.</p>
-<p><strong>The character.</strong> A live portrait of the character in its gear, with its name, level and class, surrounded by the equipment positions:</p>
+<h2 id="the-inventory-window"><a class="anchor" href="#the-inventory-window" aria-hidden="true">#</a>背包窗口</h2><figure class="shot"><a href="../../assets/img/game/inventory.png" target="_blank"><img src="../../assets/img/game/inventory.png" alt="背包窗口。" loading="lazy"></a><figcaption>背包窗口。</figcaption></figure>
+<p>按 <code>I</code> 打开或关闭背包。<code>Esc</code> 先收起固定的物品卡片，再关闭窗口。HUD 上有一个背包按钮，作用相同。</p>
+<p>窗口分为两部分。</p>
+<p><strong>角色。</strong> 角色穿着装备的实时肖像，带有名字、等级和职业，周围是装备栏位：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Position</th>
-<th>Holds</th>
+<th>栏位</th>
+<th>存放</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Head, Chest, Hands, Legs, Feet, Back</td>
-<td>Armour pieces for each body region.</td>
+<td>Head、Chest、Hands、Legs、Feet、Back</td>
+<td>各身体部位的护甲。</td>
 </tr>
 <tr>
-<td>Main hand, Off hand</td>
-<td>Weapons, shields and off-hand items.</td>
+<td>Main hand、Off hand</td>
+<td>武器、盾牌和副手物品。</td>
 </tr>
 <tr>
-<td>Ring, Second ring</td>
-<td>Two rings. A ring goes to the second position when the first is taken.</td>
+<td>Ring、Second ring</td>
+<td>两枚戒指。第一个栏位被占用时，戒指会进入第二个栏位。</td>
 </tr>
 <tr>
 <td>Amulet</td>
-<td>One amulet.</td>
+<td>一条项链。</td>
 </tr>
 <tr>
 <td>Ammo</td>
-<td>A stack of arrows or bolts for weapons that use ammunition.</td>
+<td>一堆箭矢或弩矢，供使用弹药的武器使用。</td>
 </tr>
 </tbody>
 </table></div>
-<p>The <strong>Show cosmetics</strong> button switches these slots to the eight cosmetic positions (Head, Chest, Hands, Legs, Feet, Back, Main hand, Off hand). Cosmetics change how the region looks and give no stats. The button then reads <strong>Show gear</strong>. Opening the Cosmetics tab of the bag switches to the cosmetic positions on its own. See <a href="../content/equipment.html">Equipment</a>.</p>
-<p><strong>The bag.</strong> A grid of slots with:</p>
+<p><strong>Show cosmetics</strong> 按钮把这些格子切换为八个时装栏位（Head、Chest、Hands、Legs、Feet、Back、Main hand、Off hand）。时装改变部位的外观，不提供数值。之后按钮会显示为 <strong>Show gear</strong>。打开背包的 Cosmetics 标签页会自动切换到时装栏位。见<a href="../content/equipment.html">装备</a>。</p>
+<p><strong>背包。</strong> 一个格子网格，带有：</p>
 <ul>
-<li><strong>Tabs</strong>: All, Equipment, Consumables, Resources and Cosmetics. Resources are items that are neither gear nor usable.</li>
-<li><strong>Search</strong>: filters by name as you type.</li>
-<li><strong>Sort list</strong>: By slot, By name, By type, By rarity, By weight. This only changes the view; the items keep their slots.</li>
-<li><strong>Type list</strong>: narrows the tab to one item category. It is filled from what is in the bag.</li>
-<li><strong>Sort button</strong>: asks the server to tidy the bag. It joins stacks and packs everything from the first slot: gear first (by equipment position), then the rest by item id.</li>
-<li><strong>Capacity bar</strong>: used slots out of the bag size, or weight out of the limit in <code>Weight</code> mode. It turns red at 90 % full. When the character is overloaded the label reads &quot;Too heavy to move&quot; in red.</li>
-<li><strong>Money</strong>: gold, and below it every other currency marked to show in the inventory. See <a href="../content/currencies.html">Currencies</a>.</li>
+<li><strong>标签页</strong>：All、Equipment、Consumables、Resources 和 Cosmetics。Resources 是既不是装备也不可使用的物品。</li>
+<li><strong>搜索</strong>：输入时按名字筛选。</li>
+<li><strong>排序列表</strong>：By slot、By name、By type、By rarity、By weight。这只改变显示方式，物品保持在原格子中。</li>
+<li><strong>类型列表</strong>：把标签页缩小到一个物品类别。它根据背包中的物品填充。</li>
+<li><strong>整理按钮</strong>：请服务器整理背包。它合并堆叠，并从第一个格子开始紧密排列：先放装备（按装备栏位），其余按物品 id 排列。</li>
+<li><strong>容量条</strong>：已用格子数与背包大小之比，或在 <code>Weight</code> 模式下为负重与上限之比。达到 90% 时变红。角色超重时，标签会以红色显示 &quot;Too heavy to move&quot;。</li>
+<li><strong>货币</strong>：金币，下面是所有标记为在背包中显示的其他货币。见<a href="../content/currencies.html">货币</a>。</li>
 </ul>
-<p>With the All tab, no search, no type and &quot;By slot&quot;, the grid shows every slot in order. With any filter, or in <code>Weight</code> mode, the grid shows only the matching items packed together, followed by some empty slots to drop onto.</p>
-<h3 id="mouse-actions"><a class="anchor" href="#mouse-actions" aria-hidden="true">#</a>Mouse actions</h3>
+<p>当选择 All 标签页、没有搜索、没有类型且为 &quot;By slot&quot; 时，网格按顺序显示每个格子。有任何筛选，或在 <code>Weight</code> 模式下，网格只显示符合条件的物品并紧密排列，后面跟着一些可以放置物品的空格子。</p>
+<h3 id="mouse-actions"><a class="anchor" href="#mouse-actions" aria-hidden="true">#</a>鼠标操作</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Action</th>
-<th>What it does</th>
+<th>操作</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Drag an item onto another slot</td>
-<td>Moves it. Onto the same item it tops up the stack; onto a different item it swaps them.</td>
+<td>把物品拖到另一个格子</td>
+<td>移动它。拖到相同物品上会补满堆叠；拖到不同物品上会交换。</td>
 </tr>
 <tr>
-<td>Drag onto an equipment position</td>
-<td>Wears it. Whatever was there takes its place in the bag.</td>
+<td>拖到装备栏位上</td>
+<td>穿戴它。原来在那里的东西会放到背包中它的位置。</td>
 </tr>
 <tr>
-<td>Double click a bag item</td>
-<td>Wears gear, uses a consumable. With a bank, trade, market or forge open beside the bag, does what that window does instead (store, offer, sell, put in the forge).</td>
+<td>双击背包物品</td>
+<td>穿戴装备，使用消耗品。如果背包旁边打开了银行、交易、市场或锻造窗口，则改为执行那个窗口的操作（存入、提供、出售、放入锻造）。</td>
 </tr>
 <tr>
-<td>Double click worn gear</td>
-<td>Takes it off into the first free bag slot.</td>
+<td>双击身上的装备</td>
+<td>卸下，放进背包第一个空格子。</td>
 </tr>
 <tr>
-<td><code>Shift</code> + double click a stack</td>
-<td>Splits off half into the first free slot.</td>
+<td><code>Shift</code> + 双击一个堆叠</td>
+<td>拆出一半放进第一个空格子。</td>
 </tr>
 <tr>
-<td>Right click</td>
-<td>Opens the item menu.</td>
+<td>右键点击</td>
+<td>打开物品菜单。</td>
 </tr>
 <tr>
-<td>Click (details on hover off)</td>
-<td>Pins the item card beside the item. Click again, or an empty slot, to put it away.</td>
+<td>点击（悬停显示详情关闭时）</td>
+<td>把物品卡片固定在物品旁边。再次点击，或点击空格子，即可收起。</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="the-item-menu"><a class="anchor" href="#the-item-menu" aria-hidden="true">#</a>The item menu</h3>
-<p>Right click an item in the bag or the gear to open <code>ItemMenu</code>. It lists only the lines that apply:</p>
+<h3 id="the-item-menu"><a class="anchor" href="#the-item-menu" aria-hidden="true">#</a>物品菜单</h3>
+<p>在背包或装备中右键点击物品，打开 <code>ItemMenu</code>。它只列出适用的条目：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Line</th>
-<th>Shows when</th>
+<th>条目</th>
+<th>显示条件</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>The open window's action (Store, Offer, Put in the forge...)</td>
-<td>A bank, trade, market or forge window is open beside the bag.</td>
+<td>打开窗口的操作（Store、Offer、Put in the forge...）</td>
+<td>背包旁边打开了银行、交易、市场或锻造窗口。</td>
 </tr>
 <tr>
 <td>Equip</td>
-<td>The bag item is gear.</td>
+<td>背包物品是装备。</td>
 </tr>
 <tr>
 <td>Take off</td>
-<td>The item is worn.</td>
+<td>物品已穿戴。</td>
 </tr>
 <tr>
 <td>Use</td>
-<td>The bag item is usable and not gear.</td>
+<td>背包物品可使用且不是装备。</td>
 </tr>
 <tr>
 <td>Split</td>
-<td>The stack has more than one. Asks how many, half to start with, up to one less than the stack.</td>
+<td>堆叠数量大于一。询问拆出多少，起始值为一半，最多比堆叠少一个。</td>
 </tr>
 <tr>
 <td>Salvage all (N)</td>
-<td>The forge is open and the bag has more than one plain copy of this piece. See <a href="forge.html#salvage-all">Forge</a>.</td>
+<td>锻造窗口已打开，且背包中有不止一件这种部件的普通副本。见<a href="forge.html#salvage-all">锻造</a>。</td>
 </tr>
 <tr>
 <td>Possible values</td>
-<td>The piece has random bonuses: pins its card with the range each bonus could have had.</td>
+<td>部件有随机加成：固定显示它的卡片，并列出每项加成可能的范围。</td>
 </tr>
 <tr>
 <td>View set</td>
-<td>The piece belongs to a set: opens the set window. See <a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a>.</td>
+<td>部件属于某个套装：打开套装窗口。见<a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶嵌</a>。</td>
 </tr>
 <tr>
 <td>Destroy</td>
-<td>The item is in the bag. Asks to confirm, then deletes it for good. Worn gear has to come off first.</td>
+<td>物品在背包中。要求确认，然后永久删除它。身上的装备必须先卸下。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Games add their own lines to <code>ItemMenu.Entries</code>.</p>
-<h3 id="messages"><a class="anchor" href="#messages" aria-hidden="true">#</a>Messages</h3>
-<p>When the server refuses a request, the window shows a short message for 3 seconds:</p>
+<p>游戏可以向 <code>ItemMenu.Entries</code> 添加自己的条目。</p>
+<h3 id="messages"><a class="anchor" href="#messages" aria-hidden="true">#</a>消息</h3>
+<p>服务器拒绝请求时，窗口会显示一条短消息 3 秒：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Message</th>
+<th>代码</th>
+<th>消息</th>
 </tr>
 </thead>
 <tbody>
@@ -327,226 +327,226 @@
 </tr>
 </tbody>
 </table></div>
-<p>Override <code>InventoryWindow.Describe</code> to translate them.</p>
-<h2 id="bag-rules"><a class="anchor" href="#bag-rules" aria-hidden="true">#</a>Bag rules</h2>
-<p>These rules are the same in single player and MMO, because both run the same <code>Inventory</code> class on the server.</p>
-<h3 id="stacks"><a class="anchor" href="#stacks" aria-hidden="true">#</a>Stacks</h3>
+<p>覆盖 <code>InventoryWindow.Describe</code> 来翻译它们。</p>
+<h2 id="bag-rules"><a class="anchor" href="#bag-rules" aria-hidden="true">#</a>背包规则</h2>
+<p>这些规则在单人模式和 MMO 中相同，因为两者都在服务器上运行同一个 <code>Inventory</code> 类。</p>
+<h3 id="stacks"><a class="anchor" href="#stacks" aria-hidden="true">#</a>堆叠</h3>
 <ul>
-<li>Each item has a <em>Max Stack</em> (<code>maxStack</code>): 99 for plain items by default, 1 for gear.</li>
-<li>Adding an item tops up existing stacks first, then fills free slots.</li>
-<li>Bound and unbound copies of the same item never share a stack.</li>
-<li>A copy with <strong>random bonuses</strong> (rolls) never stacks: each one is its own, with its own values. See <a href="../content/items.html">Items</a>.</li>
-<li>Taking items for a cost (a quest, an upgrade) takes from the smallest stacks first.</li>
+<li>每个物品都有 <em>Max Stack</em>（<code>maxStack</code>）：普通物品默认为 99，装备为 1。</li>
+<li>添加物品时先补满现有堆叠，再填充空格子。</li>
+<li>同一物品的绑定和未绑定副本永远不会共用一个堆叠。</li>
+<li>带有<strong>随机加成</strong>（随机值）的副本永远不会堆叠：每一件都独立，有自己的数值。见<a href="../content/items.html">物品</a>。</li>
+<li>作为消耗扣除物品时（任务、强化），先从最小的堆叠中扣。</li>
 </ul>
-<h3 id="wearing-gear"><a class="anchor" href="#wearing-gear" aria-hidden="true">#</a>Wearing gear</h3>
+<h3 id="wearing-gear"><a class="anchor" href="#wearing-gear" aria-hidden="true">#</a>穿戴装备</h3>
 <ul>
-<li>The server checks the level and the class the piece asks for before it goes on.</li>
-<li>A two-handed weapon and an off-hand item can't be worn together. The one already worn goes to the bag; if the bag has no free slot, nothing changes and you see &quot;Your bag is full.&quot;</li>
-<li>A one-handed weapon whose type allows dual wielding goes to the free off hand when the main hand already holds one that allows it too.</li>
-<li>Taking gear off onto a bag item that can't go where the gear was puts the gear in any free slot instead.</li>
-<li>Every move either completes or leaves everything as it was.</li>
+<li>部件穿上前，服务器会检查它要求的等级和职业。</li>
+<li>双手武器和副手物品不能同时穿戴。已穿戴的那件会进入背包；如果背包没有空格子，什么都不会改变，你会看到 &quot;Your bag is full.&quot;</li>
+<li>如果单手武器的类型允许双持，并且主手已经拿着一把同样允许双持的武器，它会进入空着的副手。</li>
+<li>把装备卸下到一个不能放到该装备原位置的背包物品上时，装备会改为放进任意空格子。</li>
+<li>每次移动要么完整完成，要么一切保持原样。</li>
 </ul>
-<h3 id="using-items"><a class="anchor" href="#using-items" aria-hidden="true">#</a>Using items</h3>
-<p>Double click or <strong>Use</strong> a consumable. Items in the same cooldown group share one cooldown. Consumables lose one per use. Drag an item onto the hotbar to use it with a number key; the key uses the first stack of that item in the bag.</p>
-<h3 id="bag-in-weight-mode"><a class="anchor" href="#bag-in-weight-mode" aria-hidden="true">#</a>Bag in Weight mode</h3>
+<h3 id="using-items"><a class="anchor" href="#using-items" aria-hidden="true">#</a>使用物品</h3>
+<p>双击消耗品或选择 <strong>Use</strong>。同一冷却组的物品共享一个冷却。消耗品每使用一次减少一个。把物品拖到快捷栏上就可以用数字键使用；按键会使用背包中该物品的第一个堆叠。</p>
+<h3 id="bag-in-weight-mode"><a class="anchor" href="#bag-in-weight-mode" aria-hidden="true">#</a>Weight 模式下的背包</h3>
 <ul>
-<li>The limit is <code>carryWeight</code> plus the character's <em>carry weight</em> stat. In the sample, each point of Strength adds 5, and backpacks add 10 or 20.</li>
-<li>The weight counts everything the character has, <strong>worn gear included</strong>.</li>
-<li>Each item has a <em>Weight</em> (<code>weight</code>), 1 by default. Items with weight 0 never count.</li>
-<li><code>weightModeSlots</code> still limits how many different stacks fit.</li>
+<li>上限是 <code>carryWeight</code> 加上角色的<em>负重</em>数值。在示例中，每点力量增加 5，背包类装备增加 10 或 20。</li>
+<li>负重计算角色拥有的一切，<strong>包括身上的装备</strong>。</li>
+<li>每个物品都有 <em>Weight</em>（<code>weight</code>），默认为 1。负重为 0 的物品永远不计入。</li>
+<li><code>weightModeSlots</code> 仍然限制能放下多少个不同的堆叠。</li>
 </ul>
-<h3 id="overloaded"><a class="anchor" href="#overloaded" aria-hidden="true">#</a>Overloaded</h3>
-<p>Loot is the one thing that may go past the weight limit. When picked-up loot puts the character over it, the character is <strong>overloaded</strong>:</p>
+<h3 id="overloaded"><a class="anchor" href="#overloaded" aria-hidden="true">#</a>超重</h3>
+<p>掉落物是唯一可以超过负重上限的东西。当拾取的掉落物让角色超过上限时，角色就会<strong>超重</strong>：</p>
 <ul>
-<li>It can't walk. Click-to-move is refused and the current path stops, in top-down and in third person.</li>
-<li>The server says &quot;Too heavy to move. Drop, sell or store something.&quot; The bag shows the weight in red.</li>
-<li>Drop, destroy, store or sell something to walk again.</li>
+<li>无法行走。点击移动会被拒绝，当前路径也会停止，俯视角和第三人称都一样。</li>
+<li>服务器提示 &quot;Too heavy to move. Drop, sell or store something.&quot;。背包以红色显示负重。</li>
+<li>丢弃、销毁、存入或出售一些东西才能再次行走。</li>
 </ul>
-<p>Everything else that adds items (buying, trading, taking from the bank or the mail) refuses when it would go over the limit.</p>
-<h3 id="when-the-bag-gets-smaller"><a class="anchor" href="#when-the-bag-gets-smaller" aria-hidden="true">#</a>When the bag gets smaller</h3>
-<p>If you lower <code>bagSlots</code>, or two saved items end up in the same slot, the bag moves the extra items to free slots when it loads. Nothing is deleted.</p>
-<h2 id="money"><a class="anchor" href="#money" aria-hidden="true">#</a>Money</h2>
+<p>其他所有添加物品的方式（购买、交易、从银行或邮件中取出）在会超过上限时都会被拒绝。</p>
+<h3 id="when-the-bag-gets-smaller"><a class="anchor" href="#when-the-bag-gets-smaller" aria-hidden="true">#</a>背包变小时</h3>
+<p>如果你降低 <code>bagSlots</code>，或者两个已保存的物品最终落在同一个格子，背包在加载时会把多出的物品移到空格子。不会删除任何东西。</p>
+<h2 id="money"><a class="anchor" href="#money" aria-hidden="true">#</a>货币</h2>
 <ul>
-<li>Gold is the purse currency. Its <em>Max Amount</em> (<code>maxAmount</code>) on the gold <code>CurrencyData</code> caps the purse; 0 means no cap.</li>
-<li>Gold the purse can't hold (from loot, mail, the guild or quests) goes to the <strong>bank gold</strong> instead of being lost. The server says &quot;(some to the bank)&quot;.</li>
-<li>Other currencies show under the gold when their <code>showInInventory</code> is on.</li>
-<li>Premium currency is never in the purse. It belongs to the account and is handled by the shop service. See <a href="cash-shop.html">Cash shop</a>.</li>
+<li>金币是钱包货币。金币 <code>CurrencyData</code> 上的 <em>Max Amount</em>（<code>maxAmount</code>）限制钱包的容量；0 表示无上限。</li>
+<li>钱包装不下的金币（来自掉落、邮件、公会或任务）会进入<strong>银行金币</strong>，而不是丢失。服务器会提示 &quot;(some to the bank)&quot;。</li>
+<li>其他货币在其 <code>showInInventory</code> 开启时显示在金币下方。</li>
+<li>付费货币永远不在钱包中。它属于账号，由商城服务管理。见<a href="cash-shop.html">商城</a>。</li>
 </ul>
-<h2 id="picking-up-loot"><a class="anchor" href="#picking-up-loot" aria-hidden="true">#</a>Picking up loot</h2>
-<p>Loot belongs only to the player who earned the kill. Nobody else sees it or can take it. It lives on the server for <code>dropLifetime</code> seconds (90) and then disappears.</p>
+<h2 id="picking-up-loot"><a class="anchor" href="#picking-up-loot" aria-hidden="true">#</a>拾取掉落</h2>
+<p>掉落物只属于完成击杀的玩家。其他人看不到也拿不走。它在服务器上保留 <code>dropLifetime</code> 秒（90），然后消失。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Loot mode</th>
-<th>What the player sees</th>
+<th>掉落模式</th>
+<th>玩家看到的内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Ground</code></td>
-<td>Each item floats on the ground with its icon and its name in its rarity colour, plus a pile of gold when <code>autoGold</code> is off. Click it to walk there and pick it up.</td>
+<td>每个物品漂浮在地上，带有图标和以稀有度颜色显示的名字；<code>autoGold</code> 关闭时还有一堆金币。点击它，角色会走过去拾取。</td>
 </tr>
 <tr>
 <td><code>Corpse</code></td>
-<td>The monster's grey body stays. Click it to walk there; the loot window opens with one row per item and a gold row. Click a row to take it, or <strong>Take all</strong>. The window closes when the body is empty, when you walk away or with <code>Esc</code>.</td>
+<td>怪物的灰色尸体会留下。点击它走过去，拾取窗口打开，每个物品一行，另有一行金币。点击一行拿取，或点 <strong>Take all</strong>。尸体被拿空、你走开或按 <code>Esc</code> 时窗口关闭。</td>
 </tr>
 <tr>
 <td><code>Automatic</code></td>
-<td>Items go straight to the bag with a &quot;+Item&quot; message. What doesn't fit falls on the ground.</td>
+<td>物品直接进入背包，并显示 &quot;+Item&quot; 消息。放不下的落在地上。</td>
 </tr>
 </tbody>
 </table></div>
-<p>You must be within <code>pickupRange</code> (2 m) of the drop, with 1.5 m of extra room while the loot window is open. When the bag has no free slot, what doesn't fit stays on the ground or in the body and you see the reason.</p>
-<h2 id="items-from-elsewhere-never-get-lost"><a class="anchor" href="#items-from-elsewhere-never-get-lost" aria-hidden="true">#</a>Items from elsewhere never get lost</h2>
-<p>Items that come from somewhere other than loot or a shop (a letter, the guild bank, a tax collector, a quest reward) follow this order:</p>
+<p>你必须在掉落物的 <code>pickupRange</code>（2 米）以内；拾取窗口打开时，还有额外 1.5 米的余量。背包没有空格子时，放不下的东西留在地上或尸体中，你会看到原因。</p>
+<h2 id="items-from-elsewhere-never-get-lost"><a class="anchor" href="#items-from-elsewhere-never-get-lost" aria-hidden="true">#</a>来自其他地方的物品永远不会丢失</h2>
+<p>不是来自掉落或商店的物品（信件、公会银行、收税官、任务奖励）按以下顺序处理：</p>
 <ol>
-<li>The bag.</li>
-<li>The bank, if the bag is full or too heavy.</li>
-<li>Held outside the bag grid, if the bank is full too.</li>
+<li>背包。</li>
+<li>银行，如果背包已满或太重。</li>
+<li>暂存在背包网格之外，如果银行也满了。</li>
 </ol>
-<p>A held item counts, is saved and takes the first free slot the next time the bag loads (on the next map change or login). Before taking a letter or withdrawing from the guild bank, the map server checks that everything fits in the bag or the bank, and refuses with a message if it doesn't.</p>
-<h2 id="the-bank"><a class="anchor" href="#the-bank" aria-hidden="true">#</a>The bank</h2>
-<p>The bank is one per <strong>account</strong>: every character of the account sees the same slots and the same bank gold. It has <code>bankSlots</code> slots (80) and no weight limit.</p>
-<h3 id="opening-it"><a class="anchor" href="#opening-it" aria-hidden="true">#</a>Opening it</h3>
-<p>Talk to an NPC with a <strong>Bank</strong> option (<code>BankOption</code>, see <a href="../content/npcs.html">NPCs</a>). In the sample it is Odette, the banker in Town. The bank window opens with the bag beside it.</p>
-<p>The bank only works while you stand next to the banker: within the NPC's <em>Talk Range</em> (<code>talkRange</code>, 3 m by default) plus half a meter. Walk away, die or leave the map and the window closes.</p>
-<h3 id="the-bank-window"><a class="anchor" href="#the-bank-window" aria-hidden="true">#</a>The bank window</h3>
+<p>暂存的物品会计入、会保存，并在下次背包加载时（下次切换地图或登录时）占据第一个空格子。在取出信件或从公会银行取出物品之前，地图服务器会检查所有东西能否放进背包或银行，放不下就拒绝并显示一条消息。</p>
+<h2 id="the-bank"><a class="anchor" href="#the-bank" aria-hidden="true">#</a>银行</h2>
+<p>银行每个<strong>账号</strong>一个：账号下的每个角色看到相同的格子和相同的银行金币。它有 <code>bankSlots</code> 个格子（80），没有负重限制。</p>
+<h3 id="opening-it"><a class="anchor" href="#opening-it" aria-hidden="true">#</a>打开银行</h3>
+<p>与带有 <strong>Bank</strong> 选项（<code>BankOption</code>，见 <a href="../content/npcs.html">NPC</a>）的 NPC 对话。在示例中是城镇里的银行家 Odette。银行窗口打开时，背包在它旁边。</p>
+<p>银行只在你站在银行家旁边时才能使用：在 NPC 的 <em>Talk Range</em>（<code>talkRange</code>，默认 3 米）加半米以内。走开、死亡或离开地图，窗口都会关闭。</p>
+<h3 id="the-bank-window"><a class="anchor" href="#the-bank-window" aria-hidden="true">#</a>银行窗口</h3>
 <ul>
-<li>The title reads <strong>BANK</strong>.</li>
-<li>A grid with every bank slot.</li>
-<li>A <strong>Sort</strong> button that joins stacks and packs the bank, like the bag's.</li>
-<li>The gold area: the bank gold, a number field and <strong>Deposit</strong> and <strong>Withdraw</strong> buttons.</li>
+<li>标题显示 <strong>BANK</strong>。</li>
+<li>一个包含所有银行格子的网格。</li>
+<li>一个 <strong>Sort</strong> 按钮，和背包的一样合并堆叠并整理银行。</li>
+<li>金币区域：银行金币、一个数字输入框以及 <strong>Deposit</strong> 和 <strong>Withdraw</strong> 按钮。</li>
 </ul>
-<h3 id="storing-and-taking-out"><a class="anchor" href="#storing-and-taking-out" aria-hidden="true">#</a>Storing and taking out</h3>
+<h3 id="storing-and-taking-out"><a class="anchor" href="#storing-and-taking-out" aria-hidden="true">#</a>存入和取出</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Action</th>
-<th>What it does</th>
+<th>操作</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Double click a bag item, or <strong>Store</strong> in its menu</td>
-<td>Stores it.</td>
+<td>双击背包物品，或在它的菜单中选 <strong>Store</strong></td>
+<td>存入。</td>
 </tr>
 <tr>
-<td>Drag a bag item onto the bank</td>
-<td>Stores it.</td>
+<td>把背包物品拖到银行上</td>
+<td>存入。</td>
 </tr>
 <tr>
-<td>Double click or right click a bank item</td>
-<td>Takes it out to the bag.</td>
+<td>双击或右键点击银行物品</td>
+<td>取出到背包。</td>
 </tr>
 <tr>
-<td>Drag inside the bank</td>
-<td>Moves, stacks or swaps bank items.</td>
+<td>在银行内拖动</td>
+<td>移动、堆叠或交换银行物品。</td>
 </tr>
 </tbody>
 </table></div>
-<p>For stacks, the amount follows the keys held:</p>
+<p>对于堆叠，数量取决于按住的键：</p>
 <ul>
-<li><code>Shift</code>: one.</li>
-<li><code>Ctrl</code> or <code>Cmd</code>: the whole stack.</li>
-<li>No key: a dialog asks how many, starting at the whole stack.</li>
+<li><code>Shift</code>：一个。</li>
+<li><code>Ctrl</code> 或 <code>Cmd</code>：整个堆叠。</li>
+<li>不按键：弹出对话框询问数量，初始值为整个堆叠。</li>
 </ul>
-<p>For gold, type an amount and press <strong>Deposit</strong> or <strong>Withdraw</strong>. Withdrawing stops at what the purse can still hold, so no gold vanishes.</p>
-<h3 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>What the server checks</h3>
+<p>对于金币，输入数量后按 <strong>Deposit</strong> 或 <strong>Withdraw</strong>。取出时最多只取到钱包还能容纳的数量，所以不会有金币消失。</p>
+<h3 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>服务器检查的内容</h3>
 <ul>
-<li>You are at an open bank, alive and in reach of the banker.</li>
-<li><strong>Quest items can't be stored</strong>: &quot;Quest items stay with you.&quot; They follow the character's quests.</li>
-<li><strong>Bound items can be stored</strong>, because they stay in the same account.</li>
-<li>A full bank refuses with &quot;The bank is full.&quot;</li>
-<li>Taking out needs room in the bag (slots and weight): &quot;Make room in your bag first.&quot;</li>
-<li>Every deposit and withdrawal goes to the game log. See <a href="game-log-and-reports.html">Game log and reports</a>.</li>
+<li>你在一个已打开的银行前，活着，且在银行家的范围内。</li>
+<li><strong>任务物品不能存入</strong>：&quot;Quest items stay with you.&quot;。它们跟随角色的任务。</li>
+<li><strong>绑定物品可以存入</strong>，因为它们留在同一个账号中。</li>
+<li>银行已满时拒绝并提示 &quot;The bank is full.&quot;。</li>
+<li>取出需要背包有空间（格子和负重）：&quot;Make room in your bag first.&quot;。</li>
+<li>每次存入和取出都会记录到游戏日志。见<a href="game-log-and-reports.html">游戏日志与举报</a>。</li>
 </ul>
-<p>The bank is never smaller than what it holds. If you lower <code>bankSlots</code> below what an account already stores, that account's bank keeps enough slots.</p>
-<h3 id="the-guild-bank"><a class="anchor" href="#the-guild-bank" aria-hidden="true">#</a>The guild bank</h3>
-<p>The guild bank uses the same window, opened from an NPC with a <strong>Guild bank</strong> option. Its title is the guild's name, it has no Sort button, and depositing and withdrawing gold depend on the member's role. Its size is set in Central (<code>GuildStorageSlots</code>, 50). See <a href="guilds.html">Guilds</a>.</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>银行永远不会小于它存放的内容。如果你把 <code>bankSlots</code> 降到低于某个账号已存放的数量，该账号的银行会保留足够的格子。</p>
+<h3 id="the-guild-bank"><a class="anchor" href="#the-guild-bank" aria-hidden="true">#</a>公会银行</h3>
+<p>公会银行使用同一个窗口，从带有 <strong>Guild bank</strong> 选项的 NPC 打开。它的标题是公会的名字，没有 Sort 按钮，存取金币取决于成员的职位。它的大小在 Central 中设置（<code>GuildStorageSlots</code>，50）。见<a href="guilds.html">公会</a>。</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式与 MMO</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Single player</th>
+<th>单人模式</th>
 <th>MMO</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Rules</td>
-<td>Same <code>Inventory</code> rules, run by the host.</td>
-<td>Same rules, run by the map server.</td>
+<td>规则</td>
+<td>相同的 <code>Inventory</code> 规则，由主机运行。</td>
+<td>相同的规则，由地图服务器运行。</td>
 </tr>
 <tr>
-<td>Bag and gear saved in</td>
-<td>The character's JSON in the local SQLite save.</td>
-<td>Rows of <code>item_instances</code> owned by the character, through Central.</td>
+<td>背包和装备保存在</td>
+<td>本地 SQLite 存档中角色的 JSON。</td>
+<td>属于该角色的 <code>item_instances</code> 行，通过 Central 保存。</td>
 </tr>
 <tr>
-<td>Bank saved in</td>
-<td>An <code>account</code> table in the local save, shared by all characters.</td>
-<td>Rows of <code>item_instances</code> owned by the account, and <code>accounts.BankGold</code>.</td>
+<td>银行保存在</td>
+<td>本地存档中的一张 <code>account</code> 表，所有角色共享。</td>
+<td>属于该账号的 <code>item_instances</code> 行，以及 <code>accounts.BankGold</code>。</td>
 </tr>
 <tr>
-<td>Copies</td>
-<td>Each copy has a unique id (<code>uid</code>).</td>
-<td>Each copy is one row with exactly one owner. Central's <code>ItemLedger</code> moves rows between owners in transactions and refuses a <code>uid</code> another owner holds.</td>
+<td>副本</td>
+<td>每个副本都有一个唯一 id（<code>uid</code>）。</td>
+<td>每个副本是一行，恰好有一个所有者。Central 的 <code>ItemLedger</code> 在事务中把行在所有者之间移动，并拒绝另一个所有者持有的 <code>uid</code>。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Because there is one session per account, the character in play carries the account bank and saves it with itself. In MMO this means the bank can't be open on two characters at once.</p>
-<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
-<h3 id="make-the-bag-limited-by-weight"><a class="anchor" href="#make-the-bag-limited-by-weight" aria-hidden="true">#</a>Make the bag limited by weight</h3>
+<p>因为每个账号只有一个会话，正在游戏的角色携带账号银行，并随自己一起保存。在 MMO 中这意味着银行不能同时在两个角色上打开。</p>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>分步操作</h2>
+<h3 id="make-the-bag-limited-by-weight"><a class="anchor" href="#make-the-bag-limited-by-weight" aria-hidden="true">#</a>让背包按负重限制</h3>
 <ol>
-<li>Open <strong>KitARPG &gt; Game Settings</strong>, section Bag.</li>
-<li>Set <em>Bag Mode</em> to <code>Weight</code>.</li>
-<li>Set <em>Carry Weight</em> to the base everyone carries, for example 1,000.</li>
-<li>Give items a <em>Weight</em> in the Game Database. Gear and materials that should be free get 0.</li>
-<li>Add the <em>carry weight</em> stat to attributes or gear (for example per point of Strength, or on backpacks).</li>
-<li>Press Play and open the bag: the bar now shows weight out of the limit.</li>
+<li>打开 <strong>KitARPG &gt; Game Settings</strong>，Bag 部分。</li>
+<li>把 <em>Bag Mode</em> 设为 <code>Weight</code>。</li>
+<li>把 <em>Carry Weight</em> 设为每个人都能背负的基础值，例如 1,000。</li>
+<li>在 Game Database 中为物品设置 <em>Weight</em>。应该不计重量的装备和材料设为 0。</li>
+<li>为属性或装备加上<em>负重</em>数值（例如每点力量，或在背包类装备上）。</li>
+<li>按 Play 并打开背包：容量条现在显示负重与上限之比。</li>
 </ol>
-<h3 id="add-a-banker"><a class="anchor" href="#add-a-banker" aria-hidden="true">#</a>Add a banker</h3>
+<h3 id="add-a-banker"><a class="anchor" href="#add-a-banker" aria-hidden="true">#</a>添加银行家</h3>
 <ol>
-<li>Place an NPC in a map scene (see <a href="../content/npcs.html">NPCs</a>).</li>
-<li>In its options add <strong>Bank Option</strong>. The label defaults to &quot;Bank&quot;.</li>
-<li>Make sure the Bank module is on in <strong>KitARPG &gt; Modules</strong>.</li>
-<li>Press Play, talk to the NPC and choose Bank.</li>
+<li>在地图场景中放置一个 NPC（见 <a href="../content/npcs.html">NPC</a>）。</li>
+<li>在它的选项中添加 <strong>Bank Option</strong>。标签默认为 &quot;Bank&quot;。</li>
+<li>确保 <strong>KitARPG &gt; Modules</strong> 中的 Bank 模块已开启。</li>
+<li>按 Play，与 NPC 对话并选择 Bank。</li>
 </ol>
-<h3 id="switch-to-loot-in-the-body"><a class="anchor" href="#switch-to-loot-in-the-body" aria-hidden="true">#</a>Switch to loot in the body</h3>
+<h3 id="switch-to-loot-in-the-body"><a class="anchor" href="#switch-to-loot-in-the-body" aria-hidden="true">#</a>切换为尸体拾取</h3>
 <ol>
-<li>In <strong>KitARPG &gt; Game Settings</strong>, section Loot, set <em>Loot Mode</em> to <code>Corpse</code>.</li>
-<li>Turn <em>Auto Gold</em> off if gold should wait in the body too.</li>
-<li>Kill a monster and click its body to open the loot window.</li>
+<li>在 <strong>KitARPG &gt; Game Settings</strong> 的 Loot 部分，把 <em>Loot Mode</em> 设为 <code>Corpse</code>。</li>
+<li>如果金币也应该留在尸体中，关闭 <em>Auto Gold</em>。</li>
+<li>击杀一只怪物，点击它的尸体打开拾取窗口。</li>
 </ol>
-<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>提示</h2>
 <ul>
-<li>Turn <em>Item Details On Hover</em> on for a Diablo-like feel; leave it off for a Dofus-like detail card you pin with a click.</li>
-<li>The view sort (By rarity, By weight) is free and instant. The Sort button changes the real slots on the server.</li>
-<li>Players who carry a lot should store materials in the bank: it has no weight limit.</li>
+<li>开启 <em>Item Details On Hover</em> 可以获得类似 Diablo 的手感；关闭它则是类似 Dofus 的详情卡片，点击后固定。</li>
+<li>显示排序（By rarity、By weight）免费且即时。Sort 按钮会改变服务器上真实的格子。</li>
+<li>背负很多东西的玩家应该把材料存进银行：银行没有负重限制。</li>
 </ul>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>&quot;Your bag is full&quot; when equipping a two-handed weapon.</strong> The off-hand item has to go to the bag and there is no free slot.</li>
-<li><strong>Character won't move after looting.</strong> It is overloaded in <code>Weight</code> mode. Store or drop something.</li>
-<li><strong>Quest items won't go in the bank.</strong> That is by design.</li>
-<li><strong>The bank closes by itself.</strong> You walked out of the banker's reach.</li>
-<li><strong>Lowering Bag Slots to shrink existing bags.</strong> Existing items are kept and moved to free slots; if there aren't enough slots they wait outside the grid.</li>
+<li><strong>装备双手武器时提示 &quot;Your bag is full&quot;。</strong> 副手物品必须进入背包，但没有空格子。</li>
+<li><strong>拾取后角色无法移动。</strong> 在 <code>Weight</code> 模式下超重了。存入或丢弃一些东西。</li>
+<li><strong>任务物品无法存入银行。</strong> 这是设计如此。</li>
+<li><strong>银行自己关闭了。</strong> 你走出了银行家的范围。</li>
+<li><strong>降低 Bag Slots 来缩小已有的背包。</strong> 已有的物品会保留并移到空格子；格子不够时，它们会在网格之外等待。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="../content/items.html">Items</a></li>
-<li><a href="../content/equipment.html">Equipment</a></li>
-<li><a href="../content/currencies.html">Currencies</a></li>
-<li><a href="../content/loot.html">Loot</a></li>
-<li><a href="trade.html">Trade</a></li>
-<li><a href="forge.html">Forge</a></li>
-<li><a href="market.html">Market</a></li>
-<li><a href="mail.html">Mail</a></li>
-<li><a href="guilds.html">Guilds</a></li>
+<li><a href="../content/items.html">物品</a></li>
+<li><a href="../content/equipment.html">装备</a></li>
+<li><a href="../content/currencies.html">货币</a></li>
+<li><a href="../content/loot.html">掉落</a></li>
+<li><a href="trade.html">交易</a></li>
+<li><a href="forge.html">锻造</a></li>
+<li><a href="market.html">市场</a></li>
+<li><a href="mail.html">邮件</a></li>
+<li><a href="guilds.html">公会</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="recovery-and-death.html"><span>上一页</span>Recovery and death</a><a class="next" href="trade.html"><span>下一页</span>Trade</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Finventory-and-bank.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-it-is">What it is</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#bag">Bag</a></li><li class="l3"><a href="#loot">Loot</a></li><li class="l3"><a href="#interface-and-economy">Interface and economy</a></li><li class="l3"><a href="#modules">Modules</a></li><li class="l3"><a href="#on-the-player-prefab">On the player prefab</a></li><li class="l3"><a href="#on-the-map-server">On the map server</a></li><li class="l2"><a href="#the-inventory-window">The inventory window</a></li><li class="l3"><a href="#mouse-actions">Mouse actions</a></li><li class="l3"><a href="#the-item-menu">The item menu</a></li><li class="l3"><a href="#messages">Messages</a></li><li class="l2"><a href="#bag-rules">Bag rules</a></li><li class="l3"><a href="#stacks">Stacks</a></li><li class="l3"><a href="#wearing-gear">Wearing gear</a></li><li class="l3"><a href="#using-items">Using items</a></li><li class="l3"><a href="#bag-in-weight-mode">Bag in Weight mode</a></li><li class="l3"><a href="#overloaded">Overloaded</a></li><li class="l3"><a href="#when-the-bag-gets-smaller">When the bag gets smaller</a></li><li class="l2"><a href="#money">Money</a></li><li class="l2"><a href="#picking-up-loot">Picking up loot</a></li><li class="l2"><a href="#items-from-elsewhere-never-get-lost">Items from elsewhere never get lost</a></li><li class="l2"><a href="#the-bank">The bank</a></li><li class="l3"><a href="#opening-it">Opening it</a></li><li class="l3"><a href="#the-bank-window">The bank window</a></li><li class="l3"><a href="#storing-and-taking-out">Storing and taking out</a></li><li class="l3"><a href="#what-the-server-checks">What the server checks</a></li><li class="l3"><a href="#the-guild-bank">The guild bank</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#make-the-bag-limited-by-weight">Make the bag limited by weight</a></li><li class="l3"><a href="#add-a-banker">Add a banker</a></li><li class="l3"><a href="#switch-to-loot-in-the-body">Switch to loot in the body</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="recovery-and-death.html"><span>上一页</span>恢复与死亡</a><a class="next" href="trade.html"><span>下一页</span>交易</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Finventory-and-bank.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-it-is">是什么</a></li><li class="l2"><a href="#settings">设置</a></li><li class="l3"><a href="#bag">背包</a></li><li class="l3"><a href="#loot">掉落</a></li><li class="l3"><a href="#interface-and-economy">界面与经济</a></li><li class="l3"><a href="#modules">模块</a></li><li class="l3"><a href="#on-the-player-prefab">在玩家预制体上</a></li><li class="l3"><a href="#on-the-map-server">在地图服务器上</a></li><li class="l2"><a href="#the-inventory-window">背包窗口</a></li><li class="l3"><a href="#mouse-actions">鼠标操作</a></li><li class="l3"><a href="#the-item-menu">物品菜单</a></li><li class="l3"><a href="#messages">消息</a></li><li class="l2"><a href="#bag-rules">背包规则</a></li><li class="l3"><a href="#stacks">堆叠</a></li><li class="l3"><a href="#wearing-gear">穿戴装备</a></li><li class="l3"><a href="#using-items">使用物品</a></li><li class="l3"><a href="#bag-in-weight-mode">Weight 模式下的背包</a></li><li class="l3"><a href="#overloaded">超重</a></li><li class="l3"><a href="#when-the-bag-gets-smaller">背包变小时</a></li><li class="l2"><a href="#money">货币</a></li><li class="l2"><a href="#picking-up-loot">拾取掉落</a></li><li class="l2"><a href="#items-from-elsewhere-never-get-lost">来自其他地方的物品永远不会丢失</a></li><li class="l2"><a href="#the-bank">银行</a></li><li class="l3"><a href="#opening-it">打开银行</a></li><li class="l3"><a href="#the-bank-window">银行窗口</a></li><li class="l3"><a href="#storing-and-taking-out">存入和取出</a></li><li class="l3"><a href="#what-the-server-checks">服务器检查的内容</a></li><li class="l3"><a href="#the-guild-bank">公会银行</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式与 MMO</a></li><li class="l2"><a href="#step-by-step">分步操作</a></li><li class="l3"><a href="#make-the-bag-limited-by-weight">让背包按负重限制</a></li><li class="l3"><a href="#add-a-banker">添加银行家</a></li><li class="l3"><a href="#switch-to-loot-in-the-body">切换为尸体拾取</a></li><li class="l2"><a href="#tips">提示</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

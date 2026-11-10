@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>代码中的 GM 命令 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/gm-commands-in-code.html">English</option><option value="../../es/devkit/gm-commands-in-code.html">Español</option><option value="../../pt/devkit/gm-commands-in-code.html">Português</option><option value="gm-commands-in-code.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html" class="on" aria-current="page">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>代码中的 GM 命令</h1><p>如何添加你自己的斜杠命令：注册 <code>GmCommand</code>、用 <code>GmContext</code> 读取参数、选择等级、审计如何运作，以及完整示例。</p>
+<h2 id="what-a-command-is"><a class="anchor" href="#what-a-command-is" aria-hidden="true">#</a>命令是什么</h2>
+<p>玩家在聊天中输入以 <code>/</code> 开头的命令。聊天把这一行发送到地图服务器，地图服务器查找该命令，将玩家的等级与命令的等级比较，执行命令，并把回复作为系统消息显示在聊天中。GM 面板（F8 或 <code>/gm</code>）运行的是同样的命令。套件自带的命令列在 <a href="../reference/gm-commands.html">GM 命令</a>中。</p>
+<p>命令通过代码用 <code>GmCommands.Register</code> 注册。<code>GmCommands</code> 位于 <code>KitARPG.Server</code>（命名空间 <code>Blunnyn.KitARPG.Server</code>），在线客户端从不包含它。</p>
+<p><strong>文件放在哪里：</strong><code>Game.Server</code> 程序集（见<a href="assemblies.html">程序集</a>）。这样命令存在于地图服务器、单人模式和编辑器中，而永远不会出现在在线客户端构建中。</p>
+<h2 id="registering-a-command"><a class="anchor" href="#registering-a-command" aria-hidden="true">#</a>注册命令</h2>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Server</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCommands</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;refresh&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">aliases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;fill&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Moderator</span><span class="p">,</span>
+<span class="w">                </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;refresh [player]&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fills a player&#39;s health.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Target</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nobody by that name here.&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">target</span><span class="p">.</span><span class="n">ServerHeal</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">maxHealth</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Healed {target.characterName}.&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>套件在每次 Play 时于 <code>SubsystemRegistration</code> 中清空并注册自己的命令，所以你要在 <code>AfterSceneLoad</code>（或 <code>AfterAssembliesLoaded</code>）中注册你的命令。注册一个已存在的名称会替换旧命令，包括套件的命令。这就是修改套件命令的方式；这也是意外破坏某个命令的方式，所以请使用你自己的名称。</p>
+<h3 id="gmcommand-fields"><a class="anchor" href="#gmcommand-fields" aria-hidden="true">#</a>GmCommand 字段</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是什么</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>玩家在 <code>/</code> 之后输入的内容。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td>同一命令的其他名称。</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>rank</code></td>
+<td>默认要求的等级（见下文）。</td>
+<td><code>GmRank.Admin</code></td>
+</tr>
+<tr>
+<td><code>usage</code></td>
+<td>由 <code>/help</code> 显示，例如 <code>&quot;item id [amount] [player]&quot;</code>。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>/help</code> 中的一行说明。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td><code>Func&lt;GmContext, string&gt;</code>：执行命令并返回要显示的回复，返回 null 表示不显示。</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="levels"><a class="anchor" href="#levels" aria-hidden="true">#</a>等级</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th><code>GmRank</code></th>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Player</code></td>
+<td>1</td>
+<td>任何人。</td>
+</tr>
+<tr>
+<td><code>Moderator</code></td>
+<td>2</td>
+<td>聊天和玩家管理。</td>
+</tr>
+<tr>
+<td><code>GameMaster</code></td>
+<td>3</td>
+<td>游戏改动：物品、传送、怪物。</td>
+</tr>
+<tr>
+<td><code>Admin</code></td>
+<td>4</td>
+<td>一切，包括角色权限。</td>
+</tr>
+</tbody>
+</table></div>
+<p>命令要求的等级是 <code>GmCommands.LevelOf(command)</code>：如果在 <strong>Game Settings &gt; GM commands</strong>（<code>GameInstance.gmCommandLevels</code>）中为它的名称设置了等级，就用那个等级，否则用它的 <code>rank</code>。设计师无需代码就能把任何命令（包括你的）调高或调低。<code>/role</code> 始终要求 Admin。</p>
+<p>玩家的等级是 <code>GmCommands.RankOf(player)</code>：数据库中账号的角色（<code>accounts.Role</code>），如果 <code>GmCommands.EveryoneRank</code> 更高则用后者。在单人模式中，<em>Single Player Commands</em>（<code>singlePlayerCommands</code>，默认开启）会让 <code>EveryoneRank</code> 为 Admin，因此每个命令都能当作作弊命令使用。在线时它是 Player。</p>
+<p>等级低于命令等级的玩家会看到 &quot;Unknown command&quot;，就像该命令不存在一样。</p>
+<h2 id="gmcontext"><a class="anchor" href="#gmcontext" aria-hidden="true">#</a>GmContext</h2>
+<p><code>run</code> 接收到的内容：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerCharacter player</code></td>
+<td>输入命令的人。</td>
+</tr>
+<tr>
+<td><code>string[] args</code></td>
+<td>名称之后的单词，按空格拆分。</td>
+</tr>
+<tr>
+<td><code>string rest</code></td>
+<td>名称之后的全部内容，与输入一致。用于自由文本。</td>
+</tr>
+<tr>
+<td><code>int level</code></td>
+<td>此命令要求的等级。对于 Central 会再次检查的命令，把它传给 Central。</td>
+</tr>
+<tr>
+<td><code>string Arg(int i)</code></td>
+<td>第 <code>i</code> 个单词，或 null。</td>
+</tr>
+<tr>
+<td><code>int Int(int i, int fallback)</code></td>
+<td>第 <code>i</code> 个单词转为整数，或 <code>fallback</code>。</td>
+</tr>
+<tr>
+<td><code>long Long(int i, long fallback)</code></td>
+<td>同上，转为 long。</td>
+</tr>
+<tr>
+<td><code>float Float(int i, float fallback)</code></td>
+<td>同上，转为 float。拒绝 NaN 和无穷大。</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter Target(int i)</code></td>
+<td>本地图上由第 <code>i</code> 个单词指定的玩家；该单词缺失时为输入命令的人。名称不在本地图上时为 null。</td>
+</tr>
+<tr>
+<td><code>T Data&lt;T&gt;(int i)</code></td>
+<td>id 为第 <code>i</code> 个单词的 <code>T</code> 类型游戏数据，或 null。</td>
+</tr>
+</tbody>
+</table></div>
+<p>数字按不变区域性（invariant culture）解析，因此 <code>1.5</code> 在每台机器上都能用。</p>
+<h2 id="auditing"><a class="anchor" href="#auditing" aria-hidden="true">#</a>审计</h2>
+<p>每个等级高于 Player（2 或以上）的命令都属于管理人员的工作，会被记录：</p>
+<ul>
+<li>每次使用，无论因等级而被允许还是拒绝，都会写入 GM 审计（在线时为 <code>gm_audit</code> 表，单人模式中为存档），包括账号、角色、等级、命令、整行、目标和结果。</li>
+<li>每次实际运行的使用还会写入一条类型为 <code>gm.command</code> 的游戏日志，附带回复。</li>
+<li>当审计无法记录时（Central 无法连接），管理命令会暂停并回复 &quot;GM commands are paused&quot;。没有记录，任何管理级别的命令都不会运行。</li>
+</ul>
+<p>Player 等级的命令不做审计。</p>
+<p><code>GmCommands.ServerUsed</code>（<code>PlayerCharacter, string line</code>）会在每个命令运行之前触发。<code>GmAudit.Recorded</code>（<code>GmAuditEntry</code>）会在每条审计记录时触发。见<a href="events.html">事件</a>。</p>
+<h2 id="limits"><a class="anchor" href="#limits" aria-hidden="true">#</a>上限</h2>
+<p><code>GmCommands</code> 有一些套件命令会遵守的上限，这样一次输错或一个被盗的管理账号不会冲垮经济。在你自己发放东西的命令中也要遵守它们：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MaxItems</code></td>
+<td>9,999</td>
+</tr>
+<tr>
+<td><code>MaxGold</code></td>
+<td>1,000,000,000</td>
+</tr>
+<tr>
+<td><code>MaxExperience</code></td>
+<td>1,000,000,000</td>
+</tr>
+<tr>
+<td><code>MaxPoints</code></td>
+<td>1,000</td>
+</tr>
+<tr>
+<td><code>MaxStatusSeconds</code></td>
+<td>3,600</td>
+</tr>
+<tr>
+<td><code>MaxKillRange</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>MaxMuteMinutes</code></td>
+<td>525,600</td>
+</tr>
+</tbody>
+</table></div>
+<p>它们是静态字段，每次 Play 时重置。如果你的游戏需要其他上限，在你自己的 <code>AfterSceneLoad</code> 方法中修改它们。</p>
+<h2 id="examples"><a class="anchor" href="#examples" aria-hidden="true">#</a>示例</h2>
+<h3 id="give-attribute-points-capped"><a class="anchor" href="#give-attribute-points-capped" aria-hidden="true">#</a>发放属性点，带上限</h3>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;points&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">GameMaster</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;points amount [player]&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gives attribute points.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Usage: /points amount [player]&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Min</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">GmCommands</span><span class="p">.</span><span class="n">MaxPoints</span><span class="p">);</span>
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Target</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nobody by that name here.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">target</span><span class="p">.</span><span class="n">GainPoints</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;{target.characterName} got {amount} attribute points.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<h3 id="look-up-game-data-by-id"><a class="anchor" href="#look-up-game-data-by-id" aria-hidden="true">#</a>按 id 查找游戏数据</h3>
+<p><code>Data&lt;T&gt;</code> 按 id 查找游戏数据：</p>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;where monster_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Maps where a monster lives.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Data</span><span class="o">&lt;</span><span class="n">MonsterData</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">monster</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;No monster with that id.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">MapData</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">maps</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">map</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Array</span><span class="p">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">monsters</span><span class="p">,</span><span class="w"> </span><span class="n">monster</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">maps</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">DisplayName</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">maps</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">$&quot;{monster.DisplayName} lives nowhere listed.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;{monster.DisplayName}: {string.Join(&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;, maps)}&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<h3 id="a-command-for-players"><a class="anchor" href="#a-command-for-players" aria-hidden="true">#</a>给玩家用的命令</h3>
+<p>Player 等级的命令是添加聊天功能的快捷方式。悬赏示例中的 <code>/hunters</code> 会向 Central 请求排行榜：</p>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hunters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hunters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;The best bounty hunters on every map, and your last hunts.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">mine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Last</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">player</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Online</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;The hunters board is kept online.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span>
+<span class="w">        </span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyBoardAsk</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">characterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Asking the guild of hunters...&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<p>Central 的回复稍后到达，用 <code>SocialHub.Notice</code> 显示。见<a href="talking-to-central.html">与 Central 通信</a>。</p>
+<h3 id="free-text"><a class="anchor" href="#free-text" aria-hidden="true">#</a>自由文本</h3>
+<p><code>rest</code> 保留空格：</p>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;notice&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Moderator</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;notice text&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sets the notice board.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">rest</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Usage: /notice text&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SetNotice</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">rest</span><span class="p">),</span>
+<span class="p">});</span>
+</code></pre>
+<p>其他玩家会看到的任何文本都要用 <code>PlayerText.Clean(text, maxLength)</code> 清理。</p>
+<h2 id="help"><a class="anchor" href="#help" aria-hidden="true">#</a>/help</h2>
+<p><code>/help</code> 先列出聊天命令，然后列出玩家等级允许使用的每个命令（包括 Player 等级的命令），附带用法和说明。高于 Player 等级的命令末尾用方括号标出等级，例如 <code>[3]</code>；Player 等级的命令不带这个标记。</p>
+<h2 id="errors"><a class="anchor" href="#errors" aria-hidden="true">#</a>错误</h2>
+<p><code>run</code> 内部的异常会被捕获：它会记录在服务器日志中，玩家看到 &quot;/name failed: message&quot;。对于玩家操作错误的情况，返回一句话，而不是抛出异常。</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>服务器与客户端</h2>
+<p>命令只在地图服务器（或单人模式的主机）上运行。客户端发送输入的那一行；该行在 300 个字符处截断，并像聊天一样限速。客户端只能通过这一行触及你的 <code>run</code> 中的内容，而等级检查在运行之前进行。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li>**把命令放在 <code>Game</code> 程序集中。**它看不到 <code>KitARPG.Server</code>；即使能看到，客户端也会带上命令代码。</li>
+<li>**在 <code>SubsystemRegistration</code> 中注册。**套件在那里清空列表；这些方法之间的顺序是不确定的。</li>
+<li>**重用套件命令的名称。**你的命令会替换它。</li>
+<li>**数量不设上限。**使用 <code>Max...</code> 字段。</li>
+<li><strong>不用 <code>Target</code> 就按名称操作。</strong><code>Target</code> 只能找到本地图上的玩家；对于其他地方的玩家，要通过 Central。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="../gameplay/gm-tools.html">GM 工具</a></li>
+<li><a href="../reference/gm-commands.html">GM 命令</a></li>
+<li><a href="assemblies.html">程序集</a></li>
+<li><a href="talking-to-central.html">与 Central 通信</a></li>
+<li><a href="events.html">事件</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="network-messages.html"><span>上一页</span>网络消息</a><a class="next" href="formulas.html"><span>下一页</span>公式</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fgm-commands-in-code.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-a-command-is">命令是什么</a></li><li class="l2"><a href="#registering-a-command">注册命令</a></li><li class="l3"><a href="#gmcommand-fields">GmCommand 字段</a></li><li class="l3"><a href="#levels">等级</a></li><li class="l2"><a href="#gmcontext">GmContext</a></li><li class="l2"><a href="#auditing">审计</a></li><li class="l2"><a href="#limits">上限</a></li><li class="l2"><a href="#examples">示例</a></li><li class="l3"><a href="#give-attribute-points-capped">发放属性点，带上限</a></li><li class="l3"><a href="#look-up-game-data-by-id">按 id 查找游戏数据</a></li><li class="l3"><a href="#a-command-for-players">给玩家用的命令</a></li><li class="l3"><a href="#free-text">自由文本</a></li><li class="l2"><a href="#help">/help</a></li><li class="l2"><a href="#errors">错误</a></li><li class="l2"><a href="#server-and-client">服务器与客户端</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

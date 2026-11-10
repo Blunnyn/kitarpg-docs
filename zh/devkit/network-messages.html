@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>网络消息 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/network-messages.html">English</option><option value="../../es/devkit/network-messages.html">Español</option><option value="../../pt/devkit/network-messages.html">Português</option><option value="network-messages.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html" class="on" aria-current="page">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>网络消息</h1><p>如何用 Mirror 网络消息让客户端和服务器通信，而无需在玩家预制体上添加组件：定义消息，在正确的时机注册处理函数，在服务器上校验，以及发送给一名玩家、附近的玩家或所有人。</p>
+<h2 id="messages-or-a-player-system"><a class="anchor" href="#messages-or-a-player-system" aria-hidden="true">#</a>消息还是玩家系统</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>网络消息</th>
+<th>玩家系统（<code>NetworkBehaviour</code>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预制体改动</td>
+<td>无</td>
+<td>添加到每个玩家模型预制体</td>
+</tr>
+<tr>
+<td>同步状态</td>
+<td>无；你发送变化的内容</td>
+<td><code>[SyncVar]</code> 和同步集合</td>
+</tr>
+<tr>
+<td>谁发送的</td>
+<td>服务器上的 <code>conn.identity</code></td>
+<td>组件自己的玩家</td>
+</tr>
+<tr>
+<td>适合</td>
+<td>请求和回答、通知，以及你想通过删除一个文件夹就能移除的功能</td>
+<td>界面一直在读取的状态</td>
+</tr>
+</tbody>
+</table></div>
+<p>悬赏示例使用消息：客户端在生成时请求自己的悬赏，服务器在悬赏变化时发送它。另一种做法参见<a href="player-systems.html">玩家系统</a>。</p>
+<p><strong>文件放在哪里：</strong><code>Game</code> 程序集。两端都需要消息类型和它们的处理函数。</p>
+<h2 id="defining-a-message"><a class="anchor" href="#defining-a-message" aria-hidden="true">#</a>定义消息</h2>
+<p>消息是一个实现 <code>Mirror.NetworkMessage</code> 的 <code>struct</code>，带有 Mirror 能写入的类型的公共字段：数字、<code>bool</code>、<code>string</code>、<code>Vector3</code>、枚举、这些类型的数组和列表，以及由它们组成的其他结构体。</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">CraftRequest</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">recipeId</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">CraftResult</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>Mirror 的 weaver 会在编译时于你的程序集中生成读写它们的代码。</p>
+<h2 id="registering-handlers"><a class="anchor" href="#registering-handlers" aria-hidden="true">#</a>注册处理函数</h2>
+<p>处理函数在服务器启动时于服务器上注册，在客户端连接时于客户端上注册。<code>KitNetworkManager</code> 为两者都触发事件：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServerStarted</code></td>
+<td>服务器或主机启动。在单人模式中，主机在每次切换地图时都会重启，所以每次都会再次触发。</td>
+</tr>
+<tr>
+<td><code>ServerStopping</code></td>
+<td>服务器停止之前。</td>
+</tr>
+<tr>
+<td><code>ServerDisconnecting</code>（<code>NetworkConnectionToClient</code>）</td>
+<td>某个连接的玩家被销毁之前。</td>
+</tr>
+<tr>
+<td><code>ClientConnected</code></td>
+<td>客户端连接到一张地图。</td>
+</tr>
+<tr>
+<td><code>ClientDisconnected</code></td>
+<td>客户端离开一张地图。</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>KitNetworkManager.Instance</code> 就是该管理器，位于 Title 场景（客户端和单人模式）和 Server 场景（地图服务器）的 <code>KitNetwork</code> 对象上，这两个场景是游戏启动的起点。它在场景切换中保留下来，所以在 <code>AfterSceneLoad</code> 中挂接，此时第一个场景已经加载了它：</p>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">KitNetworkManager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KitNetworkManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">manager</span><span class="p">.</span><span class="n">ServerStarted</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">CraftRequest</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnCraft</span><span class="p">);</span>
+<span class="w">    </span><span class="n">manager</span><span class="p">.</span><span class="n">ClientConnected</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">CraftResult</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnResult</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnResult</span><span class="p">(</span><span class="n">CraftResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">text</span><span class="p">);</span>
+</code></pre>
+<p>使用 <code>ReplaceHandler</code>，不要用 <code>RegisterHandler</code>：下一次启动时再次注册同一个处理函数，它不会报错。服务器处理函数只接受来自已认证连接（出示了有效票据的玩家）的消息。</p>
+<h2 id="handling-a-request-on-the-server"><a class="anchor" href="#handling-a-request-on-the-server" aria-hidden="true">#</a>在服务器上处理请求</h2>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnCraft</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">CraftRequest</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Spend from this connection&#39;s budget; floods get disconnected.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 2. Who sent it comes from the connection, never from the message.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">IsDead</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 3. Validate every field.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">recipeId</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="n">recipeId</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">99</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">recipeId</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">RecipeData</span><span class="w"> </span><span class="n">recipe</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 4. Do it through the kit&#39;s systems, then answer.</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">why</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Crafting</span><span class="p">.</span><span class="n">ServerCraft</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">recipe</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="n">amount</span><span class="p">);</span>
+<span class="w">    </span><span class="n">conn</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CraftResult</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">why</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">why</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s">$&quot;Crafted {recipe.DisplayName}.&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<p>（<code>RecipeData</code> 和 <code>Crafting</code> 代表你自己的数据类型和规则。）</p>
+<p>这四个步骤适用于每个处理函数：</p>
+<ol>
+<li><strong>限速。</strong><code>CommandPacing.Allow(conn)</code> 让每个连接与游戏中的每个 <code>[Command]</code> 共享同一份配额（每秒 30 个，突发 60 个）。远远超出时，该连接会以 <code>KickReasons.Flooding</code> 被踢出。对于会给 Central 带来工作的请求，使用 <code>CommandPacing.AllowCentral(conn)</code>（每秒 2 个，突发 10 个）。</li>
+<li><strong>身份。</strong><code>conn.identity</code> 是发送消息的那个连接的玩家对象。绝不要在请求中放入角色 id、账号 id 或玩家名字并据此行事。</li>
+<li>**校验。**字符串有长度限制，数字有范围且必须是有限值（<code>float.IsFinite</code>），id 必须存在于数据库中，对世界中事物（NPC、怪物、掉落）的引用必须离该玩家很近且对其可见。</li>
+<li>**套件系统。**通过 <code>PlayerInventory</code>、<code>IPlayerActor</code>、<code>PlayerQuests</code> 和 <code>PlayerProgress</code> 修改物品、金币和进度。</li>
+</ol>
+<h3 id="naming-things-in-the-world"><a class="anchor" href="#naming-things-in-the-world" aria-hidden="true">#</a>指明世界中的事物</h3>
+<p>要指明一个怪物或玩家，发送它的 <code>netId</code>，并在服务器上用 <code>Fighters.TargetFor</code> 解析，对于该连接不应看到的任何东西（在其视野之外、隐身的敌人、为别人生成的活动怪物），它返回 null：</p>
+<pre class="code"><code class="language-csharp"><span class="n">ICombatant</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fighters</span><span class="p">.</span><span class="n">TargetFor</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="n">targetNetId</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</code></pre>
+<p>要指明一个 NPC，发送它的 id 并检查距离：</p>
+<pre class="code"><code class="language-csharp"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Npc</span><span class="p">.</span><span class="n">TryFind</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">npc</span><span class="p">.</span><span class="n">InReach</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</code></pre>
+<h2 id="sending-from-the-server"><a class="anchor" href="#sending-from-the-server" aria-hidden="true">#</a>从服务器发送</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>发给</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一名玩家</td>
+<td><code>player.connectionToClient.Send(message)</code>（或在处理函数中用 <code>conn.Send</code>）</td>
+</tr>
+<tr>
+<td>每个能看到某玩家的人</td>
+<td><code>NetworkServer.SendToReadyObservers(player.netIdentity, message)</code></td>
+</tr>
+<tr>
+<td>此地图服务器上的所有人</td>
+<td><code>NetworkServer.SendToAll(message)</code></td>
+</tr>
+<tr>
+<td>每张地图上的所有人</td>
+<td>通过 Central：参见<a href="talking-to-central.html">与 Central 通信</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>没有所有者的对象上 <code>connectionToClient</code> 为 null，玩家正在离开时也可能为 null；使用 <code>?.Send</code>。副本地图（地下城、公会大厅）的各个副本在同一个地图服务器进程中运行，所以 <code>SendToAll</code> 会送达每个副本。要把通知限制在一个副本内，遍历 <code>PlayerCharacter.ServerAll()</code> 并比较 <code>gameObject.scene</code>。</p>
+<h2 id="sending-from-the-client"><a class="anchor" href="#sending-from-the-client" aria-hidden="true">#</a>从客户端发送</h2>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Craft</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">recipeId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CraftRequest</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">recipeId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recipeId</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="p">});</span>
+</code></pre>
+<p>只在已连接时发送（<code>NetworkClient.isConnected</code>）。在玩家生成之前发送的消息到达时 <code>conn.identity</code> 为 null，上面的处理函数会忽略它们。</p>
+<h3 id="asking-when-the-player-spawns"><a class="anchor" href="#asking-when-the-player-spawns" aria-hidden="true">#</a>在玩家生成时请求</h3>
+<p>当 <code>PlayerCharacter.LocalSpawned</code> 触发时，客户端就知道自己的玩家已经存在。悬赏示例在那里请求自己的状态：</p>
+<pre class="code"><code class="language-csharp"><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">LocalSpawned</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">AskOnSpawn</span><span class="p">;</span>
+<span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">LocalSpawned</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">AskOnSpawn</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AskOnSpawn</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyAsk</span><span class="p">());</span>
+</code></pre>
+<h2 id="a-complete-example-a-world-notice-board"><a class="anchor" href="#a-complete-example-a-world-notice-board" aria-hidden="true">#</a>完整示例：世界公告板</h2>
+<p>玩家阅读一条全服的每日消息，版主用一条 GM 命令修改它。公告保存在地图服务器上。</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">NoticeAsk</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">NoticeText</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NoticeBoard</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MaxLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Server: the current notice.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Current</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Client: the notice arrived.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Received</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Received</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">LocalSpawned</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">AskOnSpawn</span><span class="p">;</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">LocalSpawned</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">AskOnSpawn</span><span class="p">;</span>
+<span class="w">            </span><span class="n">KitNetworkManager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KitNetworkManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">manager</span><span class="p">.</span><span class="n">ServerStarted</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">NoticeAsk</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnAsk</span><span class="p">);</span>
+<span class="w">            </span><span class="n">manager</span><span class="p">.</span><span class="n">ClientConnected</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">NoticeText</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnText</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnText</span><span class="p">(</span><span class="n">NoticeText</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Received</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">text</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AskOnSpawn</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NoticeAsk</span><span class="p">());</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAsk</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">NoticeAsk</span><span class="w"> </span><span class="n">_</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">conn</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NoticeText</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Current</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Server only. Sets the notice and shows it to everyone on this map server.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerSet</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerText</span><span class="p">.</span><span class="n">Clean</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MaxLength</span><span class="p">);</span>
+<span class="w">            </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">SendToAll</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NoticeText</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Current</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>Hook</code> 遵循<a href="domain-reload.html">不重新加载域的 Play</a>：静态事件 <code>PlayerCharacter.LocalSpawned</code> 先 <code>-=</code> 再 <code>+=</code>，并放在检查网络管理器之前，这样即使场景中没有网络管理器也会订阅。网络管理器自己的事件不需要 <code>-=</code>：每次 Play 都会重新创建网络管理器，旧的会连同它的订阅者一起消失。</p>
+<p>GM 命令，在 <code>Game.Server</code> 程序集中：</p>
+<pre class="code"><code class="language-csharp"><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;notice&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Moderator</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;notice text&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sets the notice board.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">NoticeBoard</span><span class="p">.</span><span class="n">ServerSet</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">rest</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Notice set.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>PlayerText.Clean</code> 会修剪文本、移除控制字符、按长度截断并破坏富文本标签，因此公告无法向其他玩家的屏幕注入 TextMeshPro 标记。要一次在每张地图上设置它，请通过 Central 发送（参见<a href="talking-to-central.html">与 Central 通信</a>）。</p>
+<h2 id="network-version"><a class="anchor" href="#network-version" aria-hidden="true">#</a>网络版本</h2>
+<p>套件会对项目中的每个网络消息和同步字段计算哈希，包括你的（<code>NetworkVersion</code>）。客户端随票据发送该哈希，由不同代码构建的地图服务器会以 <code>version_mismatch</code> 拒绝它。添加或修改消息之后，要同时重新构建客户端和地图服务器。在编辑器中，该值根据当前代码计算，所以 Play 总是与自身匹配。</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式和 MMO</h2>
+<p>消息在两者中的工作方式相同。在单人模式中，客户端和主机在同一个进程中运行：<code>NetworkClient.Send</code> 通过本地连接送达主机的处理函数，<code>CommandPacing</code> 从不限制本地连接。由于主机在每次切换地图时都会重启，从 <code>ServerStarted</code> 注册的处理函数每次都会再注册一遍，这就是使用 <code>ReplaceHandler</code> 的原因。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li>**信任消息中的 id。**玩家发送自己的名字或 id，服务器却替别人行事。使用 <code>conn.identity</code>。</li>
+<li>**没有限速。**客户端能触发的每个处理函数都必须调用 <code>CommandPacing.Allow</code>。</li>
+<li>**只在启动时注册一次。**单人模式的主机会重启；在 <code>ServerStarted</code> 和 <code>ClientConnected</code> 中注册。</li>
+<li><strong>把私有数据发送给观察者。</strong><code>SendToReadyObservers</code> 会送达附近的每个人。</li>
+<li>**不设上限的字符串和数组。**在使用之前，以及在存储或转发之前检查长度。</li>
+<li><strong>修改消息后忘记重新构建地图服务器。</strong></li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="player-systems.html">玩家系统</a></li>
+<li><a href="security-rules.html">安全规则</a></li>
+<li><a href="talking-to-central.html">与 Central 通信</a></li>
+<li><a href="example-bounty-board.html">示例：悬赏板</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="player-systems.html"><span>上一页</span>玩家系统</a><a class="next" href="gm-commands-in-code.html"><span>下一页</span>代码中的 GM 命令</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fnetwork-messages.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#messages-or-a-player-system">消息还是玩家系统</a></li><li class="l2"><a href="#defining-a-message">定义消息</a></li><li class="l2"><a href="#registering-handlers">注册处理函数</a></li><li class="l2"><a href="#handling-a-request-on-the-server">在服务器上处理请求</a></li><li class="l3"><a href="#naming-things-in-the-world">指明世界中的事物</a></li><li class="l2"><a href="#sending-from-the-server">从服务器发送</a></li><li class="l2"><a href="#sending-from-the-client">从客户端发送</a></li><li class="l3"><a href="#asking-when-the-player-spawns">在玩家生成时请求</a></li><li class="l2"><a href="#a-complete-example-a-world-notice-board">完整示例：世界公告板</a></li><li class="l2"><a href="#network-version">网络版本</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式和 MMO</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

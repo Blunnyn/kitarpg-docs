@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>菜单和设置选项 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/menus-and-settings-options.html">English</option><option value="../../es/devkit/menus-and-settings-options.html">Español</option><option value="../../pt/devkit/menus-and-settings-options.html">Português</option><option value="menus-and-settings-options.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html" class="on" aria-current="page">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>菜单和设置选项</h1><p>如何从你自己的代码中，向物品菜单和玩家菜单添加选项行，以及向 Settings 窗口添加选项。</p>
+<p>这三者都是客户端的列表，套件在每次 Play 开始时用自己的条目填充它们。你在那之后，从 <code>Game</code> 程序集中的一个静态方法添加你的条目。</p>
+<h2 id="item-menu"><a class="anchor" href="#item-menu" aria-hidden="true">#</a>物品菜单</h2>
+<p>右键点击背包或装备中的物品会打开物品菜单（<code>ItemMenu</code>）。它的选项行来自 <code>ItemMenu.Entries</code>，按顺序排列，开头是套件自己的：背包旁打开的窗口对应的操作（出售、存放、报价）、Equip、Take off、Use、Split、Salvage all、Possible values、View set 和 Destroy。</p>
+<h3 id="itemmenuentry"><a class="anchor" href="#itemmenuentry" aria-hidden="true">#</a>ItemMenuEntry</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string label</code></td>
+<td>该行的文本。</td>
+</tr>
+<tr>
+<td><code>Func&lt;ItemMenuTarget, string&gt; labelFor</code></td>
+<td>针对这个物品的文本，当文本会变化时使用。为 null 时使用 <code>label</code>。</td>
+</tr>
+<tr>
+<td><code>Func&lt;ItemMenuTarget, bool&gt; shows</code></td>
+<td>该行是否对这个物品显示。为 null 时总是显示。</td>
+</tr>
+<tr>
+<td><code>Action&lt;ItemMenuTarget&gt; run</code></td>
+<td>选择该行时执行什么。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemmenutarget"><a class="anchor" href="#itemmenutarget" aria-hidden="true">#</a>ItemMenuTarget</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UIItem view</code></td>
+<td>屏幕上该物品的栏位。</td>
+</tr>
+<tr>
+<td><code>InventoryWindow window</code></td>
+<td>打开菜单的背包窗口。</td>
+</tr>
+<tr>
+<td><code>ItemContainer Container</code></td>
+<td><code>Bag</code>、<code>Equipment</code> 或 <code>Bank</code>。</td>
+</tr>
+<tr>
+<td><code>int Slot</code></td>
+<td>在该容器中的栏位索引。</td>
+</tr>
+<tr>
+<td><code>ItemSlotState State</code></td>
+<td>栏位中的内容：物品 id、数量、强化等级、随机加成。</td>
+</tr>
+<tr>
+<td><code>IItem Item</code></td>
+<td>物品的数据（<code>ItemData</code> 及其子类实现了它）。</td>
+</tr>
+<tr>
+<td><code>bool InBag</code></td>
+<td><code>Container == ItemContainer.Bag</code>。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-compare-with-what-you-wear"><a class="anchor" href="#example-compare-with-what-you-wear" aria-hidden="true">#</a>示例：与身上穿戴的装备比较</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CompareLine</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemMenuEntry</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Compare&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">InBag</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">Item</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">IEquippable</span><span class="p">,</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">CompareWindow</span><span class="p">.</span><span class="n">Instance</span><span class="o">?.</span><span class="n">Show</span><span class="p">((</span><span class="n">IEquippable</span><span class="p">)</span><span class="n">t</span><span class="p">.</span><span class="n">Item</span><span class="p">),</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>（<code>CompareWindow</code> 代表你自己的一个窗口。）</p>
+<h3 id="example-insert-a-line-at-a-position"><a class="anchor" href="#example-insert-a-line-at-a-position" aria-hidden="true">#</a>示例：在指定位置插入一行</h3>
+<p><code>Entries</code> 是一个普通的 <code>List&lt;ItemMenuEntry&gt;</code>。用插入的方式把一行放在套件的 Destroy 之前：</p>
+<pre class="code"><code class="language-csharp"><span class="kt">int</span><span class="w"> </span><span class="n">destroy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">FindIndex</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Destroy&quot;</span><span class="p">);</span>
+<span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="n">destroy</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">destroy</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="n">myEntry</span><span class="p">);</span>
+</code></pre>
+<h3 id="lines-that-change-the-game"><a class="anchor" href="#lines-that-change-the-game" aria-hidden="true">#</a>改变游戏的选项行</h3>
+<p>菜单在客户端上运行。对游戏产生影响的选项行要通过玩家系统命令或网络消息向服务器请求，服务器会再次检查一切：该栏位确实装着那个物品，该玩家确实可以这样做。套件自己的选项行调用 <code>PlayerInventory.Local.Equip(slot)</code>、<code>Use(slot)</code> 等，这些都是请求。参见<a href="player-systems.html">玩家系统</a>和<a href="network-messages.html">网络消息</a>。</p>
+<h2 id="player-menu"><a class="anchor" href="#player-menu" aria-hidden="true">#</a>玩家菜单</h2>
+<p>在俯视角模式中右键点击另一名玩家，或右键点击聊天中的名字，会打开玩家菜单（<code>PlayerMenu</code>）。它的选项行来自 <code>PlayerMenu.Entries</code>：Whisper、Trade、Invite to party、Make leader、Remove from party、Add friend、Invite to guild、Duel、Report 和 Give up the duel。套件的每一行在其模块关闭时都会隐藏自己。</p>
+<h3 id="playermenuentry"><a class="anchor" href="#playermenuentry" aria-hidden="true">#</a>PlayerMenuEntry</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string label</code></td>
+<td>该行的文本。</td>
+</tr>
+<tr>
+<td><code>Func&lt;PlayerMenuTarget, bool&gt; shows</code></td>
+<td>该行是否对这名玩家显示。为 null 时总是显示。</td>
+</tr>
+<tr>
+<td><code>Action&lt;PlayerMenuTarget&gt; run</code></td>
+<td>选择该行时执行什么。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playermenutarget"><a class="anchor" href="#playermenutarget" aria-hidden="true">#</a>PlayerMenuTarget</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string name</code></td>
+<td>角色的名字。</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter character</code></td>
+<td>屏幕上的玩家；如果只是在聊天中提到了名字，则为 null。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-inspect-a-player-s-gear"><a class="anchor" href="#example-inspect-a-player-s-gear" aria-hidden="true">#</a>示例：查看玩家的装备</h3>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">PlayerMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PlayerMenuEntry</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inspect&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">character</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">        </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">InspectWindow</span><span class="p">.</span><span class="n">Instance</span><span class="o">?.</span><span class="n">Show</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">character</span><span class="p">),</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<p>穿戴的装备会同步给每个能看到该玩家的人（<code>PlayerCharacter.gear</code>，按装备位置排列的物品 id），所以查看窗口可以在客户端上读取它。背包是所有者私有的。</p>
+<h3 id="example-a-line-for-one-of-your-modules"><a class="anchor" href="#example-a-line-for-one-of-your-modules" aria-hidden="true">#</a>示例：为你的某个模块添加一行</h3>
+<pre class="code"><code class="language-csharp"><span class="n">PlayerMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PlayerMenuEntry</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Challenge to a race&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">character</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">RaceRules</span><span class="p">.</span><span class="n">Enabled</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Races</span><span class="p">.</span><span class="n">Ask</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">name</span><span class="p">),</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>Races.Ask</code> 按名字发送请求；服务器在自己的地图上按名字查找该玩家（<code>PlayerCharacter.ServerFind(name)</code>），并检查距离和规则。</p>
+<h2 id="settings-window"><a class="anchor" href="#settings-window" aria-hidden="true">#</a>Settings 窗口</h2>
+<p>Settings 窗口（按 Esc 或点击齿轮，然后选 Settings，标题画面上也有）有这些标签页：Graphics、Audio、Interface，加上来自俯视角模式的 Controls，以及你添加的任何页面。每一行都是 <code>ClientOptions.All</code> 中的一个 <code>GameOption</code>。值保存在玩家的电脑上，永远不会到达服务器。</p>
+<h3 id="kinds-of-option"><a class="anchor" href="#kinds-of-option" aria-hidden="true">#</a>选项的种类</h3>
+<p>所有选项都有这些字段：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string page</code></td>
+<td>标签页：<code>ClientOptions.Graphics</code>、<code>ClientOptions.Audio</code>、<code>ClientOptions.Interface</code>，或一个新名字，它会成为末尾的一个新标签页。</td>
+</tr>
+<tr>
+<td><code>string label</code></td>
+<td>该行的文本。</td>
+</tr>
+<tr>
+<td><code>string hint</code></td>
+<td>简短的说明。</td>
+</tr>
+<tr>
+<td><code>Func&lt;bool&gt; available</code></td>
+<td>返回否时隐藏该行，用于某个平台不具备的选项。</td>
+</tr>
+<tr>
+<td><code>Action reset</code></td>
+<td>把值恢复原状，供标签页的 Reset 按钮使用。</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table"><table>
+<thead>
+<tr>
+<th>种类</th>
+<th>额外字段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ToggleOption</code></td>
+<td><code>Func&lt;bool&gt; get</code>、<code>Action&lt;bool&gt; set</code></td>
+</tr>
+<tr>
+<td><code>SliderOption</code></td>
+<td><code>int min</code>（0）、<code>int max</code>（100）、<code>int step</code>（5）、<code>Func&lt;int&gt; get</code>、<code>Action&lt;int&gt; set</code>、<code>Func&lt;int, string&gt; format</code>（默认显示 <code>&quot;50%&quot;</code>）</td>
+</tr>
+<tr>
+<td><code>ChoiceOption</code></td>
+<td><code>Func&lt;string[]&gt; choices</code>、<code>Func&lt;int&gt; get</code>、<code>Action&lt;int&gt; set</code>（索引）</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>ClientOptions.Add(option)</code> 添加一个选项。改动在玩家操作时立即生效；套件在窗口关闭时保存自己的值，你的 <code>set</code> 负责保存你的值。</p>
+<h3 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>示例：模板</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// An option of your own in the Settings window. Kept on the player&#39;s computer and never sent</span>
+<span class="w">    </span><span class="c1">/// anywhere, so use it for how the game looks and sounds, not for anything the server decides.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MySettings</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyGame.ShowHints&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">ShowHints</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">get</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ToggleOption</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// A page name the kit doesn&#39;t have becomes a new tab.</span>
+<span class="w">                </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Interface</span><span class="p">,</span>
+<span class="w">                </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Show hints&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Short tips the first time something new shows up.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="p">,</span>
+<span class="w">                </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">,</span>
+<span class="w">                </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-a-slider-and-a-choice-on-a-page-of-your-own"><a class="anchor" href="#example-a-slider-and-a-choice-on-a-page-of-your-own" aria-hidden="true">#</a>示例：在你自己的页面上添加滑块和选择项</h3>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SliderOption</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gameplay&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Screen shake&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Shake&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">),</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Shake&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">),</span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">DeleteKey</span><span class="p">(</span><span class="s">&quot;MyGame.Shake&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChoiceOption</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gameplay&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Damage numbers&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;All&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mine only&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;None&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Numbers&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Numbers&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">),</span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">DeleteKey</span><span class="p">(</span><span class="s">&quot;MyGame.Numbers&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<p>滑块按整步移动。给每个选项一个 <code>reset</code>，这样标签页的 Reset 按钮也能覆盖它。</p>
+<h3 id="example-an-option-only-on-some-platforms"><a class="anchor" href="#example-an-option-only-on-some-platforms" aria-hidden="true">#</a>示例：只在某些平台上出现的选项</h3>
+<pre class="code"><code class="language-csharp"><span class="n">available</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Application</span><span class="p">.</span><span class="n">platform</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">RuntimePlatform</span><span class="p">.</span><span class="n">WindowsPlayer</span><span class="p">,</span>
+</code></pre>
+<h3 id="what-settings-are-for"><a class="anchor" href="#what-settings-are-for" aria-hidden="true">#</a>设置的用途</h3>
+<p>设置用于游戏在那台电脑上的画面、声音和操作手感。任何影响其他玩家或规则的东西（PvP 开关、掉落分享）都属于服务器，应放在带命令的玩家系统中，而不是 <code>PlayerPrefs</code>。对于你自己的按键，读取前先检查 <code>GameInstance.KeysOn</code>：在 <em>Touch</em> 输入布局下，游戏的按键是关闭的。</p>
+<h2 id="when-to-register"><a class="anchor" href="#when-to-register" aria-hidden="true">#</a>何时注册</h2>
+<p>套件在每次 Play 开始时，于 <code>SubsystemRegistration</code> 中用自己的选项行重建 <code>ItemMenu.Entries</code> 和 <code>PlayerMenu.Entries</code>，并清空 <code>ClientOptions.All</code>。在 <code>AfterAssembliesLoaded</code> 或更晚的时机注册你的条目。Settings 窗口在打开时读取列表，所以在那之前任何时候添加的选项都会显示出来。</p>
+<p>地图服务器以批处理模式运行，从不打开这些菜单；在那里注册不会有害处。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li>**在 <code>SubsystemRegistration</code> 中注册。**套件可能在你之后重置列表。</li>
+<li>**在 <code>run</code> 中直接做改动。**菜单是客户端代码；要向服务器请求。</li>
+<li>**没有 <code>reset</code>。**标签页的 Reset 按钮会让你的选项保持原样。</li>
+<li>**把游戏规则放在 <code>PlayerPrefs</code> 中。**玩家可以修改它们。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="../gameplay/player-settings.html">玩家设置</a></li>
+<li><a href="../gameplay/hud-and-windows.html">HUD 和窗口</a></li>
+<li><a href="player-systems.html">玩家系统</a></li>
+<li><a href="domain-reload.html">不重新加载域的 Play</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="overriding-kit-behaviour.html"><span>上一页</span>重写套件的行为</a><a class="next" href="editor-extensions.html"><span>下一页</span>编辑器扩展</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fmenus-and-settings-options.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#item-menu">物品菜单</a></li><li class="l3"><a href="#itemmenuentry">ItemMenuEntry</a></li><li class="l3"><a href="#itemmenutarget">ItemMenuTarget</a></li><li class="l3"><a href="#example-compare-with-what-you-wear">示例：与身上穿戴的装备比较</a></li><li class="l3"><a href="#example-insert-a-line-at-a-position">示例：在指定位置插入一行</a></li><li class="l3"><a href="#lines-that-change-the-game">改变游戏的选项行</a></li><li class="l2"><a href="#player-menu">玩家菜单</a></li><li class="l3"><a href="#playermenuentry">PlayerMenuEntry</a></li><li class="l3"><a href="#playermenutarget">PlayerMenuTarget</a></li><li class="l3"><a href="#example-inspect-a-player-s-gear">示例：查看玩家的装备</a></li><li class="l3"><a href="#example-a-line-for-one-of-your-modules">示例：为你的某个模块添加一行</a></li><li class="l2"><a href="#settings-window">Settings 窗口</a></li><li class="l3"><a href="#kinds-of-option">选项的种类</a></li><li class="l3"><a href="#example-the-template">示例：模板</a></li><li class="l3"><a href="#example-a-slider-and-a-choice-on-a-page-of-your-own">示例：在你自己的页面上添加滑块和选择项</a></li><li class="l3"><a href="#example-an-option-only-on-some-platforms">示例：只在某些平台上出现的选项</a></li><li class="l3"><a href="#what-settings-are-for">设置的用途</a></li><li class="l2"><a href="#when-to-register">何时注册</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

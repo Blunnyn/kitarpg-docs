@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hablar con Central · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/talking-to-central.html">English</option><option value="talking-to-central.html" selected>Español</option><option value="../../pt/devkit/talking-to-central.html">Português</option><option value="../../zh/devkit/talking-to-central.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html">Efectos de skills</a></li><li><a href="item-effects.html">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html" class="on" aria-current="page">Hablar con Central</a></li><li><a href="service-modules.html">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Hablar con Central</h1><p>Cómo los servidores de mapa intercambian mensajes propios con un módulo de Central, para funciones que abarcan varios mapas o personajes: rankings, eventos del mundo, contadores de todo el servidor. Esta página cubre el lado del mapa (<code>CentralMessages</code>); el lado de Central está en <a href="service-modules.html">Módulos de servicio</a>.</p>
+<h2 id="when-you-need-central"><a class="anchor" href="#when-you-need-central" aria-hidden="true">#</a>Cuándo necesitas Central</h2>
+<p>En línea, cada mapa corre en su propio proceso de servidor y nunca toca la base de datos. Central los une a todos, mantiene las sesiones y escribe en la base de datos. Todo lo que un solo mapa no puede saber necesita Central:</p>
+<ul>
+<li>un ranking de todos los personajes (el tablero de cazadores del ejemplo de recompensas),</li>
+<li>un evento que empieza en todos los mapas a la vez,</li>
+<li>un contador de todo el servidor,</li>
+<li>datos de personajes que no están en línea.</li>
+</ul>
+<p>Los datos por personaje que viajan con el personaje no necesitan Central: usa marcas o <code>PlayerData</code> (consulta <a href="saving-data.html">Guardar datos</a>).</p>
+<p>En un jugador no hay Central. Toda función que lo use necesita una alternativa, aunque la alternativa sea &quot;solo en línea&quot;.</p>
+<h2 id="how-a-message-travels"><a class="anchor" href="#how-a-message-travels" aria-hidden="true">#</a>Cómo viaja un mensaje</h2>
+<pre class="code"><code class="language-">Map server (Unity)                       Central (.NET)
+CentralMessages.Send(new BountyFinished)  -&gt;  module handler for BountyFinished
+                                               m.Reply(new BountyBoardList)
+CentralMessages.On&lt;BountyBoardList&gt;(...)  &lt;-   (to the map that asked)
+</code></pre>
+<ol>
+<li>En el mapa, <code>CentralMessages.Send</code> escribe el nombre de la clase del mensaje y su JSON (<code>JsonUtility</code> de Unity) por el enlace autenticado del mapa con Central (LiteNetLib, confiable y en orden).</li>
+<li>Central busca qué módulo registró ese nombre de clase y le entrega el mensaje, deserializado con <code>System.Text.Json</code>, junto con qué mapa lo mandó.</li>
+<li>El módulo responde al mapa que preguntó (<code>Reply</code>), al mapa donde está un personaje (<code>SendToCharacter</code>), a un mapa por id (<code>Send</code>) o a todos los mapas (<code>Broadcast</code>).</li>
+<li>En el mapa, los manejadores de <code>CentralMessages.On&lt;T&gt;</code> corren en el hilo principal.</li>
+</ol>
+<h2 id="centralmessages"><a class="anchor" href="#centralmessages" aria-hidden="true">#</a>CentralMessages</h2>
+<p><code>CentralMessages</code> vive en <code>KitARPG.Server</code> (namespace <code>Blunnyn.KitARPG.Server</code>), así que el código que lo usa va en un ensamblado solo de servidor, como <code>Game.Server</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static bool Online</code></td>
+<td>El mapa está registrado en Central. False en un jugador y mientras Central no está.</td>
+</tr>
+<tr>
+<td><code>static bool Send&lt;T&gt;(T message)</code></td>
+<td>Manda a los módulos de Central. False cuando no se puede llegar a Central; no se encola nada. Lanza una excepción si el nombre es de un mensaje del kit.</td>
+</tr>
+<tr>
+<td><code>static void On&lt;T&gt;(Action&lt;T&gt; handler)</code></td>
+<td>Llama a <code>handler</code> en el hilo principal por cada <code>T</code> que manda Central. Un manejador por tipo: una segunda llamada reemplaza a la primera; null lo quita. Lanza una excepción si el nombre es de un mensaje del kit.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Los manejadores se borran al empezar cada Play; regístralos en <code>AfterSceneLoad</code> (o <code>AfterAssembliesLoaded</code>). Una excepción dentro de un manejador se registra en el log y no corta el enlace.</p>
+<h2 id="writing-the-messages"><a class="anchor" href="#writing-the-messages" aria-hidden="true">#</a>Escribir los mensajes</h2>
+<p>Los mensajes son clases simples de C#, que compilan Unity y tu módulo de Central desde el mismo archivo:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Map to Central: a character finished a bounty.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyFinished</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">characterId</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">monster</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Central to the map the asking character is on.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyBoardList</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">characterId</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">BountyHunter</span><span class="p">[]</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyHunter</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyHunter</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bounties</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Reglas, porque los leen dos bibliotecas de JSON distintas:</p>
+<ul>
+<li><strong>Clases <code>[Serializable]</code> con campos públicos.</strong> Sin propiedades, sin constructores con parámetros, sin diccionarios.</li>
+<li><strong>Nombres de campos en lowerCamelCase.</strong> Central escribe el JSON en camelCase; <code>JsonUtility</code> de Unity compara los nombres exactos, así que un campo llamado <code>CharacterId</code> volvería vacío en el mapa.</li>
+<li><strong>Tipos que leen los dos lados:</strong> <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>bool</code>, <code>string</code>, enums (como números), arreglos y listas de esos y de otras clases de mensaje.</li>
+<li><strong>Sin tipos de Unity</strong> (<code>Vector3</code>, <code>Color</code>). Manda números.</li>
+<li><strong>Nombres propios.</strong> Los mensajes viajan solo por nombre de clase (sin namespace). Los nombres del kit se rechazan en los dos lados: en el mapa, <code>Send</code> y <code>On</code> lanzan una excepción; en Central, el módulo no arranca. Ponles un prefijo (<code>BountyFinished</code>, no <code>Finished</code>).</li>
+</ul>
+<p>Guarda el archivo en un ensamblado sin referencias al motor (<code>noEngineReferences: true</code>) para que no se cuele nada exclusivo de Unity, y enlázalo desde el <code>.csproj</code> del módulo. El ejemplo lo guarda en <code>DevKit/Example/Bounties/Shared/BountyBoardMessages.cs</code>, ensamblado <code>Game.Bounties.Shared</code>. Consulta <a href="assemblies.html#a-plain-c-assembly-for-messages">Ensamblados</a>.</p>
+<h2 id="sending"><a class="anchor" href="#sending" aria-hidden="true">#</a>Mandar</h2>
+<pre class="code"><code class="language-csharp"><span class="c1">// Offline the board just misses this one; the character&#39;s own history still has it.</span>
+<span class="n">CentralMessages</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyFinished</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">characterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">characterName</span><span class="p">,</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="p">});</span>
+</code></pre>
+<p><code>player.State.id</code> es el id del personaje en la base de datos. Central revisa que este mapa realmente tenga a ese personaje antes de actuar (<code>MapMessage.Hosts</code>), así que un mapa solo puede hablar por sus propios jugadores.</p>
+<p><code>Send</code> devuelve false cuando el mapa no está conectado. No se guarda nada para después: si el dato no se debe perder, guárdalo también en el personaje (<code>PlayerData</code>) y vuelve a mandarlo cuando <code>Online</code> regrese, o diseña el módulo para que acepte un estado completo en lugar de incrementos.</p>
+<h2 id="receiving"><a class="anchor" href="#receiving" aria-hidden="true">#</a>Recibir</h2>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Server</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">HuntersBoard</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">On</span><span class="o">&lt;</span><span class="n">BountyBoardList</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnBoard</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBoard</span><span class="p">(</span><span class="n">BountyBoardList</span><span class="w"> </span><span class="n">board</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="s">&quot;Best bounty hunters:&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">BountyHunter</span><span class="w"> </span><span class="n">hunter</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">top</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyHunter</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">                </span><span class="n">text</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">$&quot;\n{rank++}. {PlayerText.NoTags(hunter.name)}: {hunter.bounties}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">&quot;\nNobody yet.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">text</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">$&quot;\nYou: {board.mine}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">SocialHub</span><span class="p">.</span><span class="n">Notice</span><span class="p">(</span><span class="n">board</span><span class="p">.</span><span class="n">characterId</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li>Una respuesta sobre un personaje lleva su id, y el mapa encuentra al jugador con <code>PlayerCharacter.ServerFind(characterId)</code> o muestra una línea de sistema con <code>SocialHub.Notice(characterId, text)</code>. Cualquiera de los dos no hace nada si el personaje se fue mientras tanto.</li>
+<li>El texto que vino de jugadores (nombres, notas) se muestra con <code>PlayerText.NoTags</code>, para que no pueda abrir etiquetas de texto enriquecido en otras pantallas.</li>
+<li>Los arreglos pueden llegar null desde el JSON; protégete con <code>?? new T[0]</code>.</li>
+</ul>
+<h2 id="a-complete-example-a-world-event-on-every-map"><a class="anchor" href="#a-complete-example-a-world-event-on-every-map" aria-hidden="true">#</a>Un ejemplo completo: un evento del mundo en todos los mapas</h2>
+<p>Un moderador empieza una hora de &quot;oro doble&quot; en todos los mapas. El módulo la guarda y la difunde; cada mapa la aplica a sus propios jugadores.</p>
+<p>Mensajes compartidos (en <code>Game.Shared</code>, enlazado por el módulo):</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GoldHourStart</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">characterId</span><span class="p">;</span><span class="w">   </span><span class="c1">// who asked, so Central can check the map hosts them</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">minutes</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GoldHourState</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">endsUnixSeconds</span><span class="p">;</span><span class="w">   </span><span class="c1">// 0 when none</span>
+<span class="p">}</span>
+</code></pre>
+<p>Lado del mapa (en <code>Game.Server</code>):</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Server</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GoldHour</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">endsAt</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Active</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">DateTimeOffset</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">.</span><span class="n">ToUnixTimeSeconds</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">endsAt</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">endsAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">On</span><span class="o">&lt;</span><span class="n">GoldHourState</span><span class="o">&gt;</span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">endsAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">endsUnixSeconds</span><span class="p">);</span>
+<span class="w">            </span><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;goldhour&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">GameMaster</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;goldhour minutes&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Double gold on every map.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GoldHourStart</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">characterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="p">}))</span>
+<span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Only online.&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Starting a {minutes} minute gold hour everywhere.&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Lado de Central (en el módulo, consulta <a href="service-modules.html">Módulos de servicio</a>):</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMapLink</span><span class="p">(</span><span class="n">IMapLink</span><span class="w"> </span><span class="n">link</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">link</span><span class="p">.</span><span class="n">On</span><span class="o">&lt;</span><span class="n">GoldHourStart</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">m</span><span class="p">.</span><span class="n">Hosts</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">Message</span><span class="p">.</span><span class="n">characterId</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">Message</span><span class="p">.</span><span class="n">minutes</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">Message</span><span class="p">.</span><span class="n">minutes</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1440</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">ends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTimeOffset</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">.</span><span class="n">AddMinutes</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">Message</span><span class="p">.</span><span class="n">minutes</span><span class="p">).</span><span class="n">ToUnixTimeSeconds</span><span class="p">();</span>
+<span class="w">        </span><span class="n">link</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GoldHourState</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">endsUnixSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ends</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<p>Tu propio código de recompensas lee <code>GoldHour.Active</code>. Para las tasas de experiencia, botín y oro del kit no necesitas nada de esto: el comando <code>/rates</code> ya empieza eventos de tasas con tiempo que Central reparte a todos los mapas.</p>
+<p>El comando de GM ya revisó el nivel en el mapa, y la auditoría lo registró. Un mapa que se une después no sabe del evento; manda el estado a los mapas cuando lo pidan, o guárdalo en el módulo y responde un <code>GoldHourAsk</code> de cada mapa al arrancar.</p>
+<h2 id="single-player"><a class="anchor" href="#single-player" aria-hidden="true">#</a>Un jugador</h2>
+<p><code>CentralMessages.Online</code> es false y <code>Send</code> devuelve false. Decide por función:</p>
+<ul>
+<li><strong>Solo en línea:</strong> díselo al jugador, como hace <code>/hunters</code> (&quot;The hunters board is kept online&quot;).</li>
+<li><strong>Alternativa local:</strong> guarda una versión por personaje con <code>PlayerData</code>, como el ejemplo guarda las últimas cacerías de cada personaje.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
+<ul>
+<li><strong>Usar <code>CentralMessages</code> desde el ensamblado <code>Game</code>.</strong> Vive en <code>KitARPG.Server</code>; el código va en <code>Game.Server</code>.</li>
+<li><strong>Campos en PascalCase.</strong> Las respuestas de Central llegan vacías al mapa.</li>
+<li><strong>Confiar en un id de personaje en el lado de Central</strong> sin <code>m.Hosts(id)</code>.</li>
+<li><strong>Esperar que <code>Send</code> encole.</strong> No lo hace; planea para cuando Central no esté.</li>
+<li><strong>Registrar dos manejadores para un tipo.</strong> El segundo reemplaza al primero.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="service-modules.html">Módulos de servicio</a></li>
+<li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li>
+<li><a href="../servers/architecture.html">Arquitectura</a></li>
+<li><a href="saving-data.html">Guardar datos</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="kit-updates-in-code.html"><span>Anterior</span>Actualizaciones del kit en código</a><a class="next" href="service-modules.html"><span>Siguiente</span>Módulos de servicios</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Ftalking-to-central.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#when-you-need-central">Cuándo necesitas Central</a></li><li class="l2"><a href="#how-a-message-travels">Cómo viaja un mensaje</a></li><li class="l2"><a href="#centralmessages">CentralMessages</a></li><li class="l2"><a href="#writing-the-messages">Escribir los mensajes</a></li><li class="l2"><a href="#sending">Mandar</a></li><li class="l2"><a href="#receiving">Recibir</a></li><li class="l2"><a href="#a-complete-example-a-world-event-on-every-map">Un ejemplo completo: un evento del mundo en todos los mapas</a></li><li class="l2"><a href="#single-player">Un jugador</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

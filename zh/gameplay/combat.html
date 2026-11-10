@@ -1,404 +1,404 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Combat · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>战斗 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/combat.html">English</option><option value="../../es/gameplay/combat.html">Español</option><option value="../../pt/gameplay/combat.html">Português</option><option value="combat.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html" class="on" aria-current="page">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">游戏系统</div><h1>Combat</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>How fighting works in KitARPG: basic attacks, the damage and healing formulas, critical hits, elements and resistances, line of sight, threat, kill credit and experience, summons and stealth. It also lists every setting that changes combat and what the server checks.</p>
-<h2 id="what-combat-is"><a class="anchor" href="#what-combat-is" aria-hidden="true">#</a>What combat is</h2>
-<p>Combat in KitARPG is real time and fully decided by the server. The client only asks (&quot;attack that monster&quot;, &quot;cast this skill at that point&quot;). The map server checks the request, plays the attack on the animation's hit frames, rolls the damage with the combat formula and tells every client nearby what happened. A modified client can't hit harder, faster, farther or through walls.</p>
-<p>Players and monsters share the same rules. Both are <em>fighters</em> (<code>ICombatant</code>): they have a stat sheet, statuses, health, and take damage and healing the same way. Players are on team 0 and monsters on team 1. Different teams fight each other. Two players only fight where PvP or a duel allows it (see <a href="pvp-and-duels.html">PvP and duels</a>).</p>
-<p>Combat is made of three parts:</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">操作模式</a></li><li><a href="touch-controls.html">触控操作</a></li><li><a href="combat.html" class="on" aria-current="page">战斗</a></li><li><a href="recovery-and-death.html">恢复与死亡</a></li><li><a href="inventory-and-bank.html">背包与银行</a></li><li><a href="trade.html">交易</a></li><li><a href="forge.html">锻造</a></li><li><a href="market.html">市场</a></li><li><a href="mail.html">邮件</a></li><li><a href="chat.html">聊天</a></li><li><a href="friends-and-parties.html">好友与队伍</a></li><li><a href="guilds.html">公会</a></li><li><a href="tax-collectors.html">收税官</a></li><li><a href="pvp-and-duels.html">PvP 与决斗</a></li><li><a href="dungeons.html">地下城</a></li><li><a href="day-and-night.html">昼夜</a></li><li><a href="bestiary.html">怪物图鉴</a></li><li><a href="cash-shop.html">商城</a></li><li><a href="gm-tools.html">GM 工具</a></li><li><a href="game-log-and-reports.html">游戏日志与举报</a></li><li><a href="hud-and-windows.html">HUD 与窗口</a></li><li><a href="player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏系统</div><h1>战斗</h1><p>KitARPG 中战斗的运作方式：普通攻击、伤害和治疗公式、暴击、元素与抗性、视线、仇恨、击杀归属与经验、召唤物和潜行。本页还列出了所有影响战斗的设置以及服务器检查的内容。</p>
+<h2 id="what-combat-is"><a class="anchor" href="#what-combat-is" aria-hidden="true">#</a>战斗是什么</h2>
+<p>KitARPG 的战斗是即时的，完全由服务器决定。客户端只发出请求（&quot;攻击那只怪物&quot;、&quot;对那个点施放这个技能&quot;）。地图服务器检查请求，在动画的命中帧上执行攻击，用战斗公式掷出伤害，并告诉附近的每个客户端发生了什么。被修改的客户端无法打得更重、更快、更远或穿墙攻击。</p>
+<p>玩家和怪物共用同一套规则。两者都是 <em>战斗者</em>（<code>ICombatant</code>）：它们都有数值表、状态、生命值，并以相同方式承受伤害和治疗。玩家在队伍 0，怪物在队伍 1。不同队伍之间互相战斗。两名玩家只在 PvP 或决斗允许的地方战斗（参见 <a href="pvp-and-duels.html">PvP 与决斗</a>）。</p>
+<p>战斗由三部分组成：</p>
 <ul>
-<li><strong>Basic attacks</strong> with the weapon in hand (or bare hands).</li>
-<li><strong>Skills</strong>, with their own costs, cooldowns, areas and effects (see <a href="../content/skills.html">Skills</a>).</li>
-<li><strong>Statuses</strong>: buffs, debuffs, damage over time, shields, stuns and the like (see <a href="../content/statuses-and-buffs.html">Statuses and buffs</a>).</li>
+<li>使用手中武器（或空手）的 <strong>普通攻击</strong>。</li>
+<li><strong>技能</strong>，有自己的消耗、冷却、范围和效果（参见<a href="../content/skills.html">技能</a>）。</li>
+<li><strong>状态</strong>：增益、减益、持续伤害、护盾、眩晕等（参见<a href="../content/statuses-and-buffs.html">状态与增益</a>）。</li>
 </ul>
-<h2 id="fighting-as-a-player"><a class="anchor" href="#fighting-as-a-player" aria-hidden="true">#</a>Fighting as a player</h2>
-<p>How the player starts a fight depends on the control mode (see <a href="control-modes.html">Control modes</a>).</p>
+<h2 id="fighting-as-a-player"><a class="anchor" href="#fighting-as-a-player" aria-hidden="true">#</a>作为玩家战斗</h2>
+<p>玩家如何开始战斗取决于操作模式（参见<a href="control-modes.html">操作模式</a>）。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>Basic attack</th>
-<th>Skills</th>
+<th>模式</th>
+<th>普通攻击</th>
+<th>技能</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Top-down, mouse</td>
-<td>Click a monster. The character walks into range and keeps attacking until the target dies or you give another order. Clicking the same target again doesn't restart the swing.</td>
-<td>Hotbar key or click on the skill, then click the target or the ground. The character walks into range and casts once.</td>
+<td>俯视角，鼠标</td>
+<td>点击怪物。角色走到攻击范围内并持续攻击，直到目标死亡或你下达其他命令。再次点击同一目标不会重新开始挥击。</td>
+<td>按快捷栏按键或点击技能，然后点击目标或地面。角色走到范围内并施放一次。</td>
 </tr>
 <tr>
-<td>Top-down, keys</td>
-<td><code>Space</code> attacks the nearest enemy within 10 m, slightly favoring the one ahead. Held down, it moves on to the next enemy when one falls.</td>
-<td>Same hotbar keys.</td>
+<td>俯视角，键盘</td>
+<td><code>Space</code> 攻击 10 米内最近的敌人，略微优先前方的敌人。按住时，一个敌人倒下后会转向下一个。</td>
+<td>相同的快捷栏按键。</td>
 </tr>
 <tr>
-<td>Third person</td>
-<td>Left mouse button swings toward the crosshair and keeps swinging while held. A melee weapon hits the enemy in a cone in front, a ranged weapon (range over 3 m) the first enemy along the aimed line. No enemy there: the swing hits the air.</td>
-<td>Skills go toward the aim point. They don't need a target.</td>
+<td>第三人称</td>
+<td>鼠标左键朝准星挥击，按住时持续挥击。近战武器命中前方锥形范围内的敌人，远程武器（距离超过 3 米）命中瞄准线上的第一个敌人。那里没有敌人时，挥击打空。</td>
+<td>技能朝瞄准点施放。不需要目标。</td>
 </tr>
 <tr>
-<td>Free camera</td>
-<td>Same as third person, aiming with the mouse pointer.</td>
-<td>Same as third person.</td>
+<td>自由视角</td>
+<td>与第三人称相同，用鼠标指针瞄准。</td>
+<td>与第三人称相同。</td>
 </tr>
 <tr>
-<td>Touch</td>
-<td>The Attack button does what <code>Space</code> or the left button does. Skill buttons can be dragged to aim.</td>
-<td>See <a href="touch-controls.html">Touch controls</a>.</td>
+<td>触控</td>
+<td>Attack 按钮的作用与 <code>Space</code> 或左键相同。技能按钮可以拖动来瞄准。</td>
+<td>参见<a href="touch-controls.html">触控操作</a>。</td>
 </tr>
 </tbody>
 </table></div>
-<p>In top-down, a new order (walk somewhere, click another monster, pick up loot, talk) stops the swing in progress and interrupts a skill that is still casting. A projectile already flying still lands.</p>
-<p>In third person and free camera, nothing walks on its own: an attack on an enemy out of range is refused with &quot;Too far&quot;, and one behind a wall with &quot;Not in sight&quot;. <code>Space</code> dodges a few meters instead of attacking.</p>
-<p>The hotbar has 10 keys, <code>1</code> to <code>0</code>, holding skills and items. Its slots show the cooldown as a radial shadow with the seconds left, and gray out a skill you don't have the mana for.</p>
-<h2 id="what-the-player-sees"><a class="anchor" href="#what-the-player-sees" aria-hidden="true">#</a>What the player sees</h2>
+<p>在俯视角中，新命令（走到某处、点击另一只怪物、拾取掉落、对话）会停止正在进行的挥击，并打断仍在施放的技能。已经飞出的弹道仍会命中。</p>
+<p>在第三人称和自由视角中，角色不会自己走动：攻击超出范围的敌人会被拒绝并显示 &quot;Too far&quot;，攻击墙后的敌人显示 &quot;Not in sight&quot;。<code>Space</code> 会闪避几米，而不是攻击。</p>
+<p>快捷栏有 10 个按键，<code>1</code> 到 <code>0</code>，可放技能和物品。格子以径向阴影和剩余秒数显示冷却，法力不足时技能显示为灰色。</p>
+<h2 id="what-the-player-sees"><a class="anchor" href="#what-the-player-sees" aria-hidden="true">#</a>玩家看到的内容</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>On screen</th>
-<th>Meaning</th>
+<th>屏幕上</th>
+<th>含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>White or element-colored number rising over a target</td>
-<td>Damage dealt. The color is the element that did most of the damage (<code>DamageElement.color</code>).</td>
+<td>目标上方升起的白色或元素颜色数字</td>
+<td>造成的伤害。颜色是造成最多伤害的元素（<code>DamageElement.color</code>）。</td>
 </tr>
 <tr>
-<td>Larger orange number ending in <code>!</code></td>
-<td>A critical hit.</td>
+<td>更大的、以 <code>!</code> 结尾的橙色数字</td>
+<td>暴击。</td>
 </tr>
 <tr>
-<td>Red number over your own character</td>
-<td>Damage you took.</td>
+<td>你自己角色上方的红色数字</td>
+<td>你受到的伤害。</td>
 </tr>
 <tr>
-<td>Green <code>+number</code></td>
-<td>Healing.</td>
+<td>绿色的 <code>+数字</code></td>
+<td>治疗。</td>
 </tr>
 <tr>
-<td>&quot;Absorbed&quot; (light blue)</td>
-<td>A shield soaked the whole hit.</td>
+<td>&quot;Absorbed&quot;（浅蓝色）</td>
+<td>护盾吸收了整次攻击。</td>
 </tr>
 <tr>
-<td>&quot;Immune&quot; (light blue)</td>
-<td>The target is invulnerable, or immune to the status you tried to put on it. Shown at most once per second per target.</td>
+<td>&quot;Immune&quot;（浅蓝色）</td>
+<td>目标无敌，或对你尝试施加的状态免疫。每个目标每秒最多显示一次。</td>
 </tr>
 <tr>
 <td>&quot;Not in sight&quot;</td>
-<td>You reached the spot but a wall is still in the way.</td>
+<td>你到达了位置，但仍有墙挡着。</td>
 </tr>
 <tr>
 <td>&quot;Too far&quot; / &quot;Out of range&quot;</td>
-<td>The target or point is out of reach (third person and free camera).</td>
+<td>目标或位置超出范围（第三人称和自由视角）。</td>
 </tr>
 <tr>
 <td>&quot;You are out of ammo.&quot; / &quot;That ammo doesn't fit your weapon.&quot;</td>
-<td>Chat message, at most every 3 seconds, when a bow or crossbow has nothing to shoot.</td>
+<td>弓或弩没有东西可射时的聊天消息，最多每 3 秒一次。</td>
 </tr>
 <tr>
-<td>&quot;You're stunned&quot;, &quot;You're silenced&quot;, &quot;Not enough mana&quot;, &quot;Already casting&quot;, &quot;No target&quot;</td>
-<td>Why a skill was refused, over your character.</td>
+<td>&quot;You're stunned&quot;、&quot;You're silenced&quot;、&quot;Not enough mana&quot;、&quot;Already casting&quot;、&quot;No target&quot;</td>
+<td>技能被拒绝的原因，显示在你的角色上方。</td>
 </tr>
 <tr>
-<td><code>+12 XP</code>, &quot;Level 5!&quot;</td>
-<td>Experience and level ups.</td>
+<td><code>+12 XP</code>、&quot;Level 5!&quot;</td>
+<td>经验和升级。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Damage numbers can be turned off by each player in <strong>Settings &gt; Interface &gt; Damage numbers</strong>, and monster health bars in <strong>Settings &gt; Interface &gt; Monster health bars</strong> (see <a href="player-settings.html">Player settings</a>).</p>
-<p>Other combat feedback on the HUD:</p>
+<p>每位玩家可以在 <strong>Settings &gt; Interface &gt; Damage numbers</strong> 中关闭伤害数字，在 <strong>Settings &gt; Interface &gt; Monster health bars</strong> 中关闭怪物血条（参见<a href="player-settings.html">玩家设置</a>）。</p>
+<p>HUD 上的其他战斗反馈：</p>
 <ul>
-<li><strong>Health and mana orbs</strong> and the experience bar at the bottom.</li>
-<li><strong>Cast bar</strong> with the skill's name while you cast or channel.</li>
-<li><strong>Status icons</strong> above the hotbar, with stacks or the shield left and the seconds remaining. Monsters show a row of icons over their plate.</li>
-<li><strong>Monster plates</strong> with name, level and health. Elites and bosses are marked, and a summon shows its owner's name with a green bar.</li>
-<li><strong>Boss bar</strong> at the top for the nearest boss in a fight: name, health, its buffs and its last shout (see <a href="../content/bosses.html">Bosses</a>).</li>
-<li><strong>Death screen</strong> when you fall (see <a href="recovery-and-death.html">Recovery and death</a>).</li>
+<li>底部的 <strong>生命和法力球</strong> 以及经验条。</li>
+<li>施法或引导时显示技能名称的 <strong>施法条</strong>。</li>
+<li>快捷栏上方的 <strong>状态图标</strong>，显示层数或剩余护盾，以及剩余秒数。怪物在名牌上方显示一排图标。</li>
+<li><strong>怪物名牌</strong>，显示名称、等级和生命值。精英和首领有标记，召唤物显示其主人的名字和绿色血条。</li>
+<li>顶部的 <strong>首领血条</strong>，显示战斗中最近的首领：名称、生命值、它的增益和最后一次喊话（参见<a href="../content/bosses.html">首领</a>）。</li>
+<li>你倒下时的 <strong>死亡画面</strong>（参见<a href="recovery-and-death.html">恢复与死亡</a>）。</li>
 </ul>
-<h2 id="basic-attacks"><a class="anchor" href="#basic-attacks" aria-hidden="true">#</a>Basic attacks</h2>
-<p>The basic attack uses the weapon in the main hand. Its weapon type (<strong>Game Database &gt; Weapon Types</strong>) sets how it behaves:</p>
+<h2 id="basic-attacks"><a class="anchor" href="#basic-attacks" aria-hidden="true">#</a>普通攻击</h2>
+<p>普通攻击使用主手中的武器。武器类型（<strong>Game Database &gt; Weapon Types</strong>）决定它的表现：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Attack Range</em> (<code>attackRange</code>)</td>
-<td>Meters the weapon reaches. Over 3 m counts as ranged in third person.</td>
+<td><em>Attack Range</em>（<code>attackRange</code>）</td>
+<td>武器的攻击距离（米）。在第三人称中，超过 3 米算远程。</td>
 <td>2</td>
 </tr>
 <tr>
-<td><em>Attacks Per Second</em> (<code>attacksPerSecond</code>)</td>
-<td>Base attack speed before the <code>attackSpeed</code> stat.</td>
+<td><em>Attacks Per Second</em>（<code>attacksPerSecond</code>）</td>
+<td>计入 <code>attackSpeed</code> 数值之前的基础攻击速度。</td>
 <td>1</td>
 </tr>
 <tr>
-<td><em>Effects</em> (<code>effects</code>)</td>
-<td>Launch effect, projectile and impact effect. A projectile delays the damage until it arrives.</td>
-<td>Empty</td>
+<td><em>Effects</em>（<code>effects</code>）</td>
+<td>发射效果、弹道和命中效果。弹道会把伤害推迟到它到达时。</td>
+<td>空</td>
 </tr>
 </tbody>
 </table></div>
-<p>The weapon itself gives the damage rolls, one per element (<code>WeaponData.damages</code>), grown by its upgrade level (see <a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a>). With no weapon the character fights bare handed: 1 to 2 damage of the default element, range 1.5 m, 1 attack per second.</p>
-<h3 id="attack-speed"><a class="anchor" href="#attack-speed" aria-hidden="true">#</a>Attack speed</h3>
-<p>The time between attacks is:</p>
+<p>武器本身提供伤害骰，每个元素一个（<code>WeaponData.damages</code>），随强化等级提高（参见<a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶嵌</a>）。没有武器时角色空手战斗：默认元素 1 到 2 点伤害，距离 1.5 米，每秒 1 次攻击。</p>
+<h3 id="attack-speed"><a class="anchor" href="#attack-speed" aria-hidden="true">#</a>攻击速度</h3>
+<p>两次攻击之间的时间为：</p>
 <pre class="code"><code class="language-">interval = 1 / max(0.1, attacksPerSecond × (1 + attackSpeed))
 </code></pre>
-<p><code>attackSpeed</code> is a percent bonus (the stat field stores 0.25 for +25%, and the character window shows +25%). A weapon with 1 attack per second and +25% attack speed attacks every 0.8 s. When the attack animation is longer than the interval, it plays faster to fit.</p>
-<h3 id="hit-frames"><a class="anchor" href="#hit-frames" aria-hidden="true">#</a>Hit frames</h3>
-<p>The damage lands on the hit frames of the attack animation (<code>CharacterAnimations</code> on the character prefab, <em>Hits at</em> from 0 to 1), not when the request arrives. With several hit frames, the weapon roll is split between them and each frame rolls on its own. A step out of reach during the swing still lands (up to 1 m past the range); running away doesn't. A ranged attack spawns its projectile on each hit frame and deals damage when the projectile reaches the target.</p>
-<h3 id="dual-wield-and-ammo"><a class="anchor" href="#dual-wield-and-ammo" aria-hidden="true">#</a>Dual wield and ammo</h3>
+<p><code>attackSpeed</code> 是百分比加成（数值字段中 +25% 存为 0.25，角色窗口显示 +25%）。每秒 1 次攻击、攻击速度 +25% 的武器每 0.8 秒攻击一次。攻击动画比间隔长时，会加速播放以适应间隔。</p>
+<h3 id="hit-frames"><a class="anchor" href="#hit-frames" aria-hidden="true">#</a>命中帧</h3>
+<p>伤害在攻击动画的命中帧上生效（角色预制体上的 <code>CharacterAnimations</code>，<em>Hits at</em> 从 0 到 1），而不是在请求到达时。有多个命中帧时，武器伤害会分摊到各帧，每帧单独掷骰。挥击过程中目标走出范围一步仍会命中（最多超出范围 1 米）；逃跑则不会。远程攻击在每个命中帧生成弹道，弹道到达目标时造成伤害。</p>
+<h3 id="dual-wield-and-ammo"><a class="anchor" href="#dual-wield-and-ammo" aria-hidden="true">#</a>双持和弹药</h3>
 <ul>
-<li>With a weapon in each hand (weapon types with <code>dualWield</code>), attacks take turns: main hand, off hand, main hand.</li>
-<li>A weapon that uses ammo spends one from the Ammo position for every attack. With no fitting ammo the attack doesn't start.</li>
+<li>每只手各持一把武器时（具有 <code>dualWield</code> 的武器类型），攻击轮流进行：主手、副手、主手。</li>
+<li>使用弹药的武器每次攻击消耗 Ammo 栏位中的一发。没有合适的弹药时攻击不会开始。</li>
 </ul>
-<p>See <a href="../content/equipment.html">Equipment</a> for weapon types, dual wield and ammo.</p>
-<h2 id="skills-in-combat"><a class="anchor" href="#skills-in-combat" aria-hidden="true">#</a>Skills in combat</h2>
-<p>Skills follow the same timing rules as attacks. The server checks, in order: the character is alive, not stunned or silenced (or rooted for a dash or leap), knows the skill, isn't already casting, the cooldown is over, there is enough mana, the weapon is allowed, the target fits the skill (enemy, ally, fallen ally, ground), and it is in range with a 0.6 m margin (<code>PlayerSkills.rangeTolerance</code>). Mana and cooldown are paid when the cast time ends, so an interrupted cast costs nothing. Moving, attacking or picking something up interrupts a cast; so does a stun or silence landing on you.</p>
-<p>Areas (circle, cone, line) are measured flat, ignoring height. Harmful effects land on enemies in the area, the rest on the caster and allies. Details, shapes, bounces, zones and channeling are on the <a href="../content/skills.html">Skills</a> page.</p>
-<h2 id="the-damage-formula"><a class="anchor" href="#the-damage-formula" aria-hidden="true">#</a>The damage formula</h2>
-<p>Every hit, from a weapon, a skill or a monster, goes through the combat formula (<code>CombatFormula</code>). A hit has one or more <em>rolls</em>, each with an element and a minimum and maximum. Each roll is worked out on its own:</p>
+<p>武器类型、双持和弹药参见<a href="../content/equipment.html">装备</a>。</p>
+<h2 id="skills-in-combat"><a class="anchor" href="#skills-in-combat" aria-hidden="true">#</a>战斗中的技能</h2>
+<p>技能遵循与攻击相同的时间规则。服务器按顺序检查：角色存活，没有被眩晕或沉默（冲刺或跳跃时没有被定身），学会了该技能，没有正在施法，冷却已结束，法力足够，武器符合要求，目标符合技能（敌人、盟友、倒下的盟友、地面），且在范围内，有 0.6 米的余量（<code>PlayerSkills.rangeTolerance</code>）。法力和冷却在施法时间结束时才支付，所以被打断的施法没有消耗。移动、攻击或拾取东西会打断施法；你被眩晕或沉默时也会被打断。</p>
+<p>范围（圆形、锥形、直线）按平面测量，忽略高度。有害效果作用于范围内的敌人，其余效果作用于施法者和盟友。细节、形状、弹跳、区域和引导见<a href="../content/skills.html">技能</a>页面。</p>
+<h2 id="the-damage-formula"><a class="anchor" href="#the-damage-formula" aria-hidden="true">#</a>伤害公式</h2>
+<p>每一次攻击，无论来自武器、技能还是怪物，都要经过战斗公式（<code>CombatFormula</code>）。一次攻击有一个或多个 <em>伤害骰</em>，每个都有一个元素以及最小值和最大值。每个伤害骰单独计算：</p>
 <pre class="code"><code class="language-">element damage = (roll + attacker&#39;s damage for that element) × (1 + power)
                  − defender&#39;s flat resistance to that element
                  × (1 − min(defender&#39;s resistance % to that element, element&#39;s cap))
 </code></pre>
-<p>Then:</p>
+<p>然后：</p>
 <ol>
-<li>The elements are added together. Negative results count as 0.</li>
-<li>A critical hit (chance <code>critChance</code>) multiplies the total by <code>1 + critDamage</code>.</li>
-<li>The total is rounded and is never less than 1.</li>
+<li>把各元素相加。负数结果按 0 计算。</li>
+<li>暴击（几率 <code>critChance</code>）将总数乘以 <code>1 + critDamage</code>。</li>
+<li>总数取整，且不低于 1。</li>
 </ol>
-<p>The element that dealt the most picks the color of the number and the impact effect.</p>
+<p>造成最多伤害的元素决定数字的颜色和命中效果。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Stat</th>
-<th>What it does</th>
-<th>Notes</th>
+<th>数值</th>
+<th>作用</th>
+<th>备注</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Element damage</td>
-<td>Flat damage added to every roll of that element.</td>
-<td>From attributes, gear and buffs.</td>
+<td>元素伤害</td>
+<td>加到该元素每个伤害骰上的固定伤害。</td>
+<td>来自属性、装备和增益。</td>
 </tr>
 <tr>
 <td><code>power</code></td>
-<td>Percent more damage of every element.</td>
-<td>0.2 is +20%.</td>
+<td>所有元素伤害的百分比提高。</td>
+<td>0.2 为 +20%。</td>
 </tr>
 <tr>
-<td>Flat resistance</td>
-<td>Taken off each roll of that element.</td>
-<td>Per element.</td>
+<td>固定抗性</td>
+<td>从该元素的每个伤害骰中减去。</td>
+<td>按元素。</td>
 </tr>
 <tr>
-<td>Resistance %</td>
-<td>Percent less damage of that element.</td>
-<td>Capped by the element's <em>Max Resistance</em> (<code>maxResistance</code>, default 50%). Negative values make the target take more.</td>
+<td>抗性 %</td>
+<td>该元素伤害的百分比降低。</td>
+<td>上限为元素的 <em>Max Resistance</em>（<code>maxResistance</code>，默认 50%）。负值会让目标受到更多伤害。</td>
 </tr>
 <tr>
 <td><code>critChance</code></td>
-<td>Chance of a critical hit.</td>
-<td>0.05 is 5%.</td>
+<td>暴击几率。</td>
+<td>0.05 为 5%。</td>
 </tr>
 <tr>
 <td><code>critDamage</code></td>
-<td>Extra damage on a critical.</td>
-<td>0.5 is +50%, the class default.</td>
+<td>暴击时的额外伤害。</td>
+<td>0.5 为 +50%，职业默认值。</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="worked-example"><a class="anchor" href="#worked-example" aria-hidden="true">#</a>Worked example</h3>
-<p>A warrior hits with a sword that rolls 10 to 14 Neutral. The roll comes out 12. The warrior has +3 Neutral damage and 20% power. The slime has 2 flat Neutral resistance and 25% Neutral resistance.</p>
+<h3 id="worked-example"><a class="anchor" href="#worked-example" aria-hidden="true">#</a>计算示例</h3>
+<p>一名战士用一把 10 到 14 Neutral 的剑攻击。掷出 12。战士有 +3 Neutral 伤害和 20% power。史莱姆有 2 点 Neutral 固定抗性和 25% Neutral 抗性。</p>
 <ol>
 <li>(12 + 3) × 1.2 = 18</li>
 <li>18 − 2 = 16</li>
 <li>16 × (1 − 0.25) = 12</li>
-<li>Critical with +50%: 12 × 1.5 = 18. Without it: 12.</li>
+<li>暴击 +50%：12 × 1.5 = 18。不暴击：12。</li>
 </ol>
-<p>Rolls without an element use the default element (<strong>Game Database</strong>, <em>Default Element</em>, or the first element in the list). The elements themselves, with their colors, icons and resistance caps, are set up in the Game Database (see <a href="../content/attributes-and-stats.html">Attributes and stats</a>).</p>
-<h3 id="damage-over-time"><a class="anchor" href="#damage-over-time" aria-hidden="true">#</a>Damage over time</h3>
-<p>Ticks of a status (poison, burning, bleeding) go through the same element formula with the caster's stats saved when the status landed and the holder's current resistances. They are never critical and deal at least 1. See <a href="../content/statuses-and-buffs.html">Statuses and buffs</a>.</p>
-<h3 id="healing"><a class="anchor" href="#healing" aria-hidden="true">#</a>Healing</h3>
+<p>没有元素的伤害骰使用默认元素（<strong>Game Database</strong> 中的 <em>Default Element</em>，或列表中的第一个元素）。元素本身，包括颜色、图标和抗性上限，在 Game Database 中设置（参见<a href="../content/attributes-and-stats.html">属性与数值</a>）。</p>
+<h3 id="damage-over-time"><a class="anchor" href="#damage-over-time" aria-hidden="true">#</a>持续伤害</h3>
+<p>状态（中毒、燃烧、流血）的每跳伤害也经过同样的元素公式，使用状态生效时保存的施法者数值和持有者当前的抗性。它们从不暴击，至少造成 1 点伤害。参见<a href="../content/statuses-and-buffs.html">状态与增益</a>。</p>
+<h3 id="healing"><a class="anchor" href="#healing" aria-hidden="true">#</a>治疗</h3>
 <pre class="code"><code class="language-">heal = (amount + healer&#39;s healing) × (1 + healingBonus)
 </code></pre>
-<p><code>healing</code> (Heals) is added to every heal the character casts, and <code>healingBonus</code> is a percent. Heals are never critical.</p>
-<h3 id="every-bonus-is-a-whole-number"><a class="anchor" href="#every-bonus-is-a-whole-number" aria-hidden="true">#</a>Every bonus is a whole number</h3>
-<p>Stats, bonuses and percentages are always whole numbers: 7%, never 7.5%. Each source is rounded before it is added up. See <a href="../content/attributes-and-stats.html">Attributes and stats</a>.</p>
-<h2 id="what-happens-when-a-hit-lands"><a class="anchor" href="#what-happens-when-a-hit-lands" aria-hidden="true">#</a>What happens when a hit lands</h2>
-<p>On the target, in this order:</p>
+<p><code>healing</code>（Heals）加到角色施放的每次治疗上，<code>healingBonus</code> 是百分比。治疗从不暴击。</p>
+<h3 id="every-bonus-is-a-whole-number"><a class="anchor" href="#every-bonus-is-a-whole-number" aria-hidden="true">#</a>每个加成都是整数</h3>
+<p>数值、加成和百分比始终是整数：7%，绝不会是 7.5%。每个来源在相加之前先取整。参见<a href="../content/attributes-and-stats.html">属性与数值</a>。</p>
+<h2 id="what-happens-when-a-hit-lands"><a class="anchor" href="#what-happens-when-a-hit-lands" aria-hidden="true">#</a>攻击命中时发生什么</h2>
+<p>在目标身上，按以下顺序：</p>
 <ol>
-<li>A player only takes damage from another player where PvP or a duel allows it. A player with GM god mode (<code>/god</code>) takes none.</li>
-<li>The hit puts the target in combat, and the attacker too (or the owner of the summon that hit). See <a href="recovery-and-death.html#in-combat">Recovery and death</a>.</li>
-<li>Invulnerability takes the whole hit (&quot;Immune&quot;).</li>
-<li>Shields soak what they can and end when used up. A hit fully soaked shows &quot;Absorbed&quot;.</li>
-<li>Statuses that end on damage (sleep, freeze) end.</li>
-<li>In a duel, a hit that would kill stops at 1 health and ends the duel.</li>
-<li>Health goes down. At 0 the fighter dies.</li>
+<li>玩家只在 PvP 或决斗允许的地方受到其他玩家的伤害。开启 GM 无敌模式（<code>/god</code>）的玩家不受伤害。</li>
+<li>攻击使目标进入战斗，攻击者也进入战斗（或者攻击的召唤物的主人）。参见<a href="recovery-and-death.html#in-combat">恢复与死亡</a>。</li>
+<li>无敌会承受整次攻击（&quot;Immune&quot;）。</li>
+<li>护盾尽可能吸收伤害，耗尽时结束。完全被吸收的攻击显示 &quot;Absorbed&quot;。</li>
+<li>受到伤害就结束的状态（睡眠、冰冻）结束。</li>
+<li>在决斗中，会致死的攻击停在 1 点生命并结束决斗。</li>
+<li>生命值降低。降到 0 时战斗者死亡。</li>
 </ol>
-<p>Statuses also cut actions short: a stun or silence landing interrupts a cast, and a stun or disarm cancels a basic attack in progress.</p>
+<p>状态也会中断动作：眩晕或沉默生效时会打断施法，眩晕或缴械会取消正在进行的普通攻击。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Flag</th>
-<th>Stops</th>
+<th>标记</th>
+<th>阻止</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Stun</td>
-<td>Moving, attacking and casting</td>
+<td>移动、攻击和施法</td>
 </tr>
 <tr>
 <td>Root</td>
-<td>Moving, dashing and leaping (teleport still works)</td>
+<td>移动、冲刺和跳跃（传送仍可用）</td>
 </tr>
 <tr>
 <td>Silence</td>
-<td>Casting</td>
+<td>施法</td>
 </tr>
 <tr>
 <td>Disarm</td>
-<td>Basic attacks</td>
+<td>普通攻击</td>
 </tr>
 <tr>
 <td>Invisible</td>
-<td>Monsters lose you, enemy players don't receive you</td>
+<td>怪物丢失你的踪迹，敌方玩家收不到你</td>
 </tr>
 <tr>
 <td>Invulnerable</td>
-<td>All damage and harmful statuses</td>
+<td>所有伤害和有害状态</td>
 </tr>
 <tr>
 <td>Unstoppable</td>
-<td>Control statuses and being pushed</td>
+<td>控制状态和被推动</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="line-of-sight"><a class="anchor" href="#line-of-sight" aria-hidden="true">#</a>Line of sight</h2>
-<p>Attacks, skills and monsters can't see through walls. <em>Line Of Sight</em> (<code>lineOfSight</code>) in <strong>KitARPG &gt; Game Settings</strong>, section Combat, picks how:</p>
+<h2 id="line-of-sight"><a class="anchor" href="#line-of-sight" aria-hidden="true">#</a>视线</h2>
+<p>攻击、技能和怪物都无法穿墙看到目标。<strong>KitARPG &gt; Game Settings</strong> 中 Combat 部分的 <em>Line Of Sight</em>（<code>lineOfSight</code>）决定判定方式：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>What blocks</th>
-<th>Setup</th>
+<th>模式</th>
+<th>什么会阻挡</th>
+<th>设置</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>NavMesh</code> (default)</td>
-<td>Holes in the NavMesh: walls, houses, trunks.</td>
-<td>Nothing to add. Scenery doesn't need colliders, so clicks still reach the ground.</td>
+<td><code>NavMesh</code>（默认）</td>
+<td>NavMesh 上的空洞：墙、房屋、树干。</td>
+<td>无需添加任何东西。场景物体不需要碰撞体，所以点击仍能到达地面。</td>
 </tr>
 <tr>
 <td><code>Colliders</code></td>
-<td>Colliders on the layers in <em>Sight Blockers</em> (<code>sightBlockers</code>), tested at chest height.</td>
-<td>Put colliders on what should block and set the layers. Anything with a <code>NetworkIdentity</code> (players, monsters, NPCs) never blocks.</td>
+<td><em>Sight Blockers</em>（<code>sightBlockers</code>）中各层上的碰撞体，在胸口高度检测。</td>
+<td>在需要阻挡的物体上放碰撞体并设置层。任何带 <code>NetworkIdentity</code> 的东西（玩家、怪物、NPC）都不会阻挡。</td>
 </tr>
 <tr>
 <td><code>Off</code></td>
-<td>Nothing.</td>
-<td>Attacks and skills go through everything.</td>
+<td>什么都不阻挡。</td>
+<td>攻击和技能穿过一切。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Two fighters closer than 1.2 m always see each other, so fighting around a corner doesn't stall. Off the NavMesh (a map with no NavMesh, something flying) the NavMesh test always passes.</p>
-<p>Where it applies:</p>
+<p>距离小于 1.2 米的两个战斗者总能互相看到，所以在拐角处战斗不会卡住。在 NavMesh 之外（没有 NavMesh 的地图、飞行的东西），NavMesh 检测总是通过。</p>
+<p>适用范围：</p>
 <ul>
-<li><strong>Players:</strong> in top-down, an attack or skill on a target behind a wall walks on until the target comes into view. If the character gets there and still can't see it, &quot;Not in sight&quot; appears. In third person and free camera the request is refused.</li>
-<li><strong>Monsters</strong> only notice players they see, and walk around a wall instead of hitting through it.</li>
-<li><strong>Areas and lines</strong> don't reach anyone hidden from the area's center. Bounces only jump to targets they see. Revive areas only reach fallen allies in sight.</li>
+<li><strong>玩家：</strong> 在俯视角中，对墙后目标的攻击或技能会让角色继续走，直到能看到目标。如果角色到达后仍看不到，显示 &quot;Not in sight&quot;。在第三人称和自由视角中，请求会被拒绝。</li>
+<li><strong>怪物</strong> 只注意到它们看得见的玩家，并会绕过墙，而不是穿墙攻击。</li>
+<li><strong>范围和直线</strong> 不会命中从范围中心看不到的任何人。弹跳只会跳到看得见的目标。复活范围只对视线内倒下的盟友有效。</li>
 </ul>
-<h2 id="monsters-in-combat"><a class="anchor" href="#monsters-in-combat" aria-hidden="true">#</a>Monsters in combat</h2>
-<p>Each monster's data (<strong>Game Database &gt; Monsters</strong>) sets how it fights. The full list is on <a href="../content/monsters.html">Monsters</a>; these are the combat parts.</p>
+<h2 id="monsters-in-combat"><a class="anchor" href="#monsters-in-combat" aria-hidden="true">#</a>战斗中的怪物</h2>
+<p>每只怪物的数据（<strong>Game Database &gt; Monsters</strong>）决定它如何战斗。完整列表见<a href="../content/monsters.html">怪物</a>；以下是与战斗相关的部分。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Aggression</em></td>
-<td><code>Passive</code> fights back only when hit. <code>Aggressive</code> attacks any player in sight. <code>Pack</code> also joins when a monster of the same kind within its sight range is attacked.</td>
+<td><code>Passive</code> 只在被攻击时反击。<code>Aggressive</code> 攻击视线内的任何玩家。<code>Pack</code> 还会在其视野范围内的同类怪物被攻击时加入战斗。</td>
 <td>Aggressive</td>
 </tr>
 <tr>
 <td><em>Sight Range</em></td>
-<td>Meters at which it notices players.</td>
+<td>它注意到玩家的距离（米）。</td>
 <td>8</td>
 </tr>
 <tr>
 <td><em>Leash Range</em></td>
-<td>Meters from home it follows a player before giving up.</td>
+<td>它离开出生点追击玩家的最远距离（米），超出则放弃。</td>
 <td>18</td>
 </tr>
 <tr>
 <td><em>Attack Range</em></td>
-<td>Reach of its basic attack. It closes in to this plus 0.3 m.</td>
+<td>普通攻击的距离。它会靠近到这个距离加 0.3 米。</td>
 <td>1.4</td>
 </tr>
 <tr>
 <td><em>Attacks Per Second</em></td>
-<td>Speed of its basic attack. Its skills share this turn.</td>
+<td>普通攻击的速度。它的技能共用这个节奏。</td>
 <td>0.8</td>
 </tr>
 <tr>
 <td><em>Attack</em></td>
-<td>Damage rolls of its basic attack, one per element.</td>
-<td>1 to 3, default element</td>
+<td>普通攻击的伤害骰，每个元素一个。</td>
+<td>1 到 3，默认元素</td>
 </tr>
 <tr>
 <td><em>Skills</em></td>
-<td>Cast at rank 1, with no cast time, when ready and in reach.</td>
-<td>Empty</td>
+<td>以 1 级施放，没有施法时间，在就绪且在范围内时施放。</td>
+<td>空</td>
 </tr>
 <tr>
 <td><em>Status Defense</em></td>
-<td>Statuses it ignores or that last less on it.</td>
-<td>Empty</td>
+<td>它忽略的状态，或在它身上持续时间更短的状态。</td>
+<td>空</td>
 </tr>
 </tbody>
 </table></div>
-<p>When a monster is pulled past its leash range it walks home, forgets everyone and heals to full. A boss going home also resets its phases and enrage (see <a href="../content/bosses.html">Bosses</a>).</p>
-<h3 id="threat"><a class="anchor" href="#threat" aria-hidden="true">#</a>Threat</h3>
-<p>Each monster keeps a threat table, apart from the damage that decides the kill:</p>
+<p>怪物被拉出追击范围时会走回出生点，忘记所有人并回满生命。首领回家时还会重置阶段和狂暴（参见<a href="../content/bosses.html">首领</a>）。</p>
+<h3 id="threat"><a class="anchor" href="#threat" aria-hidden="true">#</a>仇恨</h3>
+<p>每只怪物都有一张仇恨表，独立于决定击杀归属的伤害：</p>
 <ul>
-<li>Damage dealt to it adds that much threat.</li>
-<li>Healing someone it is fighting adds <em>Heal Threat</em> (<code>healThreat</code>) threat per point healed to the healer. Default 0.5.</li>
-<li>Being seen first is worth 1 point, so the first hit from elsewhere doesn't pull it away at once.</li>
-<li>It switches target only when another fighter's threat passes the current target's by <em>Threat Switch</em> (<code>threatSwitch</code>), default 1.1 (10% more). Values under 1 count as 1.</li>
-<li>Summons earn their own threat.</li>
+<li>对它造成的伤害增加同等的仇恨。</li>
+<li>治疗正在与它战斗的人，治疗者每治疗 1 点增加 <em>Heal Threat</em>（<code>healThreat</code>）点仇恨。默认 0.5。</li>
+<li>第一个被看到的人获得 1 点，所以来自别处的第一次攻击不会立刻把它拉走。</li>
+<li>只有当另一个战斗者的仇恨超过当前目标的 <em>Threat Switch</em>（<code>threatSwitch</code>）倍时才会切换目标，默认 1.1（多 10%）。小于 1 的值按 1 计算。</li>
+<li>召唤物有自己的仇恨。</li>
 </ul>
-<h3 id="sleeping-monsters"><a class="anchor" href="#sleeping-monsters" aria-hidden="true">#</a>Sleeping monsters</h3>
-<p>With <em>Monsters Sleep Unseen</em> (<code>monstersSleepUnseen</code>, on by default), a monster that no client sees, with no target and out of a fight, stops thinking until someone comes close. It still respawns on time. This saves server time on big maps and changes nothing a player can see.</p>
-<h2 id="kill-credit-and-experience"><a class="anchor" href="#kill-credit-and-experience" aria-hidden="true">#</a>Kill credit and experience</h2>
-<p>The kill goes to the player who dealt the most damage to the monster, not the last hit. Hits from a summon count for its owner. That player gets the rewards: experience, gold and loot (see <a href="../content/loot.html">Loot</a>).</p>
-<p>Experience for a kill:</p>
+<h3 id="sleeping-monsters"><a class="anchor" href="#sleeping-monsters" aria-hidden="true">#</a>休眠的怪物</h3>
+<p>开启 <em>Monsters Sleep Unseen</em>（<code>monstersSleepUnseen</code>，默认开启）时，没有任何客户端看到、没有目标且不在战斗中的怪物会停止思考，直到有人靠近。它仍会按时重生。这在大地图上节省服务器时间，且不会改变玩家能看到的任何东西。</p>
+<h2 id="kill-credit-and-experience"><a class="anchor" href="#kill-credit-and-experience" aria-hidden="true">#</a>击杀归属与经验</h2>
+<p>击杀归属于对怪物造成最多伤害的玩家，而不是最后一击。召唤物的攻击算作其主人的。该玩家获得奖励：经验、金币和掉落（参见<a href="../content/loot.html">掉落</a>）。</p>
+<p>一次击杀的经验：</p>
 <pre class="code"><code class="language-">base = monster experience × scale
 scale = 1 when the player is at most 3 levels above the monster,
         otherwise max(0.1, 1 − (levels above − 3) × 0.2)
@@ -407,13 +407,13 @@ experience = base × (1 + experienceGain) × experience rate
 <div class="table"><table>
 <thead>
 <tr>
-<th>Player above the monster by</th>
-<th>Experience</th>
+<th>玩家比怪物高出</th>
+<th>经验</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>3 levels or less (or below it)</td>
+<td>3 级或以下（或低于怪物）</td>
 <td>100%</td>
 </tr>
 <tr>
@@ -433,221 +433,221 @@ experience = base × (1 + experienceGain) × experience rate
 <td>20%</td>
 </tr>
 <tr>
-<td>8 or more</td>
+<td>8 或以上</td>
 <td>10%</td>
 </tr>
 </tbody>
 </table></div>
 <ul>
-<li><code>experienceGain</code> is a stat (0.1 is +10%) from gear, buffs or attributes.</li>
-<li>The experience rate is <em>Experience Rate</em> (<code>experienceRate</code>) in <strong>Game Settings &gt; Rates</strong>, default 1, times any rate event a GM starts with <code>/rates</code> (see <a href="gm-tools.html">GM tools</a>).</li>
-<li><strong>Parties:</strong> members alive on the same map within 40 m of the monster split the experience. Each gets <code>(1 + 0.1 × (members − 1)) / members</code> of the experience their own level would earn (<code>PlayerParty.shareRange</code> and <code>bonusPerMember</code>). See <a href="friends-and-parties.html">Friends and parties</a>.</li>
-<li>A guild tax collector nearby can take its share first (see <a href="tax-collectors.html">Tax collectors</a>).</li>
+<li><code>experienceGain</code> 是一个数值（0.1 为 +10%），来自装备、增益或属性。</li>
+<li>经验倍率是 <strong>Game Settings &gt; Rates</strong> 中的 <em>Experience Rate</em>（<code>experienceRate</code>），默认 1，乘以 GM 用 <code>/rates</code> 开启的任何倍率活动（参见 <a href="gm-tools.html">GM 工具</a>）。</li>
+<li><strong>队伍：</strong> 在同一地图、距怪物 40 米内存活的成员分享经验。每人获得按自己等级应得经验的 <code>(1 + 0.1 × (members − 1)) / members</code>（<code>PlayerParty.shareRange</code> 和 <code>bonusPerMember</code>）。参见<a href="friends-and-parties.html">好友与队伍</a>。</li>
+<li>附近的公会收税官可以先拿走它的份额（参见<a href="tax-collectors.html">收税官</a>）。</li>
 </ul>
-<h2 id="summons"><a class="anchor" href="#summons" aria-hidden="true">#</a>Summons</h2>
-<p>A skill with a summon effect (see <a href="../content/skills.html">Skills</a>) calls monsters that fight for the caster:</p>
+<h2 id="summons"><a class="anchor" href="#summons" aria-hidden="true">#</a>召唤物</h2>
+<p>带召唤效果的技能（参见<a href="../content/skills.html">技能</a>）会召唤为施法者战斗的怪物：</p>
 <ul>
-<li>They follow their owner and attack enemies close by. They return to the owner past their leash range.</li>
-<li>They go away when their time runs out, when they die, when the owner dies or leaves. Past the effect's maximum, the oldest goes.</li>
-<li>Their hits count for the owner (kill and experience). They drop no loot.</li>
-<li>Wild monsters attack them. You can't attack your own.</li>
+<li>它们跟随主人并攻击附近的敌人。超出追击范围时返回主人身边。</li>
+<li>时间耗尽、死亡、主人死亡或离开时，它们会消失。超过效果的最大数量时，最早的那只消失。</li>
+<li>它们的攻击算作主人的（击杀和经验）。它们不掉落物品。</li>
+<li>野生怪物会攻击它们。你不能攻击自己的召唤物。</li>
 </ul>
-<h2 id="stealth"><a class="anchor" href="#stealth" aria-hidden="true">#</a>Stealth</h2>
-<p>The Invisible flag (from a status such as the sample's Vanish) hides a fighter:</p>
+<h2 id="stealth"><a class="anchor" href="#stealth" aria-hidden="true">#</a>潜行</h2>
+<p>Invisible 标记（来自示例中 Vanish 这样的状态）会隐藏一个战斗者：</p>
 <ul>
-<li>Monsters lose an invisible target and don't pick it.</li>
-<li>Enemy players don't receive it at all: <code>KitInterestManagement</code> leaves it out of their view, so a modified client can't show it either. Allies and the fighter itself still see it.</li>
-<li>A request that names an invisible enemy is ignored, and an attack in progress on one stops.</li>
-<li>Statuses with <em>Ends On Action</em> end when the holder attacks or casts, which is how invisibility breaks.</li>
+<li>怪物丢失隐形目标，也不会选它为目标。</li>
+<li>敌方玩家完全收不到它：<code>KitInterestManagement</code> 把它排除在他们的视野之外，所以被修改的客户端也无法显示它。盟友和战斗者自己仍能看到它。</li>
+<li>指向隐形敌人的请求会被忽略，正在对其进行的攻击会停止。</li>
+<li>带 <em>Ends On Action</em> 的状态在持有者攻击或施法时结束，隐形就是这样被打破的。</li>
 </ul>
-<p>The network prefab must use <code>KitInterestManagement</code> (the sample does) for stealth to hide anything on the network.</p>
-<h2 id="protection-on-arrival"><a class="anchor" href="#protection-on-arrival" aria-hidden="true">#</a>Protection on arrival</h2>
-<p>A player entering a map, respawning or being revived gets the <em>Arrival Status</em> (<code>arrivalStatus</code>) of the Game Database for <em>Arrival Seconds</em> (<code>arrivalSeconds</code>, default 4). In the sample it is &quot;Protected&quot;: invulnerable, and it ends on attacking or casting. See <a href="recovery-and-death.html#protection-after-coming-back">Recovery and death</a>.</p>
-<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
-<h3 id="game-settings-combat"><a class="anchor" href="#game-settings-combat" aria-hidden="true">#</a>Game Settings, Combat</h3>
-<p>In <strong>KitARPG &gt; Game Settings</strong> (the <code>GameInstance</code> on the <code>KitNetwork</code> prefab), section Combat:</p>
+<p>网络预制体必须使用 <code>KitInterestManagement</code>（示例已使用），潜行才能在网络上隐藏东西。</p>
+<h2 id="protection-on-arrival"><a class="anchor" href="#protection-on-arrival" aria-hidden="true">#</a>到达时的保护</h2>
+<p>进入地图、重生或被复活的玩家会获得 Game Database 中的 <em>Arrival Status</em>（<code>arrivalStatus</code>），持续 <em>Arrival Seconds</em>（<code>arrivalSeconds</code>，默认 4）秒。在示例中它是 &quot;Protected&quot;：无敌，攻击或施法时结束。参见<a href="recovery-and-death.html#protection-after-coming-back">恢复与死亡</a>。</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>设置</h2>
+<h3 id="game-settings-combat"><a class="anchor" href="#game-settings-combat" aria-hidden="true">#</a>Game Settings，Combat</h3>
+<p>在 <strong>KitARPG &gt; Game Settings</strong>（<code>KitNetwork</code> 预制体上的 <code>GameInstance</code>）的 Combat 部分：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Line Of Sight</em> (<code>lineOfSight</code>)</td>
-<td>What stops attacks, skills and monsters from seeing through walls: <code>Off</code>, <code>NavMesh</code> or <code>Colliders</code>.</td>
+<td><em>Line Of Sight</em>（<code>lineOfSight</code>）</td>
+<td>阻止攻击、技能和怪物穿墙看到的方式：<code>Off</code>、<code>NavMesh</code> 或 <code>Colliders</code>。</td>
 <td>NavMesh</td>
 </tr>
 <tr>
-<td><em>Sight Blockers</em> (<code>sightBlockers</code>)</td>
-<td>Colliders mode only: the layers that block sight.</td>
-<td>Default layer</td>
+<td><em>Sight Blockers</em>（<code>sightBlockers</code>）</td>
+<td>仅 Colliders 模式：阻挡视线的层。</td>
+<td>Default 层</td>
 </tr>
 <tr>
-<td><em>Heal Threat</em> (<code>healThreat</code>)</td>
-<td>Threat a healer earns per point healed on someone a monster fights.</td>
+<td><em>Heal Threat</em>（<code>healThreat</code>）</td>
+<td>治疗者在怪物正在攻击的人身上每治疗 1 点获得的仇恨。</td>
 <td>0.5</td>
 </tr>
 <tr>
-<td><em>Threat Switch</em> (<code>threatSwitch</code>)</td>
-<td>How much more threat another fighter needs to take a monster's attention.</td>
+<td><em>Threat Switch</em>（<code>threatSwitch</code>）</td>
+<td>另一个战斗者需要多出多少仇恨才能吸引怪物的注意。</td>
 <td>1.1</td>
 </tr>
 <tr>
-<td><em>Monsters Sleep Unseen</em> (<code>monstersSleepUnseen</code>)</td>
-<td>Monsters no player can see stop thinking.</td>
-<td>On</td>
+<td><em>Monsters Sleep Unseen</em>（<code>monstersSleepUnseen</code>）</td>
+<td>没有玩家能看到的怪物停止思考。</td>
+<td>开</td>
 </tr>
 </tbody>
 </table></div>
-<p>Related sections on the same page: <strong>Recovery</strong> and <strong>Death</strong> (see <a href="recovery-and-death.html">Recovery and death</a>) and <strong>Rates</strong> (<em>Experience Rate</em>, <em>Loot Rate</em>, <em>Gold Rate</em>, all 1).</p>
-<h3 id="components"><a class="anchor" href="#components" aria-hidden="true">#</a>Components</h3>
+<p>同一页面上的相关部分：<strong>Recovery</strong> 和 <strong>Death</strong>（参见<a href="recovery-and-death.html">恢复与死亡</a>）以及 <strong>Rates</strong>（<em>Experience Rate</em>、<em>Loot Rate</em>、<em>Gold Rate</em>，均为 1）。</p>
+<h3 id="components"><a class="anchor" href="#components" aria-hidden="true">#</a>组件</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Where</th>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>位置</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>PlayerSkills</code> (player prefab)</td>
-<td><em>Range Tolerance</em> (<code>rangeTolerance</code>)</td>
-<td>Meters a target may be past a skill's range, for the time the request takes to arrive.</td>
+<td><code>PlayerSkills</code>（玩家预制体）</td>
+<td><em>Range Tolerance</em>（<code>rangeTolerance</code>）</td>
+<td>考虑到请求到达所需的时间，目标可以超出技能范围的米数。</td>
 <td>0.6</td>
 </tr>
 <tr>
 <td><code>TopDownServer</code></td>
-<td><em>Max Move Distance</em> (<code>maxMoveDistance</code>)</td>
-<td>Attack, skill and talk requests farther than this are ignored.</td>
+<td><em>Max Move Distance</em>（<code>maxMoveDistance</code>）</td>
+<td>超过这个距离的攻击、技能和对话请求会被忽略。</td>
 <td>40</td>
 </tr>
 <tr>
 <td><code>TopDownServer</code></td>
-<td><em>Max Messages Per Second</em> (<code>maxMessagesPerSecond</code>)</td>
-<td>Requests per second before the connection is dropped as flooding.</td>
+<td><em>Max Messages Per Second</em>（<code>maxMessagesPerSecond</code>）</td>
+<td>每秒请求数，超过则连接被当作刷屏断开。</td>
 <td>20</td>
 </tr>
 <tr>
 <td><code>TopDownServer</code></td>
 <td><em>Chase Repath</em> (<code>chaseRepath</code>)</td>
-<td>Seconds between path updates while chasing a target.</td>
+<td>追击目标时更新路径的间隔秒数。</td>
 <td>0.25</td>
 </tr>
 <tr>
 <td><code>TopDownInput</code></td>
-<td><em>Attack Key</em> (<code>attackKey</code>)</td>
-<td>Attacks the nearest enemy.</td>
+<td><em>Attack Key</em>（<code>attackKey</code>）</td>
+<td>攻击最近的敌人。</td>
 <td><code>Space</code></td>
 </tr>
 <tr>
 <td><code>TopDownInput</code></td>
-<td><em>Key Attack Range</em> (<code>keyAttackRange</code>)</td>
-<td>Meters around the player in which the attack key looks for an enemy.</td>
+<td><em>Key Attack Range</em>（<code>keyAttackRange</code>）</td>
+<td>攻击键在玩家周围寻找敌人的米数。</td>
 <td>10</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
-<td><em>Reach Slack</em> (<code>reachSlack</code>)</td>
-<td>Meters past the attack or skill range still accepted.</td>
+<td><em>Reach Slack</em>（<code>reachSlack</code>）</td>
+<td>超出攻击或技能范围但仍被接受的米数。</td>
 <td>0.6</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
-<td><em>Melee Arc</em> (<code>meleeArc</code>)</td>
-<td>Half the angle, in degrees, in which a melee swing finds its enemy.</td>
+<td><em>Melee Arc</em>（<code>meleeArc</code>）</td>
+<td>近战挥击寻找敌人的角度的一半（度）。</td>
 <td>60</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
-<td><em>Aim Width</em> (<code>aimWidth</code>)</td>
-<td>Meters to either side of the aimed line in which a ranged attack or single-target skill finds its enemy.</td>
+<td><em>Aim Width</em>（<code>aimWidth</code>）</td>
+<td>远程攻击或单体技能在瞄准线两侧寻找敌人的米数。</td>
 <td>0.9</td>
 </tr>
 <tr>
 <td><code>ThirdPersonServer</code></td>
-<td><em>Dodge Distance</em>, <em>Dodge Seconds</em>, <em>Dodge Cooldown</em></td>
-<td>The <code>Space</code> dodge.</td>
-<td>4, 0.3, 1.2</td>
+<td><em>Dodge Distance</em>、<em>Dodge Seconds</em>、<em>Dodge Cooldown</em></td>
+<td><code>Space</code> 闪避。</td>
+<td>4、0.3、1.2</td>
 </tr>
 <tr>
 <td><code>ThirdPersonInput</code></td>
-<td><em>Swing Repeat</em> (<code>swingRepeat</code>)</td>
-<td>Seconds between swing requests while the button is held. The server keeps the real attack speed.</td>
+<td><em>Swing Repeat</em>（<code>swingRepeat</code>）</td>
+<td>按住按钮时发送挥击请求的间隔秒数。服务器保持真实的攻击速度。</td>
 <td>0.25</td>
 </tr>
 <tr>
-<td><code>FighterStatus</code> (player and monster prefabs)</td>
-<td><em>Immune Text</em>, <em>Absorbed Text</em></td>
-<td>The words shown when a hit does nothing.</td>
-<td>&quot;Immune&quot;, &quot;Absorbed&quot;</td>
+<td><code>FighterStatus</code>（玩家和怪物预制体）</td>
+<td><em>Immune Text</em>、<em>Absorbed Text</em></td>
+<td>攻击无效时显示的文字。</td>
+<td>&quot;Immune&quot;、&quot;Absorbed&quot;</td>
 </tr>
 <tr>
-<td><code>FloatingText</code> (HUD)</td>
-<td>Colors, size, lifetime</td>
-<td>Look of the damage numbers.</td>
+<td><code>FloatingText</code>（HUD）</td>
+<td>颜色、大小、持续时间</td>
+<td>伤害数字的外观。</td>
 <td></td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>What the server checks</h2>
+<h2 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>服务器检查的内容</h2>
 <ul>
-<li><strong>Targets:</strong> a request naming a target by network id is only accepted if that client is meant to see it: in its view, not an invisible enemy, not an event monster brought for someone else. The target must be alive and an enemy.</li>
-<li><strong>Distance:</strong> top-down ignores targets more than 40 m away; third person refuses targets out of reach plus 0.6 m.</li>
-<li><strong>Line of sight</strong> for attacks, skills, areas and monster targeting.</li>
-<li><strong>Timing:</strong> attacks wait for the attack interval, skills for their cooldown and cast time, both for the hit frames. The client never decides when damage lands.</li>
-<li><strong>State:</strong> dead characters, stunned or disarmed attackers, silenced casters and characters busy casting can't act.</li>
-<li><strong>Rate:</strong> every combat request counts against the mode's flood limit and the per-connection command pacing; a flood disconnects the client.</li>
-<li><strong>Damage</strong> is rolled only on the server, with the server's stats.</li>
+<li><strong>目标：</strong> 以网络 id 指定目标的请求，只有在该客户端本应看到该目标时才会被接受：在它的视野内，不是隐形的敌人，不是为别人刷出的活动怪物。目标必须存活且是敌人。</li>
+<li><strong>距离：</strong> 俯视角忽略 40 米以外的目标；第三人称拒绝超出范围加 0.6 米的目标。</li>
+<li><strong>视线</strong>，用于攻击、技能、范围和怪物选择目标。</li>
+<li><strong>时间：</strong> 攻击等待攻击间隔，技能等待冷却和施法时间，两者都等待命中帧。客户端从不决定伤害何时生效。</li>
+<li><strong>状态：</strong> 死亡的角色、被眩晕或缴械的攻击者、被沉默的施法者以及正在施法的角色都无法行动。</li>
+<li><strong>频率：</strong> 每个战斗请求都计入模式的刷屏限制和每个连接的命令节奏；刷屏会断开客户端。</li>
+<li><strong>伤害</strong> 只在服务器上用服务器的数值掷出。</li>
 </ul>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>The rules are the same in both, because the same map code runs. In single player your game is the host: it runs the server side, so the formula, threat, line of sight and timing all work as in MMO. Stealth still applies on the host: an invisible monster is hidden from you. In single player, <em>Single Player Commands</em> gives you every GM command, so <code>/god</code> and <code>/heal</code> work as cheats (see <a href="gm-tools.html">GM tools</a>).</p>
-<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
-<h3 id="make-combat-faster-or-slower"><a class="anchor" href="#make-combat-faster-or-slower" aria-hidden="true">#</a>Make combat faster or slower</h3>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式与 MMO</h2>
+<p>两种模式的规则相同，因为运行的是同一套地图代码。在单人模式中，你的游戏就是主机：它运行服务器端，所以公式、仇恨、视线和时间都与 MMO 中一样。潜行在主机上仍然有效：隐形的怪物对你是隐藏的。在单人模式中，<em>Single Player Commands</em> 让你可以使用所有 GM 命令，所以 <code>/god</code> 和 <code>/heal</code> 可以当作作弊使用（参见 <a href="gm-tools.html">GM 工具</a>）。</p>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>分步操作</h2>
+<h3 id="make-combat-faster-or-slower"><a class="anchor" href="#make-combat-faster-or-slower" aria-hidden="true">#</a>让战斗更快或更慢</h3>
 <ol>
-<li>Open <strong>KitARPG &gt; Game Database &gt; Weapon Types</strong> and change <em>Attacks Per Second</em> on each type.</li>
-<li>For monsters, change <em>Attacks Per Second</em> on each monster.</li>
-<li>Give classes or gear <code>attackSpeed</code> for players who should attack faster.</li>
-<li>Check the attack animations: if a clip is longer than the interval it plays faster; clips much longer than the interval look rushed.</li>
+<li>打开 <strong>KitARPG &gt; Game Database &gt; Weapon Types</strong>，修改每种类型的 <em>Attacks Per Second</em>。</li>
+<li>对于怪物，修改每只怪物的 <em>Attacks Per Second</em>。</li>
+<li>给需要攻击更快的玩家的职业或装备加上 <code>attackSpeed</code>。</li>
+<li>检查攻击动画：如果片段比间隔长，会加速播放；比间隔长很多的片段看起来会很仓促。</li>
 </ol>
-<h3 id="block-attacks-with-buildings-using-colliders"><a class="anchor" href="#block-attacks-with-buildings-using-colliders" aria-hidden="true">#</a>Block attacks with buildings using colliders</h3>
+<h3 id="block-attacks-with-buildings-using-colliders"><a class="anchor" href="#block-attacks-with-buildings-using-colliders" aria-hidden="true">#</a>用碰撞体让建筑阻挡攻击</h3>
 <ol>
-<li>Put the walls on their own layer, for example <code>SightBlock</code>, with colliders.</li>
-<li>In <strong>KitARPG &gt; Game Settings</strong>, Combat, set <em>Line Of Sight</em> to <code>Colliders</code> and <em>Sight Blockers</em> to that layer.</li>
-<li>Make sure the ground isn't on that layer, or every shot gets blocked.</li>
-<li>Play and attack a monster across a wall: the character walks around until it sees the target.</li>
+<li>把墙放在单独的层上，例如 <code>SightBlock</code>，并加上碰撞体。</li>
+<li>在 <strong>KitARPG &gt; Game Settings</strong> 的 Combat 中，将 <em>Line Of Sight</em> 设为 <code>Colliders</code>，将 <em>Sight Blockers</em> 设为该层。</li>
+<li>确保地面不在这个层上，否则每次射击都会被挡住。</li>
+<li>运行并隔着墙攻击一只怪物：角色会绕过去，直到看到目标。</li>
 </ol>
-<h3 id="change-the-damage-formula"><a class="anchor" href="#change-the-damage-formula" aria-hidden="true">#</a>Change the damage formula</h3>
-<p>Subclass <code>CombatFormula</code>, override <code>Attack</code>, <code>Element</code>, <code>Heal</code>, <code>AttackInterval</code> or <code>Experience</code>, and set <code>GameInstance.Combat</code> to your class when the game starts. Only the server calls it. See <a href="../devkit/formulas.html">Formulas</a>.</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h3 id="change-the-damage-formula"><a class="anchor" href="#change-the-damage-formula" aria-hidden="true">#</a>修改伤害公式</h3>
+<p>继承 <code>CombatFormula</code>，重写 <code>Attack</code>、<code>Element</code>、<code>Heal</code>、<code>AttackInterval</code> 或 <code>Experience</code>，并在游戏开始时把 <code>GameInstance.Combat</code> 设为你的类。只有服务器会调用它。参见<a href="../devkit/formulas.html">公式</a>。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>Monsters hit through walls or attacks pass through houses.</strong> The map has no NavMesh holes where the walls are, so <code>NavMesh</code> mode can't see them. Bake the NavMesh with the walls as obstacles, or switch to <code>Colliders</code> and set <em>Sight Blockers</em>.</li>
-<li><strong>Every attack says &quot;Not in sight&quot; in Colliders mode.</strong> The ground or the character is on a sight blocker layer. Keep only walls on those layers.</li>
-<li><strong>A ranged weapon does nothing.</strong> It needs ammo in the Ammo position that fits its weapon type; the chat says &quot;You are out of ammo.&quot;</li>
-<li><strong>Resistances seem to stop at 50%.</strong> That is the element's <em>Max Resistance</em>. Raise it on the element asset.</li>
-<li><strong>Damage numbers are white.</strong> The element has no color set, or the hit has no element and the default element is white.</li>
-<li><strong>Damage lands at the wrong moment.</strong> An attack with no hit moments lands halfway through its clip. Set the moments on <code>CharacterAnimations</code> so the number appears when the blade connects.</li>
-<li><strong>Invisible players still show up for enemies.</strong> The network prefab isn't using <code>KitInterestManagement</code>.</li>
-<li><strong>Players don't hurt each other.</strong> That is the default. Turn on PvP on the map or start a duel (see <a href="pvp-and-duels.html">PvP and duels</a>).</li>
+<li><strong>怪物穿墙攻击，或者攻击穿过房屋。</strong> 地图在墙的位置没有 NavMesh 空洞，所以 <code>NavMesh</code> 模式看不到它们。把墙当作障碍物烘焙 NavMesh，或者切换到 <code>Colliders</code> 并设置 <em>Sight Blockers</em>。</li>
+<li><strong>在 Colliders 模式下每次攻击都显示 &quot;Not in sight&quot;。</strong> 地面或角色在视线阻挡层上。这些层上只放墙。</li>
+<li><strong>远程武器没有作用。</strong> 它需要在 Ammo 栏位中放入适合其武器类型的弹药；聊天中会显示 &quot;You are out of ammo.&quot;。</li>
+<li><strong>抗性似乎停在 50%。</strong> 那是元素的 <em>Max Resistance</em>。在元素资源上提高它。</li>
+<li><strong>伤害数字是白色的。</strong> 元素没有设置颜色，或者攻击没有元素而默认元素是白色。</li>
+<li><strong>伤害在错误的时刻生效。</strong> 没有命中时刻的攻击在片段一半时生效。在 <code>CharacterAnimations</code> 上设置时刻，让数字在刀刃接触时出现。</li>
+<li><strong>隐形玩家仍然对敌人可见。</strong> 网络预制体没有使用 <code>KitInterestManagement</code>。</li>
+<li><strong>玩家之间不会互相伤害。</strong> 这是默认设置。在地图上开启 PvP 或开始决斗（参见 <a href="pvp-and-duels.html">PvP 与决斗</a>）。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="../content/skills.html">Skills</a></li>
-<li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li>
-<li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li>
-<li><a href="../content/monsters.html">Monsters</a> and <a href="../content/bosses.html">Bosses</a></li>
-<li><a href="../content/loot.html">Loot</a></li>
-<li><a href="recovery-and-death.html">Recovery and death</a></li>
-<li><a href="pvp-and-duels.html">PvP and duels</a></li>
-<li><a href="control-modes.html">Control modes</a></li>
-<li><a href="../devkit/formulas.html">Formulas</a></li>
+<li><a href="../content/skills.html">技能</a></li>
+<li><a href="../content/statuses-and-buffs.html">状态与增益</a></li>
+<li><a href="../content/attributes-and-stats.html">属性与数值</a></li>
+<li><a href="../content/monsters.html">怪物</a>和<a href="../content/bosses.html">首领</a></li>
+<li><a href="../content/loot.html">掉落</a></li>
+<li><a href="recovery-and-death.html">恢复与死亡</a></li>
+<li><a href="pvp-and-duels.html">PvP 与决斗</a></li>
+<li><a href="control-modes.html">操作模式</a></li>
+<li><a href="../devkit/formulas.html">公式</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="touch-controls.html"><span>上一页</span>Touch controls</a><a class="next" href="recovery-and-death.html"><span>下一页</span>Recovery and death</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fcombat.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-combat-is">What combat is</a></li><li class="l2"><a href="#fighting-as-a-player">Fighting as a player</a></li><li class="l2"><a href="#what-the-player-sees">What the player sees</a></li><li class="l2"><a href="#basic-attacks">Basic attacks</a></li><li class="l3"><a href="#attack-speed">Attack speed</a></li><li class="l3"><a href="#hit-frames">Hit frames</a></li><li class="l3"><a href="#dual-wield-and-ammo">Dual wield and ammo</a></li><li class="l2"><a href="#skills-in-combat">Skills in combat</a></li><li class="l2"><a href="#the-damage-formula">The damage formula</a></li><li class="l3"><a href="#worked-example">Worked example</a></li><li class="l3"><a href="#damage-over-time">Damage over time</a></li><li class="l3"><a href="#healing">Healing</a></li><li class="l3"><a href="#every-bonus-is-a-whole-number">Every bonus is a whole number</a></li><li class="l2"><a href="#what-happens-when-a-hit-lands">What happens when a hit lands</a></li><li class="l2"><a href="#line-of-sight">Line of sight</a></li><li class="l2"><a href="#monsters-in-combat">Monsters in combat</a></li><li class="l3"><a href="#threat">Threat</a></li><li class="l3"><a href="#sleeping-monsters">Sleeping monsters</a></li><li class="l2"><a href="#kill-credit-and-experience">Kill credit and experience</a></li><li class="l2"><a href="#summons">Summons</a></li><li class="l2"><a href="#stealth">Stealth</a></li><li class="l2"><a href="#protection-on-arrival">Protection on arrival</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#game-settings-combat">Game Settings, Combat</a></li><li class="l3"><a href="#components">Components</a></li><li class="l2"><a href="#what-the-server-checks">What the server checks</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#make-combat-faster-or-slower">Make combat faster or slower</a></li><li class="l3"><a href="#block-attacks-with-buildings-using-colliders">Block attacks with buildings using colliders</a></li><li class="l3"><a href="#change-the-damage-formula">Change the damage formula</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="touch-controls.html"><span>上一页</span>触控操作</a><a class="next" href="recovery-and-death.html"><span>下一页</span>恢复与死亡</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fcombat.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-combat-is">战斗是什么</a></li><li class="l2"><a href="#fighting-as-a-player">作为玩家战斗</a></li><li class="l2"><a href="#what-the-player-sees">玩家看到的内容</a></li><li class="l2"><a href="#basic-attacks">普通攻击</a></li><li class="l3"><a href="#attack-speed">攻击速度</a></li><li class="l3"><a href="#hit-frames">命中帧</a></li><li class="l3"><a href="#dual-wield-and-ammo">双持和弹药</a></li><li class="l2"><a href="#skills-in-combat">战斗中的技能</a></li><li class="l2"><a href="#the-damage-formula">伤害公式</a></li><li class="l3"><a href="#worked-example">计算示例</a></li><li class="l3"><a href="#damage-over-time">持续伤害</a></li><li class="l3"><a href="#healing">治疗</a></li><li class="l3"><a href="#every-bonus-is-a-whole-number">每个加成都是整数</a></li><li class="l2"><a href="#what-happens-when-a-hit-lands">攻击命中时发生什么</a></li><li class="l2"><a href="#line-of-sight">视线</a></li><li class="l2"><a href="#monsters-in-combat">战斗中的怪物</a></li><li class="l3"><a href="#threat">仇恨</a></li><li class="l3"><a href="#sleeping-monsters">休眠的怪物</a></li><li class="l2"><a href="#kill-credit-and-experience">击杀归属与经验</a></li><li class="l2"><a href="#summons">召唤物</a></li><li class="l2"><a href="#stealth">潜行</a></li><li class="l2"><a href="#protection-on-arrival">到达时的保护</a></li><li class="l2"><a href="#settings">设置</a></li><li class="l3"><a href="#game-settings-combat">Game Settings，Combat</a></li><li class="l3"><a href="#components">组件</a></li><li class="l2"><a href="#what-the-server-checks">服务器检查的内容</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式与 MMO</a></li><li class="l2"><a href="#step-by-step">分步操作</a></li><li class="l3"><a href="#make-combat-faster-or-slower">让战斗更快或更慢</a></li><li class="l3"><a href="#block-attacks-with-buildings-using-colliders">用碰撞体让建筑阻挡攻击</a></li><li class="l3"><a href="#change-the-damage-formula">修改伤害公式</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

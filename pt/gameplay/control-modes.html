@@ -1,681 +1,681 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Control modes · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Modos de controle · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/control-modes.html">English</option><option value="../../es/gameplay/control-modes.html">Español</option><option value="control-modes.html" selected>Português</option><option value="../../zh/gameplay/control-modes.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de jogo</summary><ul><li><a href="control-modes.html" class="on" aria-current="page">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Sistemas de jogo</div><h1>Control modes</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>KitARPG plays in three control modes: top-down (Diablo style), free camera and third person. This page covers what each mode does for the player, every setting that changes it, what the server checks, and how to switch modes in single player and MMO.</p>
-<h2 id="what-a-control-mode-is"><a class="anchor" href="#what-a-control-mode-is" aria-hidden="true">#</a>What a control mode is</h2>
-<p>The control mode decides three things: how the camera follows the player, how the player walks, and where attacks and skills are aimed. Everything else (combat rules, skills, items, quests, the HUD) is the same in every mode.</p>
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section" open><summary>Sistemas de jogo</summary><ul><li><a href="control-modes.html" class="on" aria-current="page">Modos de controle</a></li><li><a href="touch-controls.html">Controles de toque</a></li><li><a href="combat.html">Combate</a></li><li><a href="recovery-and-death.html">Recuperação e morte</a></li><li><a href="inventory-and-bank.html">Inventário e banco</a></li><li><a href="trade.html">Troca</a></li><li><a href="forge.html">Forja</a></li><li><a href="market.html">Mercado</a></li><li><a href="mail.html">Correio</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Amigos e grupos</a></li><li><a href="guilds.html">Guildas</a></li><li><a href="tax-collectors.html">Coletores de impostos</a></li><li><a href="pvp-and-duels.html">PvP e duelos</a></li><li><a href="dungeons.html">Masmorras</a></li><li><a href="day-and-night.html">Dia e noite</a></li><li><a href="bestiary.html">Bestiário</a></li><li><a href="cash-shop.html">Loja premium</a></li><li><a href="gm-tools.html">Ferramentas de GM</a></li><li><a href="game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="hud-and-windows.html">HUD e janelas</a></li><li><a href="player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Visão geral do DevKit</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Efeitos de habilidades</a></li><li><a href="../devkit/item-effects.html">Efeitos de itens</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de missão</a></li><li><a href="../devkit/npc-options.html">Opções de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas do jogador</a></li><li><a href="../devkit/network-messages.html">Mensagens de rede</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Salvando dados</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="../devkit/editor-extensions.html">Extensões do editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="../devkit/talking-to-central.html">Falando com o Central</a></li><li><a href="../devkit/service-modules.html">Módulos de serviço</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="../devkit/example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sem domain reload</a></li><li><a href="../devkit/security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de jogo</div><h1>Modos de controle</h1><p>O KitARPG é jogado em três modos de controle: top-down (estilo Diablo), câmera livre e terceira pessoa. Esta página explica o que cada modo faz para o jogador, cada configuração que o muda, o que o servidor verifica e como trocar de modo em um jogador e em MMO.</p>
+<h2 id="what-a-control-mode-is"><a class="anchor" href="#what-a-control-mode-is" aria-hidden="true">#</a>O que é um modo de controle</h2>
+<p>O modo de controle decide três coisas: como a câmera segue o jogador, como o jogador anda e para onde os ataques e as habilidades são mirados. Todo o resto (regras de combate, habilidades, itens, missões, o HUD) é igual em todos os modos.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>Camera</th>
+<th>Modo</th>
+<th>Câmera</th>
 <th>Cursor</th>
-<th>Aim</th>
-<th>Walking</th>
+<th>Mira</th>
+<th>Andar</th>
 <th>Space</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Top-down (click or keys)</strong></td>
-<td>Fixed angle above the player, Diablo style</td>
-<td>Free</td>
-<td>The mouse</td>
-<td>Click the ground, or WASD and the arrows</td>
-<td>Attacks the nearest enemy</td>
+<td>Ângulo fixo acima do jogador, estilo Diablo</td>
+<td>Livre</td>
+<td>O mouse</td>
+<td>Clicar no chão, ou WASD e as setas</td>
+<td>Ataca o inimigo mais próximo</td>
 </tr>
 <tr>
 <td><strong>Free camera (cursor, right button turns)</strong></td>
-<td>Orbits behind the player; hold the right button to turn it</td>
-<td>Free</td>
-<td>The mouse</td>
-<td>WASD and the arrows</td>
-<td>Dodges</td>
+<td>Orbita atrás do jogador; segure o botão direito para girá-la</td>
+<td>Livre</td>
+<td>O mouse</td>
+<td>WASD e as setas</td>
+<td>Esquiva</td>
 </tr>
 <tr>
 <td><strong>Third person (crosshair aim)</strong></td>
-<td>Orbits over the shoulder; the mouse turns it</td>
-<td>Hidden, with a crosshair</td>
-<td>The middle of the screen</td>
-<td>WASD and the arrows</td>
-<td>Dodges</td>
+<td>Orbita sobre o ombro; o mouse a gira</td>
+<td>Oculto, com uma mira</td>
+<td>O meio da tela</td>
+<td>WASD e as setas</td>
+<td>Esquiva</td>
 </tr>
 </tbody>
 </table></div>
-<p>The same scenes play in all three. When a map loads, the kit puts the playing mode's camera and input components on the map's main camera and switches off the others. On the server it does the same on the network manager object. You never need to rebuild a scene to change mode.</p>
-<div class="callout warning"><div class="callout-title">Atenção</div><p>The map server and every client must play the same mode. A client in another mode is refused when it enters a map (see <a href="#server-checks">Server checks</a>).</p>
+<p>As mesmas cenas funcionam nos três. Quando um mapa carrega, o kit põe os componentes de câmera e de entrada do modo em jogo na câmera principal do mapa e desliga os outros. No servidor, faz o mesmo no objeto do network manager. Você nunca precisa reconstruir uma cena para trocar de modo.</p>
+<div class="callout warning"><div class="callout-title">Atenção</div><p>O servidor de mapa e todos os clientes precisam jogar o mesmo modo. Um cliente em outro modo é recusado quando entra em um mapa (veja <a href="#server-checks">Verificações do servidor</a>).</p>
 </div>
-<h2 id="choosing-the-mode"><a class="anchor" href="#choosing-the-mode" aria-hidden="true">#</a>Choosing the mode</h2>
-<p>The mode is a game setting, not a player setting. Players can't switch it.</p>
+<h2 id="choosing-the-mode"><a class="anchor" href="#choosing-the-mode" aria-hidden="true">#</a>Escolher o modo</h2>
+<p>O modo é uma configuração do jogo, não do jogador. Os jogadores não podem trocá-lo.</p>
 <ol>
-<li>Open <strong>KitARPG &gt; Game Settings</strong> (or the Game Settings page of the KitARPG window).</li>
-<li>In the <strong>Game mode</strong> section, pick <em>Control Mode</em> (<code>controlMode</code>): <strong>Top-down (click or keys)</strong>, <strong>Free camera (cursor, right button turns)</strong> or <strong>Third person (crosshair aim)</strong>. Modes added by your own code show up in the same list by name.</li>
-<li>For free camera and third person, set the camera assets below it.</li>
-<li>In MMO, rebuild the map server and restart the services (see <a href="#single-player-and-mmo">Single player and MMO</a>).</li>
+<li>Abra <strong>KitARPG &gt; Game Settings</strong> (ou a página Game Settings da janela KitARPG).</li>
+<li>Na seção <strong>Game mode</strong>, escolha <em>Control Mode</em> (<code>controlMode</code>): <strong>Top-down (click or keys)</strong>, <strong>Free camera (cursor, right button turns)</strong> ou <strong>Third person (crosshair aim)</strong>. Modos adicionados pelo seu próprio código aparecem na mesma lista pelo nome.</li>
+<li>Para câmera livre e terceira pessoa, defina os assets de câmera logo abaixo.</li>
+<li>Em MMO, recompile o servidor de mapa e reinicie os serviços (veja <a href="#single-player-and-mmo">Um jogador e MMO</a>).</li>
 </ol>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Control Mode</em> (<code>controlMode</code>)</td>
-<td>How the game is played. Stored as a name: <code>TopDown</code>, <code>FreeCamera</code> or <code>ThirdPerson</code>. Empty means <code>TopDown</code>.</td>
-<td><code>TopDown</code> (the sample's <code>KitNetwork</code> prefab ships set to <code>FreeCamera</code>)</td>
+<td>Como o jogo é jogado. Guardado como um nome: <code>TopDown</code>, <code>FreeCamera</code> ou <code>ThirdPerson</code>. Vazio significa <code>TopDown</code>.</td>
+<td><code>TopDown</code> (o prefab <code>KitNetwork</code> da amostra vem definido como <code>FreeCamera</code>)</td>
 </tr>
 <tr>
 <td><em>Third Person Camera</em> (<code>thirdPersonCamera</code>)</td>
-<td>The <a href="#camera-settings">Camera Settings</a> asset for third person. Empty: the kit's built-in defaults.</td>
-<td>Sample: <code>Camera Third Person</code></td>
+<td>O asset <a href="#camera-settings">Camera Settings</a> para terceira pessoa. Vazio: os padrões internos do kit.</td>
+<td>Amostra: <code>Camera Third Person</code></td>
 </tr>
 <tr>
 <td><em>Free Camera</em> (<code>freeCamera</code>)</td>
-<td>The <a href="#camera-settings">Camera Settings</a> asset for free camera. Empty: the kit's built-in defaults.</td>
-<td>Sample: <code>Camera Free</code></td>
+<td>O asset <a href="#camera-settings">Camera Settings</a> para câmera livre. Vazio: os padrões internos do kit.</td>
+<td>Amostra: <code>Camera Free</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>These fields live on the <code>GameInstance</code> component of the <code>KitNetwork</code> prefab, which is what Game Settings edits. See <a href="../editor/game-settings.html">Game Settings</a>.</p>
+<p>Esses campos ficam no componente <code>GameInstance</code> do prefab <code>KitNetwork</code>, que é o que Game Settings edita. Veja <a href="../editor/game-settings.html">Game Settings</a>.</p>
 <h2 id="top-down"><a class="anchor" href="#top-down" aria-hidden="true">#</a>Top-down</h2>
-<p>Top-down is click-to-move with the server pathing the character over the NavMesh. It also plays with the keys, twin-stick style.</p>
-<h3 id="playing-top-down"><a class="anchor" href="#playing-top-down" aria-hidden="true">#</a>Playing top-down</h3>
+<p>Top-down é clicar para mover, com o servidor calculando o caminho do personagem sobre o NavMesh. Também se joga com as teclas, no estilo twin-stick.</p>
+<h3 id="playing-top-down"><a class="anchor" href="#playing-top-down" aria-hidden="true">#</a>Jogar em top-down</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Input</th>
-<th>What happens</th>
+<th>Entrada</th>
+<th>O que acontece</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Left click the ground</td>
-<td>Walks there. Holding the button keeps steering toward the pointer.</td>
+<td>Clique esquerdo no chão</td>
+<td>Anda até lá. Segurar o botão continua guiando em direção ao ponteiro.</td>
 </tr>
 <tr>
-<td>Left click a monster</td>
-<td>Walks into attack range and keeps attacking until it dies or you give another order. Clicking the same target again keeps the swing going.</td>
+<td>Clique esquerdo em um monstro</td>
+<td>Anda até o alcance de ataque e continua atacando até ele morrer ou você dar outra ordem. Clicar de novo no mesmo alvo mantém o golpe.</td>
 </tr>
 <tr>
-<td>Left click another player</td>
-<td>Attacks them, when PvP or a duel allows it (see <a href="pvp-and-duels.html">PvP and duels</a>).</td>
+<td>Clique esquerdo em outro jogador</td>
+<td>Ataca-o, quando o PvP ou um duelo permite (veja <a href="pvp-and-duels.html">PvP e duelos</a>).</td>
 </tr>
 <tr>
-<td>Left click loot on the ground</td>
-<td>Walks to it and picks it up.</td>
+<td>Clique esquerdo em espólio no chão</td>
+<td>Anda até ele e o pega.</td>
 </tr>
 <tr>
-<td>Left click an NPC</td>
-<td>Walks to it and opens its dialog.</td>
+<td>Clique esquerdo em um NPC</td>
+<td>Anda até ele e abre o diálogo.</td>
 </tr>
 <tr>
-<td>Left click a tax collector that isn't fighting</td>
-<td>Talks to it through its spot.</td>
+<td>Clique esquerdo em um coletor de impostos que não está lutando</td>
+<td>Fala com ele pelo seu ponto.</td>
 </tr>
 <tr>
-<td>Right click another player</td>
-<td>Opens the player menu (trade, party, friend, duel and the rest).</td>
+<td>Clique direito em outro jogador</td>
+<td>Abre o menu do jogador (troca, grupo, amigo, duelo e o resto).</td>
 </tr>
 <tr>
-<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> or the arrows</td>
-<td>Walk in that direction, relative to the camera.</td>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> ou as setas</td>
+<td>Anda naquela direção, relativa à câmera.</td>
 </tr>
 <tr>
 <td><code>Space</code></td>
-<td>Attacks the nearest enemy within 10 m, slightly favoring the one in front. Held, it moves on to the next enemy when the current one falls.</td>
+<td>Ataca o inimigo mais próximo dentro de 10 m, favorecendo um pouco o que está à frente. Segurado, passa para o próximo inimigo quando o atual cai.</td>
 </tr>
 <tr>
 <td><code>F</code></td>
-<td>Picks up the nearest loot within 4 m or, when there is none, talks to the nearest NPC. Loot always wins.</td>
+<td>Pega o espólio mais próximo dentro de 4 m ou, quando não há, fala com o NPC mais próximo. O espólio sempre ganha.</td>
 </tr>
 <tr>
-<td>Mouse wheel</td>
-<td>Zooms between 5 and 18 m. It does nothing while the pointer is over a window, so scrolling a bag doesn't move the camera.</td>
+<td>Roda do mouse</td>
+<td>Aproxima entre 5 e 18 m. Não faz nada enquanto o ponteiro está sobre uma janela, então rolar uma bolsa não move a câmera.</td>
 </tr>
 <tr>
-<td><code>1</code> to <code>0</code></td>
-<td>Hotbar slots 1 to 10: cast the skill or use the item there.</td>
+<td><code>1</code> a <code>0</code></td>
+<td>Espaços 1 a 10 da barra rápida: lança a habilidade ou usa o item ali.</td>
 </tr>
 </tbody>
 </table></div>
-<p>When you cast a skill, top-down walks into the skill's range on its own and casts once it gets there. Behind a wall, it keeps walking until the target comes into view. Any new order (a click, a key direction, another attack) stops a swing or a cast in progress. A skill whose cast already finished plays out.</p>
-<p>While you type in the chat, the movement keys do nothing, and a key held when the chat opened stops the character. Dead characters ignore every movement order.</p>
-<h3 id="movement-click-keys-or-both"><a class="anchor" href="#movement-click-keys-or-both" aria-hidden="true">#</a>Movement: click, keys or both</h3>
-<p>Each player can choose how they walk in <strong>Settings &gt; Controls &gt; Movement</strong>:</p>
+<p>Quando você lança uma habilidade, o top-down anda sozinho até o alcance da habilidade e lança quando chega lá. Atrás de uma parede, continua andando até o alvo ficar à vista. Qualquer ordem nova (um clique, uma direção de tecla, outro ataque) para um golpe ou um lançamento em andamento. Uma habilidade cujo lançamento já terminou se completa.</p>
+<p>Enquanto você escreve no chat, as teclas de movimento não fazem nada, e uma tecla segurada quando o chat abriu para o personagem. Personagens mortos ignoram toda ordem de movimento.</p>
+<h3 id="movement-click-keys-or-both"><a class="anchor" href="#movement-click-keys-or-both" aria-hidden="true">#</a>Movimento: clique, teclas ou os dois</h3>
+<p>Cada jogador pode escolher como anda em <strong>Settings &gt; Controls &gt; Movement</strong>:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Choice</th>
-<th>What it does</th>
+<th>Opção</th>
+<th>O que faz</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Click and keys</strong></td>
-<td>Both work. While a key walks, a held mouse button doesn't fight it.</td>
+<td>Os dois funcionam. Enquanto uma tecla anda, um botão do mouse segurado não briga com ela.</td>
 </tr>
 <tr>
 <td><strong>Click only</strong></td>
-<td>The keys don't walk. <code>Space</code> and <code>F</code> still work.</td>
+<td>As teclas não andam. <code>Space</code> e <code>F</code> ainda funcionam.</td>
 </tr>
 <tr>
 <td><strong>Keys only</strong></td>
-<td>Clicking the ground doesn't walk. Clicking monsters, loot, NPCs and players still works.</td>
+<td>Clicar no chão não anda. Clicar em monstros, espólio, NPCs e jogadores ainda funciona.</td>
 </tr>
 </tbody>
 </table></div>
-<p>The setting is stored per computer in <code>PlayerPrefs</code> (<code>KitARPG.Movement</code>). Its starting value comes from the <code>TopDownInput</code> component.</p>
-<h3 id="topdowninput-fields"><a class="anchor" href="#topdowninput-fields" aria-hidden="true">#</a>TopDownInput fields</h3>
-<p><code>TopDownInput</code> sits on the main camera of each map scene (the sample's Town, Forest and Crypt have it). Change it there to tune a map.</p>
+<p>A configuração é guardada por computador em <code>PlayerPrefs</code> (<code>KitARPG.Movement</code>). O valor inicial vem do componente <code>TopDownInput</code>.</p>
+<h3 id="topdowninput-fields"><a class="anchor" href="#topdowninput-fields" aria-hidden="true">#</a>Campos de TopDownInput</h3>
+<p><code>TopDownInput</code> fica na câmera principal de cada cena de mapa (Town, Forest e Crypt da amostra o têm). Mude-o ali para ajustar um mapa.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Controls</em> (<code>controls</code>)</td>
-<td>Click and keys, click only or keys only. The starting choice when players choose, the only choice when they don't.</td>
+<td>Clique e teclas, só clique ou só teclas. A opção inicial quando os jogadores escolhem, a única opção quando não escolhem.</td>
 <td><code>ClickAndKeys</code></td>
 </tr>
 <tr>
 <td><em>Player Chooses</em> (<code>playerChooses</code>)</td>
-<td>Adds <strong>Movement</strong> to Settings &gt; Controls, so each player picks for themselves.</td>
-<td>On</td>
+<td>Adiciona <strong>Movement</strong> em Settings &gt; Controls, para que cada jogador escolha por si.</td>
+<td>Ligado</td>
 </tr>
 <tr>
 <td><em>Attack Key</em> (<code>attackKey</code>)</td>
-<td>Attacks the nearest enemy.</td>
+<td>Ataca o inimigo mais próximo.</td>
 <td><code>Space</code></td>
 </tr>
 <tr>
 <td><em>Interact Key</em> (<code>interactKey</code>)</td>
-<td>Picks up or talks to the nearest thing.</td>
+<td>Pega ou fala com a coisa mais próxima.</td>
 <td><code>F</code></td>
 </tr>
 <tr>
 <td><em>Key Attack Range</em> (<code>keyAttackRange</code>)</td>
-<td>Meters around the player in which <code>Space</code> looks for an enemy.</td>
+<td>Metros ao redor do jogador em que <code>Space</code> procura um inimigo.</td>
 <td>10</td>
 </tr>
 <tr>
 <td><em>Key Interact Range</em> (<code>keyInteractRange</code>)</td>
-<td>Meters around the player in which <code>F</code> finds loot or an NPC.</td>
+<td>Metros ao redor do jogador em que <code>F</code> encontra espólio ou um NPC.</td>
 <td>4</td>
 </tr>
 <tr>
 <td><em>Key Repeat Seconds</em> (<code>keyRepeatSeconds</code>)</td>
-<td>Seconds between direction updates while a key is held. A new direction is sent at once.</td>
-<td>0.12</td>
+<td>Segundos entre atualizações de direção enquanto uma tecla está segurada. Uma direção nova é enviada na hora.</td>
+<td>0,12</td>
 </tr>
 <tr>
 <td><em>Ground Mask</em> (<code>groundMask</code>)</td>
-<td>Layers a click can land on.</td>
+<td>Camadas onde um clique pode cair.</td>
 <td>Everything</td>
 </tr>
 <tr>
 <td><em>Repeat Seconds</em> (<code>repeatSeconds</code>)</td>
-<td>Seconds between steering updates while the mouse button is held.</td>
-<td>0.15</td>
+<td>Segundos entre atualizações de direção enquanto o botão do mouse está segurado.</td>
+<td>0,15</td>
 </tr>
 <tr>
 <td><em>View</em> (<code>view</code>)</td>
-<td>Camera used for clicks. Empty: the main camera.</td>
-<td>Empty</td>
+<td>Câmera usada para os cliques. Vazio: a câmera principal.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Player Menu Button</em> (<code>playerMenuButton</code>)</td>
-<td>Mouse button that opens the menu on another player: 0 left, 1 right, 2 middle.</td>
+<td>Botão do mouse que abre o menu em outro jogador: 0 esquerdo, 1 direito, 2 do meio.</td>
 <td>1</td>
 </tr>
 <tr>
 <td><em>Player Pick Pixels</em> (<code>playerPickPixels</code>)</td>
-<td>Pixels at 1080p from a player's body at which the pointer still picks them. Players have no click collider, so the pick is done on screen.</td>
+<td>Pixels em 1080p a partir do corpo de um jogador em que o ponteiro ainda o seleciona. Os jogadores não têm collider de clique, então a seleção é feita na tela.</td>
 <td>40</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="topdowncamera-fields"><a class="anchor" href="#topdowncamera-fields" aria-hidden="true">#</a>TopDownCamera fields</h3>
-<p><code>TopDownCamera</code> sits next to <code>TopDownInput</code> on the map camera.</p>
+<h3 id="topdowncamera-fields"><a class="anchor" href="#topdowncamera-fields" aria-hidden="true">#</a>Campos de TopDownCamera</h3>
+<p><code>TopDownCamera</code> fica ao lado de <code>TopDownInput</code> na câmera do mapa.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>angles</code></td>
-<td>Rotation of the camera in degrees (down, around, roll).</td>
+<td>Rotação da câmera em graus (para baixo, em volta, inclinação).</td>
 <td>(50, 45, 0)</td>
 </tr>
 <tr>
 <td><code>distance</code></td>
-<td>Meters from the player when the map starts.</td>
+<td>Metros do jogador quando o mapa começa.</td>
 <td>9</td>
 </tr>
 <tr>
 <td><code>zoomRange</code></td>
-<td>Closest and farthest the wheel or a pinch zooms.</td>
-<td>5 to 18</td>
+<td>O mais perto e o mais longe que a roda ou uma pinça aproxima.</td>
+<td>5 a 18</td>
 </tr>
 <tr>
 <td><code>followSharpness</code></td>
-<td>How tightly it trails the player. Higher is tighter.</td>
+<td>Quão justo ela segue o jogador. Mais alto é mais justo.</td>
 <td>10</td>
 </tr>
 </tbody>
 </table></div>
-<p>The top-down camera never turns. It looks one meter above the player's feet.</p>
-<h3 id="topdownserver-fields"><a class="anchor" href="#topdownserver-fields" aria-hidden="true">#</a>TopDownServer fields</h3>
-<p>The server half, <code>TopDownServer</code>, sits on the map server object (in the sample, the <code>Server</code> scene). When it's missing the kit adds it with these defaults.</p>
+<p>A câmera top-down nunca gira. Ela olha um metro acima dos pés do jogador.</p>
+<h3 id="topdownserver-fields"><a class="anchor" href="#topdownserver-fields" aria-hidden="true">#</a>Campos de TopDownServer</h3>
+<p>A metade do servidor, <code>TopDownServer</code>, fica no objeto do servidor de mapa (na amostra, a cena <code>Server</code>). Quando falta, o kit o adiciona com estes padrões.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Move Speed</em> (<code>moveSpeed</code>)</td>
-<td>Walking speed when the class gives no move speed stat.</td>
-<td>3.5</td>
+<td>Velocidade de caminhada quando a classe não dá um atributo de velocidade de movimento.</td>
+<td>3,5</td>
 </tr>
 <tr>
 <td><em>Max Move Distance</em> (<code>maxMoveDistance</code>)</td>
-<td>Clicks farther than this are pulled in to this distance. Attacks, talks and skills aimed farther away are ignored.</td>
+<td>Cliques mais longe que isso são trazidos para essa distância. Ataques, conversas e habilidades miradas mais longe são ignorados.</td>
 <td>40</td>
 </tr>
 <tr>
 <td><em>Max Messages Per Second</em> (<code>maxMessagesPerSecond</code>)</td>
-<td>Movement and action requests per second before the connection is dropped as flooding.</td>
+<td>Pedidos de movimento e ação por segundo antes de a conexão ser derrubada por flood.</td>
 <td>20</td>
 </tr>
 <tr>
 <td><em>Chase Repath</em> (<code>chaseRepath</code>)</td>
-<td>Seconds between path updates while chasing a target.</td>
-<td>0.25</td>
+<td>Segundos entre atualizações do caminho ao perseguir um alvo.</td>
+<td>0,25</td>
 </tr>
 <tr>
 <td><em>Steer Timeout</em> (<code>steerTimeout</code>)</td>
-<td>Seconds a key direction keeps walking without a new one, in case the key release never arrives.</td>
-<td>0.5</td>
+<td>Segundos que uma direção de tecla continua andando sem uma nova, caso a soltura da tecla nunca chegue.</td>
+<td>0,5</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="free-camera-and-third-person"><a class="anchor" href="#free-camera-and-third-person" aria-hidden="true">#</a>Free camera and third person</h2>
-<p>Free camera and third person share the same input, camera and server components. They differ in the cursor, the aim and where the character faces.</p>
-<h3 id="playing-free-camera"><a class="anchor" href="#playing-free-camera" aria-hidden="true">#</a>Playing free camera</h3>
+<h2 id="free-camera-and-third-person"><a class="anchor" href="#free-camera-and-third-person" aria-hidden="true">#</a>Câmera livre e terceira pessoa</h2><figure class="shot"><a href="../../assets/img/game/third-person.png" target="_blank"><img src="../../assets/img/game/third-person.png" alt="Terceira pessoa com a mira." loading="lazy"></a><figcaption>Terceira pessoa com a mira.</figcaption></figure>
+<p>Câmera livre e terceira pessoa dividem os mesmos componentes de entrada, câmera e servidor. Diferem no cursor, na mira e para onde o personagem olha.</p>
+<h3 id="playing-free-camera"><a class="anchor" href="#playing-free-camera" aria-hidden="true">#</a>Jogar com câmera livre</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Input</th>
-<th>What happens</th>
+<th>Entrada</th>
+<th>O que acontece</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> or the arrows</td>
-<td>Walk relative to the camera.</td>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> ou as setas</td>
+<td>Anda relativo à câmera.</td>
 </tr>
 <tr>
-<td>Hold right mouse button and move</td>
-<td>Turns the camera. The cursor hides while you turn.</td>
+<td>Segurar o botão direito do mouse e mover</td>
+<td>Gira a câmera. O cursor some enquanto você gira.</td>
 </tr>
 <tr>
-<td>Right click without turning</td>
-<td>Opens the menu on the player under the pointer. A click counts when it's shorter than 0.35 seconds and the mouse barely moved.</td>
+<td>Clique direito sem girar</td>
+<td>Abre o menu do jogador sob o ponteiro. Um clique conta quando dura menos de 0,35 segundo e o mouse quase não se moveu.</td>
 </tr>
 <tr>
-<td>Left click</td>
-<td>Picks up the loot, talks to the NPC or tax collector under the pointer. Anywhere else it swings toward the pointer. Held, it keeps swinging.</td>
+<td>Clique esquerdo</td>
+<td>Pega o espólio, fala com o NPC ou coletor de impostos sob o ponteiro. Em qualquer outro lugar, golpeia em direção ao ponteiro. Segurado, continua golpeando.</td>
 </tr>
 <tr>
 <td><code>Space</code></td>
-<td>Dodges.</td>
+<td>Esquiva.</td>
 </tr>
 <tr>
 <td><code>F</code></td>
-<td>Picks up the nearest loot within 4 m or talks to the nearest NPC.</td>
+<td>Pega o espólio mais próximo dentro de 4 m ou fala com o NPC mais próximo.</td>
 </tr>
 <tr>
-<td>Mouse wheel</td>
-<td>Zooms within the camera's zoom range.</td>
+<td>Roda do mouse</td>
+<td>Aproxima dentro da faixa de zoom da câmera.</td>
 </tr>
 <tr>
-<td><code>1</code> to <code>0</code></td>
-<td>Hotbar slots. Skills go toward the pointer.</td>
+<td><code>1</code> a <code>0</code></td>
+<td>Espaços da barra rápida. As habilidades vão em direção ao ponteiro.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="playing-third-person"><a class="anchor" href="#playing-third-person" aria-hidden="true">#</a>Playing third person</h3>
+<h3 id="playing-third-person"><a class="anchor" href="#playing-third-person" aria-hidden="true">#</a>Jogar em terceira pessoa</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Input</th>
-<th>What happens</th>
+<th>Entrada</th>
+<th>O que acontece</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Move the mouse</td>
-<td>Turns the camera. The cursor is hidden and a crosshair (a small ring with a dot) sits in the middle of the screen.</td>
+<td>Mover o mouse</td>
+<td>Gira a câmera. O cursor fica oculto e uma mira (um anel pequeno com um ponto) fica no meio da tela.</td>
 </tr>
 <tr>
-<td>Hold <code>Left Alt</code></td>
-<td>Gives the cursor back while held, to click the HUD. Opening any window, a dialog, the settings or the chat also gives it back. The crosshair stays on screen, faded.</td>
+<td>Segurar <code>Left Alt</code></td>
+<td>Devolve o cursor enquanto segurado, para clicar no HUD. Abrir qualquer janela, um diálogo, as configurações ou o chat também o devolve. A mira continua na tela, esmaecida.</td>
 </tr>
 <tr>
-<td>Left click</td>
-<td>Picks up, talks or swings at what the crosshair covers. Held, it keeps swinging.</td>
+<td>Clique esquerdo</td>
+<td>Pega, fala ou golpeia o que a mira cobre. Segurado, continua golpeando.</td>
 </tr>
 <tr>
-<td>Right click</td>
-<td>Opens the menu on the player under the crosshair.</td>
+<td>Clique direito</td>
+<td>Abre o menu do jogador sob a mira.</td>
 </tr>
 <tr>
-<td><code>W</code> <code>A</code> <code>S</code> <code>D</code>, <code>Space</code>, <code>F</code>, wheel, <code>1</code> to <code>0</code></td>
-<td>As in free camera.</td>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code>, <code>Space</code>, <code>F</code>, roda, <code>1</code> a <code>0</code></td>
+<td>Como na câmera livre.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="free-aiming"><a class="anchor" href="#free-aiming" aria-hidden="true">#</a>Free aiming</h3>
-<p>In free camera and third person nothing needs a target. A left click sends a swing toward the aimed point, with the enemy under the aim as a hint. The server decides who is hit:</p>
+<h3 id="free-aiming"><a class="anchor" href="#free-aiming" aria-hidden="true">#</a>Mira livre</h3>
+<p>Em câmera livre e terceira pessoa nada precisa de alvo. Um clique esquerdo envia um golpe em direção ao ponto mirado, com o inimigo sob a mira como dica. O servidor decide quem é atingido:</p>
 <ul>
-<li><strong>Melee weapons</strong> (attack range up to 3 m) hit the nearest enemy inside a 60 degree arc either side of the aimed direction, the one most in front winning a tie.</li>
-<li><strong>Ranged weapons</strong> (attack range over 3 m) hit the first enemy on the aimed line, within 0.9 m of it.</li>
-<li>The client's hint only counts when that enemy really is in that direction, within reach and in sight.</li>
-<li>With no enemy there, the character swings at the air: the attack animation plays, ammunition is spent and the attack timer runs.</li>
+<li><strong>Armas corpo a corpo</strong> (alcance de ataque até 3 m) acertam o inimigo mais próximo dentro de um arco de 60 graus para cada lado da direção mirada, e o que está mais à frente ganha em caso de empate.</li>
+<li><strong>Armas à distância</strong> (alcance de ataque acima de 3 m) acertam o primeiro inimigo na linha mirada, a até 0,9 m dela.</li>
+<li>A dica do cliente só conta quando aquele inimigo está de fato naquela direção, ao alcance e à vista.</li>
+<li>Sem inimigo ali, o personagem golpeia o ar: a animação de ataque toca, a munição é gasta e o temporizador de ataque corre.</li>
 </ul>
-<p>Holding the button repeats the swing every 0.25 seconds on the client. The server still applies the real attack speed of the weapon, so holding never attacks faster.</p>
-<p>Skills go to the aimed point too. The server cuts the point to the skill's range and stops it at walls. A single-target enemy skill aimed at nobody takes the first enemy on the line; if there is none, the cast fails. Area and ground skills still show their preview first (see <a href="#skill-aiming">Skill aiming</a>).</p>
-<h3 id="where-the-character-faces"><a class="anchor" href="#where-the-character-faces" aria-hidden="true">#</a>Where the character faces</h3>
-<p>The character faces where it walks or strikes. After an attack or a cast it keeps facing the target for 0.6 seconds (<code>faceAimSeconds</code>), even while walking another way, so backing off with <code>S</code> and striking still shows the strike toward the enemy.</p>
-<p>In third person with a melee weapon, a swing made <strong>while walking</strong> goes where the character walks, not where the camera looks. Standing still, it goes to the crosshair. Shots and skills always go to the crosshair.</p>
-<p>Third person adds a player option, <strong>Settings &gt; Controls &gt; Turn with the camera</strong>: the character always faces where the camera looks, to strafe. It's off by default and only shows in third person.</p>
-<h3 id="dodge"><a class="anchor" href="#dodge" aria-hidden="true">#</a>Dodge</h3>
-<p><code>Space</code> dodges 4 m in the direction you walk, or straight ahead when standing, over 0.3 seconds. It stops at the first wall and cancels the current attack. The server keeps the cooldown (1.2 seconds), so pressing faster does nothing. A dodge doesn't make the character invulnerable. Stuns, roots, a cast in progress and an overloaded bag prevent it.</p>
-<h3 id="movement-and-prediction"><a class="anchor" href="#movement-and-prediction" aria-hidden="true">#</a>Movement and prediction</h3>
-<p>The character moves at once when you press a key: the client runs fixed ticks (30 per second), moves itself over the NavMesh and sends each tick to the server. The server runs the same step on the same NavMesh and answers every 0.05 seconds with the real position. When the answers disagree, the client replays the ticks the server hasn't seen yet from that position: small differences ease out, and differences over 6 m jump straight there.</p>
-<p>Other players see your character through the normal network sync. A pushed-halfway stick walks at half speed.</p>
-<p>There is no jump: movement stays on the NavMesh, sliding along its edges, and slopes and stairs carry the character up and down.</p>
-<h3 id="thirdpersoninput-fields"><a class="anchor" href="#thirdpersoninput-fields" aria-hidden="true">#</a>ThirdPersonInput fields</h3>
-<p><code>ThirdPersonInput</code> and <code>ThirdPersonCamera</code> are added to the map's main camera at run time when the mode plays. To change their fields, add them to the camera of your map scene and set them there.</p>
+<p>Segurar o botão repete o golpe a cada 0,25 segundo no cliente. O servidor ainda aplica a velocidade de ataque real da arma, então segurar nunca ataca mais rápido.</p>
+<p>As habilidades também vão para o ponto mirado. O servidor corta o ponto ao alcance da habilidade e o para nas paredes. Uma habilidade inimiga de alvo único mirada em ninguém pega o primeiro inimigo na linha; se não houver nenhum, o lançamento falha. Habilidades de área e de chão ainda mostram a prévia primeiro (veja <a href="#skill-aiming">Mira de habilidades</a>).</p>
+<h3 id="where-the-character-faces"><a class="anchor" href="#where-the-character-faces" aria-hidden="true">#</a>Para onde o personagem olha</h3>
+<p>O personagem olha para onde anda ou golpeia. Depois de um ataque ou um lançamento, continua olhando para o alvo por 0,6 segundo (<code>faceAimSeconds</code>), mesmo andando para outro lado, então recuar com <code>S</code> e golpear ainda mostra o golpe em direção ao inimigo.</p>
+<p>Em terceira pessoa com uma arma corpo a corpo, um golpe dado <strong>enquanto anda</strong> vai para onde o personagem anda, não para onde a câmera olha. Parado, vai para a mira. Disparos e habilidades sempre vão para a mira.</p>
+<p>A terceira pessoa adiciona uma opção do jogador, <strong>Settings &gt; Controls &gt; Turn with the camera</strong>: o personagem sempre olha para onde a câmera olha, para andar de lado. Vem desligada e só aparece em terceira pessoa.</p>
+<h3 id="dodge"><a class="anchor" href="#dodge" aria-hidden="true">#</a>Esquiva</h3>
+<p><code>Space</code> esquiva 4 m na direção em que você anda, ou para a frente quando parado, em 0,3 segundo. Para na primeira parede e cancela o ataque atual. O servidor mantém a recarga (1,2 segundo), então apertar mais rápido não faz nada. Uma esquiva não deixa o personagem invulnerável. Atordoamentos, enraizamentos, um lançamento em andamento e uma bolsa com sobrepeso a impedem.</p>
+<h3 id="movement-and-prediction"><a class="anchor" href="#movement-and-prediction" aria-hidden="true">#</a>Movimento e predição</h3>
+<p>O personagem se move na hora quando você aperta uma tecla: o cliente roda ticks fixos (30 por segundo), move a si mesmo sobre o NavMesh e envia cada tick ao servidor. O servidor roda o mesmo passo no mesmo NavMesh e responde a cada 0,05 segundo com a posição real. Quando as respostas discordam, o cliente refaz, a partir dessa posição, os ticks que o servidor ainda não viu: diferenças pequenas se suavizam, e diferenças acima de 6 m saltam direto para lá.</p>
+<p>Os outros jogadores veem o seu personagem pela sincronização normal da rede. Um analógico empurrado até a metade anda a meia velocidade.</p>
+<p>Não há pulo: o movimento fica no NavMesh, deslizando ao longo das bordas, e rampas e escadas levam o personagem para cima e para baixo.</p>
+<h3 id="thirdpersoninput-fields"><a class="anchor" href="#thirdpersoninput-fields" aria-hidden="true">#</a>Campos de ThirdPersonInput</h3>
+<p><code>ThirdPersonInput</code> e <code>ThirdPersonCamera</code> são adicionados à câmera principal do mapa em tempo de execução quando o modo está em jogo. Para mudar os campos, adicione-os à câmera da sua cena de mapa e defina-os ali.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>view</code></td>
-<td>Camera used for aiming. Empty: the main camera.</td>
-<td>Empty</td>
+<td>Câmera usada para mirar. Vazio: a câmera principal.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><code>orbit</code></td>
-<td>The <code>ThirdPersonCamera</code> it reads the camera direction from. Empty: the one on the same object.</td>
-<td>Empty</td>
+<td>O <code>ThirdPersonCamera</code> de onde lê a direção da câmera. Vazio: o que está no mesmo objeto.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><em>Dodge Key</em> (<code>dodgeKey</code>)</td>
-<td>Dodges.</td>
+<td>Esquiva.</td>
 <td><code>Space</code></td>
 </tr>
 <tr>
 <td><em>Interact Key</em> (<code>interactKey</code>)</td>
-<td>Picks up or talks to the nearest thing.</td>
+<td>Pega ou fala com a coisa mais próxima.</td>
 <td><code>F</code></td>
 </tr>
 <tr>
 <td><em>Interact Range</em> (<code>interactRange</code>)</td>
-<td>Meters around the player in which <code>F</code> finds loot or an NPC.</td>
+<td>Metros ao redor do jogador em que <code>F</code> encontra espólio ou um NPC.</td>
 <td>4</td>
 </tr>
 <tr>
 <td><em>Swing Repeat</em> (<code>swingRepeat</code>)</td>
-<td>Seconds between swings while the button is held. The server keeps the real attack speed.</td>
-<td>0.25</td>
+<td>Segundos entre golpes enquanto o botão está segurado. O servidor mantém a velocidade de ataque real.</td>
+<td>0,25</td>
 </tr>
 <tr>
 <td><code>turnSharpness</code></td>
-<td>How fast the character turns to its new facing.</td>
+<td>Quão rápido o personagem gira para a nova direção.</td>
 <td>14</td>
 </tr>
 <tr>
 <td><em>Face Aim Seconds</em> (<code>faceAimSeconds</code>)</td>
-<td>Seconds the character keeps facing what it attacked or cast at.</td>
-<td>0.6</td>
+<td>Segundos que o personagem continua olhando para o que atacou ou onde lançou.</td>
+<td>0,6</td>
 </tr>
 <tr>
 <td><em>Snap Distance</em> (<code>snapDistance</code>)</td>
-<td>Meters off the server at which the character jumps there instead of easing over.</td>
+<td>Metros de diferença com o servidor em que o personagem salta para lá em vez de se suavizar.</td>
 <td>6</td>
 </tr>
 <tr>
 <td><em>Correction Sharpness</em> (<code>correctionSharpness</code>)</td>
-<td>How fast a small correction eases out.</td>
+<td>Quão rápido uma correção pequena se suaviza.</td>
 <td>10</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="thirdpersoncamera-fields"><a class="anchor" href="#thirdpersoncamera-fields" aria-hidden="true">#</a>ThirdPersonCamera fields</h3>
+<h3 id="thirdpersoncamera-fields"><a class="anchor" href="#thirdpersoncamera-fields" aria-hidden="true">#</a>Campos de ThirdPersonCamera</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>settings</code></td>
-<td>A <a href="#camera-settings">Camera Settings</a> asset for this camera only. Empty: the one in Game Settings for the playing mode.</td>
-<td>Empty</td>
+<td>Um asset <a href="#camera-settings">Camera Settings</a> só para esta câmera. Vazio: o de Game Settings para o modo em jogo.</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><code>blockers</code></td>
-<td>Layers the camera can't go through. Monsters, players, loot and triggers never block it.</td>
-<td>Default layer</td>
+<td>Camadas que a câmera não atravessa. Monstros, jogadores, espólio e triggers nunca a bloqueiam.</td>
+<td>Camada Default</td>
 </tr>
 <tr>
 <td><code>blockerRadius</code></td>
-<td>Radius of the sphere used to find walls behind the player.</td>
-<td>0.25</td>
+<td>Raio da esfera usada para encontrar paredes atrás do jogador.</td>
+<td>0,25</td>
 </tr>
 <tr>
 <td><em>Look Button</em> (<code>lookButton</code>)</td>
-<td>Free camera: mouse button held to turn. 0 left, 1 right, 2 middle.</td>
+<td>Câmera livre: botão do mouse segurado para girar. 0 esquerdo, 1 direito, 2 do meio.</td>
 <td>1</td>
 </tr>
 <tr>
 <td><em>Free Cursor Key</em> (<code>freeCursorKey</code>)</td>
-<td>Third person: held to get the cursor back.</td>
+<td>Terceira pessoa: segurada para recuperar o cursor.</td>
 <td><code>Left Alt</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>When a wall comes between the camera and the player, the camera pulls in at once and eases back out when the wall is gone.</p>
-<h3 id="thirdpersonserver-fields"><a class="anchor" href="#thirdpersonserver-fields" aria-hidden="true">#</a>ThirdPersonServer fields</h3>
-<p><code>ThirdPersonServer</code> serves both free camera and third person. It's added to the map server object at run time; add it there yourself to change its fields.</p>
+<p>Quando uma parede fica entre a câmera e o jogador, a câmera se aproxima na hora e volta suavemente quando a parede sai.</p>
+<h3 id="thirdpersonserver-fields"><a class="anchor" href="#thirdpersonserver-fields" aria-hidden="true">#</a>Campos de ThirdPersonServer</h3>
+<p><code>ThirdPersonServer</code> serve tanto a câmera livre quanto a terceira pessoa. Ele é adicionado ao objeto do servidor de mapa em tempo de execução; adicione-o ali você mesmo para mudar os campos.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Move Speed</em> (<code>moveSpeed</code>)</td>
-<td>Walking speed when the class gives no move speed stat.</td>
-<td>3.5</td>
+<td>Velocidade de caminhada quando a classe não dá um atributo de velocidade de movimento.</td>
+<td>3,5</td>
 </tr>
 <tr>
 <td><em>Max Messages Per Second</em> (<code>maxMessagesPerSecond</code>)</td>
-<td>Attacks, swings, skills, pickups and talks per second before the connection is dropped as flooding.</td>
+<td>Ataques, golpes, habilidades, coletas e conversas por segundo antes de a conexão ser derrubada por flood.</td>
 <td>20</td>
 </tr>
 <tr>
 <td><em>Max Queued Ticks</em> (<code>maxQueuedTicks</code>)</td>
-<td>Movement ticks waiting per player. More are dropped and the client corrects itself.</td>
+<td>Ticks de movimento esperando por jogador. Os excedentes são descartados e o cliente se corrige.</td>
 <td>12</td>
 </tr>
 <tr>
 <td><em>Ack Seconds</em> (<code>ackSeconds</code>)</td>
-<td>Seconds between position replies to the owner.</td>
-<td>0.05</td>
+<td>Segundos entre respostas de posição ao dono.</td>
+<td>0,05</td>
 </tr>
 <tr>
 <td><em>Reach Slack</em> (<code>reachSlack</code>)</td>
-<td>Meters past the attack or skill range still accepted, for a target taking a step.</td>
-<td>0.6</td>
+<td>Metros além do alcance do ataque ou da habilidade ainda aceitos, para um alvo que dá um passo.</td>
+<td>0,6</td>
 </tr>
 <tr>
 <td><em>Melee Arc</em> (<code>meleeArc</code>)</td>
-<td>Half the angle, in degrees, in which a melee swing finds its enemy.</td>
+<td>Metade do ângulo, em graus, em que um golpe corpo a corpo encontra o inimigo.</td>
 <td>60</td>
 </tr>
 <tr>
 <td><em>Aim Width</em> (<code>aimWidth</code>)</td>
-<td>Meters either side of the aimed line in which a ranged attack or single-target skill finds its enemy.</td>
-<td>0.9</td>
+<td>Metros para cada lado da linha mirada em que um ataque à distância ou uma habilidade de alvo único encontra o inimigo.</td>
+<td>0,9</td>
 </tr>
 <tr>
 <td><code>dodgeDistance</code></td>
-<td>Meters a dodge covers.</td>
+<td>Metros que uma esquiva cobre.</td>
 <td>4</td>
 </tr>
 <tr>
 <td><code>dodgeSeconds</code></td>
-<td>Seconds a dodge takes.</td>
-<td>0.3</td>
+<td>Segundos que uma esquiva leva.</td>
+<td>0,3</td>
 </tr>
 <tr>
 <td><code>dodgeCooldown</code></td>
-<td>Seconds between dodges.</td>
-<td>1.2</td>
+<td>Segundos entre esquivas.</td>
+<td>1,2</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="camera-settings"><a class="anchor" href="#camera-settings" aria-hidden="true">#</a>Camera settings</h2>
-<p>The framing of the free camera and third person modes is part of the game's design, the same for every player, so nobody gains an edge by pulling the camera far back. It comes from a <strong>Camera Settings</strong> asset.</p>
-<p>To make one: <strong>Create &gt; KitARPG &gt; Camera Settings</strong>, then assign it to <em>Third Person Camera</em> or <em>Free Camera</em> in Game Settings. The sample has <code>Camera Third Person</code> and <code>Camera Free</code> in <code>Samples/Starter/Data</code>.</p>
-<p>The camera reads the asset every frame. Edit it in Play mode to try values: the camera follows at once and the changes stay after Play, because the asset is a file in your project.</p>
+<p>O enquadramento dos modos câmera livre e terceira pessoa faz parte do design do jogo, igual para todos os jogadores, então ninguém ganha vantagem afastando muito a câmera. Ele vem de um asset <strong>Camera Settings</strong>.</p>
+<p>Para criar um: <strong>Create &gt; KitARPG &gt; Camera Settings</strong>, depois atribua-o a <em>Third Person Camera</em> ou <em>Free Camera</em> em Game Settings. A amostra tem <code>Camera Third Person</code> e <code>Camera Free</code> em <code>Samples/Starter/Data</code>.</p>
+<p>A câmera lê o asset a cada quadro. Edite-o no modo Play para testar valores: a câmera acompanha na hora e as mudanças ficam depois do Play, porque o asset é um arquivo no seu projeto.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Distance</em> (<code>distance</code>)</td>
-<td>Meters behind the player when the game starts, from 0.5 to 30. Clamped into the zoom range.</td>
+<td>Metros atrás do jogador quando o jogo começa, de 0,5 a 30. Limitado à faixa de zoom.</td>
 <td>6</td>
 </tr>
 <tr>
 <td><em>Zoom Range</em> (<code>zoomRange</code>)</td>
-<td>Closest and farthest the wheel zooms. The same value twice locks the zoom. The closest is never under 0.5.</td>
-<td>2 to 14</td>
+<td>O mais perto e o mais longe que a roda aproxima. O mesmo valor duas vezes trava o zoom. O mais perto nunca fica abaixo de 0,5.</td>
+<td>2 a 14</td>
 </tr>
 <tr>
 <td><em>Height</em> (<code>height</code>)</td>
-<td>Meters above the feet the camera looks at, from -2 to 6.</td>
-<td>1.6</td>
+<td>Metros acima dos pés para onde a câmera olha, de -2 a 6.</td>
+<td>1,6</td>
 </tr>
 <tr>
 <td><em>Side</em> (<code>side</code>)</td>
-<td>Meters beside the player, right above zero and left below, from -4 to 4. Moves the player off the crosshair.</td>
-<td>0.6</td>
+<td>Metros ao lado do jogador, direita acima de zero e esquerda abaixo, de -4 a 4. Tira o jogador de baixo da mira.</td>
+<td>0,6</td>
 </tr>
 <tr>
 <td><em>Field Of View</em> (<code>fieldOfView</code>)</td>
-<td>Camera field of view, 30 to 110 degrees.</td>
+<td>Campo de visão da câmera, de 30 a 110 graus.</td>
 <td>60</td>
 </tr>
 <tr>
 <td><em>Turning</em> (<code>turning</code>)</td>
-<td><strong>Free</strong> turns all the way round. <strong>Limited</strong> stays within <em>Yaw Range</em> of <em>Yaw</em>. <strong>Fixed</strong> always faces <em>Yaw</em>.</td>
+<td><strong>Free</strong> gira a volta toda. <strong>Limited</strong> fica dentro de <em>Yaw Range</em> em torno de <em>Yaw</em>. <strong>Fixed</strong> sempre olha para <em>Yaw</em>.</td>
 <td>Free</td>
 </tr>
 <tr>
 <td><em>Yaw</em> (<code>yaw</code>)</td>
-<td>World direction in degrees the camera faces when Limited or Fixed, and where it starts. 45 gives an isometric look.</td>
+<td>Direção do mundo em graus para onde a câmera olha quando Limited ou Fixed, e onde começa. 45 dá um visual isométrico.</td>
 <td>0</td>
 </tr>
 <tr>
 <td><em>Yaw Range</em> (<code>yawRange</code>)</td>
-<td>Limited: degrees it may turn left (below zero) and right of <em>Yaw</em>.</td>
-<td>-45 to 45</td>
+<td>Limited: graus que pode girar para a esquerda (abaixo de zero) e para a direita de <em>Yaw</em>.</td>
+<td>-45 a 45</td>
 </tr>
 <tr>
 <td><em>Pitch</em> (<code>pitch</code>)</td>
-<td>Degrees the camera starts looking down, -89 to 89.</td>
+<td>Graus que a câmera começa olhando para baixo, de -89 a 89.</td>
 <td>18</td>
 </tr>
 <tr>
 <td><em>Lock Pitch</em> (<code>lockPitch</code>)</td>
-<td>Keeps the camera at <em>Pitch</em>, never tilting.</td>
-<td>Off</td>
+<td>Mantém a câmera em <em>Pitch</em>, sem nunca inclinar.</td>
+<td>Desligado</td>
 </tr>
 <tr>
 <td><em>Pitch Range</em> (<code>pitchRange</code>)</td>
-<td>How far it can look up (below zero) and down.</td>
-<td>-35 to 75</td>
+<td>Quanto pode olhar para cima (abaixo de zero) e para baixo.</td>
+<td>-35 a 75</td>
 </tr>
 <tr>
 <td><em>Sensitivity</em> (<code>sensitivity</code>)</td>
-<td>Degrees per unit of mouse movement. Players scale it in Settings.</td>
+<td>Graus por unidade de movimento do mouse. Os jogadores a escalam em Settings.</td>
 <td>3</td>
 </tr>
 <tr>
 <td><em>Follow Sharpness</em> (<code>followSharpness</code>)</td>
-<td>How quickly it catches up with the player. Higher is tighter.</td>
+<td>Quão rápido alcança o jogador. Mais alto é mais justo.</td>
 <td>18</td>
 </tr>
 </tbody>
 </table></div>
-<p>The sample assets use these values:</p>
+<p>Os assets da amostra usam estes valores:</p>
 <div class="table"><table>
 <thead>
 <tr>
 <th>Asset</th>
-<th>Distance</th>
-<th>Zoom range</th>
-<th>Height</th>
-<th>Side</th>
-<th>Field of view</th>
+<th>Distância</th>
+<th>Faixa de zoom</th>
+<th>Altura</th>
+<th>Lado</th>
+<th>Campo de visão</th>
 <th>Pitch</th>
 </tr>
 </thead>
@@ -683,177 +683,177 @@
 <tr>
 <td><code>Camera Third Person</code></td>
 <td>6</td>
-<td>2 to 14</td>
-<td>0.84</td>
-<td>0.4</td>
+<td>2 a 14</td>
+<td>0,84</td>
+<td>0,4</td>
 <td>45</td>
 <td>18</td>
 </tr>
 <tr>
 <td><code>Camera Free</code></td>
-<td>5 (starts at 7, the zoom minimum)</td>
-<td>7 to 13</td>
-<td>1.6</td>
+<td>5 (começa em 7, o mínimo do zoom)</td>
+<td>7 a 13</td>
+<td>1,6</td>
 <td>0</td>
 <td>45</td>
 <td>45</td>
 </tr>
 </tbody>
 </table></div>
-<div class="callout tip"><div class="callout-title">Dica</div><p><em>Turning</em> Fixed with <em>Lock Pitch</em> on makes a camera that can't turn at all. The cursor then stays free and aims with the mouse even in third person, which gives a fixed-angle action camera with WASD movement and dodge.</p>
+<div class="callout tip"><div class="callout-title">Dica</div><p><em>Turning</em> Fixed com <em>Lock Pitch</em> ligado faz uma câmera que não gira de jeito nenhum. O cursor então fica livre e mira com o mouse mesmo em terceira pessoa, o que dá uma câmera de ação de ângulo fixo com movimento WASD e esquiva.</p>
 </div>
-<h3 id="player-camera-options"><a class="anchor" href="#player-camera-options" aria-hidden="true">#</a>Player camera options</h3>
-<p>Players only change how the mouse feels, in <strong>Settings &gt; Controls</strong>. These options appear in free camera and third person:</p>
+<h3 id="player-camera-options"><a class="anchor" href="#player-camera-options" aria-hidden="true">#</a>Opções de câmera do jogador</h3>
+<p>Os jogadores só mudam como o mouse se comporta, em <strong>Settings &gt; Controls</strong>. Estas opções aparecem em câmera livre e terceira pessoa:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Option</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Opção</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Mouse sensitivity</strong></td>
-<td>Scales the asset's <em>Sensitivity</em>, from 20 to 300 percent in steps of 10.</td>
+<td>Escala a <em>Sensitivity</em> do asset, de 20 a 300 por cento em passos de 10.</td>
 <td>100</td>
 </tr>
 <tr>
 <td><strong>Invert mouse</strong></td>
-<td>Moving the mouse up looks up.</td>
-<td>Off</td>
+<td>Mover o mouse para cima olha para cima.</td>
+<td>Desligado</td>
 </tr>
 <tr>
 <td><strong>Turn with the camera</strong></td>
-<td>Third person only: the character faces where the camera looks.</td>
-<td>Off</td>
+<td>Só terceira pessoa: o personagem olha para onde a câmera olha.</td>
+<td>Desligado</td>
 </tr>
 </tbody>
 </table></div>
-<p>They're saved per computer in <code>PlayerPrefs</code>. See <a href="player-settings.html">Player settings</a>.</p>
-<h2 id="skill-aiming"><a class="anchor" href="#skill-aiming" aria-hidden="true">#</a>Skill aiming</h2>
-<p>In every mode, area and ground skills first show where they land:</p>
+<p>Elas são salvas por computador em <code>PlayerPrefs</code>. Veja <a href="player-settings.html">Configurações do jogador</a>.</p>
+<h2 id="skill-aiming"><a class="anchor" href="#skill-aiming" aria-hidden="true">#</a>Mira de habilidades</h2>
+<p>Em todos os modos, as habilidades de área e de chão primeiro mostram onde vão cair:</p>
 <ul>
-<li>A faint white ring around the player shows the skill's range.</li>
-<li>The skill's circle, cone or line follows the aim. It's gold when the cast can go, red when the point is out of range. Top-down never shows red, because it walks into range on its own.</li>
-<li>Left click or the same hotbar key casts it. Right click or <code>Escape</code> calls it off.</li>
+<li>Um anel branco fraco ao redor do jogador mostra o alcance da habilidade.</li>
+<li>O círculo, cone ou linha da habilidade segue a mira. Fica dourado quando o lançamento pode ir, vermelho quando o ponto está fora de alcance. O top-down nunca mostra vermelho, porque anda sozinho até o alcance.</li>
+<li>Clique esquerdo ou a mesma tecla da barra rápida a lança. Clique direito ou <code>Escape</code> a cancela.</li>
 </ul>
-<p>Self skills and single-target skills (aimed at an enemy or ally) go at once. Outside of aiming, a red ring under an enemy marks the one your attack or skill would hit.</p>
-<p>Players who prefer speed pick <strong>Settings &gt; Controls &gt; Skills &gt; Cast at once</strong>: area skills go straight to the aim with no preview. The default is <strong>Show the area, then click</strong>. The choice is stored in <code>PlayerPrefs</code> (<code>KitARPG.QuickCast</code>).</p>
-<p>What a skill needs before it's sent, checked on the client to save a round trip: the skill is learned, not passive, no other cast is running, its cooldown is over and there is enough mana. The messages are &quot;You haven't learned that&quot;, &quot;That can't be cast&quot;, &quot;Already casting&quot;, &quot;<em>Skill</em> isn't ready&quot; and &quot;Not enough mana&quot;. In top-down, an enemy skill with no enemy under the pointer says &quot;No target&quot;. The server checks all of it again. See <a href="../content/skills.html">Skills</a> and <a href="combat.html">Combat</a>.</p>
-<h2 id="server-checks"><a class="anchor" href="#server-checks" aria-hidden="true">#</a>Server checks</h2>
-<p>The client only asks. Every mode's server half checks each request:</p>
+<p>Habilidades em si mesmo e de alvo único (miradas em um inimigo ou aliado) vão na hora. Fora da mira, um anel vermelho sob um inimigo marca aquele que o seu ataque ou habilidade acertaria.</p>
+<p>Os jogadores que preferem velocidade escolhem <strong>Settings &gt; Controls &gt; Skills &gt; Cast at once</strong>: as habilidades de área vão direto para a mira sem prévia. O padrão é <strong>Show the area, then click</strong>. A escolha é guardada em <code>PlayerPrefs</code> (<code>KitARPG.QuickCast</code>).</p>
+<p>O que uma habilidade precisa antes de ser enviada, verificado no cliente para poupar uma ida e volta: a habilidade foi aprendida, não é passiva, nenhum outro lançamento está em andamento, a recarga terminou e há mana suficiente. As mensagens são &quot;You haven't learned that&quot;, &quot;That can't be cast&quot;, &quot;Already casting&quot;, &quot;<em>Skill</em> isn't ready&quot; e &quot;Not enough mana&quot;. No top-down, uma habilidade inimiga sem inimigo sob o ponteiro diz &quot;No target&quot;. O servidor verifica tudo de novo. Veja <a href="../content/skills.html">Habilidades</a> e <a href="combat.html">Combate</a>.</p>
+<h2 id="server-checks"><a class="anchor" href="#server-checks" aria-hidden="true">#</a>Verificações do servidor</h2>
+<p>O cliente só pede. A metade do servidor de cada modo verifica cada pedido:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Check</th>
+<th>Verificação</th>
 <th>Top-down</th>
-<th>Free camera and third person</th>
+<th>Câmera livre e terceira pessoa</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mode matches</td>
-<td>The client sends its mode with its map ticket. Another mode is refused with <code>mode_mismatch</code>.</td>
-<td>Same</td>
+<td>Modo coincide</td>
+<td>O cliente envia o modo com o ticket do mapa. Outro modo é recusado com <code>mode_mismatch</code>.</td>
+<td>Igual</td>
 </tr>
 <tr>
-<td>Request rate</td>
-<td>More than 20 requests a second drops the connection as flooding.</td>
-<td>Same for actions. Movement ticks: more than 70 a second drops a remote client.</td>
+<td>Ritmo de pedidos</td>
+<td>Mais de 20 pedidos por segundo derruba a conexão por flood.</td>
+<td>Igual para ações. Ticks de movimento: mais de 70 por segundo derruba um cliente remoto.</td>
 </tr>
 <tr>
-<td>Bad numbers</td>
-<td>Points and directions that aren't finite numbers are ignored.</td>
-<td>Same</td>
+<td>Números ruins</td>
+<td>Pontos e direções que não são números finitos são ignorados.</td>
+<td>Igual</td>
 </tr>
 <tr>
-<td>Speed</td>
-<td>The server paths the character at its own speed.</td>
-<td>Ticks run against a real-time budget per player: sending ticks faster never moves faster. Each tick counts at most 0.1 seconds, old tick numbers are dropped.</td>
+<td>Velocidade</td>
+<td>O servidor calcula o caminho do personagem com a própria velocidade.</td>
+<td>Os ticks rodam contra um orçamento de tempo real por jogador: enviar ticks mais rápido nunca move mais rápido. Cada tick conta no máximo 0,1 segundo, números de tick antigos são descartados.</td>
 </tr>
 <tr>
-<td>Movement blocked</td>
-<td>Stuns, roots, knockbacks, death and an overloaded bag stop walking. An overloaded player sees the overload message at most every 3 seconds.</td>
-<td>Same, and a cast in progress holds the caster in place.</td>
+<td>Movimento bloqueado</td>
+<td>Atordoamentos, enraizamentos, repulsões, morte e uma bolsa com sobrepeso param a caminhada. Um jogador com sobrepeso vê a mensagem de sobrepeso no máximo a cada 3 segundos.</td>
+<td>Igual, e um lançamento em andamento segura o lançador no lugar.</td>
 </tr>
 <tr>
-<td>Reach</td>
-<td>Clicks over 40 m are pulled in; targets, NPCs and skill points over 40 m are ignored. The character walks the rest.</td>
-<td>Nothing walks on its own: attacks need attack range plus 0.6 m and line of sight (&quot;Too far&quot;, &quot;Not in sight&quot;), talks need the NPC's talk range (&quot;Too far&quot;), pickups the loot's pickup range, skills their range (&quot;Out of range&quot;).</td>
+<td>Alcance</td>
+<td>Cliques acima de 40 m são trazidos para dentro; alvos, NPCs e pontos de habilidade acima de 40 m são ignorados. O personagem anda o resto.</td>
+<td>Nada anda sozinho: ataques precisam do alcance de ataque mais 0,6 m e linha de visão (&quot;Too far&quot;, &quot;Not in sight&quot;), conversas precisam do alcance de fala do NPC (&quot;Too far&quot;), coletas do alcance de coleta do espólio, habilidades do seu alcance (&quot;Out of range&quot;).</td>
 </tr>
 <tr>
-<td>Targets</td>
-<td>Only targets this client can see; enemies only when they really are enemies (PvP and duels included).</td>
-<td>Same</td>
+<td>Alvos</td>
+<td>Só alvos que este cliente pode ver; inimigos só quando são de fato inimigos (PvP e duelos incluídos).</td>
+<td>Igual</td>
 </tr>
 <tr>
-<td>Orders from another mode</td>
-<td>Not handled.</td>
-<td>Top-down move orders are ignored instead of disconnecting the client.</td>
+<td>Ordens de outro modo</td>
+<td>Não tratadas.</td>
+<td>Ordens de movimento do top-down são ignoradas em vez de desconectar o cliente.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Line of sight follows Game Settings &gt; Combat (see <a href="combat.html">Combat</a>).</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p><strong>Single player.</strong> The game is its own host, so client and server always play the same mode. There is no prediction in free camera and third person: the host sends one tick per frame and moves the character in the same process. Change the mode in Game Settings and press Play.</p>
-<p><strong>MMO.</strong> The map servers are separate builds. The mode is compiled into them from Game Settings at build time.</p>
+<p>A linha de visão segue Game Settings &gt; Combat (veja <a href="combat.html">Combate</a>).</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Um jogador e MMO</h2>
+<p><strong>Um jogador.</strong> O jogo é o próprio host, então cliente e servidor sempre jogam o mesmo modo. Não há predição em câmera livre e terceira pessoa: o host envia um tick por quadro e move o personagem no mesmo processo. Mude o modo em Game Settings e pressione Play.</p>
+<p><strong>MMO.</strong> Os servidores de mapa são builds separadas. O modo é compilado nelas a partir de Game Settings na hora da build.</p>
 <ol>
-<li>Change <em>Control Mode</em> in Game Settings.</li>
-<li>Rebuild the map server in <strong>KitARPG &gt; Play and Servers</strong> (or <strong>KitARPG &gt; Build</strong> for Linux and Docker).</li>
-<li>Restart the services.</li>
-<li>Build and ship new clients.</li>
+<li>Mude <em>Control Mode</em> em Game Settings.</li>
+<li>Recompile o servidor de mapa em <strong>KitARPG &gt; Play and Servers</strong> (ou <strong>KitARPG &gt; Build</strong> para Linux e Docker).</li>
+<li>Reinicie os serviços.</li>
+<li>Compile e distribua novos clientes.</li>
 </ol>
-<p>A client that plays another mode than the map server is refused at the door. The title screen shows &quot;The server plays a different game mode. Update the game.&quot; In the editor, the Console also says the map server plays another mode and tells you to rebuild it. See <a href="../editor/play-and-servers.html">Play and Servers</a> and <a href="../servers/builds.html">Builds</a>.</p>
-<h2 id="input-system-and-input-manager"><a class="anchor" href="#input-system-and-input-manager" aria-hidden="true">#</a>Input System and Input Manager</h2>
-<p>The kit reads the keyboard and mouse through <code>KitInput</code>, which works with both the Input System package and the old Input Manager, depending on your project's <em>Active Input Handling</em>. Every key and mouse button above works the same in both. Scenes with a <code>StandaloneInputModule</code> get an <code>InputSystemUIInputModule</code> when they load under the Input System.</p>
-<p>On phones and tablets the modes read the on-screen controls instead. See <a href="touch-controls.html">Touch controls</a>.</p>
-<h2 id="common-setups"><a class="anchor" href="#common-setups" aria-hidden="true">#</a>Common setups</h2>
-<h3 id="a-classic-diablo-style-game"><a class="anchor" href="#a-classic-diablo-style-game" aria-hidden="true">#</a>A classic Diablo-style game</h3>
+<p>Um cliente que joga um modo diferente do servidor de mapa é recusado na porta. A tela de título mostra &quot;The server plays a different game mode. Update the game.&quot; No editor, o Console também diz que o servidor de mapa joga outro modo e pede para recompilá-lo. Veja <a href="../editor/play-and-servers.html">Play and Servers</a> e <a href="../servers/builds.html">Builds</a>.</p>
+<h2 id="input-system-and-input-manager"><a class="anchor" href="#input-system-and-input-manager" aria-hidden="true">#</a>Input System e Input Manager</h2>
+<p>O kit lê o teclado e o mouse por <code>KitInput</code>, que funciona tanto com o pacote Input System quanto com o antigo Input Manager, dependendo do <em>Active Input Handling</em> do seu projeto. Toda tecla e botão do mouse acima funciona igual nos dois. Cenas com um <code>StandaloneInputModule</code> recebem um <code>InputSystemUIInputModule</code> quando carregam com o Input System.</p>
+<p>Em celulares e tablets, os modos leem os controles na tela. Veja <a href="touch-controls.html">Controles de toque</a>.</p>
+<h2 id="common-setups"><a class="anchor" href="#common-setups" aria-hidden="true">#</a>Configurações comuns</h2>
+<h3 id="a-classic-diablo-style-game"><a class="anchor" href="#a-classic-diablo-style-game" aria-hidden="true">#</a>Um jogo clássico estilo Diablo</h3>
 <ol>
 <li>Game Settings &gt; Game mode &gt; <em>Control Mode</em>: <strong>Top-down (click or keys)</strong>.</li>
-<li>On each map camera's <code>TopDownInput</code>, leave <em>Controls</em> on <code>ClickAndKeys</code> and <em>Player Chooses</em> on.</li>
-<li>To change the camera angle or zoom, edit <code>TopDownCamera</code> on each map camera.</li>
+<li>No <code>TopDownInput</code> de cada câmera de mapa, deixe <em>Controls</em> em <code>ClickAndKeys</code> e <em>Player Chooses</em> ligado.</li>
+<li>Para mudar o ângulo ou o zoom da câmera, edite <code>TopDownCamera</code> em cada câmera de mapa.</li>
 </ol>
-<h3 id="click-only-no-wasd"><a class="anchor" href="#click-only-no-wasd" aria-hidden="true">#</a>Click only, no WASD</h3>
+<h3 id="click-only-no-wasd"><a class="anchor" href="#click-only-no-wasd" aria-hidden="true">#</a>Só clique, sem WASD</h3>
 <ol>
-<li>On every map camera's <code>TopDownInput</code>, set <em>Controls</em> to <strong>Click</strong> and turn off <em>Player Chooses</em>.</li>
-<li><code>Space</code> and <code>F</code> still work. Clear <em>Attack Key</em> and <em>Interact Key</em> (set them to <code>None</code>) to remove them too.</li>
+<li>No <code>TopDownInput</code> de cada câmera de mapa, defina <em>Controls</em> como <strong>Click</strong> e desligue <em>Player Chooses</em>.</li>
+<li><code>Space</code> e <code>F</code> ainda funcionam. Limpe <em>Attack Key</em> e <em>Interact Key</em> (defina-as como <code>None</code>) para removê-las também.</li>
 </ol>
-<h3 id="an-action-game-with-a-crosshair"><a class="anchor" href="#an-action-game-with-a-crosshair" aria-hidden="true">#</a>An action game with a crosshair</h3>
+<h3 id="an-action-game-with-a-crosshair"><a class="anchor" href="#an-action-game-with-a-crosshair" aria-hidden="true">#</a>Um jogo de ação com mira</h3>
 <ol>
 <li><em>Control Mode</em>: <strong>Third person (crosshair aim)</strong>.</li>
-<li>Assign a Camera Settings asset to <em>Third Person Camera</em>. Start from the sample's <code>Camera Third Person</code>.</li>
-<li>Press Play, open the asset and tune <em>Distance</em>, <em>Height</em> and <em>Side</em> until the crosshair clears the character.</li>
-<li>In MMO, rebuild the map server.</li>
+<li>Atribua um asset Camera Settings a <em>Third Person Camera</em>. Comece pelo <code>Camera Third Person</code> da amostra.</li>
+<li>Pressione Play, abra o asset e ajuste <em>Distance</em>, <em>Height</em> e <em>Side</em> até a mira ficar livre do personagem.</li>
+<li>Em MMO, recompile o servidor de mapa.</li>
 </ol>
-<h3 id="an-isometric-camera-with-wasd-and-dodge"><a class="anchor" href="#an-isometric-camera-with-wasd-and-dodge" aria-hidden="true">#</a>An isometric camera with WASD and dodge</h3>
+<h3 id="an-isometric-camera-with-wasd-and-dodge"><a class="anchor" href="#an-isometric-camera-with-wasd-and-dodge" aria-hidden="true">#</a>Uma câmera isométrica com WASD e esquiva</h3>
 <ol>
 <li><em>Control Mode</em>: <strong>Free camera (cursor, right button turns)</strong>.</li>
-<li>In the <em>Free Camera</em> asset set <em>Turning</em> to <strong>Fixed</strong>, <em>Yaw</em> to 45, <em>Pitch</em> to about 50 and turn on <em>Lock Pitch</em>.</li>
-<li>The camera can't turn, the cursor aims and <code>Space</code> dodges.</li>
+<li>No asset <em>Free Camera</em>, defina <em>Turning</em> como <strong>Fixed</strong>, <em>Yaw</em> como 45, <em>Pitch</em> em torno de 50 e ligue <em>Lock Pitch</em>.</li>
+<li>A câmera não gira, o cursor mira e <code>Space</code> esquiva.</li>
 </ol>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Erros comuns</h2>
 <ul>
-<li><strong>Changing the mode and not rebuilding the map server.</strong> Clients get &quot;The server plays a different game mode&quot;. Rebuild and restart the services after every mode change.</li>
-<li><strong>Expecting players to switch modes.</strong> The mode belongs to the game. Players only choose movement in top-down, skill casting, mouse sensitivity, invert mouse and turn with the camera.</li>
-<li><strong>Editing a Camera Settings asset in Play and expecting it to reset.</strong> Changes stay, like any asset. Duplicate the asset before experimenting if you want to keep the original.</li>
-<li><strong>Setting fields on <code>ThirdPersonCamera</code> or <code>ThirdPersonServer</code> that aren't in the scene.</strong> They're added at run time with defaults. Add them to the map camera or the map server object to keep your values.</li>
-<li><strong>No NavMesh on a map.</strong> Every mode walks on the NavMesh. A map without a baked <code>NavMeshSurface</code> doesn't let anyone move. See <a href="../content/maps.html">Maps</a>.</li>
-<li><strong>A huge <code>Side</code> value in third person.</strong> The camera's side offset can push it into walls on narrow paths; the camera pulls in, but the view jumps. Keep it under 1 m.</li>
-<li><strong>Expecting a jump or invulnerable dodge.</strong> Neither exists in the kit's modes.</li>
+<li><strong>Mudar o modo e não recompilar o servidor de mapa.</strong> Os clientes recebem &quot;The server plays a different game mode&quot;. Recompile e reinicie os serviços depois de cada mudança de modo.</li>
+<li><strong>Esperar que os jogadores troquem de modo.</strong> O modo pertence ao jogo. Os jogadores só escolhem o movimento no top-down, o lançamento de habilidades, a sensibilidade do mouse, inverter o mouse e girar com a câmera.</li>
+<li><strong>Editar um asset Camera Settings no Play e esperar que ele volte ao normal.</strong> As mudanças ficam, como em qualquer asset. Duplique o asset antes de experimentar se quiser manter o original.</li>
+<li><strong>Definir campos em <code>ThirdPersonCamera</code> ou <code>ThirdPersonServer</code> que não estão na cena.</strong> Eles são adicionados em tempo de execução com os padrões. Adicione-os à câmera do mapa ou ao objeto do servidor de mapa para manter os seus valores.</li>
+<li><strong>Nenhum NavMesh em um mapa.</strong> Todo modo anda sobre o NavMesh. Um mapa sem um <code>NavMeshSurface</code> assado não deixa ninguém se mover. Veja <a href="../content/maps.html">Mapas</a>.</li>
+<li><strong>Um valor de <code>Side</code> enorme em terceira pessoa.</strong> O deslocamento lateral da câmera pode empurrá-la para dentro de paredes em caminhos estreitos; a câmera se aproxima, mas a visão salta. Mantenha-o abaixo de 1 m.</li>
+<li><strong>Esperar um pulo ou uma esquiva invulnerável.</strong> Nenhum dos dois existe nos modos do kit.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
-<li><a href="touch-controls.html">Touch controls</a>: the same modes on phones and tablets.</li>
-<li><a href="combat.html">Combat</a>: attacks, damage and line of sight.</li>
-<li><a href="../content/skills.html">Skills</a>: ranges, areas and targets.</li>
-<li><a href="player-settings.html">Player settings</a>: the Settings window players use.</li>
-<li><a href="../reference/keys.html">Keys</a>: every key in one table.</li>
-<li><a href="../devkit/game-modes-in-code.html">Game modes in code</a>: writing a mode of your own.</li>
+<li><a href="touch-controls.html">Controles de toque</a>: os mesmos modos em celulares e tablets.</li>
+<li><a href="combat.html">Combate</a>: ataques, dano e linha de visão.</li>
+<li><a href="../content/skills.html">Habilidades</a>: alcances, áreas e alvos.</li>
+<li><a href="player-settings.html">Configurações do jogador</a>: a janela Settings que os jogadores usam.</li>
+<li><a href="../reference/keys.html">Teclas</a>: todas as teclas em uma tabela.</li>
+<li><a href="../devkit/game-modes-in-code.html">Modos de jogo no código</a>: escrever um modo seu.</li>
 </ul>
-<nav class="pager"><a class="prev" href="../content/world-triggers.html"><span>Anterior</span>World triggers</a><a class="next" href="touch-controls.html"><span>Próximo</span>Touch controls</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fgameplay%2Fcontrol-modes.html">Relatar um problema nesta página</a></div></main>
-  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-a-control-mode-is">What a control mode is</a></li><li class="l2"><a href="#choosing-the-mode">Choosing the mode</a></li><li class="l2"><a href="#top-down">Top-down</a></li><li class="l3"><a href="#playing-top-down">Playing top-down</a></li><li class="l3"><a href="#movement-click-keys-or-both">Movement: click, keys or both</a></li><li class="l3"><a href="#topdowninput-fields">TopDownInput fields</a></li><li class="l3"><a href="#topdowncamera-fields">TopDownCamera fields</a></li><li class="l3"><a href="#topdownserver-fields">TopDownServer fields</a></li><li class="l2"><a href="#free-camera-and-third-person">Free camera and third person</a></li><li class="l3"><a href="#playing-free-camera">Playing free camera</a></li><li class="l3"><a href="#playing-third-person">Playing third person</a></li><li class="l3"><a href="#free-aiming">Free aiming</a></li><li class="l3"><a href="#where-the-character-faces">Where the character faces</a></li><li class="l3"><a href="#dodge">Dodge</a></li><li class="l3"><a href="#movement-and-prediction">Movement and prediction</a></li><li class="l3"><a href="#thirdpersoninput-fields">ThirdPersonInput fields</a></li><li class="l3"><a href="#thirdpersoncamera-fields">ThirdPersonCamera fields</a></li><li class="l3"><a href="#thirdpersonserver-fields">ThirdPersonServer fields</a></li><li class="l2"><a href="#camera-settings">Camera settings</a></li><li class="l3"><a href="#player-camera-options">Player camera options</a></li><li class="l2"><a href="#skill-aiming">Skill aiming</a></li><li class="l2"><a href="#server-checks">Server checks</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#input-system-and-input-manager">Input System and Input Manager</a></li><li class="l2"><a href="#common-setups">Common setups</a></li><li class="l3"><a href="#a-classic-diablo-style-game">A classic Diablo-style game</a></li><li class="l3"><a href="#click-only-no-wasd">Click only, no WASD</a></li><li class="l3"><a href="#an-action-game-with-a-crosshair">An action game with a crosshair</a></li><li class="l3"><a href="#an-isometric-camera-with-wasd-and-dodge">An isometric camera with WASD and dodge</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="../content/world-triggers.html"><span>Anterior</span>Gatilhos do mundo</a><a class="next" href="touch-controls.html"><span>Próximo</span>Controles de toque</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fgameplay%2Fcontrol-modes.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-a-control-mode-is">O que é um modo de controle</a></li><li class="l2"><a href="#choosing-the-mode">Escolher o modo</a></li><li class="l2"><a href="#top-down">Top-down</a></li><li class="l3"><a href="#playing-top-down">Jogar em top-down</a></li><li class="l3"><a href="#movement-click-keys-or-both">Movimento: clique, teclas ou os dois</a></li><li class="l3"><a href="#topdowninput-fields">Campos de TopDownInput</a></li><li class="l3"><a href="#topdowncamera-fields">Campos de TopDownCamera</a></li><li class="l3"><a href="#topdownserver-fields">Campos de TopDownServer</a></li><li class="l2"><a href="#free-camera-and-third-person">Câmera livre e terceira pessoa</a></li><li class="l3"><a href="#playing-free-camera">Jogar com câmera livre</a></li><li class="l3"><a href="#playing-third-person">Jogar em terceira pessoa</a></li><li class="l3"><a href="#free-aiming">Mira livre</a></li><li class="l3"><a href="#where-the-character-faces">Para onde o personagem olha</a></li><li class="l3"><a href="#dodge">Esquiva</a></li><li class="l3"><a href="#movement-and-prediction">Movimento e predição</a></li><li class="l3"><a href="#thirdpersoninput-fields">Campos de ThirdPersonInput</a></li><li class="l3"><a href="#thirdpersoncamera-fields">Campos de ThirdPersonCamera</a></li><li class="l3"><a href="#thirdpersonserver-fields">Campos de ThirdPersonServer</a></li><li class="l2"><a href="#camera-settings">Camera settings</a></li><li class="l3"><a href="#player-camera-options">Opções de câmera do jogador</a></li><li class="l2"><a href="#skill-aiming">Mira de habilidades</a></li><li class="l2"><a href="#server-checks">Verificações do servidor</a></li><li class="l2"><a href="#single-player-and-mmo">Um jogador e MMO</a></li><li class="l2"><a href="#input-system-and-input-manager">Input System e Input Manager</a></li><li class="l2"><a href="#common-setups">Configurações comuns</a></li><li class="l3"><a href="#a-classic-diablo-style-game">Um jogo clássico estilo Diablo</a></li><li class="l3"><a href="#click-only-no-wasd">Só clique, sem WASD</a></li><li class="l3"><a href="#an-action-game-with-a-crosshair">Um jogo de ação com mira</a></li><li class="l3"><a href="#an-isometric-camera-with-wasd-and-dodge">Uma câmera isométrica com WASD e esquiva</a></li><li class="l2"><a href="#common-mistakes">Erros comuns</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
 <script src="../../assets/search-pt.js"></script>

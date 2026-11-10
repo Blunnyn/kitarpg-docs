@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公式 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/formulas.html">English</option><option value="../../es/devkit/formulas.html">Español</option><option value="../../pt/devkit/formulas.html">Português</option><option value="formulas.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html" class="on" aria-current="page">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>公式</h1><p>如何在不改动套件的情况下修改游戏的数值计算：负责伤害、治疗、攻击速度和经验的 <code>CombatFormula</code>，以及负责职业、等级、属性和装备如何累加成各项数值的 <code>StatFormula</code>。</p>
+<h2 id="how-formulas-are-installed"><a class="anchor" href="#how-formulas-are-installed" aria-hidden="true">#</a>公式如何安装</h2>
+<p>套件在 <code>GameInstance</code> 上保存两个公式对象：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>决定什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GameInstance.Combat</code></td>
+<td><code>CombatFormula</code></td>
+<td>伤害、持续伤害的每跳、治疗、两次攻击之间的时间、每次击杀获得的经验</td>
+</tr>
+<tr>
+<td><code>GameInstance.Formula</code></td>
+<td><code>StatFormula</code></td>
+<td>数值表、每级获得的属性点和技能点</td>
+</tr>
+</tbody>
+</table></div>
+<p>两者都是 <code>KitARPG.Data</code> 中带 <code>virtual</code> 方法的普通 C# 类。要修改某条规则，继承其中一个，重写你需要的方法，并在启动时赋值一个实例：</p>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCombatFormula</span><span class="p">();</span>
+</code></pre>
+<p>套件每次 Play 时会在 <code>SubsystemRegistration</code> 中把自己的公式放回去（见<a href="domain-reload.html">不重新加载域的 Play</a>）。<code>BeforeSceneLoad</code> 在那之后、任何场景之前运行，因此在你的公式就位之前不会发生任何战斗。</p>
+<p><strong>文件放在哪里：</strong><code>Game</code> 程序集，这样每个构建都会安装它。应用公式的是服务器，但客户端也会用到 <code>Combat.Experience</code>：怪物图鉴会显示一只怪物给本地玩家的经验。只放在 <code>Game.Server</code> 中的公式会让图鉴显示的数值与玩家实际获得的不一致。</p>
+<h2 id="combatformula"><a class="anchor" href="#combatformula" aria-hidden="true">#</a>CombatFormula</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>何时调用</th>
+<th>返回什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hit Attack(StatSheet attacker, IReadOnlyList&lt;ElementDamage&gt; rolls, StatSheet defender, float scale = 1)</code></td>
+<td>玩家和怪物的普通攻击，以及技能上的 <code>DamageEffect</code></td>
+<td>这次命中：总量、是否暴击、主元素</td>
+</tr>
+<tr>
+<td><code>float Element(StatSheet attacker, DamageElement element, float roll, StatSheet defender)</code></td>
+<td>由 <code>Attack</code> 和 <code>Tick</code> 调用，针对每个元素的那一份</td>
+<td>该元素经过抗性后的伤害</td>
+</tr>
+<tr>
+<td><code>Hit Tick(StatSheet caster, DamageElement element, float amount, StatSheet holder)</code></td>
+<td>持续伤害状态的每一跳</td>
+<td>这一跳的命中，永不暴击，至少为 1</td>
+</tr>
+<tr>
+<td><code>int Heal(StatSheet healer, float amount)</code></td>
+<td><code>HealEffect</code> 和治疗类状态</td>
+<td>最终治疗量</td>
+</tr>
+<tr>
+<td><code>float AttackInterval(float attacksPerSecond, StatSheet attacker)</code></td>
+<td>玩家和怪物的每次普通攻击</td>
+<td>距离下一次攻击的秒数</td>
+</tr>
+<tr>
+<td><code>long Experience(MonsterData monster, int playerLevel)</code></td>
+<td>一次击杀时，针对击杀者和每个分享经验的队伍成员；怪物图鉴</td>
+<td>加成和倍率之前的经验</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-kit-s-rules"><a class="anchor" href="#the-kit-s-rules" aria-hidden="true">#</a>套件的规则</h3>
+<ul>
+<li><strong>Attack：</strong> 每个伤害骰按其元素单独计算。骰值（在最小值和最大值之间的随机值，乘以 <code>scale</code>）加上攻击者对该元素的伤害，再按攻击者的强度放大。然后减去防御者对该元素的固定抗性，再减去其百分比抗性，百分比抗性上限为该元素的 <em>Max Resistance</em>（<code>maxResistance</code>，骰值没有元素时为 0.5）。各项结果相加。暴击（几率为 <code>critChance</code>）会把总量乘以 <code>1 + critDamage</code>。结果取整，至少为 1。</li>
+<li><strong>Tick：</strong> 使用同样的元素规则，施法者的数值取状态生效那一刻的数值；不会暴击。</li>
+<li><strong>Heal：</strong> <code>(amount + healer.healing) * (1 + healer.healingBonus)</code>，取整。</li>
+<li><strong>Attack interval：</strong> <code>1 / (attacksPerSecond * (1 + attackSpeed))</code>，至少每秒 0.1 次攻击。</li>
+<li><strong>Experience：</strong> 怪物等级不低于玩家 3 级以内时给全额经验；之后每再低一级少 20%，最低为 10%。</li>
+</ul>
+<p>在 <code>Experience</code> 之后，套件会应用玩家的经验获取数值、服务器倍率（<code>experienceRate</code> 以及来自 <code>/rates</code> 的活动）和队伍分享。你的公式只返回基础数量。</p>
+<h3 id="statsheet"><a class="anchor" href="#statsheet" aria-hidden="true">#</a>StatSheet</h3>
+<p>攻击者、防御者和治疗者是什么：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CharacterStats stats</code></td>
+<td><code>maxHealth</code>、<code>maxMana</code>、<code>healthRegen</code>、<code>manaRegen</code>、<code>power</code>、<code>critChance</code>、<code>critDamage</code>、<code>healing</code>、<code>healingBonus</code>、<code>attackSpeed</code>、<code>moveSpeed</code>、<code>carryWeight</code>、<code>experienceGain</code>、<code>lootChance</code>。比例用小数表示：<code>critChance</code> 为 0.05 即 5%。</td>
+</tr>
+<tr>
+<td><code>ElementStats Element(DamageElement e)</code></td>
+<td>该元素的 <code>damage</code>、<code>resistance</code> 和 <code>resistancePercent</code>。元素为 null 时读取后备元素。</td>
+</tr>
+<tr>
+<td><code>int Attribute(AttributeData a)</code></td>
+<td>某个属性的总值。</td>
+</tr>
+<tr>
+<td><code>DamageElement fallback</code></td>
+<td>游戏的默认元素。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-harsher-level-gap"><a class="anchor" href="#example-harsher-level-gap" aria-hidden="true">#</a>示例：更严格的等级差</h3>
+<p>比玩家低 8 级及以上的怪物完全不给经验：</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCombatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCombatFormula</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">Experience</span><span class="p">(</span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playerLevel</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playerLevel</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">level</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gap</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Experience</span><span class="p">(</span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">playerLevel</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-armor-from-an-attribute"><a class="anchor" href="#example-armor-from-an-attribute" aria-hidden="true">#</a>示例：由属性提供护甲</h3>
+<p>根据你游戏中的某个属性（这里 id 为 <code>toughness</code>）提供固定减伤，在百分比抗性之前作用于每种元素：</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ToughnessFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ToughnessFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">AttributeData</span><span class="w"> </span><span class="n">toughness</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">Element</span><span class="p">(</span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">defender</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toughness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="s">&quot;toughness&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">toughness</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Element</span><span class="p">(</span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="n">defender</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toughness</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">defender</span><span class="p">.</span><span class="n">Attribute</span><span class="p">(</span><span class="n">toughness</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>toughness</code> 是实例字段：<code>Install</code> 每次 Play 都会创建新的公式，所以即使不重新加载域，缓存的资源每次也从空开始。<code>static</code> 缓存会在 Play 之间保留下来，如果两次 Play 之间换了数据库，就会保留旧的引用；这类静态字段要在 <code>SubsystemRegistration</code> 中重置（参见<a href="domain-reload.html">不重新加载域的 Play</a>）。</p>
+<h3 id="example-capped-critical-chance-and-attack-speed"><a class="anchor" href="#example-capped-critical-chance-and-attack-speed" aria-hidden="true">#</a>示例：限制暴击几率和攻击速度</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CappedFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CappedFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Hit</span><span class="w"> </span><span class="nf">Attack</span><span class="p">(</span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">defender</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Capped for this attack only, then put back.</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">chance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="p">;</span>
+<span class="w">        </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Min</span><span class="p">(</span><span class="n">chance</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">defender</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chance</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">AttackInterval</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">attacksPerSecond</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mf">0.25f</span><span class="p">,</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">AttackInterval</span><span class="p">(</span><span class="n">attacksPerSecond</span><span class="p">,</span><span class="w"> </span><span class="n">attacker</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>stats</code> 是数值表上的一个结构体字段，因此修改在调用基类方法前做出，在调用后撤销。</p>
+<h2 id="statformula"><a class="anchor" href="#statformula" aria-hidden="true">#</a>StatFormula</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>何时调用</th>
+<th>返回</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>StatSheet Sheet(CharacterClass characterClass, int level, IReadOnlyList&lt;AttributeAmount&gt; spent, GameDatabase database, IReadOnlyList&lt;IStatSource&gt; sources = null)</code></td>
+<td>每次计算玩家数值时（<code>PlayerCharacter.RecalculateStats</code>：等级、属性、装备或增益发生变化），以及单人模式中的新角色</td>
+<td>完整的数值表</td>
+</tr>
+<tr>
+<td><code>int PointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>升级时</td>
+<td>到该等级为止获得的属性点</td>
+</tr>
+<tr>
+<td><code>int SkillPointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>技能点总数</td>
+<td>到该等级为止获得的技能点</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-kit-s-order"><a class="anchor" href="#the-kit-s-order" aria-hidden="true">#</a>套件的计算顺序</h3>
+<ol>
+<li>职业在该等级的属性，然后是已分配的点数，然后是来自每个来源（装备、增益、被动）的属性加成。</li>
+<li>职业的基础数值加上每级数值乘以 <code>level - 1</code>。</li>
+<li>每个属性的 <em>Per Point</em> 数值乘以该属性的总值。</li>
+<li>每个来源的数值修正。百分比加成最后应用。</li>
+</ol>
+<p>点数的默认值是职业的 <em>Points Per Level</em>（<code>pointsPerLevel</code>，5）和 <em>Skill Points Per Level</em>（<code>skillPointsPerLevel</code>，1），乘以 <code>level - 1</code>。</p>
+<p>怪物不使用数值公式；它们的数值来自各自的数据。</p>
+<h3 id="example-two-attribute-points-per-level"><a class="anchor" href="#example-two-attribute-points-per-level" aria-hidden="true">#</a>示例：每级两个属性点</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyStatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyStatFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Two attribute points per level instead of the class&#39;s own number.</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">PointsEarned</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-health-that-grows-by-a-share-per-level"><a class="anchor" href="#example-health-that-grows-by-a-share-per-level" aria-hidden="true">#</a>示例：每级按比例增长的生命值</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Characters</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GrowingHealthFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GrowingHealthFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="nf">Sheet</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">AttributeAmount</span><span class="o">&gt;</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span>
+<span class="w">        </span><span class="n">GameDatabase</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">IStatSource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">sheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Sheet</span><span class="p">(</span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">sources</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// +2% max health per level after the first, kept whole.</span>
+<span class="w">        </span><span class="n">sheet</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">sheet</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.02f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)));</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sheet</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>套件中的数值都是整数，百分比加成都是整数点。像上面那样对你加上的部分取整，这样提示框和数值表才会一致。</p>
+<h3 id="example-a-skill-point-every-other-level"><a class="anchor" href="#example-a-skill-point-every-other-level" aria-hidden="true">#</a>示例：每两级一个技能点</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">SkillPointsEarned</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</code></pre>
+<h2 id="changing-the-rules-on-a-live-game"><a class="anchor" href="#changing-the-rules-on-a-live-game" aria-hidden="true">#</a>在运营中的游戏上修改规则</h2>
+<p>公式决定新的数值；它们不会改写已保存的数值。修改 <code>PointsEarned</code> 会改变从现在起获得的点数。角色保留已有的点数：未分配的点数会被保存，每次升级只加上差值。如果你在运营中的游戏上降低每级点数，要给玩家一个重新分配的途径（套件的 <code>ResetAttributesAction</code> 或 <em>Scroll of Second Thoughts</em>）。</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>服务器与客户端</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>服务器</th>
+<th>客户端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Attack</code>、<code>Element</code>、<code>Tick</code>、<code>Heal</code>、<code>AttackInterval</code></td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>Experience</code></td>
+<td>是</td>
+<td>怪物图鉴</td>
+</tr>
+<tr>
+<td><code>Sheet</code>、<code>PointsEarned</code>、<code>SkillPointsEarned</code></td>
+<td>是</td>
+<td>否；拥有者收到的是计算好的数值表</td>
+</tr>
+</tbody>
+</table></div>
+<p>在线时，客户端构建中与地图服务器不同的公式只会改变该客户端图鉴显示的内容。单人模式在一个进程中同时运行两部分。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li><strong>在 <code>SubsystemRegistration</code> 中安装。</strong> 套件在那里重置公式；顺序不确定。</li>
+<li><strong>只在 <code>Game.Server</code> 中安装。</strong> 这样客户端的怪物图鉴会显示套件的数值。</li>
+<li><strong>从 <code>Sheet</code> 返回小数。</strong> 对你加上的部分取整。</li>
+<li><strong>在公式中保存每个战斗者的状态。</strong> 一个实例服务于地图上的所有战斗者。</li>
+<li><strong>在 <code>Experience</code> 中应用倍率。</strong> 套件会在它之后应用经验数值和服务器倍率，这样会被计算两次。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="../gameplay/combat.html">战斗</a></li>
+<li><a href="../content/attributes-and-stats.html">属性与数值</a></li>
+<li><a href="skill-effects.html">技能效果</a></li>
+<li><a href="domain-reload.html">不重新加载域的 Play</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="gm-commands-in-code.html"><span>上一页</span>代码中的 GM 命令</a><a class="next" href="saving-data.html"><span>下一页</span>保存数据</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fformulas.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#how-formulas-are-installed">公式如何安装</a></li><li class="l2"><a href="#combatformula">CombatFormula</a></li><li class="l3"><a href="#the-kit-s-rules">套件的规则</a></li><li class="l3"><a href="#statsheet">StatSheet</a></li><li class="l3"><a href="#example-harsher-level-gap">示例：更严格的等级差</a></li><li class="l3"><a href="#example-armor-from-an-attribute">示例：由属性提供护甲</a></li><li class="l3"><a href="#example-capped-critical-chance-and-attack-speed">示例：限制暴击几率和攻击速度</a></li><li class="l2"><a href="#statformula">StatFormula</a></li><li class="l3"><a href="#the-kit-s-order">套件的计算顺序</a></li><li class="l3"><a href="#example-two-attribute-points-per-level">示例：每级两个属性点</a></li><li class="l3"><a href="#example-health-that-grows-by-a-share-per-level">示例：每级按比例增长的生命值</a></li><li class="l3"><a href="#example-a-skill-point-every-other-level">示例：每两级一个技能点</a></li><li class="l2"><a href="#changing-the-rules-on-a-live-game">在运营中的游戏上修改规则</a></li><li class="l2"><a href="#server-and-client">服务器与客户端</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

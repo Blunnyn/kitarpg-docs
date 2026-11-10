@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saving data · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="saving-data.html" selected>English</option><option value="../../es/devkit/saving-data.html">Español</option><option value="../../pt/devkit/saving-data.html">Português</option><option value="../../zh/devkit/saving-data.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li><li><a href="npc-options.html">NPC options</a></li><li><a href="player-systems.html">Player systems</a></li><li><a href="network-messages.html">Network messages</a></li><li><a href="gm-commands-in-code.html">GM commands in code</a></li><li><a href="formulas.html">Formulas</a></li><li><a href="saving-data.html" class="on" aria-current="page">Saving data</a></li><li><a href="events.html">Events</a></li><li><a href="overriding-kit-behaviour.html">Overriding kit behaviour</a></li><li><a href="menus-and-settings-options.html">Menus and settings options</a></li><li><a href="editor-extensions.html">Editor extensions</a></li><li><a href="kit-updates-in-code.html">Kit updates in code</a></li><li><a href="talking-to-central.html">Talking to Central</a></li><li><a href="service-modules.html">Service modules</a></li><li><a href="game-modes-in-code.html">Game modes in code</a></li><li><a href="example-bounty-board.html">Example: bounty board</a></li><li><a href="domain-reload.html">Play without domain reload</a></li><li><a href="security-rules.html">Security rules</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/faq.html">FAQ</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li><li><a href="../reference/glossary.html">Glossary</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Saving data</h1><p>Where to keep your game's own data so it is saved with the character in single player and online: character flags, <code>PlayerData</code>, components with <code>IPlayerSave</code>, tables in a Central module, and data assets.</p>
+<h2 id="pick-a-place"><a class="anchor" href="#pick-a-place" aria-hidden="true">#</a>Pick a place</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>What you keep</th>
+<th>Where</th>
+<th>Seen by the client</th>
+<th>Saved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small whole numbers per character: story marks, counters, a day stamp</td>
+<td><strong>Character flags</strong></td>
+<td>The owner, synced</td>
+<td>With the character</td>
+</tr>
+<tr>
+<td>Structured values per character: a list, a pet with stats, a history</td>
+<td><strong><code>PlayerData</code></strong></td>
+<td>Never</td>
+<td>With the character</td>
+</tr>
+<tr>
+<td>The same, owned by a component of yours that loads and writes it</td>
+<td><strong><code>IPlayerSave</code> + <code>PlayerData</code></strong></td>
+<td>What you sync yourself</td>
+<td>With the character</td>
+</tr>
+<tr>
+<td>Data you query across characters: rankings, world events, counters for the whole server</td>
+<td><strong>A table in a Central module</strong></td>
+<td>What you send</td>
+<td>In your own table</td>
+</tr>
+<tr>
+<td>Content designers edit: recipes, boards, drop lists</td>
+<td><strong>A <code>ScriptableObject</code> or <code>GameData</code> asset</strong></td>
+<td>Both builds load it</td>
+<td>It is an asset</td>
+</tr>
+</tbody>
+</table></div>
+<p>Never put game state in <code>PlayerPrefs</code>: it lives on the player's computer, never reaches the server and can be edited by the player. <code>PlayerPrefs</code> is for client settings (see <a href="menus-and-settings-options.html">Menus and settings options</a>).</p>
+<h2 id="character-flags"><a class="anchor" href="#character-flags" aria-hidden="true">#</a>Character flags</h2>
+<p>Flags are named integers on the character, kept by <code>PlayerProgress</code>. Designers already use them through <code>SetFlagAction</code> and <code>FlagCondition</code>, and so can you.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Read</th>
+<th>Write</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conditions and actions</td>
+<td><code>facts.Flag(key)</code></td>
+<td><code>actor.SetFlag(key, value)</code> (server)</td>
+</tr>
+<tr>
+<td>Server code</td>
+<td><code>player.Facts.Flag(key)</code> or <code>progress.Flag(key)</code></td>
+<td><code>player.Facts.SetFlag(key, value)</code> or <code>progress.SetFlag(key, value)</code></td>
+</tr>
+<tr>
+<td>Owner's client</td>
+<td><code>PlayerProgress.Local.Flag(key)</code></td>
+<td>Never</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>A value of 0 removes the flag. <code>Flag</code> returns 0 for flags never set.</li>
+<li>Flags are synced to the owner (<code>PlayerProgress</code> uses Owner sync), so the owner's interface and conditions can read them. Other players never see them.</li>
+<li><code>PlayerProgress.ServerFlagChanged</code> (<code>PlayerCharacter, string key, int value</code>) is raised on the server when one changes.</li>
+<li>Online, Central keeps them in <code>characters.extra</code> under <code>flags</code>; in single player they go in the local save.</li>
+</ul>
+<p>The bounty example keeps its hunt progress in flags (<code>bounty.board</code>, <code>bounty.index</code>, <code>bounty.kills</code>, <code>bounty.day</code>, <code>bounty.done</code>). Each character's last hunts are a list of names, which doesn't fit in a flag, so they go in <code>PlayerData</code> (see below).</p>
+<p>Flags hold <code>int</code>. A day number, a count or an id hash fits; text and lists don't.</p>
+<h2 id="playerdata"><a class="anchor" href="#playerdata" aria-hidden="true">#</a>PlayerData</h2>
+<p><code>PlayerData</code> (namespace <code>Blunnyn.KitARPG.Net</code>) stores JSON under keys of your own on the character. Server only.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T Get&lt;T&gt;(PlayerCharacter player, string key)</code></td>
+<td>The value, or a new <code>T</code> when there is none or it can't be read.</td>
+</tr>
+<tr>
+<td><code>bool Set&lt;T&gt;(PlayerCharacter player, string key, T value)</code></td>
+<td>Stores it. Null removes the key. False when a limit would break; nothing changes then.</td>
+</tr>
+<tr>
+<td><code>bool Has(PlayerCharacter player, string key)</code></td>
+<td>Whether the key has a value.</td>
+</tr>
+<tr>
+<td><code>void Remove(PlayerCharacter player, string key)</code></td>
+<td>Removes it.</td>
+</tr>
+<tr>
+<td><code>string GetJson(...)</code>, <code>bool SetJson(...)</code></td>
+<td>The same with raw JSON.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Values are <code>[Serializable]</code> classes read and written with Unity's <code>JsonUtility</code>:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PetSave</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">petId</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">experience</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tricks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// On the server:</span>
+<span class="n">PetSave</span><span class="w"> </span><span class="n">pet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">PetSave</span><span class="o">&gt;</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mygame.pet&quot;</span><span class="p">);</span>
+<span class="n">pet</span><span class="p">.</span><span class="n">experience</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mygame.pet&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pet</span><span class="p">))</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Pet data too big.&quot;</span><span class="p">);</span>
+</code></pre>
+<h3 id="limits"><a class="anchor" href="#limits" aria-hidden="true">#</a>Limits</h3>
+<p><code>CharacterDataRules</code> (namespace <code>Blunnyn.KitARPG.Shared.Characters</code>) applies the same limits on the map, in Central and in the local save:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keys per character (<code>MaxKeys</code>)</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Key length (<code>MaxKeyLength</code>)</td>
+<td>64 characters</td>
+</tr>
+<tr>
+<td>Key characters</td>
+<td>Letters, digits, <code>.</code>, <code>-</code> and <code>_</code></td>
+</tr>
+<tr>
+<td>All values together (<code>MaxBytes</code>)</td>
+<td>32 KB of UTF-8</td>
+</tr>
+</tbody>
+</table></div>
+<p>Prefix every key with your game's name (<code>mygame.pet</code>), so it never meets another package's.</p>
+<h3 id="where-it-is-stored"><a class="anchor" href="#where-it-is-stored" aria-hidden="true">#</a>Where it is stored</h3>
+<p>Online, Central keeps the values in <code>characters.extra</code> under <code>game</code>, as one JSON object (<code>{ &quot;mygame.pet&quot;: { ... } }</code>), readable in the database and with no table migration. A save whose data breaks the limits, or holds a value that isn't valid JSON, keeps the stored data, logs a warning and saves the rest of the character. In single player the same data goes into the local save (<code>savegame.db</code> under the player's persistent data folder, set by <em>Save File</em> in <code>KitSettings</code>).</p>
+<h3 id="what-jsonutility-can-and-can-t-do"><a class="anchor" href="#what-jsonutility-can-and-can-t-do" aria-hidden="true">#</a>What JsonUtility can and can't do</h3>
+<ul>
+<li>Public fields and <code>[SerializeField]</code> private fields. Not properties.</li>
+<li><code>int</code>, <code>long</code>, <code>float</code>, <code>bool</code>, <code>string</code>, enums, arrays, <code>List&lt;T&gt;</code>, nested <code>[Serializable]</code> classes.</li>
+<li><strong>No dictionaries.</strong> Store two parallel lists, or a list of key-value classes.</li>
+<li>No polymorphism, no null for nested classes (they come back empty).</li>
+</ul>
+<h2 id="components-with-iplayersave"><a class="anchor" href="#components-with-iplayersave" aria-hidden="true">#</a>Components with IPlayerSave</h2>
+<p>When a component of yours owns its data, implement <code>IPlayerSave</code> and let the kit call you:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void ServerLoad(PlayerCharacter player, CharacterState state)</code></td>
+<td>As the character enters a map, after the kit's systems loaded, before the player spawns.</td>
+</tr>
+<tr>
+<td><code>void WriteTo(PlayerCharacter player, CharacterState state)</code></td>
+<td>Before every save.</td>
+</tr>
+</tbody>
+</table></div>
+<pre class="code"><code class="language-csharp"><span class="na">[RequireComponent(typeof(PlayerCharacter))]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerPet</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span><span class="p">,</span><span class="w"> </span><span class="n">IPlayerSave</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mygame.pet&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">PetSave</span><span class="w"> </span><span class="n">pet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PetSave</span><span class="p">();</span>
+
+<span class="w">    </span><span class="na">[SyncVar]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">petId</span><span class="p">;</span>
+<span class="w">    </span><span class="na">[SyncVar]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">petLevel</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerLoad</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">PetSave</span><span class="o">&gt;</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">);</span>
+<span class="w">        </span><span class="n">petId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pet</span><span class="p">.</span><span class="n">petId</span><span class="p">;</span>
+<span class="w">        </span><span class="n">petLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pet</span><span class="p">.</span><span class="n">level</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">pet</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p>The <strong>Saved Player Data</strong> template makes one of these (see <a href="templates.html#saved-player-data">Templates</a>).</p>
+<div class="callout warning"><div class="callout-title">Warning</div><p>In <code>ServerLoad</code> the player isn't spawned yet, so <code>isServer</code> is false and <code>PlayerData.Set</code> refuses. Read there; write from <code>WriteTo</code> or later.</p>
+</div>
+<h2 id="when-saves-happen"><a class="anchor" href="#when-saves-happen" aria-hidden="true">#</a>When saves happen</h2>
+<p>On the map server, a character is saved:</p>
+<ul>
+<li>every <em>Save Interval Seconds</em> (<code>saveIntervalSeconds</code> on the map server, 60),</li>
+<li>when the player disconnects or changes map,</li>
+<li>when the server stops.</li>
+</ul>
+<p>Each save calls <code>WriteTo</code> on every <code>IPlayerSave</code>. Online the state goes to Central, which writes it to the database; in single player it goes to the local save. Values set with <code>PlayerData.Set</code> between saves live on the character in memory and go with the next save. A crash between two saves loses what changed since the last one, as it does for the kit's own data.</p>
+<p>Items and gold that move between characters (trades, mail, market, guild bank) use transactions in Central instead of the periodic save; never model an exchange between players with <code>PlayerData</code>.</p>
+<h2 id="changing-the-format-later"><a class="anchor" href="#changing-the-format-later" aria-hidden="true">#</a>Changing the format later</h2>
+<p>Saved JSON outlives your code. Plan for old data:</p>
+<ul>
+<li>New fields get their default when old data is read; give them sensible defaults.</li>
+<li>Removed fields are ignored.</li>
+<li>For bigger changes, put a version number in the class and convert in <code>ServerLoad</code>.</li>
+<li>Renaming a key loses the old data. Read the old key once, write the new one, and <code>Remove</code> the old.</li>
+</ul>
+<h2 id="tables-in-a-central-module"><a class="anchor" href="#tables-in-a-central-module" aria-hidden="true">#</a>Tables in a Central module</h2>
+<p>For data you query across characters (the best hunters, a server-wide counter, auction history of your own), a module adds tables to the kit's database next to the kit's own, with its own migrations. Map servers reach it with <code>CentralMessages</code>. See <a href="talking-to-central.html">Talking to Central</a> and <a href="service-modules.html">Service modules</a>. Single player has no Central: keep a per-character fallback, as the bounty example does with its <code>PlayerData</code> history.</p>
+<h2 id="data-assets"><a class="anchor" href="#data-assets" aria-hidden="true">#</a>Data assets</h2>
+<p>Content (recipes, drop lists, board definitions) belongs in assets, not saves:</p>
+<ul>
+<li>A plain <code>ScriptableObject</code> with <code>[CreateAssetMenu]</code> when only your code points at it. The bounty example's <code>BountyBoardData</code> is one.</li>
+<li>A <code>GameData</code> subclass when saves or messages must point at it by id. A <code>GameData</code> has an <code>Id</code> (made from its name, saved with characters), a display name, a description and an icon, and <code>GameInstance.Database.TryGet&lt;T&gt;(id, out T)</code> finds it. It must be reachable from the game database: listed in one of its arrays, or handed over by a <code>Visit</code> method of something that is. <strong>Project Check</strong> lists <code>GameData</code> assets the database can't reach.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Saving in <code>PlayerPrefs</code>.</strong> It never reaches the server.</li>
+<li><strong>Reading <code>PlayerData</code> on the client.</strong> It is never sent. Sync what the interface needs.</li>
+<li><strong>Keys without a prefix.</strong> Another package can overwrite them.</li>
+<li><strong>Dictionaries in saved classes.</strong> <code>JsonUtility</code> drops them silently.</li>
+<li><strong>Ignoring <code>Set</code>'s answer.</strong> Over the limits, nothing is stored.</li>
+<li><strong>Changing a <code>GameData</code> id.</strong> Saves point at the old id.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="player-systems.html">Player systems</a></li>
+<li><a href="talking-to-central.html">Talking to Central</a></li>
+<li><a href="service-modules.html">Service modules</a></li>
+<li><a href="../servers/database.html">Database</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="formulas.html"><span>Previous</span>Formulas</a><a class="next" href="events.html"><span>Next</span>Events</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Fsaving-data.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#pick-a-place">Pick a place</a></li><li class="l2"><a href="#character-flags">Character flags</a></li><li class="l2"><a href="#playerdata">PlayerData</a></li><li class="l3"><a href="#limits">Limits</a></li><li class="l3"><a href="#where-it-is-stored">Where it is stored</a></li><li class="l3"><a href="#what-jsonutility-can-and-can-t-do">What JsonUtility can and can&#x27;t do</a></li><li class="l2"><a href="#components-with-iplayersave">Components with IPlayerSave</a></li><li class="l2"><a href="#when-saves-happen">When saves happen</a></li><li class="l2"><a href="#changing-the-format-later">Changing the format later</a></li><li class="l2"><a href="#tables-in-a-central-module">Tables in a Central module</a></li><li class="l2"><a href="#data-assets">Data assets</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

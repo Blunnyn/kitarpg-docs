@@ -1,470 +1,470 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chat · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>聊天 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/chat.html">English</option><option value="../../es/gameplay/chat.html">Español</option><option value="../../pt/gameplay/chat.html">Português</option><option value="chat.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html" class="on" aria-current="page">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">游戏系统</div><h1>Chat</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>The chat box, its channels, every slash command, the word filter, mutes, reports and the limits the server enforces. It also explains how chat travels between maps in an MMO and what is left in single player.</p>
-<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>What it is</h2>
-<p>The chat is the box at the bottom left of the HUD. Players type lines to people near them, on the same map, on the whole server, in private, to their party, their guild or their alliance. The game also writes system lines there: &quot;Letter sent to Ana.&quot;, &quot;Ana is online.&quot;, errors from requests.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">操作模式</a></li><li><a href="touch-controls.html">触控操作</a></li><li><a href="combat.html">战斗</a></li><li><a href="recovery-and-death.html">恢复与死亡</a></li><li><a href="inventory-and-bank.html">背包与银行</a></li><li><a href="trade.html">交易</a></li><li><a href="forge.html">锻造</a></li><li><a href="market.html">市场</a></li><li><a href="mail.html">邮件</a></li><li><a href="chat.html" class="on" aria-current="page">聊天</a></li><li><a href="friends-and-parties.html">好友与队伍</a></li><li><a href="guilds.html">公会</a></li><li><a href="tax-collectors.html">收税官</a></li><li><a href="pvp-and-duels.html">PvP 与决斗</a></li><li><a href="dungeons.html">地下城</a></li><li><a href="day-and-night.html">昼夜</a></li><li><a href="bestiary.html">怪物图鉴</a></li><li><a href="cash-shop.html">商城</a></li><li><a href="gm-tools.html">GM 工具</a></li><li><a href="game-log-and-reports.html">游戏日志与举报</a></li><li><a href="hud-and-windows.html">HUD 与窗口</a></li><li><a href="player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏系统</div><h1>聊天</h1><p>聊天框、它的频道、所有斜杠命令、屏蔽词过滤、禁言、举报以及服务器强制执行的限制。本页还说明在 MMO 中聊天如何在地图之间传递，以及单人模式中保留了哪些功能。</p>
+<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>它是什么</h2>
+<p>聊天是 HUD 左下角的框。玩家可以向附近的人、同一地图、整个服务器、私聊、自己的队伍、公会或联盟发送消息。游戏也会在这里写入系统消息：&quot;Letter sent to Ana.&quot;、&quot;Ana is online.&quot;、请求返回的错误。</p>
 <ul>
-<li>It is the <strong>Chat</strong> module (<code>PlayerChat</code> on the player prefab, <code>ChatWindow</code> in the HUD).</li>
-<li>Say and Map lines are handled by the map server. World, Whisper to another map, Party, Guild and Alliance lines go through Central in an MMO.</li>
-<li>The server checks every line: length, pace, mutes, the blocked word list and your own filter code.</li>
-<li>With the module off, players can't chat, but slash commands such as <code>/help</code> and GM commands keep working.</li>
+<li>它是 <strong>Chat</strong> 模块（玩家预制体上的 <code>PlayerChat</code>，HUD 中的 <code>ChatWindow</code>）。</li>
+<li>Say 和 Map 消息由地图服务器处理。在 MMO 中，World、发往其他地图的 Whisper、Party、Guild 和 Alliance 消息经过 Central。</li>
+<li>服务器检查每一行：长度、频率、禁言、屏蔽词列表以及你自己的过滤代码。</li>
+<li>模块关闭时，玩家无法聊天，但 <code>/help</code> 等斜杠命令和 GM 命令仍然可用。</li>
 </ul>
-<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>在编辑器中的位置</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>What</th>
-<th>Where</th>
+<th>内容</th>
+<th>位置</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Turn it on or off</td>
-<td><strong>KitARPG &gt; Modules</strong>, module <strong>Chat</strong>. See <a href="../editor/modules.html">Modules</a>.</td>
+<td>开启或关闭</td>
+<td><strong>KitARPG &gt; Modules</strong>，模块 <strong>Chat</strong>。参见<a href="../editor/modules.html">模块</a>。</td>
 </tr>
 <tr>
-<td>Blocked words, filter mode, chat logging</td>
-<td><strong>KitARPG &gt; Game Settings</strong>, cards <strong>Chat filter</strong> and <strong>Logs</strong>. See <a href="../editor/game-settings.html">Game Settings</a>.</td>
+<td>屏蔽词、过滤模式、聊天记录</td>
+<td><strong>KitARPG &gt; Game Settings</strong>，卡片 <strong>Chat filter</strong> 和 <strong>Logs</strong>。参见 <a href="../editor/game-settings.html">Game Settings</a>。</td>
 </tr>
 <tr>
-<td>Say range, line length, pace, report evidence</td>
-<td>The <code>PlayerChat</code> component on each player prefab.</td>
+<td>Say 范围、行长度、频率、举报证据</td>
+<td>每个玩家预制体上的 <code>PlayerChat</code> 组件。</td>
 </tr>
 <tr>
-<td>The chat box, colors, line count</td>
-<td><code>ChatWindow</code> in the HUD prefab. See <a href="hud-and-windows.html">HUD and windows</a>.</td>
+<td>聊天框、颜色、行数</td>
+<td>HUD 预制体中的 <code>ChatWindow</code>。参见 <a href="hud-and-windows.html">HUD 与窗口</a>。</td>
 </tr>
 <tr>
-<td>Hiding the chat on phones</td>
-<td><code>TouchChatButton</code> on the touch controls. See <a href="touch-controls.html">Touch controls</a>.</td>
+<td>在手机上隐藏聊天</td>
+<td>触控操作上的 <code>TouchChatButton</code>。参见<a href="touch-controls.html">触控操作</a>。</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="channels"><a class="anchor" href="#channels" aria-hidden="true">#</a>Channels</h2>
+<h2 id="channels"><a class="anchor" href="#channels" aria-hidden="true">#</a>频道</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Channel</th>
-<th>Who hears it</th>
-<th>Shown as</th>
-<th>Color in the sample</th>
+<th>频道</th>
+<th>谁能看到</th>
+<th>显示为</th>
+<th>示例中的颜色</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Say</td>
-<td>Players in the same map scene within <em>Say Range</em> (30 m).</td>
+<td>同一地图场景中、<em>Say Range</em>（30 米）以内的玩家。</td>
 <td><code>Name: text</code></td>
-<td>Off white</td>
+<td>米白色</td>
 </tr>
 <tr>
 <td>Map</td>
-<td>Everyone in the same map scene.</td>
+<td>同一地图场景中的所有人。</td>
 <td><code>[Map] Name: text</code></td>
-<td>Orange</td>
+<td>橙色</td>
 </tr>
 <tr>
 <td>World</td>
-<td>Everyone online on every map.</td>
+<td>所有地图上的所有在线玩家。</td>
 <td><code>[World] Name: text</code></td>
-<td>Light blue</td>
+<td>浅蓝色</td>
 </tr>
 <tr>
 <td>Whisper</td>
-<td>One player, by name, on any map.</td>
-<td><code>Name whispers: text</code> and, for you, <code>To Name: text</code></td>
-<td>Pink</td>
+<td>按名字指定的一位玩家，可在任何地图。</td>
+<td><code>Name whispers: text</code>，你自己看到 <code>To Name: text</code></td>
+<td>粉色</td>
 </tr>
 <tr>
 <td>Party</td>
-<td>Your party members online, on any map.</td>
+<td>你的在线队伍成员，可在任何地图。</td>
 <td><code>[Party] Name: text</code></td>
-<td>Blue</td>
+<td>蓝色</td>
 </tr>
 <tr>
 <td>Guild</td>
-<td>Your guild members online, on any map.</td>
+<td>你的在线公会成员，可在任何地图。</td>
 <td><code>[Guild] Name: text</code></td>
-<td>Green</td>
+<td>绿色</td>
 </tr>
 <tr>
 <td>Alliance</td>
-<td>Every online member of every guild in your guild's alliance.</td>
+<td>你的公会所在联盟中所有公会的每位在线成员。</td>
 <td><code>[Alliance] Name: text</code></td>
-<td>Pale blue</td>
+<td>淡蓝色</td>
 </tr>
 <tr>
 <td>System</td>
-<td>Only you. Lines from the game.</td>
-<td>The text</td>
-<td>Gold</td>
+<td>只有你。来自游戏的消息。</td>
+<td>文本本身</td>
+<td>金色</td>
 </tr>
 </tbody>
 </table></div>
-<p>Each copy of an instanced dungeon is its own scene, so Say and Map in a dungeon only reach your copy. See <a href="dungeons.html">Dungeons</a>.</p>
-<p>Errors you may see:</p>
+<p>副本地下城的每个副本都是独立的场景，所以地下城中的 Say 和 Map 只会发送到你所在的副本。参见<a href="dungeons.html">地下城</a>。</p>
+<p>你可能看到的错误：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Situation</th>
-<th>Message</th>
+<th>情况</th>
+<th>消息</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Party line without a party</td>
+<td>没有队伍时发送队伍消息</td>
 <td>&quot;You are not in a party.&quot;</td>
 </tr>
 <tr>
-<td>Guild line without a guild</td>
+<td>没有公会时发送公会消息</td>
 <td>&quot;You are not in a guild.&quot;</td>
 </tr>
 <tr>
-<td>Alliance line without an alliance</td>
+<td>没有联盟时发送联盟消息</td>
 <td>&quot;Your guild is in no alliance.&quot;</td>
 </tr>
 <tr>
-<td>Whisper to yourself</td>
+<td>私聊自己</td>
 <td>&quot;Talking to yourself?&quot;</td>
 </tr>
 <tr>
-<td>Whisper to someone not online</td>
+<td>私聊不在线的人</td>
 <td>&quot;Name is not online.&quot;</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="using-the-chat-as-a-player"><a class="anchor" href="#using-the-chat-as-a-player" aria-hidden="true">#</a>Using the chat as a player</h2>
-<h3 id="typing"><a class="anchor" href="#typing" aria-hidden="true">#</a>Typing</h3>
+<h2 id="using-the-chat-as-a-player"><a class="anchor" href="#using-the-chat-as-a-player" aria-hidden="true">#</a>作为玩家使用聊天</h2>
+<h3 id="typing"><a class="anchor" href="#typing" aria-hidden="true">#</a>输入</h3>
 <ul>
-<li>Press <code>Enter</code> (or keypad <code>Enter</code>), or click anywhere in the chat box, to start typing. The box turns darker while you type, so it is clear where the keys go.</li>
-<li><code>Enter</code> sends the line and stops typing.</li>
-<li><code>Esc</code> clears the line and stops typing.</li>
-<li>A plain line goes to the current channel, shown on the channel button left of the field. Click that button to cycle Say, Map, World, Party, Guild, Alliance.</li>
-<li>A line starting with <code>/</code> is a command.</li>
+<li>按 <code>Enter</code>（或小键盘 <code>Enter</code>），或点击聊天框中的任意位置开始输入。输入时聊天框会变暗，让你清楚按键输入到哪里。</li>
+<li><code>Enter</code> 发送这一行并停止输入。</li>
+<li><code>Esc</code> 清空这一行并停止输入。</li>
+<li>普通文本发送到当前频道，当前频道显示在输入框左侧的频道按钮上。点击该按钮可在 Say、Map、World、Party、Guild、Alliance 之间循环切换。</li>
+<li>以 <code>/</code> 开头的一行是命令。</li>
 </ul>
-<p>While you type, game keys don't fire (for example <code>N</code> doesn't open the mailbox).</p>
-<h3 id="names-in-the-chat"><a class="anchor" href="#names-in-the-chat" aria-hidden="true">#</a>Names in the chat</h3>
-<p>Player names are links:</p>
+<p>输入时，游戏按键不会触发（例如 <code>N</code> 不会打开邮箱）。</p>
+<h3 id="names-in-the-chat"><a class="anchor" href="#names-in-the-chat" aria-hidden="true">#</a>聊天中的名字</h3>
+<p>玩家名字是链接：</p>
 <ul>
-<li>Left click a name to start a whisper to them (<code>/w Name </code> is typed for you).</li>
-<li>Right click a name to open the player menu: whisper, trade, invite to party, add friend, invite to guild, duel, report. See <a href="hud-and-windows.html">HUD and windows</a>.</li>
+<li>左键点击名字，开始私聊对方（会自动输入 <code>/w Name </code>）。</li>
+<li>右键点击名字，打开玩家菜单：私聊、交易、邀请入队、添加好友、邀请入公会、决斗、举报。参见 <a href="hud-and-windows.html">HUD 与窗口</a>。</li>
 </ul>
-<p>Clicking your own name does nothing.</p>
-<h3 id="what-the-box-keeps"><a class="anchor" href="#what-the-box-keeps" aria-hidden="true">#</a>What the box keeps</h3>
-<p>The box keeps the last <em>Max Lines</em> (100) lines. It is hidden while no character is in the world (title, character select, loading). Switching to another character clears it.</p>
-<h2 id="slash-commands"><a class="anchor" href="#slash-commands" aria-hidden="true">#</a>Slash commands</h2>
-<p>Commands handled by the chat box:</p>
+<p>点击自己的名字没有反应。</p>
+<h3 id="what-the-box-keeps"><a class="anchor" href="#what-the-box-keeps" aria-hidden="true">#</a>聊天框保留的内容</h3>
+<p>聊天框保留最近 <em>Max Lines</em>（100）行。当没有角色在世界中时（标题、角色选择、加载），它是隐藏的。切换到另一个角色会清空它。</p>
+<h2 id="slash-commands"><a class="anchor" href="#slash-commands" aria-hidden="true">#</a>斜杠命令</h2>
+<p>由聊天框处理的命令：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Aliases</th>
-<th>What it does</th>
+<th>命令</th>
+<th>别名</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>/s text</code></td>
 <td><code>/say</code></td>
-<td>Say. Without text, makes Say the default channel.</td>
+<td>Say。不带文本时，将 Say 设为默认频道。</td>
 </tr>
 <tr>
 <td><code>/m text</code></td>
-<td><code>/y</code>, <code>/map</code></td>
-<td>Map. Without text, makes Map the default channel.</td>
+<td><code>/y</code>、<code>/map</code></td>
+<td>Map。不带文本时，将 Map 设为默认频道。</td>
 </tr>
 <tr>
 <td><code>/g text</code></td>
 <td><code>/world</code></td>
-<td>World. Without text, makes World the default channel.</td>
+<td>World。不带文本时，将 World 设为默认频道。</td>
 </tr>
 <tr>
 <td><code>/p text</code></td>
 <td><code>/party</code></td>
-<td>Party. Without text, makes Party the default channel.</td>
+<td>Party。不带文本时，将 Party 设为默认频道。</td>
 </tr>
 <tr>
 <td><code>/gu text</code></td>
 <td><code>/guild</code></td>
-<td>Guild. Without text, makes Guild the default channel.</td>
+<td>Guild。不带文本时，将 Guild 设为默认频道。</td>
 </tr>
 <tr>
 <td><code>/al text</code></td>
 <td><code>/alliance</code></td>
-<td>Alliance. Without text, makes Alliance the default channel.</td>
+<td>Alliance。不带文本时，将 Alliance 设为默认频道。</td>
 </tr>
 <tr>
 <td><code>/w Name text</code></td>
-<td><code>/whisper</code>, <code>/tell</code></td>
-<td>Whispers one player.</td>
+<td><code>/whisper</code>、<code>/tell</code></td>
+<td>私聊一位玩家。</td>
 </tr>
 <tr>
 <td><code>/r text</code></td>
 <td><code>/reply</code></td>
-<td>Whispers the last player who whispered you. &quot;Nobody to reply to yet.&quot; if nobody has.</td>
+<td>私聊最后一位私聊你的玩家。如果还没有人私聊过你，显示 &quot;Nobody to reply to yet.&quot;。</td>
 </tr>
 <tr>
 <td><code>/invite Name</code></td>
 <td></td>
-<td>Invites a player to your party. See <a href="friends-and-parties.html">Friends and parties</a>.</td>
+<td>邀请一位玩家加入你的队伍。参见<a href="friends-and-parties.html">好友与队伍</a>。</td>
 </tr>
 <tr>
 <td><code>/leave</code></td>
 <td></td>
-<td>Leaves your party.</td>
+<td>离开你的队伍。</td>
 </tr>
 <tr>
 <td><code>/kick Name</code></td>
 <td></td>
-<td>Removes a member (leader only).</td>
+<td>移除一名成员（仅队长）。</td>
 </tr>
 <tr>
 <td><code>/promote Name</code></td>
 <td><code>/lead</code></td>
-<td>Makes a member the leader (leader only).</td>
+<td>让一名成员成为队长（仅队长）。</td>
 </tr>
 <tr>
 <td><code>/friend Name</code></td>
 <td></td>
-<td>Sends a friend request, or accepts theirs.</td>
+<td>发送好友请求，或接受对方的请求。</td>
 </tr>
 <tr>
 <td><code>/unfriend Name</code></td>
 <td></td>
-<td>Removes a friend or a request.</td>
+<td>删除好友或请求。</td>
 </tr>
 <tr>
 <td><code>/trade Name</code></td>
 <td></td>
-<td>Asks a player to trade. See <a href="trade.html">Trade</a>.</td>
+<td>请求与一位玩家交易。参见<a href="trade.html">交易</a>。</td>
 </tr>
 <tr>
 <td><code>/ginvite Name</code></td>
 <td></td>
-<td>Invites a player to your guild. See <a href="guilds.html">Guilds</a>.</td>
+<td>邀请一位玩家加入你的公会。参见<a href="guilds.html">公会</a>。</td>
 </tr>
 <tr>
 <td><code>/gm</code></td>
 <td><code>/panel</code></td>
-<td>Opens the GM panel, if your account may use it. See <a href="gm-tools.html">GM tools</a>.</td>
+<td>如果你的账号有权限，打开 GM 面板。参见 <a href="gm-tools.html">GM 工具</a>。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Anything else starting with <code>/</code> goes to the server:</p>
+<p>其他以 <code>/</code> 开头的内容都会发送到服务器：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Who</th>
-<th>What it does</th>
+<th>命令</th>
+<th>谁</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>/help</code> (<code>/commands</code>)</td>
-<td>Everyone</td>
-<td>Lists the chat commands, then every GM command your account's level allows, with its level.</td>
+<td><code>/help</code>（<code>/commands</code>）</td>
+<td>所有人</td>
+<td>列出聊天命令，然后列出你账号等级允许的每条 GM 命令及其等级。</td>
 </tr>
 <tr>
 <td><code>/report Name reason</code></td>
-<td>Everyone</td>
-<td>Reports a player to the moderators. MMO only.</td>
+<td>所有人</td>
+<td>向管理员举报一位玩家。仅 MMO。</td>
 </tr>
 <tr>
-<td>GM commands</td>
-<td>Moderators and up</td>
-<td><code>/mute</code>, <code>/kick</code>, <code>/ban</code> and the rest. See <a href="../reference/gm-commands.html">GM commands</a>.</td>
+<td>GM 命令</td>
+<td>Moderator 及以上</td>
+<td><code>/mute</code>、<code>/kick</code>、<code>/ban</code> 等。参见 <a href="../reference/gm-commands.html">GM 命令</a>。</td>
 </tr>
 </tbody>
 </table></div>
-<div class="callout note"><div class="callout-title">注意</div><p><code>/g</code> is the World channel, not guild. Guild is <code>/gu</code>.</p>
+<div class="callout note"><div class="callout-title">注意</div><p><code>/g</code> 是 World 频道，不是公会。公会是 <code>/gu</code>。</p>
 </div>
-<h2 id="limits-the-server-enforces"><a class="anchor" href="#limits-the-server-enforces" aria-hidden="true">#</a>Limits the server enforces</h2>
-<h3 id="playerchat-player-prefab"><a class="anchor" href="#playerchat-player-prefab" aria-hidden="true">#</a>PlayerChat (player prefab)</h3>
+<h2 id="limits-the-server-enforces"><a class="anchor" href="#limits-the-server-enforces" aria-hidden="true">#</a>服务器强制执行的限制</h2>
+<h3 id="playerchat-player-prefab"><a class="anchor" href="#playerchat-player-prefab" aria-hidden="true">#</a>PlayerChat（玩家预制体）</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Say Range</em> (<code>sayRange</code>)</td>
-<td>Meters a Say line carries.</td>
+<td><em>Say Range</em>（<code>sayRange</code>）</td>
+<td>Say 消息传播的米数。</td>
 <td>30</td>
 </tr>
 <tr>
-<td><em>Max Length</em> (<code>maxLength</code>)</td>
-<td>Characters per line. Longer lines are cut.</td>
+<td><em>Max Length</em>（<code>maxLength</code>）</td>
+<td>每行的字符数。更长的行会被截断。</td>
 <td>200</td>
 </tr>
 <tr>
-<td><em>Burst</em> (<code>burst</code>)</td>
-<td>Lines allowed in a row; one comes back every second.</td>
+<td><em>Burst</em>（<code>burst</code>）</td>
+<td>允许连续发送的行数；每秒恢复一行。</td>
 <td>5</td>
 </tr>
 <tr>
-<td><em>Report Lines</em> (<code>reportLines</code>)</td>
-<td>Lines the player saw lately that go with a report they send.</td>
+<td><em>Report Lines</em>（<code>reportLines</code>）</td>
+<td>玩家发送举报时，随附的最近看到的行数。</td>
 <td>30</td>
 </tr>
 <tr>
-<td><em>Report Cooldown</em> (<code>reportCooldown</code>)</td>
-<td>Seconds between two reports from one player.</td>
+<td><em>Report Cooldown</em>（<code>reportCooldown</code>）</td>
+<td>同一玩家两次举报之间的秒数。</td>
 <td>60</td>
 </tr>
 </tbody>
 </table></div>
-<p>With the defaults a player can send 5 lines at once, then one a second. Past that: &quot;You are talking too fast.&quot; Slash commands share the same allowance and answer &quot;You are typing too fast.&quot; A server command line can be at most 300 characters.</p>
-<p>On top of that, every client command on the map server spends from a per connection budget (30 a second, bursts of 60). A client far over it is disconnected for flooding.</p>
-<h3 id="cleaning"><a class="anchor" href="#cleaning" aria-hidden="true">#</a>Cleaning</h3>
-<p>Before anything else, the server cleans each line: it trims spaces, turns control characters into spaces, and breaks every <code>&lt;</code> so no rich text tag can open. A player who types <code>&lt;color=red&gt;</code> sees it printed as written, in everyone's chat. Names are cleaned the same way and cut at 32 characters.</p>
-<h2 id="word-filter"><a class="anchor" href="#word-filter" aria-hidden="true">#</a>Word filter</h2>
-<p>The word filter blocks words you list. It runs on the server for chat lines, mail subjects and texts, and guild notices. Guild names with a blocked word are refused.</p>
-<h3 id="game-settings-card-chat-filter"><a class="anchor" href="#game-settings-card-chat-filter" aria-hidden="true">#</a>Game Settings, card Chat filter</h3>
+<p>使用默认值时，玩家可以一次发送 5 行，之后每秒一行。超过就会显示 &quot;You are talking too fast.&quot;。斜杠命令共用同一额度，超过时显示 &quot;You are typing too fast.&quot;。服务器命令行最多 300 个字符。</p>
+<p>此外，地图服务器上的每个客户端命令都会消耗每个连接的预算（每秒 30 次，突发 60 次）。远远超出的客户端会因刷屏被断开连接。</p>
+<h3 id="cleaning"><a class="anchor" href="#cleaning" aria-hidden="true">#</a>清理</h3>
+<p>服务器首先清理每一行：去掉首尾空格，把控制字符变成空格，并拆开每个 <code>&lt;</code>，使任何富文本标签都无法生效。玩家输入 <code>&lt;color=red&gt;</code>，所有人的聊天中都会按原样显示。名字也以同样的方式清理，并截断到 32 个字符。</p>
+<h2 id="word-filter"><a class="anchor" href="#word-filter" aria-hidden="true">#</a>屏蔽词过滤</h2>
+<p>屏蔽词过滤会屏蔽你列出的词。它在服务器上运行，作用于聊天消息、邮件标题和正文，以及公会公告。包含屏蔽词的公会名会被拒绝。</p>
+<h3 id="game-settings-card-chat-filter"><a class="anchor" href="#game-settings-card-chat-filter" aria-hidden="true">#</a>Game Settings，卡片 Chat filter</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Blocked Words</em> (<code>blockedWords</code>)</td>
-<td>Words nobody may say, one per entry. End one with <code>*</code> to also catch words that start with it.</td>
-<td>Empty</td>
+<td><em>Blocked Words</em>（<code>blockedWords</code>）</td>
+<td>任何人都不能说的词，每个条目一个。以 <code>*</code> 结尾时，也会匹配以它开头的词。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Blocked Words File</em> (<code>blockedWordsFile</code>)</td>
-<td>A text asset with more blocked words, one per line, for long lists. Lines starting with <code>#</code> are comments.</td>
-<td>None</td>
+<td><em>Blocked Words File</em>（<code>blockedWordsFile</code>）</td>
+<td>包含更多屏蔽词的文本资源，每行一个，用于长列表。以 <code>#</code> 开头的行是注释。</td>
+<td>无</td>
 </tr>
 <tr>
-<td><em>Chat Filter Mode</em> (<code>chatFilterMode</code>)</td>
-<td><strong>Mask</strong> turns blocked words into asterisks. <strong>Block</strong> drops the whole line and tells the sender &quot;That line has words this game doesn't allow.&quot;</td>
+<td><em>Chat Filter Mode</em>（<code>chatFilterMode</code>）</td>
+<td><strong>Mask</strong> 把屏蔽词变成星号。<strong>Block</strong> 丢弃整行，并告诉发送者 &quot;That line has words this game doesn't allow.&quot;。</td>
 <td>Mask</td>
 </tr>
 </tbody>
 </table></div>
-<p>How words are matched:</p>
+<p>匹配方式：</p>
 <ul>
-<li>Whole words only. With <code>ass</code> blocked, &quot;class&quot; and &quot;passage&quot; are safe.</li>
-<li>An entry ending in <code>*</code> also catches longer words: <code>darn*</code> catches &quot;darn&quot;, &quot;darned&quot; and &quot;darnit&quot;.</li>
-<li>Case doesn't matter.</li>
-<li>Digits and symbols standing in for letters are read as letters: <code>0</code>→o, <code>1</code>→i, <code>3</code>→e, <code>4</code> and <code>@</code>→a, <code>5</code> and <code>$</code>→s, <code>7</code>→t. So <code>d4rn</code> and <code>@ss</code> are caught.</li>
-<li>Mail always masks, even in Block mode, so a letter is never dropped.</li>
+<li>只匹配完整单词。屏蔽 <code>ass</code> 时，&quot;class&quot; 和 &quot;passage&quot; 不受影响。</li>
+<li>以 <code>*</code> 结尾的条目也匹配更长的词：<code>darn*</code> 匹配 &quot;darn&quot;、&quot;darned&quot; 和 &quot;darnit&quot;。</li>
+<li>不区分大小写。</li>
+<li>代替字母的数字和符号会被当作字母读取：<code>0</code>→o、<code>1</code>→i、<code>3</code>→e、<code>4</code> 和 <code>@</code>→a、<code>5</code> 和 <code>$</code>→s、<code>7</code>→t。所以 <code>d4rn</code> 和 <code>@ss</code> 也会被匹配。</li>
+<li>邮件总是使用遮蔽，即使在 Block 模式下也是如此，因此信件绝不会被丢弃。</li>
 </ul>
-<p>The list is read once per run. If you edit it during Play, the change applies the next time you press Play.</p>
-<h3 id="your-own-filter"><a class="anchor" href="#your-own-filter" aria-hidden="true">#</a>Your own filter</h3>
-<p>Code can change or drop lines after the word filter with <code>SocialHub.Filter</code>: return a changed line, or <code>null</code> to drop it. Use it for a custom mute list, links, or a spam rule. See <a href="../devkit/events.html">Events</a>.</p>
-<h2 id="mutes"><a class="anchor" href="#mutes" aria-hidden="true">#</a>Mutes</h2>
-<p>A moderator mutes a player with <code>/mute Name minutes</code> (10 minutes if no number is given, <code>0</code> lifts it). The muted player reads &quot;You can't chat for 10 minutes.&quot; and every line they try gets &quot;You are muted.&quot; The mute is stored on the character (flag <code>chat.muted</code>), so it survives logging out and changing maps. Moderators can't mute someone of their own level or higher. See <a href="../reference/gm-commands.html">GM commands</a>.</p>
-<h2 id="reports"><a class="anchor" href="#reports" aria-hidden="true">#</a>Reports</h2>
-<p>A player reports another with <code>/report Name reason</code>, or by right clicking them (in the world or in the chat) and picking <strong>Report</strong>, which asks &quot;What happened?&quot;.</p>
+<p>列表每次运行只读取一次。如果你在 Play 中修改它，改动会在下次按 Play 时生效。</p>
+<h3 id="your-own-filter"><a class="anchor" href="#your-own-filter" aria-hidden="true">#</a>你自己的过滤器</h3>
+<p>代码可以用 <code>SocialHub.Filter</code> 在屏蔽词过滤之后修改或丢弃消息：返回修改后的行，或返回 <code>null</code> 丢弃它。可用于自定义禁言列表、链接或垃圾消息规则。参见<a href="../devkit/events.html">事件</a>。</p>
+<h2 id="mutes"><a class="anchor" href="#mutes" aria-hidden="true">#</a>禁言</h2>
+<p>管理员用 <code>/mute Name minutes</code> 禁言一位玩家（不给数字时为 10 分钟，<code>0</code> 解除禁言）。被禁言的玩家会看到 &quot;You can't chat for 10 minutes.&quot;，之后尝试发送的每一行都会得到 &quot;You are muted.&quot;。禁言保存在角色上（标记 <code>chat.muted</code>），所以登出和切换地图后依然有效。管理员不能禁言与自己同级或更高级别的人。参见 <a href="../reference/gm-commands.html">GM 命令</a>。</p>
+<h2 id="reports"><a class="anchor" href="#reports" aria-hidden="true">#</a>举报</h2>
+<p>玩家可以用 <code>/report Name reason</code> 举报另一位玩家，或者右键点击对方（在世界中或聊天中）并选择 <strong>Report</strong>，它会询问 &quot;What happened?&quot;。</p>
 <ul>
-<li>The report carries the last <em>Report Lines</em> (30) lines the reporter saw, with times and channels, as evidence.</li>
-<li>One report every <em>Report Cooldown</em> (60) seconds per player: &quot;Wait a moment before sending another report.&quot; Central also allows at most 10 reports a day per player.</li>
-<li>The reporter reads &quot;Thanks. Your report on Name went to the moderators.&quot;</li>
-<li>You can't report yourself.</li>
-<li>Reports need an online server. In single player: &quot;Only on an online server.&quot;</li>
+<li>举报会附带举报者最近看到的 <em>Report Lines</em>（30）行，包含时间和频道，作为证据。</li>
+<li>每位玩家每 <em>Report Cooldown</em>（60）秒只能举报一次：&quot;Wait a moment before sending another report.&quot;。Central 还限制每位玩家每天最多举报 10 次。</li>
+<li>举报者会看到 &quot;Thanks. Your report on Name went to the moderators.&quot;。</li>
+<li>你不能举报自己。</li>
+<li>举报需要在线服务器。在单人模式中显示：&quot;Only on an online server.&quot;。</li>
 </ul>
-<p>Moderators read them with <code>/reports</code>. See <a href="game-log-and-reports.html">Game log and reports</a>.</p>
-<h2 id="logging-chat"><a class="anchor" href="#logging-chat" aria-hidden="true">#</a>Logging chat</h2>
-<p><em>Log Chat</em> (<code>logChat</code>, card <strong>Logs</strong> in Game Settings, off by default) writes every chat line to the game log as <code>chat.line</code>, with its channel and whisper target. Reports always carry the lines around them, even with it off. See <a href="game-log-and-reports.html">Game log and reports</a>.</p>
-<div class="callout warning"><div class="callout-title">警告</div><p>Logging every line stores private whispers in your database. Check what your privacy policy and local law allow before you turn it on.</p>
+<p>管理员用 <code>/reports</code> 查看举报。参见<a href="game-log-and-reports.html">游戏日志与举报</a>。</p>
+<h2 id="logging-chat"><a class="anchor" href="#logging-chat" aria-hidden="true">#</a>记录聊天</h2>
+<p><em>Log Chat</em>（<code>logChat</code>，Game Settings 中的卡片 <strong>Logs</strong>，默认关闭）会把每一条聊天消息以 <code>chat.line</code> 写入游戏日志，包含频道和私聊对象。即使它是关闭的，举报也总会附带周围的消息。参见<a href="game-log-and-reports.html">游戏日志与举报</a>。</p>
+<div class="callout warning"><div class="callout-title">警告</div><p>记录每一行会把私聊内容存入你的数据库。开启前请确认你的隐私政策和当地法律允许这样做。</p>
 </div>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式与 MMO</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Single player</th>
+<th>单人模式</th>
 <th>MMO</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Say, Map</td>
-<td>On the one map, as usual.</td>
-<td>Handled by the map server.</td>
+<td>Say、Map</td>
+<td>在唯一的地图上，照常工作。</td>
+<td>由地图服务器处理。</td>
 </tr>
 <tr>
 <td>World</td>
-<td>Reaches everyone on the map (in single player, only you).</td>
-<td>Central sends it to every map.</td>
+<td>发送给地图上的所有人（在单人模式中只有你）。</td>
+<td>Central 把它发送到每张地图。</td>
 </tr>
 <tr>
 <td>Whisper</td>
-<td>Only to a player on the same map. Otherwise &quot;Name is not online.&quot;</td>
-<td>The map looks for the player locally first, then asks Central, which finds them on any map.</td>
+<td>只能发给同一地图上的玩家。否则显示 &quot;Name is not online.&quot;。</td>
+<td>地图先在本地查找该玩家，然后询问 Central，由 Central 在任意地图上找到对方。</td>
 </tr>
 <tr>
-<td>Party, Guild, Alliance</td>
-<td>No parties or guilds, so nothing to send.</td>
-<td>Central sends the line to every online member, grouped by map.</td>
+<td>Party、Guild、Alliance</td>
+<td>没有队伍或公会，所以没有可发送的对象。</td>
+<td>Central 把消息发送给每位在线成员，按地图分组。</td>
 </tr>
 <tr>
-<td>Reports</td>
+<td>举报</td>
 <td>&quot;Only on an online server.&quot;</td>
-<td>Sent to Central.</td>
+<td>发送到 Central。</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
-<h3 id="block-a-list-of-words"><a class="anchor" href="#block-a-list-of-words" aria-hidden="true">#</a>Block a list of words</h3>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>分步操作</h2>
+<h3 id="block-a-list-of-words"><a class="anchor" href="#block-a-list-of-words" aria-hidden="true">#</a>屏蔽一组词</h3>
 <ol>
-<li>Create a text file in your project, for example <code>Assets/Game/BlockedWords.txt</code>.</li>
-<li>Write one word per line. End a word with <code>*</code> to catch longer words. Start a line with <code>#</code> to leave a comment.</li>
-<li>Open <strong>KitARPG &gt; Game Settings</strong>, card <strong>Chat filter</strong>, and drag the file into <em>Blocked Words File</em>.</li>
-<li>Pick <em>Chat Filter Mode</em>: <strong>Mask</strong> or <strong>Block</strong>.</li>
-<li>Press Play and type a blocked word to test.</li>
+<li>在项目中创建一个文本文件，例如 <code>Assets/Game/BlockedWords.txt</code>。</li>
+<li>每行写一个词。词以 <code>*</code> 结尾可匹配更长的词。以 <code>#</code> 开头的行是注释。</li>
+<li>打开 <strong>KitARPG &gt; Game Settings</strong> 的卡片 <strong>Chat filter</strong>，把文件拖到 <em>Blocked Words File</em>。</li>
+<li>选择 <em>Chat Filter Mode</em>：<strong>Mask</strong> 或 <strong>Block</strong>。</li>
+<li>按 Play，输入一个屏蔽词进行测试。</li>
 </ol>
-<p>The filter runs on the server, so rebuild your map servers after changing the list.</p>
-<h3 id="make-say-reach-farther"><a class="anchor" href="#make-say-reach-farther" aria-hidden="true">#</a>Make Say reach farther</h3>
+<p>过滤器在服务器上运行，所以修改列表后要重新构建地图服务器。</p>
+<h3 id="make-say-reach-farther"><a class="anchor" href="#make-say-reach-farther" aria-hidden="true">#</a>让 Say 传得更远</h3>
 <ol>
-<li>Open each player prefab (the sample has PlayerMale, PlayerFemale and PlayerPanda in <code>Samples/Starter/Prefabs</code>).</li>
-<li>On <code>PlayerChat</code>, set <em>Say Range</em>, for example to 50.</li>
+<li>打开每个玩家预制体（示例中 <code>Samples/Starter/Prefabs</code> 里有 PlayerMale、PlayerFemale 和 PlayerPanda）。</li>
+<li>在 <code>PlayerChat</code> 上设置 <em>Say Range</em>，例如设为 50。</li>
 </ol>
-<h3 id="change-chat-colors"><a class="anchor" href="#change-chat-colors" aria-hidden="true">#</a>Change chat colors</h3>
-<p>Select the chat box in the HUD prefab and change the colors on <code>ChatWindow</code> (<em>Say Color</em>, <em>Map Color</em>, <em>World Color</em>, <em>Whisper Color</em>, <em>Party Color</em>, <em>Guild Color</em>, <em>Alliance Color</em>, <em>System Color</em>). These are client only.</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h3 id="change-chat-colors"><a class="anchor" href="#change-chat-colors" aria-hidden="true">#</a>修改聊天颜色</h3>
+<p>在 HUD 预制体中选中聊天框，在 <code>ChatWindow</code> 上修改颜色（<em>Say Color</em>、<em>Map Color</em>、<em>World Color</em>、<em>Whisper Color</em>、<em>Party Color</em>、<em>Guild Color</em>、<em>Alliance Color</em>、<em>System Color</em>）。这些只在客户端生效。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>Typing <code>/g hello</code> to talk to the guild.</strong> That is World. Use <code>/gu</code>.</li>
-<li><strong>The filter doesn't catch a word.</strong> It must be a whole word, or end the entry with <code>*</code>. Changes made during Play wait for the next run.</li>
-<li><strong>&quot;You are talking too fast.&quot;</strong> More than 5 lines in a row. Raise <em>Burst</em> on <code>PlayerChat</code> if your game needs it.</li>
-<li><strong>World chat reaches only one map.</strong> The map server isn't connected to Central. Check <strong>Play and Servers</strong>.</li>
-<li><strong>Different settings on different player prefabs.</strong> <code>PlayerChat</code> lives on each prefab. Change all of them.</li>
+<li><strong>输入 <code>/g hello</code> 想和公会说话。</strong> 那是 World。请用 <code>/gu</code>。</li>
+<li><strong>过滤器没有匹配到某个词。</strong> 它必须是完整单词，或者让条目以 <code>*</code> 结尾。在 Play 中做的修改要到下次运行才生效。</li>
+<li><strong>&quot;You are talking too fast.&quot;</strong> 连续发送超过 5 行。如果你的游戏需要，提高 <code>PlayerChat</code> 上的 <em>Burst</em>。</li>
+<li><strong>World 聊天只到达一张地图。</strong> 地图服务器没有连接到 Central。检查 <strong>Play and Servers</strong>。</li>
+<li><strong>不同玩家预制体上的设置不同。</strong> <code>PlayerChat</code> 位于每个预制体上。要全部修改。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="friends-and-parties.html">Friends and parties</a></li>
-<li><a href="guilds.html">Guilds</a>: guild and alliance channels.</li>
-<li><a href="mail.html">Mail</a></li>
-<li><a href="gm-tools.html">GM tools</a> and <a href="../reference/gm-commands.html">GM commands</a></li>
-<li><a href="game-log-and-reports.html">Game log and reports</a></li>
-<li><a href="touch-controls.html">Touch controls</a>: the chat button on phones.</li>
-<li><a href="../reference/keys.html">Keys</a></li>
+<li><a href="friends-and-parties.html">好友与队伍</a></li>
+<li><a href="guilds.html">公会</a>：公会和联盟频道。</li>
+<li><a href="mail.html">邮件</a></li>
+<li><a href="gm-tools.html">GM 工具</a>和 <a href="../reference/gm-commands.html">GM 命令</a></li>
+<li><a href="game-log-and-reports.html">游戏日志与举报</a></li>
+<li><a href="touch-controls.html">触控操作</a>：手机上的聊天按钮。</li>
+<li><a href="../reference/keys.html">按键</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="mail.html"><span>上一页</span>Mail</a><a class="next" href="friends-and-parties.html"><span>下一页</span>Friends and parties</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fchat.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-it-is">What it is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#channels">Channels</a></li><li class="l2"><a href="#using-the-chat-as-a-player">Using the chat as a player</a></li><li class="l3"><a href="#typing">Typing</a></li><li class="l3"><a href="#names-in-the-chat">Names in the chat</a></li><li class="l3"><a href="#what-the-box-keeps">What the box keeps</a></li><li class="l2"><a href="#slash-commands">Slash commands</a></li><li class="l2"><a href="#limits-the-server-enforces">Limits the server enforces</a></li><li class="l3"><a href="#playerchat-player-prefab">PlayerChat (player prefab)</a></li><li class="l3"><a href="#cleaning">Cleaning</a></li><li class="l2"><a href="#word-filter">Word filter</a></li><li class="l3"><a href="#game-settings-card-chat-filter">Game Settings, card Chat filter</a></li><li class="l3"><a href="#your-own-filter">Your own filter</a></li><li class="l2"><a href="#mutes">Mutes</a></li><li class="l2"><a href="#reports">Reports</a></li><li class="l2"><a href="#logging-chat">Logging chat</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#block-a-list-of-words">Block a list of words</a></li><li class="l3"><a href="#make-say-reach-farther">Make Say reach farther</a></li><li class="l3"><a href="#change-chat-colors">Change chat colors</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="mail.html"><span>上一页</span>邮件</a><a class="next" href="friends-and-parties.html"><span>下一页</span>好友与队伍</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fchat.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-it-is">它是什么</a></li><li class="l2"><a href="#where-it-is-in-the-editor">在编辑器中的位置</a></li><li class="l2"><a href="#channels">频道</a></li><li class="l2"><a href="#using-the-chat-as-a-player">作为玩家使用聊天</a></li><li class="l3"><a href="#typing">输入</a></li><li class="l3"><a href="#names-in-the-chat">聊天中的名字</a></li><li class="l3"><a href="#what-the-box-keeps">聊天框保留的内容</a></li><li class="l2"><a href="#slash-commands">斜杠命令</a></li><li class="l2"><a href="#limits-the-server-enforces">服务器强制执行的限制</a></li><li class="l3"><a href="#playerchat-player-prefab">PlayerChat（玩家预制体）</a></li><li class="l3"><a href="#cleaning">清理</a></li><li class="l2"><a href="#word-filter">屏蔽词过滤</a></li><li class="l3"><a href="#game-settings-card-chat-filter">Game Settings，卡片 Chat filter</a></li><li class="l3"><a href="#your-own-filter">你自己的过滤器</a></li><li class="l2"><a href="#mutes">禁言</a></li><li class="l2"><a href="#reports">举报</a></li><li class="l2"><a href="#logging-chat">记录聊天</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式与 MMO</a></li><li class="l2"><a href="#step-by-step">分步操作</a></li><li class="l3"><a href="#block-a-list-of-words">屏蔽一组词</a></li><li class="l3"><a href="#make-say-reach-farther">让 Say 传得更远</a></li><li class="l3"><a href="#change-chat-colors">修改聊天颜色</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

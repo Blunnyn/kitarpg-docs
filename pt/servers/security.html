@@ -1,263 +1,263 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Security · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Segurança · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/security.html">English</option><option value="../../es/servers/security.html">Español</option><option value="security.html" selected>Português</option><option value="../../zh/servers/security.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>Servidores e implantação</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html" class="on" aria-current="page">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Servidores e implantação</div><h1>Security</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>How KitARPG keeps an online game safe, what you must set up before opening it to players, how to rotate keys, and a checklist to go through before launch.</p>
-<h2 id="the-model"><a class="anchor" href="#the-model" aria-hidden="true">#</a>The model</h2>
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section" open><summary>Servidores e implantação</summary><ul><li><a href="architecture.html">Arquitetura</a></li><li><a href="services.html">Serviços</a></li><li><a href="launcher.html">Lançador</a></li><li><a href="database.html">Banco de dados</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html" class="on" aria-current="page">Segurança</a></li><li><a href="shop-service.html">Serviço Shop</a></li><li><a href="performance.html">Desempenho</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Visão geral do DevKit</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Efeitos de habilidades</a></li><li><a href="../devkit/item-effects.html">Efeitos de itens</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de missão</a></li><li><a href="../devkit/npc-options.html">Opções de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas do jogador</a></li><li><a href="../devkit/network-messages.html">Mensagens de rede</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Salvando dados</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="../devkit/editor-extensions.html">Extensões do editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="../devkit/talking-to-central.html">Falando com o Central</a></li><li><a href="../devkit/service-modules.html">Módulos de serviço</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="../devkit/example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sem domain reload</a></li><li><a href="../devkit/security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Servidores e implantação</div><h1>Segurança</h1><p>Como o KitARPG mantém um jogo online seguro, o que você precisa configurar antes de abri-lo aos jogadores, como trocar as chaves e uma lista de verificação para revisar antes do lançamento.</p>
+<h2 id="the-model"><a class="anchor" href="#the-model" aria-hidden="true">#</a>O modelo</h2>
 <ul>
-<li><strong>The server decides.</strong> The client only asks. Movement, combat, loot, trades, the bank, the forge, the shop: the map server checks every request and applies it. A modified client can send anything; it can't make the server accept it.</li>
-<li><strong>Players never reach the database.</strong> Map servers don't either: they load and save through Central.</li>
-<li><strong>Tickets.</strong> A client enters a map only with a one-use ticket from Central, valid 30 seconds, for that map only. Nobody skips the login or plays someone else's character.</li>
-<li><strong>One session per account.</strong> Signing in again closes the old session first, after its map saves.</li>
-<li><strong>Items have one owner.</strong> Every copy is one database row with exactly one owner, and every move goes through one lock and one transaction. See <a href="services.html#items-move-through-one-ledger">Services</a>.</li>
-<li><strong>Clients carry no server code.</strong> Build separation keeps server logic, GM commands, keys and connection strings out of the client you ship. See <a href="builds.html#defines-and-what-goes-where">Builds</a>.</li>
+<li><strong>O servidor decide.</strong> O cliente só pede. Movimento, combate, espólio, trocas, banco, forja, loja: o servidor de mapa verifica cada pedido e o aplica. Um cliente modificado pode enviar qualquer coisa; não consegue fazer o servidor aceitar.</li>
+<li><strong>Os jogadores nunca chegam ao banco de dados.</strong> Os servidores de mapa também não: eles carregam e salvam pela Central.</li>
+<li><strong>Tickets.</strong> Um cliente entra em um mapa só com um ticket de uso único da Central, válido por 30 segundos, só para aquele mapa. Ninguém pula o login nem joga com o personagem de outra pessoa.</li>
+<li><strong>Uma sessão por conta.</strong> Entrar de novo fecha primeiro a sessão antiga, depois que o mapa dela salva.</li>
+<li><strong>Os itens têm um único dono.</strong> Cada cópia é uma linha do banco de dados com exatamente um dono, e cada movimento passa por um único bloqueio e uma única transação. Veja <a href="services.html#items-move-through-one-ledger">Serviços</a>.</li>
+<li><strong>Os clientes não levam código de servidor.</strong> A separação de builds mantém a lógica do servidor, os comandos de GM, as chaves e as strings de conexão fora do cliente que você distribui. Veja <a href="builds.html#defines-and-what-goes-where">Builds</a>.</li>
 </ul>
-<p>The rest of this page is what you set up so that model holds on your servers.</p>
-<h2 id="secrets"><a class="anchor" href="#secrets" aria-hidden="true">#</a>Secrets</h2>
+<p>O resto desta página é o que você configura para que esse modelo se mantenha nos seus servidores.</p>
+<h2 id="secrets"><a class="anchor" href="#secrets" aria-hidden="true">#</a>Segredos</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Secret</th>
-<th>Where it lives</th>
-<th>Who must have it</th>
+<th>Segredo</th>
+<th>Onde fica</th>
+<th>Quem precisa tê-lo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Token signing key</td>
+<td>Chave de assinatura de tokens</td>
 <td><code>Auth:SigningKey</code> / <code>KITARPG_SIGNING_KEY</code></td>
-<td>Login and Central</td>
+<td>Login e Central</td>
 </tr>
 <tr>
-<td>Map key</td>
-<td><code>Central:MapKey</code> / <code>KITARPG_MAP_KEY</code>, <code>KITARPG_CENTRAL_KEY</code> on maps</td>
-<td>Central and every map server</td>
+<td>Chave dos mapas</td>
+<td><code>Central:MapKey</code> / <code>KITARPG_MAP_KEY</code>, <code>KITARPG_CENTRAL_KEY</code> nos mapas</td>
+<td>A Central e cada servidor de mapa</td>
 </tr>
 <tr>
-<td>Shop map key</td>
+<td>Chave dos mapas para o Shop</td>
 <td><code>Shop:MapKeys</code> / <code>KITARPG_SHOP_KEY</code></td>
-<td>The Shop and every map server</td>
+<td>O Shop e cada servidor de mapa</td>
 </tr>
 <tr>
-<td>Shop admin key</td>
+<td>Chave de administração do Shop</td>
 <td><code>Shop:AdminKey</code> / <code>KITARPG_SHOP_ADMIN_KEY</code></td>
-<td>The Shop and whoever publishes the catalog</td>
+<td>O Shop e quem publica o catálogo</td>
 </tr>
 <tr>
-<td>Payment secrets</td>
+<td>Segredos de pagamento</td>
 <td><code>Shop:Stripe:WebhookSecret</code>, <code>Shop:Signed:Secret</code></td>
-<td>The Shop and your payment provider</td>
+<td>O Shop e o seu provedor de pagamentos</td>
 </tr>
 <tr>
-<td>Database password</td>
+<td>Senha do banco de dados</td>
 <td><code>Database:ConnectionString</code> / <code>POSTGRES_PASSWORD</code></td>
-<td>Login, Central, the Shop, PostgreSQL</td>
+<td>Login, Central, Shop, PostgreSQL</td>
 </tr>
 </tbody>
 </table></div>
-<p>Outside <code>Development</code>, the services refuse to start while any of these is empty, shorter than 16 characters, or a sample value from the repository (anything containing <code>change-me</code> or <code>kitarpg-dev</code>, or starting with <code>development-</code> or <code>dev-</code>). The signing key must also be at least 32 bytes. The database password may not be <code>kitarpg</code>, <code>postgres</code>, <code>password</code>, <code>admin</code>, <code>root</code> or <code>secret</code>. A connection string with no password at all is allowed, for passfiles and trusted local connections.</p>
-<p>The launcher and Play &amp; Servers generate random keys per computer and keep them in <code>launcher.json</code> (<code>UserSettings/KitARPG/</code> from the editor). Docker reads them from <code>Deploy/.env</code>. Keep both out of version control and never put a secret in a client build.</p>
-<div class="callout danger"><div class="callout-title">Importante</div><p>Anyone with the map key can pose as a map server and save any character. Anyone with the signing key can sign in as any account. Treat both like the database password.</p>
+<p>Fora de <code>Development</code>, os serviços se recusam a iniciar enquanto qualquer um desses estiver vazio, tiver menos de 16 caracteres ou for um valor de exemplo do repositório (qualquer coisa que contenha <code>change-me</code> ou <code>kitarpg-dev</code>, ou que comece com <code>development-</code> ou <code>dev-</code>). A chave de assinatura também precisa ter pelo menos 32 bytes. A senha do banco de dados não pode ser <code>kitarpg</code>, <code>postgres</code>, <code>password</code>, <code>admin</code>, <code>root</code> nem <code>secret</code>. Uma string de conexão sem nenhuma senha é permitida, para passfiles e conexões locais confiáveis.</p>
+<p>O lançador e Play &amp; Servers geram chaves aleatórias por computador e as guardam no <code>launcher.json</code> (<code>UserSettings/KitARPG/</code> a partir do editor). O Docker as lê de <code>Deploy/.env</code>. Mantenha os dois fora do controle de versão e nunca coloque um segredo em uma build de cliente.</p>
+<div class="callout danger"><div class="callout-title">Importante</div><p>Quem tiver a chave dos mapas pode se passar por um servidor de mapa e salvar qualquer personagem. Quem tiver a chave de assinatura pode entrar como qualquer conta. Trate as duas como a senha do banco de dados.</p>
 </div>
-<h2 id="tls-and-the-reverse-proxy"><a class="anchor" href="#tls-and-the-reverse-proxy" aria-hidden="true">#</a>TLS and the reverse proxy</h2>
-<p>Login, Central and the Shop speak plain HTTP. In production, Caddy sits in front of them (the compose file starts it):</p>
+<h2 id="tls-and-the-reverse-proxy"><a class="anchor" href="#tls-and-the-reverse-proxy" aria-hidden="true">#</a>TLS e o proxy reverso</h2>
+<p>Login, Central e Shop falam HTTP simples. Em produção, o Caddy fica na frente deles (o arquivo compose o inicia):</p>
 <ul>
-<li>Caddy serves <code>https://&lt;login domain&gt;</code> and <code>https://&lt;central domain&gt;</code> and forwards to the services on the private compose network. It gets and renews the certificates by itself once the domains point at the server and ports 80 and 443 are open.</li>
-<li>Ports 5100, 5200 and 5300 are published on <code>127.0.0.1</code> only, for health checks and the Shop's admin API from the server itself. Don't publish them on other interfaces.</li>
-<li>Of the Shop, Caddy forwards only <code>/api/shop/webhooks/*</code>, on the Login domain.</li>
-<li>Release clients refuse to build with plain HTTP addresses for Login or Central (except this computer), and ignore <code>-login</code>, <code>-centralUrl</code> and <code>-mode</code>, so a malicious shortcut can't send a password elsewhere.</li>
+<li>O Caddy serve <code>https://&lt;login domain&gt;</code> e <code>https://&lt;central domain&gt;</code> e encaminha para os serviços na rede privada do compose. Ele obtém e renova os certificados sozinho assim que os domínios apontam para o servidor e as portas 80 e 443 estão abertas.</li>
+<li>As portas 5100, 5200 e 5300 são publicadas só em <code>127.0.0.1</code>, para verificações de saúde e para a API de administração do Shop a partir do próprio servidor. Não as publique em outras interfaces.</li>
+<li>Do Shop, o Caddy encaminha só <code>/api/shop/webhooks/*</code>, no domínio do Login.</li>
+<li>Os clientes de release se recusam a ser gerados com endereços HTTP simples para o Login ou a Central (exceto este computador) e ignoram <code>-login</code>, <code>-centralUrl</code> e <code>-mode</code>, para que um atalho malicioso não consiga mandar uma senha para outro lugar.</li>
 </ul>
-<h3 id="reverse-proxy"><a class="anchor" href="#reverse-proxy" aria-hidden="true">#</a>Reverse proxy</h3>
-<p>Behind a proxy, every request comes from the proxy's address, so per-address rate limits would lump all players together. The services read <code>X-Forwarded-For</code> and <code>X-Forwarded-Proto</code> only when allowed:</p>
+<h3 id="reverse-proxy"><a class="anchor" href="#reverse-proxy" aria-hidden="true">#</a>Proxy reverso</h3>
+<p>Atrás de um proxy, cada requisição vem do endereço do proxy, então os limites por endereço juntariam todos os jogadores. Os serviços leem <code>X-Forwarded-For</code> e <code>X-Forwarded-Proto</code> só quando permitido:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Setting</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Configuração</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Proxy:Enabled</code></td>
-<td>Believe forwarded headers at all</td>
+<td>Confiar em cabeçalhos encaminhados</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>Proxy:KnownProxies</code></td>
-<td>Proxy addresses whose headers are believed (loopback always is)</td>
-<td>Empty</td>
+<td>Endereços de proxy cujos cabeçalhos são aceitos (o loopback sempre é)</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><code>Proxy:KnownNetworks</code></td>
-<td>Networks in CIDR form, for proxies without a fixed address</td>
-<td>Empty</td>
+<td>Redes em formato CIDR, para proxies sem endereço fixo</td>
+<td>Vazio</td>
 </tr>
 <tr>
 <td><code>Proxy:ForwardLimit</code></td>
-<td>Proxies in the chain</td>
+<td>Proxies na cadeia</td>
 <td>1</td>
 </tr>
 </tbody>
 </table></div>
-<p>The compose file gives Caddy a fixed address (<code>KITARPG_PROXY_ADDRESS</code>, <code>172.28.0.10</code>) and trusts only that one.</p>
-<div class="callout warning"><div class="callout-title">Atenção</div><p>Never turn <code>Proxy:Enabled</code> on without a known proxy in front. Clients could then write their own <code>X-Forwarded-For</code> and dodge the rate limits.</p>
+<p>O arquivo compose dá ao Caddy um endereço fixo (<code>KITARPG_PROXY_ADDRESS</code>, <code>172.28.0.10</code>) e confia só nele.</p>
+<div class="callout warning"><div class="callout-title">Atenção</div><p>Nunca ligue <code>Proxy:Enabled</code> sem um proxy conhecido na frente. Os clientes poderiam então escrever o próprio <code>X-Forwarded-For</code> e escapar dos limites.</p>
 </div>
-<h2 id="accounts-and-tokens"><a class="anchor" href="#accounts-and-tokens" aria-hidden="true">#</a>Accounts and tokens</h2>
+<h2 id="accounts-and-tokens"><a class="anchor" href="#accounts-and-tokens" aria-hidden="true">#</a>Contas e tokens</h2>
 <ul>
-<li><strong>Passwords</strong> are hashed with Argon2id (19 MiB, 2 passes). Unknown usernames take as long as wrong passwords.</li>
-<li><strong>Rate limits.</strong> <code>/api/auth/*</code> allows <code>Auth:AttemptsPerMinute</code> (10) requests per client and minute, counting IPv4 addresses one by one and IPv6 addresses by /64.</li>
-<li><strong>Account lock.</strong> <code>Auth:FailedLoginsPerAccount</code> (5) wrong passwords lock that username for <code>Auth:FailedLoginMinutes</code> (15) with <code>login_locked</code>, whether the account exists or not.</li>
-<li><strong>Access tokens</strong> live <code>Auth:TokenMinutes</code> (30). A banned or deleted account loses access within <code>Auth:BanCheckSeconds</code> (5).</li>
-<li><strong>Remember me</strong> tokens are stored as SHA-256 only, used once and traded for the next of their family. A reused token deletes the whole family. <code>POST /api/auth/forget-all</code> signs an account out everywhere.</li>
+<li><strong>Senhas</strong> são transformadas em hash com Argon2id (19 MiB, 2 passadas). Nomes de usuário desconhecidos demoram tanto quanto senhas erradas.</li>
+<li><strong>Limites de requisições.</strong> <code>/api/auth/*</code> permite <code>Auth:AttemptsPerMinute</code> (10) requisições por cliente e por minuto, contando endereços IPv4 um a um e endereços IPv6 por /64.</li>
+<li><strong>Bloqueio de conta.</strong> <code>Auth:FailedLoginsPerAccount</code> (5) senhas erradas bloqueiam aquele nome de usuário por <code>Auth:FailedLoginMinutes</code> (15) com <code>login_locked</code>, exista a conta ou não.</li>
+<li><strong>Tokens de acesso</strong> duram <code>Auth:TokenMinutes</code> (30). Uma conta banida ou excluída perde o acesso em até <code>Auth:BanCheckSeconds</code> (5).</li>
+<li>Os tokens de <strong>Remember me</strong> são guardados só como SHA-256, usados uma vez e trocados pelo próximo da sua família. Um token reutilizado apaga a família inteira. <code>POST /api/auth/forget-all</code> desconecta uma conta em todos os lugares.</li>
 </ul>
-<p>These counters live in memory, per Login process: a restart forgets them, and several Login copies each count on their own.</p>
-<h2 id="the-map-link"><a class="anchor" href="#the-map-link" aria-hidden="true">#</a>The map link</h2>
+<p>Esses contadores ficam na memória, por processo do Login: um reinício os esquece, e várias cópias do Login contam cada uma por conta própria.</p>
+<h2 id="the-map-link"><a class="anchor" href="#the-map-link" aria-hidden="true">#</a>O link dos mapas</h2>
 <ul>
-<li>Map servers connect to Central on UDP <code>Central:MapLinkPort</code> (7700) and must present <code>Central:MapKey</code>.</li>
-<li><code>Central:MapNetworks</code> lists the addresses or networks allowed to open the link. Empty allows any. The compose file allows only its own network.</li>
-<li>Central passes the key to the maps it launches in the <code>KITARPG_CENTRAL_KEY</code> environment variable, which other users of the machine can't read the way they can a command line.</li>
-<li>A map can only speak for players on that map: Central checks the sender of every message about a player.</li>
-<li><strong>The link isn't encrypted.</strong> Maps on other machines reach Central over a private network or a WireGuard tunnel. Publish UDP 7700 only on that interface's address and add the network to <code>Central:MapNetworks</code>. Never publish it on the internet.</li>
+<li>Os servidores de mapa se conectam à Central por UDP em <code>Central:MapLinkPort</code> (7700) e precisam apresentar <code>Central:MapKey</code>.</li>
+<li><code>Central:MapNetworks</code> lista os endereços ou redes que podem abrir o link. Vazio permite qualquer um. O arquivo compose permite só a própria rede.</li>
+<li>A Central passa a chave aos mapas que inicia na variável de ambiente <code>KITARPG_CENTRAL_KEY</code>, que outros usuários da máquina não conseguem ler como leriam uma linha de comando.</li>
+<li>Um mapa só pode falar pelos jogadores daquele mapa: a Central verifica o remetente de cada mensagem sobre um jogador.</li>
+<li><strong>O link não é criptografado.</strong> Mapas em outras máquinas chegam à Central por uma rede privada ou um túnel WireGuard. Publique a UDP 7700 só no endereço dessa interface e adicione a rede a <code>Central:MapNetworks</code>. Nunca a publique na internet.</li>
 </ul>
-<h2 id="the-shop"><a class="anchor" href="#the-shop" aria-hidden="true">#</a>The Shop</h2>
+<h2 id="the-shop"><a class="anchor" href="#the-shop" aria-hidden="true">#</a>O Shop</h2>
 <ul>
-<li>Map servers authenticate with <code>X-Shop-Key</code>, the admin API with <code>X-Admin-Key</code>. Both are compared in constant time.</li>
-<li>The internal and admin APIs stay off the internet: only webhooks go through Caddy, and port 5300 is published on loopback only.</li>
-<li>Each endpoint group has its own rate limit per client address.</li>
-<li>Webhooks are accepted only with a valid signature; each payment counts once.</li>
-<li>A map server refuses a plain <code>http://</code> Shop address on a public IP, since its key would cross the internet readable.</li>
+<li>Os servidores de mapa se autenticam com <code>X-Shop-Key</code>, a API de administração com <code>X-Admin-Key</code>. As duas são comparadas em tempo constante.</li>
+<li>As APIs interna e de administração ficam fora da internet: só os webhooks passam pelo Caddy, e a porta 5300 é publicada só no loopback.</li>
+<li>Cada grupo de endpoints tem o próprio limite de requisições por endereço do cliente.</li>
+<li>Os webhooks são aceitos só com uma assinatura válida; cada pagamento conta uma vez.</li>
+<li>Um servidor de mapa recusa um endereço <code>http://</code> simples do Shop em um IP público, já que a chave dele cruzaria a internet legível.</li>
 </ul>
-<p>See <a href="shop-service.html#security">Shop service</a>.</p>
-<h2 id="what-the-map-server-checks"><a class="anchor" href="#what-the-map-server-checks" aria-hidden="true">#</a>What the map server checks</h2>
-<p>A short list of what protects you from modified clients, all in the kit's server code:</p>
+<p>Veja <a href="shop-service.html#security">Serviço Shop</a>.</p>
+<h2 id="what-the-map-server-checks"><a class="anchor" href="#what-the-map-server-checks" aria-hidden="true">#</a>O que o servidor de mapa verifica</h2>
+<p>Uma lista curta do que protege você de clientes modificados, tudo no código de servidor do kit:</p>
 <ul>
-<li><strong>Command pacing.</strong> Every client command counts against 30 per second with bursts of 60; far above that the connection is dropped as flooding. Commands that reach Central (mail, guild, friends, party, reports) get 2 per second with bursts of 10. Trade and duel requests are limited to one every 2 seconds.</li>
-<li><strong>Targets.</strong> A player can only target what their connection sees, never an invisible enemy.</li>
-<li><strong>Player text.</strong> Chat, mail, notes, guild names and roles are cleaned so they can't open TextMeshPro tags.</li>
-<li><strong>Amounts.</strong> Negative, huge or overflowing gold and item amounts are refused in the bank, mail, trade and market.</li>
-<li><strong>Deliveries.</strong> A save made before Central delivered an item (market, mail, guild bank, collectors) can't erase the delivery.</li>
-<li><strong>GM commands</strong> run only for accounts with the right level, and every command of level 2 or more is written to <code>gm_audit</code> first. If Central can't record it, the command doesn't run. See <a href="../gameplay/gm-tools.html">GM tools</a>.</li>
+<li><strong>Ritmo de comandos.</strong> Cada comando do cliente conta contra 30 por segundo com rajadas de 60; muito acima disso, a conexão cai por inundação. Os comandos que chegam à Central (correio, guilda, amigos, grupo, denúncias) têm 2 por segundo com rajadas de 10. Pedidos de troca e de duelo ficam limitados a um a cada 2 segundos.</li>
+<li><strong>Alvos.</strong> Um jogador só pode mirar o que a conexão dele vê, nunca um inimigo invisível.</li>
+<li><strong>Texto dos jogadores.</strong> Chat, correio, notas, nomes de guilda e cargos são limpos para que não possam abrir tags do TextMeshPro.</li>
+<li><strong>Quantidades.</strong> Quantidades de ouro e de itens negativas, enormes ou que estouram são recusadas no banco, no correio, nas trocas e no mercado.</li>
+<li><strong>Entregas.</strong> Um salvamento feito antes de a Central entregar um item (mercado, correio, banco da guilda, coletores) não consegue apagar a entrega.</li>
+<li><strong>Comandos de GM</strong> rodam só para contas com o nível certo, e cada comando de nível 2 ou mais é gravado primeiro em <code>gm_audit</code>. Se a Central não conseguir registrá-lo, o comando não roda. Veja <a href="../gameplay/gm-tools.html">Ferramentas de GM</a>.</li>
 </ul>
-<p>Your own code follows the same rules. See <a href="../devkit/security-rules.html">Security rules for your code</a>.</p>
+<p>O seu próprio código segue as mesmas regras. Veja <a href="../devkit/security-rules.html">Regras de segurança para o seu código</a>.</p>
 <h2 id="builds"><a class="anchor" href="#builds" aria-hidden="true">#</a>Builds</h2>
 <ul>
-<li>Release clients are IL2CPP only. The build stops if a release client uses Mono.</li>
-<li>An MMO client never carries server assemblies, the local save, test tools, keys or connection strings. The build stops if it would.</li>
-<li>Test tools (<code>KITARPG_DEV</code>) are only in the test client. <strong>Never give the test client to players.</strong></li>
-<li>Keep the IL2CPP symbol folder (<code>*_BackUpThisFolder_ButDontShipItWithYourGame</code>) for crash reports and out of what you ship.</li>
+<li>Os clientes de release são só IL2CPP. A build para se um cliente de release usar Mono.</li>
+<li>Um cliente MMO nunca leva assemblies de servidor, o salvamento local, ferramentas de teste, chaves ou strings de conexão. A build para se fosse levar.</li>
+<li>As ferramentas de teste (<code>KITARPG_DEV</code>) estão só no cliente de teste. <strong>Nunca dê o cliente de teste aos jogadores.</strong></li>
+<li>Guarde a pasta de símbolos do IL2CPP (<code>*_BackUpThisFolder_ButDontShipItWithYourGame</code>) para relatórios de falhas e fora do que você distribui.</li>
 </ul>
-<h2 id="running-the-services"><a class="anchor" href="#running-the-services" aria-hidden="true">#</a>Running the services</h2>
+<h2 id="running-the-services"><a class="anchor" href="#running-the-services" aria-hidden="true">#</a>Rodar os serviços</h2>
 <ul>
-<li><strong>Exactly one Central per database.</strong> Sessions, tickets, parties and the item lock live in its memory. Two would hand out the same items twice.</li>
-<li><strong>Exactly one Shop per database.</strong> Buys are serialized by a lock in its process.</li>
-<li><strong>Login may run several times</strong> behind the proxy, but each copy adds its own rate limit allowance.</li>
-<li><strong>Modules run with the service's full rights.</strong> Only install modules you trust, list them in <code>Modules:Allow</code>, and keep the module folders read-only (the compose file mounts them that way). Each module's file and SHA-256 are logged at start.</li>
-<li><strong>Run as non-root.</strong> The Docker images run the services as the <code>app</code> user and the map servers as <code>kit</code>.</li>
+<li><strong>Exatamente uma Central por banco de dados.</strong> Sessões, tickets, grupos e o bloqueio de itens ficam na memória dela. Duas entregariam os mesmos itens duas vezes.</li>
+<li><strong>Exatamente um Shop por banco de dados.</strong> As compras são serializadas por um bloqueio no processo dele.</li>
+<li><strong>O Login pode rodar várias vezes</strong> atrás do proxy, mas cada cópia soma a própria cota de limite de requisições.</li>
+<li><strong>Os módulos rodam com todos os direitos do serviço.</strong> Instale só módulos em que você confia, liste-os em <code>Modules:Allow</code> e mantenha as pastas de módulos somente leitura (o arquivo compose as monta assim). O arquivo e o SHA-256 de cada módulo são registrados no log ao iniciar.</li>
+<li><strong>Rode sem root.</strong> As imagens Docker rodam os serviços como o usuário <code>app</code> e os servidores de mapa como <code>kit</code>.</li>
 </ul>
-<h2 id="rotating-keys"><a class="anchor" href="#rotating-keys" aria-hidden="true">#</a>Rotating keys</h2>
-<p>Rotate a key when someone who knew it leaves, when it may have leaked, or on a schedule.</p>
-<h3 id="token-signing-key-no-downtime"><a class="anchor" href="#token-signing-key-no-downtime" aria-hidden="true">#</a>Token signing key (no downtime)</h3>
-<p><code>Auth:SigningKeys</code> is a list. The first key signs; every key in it, plus <code>Auth:SigningKey</code>, is accepted.</p>
+<h2 id="rotating-keys"><a class="anchor" href="#rotating-keys" aria-hidden="true">#</a>Trocar as chaves</h2>
+<p>Troque uma chave quando alguém que a conhecia sair, quando ela puder ter vazado, ou em uma agenda fixa.</p>
+<h3 id="token-signing-key-no-downtime"><a class="anchor" href="#token-signing-key-no-downtime" aria-hidden="true">#</a>Chave de assinatura de tokens (sem parada)</h3>
+<p><code>Auth:SigningKeys</code> é uma lista. A primeira chave assina; todas as chaves da lista, mais <code>Auth:SigningKey</code>, são aceitas.</p>
 <ol>
 <li>
-<p>Make a new key: <code>openssl rand -hex 32</code>.</p>
+<p>Crie uma chave nova: <code>openssl rand -hex 32</code>.</p>
 </li>
 <li>
-<p>On <strong>both</strong> Login and Central, set the new key first and keep the old one:</p>
+<p><strong>Tanto</strong> no Login quanto na Central, coloque a chave nova primeiro e mantenha a antiga:</p>
 <pre class="code"><code class="language-bash"><span class="nv">Auth__SigningKeys__0</span><span class="o">=</span>&lt;new<span class="w"> </span>key&gt;
 <span class="nv">Auth__SigningKeys__1</span><span class="o">=</span>&lt;old<span class="w"> </span>key&gt;
 </code></pre>
-<p>In Docker Compose, add both lines to the <code>&amp;service-env</code> block of the <code>login</code> service, which Central shares, and run <code>docker compose up -d login central</code>.</p>
+<p>No Docker Compose, adicione as duas linhas ao bloco <code>&amp;service-env</code> do serviço <code>login</code>, que a Central compartilha, e rode <code>docker compose up -d login central</code>.</p>
 </li>
 <li>
-<p>Wait at least <code>Auth:TokenMinutes</code> (30 minutes), so every token signed with the old key has expired.</p>
+<p>Espere pelo menos <code>Auth:TokenMinutes</code> (30 minutos), para que todo token assinado com a chave antiga tenha expirado.</p>
 </li>
 <li>
-<p>Remove the old key: set <code>KITARPG_SIGNING_KEY</code> to the new key and drop the <code>SigningKeys</code> lines, then restart again.</p>
+<p>Remova a chave antiga: defina <code>KITARPG_SIGNING_KEY</code> com a chave nova e tire as linhas de <code>SigningKeys</code>, depois reinicie de novo.</p>
 </li>
 </ol>
-<p>&quot;Remember me&quot; tokens aren't signed with this key, so players stay remembered.</p>
-<h3 id="map-key-short-maintenance"><a class="anchor" href="#map-key-short-maintenance" aria-hidden="true">#</a>Map key (short maintenance)</h3>
-<p>Central accepts one map key at a time.</p>
+<p>Os tokens de &quot;Remember me&quot; não são assinados com essa chave, então os jogadores continuam lembrados.</p>
+<h3 id="map-key-short-maintenance"><a class="anchor" href="#map-key-short-maintenance" aria-hidden="true">#</a>Chave dos mapas (manutenção curta)</h3>
+<p>A Central aceita uma chave dos mapas por vez.</p>
 <ol>
-<li>Make a new key and put it in <code>KITARPG_MAP_KEY</code> (or <code>Central__MapKey</code> and each map's <code>KITARPG_CENTRAL_KEY</code>).</li>
-<li>With players out, restart Central and every map server together: <code>docker compose up -d central map-town map-forest map-crypt</code>.</li>
+<li>Crie uma chave nova e coloque-a em <code>KITARPG_MAP_KEY</code> (ou em <code>Central__MapKey</code> e no <code>KITARPG_CENTRAL_KEY</code> de cada mapa).</li>
+<li>Com os jogadores fora, reinicie a Central e todos os servidores de mapa juntos: <code>docker compose up -d central map-town map-forest map-crypt map-guild-hall</code>.</li>
 </ol>
-<p>Maps still on the old key are refused until they restart with the new one.</p>
-<h3 id="shop-map-key-no-downtime"><a class="anchor" href="#shop-map-key-no-downtime" aria-hidden="true">#</a>Shop map key (no downtime)</h3>
-<p>The Shop accepts every key in <code>Shop:MapKeys</code> plus <code>KITARPG_SHOP_KEY</code>.</p>
+<p>Os mapas que ainda estiverem com a chave antiga são recusados até reiniciarem com a nova.</p>
+<h3 id="shop-map-key-no-downtime"><a class="anchor" href="#shop-map-key-no-downtime" aria-hidden="true">#</a>Chave dos mapas para o Shop (sem parada)</h3>
+<p>O Shop aceita todas as chaves em <code>Shop:MapKeys</code> mais <code>KITARPG_SHOP_KEY</code>.</p>
 <ol>
-<li>Add the new key to the Shop as <code>Shop__MapKeys__0</code> next to the old one and restart the Shop.</li>
-<li>Give the map servers the new <code>KITARPG_SHOP_KEY</code> and restart them.</li>
-<li>Remove the old key from the Shop and restart it.</li>
+<li>Adicione a chave nova ao Shop como <code>Shop__MapKeys__0</code> ao lado da antiga e reinicie o Shop.</li>
+<li>Dê aos servidores de mapa o novo <code>KITARPG_SHOP_KEY</code> e reinicie-os.</li>
+<li>Remova a chave antiga do Shop e reinicie-o.</li>
 </ol>
-<h3 id="shop-admin-key"><a class="anchor" href="#shop-admin-key" aria-hidden="true">#</a>Shop admin key</h3>
-<p>Change <code>KITARPG_SHOP_ADMIN_KEY</code>, restart the Shop, and update the admin key on the editor's Shop page.</p>
-<h3 id="payment-secrets"><a class="anchor" href="#payment-secrets" aria-hidden="true">#</a>Payment secrets</h3>
-<p>Roll the webhook secret in your provider's dashboard (Stripe) or in your web shop, put the new value in <code>.env</code> and restart the Shop. Webhooks signed with the old secret are refused from then on.</p>
-<h3 id="database-password"><a class="anchor" href="#database-password" aria-hidden="true">#</a>Database password</h3>
+<h3 id="shop-admin-key"><a class="anchor" href="#shop-admin-key" aria-hidden="true">#</a>Chave de administração do Shop</h3>
+<p>Mude <code>KITARPG_SHOP_ADMIN_KEY</code>, reinicie o Shop e atualize a chave de administração na página Shop do editor.</p>
+<h3 id="payment-secrets"><a class="anchor" href="#payment-secrets" aria-hidden="true">#</a>Segredos de pagamento</h3>
+<p>Gere um novo segredo de webhook no painel do seu provedor (Stripe) ou na sua loja web, coloque o novo valor no <code>.env</code> e reinicie o Shop. Os webhooks assinados com o segredo antigo passam a ser recusados.</p>
+<h3 id="database-password"><a class="anchor" href="#database-password" aria-hidden="true">#</a>Senha do banco de dados</h3>
 <ol>
-<li>In PostgreSQL: <code>ALTER USER kitarpg PASSWORD '&lt;new password&gt;';</code></li>
-<li>Change <code>POSTGRES_PASSWORD</code> in <code>.env</code> (the compose file builds the connection strings from it).</li>
+<li>No PostgreSQL: <code>ALTER USER kitarpg PASSWORD '&lt;new password&gt;';</code></li>
+<li>Mude <code>POSTGRES_PASSWORD</code> no <code>.env</code> (o arquivo compose monta as strings de conexão a partir dela).</li>
 <li><code>docker compose up -d login central shop</code>.</li>
 </ol>
-<p><code>POSTGRES_PASSWORD</code> only sets the password when the <code>pgdata</code> volume is first created; afterwards, only <code>ALTER USER</code> changes it.</p>
-<h2 id="checklist-before-launch"><a class="anchor" href="#checklist-before-launch" aria-hidden="true">#</a>Checklist before launch</h2>
-<p><strong>Secrets</strong></p>
+<p><code>POSTGRES_PASSWORD</code> só define a senha quando o volume <code>pgdata</code> é criado pela primeira vez; depois disso, só <code>ALTER USER</code> a muda.</p>
+<h2 id="checklist-before-launch"><a class="anchor" href="#checklist-before-launch" aria-hidden="true">#</a>Lista de verificação antes do lançamento</h2>
+<p><strong>Segredos</strong></p>
 <ul>
-<li>[ ] Every value in <code>.env</code> changed from the sample, each made with <code>openssl rand -hex 32</code>.</li>
-<li>[ ] <code>.env</code> and <code>launcher.json</code> are out of version control and backups are stored safely.</li>
-<li>[ ] No service runs with <code>ASPNETCORE_ENVIRONMENT=Development</code>.</li>
+<li>[ ] Todos os valores do <code>.env</code> trocados em relação ao exemplo, cada um criado com <code>openssl rand -hex 32</code>.</li>
+<li>[ ] <code>.env</code> e <code>launcher.json</code> estão fora do controle de versão e as cópias de segurança estão guardadas com segurança.</li>
+<li>[ ] Nenhum serviço roda com <code>ASPNETCORE_ENVIRONMENT=Development</code>.</li>
 </ul>
-<p><strong>Network</strong></p>
+<p><strong>Rede</strong></p>
 <ul>
-<li>[ ] Firewall open only for 22/tcp, 80/tcp, 443/tcp and udp, and the map UDP ports.</li>
-<li>[ ] 5100, 5200, 5300, 5432 and 7700 not reachable from the internet.</li>
-<li>[ ] Both domains resolve and serve HTTPS with a valid certificate.</li>
-<li>[ ] <code>KITARPG_PUBLIC_ADDRESS</code> is the server's public address.</li>
-<li>[ ] Map servers on other machines use a private network or WireGuard, listed in <code>Central:MapNetworks</code>.</li>
+<li>[ ] Firewall aberto só para 22/tcp, 80/tcp, 443/tcp e udp, e as portas UDP dos mapas.</li>
+<li>[ ] 5100, 5200, 5300, 5432 e 7700 inacessíveis pela internet.</li>
+<li>[ ] Os dois domínios resolvem e servem HTTPS com um certificado válido.</li>
+<li>[ ] <code>KITARPG_PUBLIC_ADDRESS</code> é o endereço público do servidor.</li>
+<li>[ ] Servidores de mapa em outras máquinas usam uma rede privada ou WireGuard, listada em <code>Central:MapNetworks</code>.</li>
 </ul>
 <p><strong>Builds</strong></p>
 <ul>
-<li>[ ] The client was built with <strong>Build Mac Client</strong> or <strong>Build Windows Client</strong> (IL2CPP), with HTTPS <em>Login Url</em> and <em>Central Url</em>.</li>
-<li>[ ] <strong>KitARPG &gt; Check Build Separation</strong> shows no server code in the client.</li>
-<li>[ ] The test client is nowhere players can get it.</li>
-<li>[ ] Client and map servers built from the same code.</li>
+<li>[ ] O cliente foi gerado com <strong>Build Mac Client</strong> ou <strong>Build Windows Client</strong> (IL2CPP), com <em>Login Url</em> e <em>Central Url</em> em HTTPS.</li>
+<li>[ ] <strong>KitARPG &gt; Check Build Separation</strong> não mostra código de servidor no cliente.</li>
+<li>[ ] O cliente de teste não está em nenhum lugar onde os jogadores possam pegá-lo.</li>
+<li>[ ] Cliente e servidores de mapa gerados a partir do mesmo código.</li>
 </ul>
-<p><strong>Services</strong></p>
+<p><strong>Serviços</strong></p>
 <ul>
-<li>[ ] One Central and at most one Shop per database.</li>
-<li>[ ] <code>Proxy</code> settings trust only Caddy's address.</li>
-<li>[ ] <code>Modules:Allow</code> lists your modules, if you use any.</li>
-<li>[ ] The first admin is named, and GM levels in Game Settings &gt; Commands are what you want.</li>
+<li>[ ] Uma Central e no máximo um Shop por banco de dados.</li>
+<li>[ ] As configurações de <code>Proxy</code> confiam só no endereço do Caddy.</li>
+<li>[ ] <code>Modules:Allow</code> lista os seus módulos, se você usar algum.</li>
+<li>[ ] O primeiro administrador está definido, e os níveis de GM em Game Settings &gt; Commands são os que você quer.</li>
 </ul>
-<p><strong>Data</strong></p>
+<p><strong>Dados</strong></p>
 <ul>
-<li>[ ] Nightly database backups, copied off the server, and one restore tested.</li>
-<li>[ ] The Shop's admin API reachable only from the server or through an SSH tunnel.</li>
+<li>[ ] Cópias de segurança noturnas do banco de dados, copiadas para fora do servidor, e uma restauração testada.</li>
+<li>[ ] A API de administração do Shop acessível só a partir do servidor ou por um túnel SSH.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
 <li><a href="docker.html">Docker</a></li>
-<li><a href="configuration.html">Configuration</a></li>
-<li><a href="shop-service.html">Shop service</a></li>
-<li><a href="../devkit/security-rules.html">Security rules for your code</a></li>
+<li><a href="configuration.html">Configuração</a></li>
+<li><a href="shop-service.html">Serviço Shop</a></li>
+<li><a href="../devkit/security-rules.html">Regras de segurança para o seu código</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="docker.html"><span>Anterior</span>Docker</a><a class="next" href="shop-service.html"><span>Próximo</span>Shop service</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fservers%2Fsecurity.html">Relatar um problema nesta página</a></div></main>
-  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#the-model">The model</a></li><li class="l2"><a href="#secrets">Secrets</a></li><li class="l2"><a href="#tls-and-the-reverse-proxy">TLS and the reverse proxy</a></li><li class="l3"><a href="#reverse-proxy">Reverse proxy</a></li><li class="l2"><a href="#accounts-and-tokens">Accounts and tokens</a></li><li class="l2"><a href="#the-map-link">The map link</a></li><li class="l2"><a href="#the-shop">The Shop</a></li><li class="l2"><a href="#what-the-map-server-checks">What the map server checks</a></li><li class="l2"><a href="#builds">Builds</a></li><li class="l2"><a href="#running-the-services">Running the services</a></li><li class="l2"><a href="#rotating-keys">Rotating keys</a></li><li class="l3"><a href="#token-signing-key-no-downtime">Token signing key (no downtime)</a></li><li class="l3"><a href="#map-key-short-maintenance">Map key (short maintenance)</a></li><li class="l3"><a href="#shop-map-key-no-downtime">Shop map key (no downtime)</a></li><li class="l3"><a href="#shop-admin-key">Shop admin key</a></li><li class="l3"><a href="#payment-secrets">Payment secrets</a></li><li class="l3"><a href="#database-password">Database password</a></li><li class="l2"><a href="#checklist-before-launch">Checklist before launch</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="docker.html"><span>Anterior</span>Docker</a><a class="next" href="shop-service.html"><span>Próximo</span>Serviço Shop</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fservers%2Fsecurity.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#the-model">O modelo</a></li><li class="l2"><a href="#secrets">Segredos</a></li><li class="l2"><a href="#tls-and-the-reverse-proxy">TLS e o proxy reverso</a></li><li class="l3"><a href="#reverse-proxy">Proxy reverso</a></li><li class="l2"><a href="#accounts-and-tokens">Contas e tokens</a></li><li class="l2"><a href="#the-map-link">O link dos mapas</a></li><li class="l2"><a href="#the-shop">O Shop</a></li><li class="l2"><a href="#what-the-map-server-checks">O que o servidor de mapa verifica</a></li><li class="l2"><a href="#builds">Builds</a></li><li class="l2"><a href="#running-the-services">Rodar os serviços</a></li><li class="l2"><a href="#rotating-keys">Trocar as chaves</a></li><li class="l3"><a href="#token-signing-key-no-downtime">Chave de assinatura de tokens (sem parada)</a></li><li class="l3"><a href="#map-key-short-maintenance">Chave dos mapas (manutenção curta)</a></li><li class="l3"><a href="#shop-map-key-no-downtime">Chave dos mapas para o Shop (sem parada)</a></li><li class="l3"><a href="#shop-admin-key">Chave de administração do Shop</a></li><li class="l3"><a href="#payment-secrets">Segredos de pagamento</a></li><li class="l3"><a href="#database-password">Senha do banco de dados</a></li><li class="l2"><a href="#checklist-before-launch">Lista de verificação antes do lançamento</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
 <script src="../../assets/search-pt.js"></script>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>保存数据 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/saving-data.html">English</option><option value="../../es/devkit/saving-data.html">Español</option><option value="../../pt/devkit/saving-data.html">Português</option><option value="saving-data.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html" class="on" aria-current="page">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>保存数据</h1><p>把你游戏自己的数据放在哪里，才能在单人模式和在线模式中随角色一起保存：角色标记、<code>PlayerData</code>、实现 <code>IPlayerSave</code> 的组件、Central 模块中的表，以及数据资源。</p>
+<h2 id="pick-a-place"><a class="anchor" href="#pick-a-place" aria-hidden="true">#</a>选择存放位置</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>你要保存的内容</th>
+<th>放在哪里</th>
+<th>客户端能否看到</th>
+<th>保存方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每个角色的小整数：剧情标记、计数器、日期戳</td>
+<td><strong>角色标记</strong></td>
+<td>所有者可见，会同步</td>
+<td>随角色保存</td>
+</tr>
+<tr>
+<td>每个角色的结构化数值：列表、带属性的宠物、历史记录</td>
+<td><strong><code>PlayerData</code></strong></td>
+<td>永远看不到</td>
+<td>随角色保存</td>
+</tr>
+<tr>
+<td>同上，但由你自己的组件负责加载和写入</td>
+<td><strong><code>IPlayerSave</code> + <code>PlayerData</code></strong></td>
+<td>你自己同步的部分</td>
+<td>随角色保存</td>
+</tr>
+<tr>
+<td>需要跨角色查询的数据：排行榜、世界事件、整个服务器的计数器</td>
+<td><strong>Central 模块中的一张表</strong></td>
+<td>你发送的部分</td>
+<td>存在你自己的表中</td>
+</tr>
+<tr>
+<td>由内容设计者编辑的内容：配方、任务板、掉落列表</td>
+<td><strong><code>ScriptableObject</code> 或 <code>GameData</code> 资源</strong></td>
+<td>两种构建都会加载</td>
+<td>它是一个资源</td>
+</tr>
+</tbody>
+</table></div>
+<p>永远不要把游戏状态放进 <code>PlayerPrefs</code>：它存在玩家的电脑上，从不会到达服务器，并且玩家可以修改它。<code>PlayerPrefs</code> 用于客户端设置（见<a href="menus-and-settings-options.html">菜单和设置选项</a>）。</p>
+<h2 id="character-flags"><a class="anchor" href="#character-flags" aria-hidden="true">#</a>角色标记</h2>
+<p>标记是角色身上带名字的整数，由 <code>PlayerProgress</code> 保存。设计者已经通过 <code>SetFlagAction</code> 和 <code>FlagCondition</code> 使用它们，你也可以。</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>读取</th>
+<th>写入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>条件和动作</td>
+<td><code>facts.Flag(key)</code></td>
+<td><code>actor.SetFlag(key, value)</code>（服务器）</td>
+</tr>
+<tr>
+<td>服务器代码</td>
+<td><code>player.Facts.Flag(key)</code> 或 <code>progress.Flag(key)</code></td>
+<td><code>player.Facts.SetFlag(key, value)</code> 或 <code>progress.SetFlag(key, value)</code></td>
+</tr>
+<tr>
+<td>所有者的客户端</td>
+<td><code>PlayerProgress.Local.Flag(key)</code></td>
+<td>永远不能</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>值为 0 会删除该标记。对从未设置过的标记，<code>Flag</code> 返回 0。</li>
+<li>标记会同步给所有者（<code>PlayerProgress</code> 使用 Owner 同步），因此所有者的界面和条件可以读取它们。其他玩家永远看不到。</li>
+<li>标记变化时，服务器上会触发 <code>PlayerProgress.ServerFlagChanged</code>（<code>PlayerCharacter, string key, int value</code>）。</li>
+<li>在线时，Central 把它们保存在 <code>characters.extra</code> 的 <code>flags</code> 下；在单人模式中它们进入本地存档。</li>
+</ul>
+<p>悬赏示例把狩猎进度保存在标记中（<code>bounty.board</code>、<code>bounty.index</code>、<code>bounty.kills</code>、<code>bounty.day</code>、<code>bounty.done</code>）。每个角色最近几次狩猎的记录是一串名字，放不进标记，所以存放在 <code>PlayerData</code> 中（见下文）。</p>
+<p>标记保存的是 <code>int</code>。天数、计数或 id 的哈希放得下；文本和列表放不下。</p>
+<h2 id="playerdata"><a class="anchor" href="#playerdata" aria-hidden="true">#</a>PlayerData</h2>
+<p><code>PlayerData</code>（命名空间 <code>Blunnyn.KitARPG.Net</code>）在角色上以你自己的键保存 JSON。仅限服务器。</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T Get&lt;T&gt;(PlayerCharacter player, string key)</code></td>
+<td>返回该值；没有值或无法读取时返回一个新的 <code>T</code>。</td>
+</tr>
+<tr>
+<td><code>bool Set&lt;T&gt;(PlayerCharacter player, string key, T value)</code></td>
+<td>保存它。null 会删除该键。会超出限制时返回 false，此时什么都不改变。</td>
+</tr>
+<tr>
+<td><code>bool Has(PlayerCharacter player, string key)</code></td>
+<td>该键是否有值。</td>
+</tr>
+<tr>
+<td><code>void Remove(PlayerCharacter player, string key)</code></td>
+<td>删除它。</td>
+</tr>
+<tr>
+<td><code>string GetJson(...)</code>、<code>bool SetJson(...)</code></td>
+<td>同上，但使用原始 JSON。</td>
+</tr>
+</tbody>
+</table></div>
+<p>值是 <code>[Serializable]</code> 类，用 Unity 的 <code>JsonUtility</code> 读写：</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PetSave</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">petId</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">experience</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tricks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// On the server:</span>
+<span class="n">PetSave</span><span class="w"> </span><span class="n">pet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">PetSave</span><span class="o">&gt;</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mygame.pet&quot;</span><span class="p">);</span>
+<span class="n">pet</span><span class="p">.</span><span class="n">experience</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mygame.pet&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pet</span><span class="p">))</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Pet data too big.&quot;</span><span class="p">);</span>
+</code></pre>
+<h3 id="limits"><a class="anchor" href="#limits" aria-hidden="true">#</a>限制</h3>
+<p><code>CharacterDataRules</code>（命名空间 <code>Blunnyn.KitARPG.Shared.Characters</code>）在地图、Central 和本地存档中应用相同的限制：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>限制</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每个角色的键数（<code>MaxKeys</code>）</td>
+<td>64</td>
+</tr>
+<tr>
+<td>键的长度（<code>MaxKeyLength</code>）</td>
+<td>64 个字符</td>
+</tr>
+<tr>
+<td>键可用的字符</td>
+<td>字母、数字、<code>.</code>、<code>-</code> 和 <code>_</code></td>
+</tr>
+<tr>
+<td>所有值合计（<code>MaxBytes</code>）</td>
+<td>32 KB 的 UTF-8</td>
+</tr>
+</tbody>
+</table></div>
+<p>给每个键加上你游戏名字的前缀（<code>mygame.pet</code>），这样它永远不会与其他包的键冲突。</p>
+<h3 id="where-it-is-stored"><a class="anchor" href="#where-it-is-stored" aria-hidden="true">#</a>存放在哪里</h3>
+<p>在线时，Central 把这些值保存在 <code>characters.extra</code> 的 <code>game</code> 下，作为一个 JSON 对象（<code>{ &quot;mygame.pet&quot;: { ... } }</code>），可以在数据库中直接读取，也不需要表迁移。如果一次保存的数据超出限制，或包含不是有效 JSON 的值，就会保留已存储的数据、记录一条警告，并保存角色的其余部分。在单人模式中，同样的数据进入本地存档（玩家持久数据文件夹下的 <code>savegame.db</code>，由 <code>KitSettings</code> 中的 <em>Save File</em> 设置）。</p>
+<h3 id="what-jsonutility-can-and-can-t-do"><a class="anchor" href="#what-jsonutility-can-and-can-t-do" aria-hidden="true">#</a>JsonUtility 能做什么、不能做什么</h3>
+<ul>
+<li>公共字段和 <code>[SerializeField]</code> 私有字段。不支持属性。</li>
+<li><code>int</code>、<code>long</code>、<code>float</code>、<code>bool</code>、<code>string</code>、枚举、数组、<code>List&lt;T&gt;</code>、嵌套的 <code>[Serializable]</code> 类。</li>
+<li><strong>不支持字典。</strong> 改为保存两个平行列表，或一个键值类的列表。</li>
+<li>不支持多态，嵌套类不会是 null（它们读回来是空的）。</li>
+</ul>
+<h2 id="components-with-iplayersave"><a class="anchor" href="#components-with-iplayersave" aria-hidden="true">#</a>实现 IPlayerSave 的组件</h2>
+<p>当你自己的某个组件拥有它的数据时，实现 <code>IPlayerSave</code>，让套件来调用你：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>何时调用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void ServerLoad(PlayerCharacter player, CharacterState state)</code></td>
+<td>角色进入地图时，在套件的系统加载之后、玩家生成之前。</td>
+</tr>
+<tr>
+<td><code>void WriteTo(PlayerCharacter player, CharacterState state)</code></td>
+<td>每次保存之前。</td>
+</tr>
+</tbody>
+</table></div>
+<pre class="code"><code class="language-csharp"><span class="na">[RequireComponent(typeof(PlayerCharacter))]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerPet</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span><span class="p">,</span><span class="w"> </span><span class="n">IPlayerSave</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mygame.pet&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">PetSave</span><span class="w"> </span><span class="n">pet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PetSave</span><span class="p">();</span>
+
+<span class="w">    </span><span class="na">[SyncVar]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">petId</span><span class="p">;</span>
+<span class="w">    </span><span class="na">[SyncVar]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">petLevel</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerLoad</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">PetSave</span><span class="o">&gt;</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">);</span>
+<span class="w">        </span><span class="n">petId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pet</span><span class="p">.</span><span class="n">petId</span><span class="p">;</span>
+<span class="w">        </span><span class="n">petLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pet</span><span class="p">.</span><span class="n">level</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">pet</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p><strong>Saved Player Data</strong> 模板会生成一个这样的组件（见<a href="templates.html#saved-player-data">模板</a>）。</p>
+<div class="callout warning"><div class="callout-title">警告</div><p>在 <code>ServerLoad</code> 中玩家还没有生成，所以 <code>isServer</code> 为 false，<code>PlayerData.Set</code> 会拒绝写入。在那里只读取；在 <code>WriteTo</code> 或之后再写入。</p>
+</div>
+<h2 id="when-saves-happen"><a class="anchor" href="#when-saves-happen" aria-hidden="true">#</a>何时保存</h2>
+<p>在地图服务器上，角色会在以下时机保存：</p>
+<ul>
+<li>每隔 <em>Save Interval Seconds</em>（地图服务器上的 <code>saveIntervalSeconds</code>，60），</li>
+<li>玩家断开连接或切换地图时，</li>
+<li>服务器停止时。</li>
+</ul>
+<p>每次保存都会对每个 <code>IPlayerSave</code> 调用 <code>WriteTo</code>。在线时状态发往 Central，由 Central 写入数据库；在单人模式中它进入本地存档。在两次保存之间用 <code>PlayerData.Set</code> 设置的值保存在内存中的角色上，并随下一次保存一起写入。两次保存之间如果崩溃，会丢失上次保存以来的变化，套件自己的数据也是如此。</p>
+<p>在角色之间转移的物品和金币（交易、邮件、市场、公会仓库）使用 Central 中的事务，而不是定期保存；永远不要用 <code>PlayerData</code> 实现玩家之间的交换。</p>
+<h2 id="changing-the-format-later"><a class="anchor" href="#changing-the-format-later" aria-hidden="true">#</a>以后修改格式</h2>
+<p>保存的 JSON 比你的代码活得更久。要为旧数据做好准备：</p>
+<ul>
+<li>读取旧数据时，新字段取它们的默认值；给它们合理的默认值。</li>
+<li>已删除的字段会被忽略。</li>
+<li>改动较大时，在类中放一个版本号，并在 <code>ServerLoad</code> 中转换。</li>
+<li>重命名键会丢失旧数据。读取一次旧键，写入新键，然后 <code>Remove</code> 旧键。</li>
+</ul>
+<h2 id="tables-in-a-central-module"><a class="anchor" href="#tables-in-a-central-module" aria-hidden="true">#</a>Central 模块中的表</h2>
+<p>对于需要跨角色查询的数据（最佳猎人、全服计数器、你自己的拍卖历史），模块会在套件的数据库中、在套件自己的表旁边添加表，并带有自己的迁移。地图服务器通过 <code>CentralMessages</code> 访问它。见<a href="talking-to-central.html">与 Central 通信</a>和<a href="service-modules.html">服务模块</a>。单人模式没有 Central：保留一个按角色保存的后备方案，就像悬赏示例用它的 <code>PlayerData</code> 历史记录所做的那样。</p>
+<h2 id="data-assets"><a class="anchor" href="#data-assets" aria-hidden="true">#</a>数据资源</h2>
+<p>内容（配方、掉落列表、任务板定义）属于资源，而不是存档：</p>
+<ul>
+<li>只有你的代码引用它时，使用带 <code>[CreateAssetMenu]</code> 的普通 <code>ScriptableObject</code>。悬赏示例的 <code>BountyBoardData</code> 就是这样。</li>
+<li>当存档或消息必须通过 id 引用它时，使用 <code>GameData</code> 的子类。<code>GameData</code> 有一个 <code>Id</code>（由它的名字生成，随角色保存）、一个显示名称、一段描述和一个图标，<code>GameInstance.Database.TryGet&lt;T&gt;(id, out T)</code> 可以找到它。它必须能从游戏数据库访问到：列在数据库的某个数组中，或者由某个能访问到的对象的 <code>Visit</code> 方法交出。<strong>Project Check</strong> 会列出数据库访问不到的 <code>GameData</code> 资源。</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li><strong>保存在 <code>PlayerPrefs</code> 中。</strong> 它永远不会到达服务器。</li>
+<li><strong>在客户端读取 <code>PlayerData</code>。</strong> 它从不会被发送。界面需要什么就同步什么。</li>
+<li><strong>键没有前缀。</strong> 其他包可能会覆盖它们。</li>
+<li><strong>在保存的类中使用字典。</strong> <code>JsonUtility</code> 会悄悄丢掉它们。</li>
+<li><strong>忽略 <code>Set</code> 的返回值。</strong> 超出限制时什么都不会保存。</li>
+<li><strong>修改 <code>GameData</code> 的 id。</strong> 存档指向的是旧 id。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="player-systems.html">玩家系统</a></li>
+<li><a href="talking-to-central.html">与 Central 通信</a></li>
+<li><a href="service-modules.html">服务模块</a></li>
+<li><a href="../servers/database.html">数据库</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="formulas.html"><span>上一页</span>公式</a><a class="next" href="events.html"><span>下一页</span>事件</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fsaving-data.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#pick-a-place">选择存放位置</a></li><li class="l2"><a href="#character-flags">角色标记</a></li><li class="l2"><a href="#playerdata">PlayerData</a></li><li class="l3"><a href="#limits">限制</a></li><li class="l3"><a href="#where-it-is-stored">存放在哪里</a></li><li class="l3"><a href="#what-jsonutility-can-and-can-t-do">JsonUtility 能做什么、不能做什么</a></li><li class="l2"><a href="#components-with-iplayersave">实现 IPlayerSave 的组件</a></li><li class="l2"><a href="#when-saves-happen">何时保存</a></li><li class="l2"><a href="#changing-the-format-later">以后修改格式</a></li><li class="l2"><a href="#tables-in-a-central-module">Central 模块中的表</a></li><li class="l2"><a href="#data-assets">数据资源</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,164 +1,164 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Item effects · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Efectos de ítems · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/item-effects.html">English</option><option value="item-effects.html" selected>Español</option><option value="../../pt/devkit/item-effects.html">Português</option><option value="../../zh/devkit/item-effects.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html" class="on" aria-current="page">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">DevKit</div><h1>Item effects</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>How to write your own effects for consumable items: the <code>ItemEffect</code> base class, the <code>IItemUser</code> interface it works with, how using an item flows on the server, and complete examples.</p>
-<h2 id="what-an-item-effect-is"><a class="anchor" href="#what-an-item-effect-is" aria-hidden="true">#</a>What an item effect is</h2>
-<p>A consumable (<code>ConsumableData</code>: potions, scrolls, food) restores health and mana with its own fields, then runs a list of effects (<code>ConsumableData.effects</code>). The kit ships effects for experience, levels, learning skills, attribute and skill points, resetting attributes, casting a skill, adding a status and traveling. Anything else an item should do is a new effect class.</p>
-<p>Effects are <code>[Serializable]</code> classes held by reference with <code>[SerializeReference, PickType]</code>. Once yours compiles, it shows in the <strong>+</strong> type menu of <em>Effects</em> on every Consumable in <strong>KitARPG &gt; Game Database &gt; Items</strong>.</p>
-<p><strong>Where the file goes:</strong> the <code>Game</code> assembly. Tooltips on the client read the effect too.</p>
-<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h2>
-<p><code>ItemEffect</code> lives in <code>Blunnyn.KitARPG.Data</code>.</p>
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html">Efectos de skills</a></li><li><a href="item-effects.html" class="on" aria-current="page">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html">Hablar con Central</a></li><li><a href="service-modules.html">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Efectos de ítems</h1><p>Cómo escribir tus propios efectos para ítems consumibles: la clase base <code>ItemEffect</code>, la interfaz <code>IItemUser</code> con la que trabaja, cómo fluye el uso de un ítem en el servidor y ejemplos completos.</p>
+<h2 id="what-an-item-effect-is"><a class="anchor" href="#what-an-item-effect-is" aria-hidden="true">#</a>Qué es un efecto de ítem</h2>
+<p>Un consumible (<code>ConsumableData</code>: pociones, pergaminos, comida) recupera vida y maná con sus propios campos y luego ejecuta una lista de efectos (<code>ConsumableData.effects</code>). El kit trae efectos para experiencia, niveles, aprender skills, puntos de atributo y de skill, reiniciar atributos, lanzar una skill, agregar un estado y viajar. Cualquier otra cosa que deba hacer un ítem es una clase de efecto nueva.</p>
+<p>Los efectos son clases <code>[Serializable]</code> guardadas por referencia con <code>[SerializeReference, PickType]</code>. Cuando la tuya compila, aparece en el menú de tipos <strong>+</strong> de <em>Effects</em> en cada Consumable de <strong>KitARPG &gt; Game Database &gt; Items</strong>.</p>
+<p><strong>Dónde va el archivo:</strong> en el ensamblado <code>Game</code>. Los tooltips del cliente también leen el efecto.</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>La clase base</h2>
+<p><code>ItemEffect</code> vive en <code>Blunnyn.KitARPG.Data</code>.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Miembro</th>
+<th>Qué hace</th>
+<th>Por defecto</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>string Summary</code></td>
-<td>Short text in the item editor and the default tooltip line.</td>
-<td>The class name</td>
+<td>Texto corto en el editor de ítems y la línea predeterminada del tooltip.</td>
+<td>El nombre de la clase</td>
 </tr>
 <tr>
 <td><code>string Check(IItemUser user)</code></td>
-<td><strong>Server.</strong> Why this user can't use it now, or null. Every effect of the item is checked before any runs.</td>
+<td><strong>Servidor.</strong> Por qué este usuario no puede usarlo ahora, o null. Se revisan todos los efectos del ítem antes de que se ejecute alguno.</td>
 <td><code>null</code></td>
 </tr>
 <tr>
 <td><code>void Use(IItemUser user, ItemData item)</code></td>
-<td><strong>Server.</strong> Does the effect. <code>item</code> is what was used, to give back if something fails later. Required.</td>
+<td><strong>Servidor.</strong> Aplica el efecto. <code>item</code> es lo que se usó, para devolverlo si algo falla después. Obligatorio.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>void Describe(ItemDescription description, IItemUser viewer)</code></td>
-<td>Lines for the item's tooltip. <code>viewer</code> can be null (a tooltip in the editor, or for another player's item).</td>
-<td>Adds <code>Summary</code></td>
+<td>Líneas para el tooltip del ítem. <code>viewer</code> puede ser null (un tooltip en el editor, o del ítem de otro jugador).</td>
+<td>Agrega <code>Summary</code></td>
 </tr>
 <tr>
 <td><code>void Visit(Action&lt;GameData&gt; visit)</code></td>
-<td>Hands the game database every asset the effect points at.</td>
-<td>Nothing</td>
+<td>Le pasa a la base de datos del juego cada asset al que apunta el efecto.</td>
+<td>Nada</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="what-happens-when-a-player-uses-an-item"><a class="anchor" href="#what-happens-when-a-player-uses-an-item" aria-hidden="true">#</a>What happens when a player uses an item</h2>
+<h2 id="what-happens-when-a-player-uses-an-item"><a class="anchor" href="#what-happens-when-a-player-uses-an-item" aria-hidden="true">#</a>Qué pasa cuando un jugador usa un ítem</h2>
 <ol>
-<li>The owner's client asks (<code>PlayerInventory.Use(slot)</code>, from the bag, the item menu or a hotbar slot).</li>
-<li>On the server, <code>PlayerInventory</code> checks its own pace, that the slot holds an item, and that the item is usable (<code>IUsable</code>).</li>
-<li>It checks the cooldown of the item's <em>Cooldown Group</em> (<code>cooldownGroup</code>, default <code>potion</code>).</li>
-<li>It calls <code>ConsumableData.CheckUse(player)</code>: dead players can't use items, then every effect's <code>Check</code> runs in order and the first non-null answer stops everything. That answer is shown over the player's head.</li>
-<li>A consumable with no effects is usable only while it would restore something.</li>
-<li><code>ConsumableData.Use</code> restores health and mana, then calls every effect's <code>Use</code> in order.</li>
-<li>The cooldown starts and one item is taken from the stack.</li>
+<li>El cliente del dueño lo pide (<code>PlayerInventory.Use(slot)</code>, desde la bolsa, el menú del ítem o una casilla de la barra rápida).</li>
+<li>En el servidor, <code>PlayerInventory</code> revisa su propio ritmo, que la casilla tenga un ítem y que el ítem sea usable (<code>IUsable</code>).</li>
+<li>Revisa el tiempo de espera del <em>Cooldown Group</em> del ítem (<code>cooldownGroup</code>, por defecto <code>potion</code>).</li>
+<li>Llama a <code>ConsumableData.CheckUse(player)</code>: los jugadores muertos no pueden usar ítems; luego se ejecuta el <code>Check</code> de cada efecto en orden y la primera respuesta que no sea null detiene todo. Esa respuesta se muestra sobre la cabeza del jugador.</li>
+<li>Un consumible sin efectos solo se puede usar mientras recupere algo.</li>
+<li><code>ConsumableData.Use</code> recupera vida y maná, y luego llama al <code>Use</code> de cada efecto en orden.</li>
+<li>Empieza el tiempo de espera y se quita un ítem de la pila.</li>
 </ol>
-<p>Because every <code>Check</code> runs before any <code>Use</code>, an item with three effects either does all three or none. Put every reason to refuse in <code>Check</code>. Once <code>Use</code> runs, the item is spent.</p>
+<p>Como todos los <code>Check</code> se ejecutan antes de cualquier <code>Use</code>, un ítem con tres efectos hace los tres o ninguno. Pon cada motivo para rechazar en <code>Check</code>. Una vez que se ejecuta <code>Use</code>, el ítem ya se gastó.</p>
 <h2 id="iitemuser"><a class="anchor" href="#iitemuser" aria-hidden="true">#</a>IItemUser</h2>
-<p>The player as items see it. On the server it is the <code>PlayerCharacter</code>; on the client, tooltips get the local player.</p>
+<p>El jugador tal como lo ven los ítems. En el servidor es el <code>PlayerCharacter</code>; en el cliente, los tooltips reciben al jugador local.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
-<th>Where</th>
+<th>Miembro</th>
+<th>Qué hace</th>
+<th>Dónde</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>CharacterClass Class</code>, <code>int Level</code></td>
-<td>Class and level.</td>
-<td>Both</td>
+<td>Clase y nivel.</td>
+<td>Ambos</td>
 </tr>
 <tr>
 <td><code>IReadOnlyList&lt;string&gt; WornItemIds</code></td>
-<td>Item id at each equipment position, empty where nothing is worn.</td>
-<td>Both</td>
+<td>Id del ítem en cada posición de equipo, vacío donde no hay nada puesto.</td>
+<td>Ambos</td>
 </tr>
 <tr>
 <td><code>bool IsDead</code>, <code>int Health</code>, <code>int MaxHealth</code>, <code>int Mana</code>, <code>int MaxMana</code></td>
-<td>Current state.</td>
-<td>Both</td>
+<td>Estado actual.</td>
+<td>Ambos</td>
 </tr>
 <tr>
 <td><code>void RestoreHealth(int)</code>, <code>void RestoreMana(int)</code></td>
-<td>Restores.</td>
-<td>Server</td>
+<td>Recupera.</td>
+<td>Servidor</td>
 </tr>
 <tr>
 <td><code>long ExperienceToNext</code></td>
-<td>Experience still needed, 0 at the highest level.</td>
-<td>Both</td>
+<td>Experiencia que aún falta, 0 en el nivel máximo.</td>
+<td>Ambos</td>
 </tr>
 <tr>
 <td><code>void GainExperience(long)</code></td>
-<td>Adds experience, with level ups.</td>
-<td>Server</td>
+<td>Suma experiencia, con subidas de nivel.</td>
+<td>Servidor</td>
 </tr>
 <tr>
 <td><code>void GainLevel()</code></td>
-<td>One level up, as if the experience had been earned.</td>
-<td>Server</td>
+<td>Sube un nivel, como si se hubiera ganado la experiencia.</td>
+<td>Servidor</td>
 </tr>
 <tr>
 <td><code>void GainPoints(int attributePoints, int skillPoints)</code></td>
-<td>Adds points to spend.</td>
-<td>Server</td>
+<td>Suma puntos para repartir.</td>
+<td>Servidor</td>
 </tr>
 <tr>
 <td><code>int SpentAttributePoints</code></td>
-<td>Points spent so far.</td>
-<td>Both</td>
+<td>Puntos repartidos hasta ahora.</td>
+<td>Ambos</td>
 </tr>
 <tr>
 <td><code>void ResetAttributes()</code></td>
-<td>Gives back every spent attribute point.</td>
-<td>Server</td>
+<td>Devuelve todos los puntos de atributo repartidos.</td>
+<td>Servidor</td>
 </tr>
 <tr>
 <td><code>string CanLearnSkill(SkillData, int rank)</code>, <code>void LearnSkill(SkillData, int rank)</code></td>
-<td>Skill learning within the skill's rules.</td>
-<td>Check both, learn server</td>
+<td>Aprender skills dentro de las reglas de la skill.</td>
+<td>Revisar en ambos, aprender en servidor</td>
 </tr>
 <tr>
 <td><code>string CanCastFromItem(SkillData)</code>, <code>void CastFromItem(SkillData, int rank)</code></td>
-<td>Casts a skill without knowing it, with no mana cost or cooldown.</td>
-<td>Check both, cast server</td>
+<td>Lanza una skill sin conocerla, sin costo de maná ni tiempo de espera.</td>
+<td>Revisar en ambos, lanzar en servidor</td>
 </tr>
 <tr>
 <td><code>void AddStatus(StatusData, int level, float seconds)</code></td>
-<td>Adds a status.</td>
-<td>Server</td>
+<td>Agrega un estado.</td>
+<td>Servidor</td>
 </tr>
 <tr>
 <td><code>void TravelTo(MapData, Vector3, ItemData refund)</code></td>
-<td>Moves the player to a map; gives <code>refund</code> back if the trip fails.</td>
-<td>Server</td>
+<td>Lleva al jugador a un mapa; devuelve <code>refund</code> si el viaje falla.</td>
+<td>Servidor</td>
 </tr>
 </tbody>
 </table></div>
-<p>For anything not on the interface, cast to <code>PlayerCharacter</code> (namespace <code>Blunnyn.KitARPG.Net</code>) and use its components. The <code>Game</code> assembly references <code>KitARPG.Net</code>, so this works:</p>
+<p>Para todo lo que no esté en la interfaz, convierte a <code>PlayerCharacter</code> (namespace <code>Blunnyn.KitARPG.Net</code>) y usa sus componentes. El ensamblado <code>Game</code> referencia <code>KitARPG.Net</code>, así que esto funciona:</p>
 <pre class="code"><code class="language-csharp"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
 <span class="kt">var</span><span class="w"> </span><span class="n">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerInventory</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre>
-<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
-<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Item Effect</strong> makes an experience effect. See <a href="templates.html#item-effect">Templates</a>.</p>
-<h2 id="example-gold-pouch"><a class="anchor" href="#example-gold-pouch" aria-hidden="true">#</a>Example: gold pouch</h2>
-<p>Opens into a random amount of gold. The purse limit is respected; what doesn't fit goes to the bank.</p>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Ejemplo: la plantilla</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Item Effect</strong> crea un efecto de experiencia. Consulta <a href="templates.html#item-effect">Plantillas</a>.</p>
+<h2 id="example-gold-pouch"><a class="anchor" href="#example-gold-pouch" aria-hidden="true">#</a>Ejemplo: bolsa de oro</h2>
+<p>Se abre y da una cantidad de oro al azar. No se puede abrir con el monedero lleno (<code>Check</code> lo rechaza con &quot;Your purse is full&quot;); cuando el monedero tiene lugar pero no para todo, <code>ServerReceiveGold</code> manda el resto al banco.</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
@@ -194,9 +194,9 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p><code>Check</code> and <code>Use</code> run on the server, so the cast is safe there. <code>Describe</code> never casts the viewer: it may be null.</p>
-<h2 id="example-recall-to-town"><a class="anchor" href="#example-recall-to-town" aria-hidden="true">#</a>Example: recall to town</h2>
-<p>Sends the player to the game's start map. If the trip fails, the scroll comes back.</p>
+<p><code>Check</code> y <code>Use</code> se ejecutan en el servidor, así que ahí la conversión es segura. <code>Describe</code> nunca convierte al <code>viewer</code>: puede ser null.</p>
+<h2 id="example-recall-to-town"><a class="anchor" href="#example-recall-to-town" aria-hidden="true">#</a>Ejemplo: regresar a la ciudad</h2>
+<p>Envía al jugador al mapa de inicio del juego. Si el viaje falla, el pergamino vuelve.</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">RecallEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
 <span class="p">{</span>
@@ -218,9 +218,9 @@
 <span class="w">        </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Takes you back to town&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<p>The kit's <code>TravelItemEffect</code> does the same for a fixed map and position set in the inspector.</p>
-<h2 id="example-an-elixir-that-grants-a-box-of-items"><a class="anchor" href="#example-an-elixir-that-grants-a-box-of-items" aria-hidden="true">#</a>Example: an elixir that grants a box of items</h2>
-<p>Gives items from a list, only when they all fit. <code>IPlayerActor</code> (the player as actions see it) has <code>RoomFor</code> and <code>GiveItem</code>; get it from <code>PlayerCharacter.Facts</code>.</p>
+<p>El <code>TravelItemEffect</code> del kit hace lo mismo para un mapa y una posición fijos que se ponen en el inspector.</p>
+<h2 id="example-a-box-of-items"><a class="anchor" href="#example-a-box-of-items" aria-hidden="true">#</a>Ejemplo: una caja de ítems</h2>
+<p>Se abre y da cada ítem de su lista, y no se puede usar si alguna entrada no cabe en la bolsa. <code>IPlayerActor</code> (el jugador tal como lo ven las acciones) tiene <code>RoomFor</code> y <code>GiveItem</code>; lo obtienes de <code>PlayerCharacter.Facts</code>.</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BoxEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
 <span class="p">{</span>
@@ -266,79 +266,79 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p><code>RoomFor</code> checks each entry on its own against the current bag. Several entries that each fit alone may not fit together; for an exact check, test the whole list with <code>PlayerInventory.ServerRoomFor</code>, or give with <code>GiveOrBank</code> so nothing is ever lost (see <a href="../gameplay/inventory-and-bank.html">Inventory and bank</a>).</p>
+<p><code>RoomFor</code> revisa cada entrada por separado contra la bolsa actual. Varias entradas que caben solas pueden no caber juntas; para una revisión exacta, prueba la lista completa con <code>PlayerInventory.ServerRoomFor</code>, o entrega con <code>GiveOrBank</code> para que nunca se pierda nada (consulta <a href="../gameplay/inventory-and-bank.html">Inventario y banco</a>).</p>
 <h2 id="tooltips"><a class="anchor" href="#tooltips" aria-hidden="true">#</a>Tooltips</h2>
-<p><code>Describe</code> builds the tooltip lines. <code>ItemDescription.Add(text, kind, icon)</code> adds a line; the kinds are:</p>
+<p><code>Describe</code> arma las líneas del tooltip. <code>ItemDescription.Add(text, kind, icon)</code> agrega una línea; los tipos son:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Kind</th>
-<th>Used for</th>
+<th>Tipo</th>
+<th>Se usa para</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Normal</code></td>
-<td>Plain text.</td>
+<td>Texto simple.</td>
 </tr>
 <tr>
 <td><code>Heading</code></td>
-<td>A section title.</td>
+<td>Un título de sección.</td>
 </tr>
 <tr>
 <td><code>Effect</code></td>
-<td>What the item does.</td>
+<td>Lo que hace el ítem.</td>
 </tr>
 <tr>
 <td><code>Muted</code></td>
-<td>Secondary details, like requirements the viewer meets.</td>
+<td>Detalles secundarios, como requisitos que el <code>viewer</code> cumple.</td>
 </tr>
 <tr>
 <td><code>Warning</code></td>
-<td>Requirements the viewer doesn't meet.</td>
+<td>Requisitos que el <code>viewer</code> no cumple.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Use the <code>viewer</code> to color requirements: <code>Warning</code> when the local player can't use it, <code>Muted</code> when they can. Always handle <code>viewer == null</code>.</p>
-<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<p>Usa el <code>viewer</code> para colorear los requisitos: <code>Warning</code> cuando el jugador local no puede usarlo, <code>Muted</code> cuando sí puede. Contempla siempre <code>viewer == null</code>.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Servidor y cliente</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Runs on</th>
+<th>Se ejecuta en</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Check</code>, <code>Use</code></td>
-<td>Server. The client never decides whether an item works.</td>
+<td>Servidor. El cliente nunca decide si un ítem funciona.</td>
 </tr>
 <tr>
 <td><code>Describe</code>, <code>Summary</code></td>
-<td>Client (tooltips) and editor.</td>
+<td>Cliente (tooltips) y editor.</td>
 </tr>
 </tbody>
 </table></div>
-<p>In single player both sides run on the same machine, with the same code.</p>
-<h2 id="other-kinds-of-usable-items"><a class="anchor" href="#other-kinds-of-usable-items" aria-hidden="true">#</a>Other kinds of usable items</h2>
-<p>Effects cover consumables. For a whole new kind of item, subclass <code>ItemData</code> (or <code>ConsumableData</code>) and implement the interfaces that apply (<code>IUsable</code>, <code>IConsumable</code>, <code>IEquippable</code>). <code>ConsumableData.CheckUse</code> and <code>Use</code> are <code>virtual</code>. To step in for every item use, override <code>PlayerInventory.UseItem</code> in a subclass of <code>PlayerInventory</code> (see <a href="overriding-kit-behaviour.html">Overriding kit behaviour</a>).</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<p>En un jugador, los dos lados se ejecutan en la misma máquina, con el mismo código.</p>
+<h2 id="other-kinds-of-usable-items"><a class="anchor" href="#other-kinds-of-usable-items" aria-hidden="true">#</a>Otros tipos de ítems usables</h2>
+<p>Los efectos cubren los consumibles. Para un tipo de ítem completamente nuevo, hereda de <code>ItemData</code> (o <code>ConsumableData</code>) e implementa las interfaces que correspondan (<code>IUsable</code>, <code>IConsumable</code>, <code>IEquippable</code>). <code>ConsumableData.CheckUse</code> y <code>Use</code> son <code>virtual</code>. Para intervenir en cada uso de ítem, sobrescribe <code>PlayerInventory.UseItem</code> en una subclase de <code>PlayerInventory</code> (consulta <a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a>).</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
 <ul>
-<li><strong>Refusing inside <code>Use</code>.</strong> By then the item is spent. Refuse in <code>Check</code>.</li>
-<li><strong>Reading <code>viewer</code> without a null check</strong> in <code>Describe</code>.</li>
-<li><strong>Giving items with <code>Inventory.Add</code> straight on the inventory.</strong> Go through <code>PlayerInventory</code> (<code>Give</code>, <code>GiveOrBank</code>, <code>ServerReceive</code>) or <code>IPlayerActor.GiveItem</code>, so the bag syncs, weight updates and saving stays right.</li>
-<li><strong>Forgetting <code>Visit</code></strong> for items, statuses, maps or skills the effect points at.</li>
-<li><strong>Storing state in fields at runtime.</strong> One effect instance serves every copy of the item for every player.</li>
+<li><strong>Rechazar dentro de <code>Use</code>.</strong> Para entonces el ítem ya se gastó. Rechaza en <code>Check</code>.</li>
+<li><strong>Leer <code>viewer</code> sin revisar si es null</strong> en <code>Describe</code>.</li>
+<li><strong>Dar ítems con <code>Inventory.Add</code> directamente sobre el inventario.</strong> Pasa por <code>PlayerInventory</code> (<code>Give</code>, <code>GiveOrBank</code>, <code>ServerReceive</code>) o por <code>IPlayerActor.GiveItem</code>, para que la bolsa se sincronice, el peso se actualice y el guardado quede bien.</li>
+<li><strong>Olvidar <code>Visit</code></strong> para los ítems, estados, mapas o skills a los que apunta el efecto.</li>
+<li><strong>Guardar estado en campos durante la ejecución.</strong> Una sola instancia del efecto sirve a todas las copias del ítem para todos los jugadores.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
-<li><a href="../content/items.html">Items</a></li>
-<li><a href="skill-effects.html">Skill effects</a></li>
-<li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li>
-<li><a href="templates.html">Templates</a></li>
+<li><a href="../content/items.html">Ítems</a></li>
+<li><a href="skill-effects.html">Efectos de skills</a></li>
+<li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li>
+<li><a href="templates.html">Plantillas</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="skill-effects.html"><span>Anterior</span>Skill effects</a><a class="next" href="conditions-and-actions-in-code.html"><span>Siguiente</span>Conditions and actions in code</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fitem-effects.html">Reportar un problema en esta página</a></div></main>
-  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-an-item-effect-is">What an item effect is</a></li><li class="l2"><a href="#the-base-class">The base class</a></li><li class="l2"><a href="#what-happens-when-a-player-uses-an-item">What happens when a player uses an item</a></li><li class="l2"><a href="#iitemuser">IItemUser</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-gold-pouch">Example: gold pouch</a></li><li class="l2"><a href="#example-recall-to-town">Example: recall to town</a></li><li class="l2"><a href="#example-an-elixir-that-grants-a-box-of-items">Example: an elixir that grants a box of items</a></li><li class="l2"><a href="#tooltips">Tooltips</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#other-kinds-of-usable-items">Other kinds of usable items</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="skill-effects.html"><span>Anterior</span>Efectos de skills</a><a class="next" href="conditions-and-actions-in-code.html"><span>Siguiente</span>Condiciones y acciones en código</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fitem-effects.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-an-item-effect-is">Qué es un efecto de ítem</a></li><li class="l2"><a href="#the-base-class">La clase base</a></li><li class="l2"><a href="#what-happens-when-a-player-uses-an-item">Qué pasa cuando un jugador usa un ítem</a></li><li class="l2"><a href="#iitemuser">IItemUser</a></li><li class="l2"><a href="#example-the-template">Ejemplo: la plantilla</a></li><li class="l2"><a href="#example-gold-pouch">Ejemplo: bolsa de oro</a></li><li class="l2"><a href="#example-recall-to-town">Ejemplo: regresar a la ciudad</a></li><li class="l2"><a href="#example-a-box-of-items">Ejemplo: una caja de ítems</a></li><li class="l2"><a href="#tooltips">Tooltips</a></li><li class="l2"><a href="#server-and-client">Servidor y cliente</a></li><li class="l2"><a href="#other-kinds-of-usable-items">Otros tipos de ítems usables</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
 <script src="../../assets/search-es.js"></script>

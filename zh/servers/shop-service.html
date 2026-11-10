@@ -1,93 +1,93 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shop service · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Shop 服务 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/shop-service.html">English</option><option value="../../es/servers/shop-service.html">Español</option><option value="../../pt/servers/shop-service.html">Português</option><option value="shop-service.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html" class="on" aria-current="page">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">服务器与部署</div><h1>Shop service</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>The Shop is an optional .NET service that runs the in-game premium shop: the catalog, the premium balances of every account, purchases and gifts, and real-money payments. This page covers how it fits with the rest, its catalog file, every endpoint and setting, payments, and how to run it locally and in production.</p>
-<p>For the player side (the shop window, premium currencies) see <a href="../gameplay/cash-shop.html">Cash shop</a>. For editing offers in the editor see <a href="../editor/shop-page.html">Shop page</a>.</p>
-<h2 id="how-it-fits"><a class="anchor" href="#how-it-fits" aria-hidden="true">#</a>How it fits</h2>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">架构</a></li><li><a href="services.html">服务</a></li><li><a href="launcher.html">启动器</a></li><li><a href="database.html">数据库</a></li><li><a href="configuration.html">配置</a></li><li><a href="builds.html">构建</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">安全</a></li><li><a href="shop-service.html" class="on" aria-current="page">Shop 服务</a></li><li><a href="performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">服务器与部署</div><h1>Shop 服务</h1><p>Shop 是一个可选的 .NET 服务，负责运行游戏内的高级商店：目录、每个账号的高级货币余额、购买和赠礼，以及真实货币支付。本页介绍它如何与其他部分配合、它的目录文件、每个端点和设置、支付，以及如何在本地和生产环境中运行它。</p>
+<p>玩家一侧（商店窗口、高级货币）见<a href="../gameplay/cash-shop.html">商城</a>。在编辑器中编辑商品见 <a href="../editor/shop-page.html">Shop 页面</a>。</p>
+<h2 id="how-it-fits"><a class="anchor" href="#how-it-fits" aria-hidden="true">#</a>它如何配合</h2>
 <ul>
-<li><strong>Separate and optional.</strong> Central knows nothing about the Shop. Without it the game runs normally and the shop button doesn't show.</li>
-<li><strong>Online only.</strong> Single player games have no shop.</li>
-<li><strong>Players never reach it.</strong> The shop window asks the map server; the map server calls the Shop's internal API with its key (<code>X-Shop-Key</code>). Only payment webhooks come from outside, through Caddy.</li>
-<li><strong>Same database.</strong> It uses the database Login and Central use. Login must have started once so the <code>items</code> catalog is filled.</li>
-<li><strong>Purchases travel by mail.</strong> A buy writes the charge and a letter with the bought items in one transaction. Map servers take shop letters into the bag at once (unless <em>Shop Auto Take</em> (<code>shopAutoTake</code>) is off in Game Settings); if the bag and the bank are full, the letter waits in the mailbox and the player is told.</li>
+<li><strong>独立且可选。</strong> Central 对 Shop 一无所知。没有它游戏照常运行，只是不显示商店按钮。</li>
+<li><strong>仅限在线模式。</strong> 单人模式游戏没有商店。</li>
+<li><strong>玩家从不直接访问它。</strong> 商店窗口向地图服务器请求；地图服务器用它的密钥（<code>X-Shop-Key</code>）调用 Shop 的内部 API。只有支付 webhook 从外部经 Caddy 进入。</li>
+<li><strong>同一个数据库。</strong> 它使用 Login 和 Central 使用的数据库。Login 必须至少启动过一次，使 <code>items</code> 目录被填充。</li>
+<li><strong>购买的物品通过邮件送达。</strong> 一次购买在同一个事务中写入扣款和一封装有所购物品的信件。地图服务器会立即把商店信件收进背包（除非在 Game Settings 中关闭了 <em>Shop Auto Take</em>（<code>shopAutoTake</code>））；如果背包和银行都满了，信件会留在邮箱中并通知玩家。</li>
 </ul>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Who</th>
-<th>Talks to the Shop with</th>
-<th>Over</th>
+<th>谁</th>
+<th>用什么与 Shop 通信</th>
+<th>通过什么</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Map servers</td>
-<td>Internal API, <code>X-Shop-Key</code></td>
-<td>HTTP on the private network, port 5300</td>
+<td>地图服务器</td>
+<td>内部 API，<code>X-Shop-Key</code></td>
+<td>私有网络上的 HTTP，端口 5300</td>
 </tr>
 <tr>
-<td>Payment providers</td>
-<td>Webhooks, signed</td>
-<td>HTTPS through Caddy on the Login domain</td>
+<td>支付服务商</td>
+<td>Webhook，带签名</td>
+<td>经 Caddy 的 HTTPS，位于 Login 域名上</td>
 </tr>
 <tr>
-<td>You and the editor</td>
-<td>Admin API, <code>X-Admin-Key</code></td>
-<td>HTTP on <code>127.0.0.1:5300</code>, or an SSH tunnel</td>
+<td>你和编辑器</td>
+<td>管理 API，<code>X-Admin-Key</code></td>
+<td><code>127.0.0.1:5300</code> 上的 HTTP，或 SSH 隧道</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="running-it"><a class="anchor" href="#running-it" aria-hidden="true">#</a>Running it</h2>
-<h3 id="on-your-computer-from-the-editor"><a class="anchor" href="#on-your-computer-from-the-editor" aria-hidden="true">#</a>On your computer, from the editor</h3>
-<p>Open the <strong>Shop</strong> page of the KitARPG window, turn the shop on and press <strong>Start the shop</strong>. The editor runs the launcher with <code>--headless --shop-only</code>, with keys made for this computer and the catalog in <code>UserSettings/KitARPG/shop-conf.json</code>. Maps in Play find it on their own. See <a href="../editor/shop-page.html">Shop page</a>.</p>
-<h3 id="with-the-launcher"><a class="anchor" href="#with-the-launcher" aria-hidden="true">#</a>With the launcher</h3>
-<p>Tick <strong>Premium shop</strong> in the launcher window, or set <code>ShopEnabled</code> and <code>ShopAutoStart</code> in <code>launcher.json</code>. The Shop starts with Login and Central on port <code>ShopPort</code> (5300), and the maps Central starts get its address and key. See <a href="launcher.html#launcher-json">Launcher</a>.</p>
-<h3 id="by-hand-for-development"><a class="anchor" href="#by-hand-for-development" aria-hidden="true">#</a>By hand, for development</h3>
+<h2 id="running-it"><a class="anchor" href="#running-it" aria-hidden="true">#</a>运行它</h2>
+<h3 id="on-your-computer-from-the-editor"><a class="anchor" href="#on-your-computer-from-the-editor" aria-hidden="true">#</a>在你的电脑上，从编辑器</h3>
+<p>打开 KitARPG 窗口的 <strong>Shop</strong> 页面，开启商店并按 <strong>Start the shop</strong>。编辑器以 <code>--headless --shop-only</code> 运行启动器，使用为这台电脑生成的密钥，目录位于 <code>UserSettings/KitARPG/shop-conf.json</code>。处于 Play 中的地图会自行找到它。见 <a href="../editor/shop-page.html">Shop 页面</a>。</p>
+<h3 id="with-the-launcher"><a class="anchor" href="#with-the-launcher" aria-hidden="true">#</a>使用启动器</h3>
+<p>在启动器窗口中勾选 <strong>Premium shop</strong>，或在 <code>launcher.json</code> 中设置 <code>ShopEnabled</code> 和 <code>ShopAutoStart</code>。Shop 随 Login 和 Central 一起在端口 <code>ShopPort</code>（5300）上启动，Central 启动的地图会获得它的地址和密钥。见<a href="launcher.html#launcher-json">启动器</a>。</p>
+<h3 id="by-hand-for-development"><a class="anchor" href="#by-hand-for-development" aria-hidden="true">#</a>手动运行，用于开发</h3>
 <pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services
 <span class="nv">ASPNETCORE_ENVIRONMENT</span><span class="o">=</span>Development<span class="w"> </span><span class="se">\</span>
 <span class="nv">Database__ConnectionString</span><span class="o">=</span><span class="s2">&quot;Data Source=/full/path/to/kitarpg.db&quot;</span><span class="w"> </span><span class="se">\</span>
 dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Shop<span class="w">          </span><span class="c1"># http://localhost:5300</span>
 </code></pre>
-<p>In <code>Development</code> the map key is <code>dev-shop-key</code> and the admin key <code>dev-shop-admin-key</code> (<code>appsettings.Development.json</code>). Point it at the same SQLite file as Login and Central.</p>
-<h3 id="in-docker-compose"><a class="anchor" href="#in-docker-compose" aria-hidden="true">#</a>In Docker Compose</h3>
+<p>在 <code>Development</code> 中，地图密钥为 <code>dev-shop-key</code>，管理密钥为 <code>dev-shop-admin-key</code>（<code>appsettings.Development.json</code>）。让它指向与 Login 和 Central 相同的 SQLite 文件。</p>
+<h3 id="in-docker-compose"><a class="anchor" href="#in-docker-compose" aria-hidden="true">#</a>在 Docker Compose 中</h3>
 <pre class="code"><code class="language-bash">docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>shop<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d
 </code></pre>
-<p>Set <code>KITARPG_SHOP_KEY</code> and <code>KITARPG_SHOP_ADMIN_KEY</code> in <code>Deploy/.env</code> first. See <a href="docker.html#the-shop">Docker</a>.</p>
-<h3 id="how-map-servers-find-it"><a class="anchor" href="#how-map-servers-find-it" aria-hidden="true">#</a>How map servers find it</h3>
+<p>先在 <code>Deploy/.env</code> 中设置 <code>KITARPG_SHOP_KEY</code> 和 <code>KITARPG_SHOP_ADMIN_KEY</code>。见 <a href="docker.html#the-shop">Docker</a>。</p>
+<h3 id="how-map-servers-find-it"><a class="anchor" href="#how-map-servers-find-it" aria-hidden="true">#</a>地图服务器如何找到它</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Map server reads</th>
-<th>What it is</th>
+<th>地图服务器读取</th>
+<th>是什么</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-shop &lt;url&gt;</code> or <code>KITARPG_SHOP_URL</code></td>
-<td>The Shop's address, for example <code>http://shop:5300</code></td>
+<td><code>-shop &lt;url&gt;</code> 或 <code>KITARPG_SHOP_URL</code></td>
+<td>Shop 的地址，例如 <code>http://shop:5300</code></td>
 </tr>
 <tr>
-<td><code>-shopKey &lt;key&gt;</code> or <code>KITARPG_SHOP_KEY</code></td>
-<td>One of the Shop's map keys</td>
+<td><code>-shopKey &lt;key&gt;</code> 或 <code>KITARPG_SHOP_KEY</code></td>
+<td>Shop 的地图密钥之一</td>
 </tr>
 </tbody>
 </table></div>
-<p>In the editor, a map in Play without these uses the Shop page's settings (<code>UserSettings/KitARPG/launcher.json</code>). A built map server refuses a plain <code>http://</code> address on a public IP, since the key would cross the internet readable: use <code>https://</code> or a private address.</p>
-<h2 id="the-catalog-file"><a class="anchor" href="#the-catalog-file" aria-hidden="true">#</a>The catalog file</h2>
-<p><code>shop-conf.json</code>, at <code>Shop:CatalogPath</code> (relative to the service's folder unless absolute). A sample ships next to the service; if the configured file is missing, the first start copies the sample there.</p>
+<p>在编辑器中，处于 Play 中且没有这些参数的地图使用 Shop 页面的设置（<code>UserSettings/KitARPG/launcher.json</code>）。构建好的地图服务器会拒绝公网 IP 上的普通 <code>http://</code> 地址，因为密钥会以可读的形式穿过互联网：请使用 <code>https://</code> 或私有地址。</p>
+<h2 id="the-catalog-file"><a class="anchor" href="#the-catalog-file" aria-hidden="true">#</a>目录文件</h2>
+<p><code>shop-conf.json</code>，位于 <code>Shop:CatalogPath</code>（除非是绝对路径，否则相对于服务所在的文件夹）。服务旁边附带一个示例；如果配置的文件不存在，首次启动时会把示例复制过去。</p>
 <pre class="code"><code class="language-json"><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;mailSender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shop&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;mailDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
@@ -103,421 +103,421 @@ dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="top-level"><a class="anchor" href="#top-level" aria-hidden="true">#</a>Top level</h3>
+<h3 id="top-level"><a class="anchor" href="#top-level" aria-hidden="true">#</a>顶层</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>mailSender</code></td>
-<td>Sender name on purchase letters</td>
+<td>购买信件上的发件人名称</td>
 <td><code>Shop</code></td>
 </tr>
 <tr>
 <td><code>mailDays</code></td>
-<td>Days a purchase letter stays in the mailbox</td>
+<td>购买信件在邮箱中保留的天数</td>
 <td>30</td>
 </tr>
 <tr>
 <td><code>products</code></td>
-<td>What each real-money product gives (below)</td>
-<td>Empty</td>
+<td>每个真实货币产品提供什么（见下文）</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>offers</code></td>
-<td>What the shop sells for premium currency (below)</td>
-<td>Empty</td>
+<td>商店以高级货币出售什么（见下文）</td>
+<td>空</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="offers"><a class="anchor" href="#offers" aria-hidden="true">#</a>Offers</h3>
+<h3 id="offers"><a class="anchor" href="#offers" aria-hidden="true">#</a>商品</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>id</code></td>
-<td>Unique id, up to 64 characters. Never change it once sold: buy limits and history use it</td>
-<td>Required</td>
+<td>唯一 id，最多 64 个字符。一旦售出就不要再修改：购买限制和历史记录都使用它</td>
+<td>必填</td>
 </tr>
 <tr>
-<td><code>name</code>, <code>description</code></td>
-<td>What players read</td>
-<td>Empty</td>
+<td><code>name</code>、<code>description</code></td>
+<td>玩家看到的内容</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>category</code></td>
-<td>The entry it shows under on the shop's left side</td>
+<td>它显示在商店左侧哪个条目下</td>
 <td><code>Featured</code></td>
 </tr>
 <tr>
 <td><code>icon</code></td>
-<td>Item whose icon the card shows. Empty uses the first item's</td>
-<td>Empty</td>
+<td>卡片显示其图标的物品。为空则使用第一个物品的图标</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>image</code></td>
-<td>Key of the card and detail picture in the game's Shop Art. Empty draws the icon</td>
-<td>Empty</td>
+<td>游戏 Shop Art 中卡片和详情图片的键。为空则绘制图标</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>banner</code></td>
-<td>Key of a wide picture. Offers with one take turns at the top of the shop</td>
-<td>Empty</td>
+<td>一张宽图的键。设置了横幅的商品会轮流显示在商店顶部</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>badge</code></td>
-<td>Ribbon on the card, such as <code>New</code> or <code>Sale</code>, up to 24 characters</td>
-<td>Empty</td>
+<td>卡片上的角标，例如 <code>New</code> 或 <code>Sale</code>，最多 24 个字符</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>order</code></td>
-<td>Lower comes first when sorted by relevance</td>
+<td>按相关性排序时，值越小越靠前</td>
 <td>0</td>
 </tr>
 <tr>
 <td><code>currency</code></td>
-<td>The premium currency it costs</td>
-<td>Required</td>
+<td>它花费的高级货币</td>
+<td>必填</td>
 </tr>
 <tr>
 <td><code>price</code></td>
-<td>Price, above 0 and up to 1,000,000,000,000</td>
-<td>Required</td>
+<td>价格，大于 0 且最多 1,000,000,000,000</td>
+<td>必填</td>
 </tr>
 <tr>
 <td><code>items</code></td>
-<td><code>itemId</code> and <code>amount</code> of each item it gives. At least one</td>
-<td>Required</td>
+<td>它提供的每个物品的 <code>itemId</code> 和 <code>amount</code>。至少一个</td>
+<td>必填</td>
 </tr>
 <tr>
-<td><code>startsAt</code>, <code>endsAt</code></td>
-<td>UTC, ISO 8601 (<code>2026-12-01T00:00:00Z</code>). Empty is always</td>
-<td>Empty</td>
+<td><code>startsAt</code>、<code>endsAt</code></td>
+<td>UTC，ISO 8601（<code>2026-12-01T00:00:00Z</code>）。为空表示始终</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>perAccount</code></td>
-<td>Times one account can buy it. 0 is no limit</td>
+<td>一个账号可以购买的次数。0 表示不限</td>
 <td>0</td>
 </tr>
 <tr>
 <td><code>giftable</code></td>
-<td>Can be bought as a gift for another character</td>
+<td>可以作为礼物为其他角色购买</td>
 <td><code>true</code></td>
 </tr>
 <tr>
 <td><code>hidden</code></td>
-<td>Kept for history but no longer sold</td>
+<td>为历史记录保留，但不再出售</td>
 <td><code>false</code></td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="products"><a class="anchor" href="#products" aria-hidden="true">#</a>Products</h3>
-<p>Each real-money product id (the one your payment provider sends) gives an amount of one currency.</p>
+<h3 id="products"><a class="anchor" href="#products" aria-hidden="true">#</a>产品</h3>
+<p>每个真实货币产品 id（即你的支付服务商发送的 id）提供一定数量的一种货币。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
+<th>字段</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>id</code></td>
-<td>Product id, unique, up to 64 characters</td>
+<td>产品 id，唯一，最多 64 个字符</td>
 </tr>
 <tr>
 <td><code>currency</code></td>
-<td>The premium currency it gives</td>
+<td>它提供的高级货币</td>
 </tr>
 <tr>
 <td><code>amount</code></td>
-<td>How much, from 1 to 1,000,000,000,000</td>
+<td>数量，从 1 到 1,000,000,000,000</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="checks-and-reloading"><a class="anchor" href="#checks-and-reloading" aria-hidden="true">#</a>Checks and reloading</h3>
+<h3 id="checks-and-reloading"><a class="anchor" href="#checks-and-reloading" aria-hidden="true">#</a>检查和重新加载</h3>
 <ul>
-<li>Each offer and product is checked: id, currency, price, dates (ISO 8601, ending after starting), badge and picture key lengths, at least one item with an amount, no repeated ids, and every item present and not retired in the <code>items</code> table.</li>
-<li>A bad offer or product is logged and left out. It never stops the service. If the <code>items</code> table is empty, the item check is skipped with a warning.</li>
-<li>The file is read again half a second after it changes, and on <code>POST /api/shop/admin/reload</code>. A file that can't be parsed keeps the last good catalog.</li>
-<li>The catalog has a <code>version</code>, a short hash of the offers on sale, so maps know when to fetch it again.</li>
+<li>每个商品和产品都会被检查：id、货币、价格、日期（ISO 8601，结束时间晚于开始时间）、角标和图片键的长度、至少一个带数量的物品、没有重复的 id，以及每个物品都存在于 <code>items</code> 表中且未退役。</li>
+<li>有问题的商品或产品会被记录并排除。它从不会让服务停止。如果 <code>items</code> 表为空，会跳过物品检查并给出警告。</li>
+<li>文件修改半秒后会被重新读取，调用 <code>POST /api/shop/admin/reload</code> 时也会。无法解析的文件会保留上一个正确的目录。</li>
+<li>目录有一个 <code>version</code>，即在售商品的简短哈希，这样地图就知道何时需要重新获取。</li>
 </ul>
-<h2 id="how-buying-works"><a class="anchor" href="#how-buying-works" aria-hidden="true">#</a>How buying works</h2>
+<h2 id="how-buying-works"><a class="anchor" href="#how-buying-works" aria-hidden="true">#</a>购买如何进行</h2>
 <ol>
-<li>The player picks an offer in the shop window. The map server makes the item copies (with their random bonuses) and sends them with the offer id to <code>/api/shop/internal/buy</code>.</li>
-<li>The Shop charges the price from its own catalog, never one from the map, and checks the copies against the offer: same items, same amounts, unique ids, known to the item catalog.</li>
-<li>It checks the offer is on sale, the per-account limit and the balance.</li>
-<li>In one transaction, one buy at a time, it writes the charge to <code>currency_ledger</code> and a letter with the copies, from <code>mailSender</code>, marked <code>Kind = shop</code>, with the subject <code>From the shop: &lt;offer&gt;</code> (or <code>A gift from &lt;buyer&gt;</code>).</li>
-<li>The map takes the letter into the bag; Central deletes a shop letter once it is taken.</li>
-<li>The buy is written to <code>game_logs</code> as <code>shop.premium_buy</code> or <code>shop.premium_gift</code>.</li>
+<li>玩家在商店窗口中选择一个商品。地图服务器生成物品副本（带有其随机加成），并把它们和商品 id 一起发送到 <code>/api/shop/internal/buy</code>。</li>
+<li>Shop 按它自己目录中的价格扣款，从不使用地图给出的价格，并对照商品检查这些副本：相同的物品、相同的数量、唯一的 id、物品目录中已知。</li>
+<li>它检查商品是否在售、每账号限制和余额。</li>
+<li>在一个事务中、一次处理一笔购买，它把扣款写入 <code>currency_ledger</code>，并写入一封装有副本的信件，发件人为 <code>mailSender</code>，标记为 <code>Kind = shop</code>，主题为 <code>From the shop: &lt;offer&gt;</code>（或 <code>A gift from &lt;buyer&gt;</code>）。</li>
+<li>地图把信件收进背包；商店信件被收取后，Central 会删除它。</li>
+<li>这次购买以 <code>shop.premium_buy</code> 或 <code>shop.premium_gift</code> 写入 <code>game_logs</code>。</li>
 </ol>
-<p>Refusals (not enough currency, limit reached, not on sale, wrong copies) come back as a normal answer with <code>ok: false</code> and a message for the player.</p>
+<p>拒绝（货币不足、达到限制、不在售、副本不正确）会以普通回答返回，带有 <code>ok: false</code> 和一条给玩家的消息。</p>
 <ul>
-<li><strong>Gifts.</strong> The offer must be <code>giftable</code>. The recipient is found by character name and can't be the buyer.</li>
-<li><strong>Grants.</strong> GM commands (<code>/currency gems 100 Name</code>) and game rewards use the internal grant. A reference sent by a map is stored as <code>map:&lt;reference&gt;</code>; without one it becomes <code>grant:&lt;guid&gt;</code>, so grants never collide with payments.</li>
+<li><strong>赠礼。</strong> 商品必须是 <code>giftable</code>。收礼人按角色名查找，不能是购买者本人。</li>
+<li><strong>发放。</strong> GM 命令（<code>/currency gems 100 Name</code>）和游戏奖励使用内部发放接口。地图发送的引用保存为 <code>map:&lt;reference&gt;</code>；没有引用时变为 <code>grant:&lt;guid&gt;</code>，因此发放永远不会与付款冲突。</li>
 </ul>
-<h3 id="the-ledger"><a class="anchor" href="#the-ledger" aria-hidden="true">#</a>The ledger</h3>
-<p>Every change to a balance is a row of <code>currency_ledger</code>: account, currency, change, reason, offer, detail and a unique reference. The balance is the sum of the rows. The unique reference makes a retried payment, grant or webhook count once.</p>
+<h3 id="the-ledger"><a class="anchor" href="#the-ledger" aria-hidden="true">#</a>账本</h3>
+<p>余额的每一次变动都是 <code>currency_ledger</code> 中的一行：账号、货币、变动量、原因、商品、详情和一个唯一的引用。余额是这些行的总和。唯一引用使重试的付款、发放或 webhook 只计算一次。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Reason</th>
-<th>When</th>
+<th>原因</th>
+<th>何时</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>shop.buy</code></td>
-<td>A buy or gift</td>
+<td>购买或赠礼</td>
 </tr>
 <tr>
 <td><code>premium.topup</code></td>
-<td>A paid webhook</td>
+<td>已付款的 webhook</td>
 </tr>
 <tr>
 <td><code>premium.refund</code></td>
-<td>A refund webhook</td>
+<td>退款的 webhook</td>
 </tr>
 <tr>
 <td><code>gm.grant</code></td>
-<td>A GM grant or an admin grant</td>
+<td>GM 发放或管理员发放</td>
 </tr>
 <tr>
 <td><code>game.reward</code></td>
-<td>A game reward, such as a quest</td>
+<td>游戏奖励，例如任务</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="internal-api"><a class="anchor" href="#internal-api" aria-hidden="true">#</a>Internal API</h2>
-<p>For map servers. Header <code>X-Shop-Key</code> with one of <code>Shop:MapKeys</code> or <code>KITARPG_SHOP_KEY</code>. Bodies and answers are the shared classes in <code>ShopMessages.cs</code>.</p>
+<h2 id="internal-api"><a class="anchor" href="#internal-api" aria-hidden="true">#</a>内部 API</h2>
+<p>供地图服务器使用。请求头 <code>X-Shop-Key</code> 为 <code>Shop:MapKeys</code> 或 <code>KITARPG_SHOP_KEY</code> 中的一个。请求体和回答是 <code>ShopMessages.cs</code> 中的共享类。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Route</th>
-<th>Body → answer</th>
+<th>方法</th>
+<th>路由</th>
+<th>请求体 → 回答</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/internal/catalog</code></td>
-<td><code>ShopCatalog</code>: the version and every offer that isn't hidden. The client filters by date</td>
+<td><code>ShopCatalog</code>：版本以及所有未隐藏的商品。由客户端按日期筛选</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/internal/state</code></td>
-<td><code>ShopStateRequest</code> (<code>characterId</code>) → <code>ShopState</code>: balances of every catalog currency and any the account holds, buys per offer, catalog version. 404 for an unknown character</td>
+<td><code>ShopStateRequest</code>（<code>characterId</code>）→ <code>ShopState</code>：目录中每种货币以及账号持有的任何货币的余额、每个商品的购买次数、目录版本。未知角色返回 404</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/internal/buy</code></td>
-<td><code>ShopBuyRequest</code> (<code>characterId</code>, <code>offerId</code>, <code>items</code>, <code>giftTo</code>) → <code>ShopResult</code> (<code>mailedTo</code> is the character who got the letter, <code>state</code> the buyer's)</td>
+<td><code>ShopBuyRequest</code>（<code>characterId</code>、<code>offerId</code>、<code>items</code>、<code>giftTo</code>）→ <code>ShopResult</code>（<code>mailedTo</code> 是收到信件的角色，<code>state</code> 是购买者的状态）</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/internal/grant</code></td>
-<td><code>ShopGrantRequest</code> → <code>ShopResult</code> (<code>changed</code> is the target character)</td>
+<td><code>ShopGrantRequest</code> → <code>ShopResult</code>（<code>changed</code> 是目标角色）</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="admin-api"><a class="anchor" href="#admin-api" aria-hidden="true">#</a>Admin API</h2>
-<p>Header <code>X-Admin-Key</code> with <code>Shop:AdminKey</code>. Empty <code>AdminKey</code> turns the admin API off. Caddy doesn't forward it: call it from the server itself (<code>127.0.0.1:5300</code>) or through an SSH tunnel.</p>
+<h2 id="admin-api"><a class="anchor" href="#admin-api" aria-hidden="true">#</a>管理 API</h2>
+<p>请求头 <code>X-Admin-Key</code> 为 <code>Shop:AdminKey</code>。<code>AdminKey</code> 为空则关闭管理 API。Caddy 不转发它：请从服务器本机（<code>127.0.0.1:5300</code>）或通过 SSH 隧道调用。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Route</th>
-<th>What it does</th>
+<th>方法</th>
+<th>路由</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/catalog</code></td>
-<td>The whole file as a <code>ShopConfig</code>, including hidden offers and ones that fail the checks. 409 if it can't be parsed</td>
+<td>以 <code>ShopConfig</code> 形式返回整个文件，包括隐藏的商品和未通过检查的商品。无法解析时返回 409</td>
 </tr>
 <tr>
 <td>PUT</td>
 <td><code>/api/shop/admin/catalog</code></td>
-<td>Publishes a whole <code>ShopConfig</code> (at most 2 MB, 2,000 offers and 500 products). All or nothing: with any problem nothing is written and the answer is 400 with one line per problem (<code>Offer witch_hat: gives no items</code>). Otherwise 200 with <code>ok</code>, the new <code>version</code> and the number of <code>offers</code></td>
+<td>发布一个完整的 <code>ShopConfig</code>（最多 2 MB、2,000 个商品和 500 个产品）。要么全部成功要么全部失败：有任何问题时不写入任何内容，回答为 400，每个问题一行（<code>Offer witch_hat: gives no items</code>）。否则返回 200，带有 <code>ok</code>、新的 <code>version</code> 和 <code>offers</code> 的数量</td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/offers</code></td>
-<td>Every offer in use, hidden ones too, and the products</td>
+<td>所有正在使用的商品（包括隐藏的）以及产品</td>
 </tr>
 <tr>
 <td>PUT</td>
 <td><code>/api/shop/admin/offers/{id}</code></td>
-<td>Adds or replaces one offer, checked like the file. The rest of the file stays; comments in it are lost</td>
+<td>添加或替换一个商品，检查方式与文件相同。文件的其余部分保持不变；其中的注释会丢失</td>
 </tr>
 <tr>
 <td>DELETE</td>
 <td><code>/api/shop/admin/offers/{id}</code></td>
-<td>Removes the offer from the file. Its buys stay in the ledger</td>
+<td>从文件中移除该商品。它的购买记录保留在账本中</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/admin/reload</code></td>
-<td>Reads the file again. 409 if it can't be parsed</td>
+<td>重新读取文件。无法解析时返回 409</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/admin/grant</code></td>
-<td><code>{ username or accountId, currency, amount, reason?, reference?, detail? }</code>. A negative amount takes. The same <code>reference</code> twice applies once. Answers <code>applied</code> and the new <code>balance</code></td>
+<td><code>{ username or accountId, currency, amount, reason?, reference?, detail? }</code>。负数表示扣除。同一个 <code>reference</code> 发送两次只应用一次。返回 <code>applied</code> 和新的 <code>balance</code></td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/balance/{username}</code></td>
-<td>Every currency the account has</td>
+<td>该账号拥有的每种货币</td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/history/{username}?take=50</code></td>
-<td>The latest ledger rows, at most 500</td>
+<td>最新的账本记录，最多 500 条</td>
 </tr>
 </tbody>
 </table></div>
-<p>The editor's <strong>Publish to server</strong> and <strong>Pull from server</strong> use the catalog routes. From a terminal:</p>
+<p>编辑器的 <strong>Publish to server</strong> 和 <strong>Pull from server</strong> 使用目录路由。在终端中：</p>
 <pre class="code"><code class="language-bash">curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-Admin-Key: </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span>http://127.0.0.1:5300/api/shop/admin/balance/alice
 curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-Admin-Key: </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;username&quot;:&quot;alice&quot;,&quot;currency&quot;:&quot;gems&quot;,&quot;amount&quot;:500,&quot;reason&quot;:&quot;support&quot;,&quot;reference&quot;:&quot;ticket-1234&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>http://127.0.0.1:5300/api/shop/admin/grant
 </code></pre>
-<p>Writes replace the file by writing it aside and renaming it over the old one. In Docker the <code>Deploy/shop</code> folder must be writable by the container user (<code>sudo chown 1654 shop</code>).</p>
-<h2 id="payments"><a class="anchor" href="#payments" aria-hidden="true">#</a>Payments</h2>
-<p>Webhooks arrive at <code>POST /api/shop/webhooks/{provider}</code>, which Caddy forwards from <code>https://&lt;login domain&gt;/api/shop/webhooks/...</code>.</p>
+<p>写入操作先把文件写到旁边，再通过重命名覆盖旧文件来替换它。在 Docker 中，<code>Deploy/shop</code> 文件夹必须可以被容器用户写入（<code>sudo chown 1654 shop</code>）。</p>
+<h2 id="payments"><a class="anchor" href="#payments" aria-hidden="true">#</a>支付</h2>
+<p>Webhook 到达 <code>POST /api/shop/webhooks/{provider}</code>，由 Caddy 从 <code>https://&lt;login domain&gt;/api/shop/webhooks/...</code> 转发而来。</p>
 <ul>
-<li>A paid event adds <code>amount × quantity</code> of its product (<code>premium.topup</code>). A refund takes it back (<code>premium.refund</code>). A balance can go below zero; the player then can't buy until it is back above the price.</li>
-<li>An event already applied answers 200 with <code>&quot;status&quot;: &quot;duplicate&quot;</code>. An unknown account or product answers 422 and is logged. A bad signature answers 400.</li>
-<li>At most <code>Shop:MaxQuantity</code> (100) units of a product per payment.</li>
+<li>已付款事件会增加其产品的 <code>amount × quantity</code>（<code>premium.topup</code>）。退款会把它收回（<code>premium.refund</code>）。余额可以低于零；此时玩家在余额重新高于价格之前无法购买。</li>
+<li>已经应用过的事件返回 200 和 <code>&quot;status&quot;: &quot;duplicate&quot;</code>。未知的账号或产品返回 422 并被记录。签名错误返回 400。</li>
+<li>每笔付款中一个产品最多 <code>Shop:MaxQuantity</code>（100）个单位。</li>
 </ul>
 <h3 id="stripe"><a class="anchor" href="#stripe" aria-hidden="true">#</a>Stripe</h3>
-<p>Set <code>Shop:Stripe:WebhookSecret</code> (<code>KITARPG_STRIPE_WEBHOOK_SECRET</code>) to the endpoint's signing secret from the Stripe dashboard. The Shop checks <code>Stripe-Signature</code> itself (HMAC-SHA256 of <code>{t}.{body}</code>, at most <code>ToleranceSeconds</code> old), without the Stripe SDK.</p>
+<p>把 <code>Shop:Stripe:WebhookSecret</code>（<code>KITARPG_STRIPE_WEBHOOK_SECRET</code>）设为 Stripe 控制台中该端点的签名密钥。Shop 自己检查 <code>Stripe-Signature</code>（对 <code>{t}.{body}</code> 的 HMAC-SHA256，时间不超过 <code>ToleranceSeconds</code>），不使用 Stripe SDK。</p>
 <ol>
-<li>In Stripe, add a webhook endpoint <code>https://login.mygame.com/api/shop/webhooks/stripe</code> for <code>checkout.session.completed</code>, <code>checkout.session.async_payment_succeeded</code> and <code>charge.refunded</code>.</li>
-<li>Create Checkout Sessions from your website with <code>client_reference_id</code> (the account id or username), or <code>metadata.account_id</code> / <code>metadata.username</code>, plus <code>metadata.product</code> (a product id from the catalog) and <code>metadata.quantity</code> when it isn't 1.</li>
-<li>Completed sessions count once paid. The reference is <code>stripe:&lt;payment_intent&gt;</code>.</li>
-<li><code>charge.refunded</code> counts once the charge is refunded in full and takes back exactly what that payment gave. Handle partial refunds with the admin grant.</li>
+<li>在 Stripe 中添加一个 webhook 端点 <code>https://login.mygame.com/api/shop/webhooks/stripe</code>，订阅 <code>checkout.session.completed</code>、<code>checkout.session.async_payment_succeeded</code> 和 <code>charge.refunded</code>。</li>
+<li>在你的网站上创建 Checkout Session，带上 <code>client_reference_id</code>（账号 id 或用户名），或 <code>metadata.account_id</code> / <code>metadata.username</code>，以及 <code>metadata.product</code>（目录中的一个产品 id），数量不为 1 时还要带上 <code>metadata.quantity</code>。</li>
+<li>完成的会话在付款后计入一次。引用为 <code>stripe:&lt;payment_intent&gt;</code>。</li>
+<li><code>charge.refunded</code> 在这笔费用全额退款后计入一次，并准确收回该笔付款给予的内容。部分退款请用管理员发放来处理。</li>
 </ol>
-<h3 id="your-own-web-shop"><a class="anchor" href="#your-own-web-shop" aria-hidden="true">#</a>Your own web shop</h3>
-<p>Set <code>Shop:Signed:Secret</code> (<code>KITARPG_SHOP_SIGNED_SECRET</code>) and have your shop post to <code>/api/shop/webhooks/signed</code>:</p>
+<h3 id="your-own-web-shop"><a class="anchor" href="#your-own-web-shop" aria-hidden="true">#</a>你自己的网上商店</h3>
+<p>设置 <code>Shop:Signed:Secret</code>（<code>KITARPG_SHOP_SIGNED_SECRET</code>），并让你的商店向 <code>/api/shop/webhooks/signed</code> 发送请求：</p>
 <ul>
-<li>Header <code>X-KitARPG-Signature: sha256=&lt;hex HMAC-SHA256 of the raw body with the secret&gt;</code>.</li>
-<li>Body <code>{ &quot;id&quot;, &quot;kind&quot;: &quot;paid&quot; | &quot;refunded&quot;, &quot;accountId&quot; or &quot;username&quot;, &quot;product&quot;, &quot;quantity&quot;, &quot;refundOf&quot; }</code>. A refund with <code>refundOf</code> (the <code>id</code> of the paid order) takes back exactly what that order gave.</li>
+<li>请求头 <code>X-KitARPG-Signature: sha256=&lt;hex HMAC-SHA256 of the raw body with the secret&gt;</code>。</li>
+<li>请求体 <code>{ &quot;id&quot;, &quot;kind&quot;: &quot;paid&quot; | &quot;refunded&quot;, &quot;accountId&quot; or &quot;username&quot;, &quot;product&quot;, &quot;quantity&quot;, &quot;refundOf&quot; }</code>。带有 <code>refundOf</code>（已付款订单的 <code>id</code>）的退款会准确收回该订单给予的内容。</li>
 </ul>
-<h3 id="another-provider"><a class="anchor" href="#another-provider" aria-hidden="true">#</a>Another provider</h3>
-<p>Implement <code>IPaymentProvider</code> in the Shop project:</p>
+<h3 id="another-provider"><a class="anchor" href="#another-provider" aria-hidden="true">#</a>其他服务商</h3>
+<p>在 Shop 项目中实现 <code>IPaymentProvider</code>：</p>
 <ul>
-<li><code>Name</code> is the <code>{provider}</code> in the URL.</li>
-<li><code>Read</code> checks the signature and returns a <code>PaymentEvent</code>, null for events to ignore, or throws <code>PaymentRejectedException</code> for forged ones.</li>
-<li>Register it in <code>Shop/Program.cs</code>: <code>builder.Services.AddSingleton&lt;IPaymentProvider, MyProvider&gt;();</code>.</li>
+<li><code>Name</code> 是 URL 中的 <code>{provider}</code>。</li>
+<li><code>Read</code> 检查签名并返回一个 <code>PaymentEvent</code>，对于要忽略的事件返回 null，对于伪造的事件抛出 <code>PaymentRejectedException</code>。</li>
+<li>在 <code>Shop/Program.cs</code> 中注册它：<code>builder.Services.AddSingleton&lt;IPaymentProvider, MyProvider&gt;();</code>。</li>
 </ul>
-<p>Consoles and mobile stores need their own payment systems.</p>
-<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
+<p>主机和移动应用商店需要它们自己的支付系统。</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>设置</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Setting</th>
-<th>What it does</th>
-<th>Default</th>
+<th>设置</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Shop:CatalogPath</code></td>
-<td>The catalog file</td>
+<td>目录文件</td>
 <td><code>shop-conf.json</code></td>
 </tr>
 <tr>
 <td><code>Shop:MapKeys</code></td>
-<td>Keys map servers send as <code>X-Shop-Key</code>. <code>KITARPG_SHOP_KEY</code> adds one more. Several allow rotating them</td>
-<td>Empty (<code>dev-shop-key</code> in <code>Development</code>)</td>
+<td>地图服务器以 <code>X-Shop-Key</code> 发送的密钥。<code>KITARPG_SHOP_KEY</code> 会再增加一个。多个密钥便于轮换</td>
+<td>空（<code>Development</code> 中为 <code>dev-shop-key</code>）</td>
 </tr>
 <tr>
 <td><code>Shop:AdminKey</code></td>
-<td>Key for the admin API. Empty turns it off</td>
-<td>Empty (<code>dev-shop-admin-key</code> in <code>Development</code>)</td>
+<td>管理 API 的密钥。为空则关闭</td>
+<td>空（<code>Development</code> 中为 <code>dev-shop-admin-key</code>）</td>
 </tr>
 <tr>
 <td><code>Shop:Stripe:WebhookSecret</code></td>
-<td>Stripe endpoint secret (<code>whsec_...</code>). Empty turns Stripe off</td>
-<td>Empty</td>
+<td>Stripe 端点密钥（<code>whsec_...</code>）。为空则关闭 Stripe</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>Shop:Stripe:ToleranceSeconds</code></td>
-<td>How old a Stripe event may be</td>
+<td>Stripe 事件允许的最长时间</td>
 <td>300</td>
 </tr>
 <tr>
 <td><code>Shop:Signed:Secret</code></td>
-<td>Secret shared with your web shop. Empty turns it off</td>
-<td>Empty</td>
+<td>与你的网上商店共享的密钥。为空则关闭</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>Shop:InternalPerMinute</code></td>
-<td>Internal API requests per client address and minute</td>
+<td>每个客户端地址每分钟的内部 API 请求数</td>
 <td>1200</td>
 </tr>
 <tr>
 <td><code>Shop:WebhooksPerMinute</code></td>
-<td>Webhook requests per client address and minute</td>
+<td>每个客户端地址每分钟的 webhook 请求数</td>
 <td>120</td>
 </tr>
 <tr>
 <td><code>Shop:AdminPerMinute</code></td>
-<td>Admin API requests per client address and minute</td>
+<td>每个客户端地址每分钟的管理 API 请求数</td>
 <td>30</td>
 </tr>
 <tr>
 <td><code>Shop:MaxQuantity</code></td>
-<td>Most units of a product in one payment</td>
+<td>一笔付款中一个产品的最多单位数</td>
 <td>100</td>
 </tr>
 <tr>
 <td><code>Shop:MaxItemsPerBuy</code></td>
-<td>Most item copies one buy may carry</td>
+<td>一次购买最多可以携带的物品副本数</td>
 <td>100</td>
 </tr>
 </tbody>
 </table></div>
-<p>It also reads <code>Database</code>, <code>Proxy</code> and <code>Logs</code> like the other services. See <a href="configuration.html">Configuration</a>.</p>
-<h2 id="security"><a class="anchor" href="#security" aria-hidden="true">#</a>Security</h2>
+<p>它也像其他服务一样读取 <code>Database</code>、<code>Proxy</code> 和 <code>Logs</code>。见<a href="configuration.html">配置</a>。</p>
+<h2 id="security"><a class="anchor" href="#security" aria-hidden="true">#</a>安全</h2>
 <ul>
-<li>Outside <code>Development</code> the Shop refuses to start without a map key, or with a map key, admin key or provider secret that is empty, short or a sample value. An empty provider secret only turns that provider off.</li>
-<li>Keys and signatures are compared in constant time. Every endpoint group has its own rate limit per client address.</li>
-<li>The internal and admin APIs stay off the internet. Map servers on other machines reach the Shop over a private network or a WireGuard tunnel.</li>
-<li>Run a single Shop per database: buys are serialized by a lock in its process. The Shop only adds new item rows inside new letters; moving copies stays with Central.</li>
+<li>在 <code>Development</code> 之外，没有地图密钥时，或者地图密钥、管理密钥或服务商密钥为空、过短或为示例值时，Shop 拒绝启动。服务商密钥为空只会关闭该服务商。</li>
+<li>密钥和签名以常量时间比较。每组端点都有各自的按客户端地址的速率限制。</li>
+<li>内部 API 和管理 API 不对互联网开放。其他机器上的地图服务器通过私有网络或 WireGuard 隧道访问 Shop。</li>
+<li>每个数据库只运行一个 Shop：购买由其进程内的锁串行处理。Shop 只在新信件中添加新的物品行；移动副本仍由 Central 负责。</li>
 </ul>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>The shop button doesn't show.</strong> The Shop isn't running, the map has no <code>-shop</code>/<code>-shopKey</code>, or the In-game shop module is off.</li>
-<li><strong>An offer is missing in the game.</strong> It failed a check (the Shop's log names it), it is hidden, or its dates exclude today.</li>
-<li><strong>Publishing from the editor fails with 401.</strong> The admin key on the Shop page doesn't match <code>Shop:AdminKey</code>.</li>
-<li><strong>Admin edits fail in Docker.</strong> The <code>shop</code> folder isn't writable by uid 1654.</li>
-<li><strong>A payment didn't arrive.</strong> Look for the webhook in the Shop's log: 400 is a wrong secret, 422 an unknown account or product id.</li>
+<li><strong>商店按钮不显示。</strong> Shop 没有运行、地图没有 <code>-shop</code>/<code>-shopKey</code>，或者 In-game shop 模块已关闭。</li>
+<li><strong>游戏中缺少某个商品。</strong> 它没有通过检查（Shop 的日志会指出它）、它被隐藏，或者它的日期不包括今天。</li>
+<li><strong>从编辑器发布时失败并返回 401。</strong> Shop 页面上的管理密钥与 <code>Shop:AdminKey</code> 不一致。</li>
+<li><strong>在 Docker 中管理编辑失败。</strong> <code>shop</code> 文件夹无法被 uid 1654 写入。</li>
+<li><strong>一笔付款没有到账。</strong> 在 Shop 的日志中查找该 webhook：400 表示密钥错误，422 表示未知的账号或产品 id。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="../gameplay/cash-shop.html">Cash shop</a></li>
-<li><a href="../editor/shop-page.html">Shop page</a></li>
-<li><a href="security.html">Security</a></li>
+<li><a href="../gameplay/cash-shop.html">商城</a></li>
+<li><a href="../editor/shop-page.html">Shop 页面</a></li>
+<li><a href="security.html">安全</a></li>
 <li><a href="docker.html">Docker</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="security.html"><span>上一页</span>Security</a><a class="next" href="performance.html"><span>下一页</span>Performance</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Fshop-service.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#how-it-fits">How it fits</a></li><li class="l2"><a href="#running-it">Running it</a></li><li class="l3"><a href="#on-your-computer-from-the-editor">On your computer, from the editor</a></li><li class="l3"><a href="#with-the-launcher">With the launcher</a></li><li class="l3"><a href="#by-hand-for-development">By hand, for development</a></li><li class="l3"><a href="#in-docker-compose">In Docker Compose</a></li><li class="l3"><a href="#how-map-servers-find-it">How map servers find it</a></li><li class="l2"><a href="#the-catalog-file">The catalog file</a></li><li class="l3"><a href="#top-level">Top level</a></li><li class="l3"><a href="#offers">Offers</a></li><li class="l3"><a href="#products">Products</a></li><li class="l3"><a href="#checks-and-reloading">Checks and reloading</a></li><li class="l2"><a href="#how-buying-works">How buying works</a></li><li class="l3"><a href="#the-ledger">The ledger</a></li><li class="l2"><a href="#internal-api">Internal API</a></li><li class="l2"><a href="#admin-api">Admin API</a></li><li class="l2"><a href="#payments">Payments</a></li><li class="l3"><a href="#stripe">Stripe</a></li><li class="l3"><a href="#your-own-web-shop">Your own web shop</a></li><li class="l3"><a href="#another-provider">Another provider</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l2"><a href="#security">Security</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="security.html"><span>上一页</span>安全</a><a class="next" href="performance.html"><span>下一页</span>性能</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Fshop-service.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#how-it-fits">它如何配合</a></li><li class="l2"><a href="#running-it">运行它</a></li><li class="l3"><a href="#on-your-computer-from-the-editor">在你的电脑上，从编辑器</a></li><li class="l3"><a href="#with-the-launcher">使用启动器</a></li><li class="l3"><a href="#by-hand-for-development">手动运行，用于开发</a></li><li class="l3"><a href="#in-docker-compose">在 Docker Compose 中</a></li><li class="l3"><a href="#how-map-servers-find-it">地图服务器如何找到它</a></li><li class="l2"><a href="#the-catalog-file">目录文件</a></li><li class="l3"><a href="#top-level">顶层</a></li><li class="l3"><a href="#offers">商品</a></li><li class="l3"><a href="#products">产品</a></li><li class="l3"><a href="#checks-and-reloading">检查和重新加载</a></li><li class="l2"><a href="#how-buying-works">购买如何进行</a></li><li class="l3"><a href="#the-ledger">账本</a></li><li class="l2"><a href="#internal-api">内部 API</a></li><li class="l2"><a href="#admin-api">管理 API</a></li><li class="l2"><a href="#payments">支付</a></li><li class="l3"><a href="#stripe">Stripe</a></li><li class="l3"><a href="#your-own-web-shop">你自己的网上商店</a></li><li class="l3"><a href="#another-provider">其他服务商</a></li><li class="l2"><a href="#settings">设置</a></li><li class="l2"><a href="#security">安全</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

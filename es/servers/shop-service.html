@@ -1,93 +1,93 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shop service · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Servicio Shop · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/shop-service.html">English</option><option value="shop-service.html" selected>Español</option><option value="../../pt/servers/shop-service.html">Português</option><option value="../../zh/servers/shop-service.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>Servidores y despliegue</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html" class="on" aria-current="page">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Servidores y despliegue</div><h1>Shop service</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>The Shop is an optional .NET service that runs the in-game premium shop: the catalog, the premium balances of every account, purchases and gifts, and real-money payments. This page covers how it fits with the rest, its catalog file, every endpoint and setting, payments, and how to run it locally and in production.</p>
-<p>For the player side (the shop window, premium currencies) see <a href="../gameplay/cash-shop.html">Cash shop</a>. For editing offers in the editor see <a href="../editor/shop-page.html">Shop page</a>.</p>
-<h2 id="how-it-fits"><a class="anchor" href="#how-it-fits" aria-hidden="true">#</a>How it fits</h2>
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section" open><summary>Servidores y despliegue</summary><ul><li><a href="architecture.html">Arquitectura</a></li><li><a href="services.html">Servicios</a></li><li><a href="launcher.html">Lanzador</a></li><li><a href="database.html">Base de datos</a></li><li><a href="configuration.html">Configuración</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Seguridad</a></li><li><a href="shop-service.html" class="on" aria-current="page">Servicio Shop</a></li><li><a href="performance.html">Rendimiento</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Introducción al DevKit</a></li><li><a href="../devkit/assemblies.html">Ensamblados</a></li><li><a href="../devkit/templates.html">Plantillas</a></li><li><a href="../devkit/skill-effects.html">Efectos de skills</a></li><li><a href="../devkit/item-effects.html">Efectos de ítems</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de misión</a></li><li><a href="../devkit/npc-options.html">Opciones de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas del jugador</a></li><li><a href="../devkit/network-messages.html">Mensajes de red</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Guardar datos</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="../devkit/editor-extensions.html">Extensiones del editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="../devkit/talking-to-central.html">Hablar con Central</a></li><li><a href="../devkit/service-modules.html">Módulos de servicios</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de juego en código</a></li><li><a href="../devkit/example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sin recarga de dominio</a></li><li><a href="../devkit/security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Servidores y despliegue</div><h1>Servicio Shop</h1><p>Shop es un servicio .NET opcional que lleva la tienda premium del juego: el catálogo, los saldos premium de cada cuenta, las compras y los regalos, y los pagos con dinero real. Esta página cubre cómo encaja con el resto, su archivo de catálogo, cada endpoint y opción, los pagos y cómo correrlo en local y en producción.</p>
+<p>Para el lado del jugador (la ventana de la tienda, las monedas premium) consulta <a href="../gameplay/cash-shop.html">Tienda del juego</a>. Para editar ofertas en el editor consulta <a href="../editor/shop-page.html">Página Shop</a>.</p>
+<h2 id="how-it-fits"><a class="anchor" href="#how-it-fits" aria-hidden="true">#</a>Cómo encaja</h2>
 <ul>
-<li><strong>Separate and optional.</strong> Central knows nothing about the Shop. Without it the game runs normally and the shop button doesn't show.</li>
-<li><strong>Online only.</strong> Single player games have no shop.</li>
-<li><strong>Players never reach it.</strong> The shop window asks the map server; the map server calls the Shop's internal API with its key (<code>X-Shop-Key</code>). Only payment webhooks come from outside, through Caddy.</li>
-<li><strong>Same database.</strong> It uses the database Login and Central use. Login must have started once so the <code>items</code> catalog is filled.</li>
-<li><strong>Purchases travel by mail.</strong> A buy writes the charge and a letter with the bought items in one transaction. Map servers take shop letters into the bag at once (unless <em>Shop Auto Take</em> (<code>shopAutoTake</code>) is off in Game Settings); if the bag and the bank are full, the letter waits in the mailbox and the player is told.</li>
+<li><strong>Aparte y opcional.</strong> Central no sabe nada de Shop. Sin él el juego corre con normalidad y el botón de la tienda no aparece.</li>
+<li><strong>Solo en línea.</strong> Los juegos de un jugador no tienen tienda.</li>
+<li><strong>Los jugadores nunca llegan a él.</strong> La ventana de la tienda le pide al servidor de mapa; el servidor de mapa llama a la API interna de Shop con su clave (<code>X-Shop-Key</code>). Solo los webhooks de pago vienen de afuera, a través de Caddy.</li>
+<li><strong>Misma base de datos.</strong> Usa la base de datos que usan Login y Central. Login debe haber arrancado una vez para que el catálogo <code>items</code> esté lleno.</li>
+<li><strong>Las compras viajan por correo.</strong> Una compra escribe el cargo y una carta con los objetos comprados en una sola transacción. Los servidores de mapa pasan las cartas de la tienda a la bolsa al instante (salvo que <em>Shop Auto Take</em> (<code>shopAutoTake</code>) esté desactivado en Game Settings); si la bolsa y el banco están llenos, la carta espera en el buzón y se le avisa al jugador.</li>
 </ul>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Who</th>
-<th>Talks to the Shop with</th>
-<th>Over</th>
+<th>Quién</th>
+<th>Habla con Shop con</th>
+<th>Por</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Map servers</td>
-<td>Internal API, <code>X-Shop-Key</code></td>
-<td>HTTP on the private network, port 5300</td>
+<td>Servidores de mapa</td>
+<td>API interna, <code>X-Shop-Key</code></td>
+<td>HTTP en la red privada, puerto 5300</td>
 </tr>
 <tr>
-<td>Payment providers</td>
-<td>Webhooks, signed</td>
-<td>HTTPS through Caddy on the Login domain</td>
+<td>Proveedores de pago</td>
+<td>Webhooks, firmados</td>
+<td>HTTPS a través de Caddy en el dominio de Login</td>
 </tr>
 <tr>
-<td>You and the editor</td>
-<td>Admin API, <code>X-Admin-Key</code></td>
-<td>HTTP on <code>127.0.0.1:5300</code>, or an SSH tunnel</td>
+<td>Tú y el editor</td>
+<td>API de administración, <code>X-Admin-Key</code></td>
+<td>HTTP en <code>127.0.0.1:5300</code>, o un túnel SSH</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="running-it"><a class="anchor" href="#running-it" aria-hidden="true">#</a>Running it</h2>
-<h3 id="on-your-computer-from-the-editor"><a class="anchor" href="#on-your-computer-from-the-editor" aria-hidden="true">#</a>On your computer, from the editor</h3>
-<p>Open the <strong>Shop</strong> page of the KitARPG window, turn the shop on and press <strong>Start the shop</strong>. The editor runs the launcher with <code>--headless --shop-only</code>, with keys made for this computer and the catalog in <code>UserSettings/KitARPG/shop-conf.json</code>. Maps in Play find it on their own. See <a href="../editor/shop-page.html">Shop page</a>.</p>
-<h3 id="with-the-launcher"><a class="anchor" href="#with-the-launcher" aria-hidden="true">#</a>With the launcher</h3>
-<p>Tick <strong>Premium shop</strong> in the launcher window, or set <code>ShopEnabled</code> and <code>ShopAutoStart</code> in <code>launcher.json</code>. The Shop starts with Login and Central on port <code>ShopPort</code> (5300), and the maps Central starts get its address and key. See <a href="launcher.html#launcher-json">Launcher</a>.</p>
-<h3 id="by-hand-for-development"><a class="anchor" href="#by-hand-for-development" aria-hidden="true">#</a>By hand, for development</h3>
+<h2 id="running-it"><a class="anchor" href="#running-it" aria-hidden="true">#</a>Correrlo</h2>
+<h3 id="on-your-computer-from-the-editor"><a class="anchor" href="#on-your-computer-from-the-editor" aria-hidden="true">#</a>En tu computadora, desde el editor</h3>
+<p>Abre la página <strong>Shop</strong> de la ventana KitARPG, activa la tienda y presiona <strong>Start the shop</strong>. El editor corre el lanzador con <code>--headless --shop-only</code>, con claves creadas para esta computadora y el catálogo en <code>UserSettings/KitARPG/shop-conf.json</code>. Los mapas en Play lo encuentran solos. Consulta <a href="../editor/shop-page.html">Página Shop</a>.</p>
+<h3 id="with-the-launcher"><a class="anchor" href="#with-the-launcher" aria-hidden="true">#</a>Con el lanzador</h3>
+<p>Marca <strong>Premium shop</strong> en la ventana del lanzador, o pon <code>ShopEnabled</code> y <code>ShopAutoStart</code> en <code>launcher.json</code>. Shop arranca con Login y Central en el puerto <code>ShopPort</code> (5300), y los mapas que arranca Central reciben su dirección y su clave. Consulta <a href="launcher.html#launcher-json">Lanzador</a>.</p>
+<h3 id="by-hand-for-development"><a class="anchor" href="#by-hand-for-development" aria-hidden="true">#</a>A mano, para desarrollo</h3>
 <pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services
 <span class="nv">ASPNETCORE_ENVIRONMENT</span><span class="o">=</span>Development<span class="w"> </span><span class="se">\</span>
 <span class="nv">Database__ConnectionString</span><span class="o">=</span><span class="s2">&quot;Data Source=/full/path/to/kitarpg.db&quot;</span><span class="w"> </span><span class="se">\</span>
 dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Shop<span class="w">          </span><span class="c1"># http://localhost:5300</span>
 </code></pre>
-<p>In <code>Development</code> the map key is <code>dev-shop-key</code> and the admin key <code>dev-shop-admin-key</code> (<code>appsettings.Development.json</code>). Point it at the same SQLite file as Login and Central.</p>
-<h3 id="in-docker-compose"><a class="anchor" href="#in-docker-compose" aria-hidden="true">#</a>In Docker Compose</h3>
+<p>En <code>Development</code> la clave del mapa es <code>dev-shop-key</code> y la clave de administración <code>dev-shop-admin-key</code> (<code>appsettings.Development.json</code>). Apúntalo al mismo archivo SQLite que Login y Central.</p>
+<h3 id="in-docker-compose"><a class="anchor" href="#in-docker-compose" aria-hidden="true">#</a>En Docker Compose</h3>
 <pre class="code"><code class="language-bash">docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>shop<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d
 </code></pre>
-<p>Set <code>KITARPG_SHOP_KEY</code> and <code>KITARPG_SHOP_ADMIN_KEY</code> in <code>Deploy/.env</code> first. See <a href="docker.html#the-shop">Docker</a>.</p>
-<h3 id="how-map-servers-find-it"><a class="anchor" href="#how-map-servers-find-it" aria-hidden="true">#</a>How map servers find it</h3>
+<p>Pon primero <code>KITARPG_SHOP_KEY</code> y <code>KITARPG_SHOP_ADMIN_KEY</code> en <code>Deploy/.env</code>. Consulta <a href="docker.html#the-shop">Docker</a>.</p>
+<h3 id="how-map-servers-find-it"><a class="anchor" href="#how-map-servers-find-it" aria-hidden="true">#</a>Cómo lo encuentran los servidores de mapa</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Map server reads</th>
-<th>What it is</th>
+<th>El servidor de mapa lee</th>
+<th>Qué es</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-shop &lt;url&gt;</code> or <code>KITARPG_SHOP_URL</code></td>
-<td>The Shop's address, for example <code>http://shop:5300</code></td>
+<td><code>-shop &lt;url&gt;</code> o <code>KITARPG_SHOP_URL</code></td>
+<td>La dirección de Shop, por ejemplo <code>http://shop:5300</code></td>
 </tr>
 <tr>
-<td><code>-shopKey &lt;key&gt;</code> or <code>KITARPG_SHOP_KEY</code></td>
-<td>One of the Shop's map keys</td>
+<td><code>-shopKey &lt;key&gt;</code> o <code>KITARPG_SHOP_KEY</code></td>
+<td>Una de las claves de mapa de Shop</td>
 </tr>
 </tbody>
 </table></div>
-<p>In the editor, a map in Play without these uses the Shop page's settings (<code>UserSettings/KitARPG/launcher.json</code>). A built map server refuses a plain <code>http://</code> address on a public IP, since the key would cross the internet readable: use <code>https://</code> or a private address.</p>
-<h2 id="the-catalog-file"><a class="anchor" href="#the-catalog-file" aria-hidden="true">#</a>The catalog file</h2>
-<p><code>shop-conf.json</code>, at <code>Shop:CatalogPath</code> (relative to the service's folder unless absolute). A sample ships next to the service; if the configured file is missing, the first start copies the sample there.</p>
+<p>En el editor, un mapa en Play sin estos usa las opciones de la página Shop (<code>UserSettings/KitARPG/launcher.json</code>). Un servidor de mapa compilado rechaza una dirección <code>http://</code> simple en una IP pública, porque la clave cruzaría internet legible: usa <code>https://</code> o una dirección privada.</p>
+<h2 id="the-catalog-file"><a class="anchor" href="#the-catalog-file" aria-hidden="true">#</a>El archivo de catálogo</h2>
+<p><code>shop-conf.json</code>, en <code>Shop:CatalogPath</code> (relativo a la carpeta del servicio salvo que sea absoluto). Junto al servicio viene una muestra; si falta el archivo configurado, el primer arranque copia la muestra ahí.</p>
 <pre class="code"><code class="language-json"><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;mailSender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shop&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;mailDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
@@ -103,421 +103,421 @@ dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="top-level"><a class="anchor" href="#top-level" aria-hidden="true">#</a>Top level</h3>
+<h3 id="top-level"><a class="anchor" href="#top-level" aria-hidden="true">#</a>Nivel superior</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>mailSender</code></td>
-<td>Sender name on purchase letters</td>
+<td>Nombre del remitente en las cartas de compra</td>
 <td><code>Shop</code></td>
 </tr>
 <tr>
 <td><code>mailDays</code></td>
-<td>Days a purchase letter stays in the mailbox</td>
+<td>Días que una carta de compra queda en el buzón</td>
 <td>30</td>
 </tr>
 <tr>
 <td><code>products</code></td>
-<td>What each real-money product gives (below)</td>
-<td>Empty</td>
+<td>Lo que da cada producto de dinero real (abajo)</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>offers</code></td>
-<td>What the shop sells for premium currency (below)</td>
-<td>Empty</td>
+<td>Lo que vende la tienda por moneda premium (abajo)</td>
+<td>Vacío</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="offers"><a class="anchor" href="#offers" aria-hidden="true">#</a>Offers</h3>
+<h3 id="offers"><a class="anchor" href="#offers" aria-hidden="true">#</a>Ofertas</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>id</code></td>
-<td>Unique id, up to 64 characters. Never change it once sold: buy limits and history use it</td>
-<td>Required</td>
+<td>Id único, hasta 64 caracteres. Nunca lo cambies una vez vendida: los límites de compra y el historial lo usan</td>
+<td>Obligatorio</td>
 </tr>
 <tr>
 <td><code>name</code>, <code>description</code></td>
-<td>What players read</td>
-<td>Empty</td>
+<td>Lo que leen los jugadores</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>category</code></td>
-<td>The entry it shows under on the shop's left side</td>
+<td>La entrada bajo la que aparece en el lado izquierdo de la tienda</td>
 <td><code>Featured</code></td>
 </tr>
 <tr>
 <td><code>icon</code></td>
-<td>Item whose icon the card shows. Empty uses the first item's</td>
-<td>Empty</td>
+<td>Objeto cuyo ícono muestra la tarjeta. Vacío usa el del primer objeto</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>image</code></td>
-<td>Key of the card and detail picture in the game's Shop Art. Empty draws the icon</td>
-<td>Empty</td>
+<td>Clave de la imagen de la tarjeta y el detalle en el Shop Art del juego. Vacío dibuja el ícono</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>banner</code></td>
-<td>Key of a wide picture. Offers with one take turns at the top of the shop</td>
-<td>Empty</td>
+<td>Clave de una imagen ancha. Las ofertas que tienen una se turnan arriba de la tienda</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>badge</code></td>
-<td>Ribbon on the card, such as <code>New</code> or <code>Sale</code>, up to 24 characters</td>
-<td>Empty</td>
+<td>Cinta en la tarjeta, como <code>New</code> o <code>Sale</code>, hasta 24 caracteres</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>order</code></td>
-<td>Lower comes first when sorted by relevance</td>
+<td>Menor va primero al ordenar por relevancia</td>
 <td>0</td>
 </tr>
 <tr>
 <td><code>currency</code></td>
-<td>The premium currency it costs</td>
-<td>Required</td>
+<td>La moneda premium que cuesta</td>
+<td>Obligatorio</td>
 </tr>
 <tr>
 <td><code>price</code></td>
-<td>Price, above 0 and up to 1,000,000,000,000</td>
-<td>Required</td>
+<td>Precio, mayor que 0 y hasta 1.000.000.000.000</td>
+<td>Obligatorio</td>
 </tr>
 <tr>
 <td><code>items</code></td>
-<td><code>itemId</code> and <code>amount</code> of each item it gives. At least one</td>
-<td>Required</td>
+<td><code>itemId</code> y <code>amount</code> de cada objeto que da. Al menos uno</td>
+<td>Obligatorio</td>
 </tr>
 <tr>
 <td><code>startsAt</code>, <code>endsAt</code></td>
-<td>UTC, ISO 8601 (<code>2026-12-01T00:00:00Z</code>). Empty is always</td>
-<td>Empty</td>
+<td>UTC, ISO 8601 (<code>2026-12-01T00:00:00Z</code>). Vacío es siempre</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>perAccount</code></td>
-<td>Times one account can buy it. 0 is no limit</td>
+<td>Veces que una cuenta puede comprarla. 0 es sin límite</td>
 <td>0</td>
 </tr>
 <tr>
 <td><code>giftable</code></td>
-<td>Can be bought as a gift for another character</td>
+<td>Se puede comprar como regalo para otro personaje</td>
 <td><code>true</code></td>
 </tr>
 <tr>
 <td><code>hidden</code></td>
-<td>Kept for history but no longer sold</td>
+<td>Se conserva para el historial pero ya no se vende</td>
 <td><code>false</code></td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="products"><a class="anchor" href="#products" aria-hidden="true">#</a>Products</h3>
-<p>Each real-money product id (the one your payment provider sends) gives an amount of one currency.</p>
+<h3 id="products"><a class="anchor" href="#products" aria-hidden="true">#</a>Productos</h3>
+<p>Cada id de producto de dinero real (el que envía tu proveedor de pagos) da una cantidad de una moneda.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
+<th>Campo</th>
+<th>Qué hace</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>id</code></td>
-<td>Product id, unique, up to 64 characters</td>
+<td>Id de producto, único, hasta 64 caracteres</td>
 </tr>
 <tr>
 <td><code>currency</code></td>
-<td>The premium currency it gives</td>
+<td>La moneda premium que da</td>
 </tr>
 <tr>
 <td><code>amount</code></td>
-<td>How much, from 1 to 1,000,000,000,000</td>
+<td>Cuánto, de 1 a 1.000.000.000.000</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="checks-and-reloading"><a class="anchor" href="#checks-and-reloading" aria-hidden="true">#</a>Checks and reloading</h3>
+<h3 id="checks-and-reloading"><a class="anchor" href="#checks-and-reloading" aria-hidden="true">#</a>Revisiones y recarga</h3>
 <ul>
-<li>Each offer and product is checked: id, currency, price, dates (ISO 8601, ending after starting), badge and picture key lengths, at least one item with an amount, no repeated ids, and every item present and not retired in the <code>items</code> table.</li>
-<li>A bad offer or product is logged and left out. It never stops the service. If the <code>items</code> table is empty, the item check is skipped with a warning.</li>
-<li>The file is read again half a second after it changes, and on <code>POST /api/shop/admin/reload</code>. A file that can't be parsed keeps the last good catalog.</li>
-<li>The catalog has a <code>version</code>, a short hash of the offers on sale, so maps know when to fetch it again.</li>
+<li>Cada oferta y producto se revisa: id, moneda, precio, fechas (ISO 8601, con el fin después del inicio), largos de la insignia y de la clave de imagen, al menos un objeto con cantidad, sin ids repetidos, y cada objeto presente y no retirado en la tabla <code>items</code>.</li>
+<li>Una oferta o un producto inválido se registra y se deja fuera. Nunca detiene el servicio. Si la tabla <code>items</code> está vacía, la revisión de objetos se salta con una advertencia.</li>
+<li>El archivo se vuelve a leer medio segundo después de cambiar, y con <code>POST /api/shop/admin/reload</code>. Un archivo que no se puede leer conserva el último catálogo bueno.</li>
+<li>El catálogo tiene una <code>version</code>, un hash corto de las ofertas a la venta, para que los mapas sepan cuándo volver a pedirlo.</li>
 </ul>
-<h2 id="how-buying-works"><a class="anchor" href="#how-buying-works" aria-hidden="true">#</a>How buying works</h2>
+<h2 id="how-buying-works"><a class="anchor" href="#how-buying-works" aria-hidden="true">#</a>Cómo funciona la compra</h2>
 <ol>
-<li>The player picks an offer in the shop window. The map server makes the item copies (with their random bonuses) and sends them with the offer id to <code>/api/shop/internal/buy</code>.</li>
-<li>The Shop charges the price from its own catalog, never one from the map, and checks the copies against the offer: same items, same amounts, unique ids, known to the item catalog.</li>
-<li>It checks the offer is on sale, the per-account limit and the balance.</li>
-<li>In one transaction, one buy at a time, it writes the charge to <code>currency_ledger</code> and a letter with the copies, from <code>mailSender</code>, marked <code>Kind = shop</code>, with the subject <code>From the shop: &lt;offer&gt;</code> (or <code>A gift from &lt;buyer&gt;</code>).</li>
-<li>The map takes the letter into the bag; Central deletes a shop letter once it is taken.</li>
-<li>The buy is written to <code>game_logs</code> as <code>shop.premium_buy</code> or <code>shop.premium_gift</code>.</li>
+<li>El jugador elige una oferta en la ventana de la tienda. El servidor de mapa crea las copias de los objetos (con sus bonificaciones aleatorias) y las envía con el id de la oferta a <code>/api/shop/internal/buy</code>.</li>
+<li>Shop cobra el precio de su propio catálogo, nunca uno del mapa, y revisa las copias contra la oferta: los mismos objetos, las mismas cantidades, ids únicos, conocidos por el catálogo de objetos.</li>
+<li>Revisa que la oferta esté a la venta, el límite por cuenta y el saldo.</li>
+<li>En una transacción, una compra a la vez, escribe el cargo en <code>currency_ledger</code> y una carta con las copias, de <code>mailSender</code>, marcada <code>Kind = shop</code>, con el asunto <code>From the shop: &lt;offer&gt;</code> (o <code>A gift from &lt;buyer&gt;</code>).</li>
+<li>El mapa pasa la carta a la bolsa; Central borra una carta de la tienda una vez tomada.</li>
+<li>La compra se escribe en <code>game_logs</code> como <code>shop.premium_buy</code> o <code>shop.premium_gift</code>.</li>
 </ol>
-<p>Refusals (not enough currency, limit reached, not on sale, wrong copies) come back as a normal answer with <code>ok: false</code> and a message for the player.</p>
+<p>Los rechazos (moneda insuficiente, límite alcanzado, no está a la venta, copias incorrectas) vuelven como una respuesta normal con <code>ok: false</code> y un mensaje para el jugador.</p>
 <ul>
-<li><strong>Gifts.</strong> The offer must be <code>giftable</code>. The recipient is found by character name and can't be the buyer.</li>
-<li><strong>Grants.</strong> GM commands (<code>/currency gems 100 Name</code>) and game rewards use the internal grant. A reference sent by a map is stored as <code>map:&lt;reference&gt;</code>; without one it becomes <code>grant:&lt;guid&gt;</code>, so grants never collide with payments.</li>
+<li><strong>Regalos.</strong> La oferta debe ser <code>giftable</code>. El destinatario se encuentra por nombre de personaje y no puede ser el comprador.</li>
+<li><strong>Entregas.</strong> Los comandos de GM (<code>/currency gems 100 Name</code>) y las recompensas del juego usan la entrega interna. Una referencia enviada por un mapa se guarda como <code>map:&lt;reference&gt;</code>; sin una se convierte en <code>grant:&lt;guid&gt;</code>, así las entregas nunca chocan con los pagos.</li>
 </ul>
-<h3 id="the-ledger"><a class="anchor" href="#the-ledger" aria-hidden="true">#</a>The ledger</h3>
-<p>Every change to a balance is a row of <code>currency_ledger</code>: account, currency, change, reason, offer, detail and a unique reference. The balance is the sum of the rows. The unique reference makes a retried payment, grant or webhook count once.</p>
+<h3 id="the-ledger"><a class="anchor" href="#the-ledger" aria-hidden="true">#</a>El registro</h3>
+<p>Cada cambio a un saldo es una fila de <code>currency_ledger</code>: cuenta, moneda, cambio, motivo, oferta, detalle y una referencia única. El saldo es la suma de las filas. La referencia única hace que un pago, una entrega o un webhook reintentado cuente una vez.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Reason</th>
-<th>When</th>
+<th>Motivo</th>
+<th>Cuándo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>shop.buy</code></td>
-<td>A buy or gift</td>
+<td>Una compra o un regalo</td>
 </tr>
 <tr>
 <td><code>premium.topup</code></td>
-<td>A paid webhook</td>
+<td>Un webhook de pago</td>
 </tr>
 <tr>
 <td><code>premium.refund</code></td>
-<td>A refund webhook</td>
+<td>Un webhook de reembolso</td>
 </tr>
 <tr>
 <td><code>gm.grant</code></td>
-<td>A GM grant or an admin grant</td>
+<td>Una entrega de GM o una entrega de administración</td>
 </tr>
 <tr>
 <td><code>game.reward</code></td>
-<td>A game reward, such as a quest</td>
+<td>Una recompensa del juego, como una misión</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="internal-api"><a class="anchor" href="#internal-api" aria-hidden="true">#</a>Internal API</h2>
-<p>For map servers. Header <code>X-Shop-Key</code> with one of <code>Shop:MapKeys</code> or <code>KITARPG_SHOP_KEY</code>. Bodies and answers are the shared classes in <code>ShopMessages.cs</code>.</p>
+<h2 id="internal-api"><a class="anchor" href="#internal-api" aria-hidden="true">#</a>API interna</h2>
+<p>Para los servidores de mapa. Cabecera <code>X-Shop-Key</code> con una de <code>Shop:MapKeys</code> o <code>KITARPG_SHOP_KEY</code>. Los cuerpos y las respuestas son las clases compartidas de <code>ShopMessages.cs</code>.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Route</th>
-<th>Body → answer</th>
+<th>Método</th>
+<th>Ruta</th>
+<th>Cuerpo → respuesta</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/internal/catalog</code></td>
-<td><code>ShopCatalog</code>: the version and every offer that isn't hidden. The client filters by date</td>
+<td><code>ShopCatalog</code>: la versión y cada oferta que no está oculta. El cliente filtra por fecha</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/internal/state</code></td>
-<td><code>ShopStateRequest</code> (<code>characterId</code>) → <code>ShopState</code>: balances of every catalog currency and any the account holds, buys per offer, catalog version. 404 for an unknown character</td>
+<td><code>ShopStateRequest</code> (<code>characterId</code>) → <code>ShopState</code>: saldos de cada moneda del catálogo y de cualquiera que tenga la cuenta, compras por oferta, versión del catálogo. 404 para un personaje desconocido</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/internal/buy</code></td>
-<td><code>ShopBuyRequest</code> (<code>characterId</code>, <code>offerId</code>, <code>items</code>, <code>giftTo</code>) → <code>ShopResult</code> (<code>mailedTo</code> is the character who got the letter, <code>state</code> the buyer's)</td>
+<td><code>ShopBuyRequest</code> (<code>characterId</code>, <code>offerId</code>, <code>items</code>, <code>giftTo</code>) → <code>ShopResult</code> (<code>mailedTo</code> es el personaje que recibió la carta, <code>state</code> el del comprador)</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/internal/grant</code></td>
-<td><code>ShopGrantRequest</code> → <code>ShopResult</code> (<code>changed</code> is the target character)</td>
+<td><code>ShopGrantRequest</code> → <code>ShopResult</code> (<code>changed</code> es el personaje destinatario)</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="admin-api"><a class="anchor" href="#admin-api" aria-hidden="true">#</a>Admin API</h2>
-<p>Header <code>X-Admin-Key</code> with <code>Shop:AdminKey</code>. Empty <code>AdminKey</code> turns the admin API off. Caddy doesn't forward it: call it from the server itself (<code>127.0.0.1:5300</code>) or through an SSH tunnel.</p>
+<h2 id="admin-api"><a class="anchor" href="#admin-api" aria-hidden="true">#</a>API de administración</h2>
+<p>Cabecera <code>X-Admin-Key</code> con <code>Shop:AdminKey</code>. Un <code>AdminKey</code> vacío desactiva la API de administración. Caddy no la reenvía: llámala desde el servidor mismo (<code>127.0.0.1:5300</code>) o a través de un túnel SSH.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Route</th>
-<th>What it does</th>
+<th>Método</th>
+<th>Ruta</th>
+<th>Qué hace</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/catalog</code></td>
-<td>The whole file as a <code>ShopConfig</code>, including hidden offers and ones that fail the checks. 409 if it can't be parsed</td>
+<td>El archivo entero como un <code>ShopConfig</code>, incluidas las ofertas ocultas y las que no pasan las revisiones. 409 si no se puede leer</td>
 </tr>
 <tr>
 <td>PUT</td>
 <td><code>/api/shop/admin/catalog</code></td>
-<td>Publishes a whole <code>ShopConfig</code> (at most 2 MB, 2,000 offers and 500 products). All or nothing: with any problem nothing is written and the answer is 400 with one line per problem (<code>Offer witch_hat: gives no items</code>). Otherwise 200 with <code>ok</code>, the new <code>version</code> and the number of <code>offers</code></td>
+<td>Publica un <code>ShopConfig</code> entero (como máximo 2 MB, 2.000 ofertas y 500 productos). Todo o nada: con cualquier problema no se escribe nada y la respuesta es 400 con una línea por problema (<code>Offer witch_hat: gives no items</code>). Si no, 200 con <code>ok</code>, la nueva <code>version</code> y la cantidad de <code>offers</code></td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/offers</code></td>
-<td>Every offer in use, hidden ones too, and the products</td>
+<td>Cada oferta en uso, también las ocultas, y los productos</td>
 </tr>
 <tr>
 <td>PUT</td>
 <td><code>/api/shop/admin/offers/{id}</code></td>
-<td>Adds or replaces one offer, checked like the file. The rest of the file stays; comments in it are lost</td>
+<td>Agrega o reemplaza una oferta, revisada como el archivo. El resto del archivo queda; los comentarios que tenga se pierden</td>
 </tr>
 <tr>
 <td>DELETE</td>
 <td><code>/api/shop/admin/offers/{id}</code></td>
-<td>Removes the offer from the file. Its buys stay in the ledger</td>
+<td>Quita la oferta del archivo. Sus compras quedan en el registro</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/admin/reload</code></td>
-<td>Reads the file again. 409 if it can't be parsed</td>
+<td>Vuelve a leer el archivo. 409 si no se puede leer</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/api/shop/admin/grant</code></td>
-<td><code>{ username or accountId, currency, amount, reason?, reference?, detail? }</code>. A negative amount takes. The same <code>reference</code> twice applies once. Answers <code>applied</code> and the new <code>balance</code></td>
+<td><code>{ username or accountId, currency, amount, reason?, reference?, detail? }</code>. Una cantidad negativa quita. La misma <code>reference</code> dos veces se aplica una vez. Responde <code>applied</code> y el nuevo <code>balance</code></td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/balance/{username}</code></td>
-<td>Every currency the account has</td>
+<td>Cada moneda que tiene la cuenta</td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/api/shop/admin/history/{username}?take=50</code></td>
-<td>The latest ledger rows, at most 500</td>
+<td>Las últimas filas del registro, como máximo 500</td>
 </tr>
 </tbody>
 </table></div>
-<p>The editor's <strong>Publish to server</strong> and <strong>Pull from server</strong> use the catalog routes. From a terminal:</p>
+<p><strong>Publish to server</strong> y <strong>Pull from server</strong> del editor usan las rutas del catálogo. Desde una terminal:</p>
 <pre class="code"><code class="language-bash">curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-Admin-Key: </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span>http://127.0.0.1:5300/api/shop/admin/balance/alice
 curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-Admin-Key: </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;username&quot;:&quot;alice&quot;,&quot;currency&quot;:&quot;gems&quot;,&quot;amount&quot;:500,&quot;reason&quot;:&quot;support&quot;,&quot;reference&quot;:&quot;ticket-1234&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>http://127.0.0.1:5300/api/shop/admin/grant
 </code></pre>
-<p>Writes replace the file by writing it aside and renaming it over the old one. In Docker the <code>Deploy/shop</code> folder must be writable by the container user (<code>sudo chown 1654 shop</code>).</p>
-<h2 id="payments"><a class="anchor" href="#payments" aria-hidden="true">#</a>Payments</h2>
-<p>Webhooks arrive at <code>POST /api/shop/webhooks/{provider}</code>, which Caddy forwards from <code>https://&lt;login domain&gt;/api/shop/webhooks/...</code>.</p>
+<p>Las escrituras reemplazan el archivo escribiéndolo aparte y renombrándolo sobre el viejo. En Docker la carpeta <code>Deploy/shop</code> debe poder escribirla el usuario del contenedor (<code>sudo chown 1654 shop</code>).</p>
+<h2 id="payments"><a class="anchor" href="#payments" aria-hidden="true">#</a>Pagos</h2>
+<p>Los webhooks llegan a <code>POST /api/shop/webhooks/{provider}</code>, que Caddy reenvía desde <code>https://&lt;login domain&gt;/api/shop/webhooks/...</code>.</p>
 <ul>
-<li>A paid event adds <code>amount × quantity</code> of its product (<code>premium.topup</code>). A refund takes it back (<code>premium.refund</code>). A balance can go below zero; the player then can't buy until it is back above the price.</li>
-<li>An event already applied answers 200 with <code>&quot;status&quot;: &quot;duplicate&quot;</code>. An unknown account or product answers 422 and is logged. A bad signature answers 400.</li>
-<li>At most <code>Shop:MaxQuantity</code> (100) units of a product per payment.</li>
+<li>Un evento pagado suma <code>amount × quantity</code> de su producto (<code>premium.topup</code>). Un reembolso lo quita (<code>premium.refund</code>). Un saldo puede quedar bajo cero; el jugador entonces no puede comprar hasta que vuelva a estar por encima del precio.</li>
+<li>Un evento ya aplicado responde 200 con <code>&quot;status&quot;: &quot;duplicate&quot;</code>. Una cuenta o un producto desconocido responde 422 y se registra. Una firma incorrecta responde 400.</li>
+<li>Como máximo <code>Shop:MaxQuantity</code> (100) unidades de un producto por pago.</li>
 </ul>
 <h3 id="stripe"><a class="anchor" href="#stripe" aria-hidden="true">#</a>Stripe</h3>
-<p>Set <code>Shop:Stripe:WebhookSecret</code> (<code>KITARPG_STRIPE_WEBHOOK_SECRET</code>) to the endpoint's signing secret from the Stripe dashboard. The Shop checks <code>Stripe-Signature</code> itself (HMAC-SHA256 of <code>{t}.{body}</code>, at most <code>ToleranceSeconds</code> old), without the Stripe SDK.</p>
+<p>Pon en <code>Shop:Stripe:WebhookSecret</code> (<code>KITARPG_STRIPE_WEBHOOK_SECRET</code>) el secreto de firma del endpoint del panel de Stripe. Shop revisa <code>Stripe-Signature</code> por sí mismo (HMAC-SHA256 de <code>{t}.{body}</code>, de como máximo <code>ToleranceSeconds</code> de antigüedad), sin el SDK de Stripe.</p>
 <ol>
-<li>In Stripe, add a webhook endpoint <code>https://login.mygame.com/api/shop/webhooks/stripe</code> for <code>checkout.session.completed</code>, <code>checkout.session.async_payment_succeeded</code> and <code>charge.refunded</code>.</li>
-<li>Create Checkout Sessions from your website with <code>client_reference_id</code> (the account id or username), or <code>metadata.account_id</code> / <code>metadata.username</code>, plus <code>metadata.product</code> (a product id from the catalog) and <code>metadata.quantity</code> when it isn't 1.</li>
-<li>Completed sessions count once paid. The reference is <code>stripe:&lt;payment_intent&gt;</code>.</li>
-<li><code>charge.refunded</code> counts once the charge is refunded in full and takes back exactly what that payment gave. Handle partial refunds with the admin grant.</li>
+<li>En Stripe, agrega un endpoint de webhook <code>https://login.mygame.com/api/shop/webhooks/stripe</code> para <code>checkout.session.completed</code>, <code>checkout.session.async_payment_succeeded</code> y <code>charge.refunded</code>.</li>
+<li>Crea Checkout Sessions desde tu sitio web con <code>client_reference_id</code> (el id de la cuenta o el nombre de usuario), o <code>metadata.account_id</code> / <code>metadata.username</code>, más <code>metadata.product</code> (un id de producto del catálogo) y <code>metadata.quantity</code> cuando no es 1.</li>
+<li>Las sesiones completadas cuentan una vez pagadas. La referencia es <code>stripe:&lt;payment_intent&gt;</code>.</li>
+<li><code>charge.refunded</code> cuenta una vez que el cargo se reembolsa por completo y quita exactamente lo que dio ese pago. Atiende los reembolsos parciales con la entrega de administración.</li>
 </ol>
-<h3 id="your-own-web-shop"><a class="anchor" href="#your-own-web-shop" aria-hidden="true">#</a>Your own web shop</h3>
-<p>Set <code>Shop:Signed:Secret</code> (<code>KITARPG_SHOP_SIGNED_SECRET</code>) and have your shop post to <code>/api/shop/webhooks/signed</code>:</p>
+<h3 id="your-own-web-shop"><a class="anchor" href="#your-own-web-shop" aria-hidden="true">#</a>Tu propia tienda web</h3>
+<p>Pon <code>Shop:Signed:Secret</code> (<code>KITARPG_SHOP_SIGNED_SECRET</code>) y haz que tu tienda envíe a <code>/api/shop/webhooks/signed</code>:</p>
 <ul>
-<li>Header <code>X-KitARPG-Signature: sha256=&lt;hex HMAC-SHA256 of the raw body with the secret&gt;</code>.</li>
-<li>Body <code>{ &quot;id&quot;, &quot;kind&quot;: &quot;paid&quot; | &quot;refunded&quot;, &quot;accountId&quot; or &quot;username&quot;, &quot;product&quot;, &quot;quantity&quot;, &quot;refundOf&quot; }</code>. A refund with <code>refundOf</code> (the <code>id</code> of the paid order) takes back exactly what that order gave.</li>
+<li>Cabecera <code>X-KitARPG-Signature: sha256=&lt;hex HMAC-SHA256 of the raw body with the secret&gt;</code>.</li>
+<li>Cuerpo <code>{ &quot;id&quot;, &quot;kind&quot;: &quot;paid&quot; | &quot;refunded&quot;, &quot;accountId&quot; or &quot;username&quot;, &quot;product&quot;, &quot;quantity&quot;, &quot;refundOf&quot; }</code>. Un reembolso con <code>refundOf</code> (el <code>id</code> del pedido pagado) quita exactamente lo que dio ese pedido.</li>
 </ul>
-<h3 id="another-provider"><a class="anchor" href="#another-provider" aria-hidden="true">#</a>Another provider</h3>
-<p>Implement <code>IPaymentProvider</code> in the Shop project:</p>
+<h3 id="another-provider"><a class="anchor" href="#another-provider" aria-hidden="true">#</a>Otro proveedor</h3>
+<p>Implementa <code>IPaymentProvider</code> en el proyecto Shop:</p>
 <ul>
-<li><code>Name</code> is the <code>{provider}</code> in the URL.</li>
-<li><code>Read</code> checks the signature and returns a <code>PaymentEvent</code>, null for events to ignore, or throws <code>PaymentRejectedException</code> for forged ones.</li>
-<li>Register it in <code>Shop/Program.cs</code>: <code>builder.Services.AddSingleton&lt;IPaymentProvider, MyProvider&gt;();</code>.</li>
+<li><code>Name</code> es el <code>{provider}</code> de la URL.</li>
+<li><code>Read</code> revisa la firma y devuelve un <code>PaymentEvent</code>, null para los eventos que se ignoran, o lanza <code>PaymentRejectedException</code> para los falsificados.</li>
+<li>Regístralo en <code>Shop/Program.cs</code>: <code>builder.Services.AddSingleton&lt;IPaymentProvider, MyProvider&gt;();</code>.</li>
 </ul>
-<p>Consoles and mobile stores need their own payment systems.</p>
-<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
+<p>Las consolas y las tiendas móviles necesitan sus propios sistemas de pago.</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Opciones</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Setting</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Opción</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Shop:CatalogPath</code></td>
-<td>The catalog file</td>
+<td>El archivo de catálogo</td>
 <td><code>shop-conf.json</code></td>
 </tr>
 <tr>
 <td><code>Shop:MapKeys</code></td>
-<td>Keys map servers send as <code>X-Shop-Key</code>. <code>KITARPG_SHOP_KEY</code> adds one more. Several allow rotating them</td>
-<td>Empty (<code>dev-shop-key</code> in <code>Development</code>)</td>
+<td>Claves que envían los servidores de mapa como <code>X-Shop-Key</code>. <code>KITARPG_SHOP_KEY</code> agrega una más. Tener varias permite rotarlas</td>
+<td>Vacío (<code>dev-shop-key</code> en <code>Development</code>)</td>
 </tr>
 <tr>
 <td><code>Shop:AdminKey</code></td>
-<td>Key for the admin API. Empty turns it off</td>
-<td>Empty (<code>dev-shop-admin-key</code> in <code>Development</code>)</td>
+<td>Clave para la API de administración. Vacío la desactiva</td>
+<td>Vacío (<code>dev-shop-admin-key</code> en <code>Development</code>)</td>
 </tr>
 <tr>
 <td><code>Shop:Stripe:WebhookSecret</code></td>
-<td>Stripe endpoint secret (<code>whsec_...</code>). Empty turns Stripe off</td>
-<td>Empty</td>
+<td>Secreto del endpoint de Stripe (<code>whsec_...</code>). Vacío desactiva Stripe</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>Shop:Stripe:ToleranceSeconds</code></td>
-<td>How old a Stripe event may be</td>
+<td>Qué antigüedad puede tener un evento de Stripe</td>
 <td>300</td>
 </tr>
 <tr>
 <td><code>Shop:Signed:Secret</code></td>
-<td>Secret shared with your web shop. Empty turns it off</td>
-<td>Empty</td>
+<td>Secreto compartido con tu tienda web. Vacío lo desactiva</td>
+<td>Vacío</td>
 </tr>
 <tr>
 <td><code>Shop:InternalPerMinute</code></td>
-<td>Internal API requests per client address and minute</td>
-<td>1200</td>
+<td>Peticiones a la API interna por dirección de cliente y minuto</td>
+<td>1.200</td>
 </tr>
 <tr>
 <td><code>Shop:WebhooksPerMinute</code></td>
-<td>Webhook requests per client address and minute</td>
+<td>Peticiones de webhooks por dirección de cliente y minuto</td>
 <td>120</td>
 </tr>
 <tr>
 <td><code>Shop:AdminPerMinute</code></td>
-<td>Admin API requests per client address and minute</td>
+<td>Peticiones a la API de administración por dirección de cliente y minuto</td>
 <td>30</td>
 </tr>
 <tr>
 <td><code>Shop:MaxQuantity</code></td>
-<td>Most units of a product in one payment</td>
+<td>La mayor cantidad de unidades de un producto en un pago</td>
 <td>100</td>
 </tr>
 <tr>
 <td><code>Shop:MaxItemsPerBuy</code></td>
-<td>Most item copies one buy may carry</td>
+<td>La mayor cantidad de copias de objetos que puede llevar una compra</td>
 <td>100</td>
 </tr>
 </tbody>
 </table></div>
-<p>It also reads <code>Database</code>, <code>Proxy</code> and <code>Logs</code> like the other services. See <a href="configuration.html">Configuration</a>.</p>
-<h2 id="security"><a class="anchor" href="#security" aria-hidden="true">#</a>Security</h2>
+<p>También lee <code>Database</code>, <code>Proxy</code> y <code>Logs</code> como los otros servicios. Consulta <a href="configuration.html">Configuración</a>.</p>
+<h2 id="security"><a class="anchor" href="#security" aria-hidden="true">#</a>Seguridad</h2>
 <ul>
-<li>Outside <code>Development</code> the Shop refuses to start without a map key, or with a map key, admin key or provider secret that is empty, short or a sample value. An empty provider secret only turns that provider off.</li>
-<li>Keys and signatures are compared in constant time. Every endpoint group has its own rate limit per client address.</li>
-<li>The internal and admin APIs stay off the internet. Map servers on other machines reach the Shop over a private network or a WireGuard tunnel.</li>
-<li>Run a single Shop per database: buys are serialized by a lock in its process. The Shop only adds new item rows inside new letters; moving copies stays with Central.</li>
+<li>Fuera de <code>Development</code> Shop se niega a arrancar sin una clave de mapa, o con una clave de mapa, una clave de administración o un secreto de proveedor vacío, corto o de ejemplo. Un secreto de proveedor vacío solo desactiva ese proveedor.</li>
+<li>Las claves y las firmas se comparan en tiempo constante. Cada grupo de endpoints tiene su propio límite de ritmo por dirección de cliente.</li>
+<li>Las API interna y de administración quedan fuera de internet. Los servidores de mapa en otras máquinas alcanzan a Shop por una red privada o un túnel WireGuard.</li>
+<li>Corre un solo Shop por base de datos: las compras se ordenan con un bloqueo en su proceso. Shop solo agrega filas de objetos nuevas dentro de cartas nuevas; mover copias sigue siendo cosa de Central.</li>
 </ul>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
 <ul>
-<li><strong>The shop button doesn't show.</strong> The Shop isn't running, the map has no <code>-shop</code>/<code>-shopKey</code>, or the In-game shop module is off.</li>
-<li><strong>An offer is missing in the game.</strong> It failed a check (the Shop's log names it), it is hidden, or its dates exclude today.</li>
-<li><strong>Publishing from the editor fails with 401.</strong> The admin key on the Shop page doesn't match <code>Shop:AdminKey</code>.</li>
-<li><strong>Admin edits fail in Docker.</strong> The <code>shop</code> folder isn't writable by uid 1654.</li>
-<li><strong>A payment didn't arrive.</strong> Look for the webhook in the Shop's log: 400 is a wrong secret, 422 an unknown account or product id.</li>
+<li><strong>El botón de la tienda no aparece.</strong> Shop no está corriendo, el mapa no tiene <code>-shop</code>/<code>-shopKey</code>, o el módulo de tienda del juego está desactivado.</li>
+<li><strong>Falta una oferta en el juego.</strong> No pasó una revisión (el registro de Shop la nombra), está oculta o sus fechas excluyen el día de hoy.</li>
+<li><strong>Publicar desde el editor falla con 401.</strong> La clave de administración de la página Shop no coincide con <code>Shop:AdminKey</code>.</li>
+<li><strong>Las ediciones de administración fallan en Docker.</strong> El uid 1654 no puede escribir la carpeta <code>shop</code>.</li>
+<li><strong>Un pago no llegó.</strong> Busca el webhook en el registro de Shop: 400 es un secreto incorrecto, 422 una cuenta o un id de producto desconocido.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
-<li><a href="../gameplay/cash-shop.html">Cash shop</a></li>
-<li><a href="../editor/shop-page.html">Shop page</a></li>
-<li><a href="security.html">Security</a></li>
+<li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li>
+<li><a href="../editor/shop-page.html">Página Shop</a></li>
+<li><a href="security.html">Seguridad</a></li>
 <li><a href="docker.html">Docker</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="security.html"><span>Anterior</span>Security</a><a class="next" href="performance.html"><span>Siguiente</span>Performance</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fservers%2Fshop-service.html">Reportar un problema en esta página</a></div></main>
-  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#how-it-fits">How it fits</a></li><li class="l2"><a href="#running-it">Running it</a></li><li class="l3"><a href="#on-your-computer-from-the-editor">On your computer, from the editor</a></li><li class="l3"><a href="#with-the-launcher">With the launcher</a></li><li class="l3"><a href="#by-hand-for-development">By hand, for development</a></li><li class="l3"><a href="#in-docker-compose">In Docker Compose</a></li><li class="l3"><a href="#how-map-servers-find-it">How map servers find it</a></li><li class="l2"><a href="#the-catalog-file">The catalog file</a></li><li class="l3"><a href="#top-level">Top level</a></li><li class="l3"><a href="#offers">Offers</a></li><li class="l3"><a href="#products">Products</a></li><li class="l3"><a href="#checks-and-reloading">Checks and reloading</a></li><li class="l2"><a href="#how-buying-works">How buying works</a></li><li class="l3"><a href="#the-ledger">The ledger</a></li><li class="l2"><a href="#internal-api">Internal API</a></li><li class="l2"><a href="#admin-api">Admin API</a></li><li class="l2"><a href="#payments">Payments</a></li><li class="l3"><a href="#stripe">Stripe</a></li><li class="l3"><a href="#your-own-web-shop">Your own web shop</a></li><li class="l3"><a href="#another-provider">Another provider</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l2"><a href="#security">Security</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="security.html"><span>Anterior</span>Seguridad</a><a class="next" href="performance.html"><span>Siguiente</span>Rendimiento</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fservers%2Fshop-service.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#how-it-fits">Cómo encaja</a></li><li class="l2"><a href="#running-it">Correrlo</a></li><li class="l3"><a href="#on-your-computer-from-the-editor">En tu computadora, desde el editor</a></li><li class="l3"><a href="#with-the-launcher">Con el lanzador</a></li><li class="l3"><a href="#by-hand-for-development">A mano, para desarrollo</a></li><li class="l3"><a href="#in-docker-compose">En Docker Compose</a></li><li class="l3"><a href="#how-map-servers-find-it">Cómo lo encuentran los servidores de mapa</a></li><li class="l2"><a href="#the-catalog-file">El archivo de catálogo</a></li><li class="l3"><a href="#top-level">Nivel superior</a></li><li class="l3"><a href="#offers">Ofertas</a></li><li class="l3"><a href="#products">Productos</a></li><li class="l3"><a href="#checks-and-reloading">Revisiones y recarga</a></li><li class="l2"><a href="#how-buying-works">Cómo funciona la compra</a></li><li class="l3"><a href="#the-ledger">El registro</a></li><li class="l2"><a href="#internal-api">API interna</a></li><li class="l2"><a href="#admin-api">API de administración</a></li><li class="l2"><a href="#payments">Pagos</a></li><li class="l3"><a href="#stripe">Stripe</a></li><li class="l3"><a href="#your-own-web-shop">Tu propia tienda web</a></li><li class="l3"><a href="#another-provider">Otro proveedor</a></li><li class="l2"><a href="#settings">Opciones</a></li><li class="l2"><a href="#security">Seguridad</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
 <script src="../../assets/search-es.js"></script>

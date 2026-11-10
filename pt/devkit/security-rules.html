@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Regras de segurança · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/security-rules.html">English</option><option value="../../es/devkit/security-rules.html">Español</option><option value="security-rules.html" selected>Português</option><option value="../../zh/devkit/security-rules.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Visão geral do DevKit</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Efeitos de habilidades</a></li><li><a href="item-effects.html">Efeitos de itens</a></li><li><a href="conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="quest-objectives.html">Objetivos de missão</a></li><li><a href="npc-options.html">Opções de NPC</a></li><li><a href="player-systems.html">Sistemas do jogador</a></li><li><a href="network-messages.html">Mensagens de rede</a></li><li><a href="gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Salvando dados</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="editor-extensions.html">Extensões do editor</a></li><li><a href="kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="talking-to-central.html">Falando com o Central</a></li><li><a href="service-modules.html">Módulos de serviço</a></li><li><a href="game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="domain-reload.html">Play sem domain reload</a></li><li><a href="security-rules.html" class="on" aria-current="page">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Regras de segurança</h1><p>As regras que protegem um jogo online feito com KitARPG contra clientes modificados, e como segui-las no seu próprio código: autoridade do servidor, ritmo de pedidos, identidade, validação, itens e moedas, o que os clientes recebem, o que as builds levam e os serviços.</p>
+<h2 id="assume-the-client-is-hostile"><a class="anchor" href="#assume-the-client-is-hostile" aria-hidden="true">#</a>Considere o cliente hostil</h2>
+<p>Online, os jogadores rodam o seu cliente nas próprias máquinas. Qualquer um pode modificá-lo ou escrever um programa que fale o seu protocolo de rede. Um cliente assim pode:</p>
+<ul>
+<li>chamar qualquer <code>[Command]</code> e enviar qualquer mensagem de rede, com quaisquer argumentos, tantas vezes quanto a conexão permitir,</li>
+<li>ler todo valor que o seu servidor envia a ele,</li>
+<li>pular toda verificação que o seu código de cliente faz,</li>
+<li>alterar a própria memória: barras de vida, timers de recarga, botões que estavam ocultos.</li>
+</ul>
+<p>Ele não pode mudar o que o servidor decide. Esse é o modelo inteiro: <strong>o cliente pede, o servidor decide.</strong> Todas as regras abaixo vêm disso.</p>
+<p>No modo um jogador não há outros jogadores para proteger, mas o mesmo código roda ali, então seguir as regras não custa nada.</p>
+<h2 id="1-the-server-decides-everything-that-matters"><a class="anchor" href="#1-the-server-decides-everything-that-matters" aria-hidden="true">#</a>1. O servidor decide tudo o que importa</h2>
+<p>Dano, cura, itens, ouro, experiência, progresso de missões, recargas, posições, quem pode ver o quê: tudo isso é decidido por código de servidor (o servidor de mapa online, o host no modo um jogador). O código de cliente mostra resultados e envia pedidos.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Fica no servidor</th>
+<th>Fica no cliente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Métodos <code>Server...</code>, corpos de <code>[Command]</code>, handlers de mensagens no <code>NetworkServer</code></td>
+<td>Janelas, menus, câmera, input, sons, efeitos</td>
+</tr>
+<tr>
+<td><code>Apply</code> dos efeitos de habilidade, <code>Use</code> dos efeitos de item, <code>Run</code> das ações, <code>Run</code> das opções de NPC</td>
+<td>Tooltips (<code>Describe</code>), rótulos</td>
+</tr>
+<tr>
+<td>Fórmulas</td>
+<td>Configurações em <code>PlayerPrefs</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Uma verificação feita pelo cliente (deixar um botão cinza, um círculo de alcance) é uma cortesia ao jogador. Faça-a de novo no servidor.</p>
+<h2 id="2-pace-every-request"><a class="anchor" href="#2-pace-every-request" aria-hidden="true">#</a>2. Limite o ritmo de todo pedido</h2>
+<p><code>CommandPacing</code> (namespace <code>Blunnyn.KitARPG.Net</code>) dá a cada conexão um orçamento compartilhado por todos os componentes e handlers: 30 pedidos por segundo com rajada de 60. Uma conexão muito acima disso é desconectada com <code>KickReasons.Flooding</code>. Pedidos que geram trabalho para o Central (correio, guilda, amigos, denúncias e qualquer coisa sua que termine em <code>CentralMessages.Send</code>) também gastam de um orçamento mais rígido: 2 por segundo, rajada de 10.</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Command]</span>
+<span class="k">void</span><span class="w"> </span><span class="nf">CmdDoThing</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">connectionToClient</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnRequest</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">MyRequest</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">AllowCentral</span><span class="p">(</span><span class="n">conn</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">   </span><span class="c1">// this one reaches Central</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>Pedidos recusados também contam, então um cliente que continua insistindo afunda até ser expulso. A conexão do próprio host no modo um jogador nunca é limitada.</p>
+<h2 id="3-identity-comes-from-the-connection"><a class="anchor" href="#3-identity-comes-from-the-connection" aria-hidden="true">#</a>3. A identidade vem da conexão</h2>
+<p>O servidor sabe quem enviou um pedido: o objeto de jogador da conexão (<code>conn.identity</code>, ou o próprio jogador do componente dentro de um <code>[Command]</code>). Nunca coloque &quot;quem eu sou&quot; em um pedido.</p>
+<pre class="code"><code class="language-csharp"><span class="c1">// Wrong: any client can claim any id.</span>
+<span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">GiftRequest</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">fromCharacterId</span><span class="p">;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">toName</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// Right: the sender is the connection&#39;s player.</span>
+<span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">GiftRequest</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">toName</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnGift</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">GiftRequest</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="k">from</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>O mesmo vale para os módulos do Central: uma mensagem leva um id de personagem, e o módulo verifica <code>m.Hosts(characterId)</code> para que um mapa só possa falar pelos jogadores que ele hospeda.</p>
+<h2 id="4-validate-every-argument"><a class="anchor" href="#4-validate-every-argument" aria-hidden="true">#</a>4. Valide todo argumento</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Argumento</th>
+<th>Verificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strings</td>
+<td>Não nulas, limites de tamanho, <code>PlayerText.Clean</code> antes de guardar ou mostrar a outros</td>
+</tr>
+<tr>
+<td>Inteiros</td>
+<td>Faixas, nunca negativos onde não faz sentido, <code>long.MinValue</code> e overflow (compare com os limites sem somar antes)</td>
+</tr>
+<tr>
+<td>Floats e vetores</td>
+<td><code>float.IsFinite</code> em cada componente, distâncias limitadas</td>
+</tr>
+<tr>
+<td>Ids de dados do jogo</td>
+<td>Existem no banco de dados (<code>GameInstance.Database.TryGet</code>)</td>
+</tr>
+<tr>
+<td>Casas e índices</td>
+<td>Dentro do contêiner; a casa contém o que o cliente diz</td>
+</tr>
+<tr>
+<td>Coisas no mundo</td>
+<td>Resolvidas no servidor e ao alcance (veja abaixo)</td>
+</tr>
+<tr>
+<td>Arrays</td>
+<td>Limites de tamanho antes de percorrer</td>
+</tr>
+</tbody>
+</table></div>
+<p>Overflow é um risco real: o kit já teve um bug em que uma quantia grande de ouro mais a postagem dava a volta e virava um número pequeno. Compare <code>amount &gt; limit - fee</code>, não <code>amount + fee &gt; limit</code>.</p>
+<h2 id="5-resolve-the-world-on-the-server"><a class="anchor" href="#5-resolve-the-world-on-the-server" aria-hidden="true">#</a>5. Resolva o mundo no servidor</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>O cliente nomeia</th>
+<th>Resolva com</th>
+<th>Depois verifique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Um monstro ou jogador (por <code>netId</code>)</td>
+<td><code>Fighters.TargetFor(conn, player, netId)</code>: null para qualquer coisa fora da visão desse cliente, inimigos invisíveis, monstros de evento gerados para outra pessoa</td>
+<td><code>Fighters.Enemies</code>, distância, <code>Sight.Clear</code></td>
+</tr>
+<tr>
+<td>Um NPC (por id)</td>
+<td><code>Npc.TryFind(id, out npc)</code></td>
+<td><code>npc.InReach(player.transform.position)</code></td>
+</tr>
+<tr>
+<td>Um drop</td>
+<td><code>Rewards.Instance.Pickup(player, id)</code> (verifica o alcance sozinho)</td>
+<td></td>
+</tr>
+<tr>
+<td>Um jogador pelo nome</td>
+<td><code>PlayerCharacter.ServerFind(name)</code> (este mapa)</td>
+<td>Distância, consentimento, regras</td>
+</tr>
+<tr>
+<td>Um ponto no chão</td>
+<td>Limite a distância, <code>NavMesh.SamplePosition</code>, <code>Sight.Clear</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-move-items-and-currencies-through-the-kit"><a class="anchor" href="#6-move-items-and-currencies-through-the-kit" aria-hidden="true">#</a>6. Mova itens e moedas pelo kit</h2>
+<p>Os itens têm um único dono o tempo todo, e toda movimentação entre donos é uma transação no Central. O seu código mantém isso verdadeiro passando pelo kit:</p>
+<ul>
+<li>Bolsa e equipamento: <code>PlayerInventory</code> (<code>Give</code>, <code>GiveOrBank</code>, <code>ServerReceive</code>, <code>ServerReceiveGold</code>, <code>AddGold</code>, <code>AddCurrency</code>), ou <code>IPlayerActor</code> (<code>GiveItem</code>, <code>TakeItem</code>, <code>AddCurrency</code>).</li>
+<li>Entre jogadores: a troca, o correio e o mercado do kit. Não construa sua própria transferência com dois salvamentos separados; uma queda entre eles duplica ou perde itens.</li>
+<li>Moedas premium pertencem à conta e só são gastas na loja do jogo, cujo serviço verifica o saldo. <code>AddCurrency</code> com uma moeda premium a concede pelo serviço da loja; retirá-la é recusado.</li>
+<li>Registre o que o suporte vai precisar com <code>GameLog.Write(&quot;mygame.kind&quot;, player, ...)</code>. As linhas vão para a tabela <code>game_logs</code> e os moderadores as leem com <code>/logs</code>.</li>
+</ul>
+<h2 id="7-send-clients-only-what-they-may-know"><a class="anchor" href="#7-send-clients-only-what-they-may-know" aria-hidden="true">#</a>7. Envie aos clientes só o que eles podem saber</h2>
+<ul>
+<li>Um <code>NetworkBehaviour</code> com <em>Sync Mode</em> Observers envia seus valores sincronizados a todo cliente que vê o jogador. Use Owner para dados privados (bolsas, missões, marcas, seus próprios sistemas).</li>
+<li><code>[ClientRpc]</code> chega a todo observador; <code>[TargetRpc]</code> só ao dono.</li>
+<li><code>PlayerData</code> nunca sai do servidor. Sincronize só o que a interface precisa.</li>
+<li>Não envie posições, vida ou stats de coisas que um cliente não pode ver; o gerenciamento de interesse do kit já limita o que cada cliente recebe.</li>
+<li>Texto escrito por jogadores é mostrado com <code>PlayerText.NoTags</code> (ou limpo com <code>PlayerText.Clean</code> no servidor), para que ninguém injete tags de TextMeshPro na tela de outros jogadores.</li>
+</ul>
+<h2 id="8-keep-server-code-out-of-client-builds"><a class="anchor" href="#8-keep-server-code-out-of-client-builds" aria-hidden="true">#</a>8. Mantenha o código de servidor fora das builds de cliente</h2>
+<p>Código só de servidor vai em assemblies com a restrição <code>UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER</code> (<code>Game.Server</code>). Assim os clientes online não levam comandos de GM, mensagens do Central nem as suas regras de servidor, e por isso não podem lê-los nem chamá-los.</p>
+<p>Antes de cada build, <code>BuildSeparation</code> para uma build de cliente que levaria código de servidor, o salvamento do modo um jogador ou ferramentas de teste. Os clientes de release são compilados com IL2CPP (a verificação exige isso), o que os torna muito mais difíceis de ler. Nunca coloque chaves, senhas ou strings de conexão em nada que uma build de cliente inclua: o servidor de mapa lê a chave do Central de <code>KITARPG_CENTRAL_KEY</code>, e a chave da loja de <code>KITARPG_SHOP_KEY</code>.</p>
+<p>Veja <a href="assemblies.html">Assemblies</a> e <a href="../servers/builds.html">Builds</a>.</p>
+<h2 id="9-staff-commands-are-audited"><a class="anchor" href="#9-staff-commands-are-audited" aria-hidden="true">#</a>9. Os comandos da equipe são auditados</h2>
+<p>Os comandos de GM ficam em assemblies só de servidor, verificam o nível do jogador antes de rodar, e todo uso de nível de equipe (nível 2 ou mais) é gravado na auditoria de GM e no registro do jogo. Quando a auditoria não pode ser gravada, os comandos da equipe ficam em pausa. Os seus comandos ganham tudo isso de <code>GmCommands.Register</code>. Limite o que eles distribuem com <code>GmCommands.MaxItems</code>, <code>MaxGold</code> e os outros limites. Veja <a href="gm-commands-in-code.html">Comandos de GM em código</a>.</p>
+<h2 id="10-the-services"><a class="anchor" href="#10-the-services" aria-hidden="true">#</a>10. Os serviços</h2>
+<ul>
+<li><strong>Módulos do Central</strong> tratam o que os mapas enviam por seus jogadores: valide todo campo, verifique <code>m.Hosts(characterId)</code> e registre as recusas com o id do mapa.</li>
+<li><strong>Endpoints HTTP</strong> em módulos são públicos a menos que chamem <code>RequireAuthorization()</code>. Leia a conta da claim <code>sub</code> do token, nunca de um parâmetro.</li>
+<li><strong>Os módulos rodam com todos os direitos do serviço.</strong> Só o operador do servidor os instala; <code>Modules:Allow</code> limita quais dlls podem carregar. Veja <a href="service-modules.html">Módulos de serviço</a>.</li>
+<li><strong>Nunca altere as tabelas do kit</strong> a partir de um módulo.</li>
+</ul>
+<h2 id="a-review-checklist"><a class="anchor" href="#a-review-checklist" aria-hidden="true">#</a>Uma lista de revisão</h2>
+<p>Antes de lançar um recurso, passe por cada pedido que um cliente pode enviar:</p>
+<ul>
+<li>[ ] O ritmo é limitado com <code>CommandPacing.Allow</code> (ou <code>AllowCentral</code>).</li>
+<li>[ ] O remetente vem da conexão, não da mensagem.</li>
+<li>[ ] Toda string, número, vetor e array é verificado.</li>
+<li>[ ] Todo id é buscado no servidor; todo objeto do mundo é resolvido com os helpers do kit e verificado quanto a alcance e visão.</li>
+<li>[ ] Itens, ouro e moedas passam por <code>PlayerInventory</code> ou <code>IPlayerActor</code>.</li>
+<li>[ ] A resposta e qualquer valor sincronizado não revelam nada que o jogador não deveria saber.</li>
+<li>[ ] O código só de servidor está em um assembly <code>.Server</code>.</li>
+<li>[ ] Tudo o que o suporte vai perguntar está no registro do jogo.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="../servers/security.html">Segurança</a></li>
+<li><a href="network-messages.html">Mensagens de rede</a></li>
+<li><a href="player-systems.html">Sistemas do jogador</a></li>
+<li><a href="assemblies.html">Assemblies</a></li>
+<li><a href="service-modules.html">Módulos de serviço</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="domain-reload.html"><span>Anterior</span>Play sem domain reload</a><a class="next" href="../reference/keys.html"><span>Próximo</span>Teclas</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fdevkit%2Fsecurity-rules.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#assume-the-client-is-hostile">Considere o cliente hostil</a></li><li class="l2"><a href="#1-the-server-decides-everything-that-matters">1. O servidor decide tudo o que importa</a></li><li class="l2"><a href="#2-pace-every-request">2. Limite o ritmo de todo pedido</a></li><li class="l2"><a href="#3-identity-comes-from-the-connection">3. A identidade vem da conexão</a></li><li class="l2"><a href="#4-validate-every-argument">4. Valide todo argumento</a></li><li class="l2"><a href="#5-resolve-the-world-on-the-server">5. Resolva o mundo no servidor</a></li><li class="l2"><a href="#6-move-items-and-currencies-through-the-kit">6. Mova itens e moedas pelo kit</a></li><li class="l2"><a href="#7-send-clients-only-what-they-may-know">7. Envie aos clientes só o que eles podem saber</a></li><li class="l2"><a href="#8-keep-server-code-out-of-client-builds">8. Mantenha o código de servidor fora das builds de cliente</a></li><li class="l2"><a href="#9-staff-commands-are-audited">9. Os comandos da equipe são auditados</a></li><li class="l2"><a href="#10-the-services">10. Os serviços</a></li><li class="l2"><a href="#a-review-checklist">Uma lista de revisão</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

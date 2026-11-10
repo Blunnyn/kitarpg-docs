@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Formulas · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="formulas.html" selected>English</option><option value="../../es/devkit/formulas.html">Español</option><option value="../../pt/devkit/formulas.html">Português</option><option value="../../zh/devkit/formulas.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li><li><a href="npc-options.html">NPC options</a></li><li><a href="player-systems.html">Player systems</a></li><li><a href="network-messages.html">Network messages</a></li><li><a href="gm-commands-in-code.html">GM commands in code</a></li><li><a href="formulas.html" class="on" aria-current="page">Formulas</a></li><li><a href="saving-data.html">Saving data</a></li><li><a href="events.html">Events</a></li><li><a href="overriding-kit-behaviour.html">Overriding kit behaviour</a></li><li><a href="menus-and-settings-options.html">Menus and settings options</a></li><li><a href="editor-extensions.html">Editor extensions</a></li><li><a href="kit-updates-in-code.html">Kit updates in code</a></li><li><a href="talking-to-central.html">Talking to Central</a></li><li><a href="service-modules.html">Service modules</a></li><li><a href="game-modes-in-code.html">Game modes in code</a></li><li><a href="example-bounty-board.html">Example: bounty board</a></li><li><a href="domain-reload.html">Play without domain reload</a></li><li><a href="security-rules.html">Security rules</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/faq.html">FAQ</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li><li><a href="../reference/glossary.html">Glossary</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Formulas</h1><p>How to change the game's math without touching the kit: the <code>CombatFormula</code> for damage, healing, attack speed and experience, and the <code>StatFormula</code> for how class, level, attributes and gear add up to stats.</p>
+<h2 id="how-formulas-are-installed"><a class="anchor" href="#how-formulas-are-installed" aria-hidden="true">#</a>How formulas are installed</h2>
+<p>The kit keeps two formula objects on <code>GameInstance</code>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Decides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GameInstance.Combat</code></td>
+<td><code>CombatFormula</code></td>
+<td>Damage, damage over time ticks, heals, time between attacks, experience per kill</td>
+</tr>
+<tr>
+<td><code>GameInstance.Formula</code></td>
+<td><code>StatFormula</code></td>
+<td>Stat sheets, attribute points and skill points earned per level</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both are plain C# classes in <code>KitARPG.Data</code> with <code>virtual</code> methods. To change a rule, subclass one, override what you need and assign an instance at startup:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCombatFormula</span><span class="p">();</span>
+</code></pre>
+<p>The kit puts its own formulas back in <code>SubsystemRegistration</code> on every Play (see <a href="domain-reload.html">Play without domain reload</a>). <code>BeforeSceneLoad</code> runs after that and before any scene, so nothing fights before your formula is in place.</p>
+<p><strong>Where the file goes:</strong> the <code>Game</code> assembly, so every build installs it. The server is what applies formulas, but the client uses <code>Combat.Experience</code> too: the bestiary shows the experience a monster gives the local player. A formula only in <code>Game.Server</code> would make the bestiary disagree with what players earn.</p>
+<h2 id="combatformula"><a class="anchor" href="#combatformula" aria-hidden="true">#</a>CombatFormula</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Called when</th>
+<th>What it returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hit Attack(StatSheet attacker, IReadOnlyList&lt;ElementDamage&gt; rolls, StatSheet defender, float scale = 1)</code></td>
+<td>Basic attacks of players and monsters, and <code>DamageEffect</code> on skills</td>
+<td>The hit: total, critical, main element</td>
+</tr>
+<tr>
+<td><code>float Element(StatSheet attacker, DamageElement element, float roll, StatSheet defender)</code></td>
+<td>By <code>Attack</code> and <code>Tick</code>, for each element's share</td>
+<td>That element's damage after resistances</td>
+</tr>
+<tr>
+<td><code>Hit Tick(StatSheet caster, DamageElement element, float amount, StatSheet holder)</code></td>
+<td>Each tick of a damage over time status</td>
+<td>The tick's hit, never critical, at least 1</td>
+</tr>
+<tr>
+<td><code>int Heal(StatSheet healer, float amount)</code></td>
+<td><code>HealEffect</code> and healing statuses</td>
+<td>The final heal</td>
+</tr>
+<tr>
+<td><code>float AttackInterval(float attacksPerSecond, StatSheet attacker)</code></td>
+<td>Every basic attack of players and monsters</td>
+<td>Seconds until the next attack</td>
+</tr>
+<tr>
+<td><code>long Experience(MonsterData monster, int playerLevel)</code></td>
+<td>A kill, for the killer and each party member sharing it; the bestiary</td>
+<td>Experience before bonuses and rates</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-kit-s-rules"><a class="anchor" href="#the-kit-s-rules" aria-hidden="true">#</a>The kit's rules</h3>
+<ul>
+<li><strong>Attack:</strong> each roll is worked out apart for its element. The roll (a random value between its min and max, times <code>scale</code>) plus the attacker's damage for that element, grown by the attacker's power. Then the defender's flat resistance to that element is taken off, then its percent resistance, capped at the element's <em>Max Resistance</em> (<code>maxResistance</code>, 0.5 when the roll has no element). The totals add up. A critical hit (chance <code>critChance</code>) multiplies the total by <code>1 + critDamage</code>. The result is rounded and at least 1.</li>
+<li><strong>Tick:</strong> the same element rule with the caster's stats as they were when the status landed; not critical.</li>
+<li><strong>Heal:</strong> <code>(amount + healer.healing) * (1 + healer.healingBonus)</code>, rounded.</li>
+<li><strong>Attack interval:</strong> <code>1 / (attacksPerSecond * (1 + attackSpeed))</code>, with at least 0.1 attacks per second.</li>
+<li><strong>Experience:</strong> the monster's experience in full up to 3 levels below the player; then 20% less for each level further below, down to 10%.</li>
+</ul>
+<p>After <code>Experience</code>, the kit applies the player's experience gain stat, the server's rates (<code>experienceRate</code> and events from <code>/rates</code>) and party sharing. Your formula returns the base amount.</p>
+<h3 id="statsheet"><a class="anchor" href="#statsheet" aria-hidden="true">#</a>StatSheet</h3>
+<p>What attacker, defender and healer are:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CharacterStats stats</code></td>
+<td><code>maxHealth</code>, <code>maxMana</code>, <code>healthRegen</code>, <code>manaRegen</code>, <code>power</code>, <code>critChance</code>, <code>critDamage</code>, <code>healing</code>, <code>healingBonus</code>, <code>attackSpeed</code>, <code>moveSpeed</code>, <code>carryWeight</code>, <code>experienceGain</code>, <code>lootChance</code>. Shares are fractions: <code>critChance</code> 0.05 is 5%.</td>
+</tr>
+<tr>
+<td><code>ElementStats Element(DamageElement e)</code></td>
+<td>The element's <code>damage</code>, <code>resistance</code> and <code>resistancePercent</code>. A null element reads the fallback.</td>
+</tr>
+<tr>
+<td><code>int Attribute(AttributeData a)</code></td>
+<td>An attribute's total.</td>
+</tr>
+<tr>
+<td><code>DamageElement fallback</code></td>
+<td>The game's default element.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-harsher-level-gap"><a class="anchor" href="#example-harsher-level-gap" aria-hidden="true">#</a>Example: harsher level gap</h3>
+<p>Monsters far below the player give nothing at all after 8 levels:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCombatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCombatFormula</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">Experience</span><span class="p">(</span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playerLevel</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playerLevel</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">level</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gap</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Experience</span><span class="p">(</span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">playerLevel</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-armor-from-an-attribute"><a class="anchor" href="#example-armor-from-an-attribute" aria-hidden="true">#</a>Example: armor from an attribute</h3>
+<p>A flat reduction from an attribute of your game (here one with id <code>toughness</code>), applied to every element before the percent resistance:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ToughnessFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ToughnessFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">AttributeData</span><span class="w"> </span><span class="n">toughness</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">Element</span><span class="p">(</span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">defender</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toughness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="s">&quot;toughness&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">toughness</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Element</span><span class="p">(</span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="n">defender</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toughness</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">defender</span><span class="p">.</span><span class="n">Attribute</span><span class="p">(</span><span class="n">toughness</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>toughness</code> is an instance field: <code>Install</code> makes a new formula on every Play, so the cached asset starts empty each time, even without domain reload. A <code>static</code> cache would outlive Play and keep an old reference if the database changed between Plays; reset such statics in <code>SubsystemRegistration</code> (see <a href="domain-reload.html">Play without domain reload</a>).</p>
+<h3 id="example-capped-critical-chance-and-attack-speed"><a class="anchor" href="#example-capped-critical-chance-and-attack-speed" aria-hidden="true">#</a>Example: capped critical chance and attack speed</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CappedFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CappedFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Hit</span><span class="w"> </span><span class="nf">Attack</span><span class="p">(</span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">defender</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Capped for this attack only, then put back.</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">chance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="p">;</span>
+<span class="w">        </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Min</span><span class="p">(</span><span class="n">chance</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">defender</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chance</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">AttackInterval</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">attacksPerSecond</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mf">0.25f</span><span class="p">,</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">AttackInterval</span><span class="p">(</span><span class="n">attacksPerSecond</span><span class="p">,</span><span class="w"> </span><span class="n">attacker</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>stats</code> is a struct field on the sheet, so the change is made and undone around the base call.</p>
+<h2 id="statformula"><a class="anchor" href="#statformula" aria-hidden="true">#</a>StatFormula</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Called when</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>StatSheet Sheet(CharacterClass characterClass, int level, IReadOnlyList&lt;AttributeAmount&gt; spent, GameDatabase database, IReadOnlyList&lt;IStatSource&gt; sources = null)</code></td>
+<td>Every time a player's stats are worked out (<code>PlayerCharacter.RecalculateStats</code>: level, attributes, gear or buffs changed), and for new characters in single player</td>
+<td>The full sheet</td>
+</tr>
+<tr>
+<td><code>int PointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>Level ups</td>
+<td>Attribute points earned by that level</td>
+</tr>
+<tr>
+<td><code>int SkillPointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>Skill point totals</td>
+<td>Skill points earned by that level</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-kit-s-order"><a class="anchor" href="#the-kit-s-order" aria-hidden="true">#</a>The kit's order</h3>
+<ol>
+<li>The class's attributes at this level, then the spent points, then attribute bonuses from every source (gear, buffs, passives).</li>
+<li>The class's base stats plus its stats per level times <code>level - 1</code>.</li>
+<li>Each attribute's <em>Per Point</em> stats times its total.</li>
+<li>Every source's stat modifiers. Percent bonuses apply last.</li>
+</ol>
+<p>The defaults for points are the class's <em>Points Per Level</em> (<code>pointsPerLevel</code>, 5) and <em>Skill Points Per Level</em> (<code>skillPointsPerLevel</code>, 1), times <code>level - 1</code>.</p>
+<p>Monsters don't use the stat formula; their stats come from their data.</p>
+<h3 id="example-two-attribute-points-per-level"><a class="anchor" href="#example-two-attribute-points-per-level" aria-hidden="true">#</a>Example: two attribute points per level</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyStatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyStatFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Two attribute points per level instead of the class&#39;s own number.</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">PointsEarned</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-health-that-grows-by-a-share-per-level"><a class="anchor" href="#example-health-that-grows-by-a-share-per-level" aria-hidden="true">#</a>Example: health that grows by a share per level</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Characters</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GrowingHealthFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GrowingHealthFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="nf">Sheet</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">AttributeAmount</span><span class="o">&gt;</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span>
+<span class="w">        </span><span class="n">GameDatabase</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">IStatSource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">sheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Sheet</span><span class="p">(</span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">sources</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// +2% max health per level after the first, kept whole.</span>
+<span class="w">        </span><span class="n">sheet</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">sheet</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.02f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)));</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sheet</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Stats in the kit are whole numbers and percent bonuses are whole points. Round what you add, as above, so tooltips and sheets agree.</p>
+<h3 id="example-a-skill-point-every-other-level"><a class="anchor" href="#example-a-skill-point-every-other-level" aria-hidden="true">#</a>Example: a skill point every other level</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">SkillPointsEarned</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</code></pre>
+<h2 id="changing-the-rules-on-a-live-game"><a class="anchor" href="#changing-the-rules-on-a-live-game" aria-hidden="true">#</a>Changing the rules on a live game</h2>
+<p>Formulas decide new numbers; they don't rewrite saved ones. Changing <code>PointsEarned</code> changes what is earned from now on. Characters keep the points they have: free points are stored and only the difference at each level up is added. If you lower the points per level on a live game, give players a way to start over (the kit's <code>ResetAttributesAction</code> or <em>Scroll of Second Thoughts</em>).</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Server</th>
+<th>Client</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Attack</code>, <code>Element</code>, <code>Tick</code>, <code>Heal</code>, <code>AttackInterval</code></td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>Experience</code></td>
+<td>Yes</td>
+<td>The bestiary</td>
+</tr>
+<tr>
+<td><code>Sheet</code>, <code>PointsEarned</code>, <code>SkillPointsEarned</code></td>
+<td>Yes</td>
+<td>No; the owner receives the finished sheet</td>
+</tr>
+</tbody>
+</table></div>
+<p>Online, a formula in a client build that differs from the map server's only changes what that client's bestiary shows. Single player runs both halves in one process.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Installing in <code>SubsystemRegistration</code>.</strong> The kit resets the formulas there; the order is undefined.</li>
+<li><strong>Installing only in <code>Game.Server</code>.</strong> The bestiary on clients then shows the kit's numbers.</li>
+<li><strong>Returning decimals from <code>Sheet</code>.</strong> Round your additions.</li>
+<li><strong>Keeping per-fighter state in the formula.</strong> One instance serves every fighter on the map.</li>
+<li><strong>Applying rates inside <code>Experience</code>.</strong> The kit applies the experience stat and server rates after it, so they would count twice.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../gameplay/combat.html">Combat</a></li>
+<li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li>
+<li><a href="skill-effects.html">Skill effects</a></li>
+<li><a href="domain-reload.html">Play without domain reload</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="gm-commands-in-code.html"><span>Previous</span>GM commands in code</a><a class="next" href="saving-data.html"><span>Next</span>Saving data</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Fformulas.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#how-formulas-are-installed">How formulas are installed</a></li><li class="l2"><a href="#combatformula">CombatFormula</a></li><li class="l3"><a href="#the-kit-s-rules">The kit&#x27;s rules</a></li><li class="l3"><a href="#statsheet">StatSheet</a></li><li class="l3"><a href="#example-harsher-level-gap">Example: harsher level gap</a></li><li class="l3"><a href="#example-armor-from-an-attribute">Example: armor from an attribute</a></li><li class="l3"><a href="#example-capped-critical-chance-and-attack-speed">Example: capped critical chance and attack speed</a></li><li class="l2"><a href="#statformula">StatFormula</a></li><li class="l3"><a href="#the-kit-s-order">The kit&#x27;s order</a></li><li class="l3"><a href="#example-two-attribute-points-per-level">Example: two attribute points per level</a></li><li class="l3"><a href="#example-health-that-grows-by-a-share-per-level">Example: health that grows by a share per level</a></li><li class="l3"><a href="#example-a-skill-point-every-other-level">Example: a skill point every other level</a></li><li class="l2"><a href="#changing-the-rules-on-a-live-game">Changing the rules on a live game</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

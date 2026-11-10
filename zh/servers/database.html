@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Database · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>数据库 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/database.html">English</option><option value="../../es/servers/database.html">Español</option><option value="../../pt/servers/database.html">Português</option><option value="database.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html" class="on" aria-current="page">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">服务器与部署</div><h1>Database</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>Where an online KitARPG game keeps accounts, characters and items: SQLite or PostgreSQL, how the schema is created and updated, every table, how to switch to PostgreSQL, and how to back up and restore.</p>
-<h2 id="sqlite-or-postgresql"><a class="anchor" href="#sqlite-or-postgresql" aria-hidden="true">#</a>SQLite or PostgreSQL</h2>
-<p>Login, Central and the Shop share one database. Map servers never connect to it; they load and save through Central.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">架构</a></li><li><a href="services.html">服务</a></li><li><a href="launcher.html">启动器</a></li><li><a href="database.html" class="on" aria-current="page">数据库</a></li><li><a href="configuration.html">配置</a></li><li><a href="builds.html">构建</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">安全</a></li><li><a href="shop-service.html">Shop 服务</a></li><li><a href="performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">服务器与部署</div><h1>数据库</h1><p>在线 KitARPG 游戏在哪里保存账号、角色和物品：SQLite 或 PostgreSQL，数据库结构如何创建和更新，每张表的内容，如何切换到 PostgreSQL，以及如何备份和恢复。</p>
+<h2 id="sqlite-or-postgresql"><a class="anchor" href="#sqlite-or-postgresql" aria-hidden="true">#</a>SQLite 还是 PostgreSQL</h2>
+<p>Login、Central 和 Shop 共用一个数据库。地图服务器从不连接它；它们通过 Central 加载和保存。</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -27,307 +27,307 @@
 </thead>
 <tbody>
 <tr>
-<td>What it is</td>
-<td>One file on disk</td>
-<td>A database server</td>
+<td>是什么</td>
+<td>磁盘上的一个文件</td>
+<td>一个数据库服务器</td>
 </tr>
 <tr>
-<td>Setup</td>
-<td>None</td>
-<td>A server, a database and a user (the editor can make them)</td>
+<td>安装</td>
+<td>无</td>
+<td>一个服务器、一个数据库和一个用户（编辑器可以创建它们）</td>
 </tr>
 <tr>
-<td>Good for</td>
-<td>Developing, testing, small private servers on one machine</td>
-<td>Production, anything public, maps on several machines</td>
+<td>适合</td>
+<td>开发、测试、单台机器上的小型私人服务器</td>
+<td>生产环境、任何公开服务、分布在多台机器上的地图</td>
 </tr>
 <tr>
-<td>Where</td>
-<td><code>UserSettings/KitARPG/data/kitarpg.db</code> from the editor, <code>data/kitarpg.db</code> next to <code>launcher.json</code> from the launcher</td>
-<td>Wherever your server runs. In Docker Compose, the <code>pgdata</code> volume</td>
+<td>位置</td>
+<td>从编辑器运行时为 <code>UserSettings/KitARPG/data/kitarpg.db</code>，从启动器运行时为 <code>launcher.json</code> 旁边的 <code>data/kitarpg.db</code></td>
+<td>你的服务器运行的任何地方。在 Docker Compose 中为 <code>pgdata</code> 卷</td>
 </tr>
 <tr>
-<td>JSON columns</td>
-<td>Text</td>
+<td>JSON 列</td>
+<td>文本</td>
 <td><code>jsonb</code></td>
 </tr>
 <tr>
-<td>Versions</td>
-<td>Bundled with the services</td>
-<td>PostgreSQL 16 or newer. The compose file uses <code>postgres:17-alpine</code></td>
+<td>版本</td>
+<td>随服务一起打包</td>
+<td>PostgreSQL 16 或更新版本。compose 文件使用 <code>postgres:17-alpine</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>The same code and the same migrations run on both. Each provider has its own database context (<code>SqliteGameDbContext</code>, <code>PostgresGameDbContext</code>) and its own migration folder.</p>
-<p>A single player game uses neither: it saves to its own SQLite file in the player's persistent data folder (<code>savegame.db</code> by default, set in <code>KitARPGSettings</code> as <em>Save File</em> (<code>saveFile</code>)). That file belongs to the player and isn't covered here.</p>
-<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
-<p>Every service reads the same <code>Database</code> section. Environment variables use <code>__</code> between levels.</p>
+<p>两者运行相同的代码和相同的迁移。每个提供程序有自己的数据库上下文（<code>SqliteGameDbContext</code>、<code>PostgresGameDbContext</code>）和自己的迁移文件夹。</p>
+<p>单人模式游戏两者都不用：它保存到玩家持久数据文件夹中自己的 SQLite 文件（默认为 <code>savegame.db</code>，在 <code>KitARPGSettings</code> 中以 <em>Save File</em>（<code>saveFile</code>）设置）。这个文件属于玩家，本页不涉及。</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>设置</h2>
+<p>每个服务都读取同一个 <code>Database</code> 节。环境变量在层级之间使用 <code>__</code>。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Setting</th>
-<th>Environment variable</th>
-<th>What it does</th>
-<th>Default</th>
+<th>设置</th>
+<th>环境变量</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Database:Provider</code></td>
 <td><code>Database__Provider</code></td>
-<td><code>Sqlite</code> or <code>Postgres</code></td>
+<td><code>Sqlite</code> 或 <code>Postgres</code></td>
 <td><code>Sqlite</code></td>
 </tr>
 <tr>
 <td><code>Database:ConnectionString</code></td>
 <td><code>Database__ConnectionString</code></td>
-<td>The connection. SQLite: <code>Data Source=&lt;file&gt;</code>. PostgreSQL: <code>Host=...;Port=5432;Database=...;Username=...;Password=...</code></td>
+<td>连接。SQLite：<code>Data Source=&lt;file&gt;</code>。PostgreSQL：<code>Host=...;Port=5432;Database=...;Username=...;Password=...</code></td>
 <td><code>Data Source=kitarpg.db</code></td>
 </tr>
 <tr>
 <td><code>Database:MigrateOnStartup</code></td>
 <td><code>Database__MigrateOnStartup</code></td>
-<td>Bring the schema up to date when the service starts, then migrate the modules' tables</td>
+<td>服务启动时把数据库结构更新到最新，然后迁移模块的表</td>
 <td><code>true</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>A relative SQLite path is relative to the service's own folder. When you run services by hand, give them all the same absolute path, or each makes its own file.</p>
-<p>Npgsql connection string options all work, for example <code>SSL Mode=Require</code> for hosted servers and <code>Maximum Pool Size=...</code> for the connection pool.</p>
-<h2 id="migrations"><a class="anchor" href="#migrations" aria-hidden="true">#</a>Migrations</h2>
+<p>SQLite 的相对路径是相对于服务自己的文件夹。手动运行服务时，要给它们全部相同的绝对路径，否则每个服务都会创建自己的文件。</p>
+<p>Npgsql 连接字符串的选项都可以使用，例如托管服务器用的 <code>SSL Mode=Require</code>，以及连接池用的 <code>Maximum Pool Size=...</code>。</p>
+<h2 id="migrations"><a class="anchor" href="#migrations" aria-hidden="true">#</a>迁移</h2>
 <ul>
-<li>With <code>MigrateOnStartup</code> on, each service applies any missing migrations at start. The launcher starts Login first and waits a moment, so Login usually does it.</li>
-<li>The applied migrations are recorded in <code>__EFMigrationsHistory</code>. A module's go in <code>__ModuleMigrations_&lt;module name&gt;</code>.</li>
-<li>A kit update that changes the schema ships new migrations for both providers. Restarting the services applies them.</li>
-<li>Migrations go forward only. Some move data in ways that can't be undone (for example <code>ItemOwnersAndCatalog</code>, which moved items stored as JSON into rows). <strong>Back up before updating the kit on a live server.</strong></li>
+<li>开启 <code>MigrateOnStartup</code> 时，每个服务在启动时应用所有缺失的迁移。启动器先启动 Login 并稍等片刻，所以通常由 Login 完成迁移。</li>
+<li>已应用的迁移记录在 <code>__EFMigrationsHistory</code> 中。模块的迁移记录在 <code>__ModuleMigrations_&lt;module name&gt;</code> 中。</li>
+<li>修改数据库结构的套件更新会为两种提供程序都附带新的迁移。重启服务即可应用。</li>
+<li>迁移只能向前。有些迁移移动数据的方式无法撤销（例如 <code>ItemOwnersAndCatalog</code>，它把以 JSON 存储的物品移到了行中）。<strong>在正式服务器上更新套件之前先备份。</strong></li>
 </ul>
-<p>To make your own tables, write a service module with its own context and migrations; never change the kit's tables. See <a href="../devkit/service-modules.html">Service modules</a>. If you change the kit's entities anyway (for your own fork), generate a migration for both providers:</p>
+<p>要创建你自己的表，请编写一个带有自己上下文和迁移的服务模块；绝不要修改套件的表。见<a href="../devkit/service-modules.html">服务模块</a>。如果你仍然修改了套件的实体（用于你自己的分支），请为两种提供程序都生成迁移：</p>
 <pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services/Data
 dotnet<span class="w"> </span>ef<span class="w"> </span>migrations<span class="w"> </span>add<span class="w"> </span>&lt;Name&gt;<span class="w"> </span>--context<span class="w"> </span>SqliteGameDbContext<span class="w"> </span>--output-dir<span class="w"> </span>Migrations/Sqlite
 dotnet<span class="w"> </span>ef<span class="w"> </span>migrations<span class="w"> </span>add<span class="w"> </span>&lt;Name&gt;<span class="w"> </span>--context<span class="w"> </span>PostgresGameDbContext<span class="w"> </span>--output-dir<span class="w"> </span>Migrations/Postgres
 </code></pre>
-<h2 id="tables"><a class="anchor" href="#tables" aria-hidden="true">#</a>Tables</h2>
+<h2 id="tables"><a class="anchor" href="#tables" aria-hidden="true">#</a>表</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Table</th>
-<th>What it holds</th>
-<th>Written by</th>
+<th>表</th>
+<th>保存什么</th>
+<th>由谁写入</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>accounts</code></td>
-<td>Username (unique, up to 32), email, Argon2id password hash, GM level (<code>Role</code>: 1 Player, 2 Moderator, 3 Game Master, 4 Admin), <code>BannedUntil</code>, bank gold, creation date</td>
-<td>Login, Central (bans, roles, bank)</td>
+<td>用户名（唯一，最多 32 个字符）、电子邮件、Argon2id 密码哈希、GM 等级（<code>Role</code>：1 Player、2 Moderator、3 Game Master、4 Admin）、<code>BannedUntil</code>、银行金币、创建日期</td>
+<td>Login、Central（封禁、角色等级、银行）</td>
 </tr>
 <tr>
 <td><code>characters</code></td>
-<td>Name (unique), class, level, experience, gold, map and position, health, mana, free points, and JSON columns for currencies, attributes, skills, hotbar, appearance and <code>Extra</code> (quests, progress, your own <code>PlayerData</code> under <code>game</code>). <code>Version</code> refuses old saves; <code>Deliveries</code> counts what Central handed over</td>
-<td>Login creates, Central saves</td>
+<td>名称（唯一）、职业、等级、经验、金币、地图和位置、生命、法力、自由点数，以及货币、属性、技能、快捷栏、外观和 <code>Extra</code>（任务、进度、<code>game</code> 下你自己的 <code>PlayerData</code>）的 JSON 列。<code>Version</code> 拒绝旧存档；<code>Deliveries</code> 统计 Central 交付过的内容</td>
+<td>Login 创建，Central 保存</td>
 </tr>
 <tr>
 <td><code>item_instances</code></td>
-<td>Every copy of every item: uid, item id, exactly one owner (<code>CharacterId</code>, <code>AccountId</code>, <code>GuildId</code>, <code>MailId</code>, <code>CollectorId</code> or <code>ListingId</code>), container, slot, amount, bound, <code>Extra</code> JSON (random rolls, upgrade, gems)</td>
-<td>Central, the Shop (new copies in letters)</td>
+<td>每件物品的每一个副本：uid、物品 id、恰好一个所有者（<code>CharacterId</code>、<code>AccountId</code>、<code>GuildId</code>、<code>MailId</code>、<code>CollectorId</code> 或 <code>ListingId</code>）、容器、格子、数量、绑定、<code>Extra</code> JSON（随机属性、强化、宝石）</td>
+<td>Central、Shop（信件中的新副本）</td>
 </tr>
 <tr>
 <td><code>items</code></td>
-<td>The item catalog: id, name, category and the rest of what the game data exports, plus <code>Retired</code></td>
-<td>Login, at every start</td>
+<td>物品目录：id、名称、类别以及游戏数据导出的其余内容，外加 <code>Retired</code></td>
+<td>Login，每次启动时</td>
 </tr>
 <tr>
 <td><code>skills</code></td>
-<td>The skill catalog: id, name, classes, <code>Retired</code></td>
-<td>Login, at every start</td>
+<td>技能目录：id、名称、职业、<code>Retired</code></td>
+<td>Login，每次启动时</td>
 </tr>
 <tr>
 <td><code>friends</code></td>
-<td>Pairs of characters</td>
+<td>成对的角色</td>
 <td>Central</td>
 </tr>
 <tr>
-<td><code>guilds</code>, <code>guild_members</code></td>
-<td>Guilds (unique name, notice, level, upgrades, emblem, alliance) and their members with roles</td>
+<td><code>guilds</code>、<code>guild_members</code></td>
+<td>公会（唯一名称、公告、等级、升级、徽章、联盟）及其带职位的成员</td>
 <td>Central</td>
 </tr>
 <tr>
 <td><code>guild_events</code></td>
-<td>Guild history lines, dropped after <code>Central:GuildHistoryDays</code></td>
+<td>公会历史记录，在 <code>Central:GuildHistoryDays</code> 之后删除</td>
 <td>Central</td>
 </tr>
 <tr>
 <td><code>alliances</code></td>
-<td>Alliances (unique name and tag, notice)</td>
+<td>联盟（唯一名称和标签、公告）</td>
 <td>Central</td>
 </tr>
 <tr>
 <td><code>mails</code></td>
-<td>Letters: recipient, sender name, subject, body, gold, expiry, <code>Kind</code> (<code>shop</code> for shop deliveries)</td>
-<td>Central, the Shop</td>
+<td>信件：收件人、发件人名称、主题、正文、金币、过期时间、<code>Kind</code>（商店交付为 <code>shop</code>）</td>
+<td>Central、Shop</td>
 </tr>
 <tr>
 <td><code>market_listings</code></td>
-<td>Lots on the market: seller, item, unit price, expiry</td>
+<td>市场上的拍品：卖家、物品、单价、过期时间</td>
 <td>Central</td>
 </tr>
 <tr>
 <td><code>collectors</code></td>
-<td>Tax collectors: guild, map, spot</td>
+<td>收税官：公会、地图、位置</td>
 <td>Central</td>
 </tr>
 <tr>
 <td><code>game_logs</code></td>
-<td>The game log: kind, time, account, character, map, item, gold, detail. Trimmed after <code>Logs:Days</code></td>
-<td>Login, Central, the Shop</td>
+<td>游戏日志：类型、时间、账号、角色、地图、物品、金币、详情。在 <code>Logs:Days</code> 之后清理</td>
+<td>Login、Central、Shop</td>
 </tr>
 <tr>
 <td><code>gm_audit</code></td>
-<td>Every GM command of level 2 or more, with the line, target and result</td>
+<td>每条 2 级及以上的 GM 命令，包括命令行、目标和结果</td>
 <td>Central</td>
 </tr>
 <tr>
 <td><code>reports</code></td>
-<td>Player reports, with the chat around them</td>
+<td>玩家举报，以及前后的聊天内容</td>
 <td>Central</td>
 </tr>
 <tr>
 <td><code>remember_tokens</code></td>
-<td>SHA-256 of each &quot;Remember me&quot; token, its family, account, address, expiry and use</td>
+<td>每个 &quot;Remember me&quot; 令牌的 SHA-256、其令牌族、账号、地址、过期时间和使用情况</td>
 <td>Login</td>
 </tr>
 <tr>
 <td><code>currency_ledger</code></td>
-<td>Every change to a premium balance, with a unique reference</td>
-<td>The Shop</td>
+<td>高级货币余额的每一次变动，带有唯一的引用</td>
+<td>Shop</td>
 </tr>
 </tbody>
 </table></div>
-<p>The database enforces the important rules itself:</p>
+<p>数据库自身会强制执行重要规则：</p>
 <ul>
-<li><code>item_instances</code> has a check constraint: exactly one owner and an amount above zero. Its item id is a foreign key to <code>items</code>, so a copy can't point to an item the catalog never had.</li>
-<li>Deleting a character, account, guild, letter, collector or market lot deletes the copies it holds.</li>
-<li>Usernames, character names, guild names and alliance names and tags are unique, compared in a normalized form.</li>
-<li><code>currency_ledger.Reference</code> is unique, so a payment or grant counts once.</li>
+<li><code>item_instances</code> 有一个检查约束：恰好一个所有者，并且数量大于零。它的物品 id 是指向 <code>items</code> 的外键，所以副本不能指向目录中从未有过的物品。</li>
+<li>删除角色、账号、公会、信件、收税官或市场拍品时，会删除其持有的副本。</li>
+<li>用户名、角色名、公会名以及联盟名称和标签都是唯一的，以规范化形式比较。</li>
+<li><code>currency_ledger.Reference</code> 是唯一的，所以一笔支付或发放只计算一次。</li>
 </ul>
-<p>Don't edit <code>items</code> or <code>skills</code> by hand: Login overwrites them from <code>gamedata.json</code> at every start.</p>
-<h2 id="switching-to-postgresql"><a class="anchor" href="#switching-to-postgresql" aria-hidden="true">#</a>Switching to PostgreSQL</h2>
-<h3 id="from-the-editor"><a class="anchor" href="#from-the-editor" aria-hidden="true">#</a>From the editor</h3>
+<p>不要手动编辑 <code>items</code> 或 <code>skills</code>：Login 每次启动时都会用 <code>gamedata.json</code> 覆盖它们。</p>
+<h2 id="switching-to-postgresql"><a class="anchor" href="#switching-to-postgresql" aria-hidden="true">#</a>切换到 PostgreSQL</h2>
+<h3 id="from-the-editor"><a class="anchor" href="#from-the-editor" aria-hidden="true">#</a>在编辑器中</h3>
 <ol>
-<li>Open <strong>KitARPG &gt; Play and Servers</strong>, pick <strong>MMO</strong>, and stop the services if they run.</li>
-<li>In the database step pick <strong>PostgreSQL: for production</strong> and press <strong>Set up PostgreSQL...</strong> (build the services first; they do the talking).</li>
-<li>Pick one:
+<li>打开 <strong>KitARPG &gt; Play and Servers</strong>，选择 <strong>MMO</strong>，如果服务正在运行则停止它们。</li>
+<li>在数据库步骤中选择 <strong>PostgreSQL: for production</strong>，然后按 <strong>Set up PostgreSQL...</strong>（先构建服务；由它们负责与数据库通信）。</li>
+<li>选择其一：
 <ul>
-<li><strong>A server I run</strong>: fill <strong>Host</strong>, <strong>Port</strong> and <strong>SSL</strong> (<code>Prefer</code>, <code>Require</code> or <code>Disable</code>; hosted servers usually need <code>Require</code>). Then <strong>Create the database for me</strong> with an admin login (used once, never saved) and <strong>Create and use</strong>, or <strong>Use a database I have</strong> and <strong>Test and use</strong>.</li>
-<li><strong>Docker on this computer</strong>: <strong>Create and use</strong> starts PostgreSQL 17 in a container named <code>kitarpg-postgres</code>, published on <code>127.0.0.1</code> from port 5432 (or the next free one), with its data in the <code>kitarpg-pgdata</code> volume and a random password.</li>
+<li><strong>A server I run</strong>：填写 <strong>Host</strong>、<strong>Port</strong> 和 <strong>SSL</strong>（<code>Prefer</code>、<code>Require</code> 或 <code>Disable</code>；托管服务器通常需要 <code>Require</code>）。然后用管理员登录信息（只使用一次，从不保存）选择 <strong>Create the database for me</strong> 并按 <strong>Create and use</strong>，或者选择 <strong>Use a database I have</strong> 并按 <strong>Test and use</strong>。</li>
+<li><strong>Docker on this computer</strong>：<strong>Create and use</strong> 会在名为 <code>kitarpg-postgres</code> 的容器中启动 PostgreSQL 17，在 <code>127.0.0.1</code> 上从端口 5432（或下一个空闲端口）发布，数据放在 <code>kitarpg-pgdata</code> 卷中，并使用随机密码。</li>
 </ul>
 </li>
-<li>Start the services. The tables are created on the first start.</li>
+<li>启动服务。首次启动时会创建表。</li>
 </ol>
-<p>The connection is saved for this computer in <code>UserSettings/KitARPG/launcher.json</code>. See <a href="../editor/play-and-servers.html">Play &amp; Servers</a>.</p>
-<h3 id="with-the-launcher"><a class="anchor" href="#with-the-launcher" aria-hidden="true">#</a>With the launcher</h3>
-<p>Set two fields in <code>launcher.json</code>:</p>
+<p>连接信息会为这台电脑保存在 <code>UserSettings/KitARPG/launcher.json</code> 中。见 <a href="../editor/play-and-servers.html">Play &amp; Servers</a>。</p>
+<h3 id="with-the-launcher"><a class="anchor" href="#with-the-launcher" aria-hidden="true">#</a>使用启动器</h3>
+<p>在 <code>launcher.json</code> 中设置两个字段：</p>
 <pre class="code"><code class="language-json"><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;DatabaseProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Postgres&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Host=localhost;Port=5432;Database=kitarpg;Username=kitarpg;Password=&lt;password&gt;&quot;</span>
 <span class="p">}</span>
 </code></pre>
-<p>To create the database and user first, <code>dotnet run --project Launcher -- --postgres</code> with a <code>create</code> request does what the editor does. See <a href="launcher.html#checking-postgresql">Launcher</a>.</p>
-<h3 id="by-hand"><a class="anchor" href="#by-hand" aria-hidden="true">#</a>By hand</h3>
-<p>As a PostgreSQL superuser:</p>
+<p>要先创建数据库和用户，用 <code>dotnet run --project Launcher -- --postgres</code> 加一个 <code>create</code> 请求，它会做与编辑器相同的事。见<a href="launcher.html#checking-postgresql">启动器</a>。</p>
+<h3 id="by-hand"><a class="anchor" href="#by-hand" aria-hidden="true">#</a>手动</h3>
+<p>以 PostgreSQL 超级用户身份执行：</p>
 <pre class="code"><code class="language-sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">ROLE</span><span class="w"> </span><span class="n">kitarpg</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;&lt;long random password&gt;&#39;</span><span class="p">;</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">kitarpg</span><span class="w"> </span><span class="k">OWNER</span><span class="w"> </span><span class="n">kitarpg</span><span class="w"> </span><span class="k">ENCODING</span><span class="w"> </span><span class="s1">&#39;UTF8&#39;</span><span class="p">;</span>
 </code></pre>
-<p>Then give every service:</p>
+<p>然后给每个服务设置：</p>
 <pre class="code"><code class="language-bash"><span class="nv">Database__Provider</span><span class="o">=</span>Postgres
 <span class="nv">Database__ConnectionString</span><span class="o">=</span><span class="s2">&quot;Host=db.example.com;Port=5432;Database=kitarpg;Username=kitarpg;Password=&lt;password&gt;;SSL Mode=Require&quot;</span>
 </code></pre>
-<h3 id="in-docker-compose"><a class="anchor" href="#in-docker-compose" aria-hidden="true">#</a>In Docker Compose</h3>
-<p>The compose file already uses PostgreSQL with the password from <code>POSTGRES_PASSWORD</code> in <code>Deploy/.env</code>. See <a href="docker.html">Docker</a>.</p>
-<div class="callout note"><div class="callout-title">注意</div><p>Switching providers starts an empty database. The kit doesn't copy data from SQLite to PostgreSQL. Switch before you have players.</p>
+<h3 id="in-docker-compose"><a class="anchor" href="#in-docker-compose" aria-hidden="true">#</a>在 Docker Compose 中</h3>
+<p>compose 文件已经使用 PostgreSQL，密码来自 <code>Deploy/.env</code> 中的 <code>POSTGRES_PASSWORD</code>。见 <a href="docker.html">Docker</a>。</p>
+<div class="callout note"><div class="callout-title">注意</div><p>切换提供程序会从一个空数据库开始。套件不会把数据从 SQLite 复制到 PostgreSQL。请在有玩家之前切换。</p>
 </div>
-<h2 id="backups"><a class="anchor" href="#backups" aria-hidden="true">#</a>Backups</h2>
-<p>Back up the whole database: characters, items, guilds, mail and the shop ledger only make sense together.</p>
-<h3 id="postgresql-in-docker-compose"><a class="anchor" href="#postgresql-in-docker-compose" aria-hidden="true">#</a>PostgreSQL in Docker Compose</h3>
-<p>From the <code>Deploy</code> folder:</p>
+<h2 id="backups"><a class="anchor" href="#backups" aria-hidden="true">#</a>备份</h2>
+<p>备份整个数据库：角色、物品、公会、邮件和商店账本只有放在一起才有意义。</p>
+<h3 id="postgresql-in-docker-compose"><a class="anchor" href="#postgresql-in-docker-compose" aria-hidden="true">#</a>Docker Compose 中的 PostgreSQL</h3>
+<p>在 <code>Deploy</code> 文件夹中执行：</p>
 <pre class="code"><code class="language-bash">docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-T<span class="w"> </span>postgres<span class="w"> </span>pg_dump<span class="w"> </span>-U<span class="w"> </span>kitarpg<span class="w"> </span>-d<span class="w"> </span>kitarpg<span class="w"> </span>-Fc<span class="w"> </span>&gt;<span class="w"> </span>kitarpg-<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>.dump
 </code></pre>
-<p><code>pg_dump</code> takes a consistent snapshot while the game runs. Copy the file off the server. To run it every night, put the line in the server's crontab with the full path to the <code>Deploy</code> folder.</p>
-<h3 id="postgresql-elsewhere"><a class="anchor" href="#postgresql-elsewhere" aria-hidden="true">#</a>PostgreSQL elsewhere</h3>
+<p><code>pg_dump</code> 在游戏运行时也能获取一致的快照。把文件复制到服务器以外。要每晚运行，把这行命令连同 <code>Deploy</code> 文件夹的完整路径放进服务器的 crontab。</p>
+<h3 id="postgresql-elsewhere"><a class="anchor" href="#postgresql-elsewhere" aria-hidden="true">#</a>其他地方的 PostgreSQL</h3>
 <pre class="code"><code class="language-bash">pg_dump<span class="w"> </span><span class="s2">&quot;host=db.example.com dbname=kitarpg user=kitarpg sslmode=require&quot;</span><span class="w"> </span>-Fc<span class="w"> </span>&gt;<span class="w"> </span>kitarpg.dump
 </code></pre>
-<p>Hosted PostgreSQL services also keep their own backups; check how long they keep them.</p>
+<p>托管的 PostgreSQL 服务也会保留自己的备份；请确认它们保留多长时间。</p>
 <h3 id="sqlite"><a class="anchor" href="#sqlite" aria-hidden="true">#</a>SQLite</h3>
-<p>Stop the services, then copy <code>kitarpg.db</code> together with <code>kitarpg.db-wal</code> and <code>kitarpg.db-shm</code> if they exist. Copying the file while the services run can give you a broken copy.</p>
-<h3 id="restoring"><a class="anchor" href="#restoring" aria-hidden="true">#</a>Restoring</h3>
+<p>停止服务，然后复制 <code>kitarpg.db</code>，如果存在 <code>kitarpg.db-wal</code> 和 <code>kitarpg.db-shm</code>，也一并复制。在服务运行时复制文件可能会得到损坏的副本。</p>
+<h3 id="restoring"><a class="anchor" href="#restoring" aria-hidden="true">#</a>恢复</h3>
 <ol>
 <li>
-<p>Stop Login, Central, the Shop and the map servers (<code>docker compose stop login central shop map-town map-forest map-crypt</code>).</p>
+<p>停止 Login、Central、Shop 和地图服务器（<code>docker compose stop login central shop map-town map-forest map-crypt map-guild-hall</code>）。</p>
 </li>
 <li>
-<p>Restore into an empty database:</p>
+<p>恢复到一个空数据库：</p>
 <pre class="code"><code class="language-bash">docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-T<span class="w"> </span>postgres<span class="w"> </span>dropdb<span class="w"> </span>-U<span class="w"> </span>kitarpg<span class="w"> </span>kitarpg
 docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-T<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>-U<span class="w"> </span>kitarpg<span class="w"> </span>-O<span class="w"> </span>kitarpg<span class="w"> </span>kitarpg
 docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-T<span class="w"> </span>postgres<span class="w"> </span>pg_restore<span class="w"> </span>-U<span class="w"> </span>kitarpg<span class="w"> </span>-d<span class="w"> </span>kitarpg<span class="w"> </span>&lt;<span class="w"> </span>kitarpg-2026-11-10.dump
 </code></pre>
 </li>
 <li>
-<p>Start everything again. If the backup is older than the services, the missing migrations run on start.</p>
+<p>重新启动所有内容。如果备份比服务旧，缺失的迁移会在启动时运行。</p>
 </li>
 </ol>
-<div class="callout warning"><div class="callout-title">警告</div><p>Restoring rolls back every player to the time of the backup, including premium currency bought since. Payments made after the backup are still in your payment provider; grant them again with the Shop's admin API before reopening.</p>
+<div class="callout warning"><div class="callout-title">警告</div><p>恢复会把每个玩家回滚到备份时的状态，包括之后购买的高级货币。备份之后的付款仍记录在你的支付服务商中；重新开放之前，用 Shop 的管理 API 再次发放它们。</p>
 </div>
-<h2 id="everyday-queries"><a class="anchor" href="#everyday-queries" aria-hidden="true">#</a>Everyday queries</h2>
-<p>Name the first admin after creating your account:</p>
+<h2 id="everyday-queries"><a class="anchor" href="#everyday-queries" aria-hidden="true">#</a>日常查询</h2>
+<p>创建账号后，将第一个管理员设为你自己：</p>
 <pre class="code"><code class="language-sql"><span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="ss">&quot;Role&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="ss">&quot;Username&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;yourname&#39;</span><span class="p">;</span>
 </code></pre>
-<p>Column names keep their capitals, so they need double quotes in PostgreSQL. After that, admins change levels in game with <code>/role</code>. See <a href="../gameplay/gm-tools.html">GM tools</a>.</p>
-<p>Other useful reads:</p>
+<p>列名保留大写字母，所以在 PostgreSQL 中需要加双引号。之后，管理员可以在游戏中用 <code>/role</code> 修改等级。见 <a href="../gameplay/gm-tools.html">GM 工具</a>。</p>
+<p>其他有用的查询：</p>
 <pre class="code"><code class="language-sql"><span class="c1">-- Who is banned</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="ss">&quot;Username&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;BannedUntil&quot;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="ss">&quot;BannedUntil&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">now</span><span class="p">();</span>
 <span class="c1">-- The latest GM commands</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="ss">&quot;At&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Character&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Line&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Result&quot;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gm_audit</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="ss">&quot;At&quot;</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
 </code></pre>
-<p>Prefer the game's own tools (<code>/logs</code>, <code>/reports</code>, the GM panel) for moderation. Never move items or gold with SQL while the game runs: Central and the maps hold their own view and would overwrite or duplicate your change.</p>
-<h2 id="log-retention"><a class="anchor" href="#log-retention" aria-hidden="true">#</a>Log retention</h2>
+<p>管理时优先使用游戏自带的工具（<code>/logs</code>、<code>/reports</code>、GM 面板）。绝不要在游戏运行时用 SQL 移动物品或金币：Central 和各地图持有自己的视图，会覆盖或复制你的修改。</p>
+<h2 id="log-retention"><a class="anchor" href="#log-retention" aria-hidden="true">#</a>日志保留</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Setting</th>
-<th>What it does</th>
-<th>Default</th>
+<th>设置</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Logs:Days</code></td>
-<td>Days <code>game_logs</code> lines are kept. Checked once an hour. 0 keeps them forever</td>
+<td><code>game_logs</code> 记录保留的天数。每小时检查一次。0 表示永久保留</td>
 <td>180</td>
 </tr>
 <tr>
 <td><code>Central:GuildHistoryDays</code></td>
-<td>Days guild history lines are kept</td>
+<td>公会历史记录保留的天数</td>
 <td>90</td>
 </tr>
 </tbody>
 </table></div>
-<p>Set them on every service that writes the log (Login, Central and the Shop).</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<p>在每个写入日志的服务（Login、Central 和 Shop）上设置它们。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>Two SQLite files.</strong> Services run by hand from different folders with the default connection string each make their own <code>kitarpg.db</code>. Use one absolute path.</li>
-<li><strong>&quot;The database password in Database:ConnectionString is empty or a sample value.&quot;</strong> Outside <code>Development</code> the services refuse passwords like <code>kitarpg</code>, <code>postgres</code>, <code>password</code> or anything with <code>change-me</code>. Use a long random one.</li>
-<li><strong>The user can't create tables.</strong> The game's user must own the database (or have <code>CREATE</code> on it and on the <code>public</code> schema). The editor's <strong>Test and use</strong> checks this.</li>
-<li><strong>Editing <code>items</code> by hand.</strong> Login overwrites it at the next start. Change the item in the Game Database and export again.</li>
+<li><strong>两个 SQLite 文件。</strong> 从不同文件夹手动运行、使用默认连接字符串的服务，会各自创建自己的 <code>kitarpg.db</code>。请使用同一个绝对路径。</li>
+<li><strong>&quot;The database password in Database:ConnectionString is empty or a sample value.&quot;</strong> 在 <code>Development</code> 之外，服务会拒绝 <code>kitarpg</code>、<code>postgres</code>、<code>password</code> 或任何包含 <code>change-me</code> 的密码。请使用一个长的随机密码。</li>
+<li><strong>用户无法创建表。</strong> 游戏使用的用户必须拥有该数据库（或在数据库和 <code>public</code> 模式上有 <code>CREATE</code> 权限）。编辑器的 <strong>Test and use</strong> 会检查这一点。</li>
+<li><strong>手动编辑 <code>items</code>。</strong> Login 会在下次启动时覆盖它。请在 Game Database 中修改物品并重新导出。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="configuration.html">Configuration</a></li>
+<li><a href="configuration.html">配置</a></li>
 <li><a href="docker.html">Docker</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="../devkit/saving-data.html">Saving data</a></li>
+<li><a href="security.html">安全</a></li>
+<li><a href="../devkit/saving-data.html">保存数据</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="launcher.html"><span>上一页</span>Launcher</a><a class="next" href="configuration.html"><span>下一页</span>Configuration</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Fdatabase.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#sqlite-or-postgresql">SQLite or PostgreSQL</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l2"><a href="#migrations">Migrations</a></li><li class="l2"><a href="#tables">Tables</a></li><li class="l2"><a href="#switching-to-postgresql">Switching to PostgreSQL</a></li><li class="l3"><a href="#from-the-editor">From the editor</a></li><li class="l3"><a href="#with-the-launcher">With the launcher</a></li><li class="l3"><a href="#by-hand">By hand</a></li><li class="l3"><a href="#in-docker-compose">In Docker Compose</a></li><li class="l2"><a href="#backups">Backups</a></li><li class="l3"><a href="#postgresql-in-docker-compose">PostgreSQL in Docker Compose</a></li><li class="l3"><a href="#postgresql-elsewhere">PostgreSQL elsewhere</a></li><li class="l3"><a href="#sqlite">SQLite</a></li><li class="l3"><a href="#restoring">Restoring</a></li><li class="l2"><a href="#everyday-queries">Everyday queries</a></li><li class="l2"><a href="#log-retention">Log retention</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="launcher.html"><span>上一页</span>启动器</a><a class="next" href="configuration.html"><span>下一页</span>配置</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Fdatabase.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#sqlite-or-postgresql">SQLite 还是 PostgreSQL</a></li><li class="l2"><a href="#settings">设置</a></li><li class="l2"><a href="#migrations">迁移</a></li><li class="l2"><a href="#tables">表</a></li><li class="l2"><a href="#switching-to-postgresql">切换到 PostgreSQL</a></li><li class="l3"><a href="#from-the-editor">在编辑器中</a></li><li class="l3"><a href="#with-the-launcher">使用启动器</a></li><li class="l3"><a href="#by-hand">手动</a></li><li class="l3"><a href="#in-docker-compose">在 Docker Compose 中</a></li><li class="l2"><a href="#backups">备份</a></li><li class="l3"><a href="#postgresql-in-docker-compose">Docker Compose 中的 PostgreSQL</a></li><li class="l3"><a href="#postgresql-elsewhere">其他地方的 PostgreSQL</a></li><li class="l3"><a href="#sqlite">SQLite</a></li><li class="l3"><a href="#restoring">恢复</a></li><li class="l2"><a href="#everyday-queries">日常查询</a></li><li class="l2"><a href="#log-retention">日志保留</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

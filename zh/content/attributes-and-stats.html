@@ -1,421 +1,421 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Attributes and stats · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>属性与数值 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/attributes-and-stats.html">English</option><option value="../../es/content/attributes-and-stats.html">Español</option><option value="../../pt/content/attributes-and-stats.html">Português</option><option value="attributes-and-stats.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>游戏内容</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html" class="on" aria-current="page">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">游戏内容</div><h1>Attributes and stats</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>Attributes are the points players spend (Strength, Intelligence and the like); stats are the numbers combat reads (health, power, critical chance, move speed). This page lists every stat, explains attributes and damage elements, and shows step by step how the kit adds class, attributes, gear and buffs into a character's final numbers, always in whole numbers.</p>
-<h2 id="the-pieces"><a class="anchor" href="#the-pieces" aria-hidden="true">#</a>The pieces</h2>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section" open><summary>游戏内容</summary><ul><li><a href="classes.html">职业</a></li><li><a href="attributes-and-stats.html" class="on" aria-current="page">属性与数值</a></li><li><a href="player-models.html">玩家模型</a></li><li><a href="items.html">物品</a></li><li><a href="equipment.html">装备</a></li><li><a href="sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="currencies.html">货币</a></li><li><a href="skills.html">技能</a></li><li><a href="statuses-and-buffs.html">状态与增益</a></li><li><a href="monsters.html">怪物</a></li><li><a href="bosses.html">首领</a></li><li><a href="loot.html">掉落</a></li><li><a href="maps.html">地图</a></li><li><a href="npcs.html">NPC</a></li><li><a href="npc-shops.html">NPC 商店</a></li><li><a href="quests.html">任务</a></li><li><a href="conditions-and-actions.html">条件与动作</a></li><li><a href="dialogues.html">对话</a></li><li><a href="world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏内容</div><h1>属性与数值</h1><p>属性是玩家分配的点数（Strength、Intelligence 等）；数值是战斗读取的数字（生命值、威力、暴击几率、移动速度）。本页列出每个数值，解释属性和伤害元素，并逐步说明套件如何把职业、属性、装备和增益相加得到角色的最终数值，结果始终为整数。</p>
+<h2 id="the-pieces"><a class="anchor" href="#the-pieces" aria-hidden="true">#</a>组成部分</h2>
 <ul>
-<li><strong>Stats</strong> are a fixed set of numbers every character has: health, mana, regeneration, power, critical hits, healing, attack speed, move speed, carry weight, experience gain and loot chance.</li>
-<li><strong>Damage elements</strong> are kinds of damage, like Fire or Water. Each character has, per element, a flat damage bonus, a flat resistance and a percent resistance.</li>
-<li><strong>Attributes</strong> are assets. Each point of an attribute adds a bundle of stats, element damage and resistances. Classes give attribute points per level, players spend more, and gear can add some.</li>
-<li><strong>Modifiers</strong> (<code>StatModifiers</code>) are that bundle. Class levels, attribute points, gear, sets, gems, statuses, buffs and passive skills all use the same bundle, so any of them can raise any stat, element, attribute or skill rank.</li>
+<li><strong>数值</strong>是每个角色都有的一组固定数字：生命值、法力值、恢复、威力、暴击、治疗、攻击速度、移动速度、负重、经验获取和掉落几率。</li>
+<li><strong>伤害元素</strong>是伤害的种类，例如 Fire 或 Water。每个角色对每种元素有一个固定伤害加成、一个固定抗性和一个百分比抗性。</li>
+<li><strong>属性</strong>是资源。属性的每一点会增加一组数值、元素伤害和抗性。职业每级提供属性点，玩家再分配更多，装备也可以增加一些。</li>
+<li><strong>修正值</strong>（<code>StatModifiers</code>）就是这组数值。职业等级、属性点、装备、套装、宝石、状态、增益和被动技能都使用同一种组合，因此它们中的任何一个都可以提升任何数值、元素、属性或技能等级。</li>
 </ul>
-<h2 id="the-stats"><a class="anchor" href="#the-stats" aria-hidden="true">#</a>The stats</h2>
-<p>The stats live in <code>CharacterStats</code>. Percent stats are stored as fractions: <code>0.05</code> is 5%.</p>
+<h2 id="the-stats"><a class="anchor" href="#the-stats" aria-hidden="true">#</a>数值</h2><figure class="shot"><a href="../../assets/img/art/stats.png" target="_blank"><img src="../../assets/img/art/stats.png" alt="属性图标。" loading="lazy"></a><figcaption>属性图标。</figcaption></figure>
+<p>数值保存在 <code>CharacterStats</code> 中。百分比数值以小数存储：<code>0.05</code> 是 5%。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Stat (id)</th>
-<th>Shown as</th>
-<th>What it does</th>
+<th>数值（id）</th>
+<th>显示为</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Health (<code>maxHealth</code>)</td>
-<td>Number</td>
-<td>Maximum health.</td>
+<td>Health（<code>maxHealth</code>）</td>
+<td>数字</td>
+<td>最大生命值。</td>
 </tr>
 <tr>
-<td>Mana (<code>maxMana</code>)</td>
-<td>Number</td>
-<td>Maximum mana, spent by skills.</td>
+<td>Mana（<code>maxMana</code>）</td>
+<td>数字</td>
+<td>最大法力值，由技能消耗。</td>
 </tr>
 <tr>
-<td>Health regen (<code>healthRegen</code>)</td>
-<td>Per second</td>
-<td>Health recovered each second. See <a href="../gameplay/recovery-and-death.html">Recovery and death</a> for how it behaves in and out of combat.</td>
+<td>Health regen（<code>healthRegen</code>）</td>
+<td>每秒</td>
+<td>每秒恢复的生命值。它在战斗中和战斗外的表现见<a href="../gameplay/recovery-and-death.html">恢复与死亡</a>。</td>
 </tr>
 <tr>
-<td>Mana regen (<code>manaRegen</code>)</td>
-<td>Per second</td>
-<td>Mana recovered each second.</td>
+<td>Mana regen（<code>manaRegen</code>）</td>
+<td>每秒</td>
+<td>每秒恢复的法力值。</td>
 </tr>
 <tr>
-<td>Power (<code>power</code>)</td>
-<td>Percent</td>
-<td>More damage of every element. <code>0.1</code> is +10% to every hit, including damage over time.</td>
+<td>Power（<code>power</code>）</td>
+<td>百分比</td>
+<td>提高所有元素的伤害。<code>0.1</code> 表示每次命中（包括持续伤害）+10%。</td>
 </tr>
 <tr>
-<td>Critical (<code>critChance</code>)</td>
-<td>Percent</td>
-<td>Chance that a hit is critical. <code>0.05</code> is 5%.</td>
+<td>Critical（<code>critChance</code>）</td>
+<td>百分比</td>
+<td>命中成为暴击的几率。<code>0.05</code> 是 5%。</td>
 </tr>
 <tr>
-<td>Crit damage (<code>critDamage</code>)</td>
-<td>Percent</td>
-<td>Extra damage on a critical hit. <code>0.5</code> means a critical deals 150%.</td>
+<td>Crit damage（<code>critDamage</code>）</td>
+<td>百分比</td>
+<td>暴击时的额外伤害。<code>0.5</code> 表示暴击造成 150% 伤害。</td>
 </tr>
 <tr>
-<td>Heals (<code>healing</code>)</td>
-<td>Number</td>
-<td>Added to every heal this character casts, before the heal bonus.</td>
+<td>Heals（<code>healing</code>）</td>
+<td>数字</td>
+<td>加到该角色施放的每次治疗上，在治疗加成之前计算。</td>
 </tr>
 <tr>
-<td>Heal bonus (<code>healingBonus</code>)</td>
-<td>Percent</td>
-<td>More healing on every heal this character casts. <code>0.1</code> is +10%.</td>
+<td>Heal bonus（<code>healingBonus</code>）</td>
+<td>百分比</td>
+<td>提高该角色施放的每次治疗量。<code>0.1</code> 是 +10%。</td>
 </tr>
 <tr>
-<td>Attack speed (<code>attackSpeed</code>)</td>
-<td>Percent</td>
-<td>Multiplies the weapon's attacks per second. <code>0.1</code> is +10%.</td>
+<td>Attack speed（<code>attackSpeed</code>）</td>
+<td>百分比</td>
+<td>乘到武器的每秒攻击次数上。<code>0.1</code> 是 +10%。</td>
 </tr>
 <tr>
-<td>Move speed (<code>moveSpeed</code>)</td>
-<td>Number</td>
-<td>Meters per second.</td>
+<td>Move speed（<code>moveSpeed</code>）</td>
+<td>数字</td>
+<td>每秒米数。</td>
 </tr>
 <tr>
-<td>Carry weight (<code>carryWeight</code>)</td>
-<td>Number</td>
-<td>Extra weight the character can carry when bags are limited by weight.</td>
+<td>Carry weight（<code>carryWeight</code>）</td>
+<td>数字</td>
+<td>背包按重量限制时角色能额外携带的重量。</td>
 </tr>
 <tr>
-<td>XP gain (<code>experienceGain</code>)</td>
-<td>Percent</td>
-<td>More experience from kills and quests. <code>0.1</code> is +10%.</td>
+<td>XP gain（<code>experienceGain</code>）</td>
+<td>百分比</td>
+<td>击杀和任务获得更多经验。<code>0.1</code> 是 +10%。</td>
 </tr>
 <tr>
-<td>Loot chance (<code>lootChance</code>)</td>
-<td>Percent</td>
-<td>Better odds for every item a kill can drop. <code>0.1</code> is +10% of each chance, so a 20% drop becomes 22%.</td>
+<td>Loot chance（<code>lootChance</code>）</td>
+<td>百分比</td>
+<td>提高击杀可掉落的每个物品的几率。<code>0.1</code> 表示每个几率的 +10%，因此 20% 的掉落变为 22%。</td>
 </tr>
 </tbody>
 </table></div>
-<p>There are no armor, physical attack or magic attack stats. Defense comes from per element resistances, and offense from weapon rolls, element damage and power. How a hit is worked out is on <a href="../gameplay/combat.html">Combat</a>.</p>
-<h3 id="stat-names-and-icons"><a class="anchor" href="#stat-names-and-icons" aria-hidden="true">#</a>Stat names and icons</h3>
-<p>The names above are the defaults. To rename a stat or give it an icon, open <strong>Game Database &gt; Settings</strong> and add an entry to <em>Stat Display</em> (<code>statDisplay</code>):</p>
+<p>没有护甲、物理攻击或魔法攻击数值。防御来自各元素的抗性，进攻来自武器伤害取值、元素伤害和威力。一次命中如何计算见<a href="../gameplay/combat.html">战斗</a>。</p>
+<h3 id="stat-names-and-icons"><a class="anchor" href="#stat-names-and-icons" aria-hidden="true">#</a>数值名称和图标</h3>
+<p>上面的名称是默认值。要重命名某个数值或为它设置图标，打开 <strong>Game Database &gt; Settings</strong> 并在 <em>Stat Display</em>（<code>statDisplay</code>）中添加一个条目：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Stat</em> (<code>stat</code>)</td>
-<td>The stat's id, like <code>power</code> or <code>maxHealth</code>.</td>
-<td>Empty</td>
+<td><em>Stat</em>（<code>stat</code>）</td>
+<td>数值的 id，例如 <code>power</code> 或 <code>maxHealth</code>。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Label</em> (<code>label</code>)</td>
-<td>The name players see. Empty keeps the built-in name.</td>
-<td>Empty</td>
+<td><em>Label</em>（<code>label</code>）</td>
+<td>玩家看到的名称。留空则保留内置名称。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Icon</em> (<code>icon</code>)</td>
-<td>Shown in the Character window, tooltips and item effects.</td>
+<td><em>Icon</em>（<code>icon</code>）</td>
+<td>显示在 Character 窗口、提示框和物品效果中。</td>
 <td>None</td>
 </tr>
 </tbody>
 </table></div>
-<p>The Character window (<code>C</code>) groups the stats in sections: health and mana; power, critical and attack speed; heals; movement and carry weight; experience and loot.</p>
-<h2 id="damage-elements"><a class="anchor" href="#damage-elements" aria-hidden="true">#</a>Damage elements</h2>
-<p>Elements are in <strong>Game Database &gt; Characters &gt; Elements</strong>. Create one with <strong>Create &gt; KitARPG &gt; Damage Element</strong>. The sample has Neutral, Earth, Fire, Water and Air.</p>
+<p>Character 窗口（<code>C</code>）把数值分组显示：生命值和法力值；威力、暴击和攻击速度；治疗；移动和负重；经验和掉落。</p>
+<h2 id="damage-elements"><a class="anchor" href="#damage-elements" aria-hidden="true">#</a>伤害元素</h2><figure class="shot"><a href="../../assets/img/art/elements.png" target="_blank"><img src="../../assets/img/art/elements.png" alt="伤害元素。" loading="lazy"></a><figcaption>伤害元素。</figcaption></figure>
+<p>元素位于 <strong>Game Database &gt; Characters &gt; Elements</strong>。用 <strong>Create &gt; KitARPG &gt; Damage Element</strong> 创建一个。示例中有 Neutral、Earth、Fire、Water 和 Air。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Id</em>, <em>Display Name</em>, <em>Description</em>, <em>Icon</em></td>
-<td>As for every game data asset.</td>
+<td><em>Id</em>、<em>Display Name</em>、<em>Description</em>、<em>Icon</em></td>
+<td>与所有游戏数据资源相同。</td>
 <td></td>
 </tr>
 <tr>
-<td><em>Color</em> (<code>color</code>)</td>
-<td>Color of damage numbers and tooltip lines of this element. Also tints effects marked <em>Tint</em>.</td>
-<td>White</td>
+<td><em>Color</em>（<code>color</code>）</td>
+<td>该元素的伤害数字和提示框文字的颜色。也会为标记了 <em>Tint</em> 的特效着色。</td>
+<td>白色</td>
 </tr>
 <tr>
-<td><em>Max Resistance</em> (<code>maxResistance</code>)</td>
-<td>Highest percent resistance that counts against this element, from 0 to 1. <code>0.5</code> means a hit of this element is never cut by more than half, however much resistance the defender stacks.</td>
+<td><em>Max Resistance</em>（<code>maxResistance</code>）</td>
+<td>对该元素生效的最高百分比抗性，从 0 到 1。<code>0.5</code> 表示无论防御者叠加多少抗性，该元素的命中最多只被削减一半。</td>
 <td>0.5</td>
 </tr>
 <tr>
-<td><em>Hit Effect</em> (<code>hitEffect</code>)</td>
-<td>Effect on whoever takes a hit of this element, unless the skill or weapon has its own.</td>
+<td><em>Hit Effect</em>（<code>hitEffect</code>）</td>
+<td>受到该元素命中者身上的特效，除非技能或武器有自己的特效。</td>
 <td>None</td>
 </tr>
 </tbody>
 </table></div>
-<p>In <strong>Game Database &gt; Settings</strong>:</p>
+<p>在 <strong>Game Database &gt; Settings</strong> 中：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Elements</em> (<code>elements</code>)</td>
-<td>The elements, in the order the Character window lists them.</td>
-<td>Empty</td>
+<td><em>Elements</em>（<code>elements</code>）</td>
+<td>元素，按 Character 窗口列出的顺序。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Default Element</em> (<code>defaultElement</code>)</td>
-<td>Used wherever no element is set: a weapon roll, a damage bonus or a resistance with an empty element counts as this one. Empty uses the first in the list.</td>
+<td><em>Default Element</em>（<code>defaultElement</code>）</td>
+<td>在没有设置元素的地方使用：元素为空的武器伤害、伤害加成或抗性都算作此元素。留空则使用列表中的第一个。</td>
 <td>None</td>
 </tr>
 <tr>
-<td><em>Default Hit Effect</em> (<code>defaultHitEffect</code>)</td>
-<td>Effect on whoever is hit when nothing else gives one.</td>
+<td><em>Default Hit Effect</em>（<code>defaultHitEffect</code>）</td>
+<td>没有其他特效时，作用在被击中者身上的特效。</td>
 <td>None</td>
 </tr>
 </tbody>
 </table></div>
-<p>For each element, a character has three numbers:</p>
+<p>对每种元素，角色有三个数字：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Number</th>
-<th>What it does</th>
+<th>数字</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Damage</td>
-<td>Added to every hit of this element the character deals, before power.</td>
+<td>加到角色造成的该元素每次命中上，在威力之前计算。</td>
 </tr>
 <tr>
 <td>Resistance</td>
-<td>Taken off every hit of this element the character receives.</td>
+<td>从角色受到的该元素每次命中中扣除。</td>
 </tr>
 <tr>
 <td>Resistance %</td>
-<td>Share of each hit of this element ignored, up to the element's <em>Max Resistance</em>.</td>
+<td>该元素每次命中中被忽略的比例，最高为该元素的 <em>Max Resistance</em>。</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="attributes"><a class="anchor" href="#attributes" aria-hidden="true">#</a>Attributes</h2>
-<p>Attributes are in <strong>Game Database &gt; Characters &gt; Attributes</strong>. Create one with <strong>Create &gt; KitARPG &gt; Attribute</strong>.</p>
+<h2 id="attributes"><a class="anchor" href="#attributes" aria-hidden="true">#</a>属性</h2><figure class="shot"><a href="../../assets/img/editor/db-characters-attributes.png" target="_blank"><img src="../../assets/img/editor/db-characters-attributes.png" alt="一项属性及每点提供的数值。" loading="lazy"></a><figcaption>一项属性及每点提供的数值。</figcaption></figure>
+<p>属性位于 <strong>Game Database &gt; Characters &gt; Attributes</strong>。用 <strong>Create &gt; KitARPG &gt; Attribute</strong> 创建一个。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Id</em>, <em>Display Name</em>, <em>Description</em>, <em>Icon</em></td>
-<td>As for every game data asset. The id is what saved characters store their spent points under.</td>
+<td><em>Id</em>、<em>Display Name</em>、<em>Description</em>、<em>Icon</em></td>
+<td>与所有游戏数据资源相同。id 是已保存角色存放其已分配点数时使用的键。</td>
 <td></td>
 </tr>
 <tr>
-<td><em>Per Point</em> (<code>perPoint</code>)</td>
-<td>What one point adds: a full modifier bundle (see below). Its <em>Attributes</em> list is ignored here: an attribute can't give points of another attribute.</td>
-<td>Empty</td>
+<td><em>Per Point</em>（<code>perPoint</code>）</td>
+<td>一点所增加的内容：一组完整的修正值（见下文）。这里会忽略其 <em>Attributes</em> 列表：一个属性不能提供另一个属性的点数。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Max Spent</em> (<code>maxSpent</code>)</td>
-<td>Most points a player can spend in this attribute. Points from the class and from gear don't count toward it. <code>0</code> means no limit.</td>
+<td><em>Max Spent</em>（<code>maxSpent</code>）</td>
+<td>玩家在该属性上最多能分配的点数。来自职业和装备的点数不计入。<code>0</code> 表示不限。</td>
 <td>0</td>
 </tr>
 </tbody>
 </table></div>
-<p>The sample has five attributes:</p>
+<p>示例中有五个属性：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Attribute (id)</th>
-<th>One point gives</th>
+<th>属性（id）</th>
+<th>每点提供</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Vitality (<code>vitality</code>)</td>
-<td>+10 health, +0.2 health regen</td>
+<td>Vitality（<code>vitality</code>）</td>
+<td>+10 生命值，+0.2 生命恢复</td>
 </tr>
 <tr>
-<td>Strength (<code>strength</code>)</td>
-<td>+5 carry weight, +0.5 Earth damage, +0.5 Neutral damage</td>
+<td>Strength（<code>strength</code>）</td>
+<td>+5 负重，+0.5 Earth 伤害，+0.5 Neutral 伤害</td>
 </tr>
 <tr>
-<td>Intelligence (<code>intelligence</code>)</td>
-<td>+4 mana, +0.08 mana regen, +0.5 heals, +0.2% XP gain, +0.5 Fire damage</td>
+<td>Intelligence（<code>intelligence</code>）</td>
+<td>+4 法力值，+0.08 法力恢复，+0.5 治疗，+0.2% 经验获取，+0.5 Fire 伤害</td>
 </tr>
 <tr>
-<td>Luck (<code>luck</code>)</td>
-<td>+0.2% critical, +0.5% loot chance, +0.5 Water damage</td>
+<td>Luck（<code>luck</code>）</td>
+<td>+0.2% 暴击，+0.5% 掉落几率，+0.5 Water 伤害</td>
 </tr>
 <tr>
-<td>Agility (<code>dexterity</code>)</td>
-<td>+0.6% attack speed, +0.5 Air damage</td>
+<td>Agility（<code>dexterity</code>）</td>
+<td>+0.6% 攻击速度，+0.5 Air 伤害</td>
 </tr>
 </tbody>
 </table></div>
-<p>Agility keeps the id <code>dexterity</code> from when it was called Dexterity, so characters saved before the rename keep their points.</p>
-<p>Fractional values per point are fine. They add up over all points before rounding (see <a href="#whole-numbers">whole numbers</a>), so 7 points of Vitality give <code>0.2 × 7 = 1.4</code>, which counts as 1 health per second.</p>
-<h3 id="spending-points"><a class="anchor" href="#spending-points" aria-hidden="true">#</a>Spending points</h3>
-<p>Players earn <em>Points Per Level</em> attribute points for each level after the first (set on the <a href="classes.html#points-per-level">class</a>). In the Character window (<code>C</code>):</p>
+<p>Agility 保留了它还叫 Dexterity 时的 id <code>dexterity</code>，因此改名前保存的角色仍保留其点数。</p>
+<p>每点的值可以是小数。它们会先在所有点数上累加再四舍五入（参见<a href="#whole-numbers">整数</a>），因此 7 点 Vitality 提供 <code>0.2 × 7 = 1.4</code>，算作每秒 1 点生命值。</p>
+<h3 id="spending-points"><a class="anchor" href="#spending-points" aria-hidden="true">#</a>分配点数</h3>
+<p>玩家在第一级之后每级获得 <em>Points Per Level</em> 个属性点（在<a href="classes.html#points-per-level">职业</a>上设置）。在 Character 窗口（<code>C</code>）中：</p>
 <ul>
-<li><strong>+</strong> next to an attribute adds one pending point. <code>Shift</code> + <strong>+</strong> adds all that fit.</li>
-<li>Clicking the attribute opens an amount picker with <strong>−</strong>, <strong>+</strong> and <strong>MAX</strong>. What you type is kept between 0 and what fits (free points not already pending elsewhere, and the attribute's <em>Max Spent</em>).</li>
-<li>Pending points show in green on the total, and <strong>Points left</strong> goes down.</li>
-<li>The button turns into <strong>CONFIRM n</strong>. Only then are the points sent to the server. <strong>UNDO</strong>, or closing the window, drops the pending points.</li>
+<li>属性旁的 <strong>+</strong> 添加一个待定点数。<code>Shift</code> + <strong>+</strong> 添加所有可容纳的点数。</li>
+<li>点击属性会打开一个带有 <strong>−</strong>、<strong>+</strong> 和 <strong>MAX</strong> 的数量选择器。你输入的值会被限制在 0 到可容纳的数量之间（尚未在其他地方待定的可用点数，以及该属性的 <em>Max Spent</em>）。</li>
+<li>待定点数在总数上以绿色显示，<strong>Points left</strong> 随之减少。</li>
+<li>按钮变为 <strong>CONFIRM n</strong>。只有此时点数才会发送给服务器。<strong>UNDO</strong> 或关闭窗口会丢弃待定点数。</li>
 </ul>
-<p>The server checks every request: the attribute is in the database, the player has the free points, and <em>Max Spent</em> is not passed.</p>
-<p>Spent points are permanent. They come back only through a reset: the <strong>Reset Attributes</strong> game action (for quests and dialogues; the sample's quest <em>Second Thoughts</em> gives one free reset) or a consumable with the <strong>Reset Attributes</strong> item effect (the sample's <em>Scroll of Second Thoughts</em>). See <a href="items.html#item-effects">Item effects</a>.</p>
-<h3 id="the-modifier-bundle"><a class="anchor" href="#the-modifier-bundle" aria-hidden="true">#</a>The modifier bundle</h3>
-<p>Every source of stats uses this bundle (<code>StatModifiers</code>):</p>
+<p>服务器会检查每个请求：属性存在于数据库中，玩家有足够的可用点数，且没有超过 <em>Max Spent</em>。</p>
+<p>已分配的点数是永久的。只能通过重置收回：<strong>Reset Attributes</strong> 游戏动作（用于任务和对话；示例中的任务 <em>Second Thoughts</em> 提供一次免费重置），或带有 <strong>Reset Attributes</strong> 物品效果的消耗品（示例中的 <em>Scroll of Second Thoughts</em>）。参见<a href="items.html#item-effects">物品效果</a>。</p>
+<h3 id="the-modifier-bundle"><a class="anchor" href="#the-modifier-bundle" aria-hidden="true">#</a>修正值组合</h3>
+<p>每个数值来源都使用这个组合（<code>StatModifiers</code>）：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Stats</em> (<code>stats</code>)</td>
-<td>Flat amounts added to stats. Percent stats are written as fractions (<code>0.05</code> for 5%).</td>
-<td>All 0</td>
+<td><em>Stats</em>（<code>stats</code>）</td>
+<td>加到数值上的固定数量。百分比数值写成小数（5% 写作 <code>0.05</code>）。</td>
+<td>全部为 0</td>
 </tr>
 <tr>
-<td><em>Stats Percent</em> (<code>statsPercent</code>)</td>
-<td>Percent of each stat's total, as fractions. <code>0.1</code> on Health is +10% of total health. <code>-0.4</code> on Move Speed is 40% slower.</td>
-<td>All 0</td>
+<td><em>Stats Percent</em>（<code>statsPercent</code>）</td>
+<td>每个数值总值的百分比，以小数表示。Health 上的 <code>0.1</code> 是总生命值 +10%。Move Speed 上的 <code>-0.4</code> 是减慢 40%。</td>
+<td>全部为 0</td>
 </tr>
 <tr>
-<td><em>Damage</em> (<code>damage</code>)</td>
-<td>Flat damage added to every hit of an element. List of element and amount; an empty element is the default element.</td>
-<td>Empty</td>
+<td><em>Damage</em>（<code>damage</code>）</td>
+<td>加到某元素每次命中上的固定伤害。元素和数量的列表；元素为空即默认元素。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Resistance</em> (<code>resistance</code>)</td>
-<td>Flat damage taken off every hit of an element.</td>
-<td>Empty</td>
+<td><em>Resistance</em>（<code>resistance</code>）</td>
+<td>从某元素每次命中中扣除的固定伤害。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Resistance Percent</em> (<code>resistancePercent</code>)</td>
-<td>Share of every hit of an element ignored. <code>0.1</code> is 10%.</td>
-<td>Empty</td>
+<td><em>Resistance Percent</em>（<code>resistancePercent</code>）</td>
+<td>某元素每次命中中被忽略的比例。<code>0.1</code> 是 10%。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Attributes</em> (<code>attributes</code>)</td>
-<td>Points added to attributes. Ignored on an attribute's <em>Per Point</em>.</td>
-<td>Empty</td>
+<td><em>Attributes</em>（<code>attributes</code>）</td>
+<td>加到属性上的点数。在属性的 <em>Per Point</em> 中被忽略。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Skills</em> (<code>skills</code>)</td>
-<td>Ranks added to specific skills the character has learned, while the source counts.</td>
-<td>Empty</td>
+<td><em>Skills</em>（<code>skills</code>）</td>
+<td>在来源生效期间，加到角色已习得的特定技能上的等级。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>All Skills</em> (<code>allSkills</code>)</td>
-<td>Ranks added to every skill the character has learned.</td>
+<td><em>All Skills</em>（<code>allSkills</code>）</td>
+<td>加到角色已习得的每个技能上的等级。</td>
 <td>0</td>
 </tr>
 </tbody>
 </table></div>
-<p>Skill ranks from gear only raise skills the character already knows; they never teach a new one. Learning and raising with points still uses the learned rank. See <a href="skills.html#ranks-from-gear-and-effects">Skill ranks from gear</a>.</p>
-<h2 id="whole-numbers"><a class="anchor" href="#whole-numbers" aria-hidden="true">#</a>Whole numbers</h2>
-<p>Every bonus in the kit counts in whole numbers, and every percent in whole percent points. A piece of gear gives +7 health, never +7.5, and +3% critical, never +3.5%.</p>
+<p>来自装备的技能等级只会提升角色已经会的技能；它们永远不会传授新技能。用点数学习和提升时仍使用已习得的等级。参见<a href="skills.html#ranks-from-gear-and-effects">来自装备的技能等级</a>。</p>
+<h2 id="whole-numbers"><a class="anchor" href="#whole-numbers" aria-hidden="true">#</a>整数</h2>
+<p>套件中的每项加成都以整数计算，每个百分比都以整数百分点计算。一件装备提供 +7 生命值，永远不会是 +7.5；提供 +3% 暴击，永远不会是 +3.5%。</p>
 <ul>
-<li>Rounding goes to the nearest whole number or whole percent; halves go away from zero (<code>2.5</code> becomes <code>3</code>, <code>-2.5</code> becomes <code>-3</code>).</li>
-<li>Each source is rounded on its own before it is added. An attribute counts as one source: its <em>Per Point</em> times the points, then rounded. So 3 points of Intelligence at <code>0.5</code> heals each give <code>1.5</code>, which counts as 2.</li>
-<li>Fields that are always percents (power, critical, crit damage, heal bonus, attack speed, XP gain, loot chance) round to a whole percent even in <em>Stats</em>. Luck at 0.2% critical per point: 12 points give 2.4%, which counts as 2%.</li>
-<li>The class's base stats are the only exception: they can keep decimals, like a walk speed of 3.5 meters per second. The final totals are whole again after the percents, except move speed, which keeps its decimals.</li>
-<li>Tooltips show bonuses already rounded, even if the asset has decimals.</li>
+<li>四舍五入到最接近的整数或整数百分点；0.5 时远离零取整（<code>2.5</code> 变为 <code>3</code>，<code>-2.5</code> 变为 <code>-3</code>）。</li>
+<li>每个来源在相加前单独取整。一个属性算作一个来源：其 <em>Per Point</em> 乘以点数，然后取整。因此 3 点 Intelligence、每点 <code>0.5</code> 治疗，合计 <code>1.5</code>，算作 2。</li>
+<li>始终为百分比的字段（威力、暴击、暴击伤害、治疗加成、攻击速度、经验获取、掉落几率）即使在 <em>Stats</em> 中也取整为整数百分点。Luck 每点 0.2% 暴击：12 点提供 2.4%，算作 2%。</li>
+<li>职业的基础数值是唯一的例外：它们可以保留小数，例如 3.5 米每秒的步行速度。百分比计算之后最终总值又会变为整数，移动速度除外，它保留小数。</li>
+<li>提示框显示已经取整后的加成，即使资源中有小数。</li>
 </ul>
-<div class="callout tip"><div class="callout-title">提示</div><p>Give speed bonuses as a percent (<em>Stats Percent</em> &gt; <em>Move Speed</em>), not as a flat amount. A flat +1 meter per second is a huge jump, and anything smaller rounds to 0.</p>
+<div class="callout tip"><div class="callout-title">提示</div><p>用百分比提供速度加成（<em>Stats Percent</em> &gt; <em>Move Speed</em>），而不是固定数量。固定的 +1 米每秒是巨大的跳跃，而更小的值会取整为 0。</p>
 </div>
-<h2 id="how-stats-are-computed"><a class="anchor" href="#how-stats-are-computed" aria-hidden="true">#</a>How stats are computed</h2>
-<p>The server works out a character's stats whenever something changes them: entering a map, leveling up, spending or resetting points, changing gear, a buff landing or ending, a passive skill being learned. The rules are in <code>StatFormula</code>, which you can replace in code (see <a href="../devkit/formulas.html">Formulas</a>). The default order is fixed:</p>
+<h2 id="how-stats-are-computed"><a class="anchor" href="#how-stats-are-computed" aria-hidden="true">#</a>数值如何计算</h2>
+<p>每当有东西改变角色的数值时，服务器都会重新计算：进入地图、升级、分配或重置点数、更换装备、增益生效或结束、习得被动技能。规则位于 <code>StatFormula</code> 中，你可以在代码中替换它（参见<a href="../devkit/formulas.html">公式</a>）。默认顺序是固定的：</p>
 <ol>
-<li><strong>Class attribute points.</strong> For each entry in the class's <em>Attributes</em>, the amount at the character's level, rounded.</li>
-<li><strong>Spent points.</strong> The points the player spent, per attribute.</li>
-<li><strong>Attribute points from sources.</strong> The <em>Attributes</em> list of every source: worn gear (with its rolled values and upgrade level), gems in that gear, set bonuses reached, statuses and buffs on the character, and passive skills.</li>
-<li><strong>Class stats.</strong> The class's <em>Base Stats</em> plus <em>Stats Per Level</em> × (level − 1). These may keep decimals.</li>
-<li><strong>Attributes.</strong> For each attribute, its <em>Per Point</em> times its total points from steps 1 to 3, rounded as one source.</li>
-<li><strong>Sources.</strong> Every source's flat stats, element damage, resistances and skill ranks, each rounded on its own. Percent bonuses from every source are added together.</li>
-<li><strong>Percents.</strong> Each stat is grown by the sum of its percent bonuses: <code>total × (1 + percent)</code>. Then every stat is rounded to a whole number or whole percent, except move speed.</li>
+<li><strong>职业属性点。</strong> 对职业 <em>Attributes</em> 中的每个条目，取角色当前等级的数量并取整。</li>
+<li><strong>已分配点数。</strong> 玩家在每个属性上分配的点数。</li>
+<li><strong>来源提供的属性点。</strong> 每个来源的 <em>Attributes</em> 列表：穿戴的装备（带有其随机值和强化等级）、装备中的宝石、达成的套装加成、角色身上的状态和增益，以及被动技能。</li>
+<li><strong>职业数值。</strong> 职业的 <em>Base Stats</em> 加上 <em>Stats Per Level</em> × (等级 − 1)。这些可以保留小数。</li>
+<li><strong>属性。</strong> 对每个属性，其 <em>Per Point</em> 乘以第 1 到 3 步得出的总点数，作为一个来源取整。</li>
+<li><strong>来源。</strong> 每个来源的固定数值、元素伤害、抗性和技能等级，各自单独取整。所有来源的百分比加成相加。</li>
+<li><strong>百分比。</strong> 每个数值按其百分比加成之和增长：<code>total × (1 + percent)</code>。然后每个数值取整为整数或整数百分点，移动速度除外。</li>
 </ol>
-<p>Attributes come first because they add stats: a ring with +5 Strength must also give the damage and carry weight of those 5 points.</p>
-<p>Health and mana maximums are the rounded totals (health at least 1). Current health and mana stay where they were, cut down to the new maximum if it shrank.</p>
-<h3 id="a-worked-example"><a class="anchor" href="#a-worked-example" aria-hidden="true">#</a>A worked example</h3>
-<p>A level 10 Warrior with 10 points spent in Strength, wearing a chest piece whose copy rolled +6 Vitality and +30 health, and under War Cry (+15% power). For the sake of the example nothing else is worn.</p>
+<p>属性先计算，是因为它们会增加数值：一枚 +5 Strength 的戒指必须同时提供这 5 点带来的伤害和负重。</p>
+<p>生命值和法力值上限是取整后的总值（生命值至少为 1）。当前生命值和法力值保持不变，如果上限降低则削减到新的上限。</p>
+<h3 id="a-worked-example"><a class="anchor" href="#a-worked-example" aria-hidden="true">#</a>计算示例</h3>
+<p>一名 10 级 Warrior，在 Strength 上分配了 10 点，穿着一件随机到 +6 Vitality 和 +30 生命值的胸甲，并处于 War Cry 状态下（+15% 威力）。为便于说明，没有穿戴其他东西。</p>
 <ol>
-<li>Class points at level 10: Vitality <code>7 + 2 × 9 = 25</code>, Strength <code>8 + 2 × 9 = 26</code>, Intelligence <code>2 + 0.5 × 9 = 6.5</code>, rounded to <code>7</code>, Luck <code>3 + 0.5 × 9 = 7.5</code>, rounded to <code>8</code>, Agility <code>4 + 1 × 9 = 13</code>.</li>
-<li>Spent points: Strength <code>26 + 10 = 36</code>.</li>
-<li>Attribute points from sources: the chest piece gives +6 Vitality, so Vitality is <code>25 + 6 = 31</code>.</li>
-<li>Class stats: health <code>90 + 14 × 9 = 216</code>, mana <code>20 + 2 × 9 = 38</code>, move speed <code>3.5</code>, crit damage <code>0.5</code>.</li>
-<li>Attributes, each rounded as one source:
+<li>10 级时的职业点数：Vitality <code>7 + 2 × 9 = 25</code>，Strength <code>8 + 2 × 9 = 26</code>，Intelligence <code>2 + 0.5 × 9 = 6.5</code>，取整为 <code>7</code>，Luck <code>3 + 0.5 × 9 = 7.5</code>，取整为 <code>8</code>，Agility <code>4 + 1 × 9 = 13</code>。</li>
+<li>已分配点数：Strength <code>26 + 10 = 36</code>。</li>
+<li>来源提供的属性点：胸甲提供 +6 Vitality，因此 Vitality 为 <code>25 + 6 = 31</code>。</li>
+<li>职业数值：生命值 <code>90 + 14 × 9 = 216</code>，法力值 <code>20 + 2 × 9 = 38</code>，移动速度 <code>3.5</code>，暴击伤害 <code>0.5</code>。</li>
+<li>属性，各自作为一个来源取整：
 <ul>
-<li>Vitality 31: health <code>+310</code>, health regen <code>0.2 × 31 = 6.2</code>, counted as <code>6</code>.</li>
-<li>Strength 36: carry weight <code>+180</code>, Earth damage <code>+18</code>, Neutral damage <code>+18</code>.</li>
-<li>Intelligence 7: mana <code>+28</code>, mana regen <code>0.56</code>, counted as <code>1</code>, heals <code>3.5</code>, counted as <code>4</code>, XP gain <code>1.4%</code>, counted as <code>1%</code>, Fire damage <code>3.5</code>, counted as <code>4</code>.</li>
-<li>Luck 8: critical <code>1.6%</code>, counted as <code>2%</code>, loot chance <code>4%</code>, Water damage <code>4</code>.</li>
-<li>Agility 13: attack speed <code>7.8%</code>, counted as <code>8%</code>, Air damage <code>6.5</code>, counted as <code>7</code>.</li>
+<li>Vitality 31：生命值 <code>+310</code>，生命恢复 <code>0.2 × 31 = 6.2</code>，算作 <code>6</code>。</li>
+<li>Strength 36：负重 <code>+180</code>，Earth 伤害 <code>+18</code>，Neutral 伤害 <code>+18</code>。</li>
+<li>Intelligence 7：法力值 <code>+28</code>，法力恢复 <code>0.56</code>，算作 <code>1</code>，治疗 <code>3.5</code>，算作 <code>4</code>，经验获取 <code>1.4%</code>，算作 <code>1%</code>，Fire 伤害 <code>3.5</code>，算作 <code>4</code>。</li>
+<li>Luck 8：暴击 <code>1.6%</code>，算作 <code>2%</code>，掉落几率 <code>4%</code>，Water 伤害 <code>4</code>。</li>
+<li>Agility 13：攻击速度 <code>7.8%</code>，算作 <code>8%</code>，Air 伤害 <code>6.5</code>，算作 <code>7</code>。</li>
 </ul>
 </li>
-<li>Sources: the chest piece adds +30 health; War Cry adds +15% power (it is a flat amount on a percent stat, so it adds 0.15 to power).</li>
-<li>Percents: none of the sources has a <em>Stats Percent</em> bonus, so nothing grows. Health ends at <code>216 + 310 + 30 = 556</code>, mana at <code>38 + 28 = 66</code>, power at 15%, critical at 2%, crit damage at 50%.</li>
+<li>来源：胸甲增加 +30 生命值；War Cry 增加 +15% 威力（这是百分比数值上的固定数量，因此为威力加 0.15）。</li>
+<li>百分比：没有来源带有 <em>Stats Percent</em> 加成，因此没有增长。生命值最终为 <code>216 + 310 + 30 = 556</code>，法力值为 <code>38 + 28 = 66</code>，威力 15%，暴击 2%，暴击伤害 50%。</li>
 </ol>
-<p>If the same character also wore a set bonus of +8% health (<em>Stats Percent</em>), step 7 would make health <code>556 × 1.08 = 600.48</code>, rounded to <code>600</code>.</p>
-<p>The Character window shows the result: attributes with their totals, the stats in sections, and a table of damage, resistance and resistance percent per element.</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>The rules are the same in both modes and only run on the server: the map server in MMO, the game itself in single player. The client never computes its own stats. After each recalculation the server sends the owner the final stats and the total of each attribute; other players only see health bars.</p>
-<p>Characters save only the points the player spent, as a list of attribute id and amount: in the <code>Attributes</code> column of the database in MMO (<code>jsonb</code> in PostgreSQL), inside the character's JSON in single player. Class points and gear bonuses are never saved; they are worked out again on load. So rebalancing a class or an attribute changes every existing character at once.</p>
-<p>In MMO, Login creates new characters without Unity, so it reads each class's level 1 health and mana from <code>gamedata.json</code>. Export it again after changing base stats (<strong>Play &amp; Servers</strong> does it when starting the services; <strong>KitARPG &gt; Export Game Data for Services</strong> for builds).</p>
-<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<p>如果同一角色还拥有 +8% 生命值（<em>Stats Percent</em>）的套装加成，第 7 步会使生命值变为 <code>556 × 1.08 = 600.48</code>，取整为 <code>600</code>。</p>
+<p>Character 窗口显示结果：属性及其总值、分组的数值，以及每种元素的伤害、抗性和抗性百分比表格。</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式和 MMO</h2>
+<p>规则在两种模式下相同，且只在服务器上运行：MMO 中是地图服务器，单人模式中是游戏本身。客户端永远不会自己计算数值。每次重新计算后，服务器把最终数值和每个属性的总值发送给角色的拥有者；其他玩家只能看到血条。</p>
+<p>角色只保存玩家分配的点数，作为属性 id 和数量的列表：MMO 中存放在数据库的 <code>Attributes</code> 列中（PostgreSQL 中为 <code>jsonb</code>），单人模式中存放在角色的 JSON 内。职业点数和装备加成永远不会被保存；它们在加载时重新计算。因此重新平衡某个职业或属性会立即改变所有现有角色。</p>
+<p>在 MMO 中，Login 不使用 Unity 创建新角色，因此它从 <code>gamedata.json</code> 读取每个职业 1 级时的生命值和法力值。修改基础数值后请重新导出（<strong>Play &amp; Servers</strong> 在启动服务时会这样做；构建时使用 <strong>KitARPG &gt; Export Game Data for Services</strong>）。</p>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>提示</h2>
 <ul>
-<li>Give each attribute one clear job and one element. Players understand &quot;Intelligence is fire and mana&quot; at once.</li>
-<li>Keep <em>Max Spent</em> at 0 unless you want hard caps; caps make some builds impossible.</li>
-<li>Element resistances are strong because they stack with percent resistance. Keep <em>Max Resistance</em> at 0.5 or lower for elements players will fight a lot.</li>
+<li>给每个属性一个明确的作用和一个元素。玩家一下子就能理解 &quot;Intelligence 是火和法力&quot;。</li>
+<li>除非你想要硬性上限，否则让 <em>Max Spent</em> 保持为 0；上限会让一些流派无法实现。</li>
+<li>元素抗性很强，因为它们会与百分比抗性叠加。对于玩家会经常面对的元素，把 <em>Max Resistance</em> 保持在 0.5 或更低。</li>
 </ul>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>A bonus of 0.4 does nothing.</strong> It rounds to 0. Use a whole number, or a bigger percent.</li>
-<li><strong>Attack speed of 10 makes attacks absurdly fast.</strong> Percent stats are fractions in <em>Stats</em>: 10% is <code>0.1</code>.</li>
-<li><strong>An attribute was renamed and characters lost their points.</strong> The id changed. Put the old id back; you can rename the <em>Display Name</em> freely.</li>
-<li><strong>Gear raises a skill the character doesn't know, and nothing happens.</strong> Skill ranks from gear only apply to learned skills.</li>
+<li><strong>0.4 的加成没有任何效果。</strong> 它被取整为 0。请使用整数或更大的百分比。</li>
+<li><strong>攻击速度设为 10 导致攻击快得离谱。</strong> 在 <em>Stats</em> 中百分比数值是小数：10% 是 <code>0.1</code>。</li>
+<li><strong>某个属性被重命名后，角色丢失了点数。</strong> id 被修改了。改回旧的 id；<em>Display Name</em> 可以随意修改。</li>
+<li><strong>装备提升了角色不会的技能，结果没有任何效果。</strong> 来自装备的技能等级只作用于已习得的技能。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="classes.html">Classes</a></li>
-<li><a href="equipment.html">Equipment</a></li>
-<li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li>
-<li><a href="statuses-and-buffs.html">Statuses and buffs</a></li>
-<li><a href="../gameplay/combat.html">Combat</a></li>
-<li><a href="../devkit/formulas.html">Formulas</a></li>
+<li><a href="classes.html">职业</a></li>
+<li><a href="equipment.html">装备</a></li>
+<li><a href="sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li>
+<li><a href="statuses-and-buffs.html">状态与增益</a></li>
+<li><a href="../gameplay/combat.html">战斗</a></li>
+<li><a href="../devkit/formulas.html">公式</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="classes.html"><span>上一页</span>Classes</a><a class="next" href="player-models.html"><span>下一页</span>Player models</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fcontent%2Fattributes-and-stats.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#the-pieces">The pieces</a></li><li class="l2"><a href="#the-stats">The stats</a></li><li class="l3"><a href="#stat-names-and-icons">Stat names and icons</a></li><li class="l2"><a href="#damage-elements">Damage elements</a></li><li class="l2"><a href="#attributes">Attributes</a></li><li class="l3"><a href="#spending-points">Spending points</a></li><li class="l3"><a href="#the-modifier-bundle">The modifier bundle</a></li><li class="l2"><a href="#whole-numbers">Whole numbers</a></li><li class="l2"><a href="#how-stats-are-computed">How stats are computed</a></li><li class="l3"><a href="#a-worked-example">A worked example</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="classes.html"><span>上一页</span>职业</a><a class="next" href="player-models.html"><span>下一页</span>玩家模型</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fcontent%2Fattributes-and-stats.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#the-pieces">组成部分</a></li><li class="l2"><a href="#the-stats">数值</a></li><li class="l3"><a href="#stat-names-and-icons">数值名称和图标</a></li><li class="l2"><a href="#damage-elements">伤害元素</a></li><li class="l2"><a href="#attributes">属性</a></li><li class="l3"><a href="#spending-points">分配点数</a></li><li class="l3"><a href="#the-modifier-bundle">修正值组合</a></li><li class="l2"><a href="#whole-numbers">整数</a></li><li class="l2"><a href="#how-stats-are-computed">数值如何计算</a></li><li class="l3"><a href="#a-worked-example">计算示例</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式和 MMO</a></li><li class="l2"><a href="#tips">提示</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

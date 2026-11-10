@@ -1,206 +1,206 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Skill effects · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>技能效果 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/skill-effects.html">English</option><option value="../../es/devkit/skill-effects.html">Español</option><option value="../../pt/devkit/skill-effects.html">Português</option><option value="skill-effects.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html" class="on" aria-current="page">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">开发套件</div><h1>Skill effects</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>How to write your own skill effects: the <code>SkillEffect</code> base class, what a cast hands you, how targets are chosen, and complete examples that follow the game's damage rules.</p>
-<h2 id="what-a-skill-effect-is"><a class="anchor" href="#what-a-skill-effect-is" aria-hidden="true">#</a>What a skill effect is</h2>
-<p>A skill is a target, an area and a list of effects (<code>SkillData.effects</code>). When the skill lands, the server works out who it reached and calls each effect once per target. The kit ships effects for damage, heals, stat buffs, statuses, cleanse and dispel, knockback, revive and summons. Anything else a skill should do is a new effect class.</p>
-<p>Effects are <code>[Serializable]</code> classes held by reference (<code>[SerializeReference, PickType]</code>). Once your class compiles, it appears in the <strong>+</strong> type menu of every skill's <em>Effects</em> list in <strong>KitARPG &gt; Game Database &gt; Skills</strong>. There is nothing to register.</p>
-<p><strong>Where the file goes:</strong> the <code>Game</code> assembly. Effects are data that both builds load (the client shows them in tooltips), even though only the server applies them.</p>
-<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h2>
-<p><code>SkillEffect</code> lives in <code>Blunnyn.KitARPG.Data</code>.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html" class="on" aria-current="page">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>技能效果</h1><p>如何编写你自己的技能效果：<code>SkillEffect</code> 基类、一次施放交给你什么、如何选择目标，以及遵循游戏伤害规则的完整示例。</p>
+<h2 id="what-a-skill-effect-is"><a class="anchor" href="#what-a-skill-effect-is" aria-hidden="true">#</a>技能效果是什么</h2>
+<p>技能由一个目标、一个范围和一组效果（<code>SkillData.effects</code>）组成。技能命中时，服务器算出它到达了谁，然后对每个目标调用每个效果一次。套件自带的效果有伤害、治疗、属性增益、状态、净化和驱散、击退、复活和召唤。技能还要做的其他任何事情，都是一个新的效果类。</p>
+<p>效果是按引用保存的 <code>[Serializable]</code> 类（<code>[SerializeReference, PickType]</code>）。你的类编译后，它会出现在 <strong>KitARPG &gt; Game Database &gt; Skills</strong> 中每个技能的 <em>Effects</em> 列表的 <strong>+</strong> 类型菜单里。不需要注册任何东西。</p>
+<p><strong>文件放在哪里：</strong> <code>Game</code> 程序集。效果是两种构建都会加载的数据（客户端在提示框中显示它们），尽管只有服务器会应用它们。</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>基类</h2>
+<p><code>SkillEffect</code> 位于 <code>Blunnyn.KitARPG.Data</code>。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
-<th>Default</th>
+<th>成员</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>string Summary</code></td>
-<td>Short text shown in the skill editor's effect list and used as the default tooltip line.</td>
-<td>The class name</td>
+<td>显示在技能编辑器效果列表中的短文本，也用作默认的提示行。</td>
+<td>类名</td>
 </tr>
 <tr>
 <td><code>bool Harmful</code></td>
-<td><code>true</code>: the effect lands on enemies the skill reaches. <code>false</code>: on the caster and allies it reaches.</td>
+<td><code>true</code>：效果作用于技能到达的敌人。<code>false</code>：作用于施法者和技能到达的盟友。</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>bool OnCaster</code></td>
-<td><code>true</code>: the effect runs once per cast with the caster as the target, whoever else the skill reaches. Used by summons.</td>
+<td><code>true</code>：无论技能还到达了谁，效果每次施放只以施法者为目标运行一次。召唤使用这种方式。</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>void Apply(SkillCast cast, IFighter target)</code></td>
-<td><strong>Server only.</strong> Called once per target. Required.</td>
+<td><strong>仅限服务器。</strong> 每个目标调用一次。必须实现。</td>
 <td></td>
 </tr>
 <tr>
 <td><code>void Describe(ItemDescription description, int level, DamageElement fallback)</code></td>
-<td>Lines for the skill's card at a rank. Runs on the client. <code>fallback</code> is the element to name when yours is empty.</td>
-<td>Adds <code>Summary</code></td>
+<td>某个等级下技能卡片上的文字行。在客户端运行。当你的元素为空时，<code>fallback</code> 是要显示的元素。</td>
+<td>添加 <code>Summary</code></td>
 </tr>
 <tr>
 <td><code>void Visit(Action&lt;GameData&gt; visit)</code></td>
-<td>Hands the game database every asset the effect points at, so they get registered.</td>
-<td>Nothing</td>
+<td>把效果引用的每个资源交给游戏数据库，使它们得到注册。</td>
+<td>什么都不做</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="how-targets-are-picked"><a class="anchor" href="#how-targets-are-picked" aria-hidden="true">#</a>How targets are picked</h3>
-<p>The server's <code>SkillRunner</code> gathers enemies and allies in the skill's area, then for each effect in order:</p>
+<h3 id="how-targets-are-picked"><a class="anchor" href="#how-targets-are-picked" aria-hidden="true">#</a>如何选择目标</h3>
+<p>服务器的 <code>SkillRunner</code> 收集技能范围内的敌人和盟友，然后按顺序对每个效果：</p>
 <ul>
-<li><code>OnCaster</code> effects run once with <code>target</code> set to the caster.</li>
-<li><code>Harmful</code> effects run on every enemy reached; the others run on every ally reached (the caster counts as an ally when the area includes it).</li>
-<li>On skills with <em>Targets Dead</em> set, only dead fighters are reached; otherwise only living ones.</li>
+<li><code>OnCaster</code> 效果运行一次，<code>target</code> 设为施法者。</li>
+<li><code>Harmful</code> 效果在每个到达的敌人身上运行；其他效果在每个到达的盟友身上运行（范围包含施法者时，施法者也算盟友）。</li>
+<li>在设置了 <em>Targets Dead</em> 的技能上，只会到达死亡的战斗者；否则只到达活着的。</li>
 </ul>
-<p>A skill can land several times in one cast:</p>
+<p>一个技能在一次施放中可以命中多次：</p>
 <ul>
-<li><strong>Multi-hit animations</strong> split one cast across several hit moments. Each landing carries a share of the damage in <code>cast.scale</code>, and only the first has <code>cast.firstHit</code> true.</li>
-<li><strong>Zones</strong> left on the ground land again every tick, each tick as a fresh cast with <code>firstHit</code> true.</li>
-<li><strong>Piercing lines</strong> hit each target as the projectile passes.</li>
-<li><strong>Bounces</strong> jump to the next target with <code>cast.scale</code> reduced by the skill's <em>Bounce Keep</em>.</li>
+<li><strong>多段命中动画</strong>把一次施放分到多个命中时刻。每次命中在 <code>cast.scale</code> 中带着一部分伤害，只有第一次的 <code>cast.firstHit</code> 为 true。</li>
+<li>留在地面上的<strong>区域</strong>每个 tick 再次命中，每个 tick 都是一次新的施放，<code>firstHit</code> 为 true。</li>
+<li><strong>穿透直线</strong>在投射物经过时命中每个目标。</li>
+<li><strong>弹射</strong>跳到下一个目标，<code>cast.scale</code> 按技能的 <em>Bounce Keep</em> 减少。</li>
 </ul>
-<p>Two rules follow. Scale damage and healing by <code>cast.scale</code>. Put buffs, statuses and other one-time effects behind <code>if (!cast.firstHit) return;</code> so they go on once per cast.</p>
-<h2 id="what-a-cast-hands-you"><a class="anchor" href="#what-a-cast-hands-you" aria-hidden="true">#</a>What a cast hands you</h2>
-<p><code>SkillCast</code>:</p>
+<p>由此得出两条规则。用 <code>cast.scale</code> 缩放伤害和治疗。把增益、状态和其他一次性效果放在 <code>if (!cast.firstHit) return;</code> 之后，让它们每次施放只生效一次。</p>
+<h2 id="what-a-cast-hands-you"><a class="anchor" href="#what-a-cast-hands-you" aria-hidden="true">#</a>一次施放交给你什么</h2>
+<p><code>SkillCast</code>：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it is</th>
+<th>字段</th>
+<th>是什么</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>IFighter caster</code></td>
-<td>Who cast it: a player or a monster.</td>
+<td>谁施放的：玩家或怪物。</td>
 </tr>
 <tr>
 <td><code>SkillData skill</code></td>
-<td>The skill.</td>
+<td>该技能。</td>
 </tr>
 <tr>
 <td><code>int level</code></td>
-<td>The rank it was cast at, gear bonuses included. Use it with <code>LevelValue.At(level)</code>.</td>
+<td>施放时的等级，包含装备加成。与 <code>LevelValue.At(level)</code> 一起使用。</td>
 </tr>
 <tr>
 <td><code>IReadOnlyList&lt;ElementDamage&gt; weapon</code></td>
-<td>Rolls of the caster's weapon, for effects that scale with it. May be empty or null.</td>
+<td>施法者武器的伤害取值，供随武器缩放的效果使用。可能为空或 null。</td>
 </tr>
 <tr>
 <td><code>IFighter target</code></td>
-<td>The aimed target, if the skill has one.</td>
+<td>瞄准的目标，如果技能有目标的话。</td>
 </tr>
 <tr>
 <td><code>Vector3 point</code></td>
-<td>Where it was aimed: the target's position or a point on the ground.</td>
+<td>瞄准的位置：目标的位置或地面上的一个点。</td>
 </tr>
 <tr>
 <td><code>float scale</code></td>
-<td>Share of damage and healing this landing carries. <code>1</code> for a single landing.</td>
+<td>这次命中所带的伤害和治疗比例。只命中一次时为 <code>1</code>。</td>
 </tr>
 <tr>
 <td><code>bool firstHit</code></td>
-<td>False on the later landings of one cast.</td>
+<td>在一次施放的后续命中中为 false。</td>
 </tr>
 <tr>
 <td><code>float projectileSpeed</code></td>
-<td>Meters per second of the skill's projectile, 0 without one.</td>
+<td>技能投射物的速度（米/秒），没有投射物时为 0。</td>
 </tr>
 <tr>
 <td><code>SkillCast Copy()</code></td>
-<td>A copy, for effects that land later.</td>
+<td>一份副本，供稍后才命中的效果使用。</td>
 </tr>
 </tbody>
 </table></div>
-<p><code>IFighter</code> is anything a skill can touch, on the server:</p>
+<p><code>IFighter</code> 是服务器上技能能触及的任何东西：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
+<th>成员</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Transform transform</code>, <code>bool IsDead</code>, <code>int Level</code></td>
-<td>Position, state, level.</td>
+<td><code>Transform transform</code>、<code>bool IsDead</code>、<code>int Level</code></td>
+<td>位置、状态、等级。</td>
 </tr>
 <tr>
 <td><code>int Team</code></td>
-<td>Players are 0, monsters 1. Different teams are enemies.</td>
+<td>玩家为 0，怪物为 1。不同队伍互为敌人。</td>
 </tr>
 <tr>
 <td><code>StatSheet CombatStats</code></td>
-<td>Stats and elements for attacking and defending. Server only.</td>
+<td>用于攻击和防御的属性和元素。仅限服务器。</td>
 </tr>
 <tr>
 <td><code>void ServerDamage(Hit hit, IFighter source)</code></td>
-<td>Deals a hit. Shields, immunities and death are handled inside.</td>
+<td>造成一次命中。护盾、免疫和死亡都在内部处理。</td>
 </tr>
 <tr>
 <td><code>void ServerHeal(int amount, IFighter source, GameData cause = null)</code></td>
-<td>Heals. The amount is final: the healer's stats are not added again. <code>cause</code> picks the effect clients show.</td>
+<td>治疗。数量是最终值：不会再次加上治疗者的属性。<code>cause</code> 决定客户端显示的特效。</td>
 </tr>
 <tr>
 <td><code>bool ServerAddBuff(Buff buff)</code></td>
-<td>Adds a buff or status. False when it didn't take (immunity, dead).</td>
+<td>添加增益或状态。没有生效时（免疫、已死亡）返回 false。</td>
 </tr>
 <tr>
 <td><code>int ServerRemoveBuffs(Predicate&lt;Buff&gt; match, int max = 0)</code></td>
-<td>Removes matching buffs, newest first; 0 removes all. Returns how many.</td>
+<td>移除匹配的增益，从最新的开始；0 表示全部移除。返回移除的数量。</td>
 </tr>
 <tr>
 <td><code>StatusFlags Status</code></td>
-<td>What its statuses stop it from doing now (stunned, rooted, invisible).</td>
+<td>它的状态当前阻止它做什么（眩晕、定身、隐身）。</td>
 </tr>
 <tr>
 <td><code>bool ServerKnock(Vector3 to, float seconds)</code></td>
-<td>Pushes or pulls it. False when it can't be moved.</td>
+<td>推开或拉近它。无法移动时返回 false。</td>
 </tr>
 <tr>
 <td><code>bool ServerRevive(float health, float mana, IFighter by)</code></td>
-<td>Brings it back with a share of health and mana.</td>
+<td>以一定比例的生命和法力让它复活。</td>
 </tr>
 </tbody>
 </table></div>
-<p>On the server, players are <code>PlayerCharacter</code> and monsters are <code>Monster</code> (both in <code>Blunnyn.KitARPG.Net</code>). Cast to them when you need something <code>IFighter</code> doesn't have, such as health.</p>
-<h3 id="numbers-that-grow-with-rank"><a class="anchor" href="#numbers-that-grow-with-rank" aria-hidden="true">#</a>Numbers that grow with rank</h3>
-<p><code>LevelValue</code> is a value at rank 1 plus an amount per rank after it:</p>
+<p>在服务器上，玩家是 <code>PlayerCharacter</code>，怪物是 <code>Monster</code>（都在 <code>Blunnyn.KitARPG.Net</code> 中）。需要 <code>IFighter</code> 没有的东西（例如生命值）时，转换成它们。</p>
+<h3 id="numbers-that-grow-with-rank"><a class="anchor" href="#numbers-that-grow-with-rank" aria-hidden="true">#</a>随等级增长的数值</h3>
+<p><code>LevelValue</code> 是 1 级时的数值，加上之后每级增加的量：</p>
 <pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">   </span><span class="c1">// 10 at rank 1, 12 at rank 2, 14 at rank 3</span>
 <span class="kt">float</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">);</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">whole</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">AtInt</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">);</span><span class="w">               </span><span class="c1">// rounded</span>
 </code></pre>
-<p>The inspector shows it as <em>Base Value</em> and <em>Per Level</em>.</p>
-<h3 id="hits-and-the-damage-formula"><a class="anchor" href="#hits-and-the-damage-formula" aria-hidden="true">#</a>Hits and the damage formula</h3>
-<p>A <code>Hit</code> is <code>amount</code>, <code>critical</code>, <code>element</code> (the element that did most of it, for its color) and <code>source</code> (the skill, weapon type or monster, which picks the hit effect).</p>
-<p>To follow the game's damage rules (element damage, power, flat and percent resistance, criticals), let the combat formula build the hit:</p>
+<p>检视面板把它显示为 <em>Base Value</em> 和 <em>Per Level</em>。</p>
+<h3 id="hits-and-the-damage-formula"><a class="anchor" href="#hits-and-the-damage-formula" aria-hidden="true">#</a>命中和伤害公式</h3>
+<p><code>Hit</code> 包含 <code>amount</code>、<code>critical</code>、<code>element</code>（造成大部分伤害的元素，决定它的颜色）和 <code>source</code>（技能、武器类型或怪物，决定命中特效）。</p>
+<p>要遵循游戏的伤害规则（元素伤害、强度、固定和百分比抗性、暴击），让战斗公式来生成命中：</p>
 <pre class="code"><code class="language-csharp"><span class="kt">var</span><span class="w"> </span><span class="n">rolls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementDamage</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">),</span><span class="w"> </span><span class="n">max</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">))</span><span class="w"> </span><span class="p">};</span>
 <span class="n">Hit</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">scale</span><span class="p">);</span>
 <span class="n">hit</span><span class="p">.</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">skill</span><span class="p">;</span>
 <span class="n">target</span><span class="p">.</span><span class="n">ServerDamage</span><span class="p">(</span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">);</span>
 </code></pre>
-<p>For heals, <code>GameInstance.Combat.Heal(cast.caster.CombatStats, amount)</code> adds the caster's heals stat and healing bonus. A game that swapped the formula (see <a href="formulas.html">Formulas</a>) changes your effects too.</p>
-<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
-<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Skill Effect</strong> makes a fixed-damage effect. It skips the formula on purpose to stay short. The <a href="templates.html#skill-effect">Templates</a> page shows it.</p>
-<h2 id="example-life-steal"><a class="anchor" href="#example-life-steal" aria-hidden="true">#</a>Example: life steal</h2>
-<p>Damage that heals the caster for a share of what it dealt.</p>
+<p>对于治疗，<code>GameInstance.Combat.Heal(cast.caster.CombatStats, amount)</code> 会加上施法者的治疗属性和治疗加成。如果游戏替换了公式（见<a href="formulas.html">公式</a>），你的效果也会随之改变。</p>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>示例：模板</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Skill Effect</strong> 会生成一个固定伤害的效果。它为了保持简短，有意跳过了公式。<a href="templates.html#skill-effect">模板</a>页面展示了它。</p>
+<h2 id="example-life-steal"><a class="anchor" href="#example-life-steal" aria-hidden="true">#</a>示例：生命偷取</h2>
+<p>造成伤害，并按造成伤害的一定比例治疗施法者。</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
@@ -247,9 +247,9 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p>The heal uses the hit's amount before shields soaked any of it. If that matters in your game, compare the target's health before and after (see the next example for reading health).</p>
-<h2 id="example-execute"><a class="anchor" href="#example-execute" aria-hidden="true">#</a>Example: execute</h2>
-<p>Extra damage against targets below a share of their health.</p>
+<p>治疗使用的是护盾吸收之前的命中数量。如果这在你的游戏中很重要，比较目标受击前后的生命值（读取生命值的方法见下一个示例）。</p>
+<h2 id="example-execute"><a class="anchor" href="#example-execute" aria-hidden="true">#</a>示例：斩杀</h2>
+<p>对生命低于一定比例的目标造成额外伤害。</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
@@ -301,8 +301,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h2 id="example-mana-refund-on-the-caster"><a class="anchor" href="#example-mana-refund-on-the-caster" aria-hidden="true">#</a>Example: mana refund on the caster</h2>
-<p>An <code>OnCaster</code> effect runs once per cast, with the caster as <code>target</code>. This one gives mana back when the skill reached at least one enemy.</p>
+<h2 id="example-mana-refund-on-the-caster"><a class="anchor" href="#example-mana-refund-on-the-caster" aria-hidden="true">#</a>示例：返还施法者法力</h2>
+<p><code>OnCaster</code> 效果每次施放运行一次，<code>target</code> 为施法者。这个效果每次施放都会返还法力，无论技能是否到达任何人。<code>firstHit</code> 检查让它在多段命中动画中只生效一次；区域每跳都会再返还一次，因为每跳都是一次新的施放。</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
@@ -330,8 +330,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h2 id="example-a-status-with-a-chance-from-a-field"><a class="anchor" href="#example-a-status-with-a-chance-from-a-field" aria-hidden="true">#</a>Example: a status with a chance, from a field</h2>
-<p>Effects that point at assets (statuses, monsters, items) must hand them to <code>Visit</code>. Without it, an asset only your effect references may be left out of the game database, and the server can't find it by id.</p>
+<h2 id="example-a-status-from-a-field"><a class="anchor" href="#example-a-status-from-a-field" aria-hidden="true">#</a>示例：来自字段的状态</h2>
+<p>引用资源（状态、怪物、物品）的效果必须把它们交给 <code>Visit</code>。否则，只被你的效果引用的资源可能会被排除在游戏数据库之外，服务器就无法通过 id 找到它。</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MarkForDeathEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SkillEffect</span>
 <span class="p">{</span>
@@ -351,53 +351,53 @@
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Visit</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GameData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<p>For most statuses the kit's <code>ApplyStatusEffect</code> already does this, with a chance and stacks. Write your own only when the rule differs.</p>
-<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<p>对于大多数状态，套件的 <code>ApplyStatusEffect</code> 已经做到了这一点，并且带有几率和叠加层数。只有规则不同时才自己编写。</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>服务器和客户端</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Runs on</th>
+<th>运行于</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Apply</code></td>
-<td>Server only: the map server online, the host in single player.</td>
+<td>仅限服务器：在线时为地图服务器，单人模式中为主机。</td>
 </tr>
 <tr>
-<td><code>Describe</code>, <code>Summary</code></td>
-<td>Wherever a skill card is shown: the client, and the editor.</td>
+<td><code>Describe</code>、<code>Summary</code></td>
+<td>任何显示技能卡片的地方：客户端和编辑器。</td>
 </tr>
 <tr>
-<td>Field values</td>
-<td>Both: the asset is the same in both builds.</td>
+<td>字段值</td>
+<td>两者：资源在两种构建中是相同的。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Clients see the result through the kit's own sync: health bars, damage numbers (<code>CombatEvents.Damaged</code>), buff icons and the skill's effects. Your effect doesn't need to send anything.</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>Nothing changes. In single player the host runs the same <code>Apply</code>. Damage between players only lands where PvP or a duel allows it; that check happens before your effect is called, when targets are gathered.</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<p>客户端通过套件自己的同步看到结果：生命条、伤害数字（<code>CombatEvents.Damaged</code>）、增益图标和技能的特效。你的效果不需要发送任何东西。</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式和 MMO</h2>
+<p>没有任何变化。在单人模式中，主机运行同样的 <code>Apply</code>。玩家之间的伤害只会在 PvP 或决斗允许的地方生效；这项检查在收集目标时、在你的效果被调用之前进行。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>Applying a buff on every landing.</strong> Multi-hit animations and zones call <code>Apply</code> many times. Guard one-time effects with <code>cast.firstHit</code>.</li>
-<li><strong>Ignoring <code>cast.scale</code>.</strong> A three-hit animation then deals three full hits.</li>
-<li><strong>Using <code>UnityEngine.Random</code> in <code>Describe</code>.</strong> Tooltips must be stable; roll only in <code>Apply</code>.</li>
-<li><strong>Keeping per-cast state in fields.</strong> One effect instance is shared by every cast of that skill, by every player. Store nothing in fields at runtime; use locals, or a dictionary keyed by the fighter in a server-side system.</li>
-<li><strong>Forgetting <code>Visit</code>.</strong> Assets only your effect references may be missing from the database.</li>
-<li><strong>Renaming the class.</strong> Skills store your effect by type name. A rename leaves &quot;missing type&quot; entries that the validator lists. Keep the name, or add <code>[UnityEngine.Scripting.APIUpdating.MovedFrom(...)]</code> with the old name.</li>
-<li><strong>Calling <code>ServerHeal</code> with a raw number and then the formula again.</strong> <code>ServerHeal</code> takes a final amount.</li>
+<li><strong>每次命中都施加增益。</strong> 多段命中动画和区域会多次调用 <code>Apply</code>。用 <code>cast.firstHit</code> 保护一次性效果。</li>
+<li><strong>忽略 <code>cast.scale</code>。</strong> 这样三段命中的动画就会造成三次完整伤害。</li>
+<li><strong>在 <code>Describe</code> 中使用 <code>UnityEngine.Random</code>。</strong> 提示框必须稳定；只在 <code>Apply</code> 中掷随机数。</li>
+<li><strong>在字段中保存每次施放的状态。</strong> 一个效果实例被该技能的每次施放、每个玩家共享。运行时不要在字段中保存任何东西；使用局部变量，或者在服务器端系统中使用以战斗者为键的字典。</li>
+<li><strong>忘记 <code>Visit</code>。</strong> 只被你的效果引用的资源可能会从数据库中缺失。</li>
+<li><strong>重命名类。</strong> 技能按类型名保存你的效果。重命名会留下 &quot;missing type&quot; 条目，由验证器列出。保留原名，或者添加带旧名称的 <code>[UnityEngine.Scripting.APIUpdating.MovedFrom(...)]</code>。</li>
+<li><strong>用原始数字调用 <code>ServerHeal</code> 之后又套用一次公式。</strong> <code>ServerHeal</code> 接受的是最终数值。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="../content/skills.html">Skills</a></li>
-<li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li>
-<li><a href="formulas.html">Formulas</a></li>
-<li><a href="item-effects.html">Item effects</a></li>
-<li><a href="templates.html">Templates</a></li>
+<li><a href="../content/skills.html">技能</a></li>
+<li><a href="../content/statuses-and-buffs.html">状态和增益</a></li>
+<li><a href="formulas.html">公式</a></li>
+<li><a href="item-effects.html">物品效果</a></li>
+<li><a href="templates.html">模板</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="templates.html"><span>上一页</span>Templates</a><a class="next" href="item-effects.html"><span>下一页</span>Item effects</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fskill-effects.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-a-skill-effect-is">What a skill effect is</a></li><li class="l2"><a href="#the-base-class">The base class</a></li><li class="l3"><a href="#how-targets-are-picked">How targets are picked</a></li><li class="l2"><a href="#what-a-cast-hands-you">What a cast hands you</a></li><li class="l3"><a href="#numbers-that-grow-with-rank">Numbers that grow with rank</a></li><li class="l3"><a href="#hits-and-the-damage-formula">Hits and the damage formula</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-life-steal">Example: life steal</a></li><li class="l2"><a href="#example-execute">Example: execute</a></li><li class="l2"><a href="#example-mana-refund-on-the-caster">Example: mana refund on the caster</a></li><li class="l2"><a href="#example-a-status-with-a-chance-from-a-field">Example: a status with a chance, from a field</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="templates.html"><span>上一页</span>模板</a><a class="next" href="item-effects.html"><span>下一页</span>代码中的物品效果</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fskill-effects.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-a-skill-effect-is">技能效果是什么</a></li><li class="l2"><a href="#the-base-class">基类</a></li><li class="l3"><a href="#how-targets-are-picked">如何选择目标</a></li><li class="l2"><a href="#what-a-cast-hands-you">一次施放交给你什么</a></li><li class="l3"><a href="#numbers-that-grow-with-rank">随等级增长的数值</a></li><li class="l3"><a href="#hits-and-the-damage-formula">命中和伤害公式</a></li><li class="l2"><a href="#example-the-template">示例：模板</a></li><li class="l2"><a href="#example-life-steal">示例：生命偷取</a></li><li class="l2"><a href="#example-execute">示例：斩杀</a></li><li class="l2"><a href="#example-mana-refund-on-the-caster">示例：返还施法者法力</a></li><li class="l2"><a href="#example-a-status-from-a-field">示例：来自字段的状态</a></li><li class="l2"><a href="#server-and-client">服务器和客户端</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式和 MMO</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

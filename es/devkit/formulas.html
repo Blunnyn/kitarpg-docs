@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fórmulas · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/formulas.html">English</option><option value="formulas.html" selected>Español</option><option value="../../pt/devkit/formulas.html">Português</option><option value="../../zh/devkit/formulas.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html">Efectos de skills</a></li><li><a href="item-effects.html">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html" class="on" aria-current="page">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html">Hablar con Central</a></li><li><a href="service-modules.html">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Fórmulas</h1><p>Cómo cambiar las cuentas del juego sin tocar el kit: la <code>CombatFormula</code> para daño, curación, velocidad de ataque y experiencia, y la <code>StatFormula</code> para cómo se suman clase, nivel, atributos y equipo en las stats.</p>
+<h2 id="how-formulas-are-installed"><a class="anchor" href="#how-formulas-are-installed" aria-hidden="true">#</a>Cómo se instalan las fórmulas</h2>
+<p>El kit tiene dos objetos de fórmula en <code>GameInstance</code>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Tipo</th>
+<th>Decide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GameInstance.Combat</code></td>
+<td><code>CombatFormula</code></td>
+<td>Daño, pulsos de daño en el tiempo, curaciones, tiempo entre ataques, experiencia por muerte</td>
+</tr>
+<tr>
+<td><code>GameInstance.Formula</code></td>
+<td><code>StatFormula</code></td>
+<td>Hojas de stats, puntos de atributo y puntos de skill ganados por nivel</td>
+</tr>
+</tbody>
+</table></div>
+<p>Las dos son clases de C# comunes en <code>KitARPG.Data</code> con métodos <code>virtual</code>. Para cambiar una regla, hereda de una, sobrescribe lo que necesites y asigna una instancia al iniciar:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCombatFormula</span><span class="p">();</span>
+</code></pre>
+<p>El kit vuelve a poner sus propias fórmulas en <code>SubsystemRegistration</code> en cada Play (consulta <a href="domain-reload.html">Play sin recarga de dominio</a>). <code>BeforeSceneLoad</code> se ejecuta después de eso y antes de cualquier escena, así que nadie pelea antes de que tu fórmula esté puesta.</p>
+<p><strong>Dónde va el archivo:</strong> en el ensamblado <code>Game</code>, para que cada build la instale. El servidor es quien aplica las fórmulas, pero el cliente también usa <code>Combat.Experience</code>: el bestiario muestra la experiencia que un monstruo le da al jugador local. Una fórmula solo en <code>Game.Server</code> haría que el bestiario no coincidiera con lo que ganan los jugadores.</p>
+<h2 id="combatformula"><a class="anchor" href="#combatformula" aria-hidden="true">#</a>CombatFormula</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Se llama cuando</th>
+<th>Qué devuelve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hit Attack(StatSheet attacker, IReadOnlyList&lt;ElementDamage&gt; rolls, StatSheet defender, float scale = 1)</code></td>
+<td>Ataques básicos de jugadores y monstruos, y <code>DamageEffect</code> en las skills</td>
+<td>El golpe: total, crítico, elemento principal</td>
+</tr>
+<tr>
+<td><code>float Element(StatSheet attacker, DamageElement element, float roll, StatSheet defender)</code></td>
+<td>Desde <code>Attack</code> y <code>Tick</code>, para la parte de cada elemento</td>
+<td>El daño de ese elemento después de las resistencias</td>
+</tr>
+<tr>
+<td><code>Hit Tick(StatSheet caster, DamageElement element, float amount, StatSheet holder)</code></td>
+<td>Cada pulso de un estado de daño en el tiempo</td>
+<td>El golpe del pulso, nunca crítico, al menos 1</td>
+</tr>
+<tr>
+<td><code>int Heal(StatSheet healer, float amount)</code></td>
+<td><code>HealEffect</code> y estados de curación</td>
+<td>La curación final</td>
+</tr>
+<tr>
+<td><code>float AttackInterval(float attacksPerSecond, StatSheet attacker)</code></td>
+<td>Cada ataque básico de jugadores y monstruos</td>
+<td>Segundos hasta el siguiente ataque</td>
+</tr>
+<tr>
+<td><code>long Experience(MonsterData monster, int playerLevel)</code></td>
+<td>Una muerte, para quien mató y para cada miembro del grupo que la comparte; el bestiario</td>
+<td>La experiencia antes de bonificaciones y tasas</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-kit-s-rules"><a class="anchor" href="#the-kit-s-rules" aria-hidden="true">#</a>Las reglas del kit</h3>
+<ul>
+<li><strong>Ataque:</strong> cada tirada se calcula aparte para su elemento. La tirada (un valor al azar entre su mínimo y su máximo, por <code>scale</code>) más el daño del atacante para ese elemento, aumentado por el poder del atacante. Luego se resta la resistencia fija del defensor a ese elemento y después su resistencia porcentual, con tope en el <em>Max Resistance</em> (<code>maxResistance</code>) del elemento (0,5 cuando la tirada no tiene elemento). Los totales se suman. Un golpe crítico (probabilidad <code>critChance</code>) multiplica el total por <code>1 + critDamage</code>. El resultado se redondea y es al menos 1.</li>
+<li><strong>Pulso:</strong> la misma regla de elemento con las stats del lanzador tal como estaban cuando cayó el estado; no es crítico.</li>
+<li><strong>Curación:</strong> <code>(amount + healer.healing) * (1 + healer.healingBonus)</code>, redondeado.</li>
+<li><strong>Intervalo de ataque:</strong> <code>1 / (attacksPerSecond * (1 + attackSpeed))</code>, con al menos 0,1 ataques por segundo.</li>
+<li><strong>Experiencia:</strong> la experiencia completa del monstruo hasta 3 niveles por debajo del jugador; luego 20 % menos por cada nivel más abajo, hasta un mínimo de 10 %.</li>
+</ul>
+<p>Después de <code>Experience</code>, el kit aplica la stat de ganancia de experiencia del jugador, las tasas del servidor (<code>experienceRate</code> y los eventos de <code>/rates</code>) y el reparto del grupo. Tu fórmula devuelve la cantidad base.</p>
+<h3 id="statsheet"><a class="anchor" href="#statsheet" aria-hidden="true">#</a>StatSheet</h3>
+<p>Lo que son el atacante, el defensor y el que cura:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CharacterStats stats</code></td>
+<td><code>maxHealth</code>, <code>maxMana</code>, <code>healthRegen</code>, <code>manaRegen</code>, <code>power</code>, <code>critChance</code>, <code>critDamage</code>, <code>healing</code>, <code>healingBonus</code>, <code>attackSpeed</code>, <code>moveSpeed</code>, <code>carryWeight</code>, <code>experienceGain</code>, <code>lootChance</code>. Las proporciones son fracciones: <code>critChance</code> 0.05 es 5 %.</td>
+</tr>
+<tr>
+<td><code>ElementStats Element(DamageElement e)</code></td>
+<td>El <code>damage</code>, la <code>resistance</code> y el <code>resistancePercent</code> del elemento. Un elemento null lee el predeterminado.</td>
+</tr>
+<tr>
+<td><code>int Attribute(AttributeData a)</code></td>
+<td>El total de un atributo.</td>
+</tr>
+<tr>
+<td><code>DamageElement fallback</code></td>
+<td>El elemento predeterminado del juego.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-harsher-level-gap"><a class="anchor" href="#example-harsher-level-gap" aria-hidden="true">#</a>Ejemplo: diferencia de nivel más dura</h3>
+<p>Los monstruos muy por debajo del jugador no dan nada a partir de 8 niveles:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCombatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCombatFormula</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">Experience</span><span class="p">(</span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playerLevel</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playerLevel</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">level</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gap</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Experience</span><span class="p">(</span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">playerLevel</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-armor-from-an-attribute"><a class="anchor" href="#example-armor-from-an-attribute" aria-hidden="true">#</a>Ejemplo: armadura a partir de un atributo</h3>
+<p>Una reducción fija a partir de un atributo de tu juego (aquí uno con id <code>toughness</code>), aplicada a cada elemento antes de la resistencia porcentual:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ToughnessFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ToughnessFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">AttributeData</span><span class="w"> </span><span class="n">toughness</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">Element</span><span class="p">(</span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">defender</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toughness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="s">&quot;toughness&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">toughness</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Element</span><span class="p">(</span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="n">defender</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toughness</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">defender</span><span class="p">.</span><span class="n">Attribute</span><span class="p">(</span><span class="n">toughness</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>toughness</code> es un campo de instancia: <code>Install</code> crea una fórmula nueva en cada Play, así que el asset en caché empieza vacío cada vez, aun sin recarga de dominio. Una caché <code>static</code> sobreviviría al Play y guardaría una referencia vieja si la base de datos cambiara entre Plays; reinicia esos estáticos en <code>SubsystemRegistration</code> (consulta <a href="domain-reload.html">Play sin recarga de dominio</a>).</p>
+<h3 id="example-capped-critical-chance-and-attack-speed"><a class="anchor" href="#example-capped-critical-chance-and-attack-speed" aria-hidden="true">#</a>Ejemplo: probabilidad de crítico y velocidad de ataque con tope</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CappedFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CappedFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Hit</span><span class="w"> </span><span class="nf">Attack</span><span class="p">(</span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">defender</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Capped for this attack only, then put back.</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">chance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="p">;</span>
+<span class="w">        </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Min</span><span class="p">(</span><span class="n">chance</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">defender</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">attacker</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">critChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chance</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">AttackInterval</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">attacksPerSecond</span><span class="p">,</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">attacker</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mf">0.25f</span><span class="p">,</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">AttackInterval</span><span class="p">(</span><span class="n">attacksPerSecond</span><span class="p">,</span><span class="w"> </span><span class="n">attacker</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>stats</code> es un campo struct de la hoja, así que el cambio se hace y se deshace alrededor de la llamada a la base.</p>
+<h2 id="statformula"><a class="anchor" href="#statformula" aria-hidden="true">#</a>StatFormula</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Se llama cuando</th>
+<th>Devuelve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>StatSheet Sheet(CharacterClass characterClass, int level, IReadOnlyList&lt;AttributeAmount&gt; spent, GameDatabase database, IReadOnlyList&lt;IStatSource&gt; sources = null)</code></td>
+<td>Cada vez que se calculan las stats de un jugador (<code>PlayerCharacter.RecalculateStats</code>: cambió el nivel, los atributos, el equipo o los buffs), y para personajes nuevos en un jugador</td>
+<td>La hoja completa</td>
+</tr>
+<tr>
+<td><code>int PointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>Subidas de nivel</td>
+<td>Los puntos de atributo ganados hasta ese nivel</td>
+</tr>
+<tr>
+<td><code>int SkillPointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>Totales de puntos de skill</td>
+<td>Los puntos de skill ganados hasta ese nivel</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-kit-s-order"><a class="anchor" href="#the-kit-s-order" aria-hidden="true">#</a>El orden del kit</h3>
+<ol>
+<li>Los atributos de la clase en este nivel, luego los puntos repartidos, luego las bonificaciones de atributo de cada fuente (equipo, buffs, pasivas).</li>
+<li>Las stats base de la clase más sus stats por nivel por <code>level - 1</code>.</li>
+<li>Las stats <em>Per Point</em> de cada atributo por su total.</li>
+<li>Los modificadores de stats de cada fuente. Las bonificaciones porcentuales se aplican al final.</li>
+</ol>
+<p>Los valores predeterminados de puntos son el <em>Points Per Level</em> (<code>pointsPerLevel</code>, 5) y el <em>Skill Points Per Level</em> (<code>skillPointsPerLevel</code>, 1) de la clase, por <code>level - 1</code>.</p>
+<p>Los monstruos no usan la fórmula de stats; sus stats vienen de sus datos.</p>
+<h3 id="example-two-attribute-points-per-level"><a class="anchor" href="#example-two-attribute-points-per-level" aria-hidden="true">#</a>Ejemplo: dos puntos de atributo por nivel</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyStatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyStatFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Two attribute points per level instead of the class&#39;s own number.</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">PointsEarned</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-health-that-grows-by-a-share-per-level"><a class="anchor" href="#example-health-that-grows-by-a-share-per-level" aria-hidden="true">#</a>Ejemplo: vida que crece en una proporción por nivel</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Characters</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GrowingHealthFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StatFormula</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GrowingHealthFormula</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="nf">Sheet</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">AttributeAmount</span><span class="o">&gt;</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span>
+<span class="w">        </span><span class="n">GameDatabase</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">IStatSource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">StatSheet</span><span class="w"> </span><span class="n">sheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Sheet</span><span class="p">(</span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">sources</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// +2% max health per level after the first, kept whole.</span>
+<span class="w">        </span><span class="n">sheet</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">sheet</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.02f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)));</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sheet</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>En el kit, las stats son números enteros y las bonificaciones porcentuales son puntos enteros. Redondea lo que agregues, como arriba, para que los tooltips y las hojas coincidan.</p>
+<h3 id="example-a-skill-point-every-other-level"><a class="anchor" href="#example-a-skill-point-every-other-level" aria-hidden="true">#</a>Ejemplo: un punto de skill cada dos niveles</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">SkillPointsEarned</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</code></pre>
+<h2 id="changing-the-rules-on-a-live-game"><a class="anchor" href="#changing-the-rules-on-a-live-game" aria-hidden="true">#</a>Cambiar las reglas en un juego en marcha</h2>
+<p>Las fórmulas deciden números nuevos; no reescriben los guardados. Cambiar <code>PointsEarned</code> cambia lo que se gana de ahora en adelante. Los personajes conservan los puntos que tienen: los puntos libres se guardan y en cada subida de nivel solo se suma la diferencia. Si bajas los puntos por nivel en un juego en marcha, dales a los jugadores una forma de empezar de nuevo (el <code>ResetAttributesAction</code> del kit o el <em>Scroll of Second Thoughts</em>).</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Servidor y cliente</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Servidor</th>
+<th>Cliente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Attack</code>, <code>Element</code>, <code>Tick</code>, <code>Heal</code>, <code>AttackInterval</code></td>
+<td>Sí</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>Experience</code></td>
+<td>Sí</td>
+<td>El bestiario</td>
+</tr>
+<tr>
+<td><code>Sheet</code>, <code>PointsEarned</code>, <code>SkillPointsEarned</code></td>
+<td>Sí</td>
+<td>No; el dueño recibe la hoja terminada</td>
+</tr>
+</tbody>
+</table></div>
+<p>Online, una fórmula en una build de cliente distinta de la del servidor de mapa solo cambia lo que muestra el bestiario de ese cliente. En un jugador, las dos mitades se ejecutan en un solo proceso.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
+<ul>
+<li><strong>Instalar en <code>SubsystemRegistration</code>.</strong> El kit reinicia las fórmulas ahí; el orden no está definido.</li>
+<li><strong>Instalar solo en <code>Game.Server</code>.</strong> El bestiario de los clientes muestra entonces los números del kit.</li>
+<li><strong>Devolver decimales desde <code>Sheet</code>.</strong> Redondea lo que agregas.</li>
+<li><strong>Guardar estado por combatiente en la fórmula.</strong> Una sola instancia sirve a todos los combatientes del mapa.</li>
+<li><strong>Aplicar tasas dentro de <code>Experience</code>.</strong> El kit aplica la stat de experiencia y las tasas del servidor después, así que contarían dos veces.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="../gameplay/combat.html">Combate</a></li>
+<li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li>
+<li><a href="skill-effects.html">Efectos de skills</a></li>
+<li><a href="domain-reload.html">Play sin recarga de dominio</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="gm-commands-in-code.html"><span>Anterior</span>Comandos de GM en código</a><a class="next" href="saving-data.html"><span>Siguiente</span>Guardar datos</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fformulas.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#how-formulas-are-installed">Cómo se instalan las fórmulas</a></li><li class="l2"><a href="#combatformula">CombatFormula</a></li><li class="l3"><a href="#the-kit-s-rules">Las reglas del kit</a></li><li class="l3"><a href="#statsheet">StatSheet</a></li><li class="l3"><a href="#example-harsher-level-gap">Ejemplo: diferencia de nivel más dura</a></li><li class="l3"><a href="#example-armor-from-an-attribute">Ejemplo: armadura a partir de un atributo</a></li><li class="l3"><a href="#example-capped-critical-chance-and-attack-speed">Ejemplo: probabilidad de crítico y velocidad de ataque con tope</a></li><li class="l2"><a href="#statformula">StatFormula</a></li><li class="l3"><a href="#the-kit-s-order">El orden del kit</a></li><li class="l3"><a href="#example-two-attribute-points-per-level">Ejemplo: dos puntos de atributo por nivel</a></li><li class="l3"><a href="#example-health-that-grows-by-a-share-per-level">Ejemplo: vida que crece en una proporción por nivel</a></li><li class="l3"><a href="#example-a-skill-point-every-other-level">Ejemplo: un punto de skill cada dos niveles</a></li><li class="l2"><a href="#changing-the-rules-on-a-live-game">Cambiar las reglas en un juego en marcha</a></li><li class="l2"><a href="#server-and-client">Servidor y cliente</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

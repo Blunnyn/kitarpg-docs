@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejemplo: tablero de recompensas · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/example-bounty-board.html">English</option><option value="example-bounty-board.html" selected>Español</option><option value="../../pt/devkit/example-bounty-board.html">Português</option><option value="../../zh/devkit/example-bounty-board.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html">Efectos de skills</a></li><li><a href="item-effects.html">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html">Hablar con Central</a></li><li><a href="service-modules.html">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html" class="on" aria-current="page">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Ejemplo: tablero de recompensas</h1><p>Un recorrido por el ejemplo del DevKit, archivo por archivo: un tablero de recompensas que da una cacería por día, cuenta las muertes, muestra el avance en el HUD, paga recompensas y lleva en Central un ranking de los mejores cazadores. Está hecho solo con los puntos de extensión de esta sección, sin cambiar el kit.</p>
+<h2 id="what-it-does"><a class="anchor" href="#what-it-does" aria-hidden="true">#</a>Qué hace</h2>
+<ol>
+<li>Un tablero en el pueblo es un NPC con un botón <strong>Bounties</strong>.</li>
+<li>Cada personaje recibe una cacería por día de la lista del tablero: matar cierta cantidad de un monstruo. La cacería es la misma todo el día para ese personaje y distinta entre personajes.</li>
+<li>Las muertes se cuentan en el servidor y una línea bajo el reloj muestra &quot;Bounty: Slime 3/8&quot;.</li>
+<li>De vuelta en el tablero, el botón entrega la cacería y paga las recompensas que tiene el tablero (oro, experiencia, cualquier cosa que puedan hacer las acciones del kit).</li>
+<li>En línea, cada recompensa pagada va a un módulo en Central, y <code>/hunters</code> muestra los diez mejores cazadores de todos los mapas.</li>
+</ol>
+<h2 id="try-it"><a class="anchor" href="#try-it" aria-hidden="true">#</a>Pruébalo</h2>
+<ol>
+<li>Abre la escena Town o Forest.</li>
+<li>Elige <strong>KitARPG &gt; DevKit &gt; Add Bounty Board to the Open Scene</strong>. Aparece un tablero de madera en el pivote de la vista Scene y, la primera vez, se crea un asset <em>Sample Bounty Board</em> con los dos primeros monstruos normales de tu base de datos. Guarda la escena.</li>
+<li>Dale Play, camina hasta el tablero y presiona <strong>Today's bounty</strong>. Caza; la línea bajo el reloj va contando.</li>
+<li>De vuelta en el tablero, presiona <strong>Turn in the bounty</strong>.</li>
+<li>Para probar rápido: <code>/bounty done</code> completa las muertes y <code>/bounty reset</code> borra la cacería de hoy (nivel admin; en un jugador funcionan todos los comandos).</li>
+<li>En línea: compila el módulo de Central e instálalo (consulta <a href="#the-central-module">El módulo de Central</a> más abajo), reinicia los servicios y escribe <code>/hunters</code>.</li>
+</ol>
+<h2 id="the-files"><a class="anchor" href="#the-files" aria-hidden="true">#</a>Los archivos</h2>
+<p>Todo está en <code>Assets/Blunnyn/KitARPG/DevKit/Example/Bounties/</code>, más el módulo de Central en <code>Services/Examples/Bounties/</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Ensamblado</th>
+<th>Muestra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Game.Bounties.asmdef</code></td>
+<td></td>
+<td>Un ensamblado propio que referencia los del kit</td>
+</tr>
+<tr>
+<td><code>BountyBoardData.cs</code></td>
+<td>Game.Bounties</td>
+<td>Un asset de datos con una lista de <code>GameAction</code> del kit</td>
+</tr>
+<tr>
+<td><code>BountyOption.cs</code></td>
+<td>Game.Bounties</td>
+<td>Una <code>NpcOption</code> con una etiqueta por jugador</td>
+</tr>
+<tr>
+<td><code>Bounties.cs</code></td>
+<td>Game.Bounties</td>
+<td>Reglas de servidor: eventos, marcas, el registro del juego, mensajes de red</td>
+</tr>
+<tr>
+<td><code>BountyMessages.cs</code></td>
+<td>Game.Bounties</td>
+<td>Mensajes de Mirror en vez de un componente en el jugador</td>
+</tr>
+<tr>
+<td><code>BountyTracker.cs</code></td>
+<td>Game.Bounties</td>
+<td>Una línea del HUD agregada desde código</td>
+</tr>
+<tr>
+<td><code>BountiesDoneCondition.cs</code></td>
+<td>Game.Bounties</td>
+<td>Una <code>Condition</code> que los diseñadores pueden usar en cualquier parte</td>
+</tr>
+<tr>
+<td><code>Server/BountyCommands.cs</code></td>
+<td>Game.Bounties.Server</td>
+<td>El comando de GM <code>/bounty</code></td>
+</tr>
+<tr>
+<td><code>Server/BountyHunters.cs</code></td>
+<td>Game.Bounties.Server</td>
+<td><code>CentralMessages</code>, <code>PlayerData</code>, un comando de nivel jugador</td>
+</tr>
+<tr>
+<td><code>Shared/BountyBoardMessages.cs</code></td>
+<td>Game.Bounties.Shared</td>
+<td>Mensajes compartidos con el módulo de Central</td>
+</tr>
+<tr>
+<td><code>Editor/BountySetup.cs</code></td>
+<td>Game.Bounties.Editor</td>
+<td>Un menú que prepara el ejemplo</td>
+</tr>
+<tr>
+<td><code>Services/Examples/Bounties/*</code></td>
+<td>Módulo .NET</td>
+<td>El módulo de Central con su propia tabla</td>
+</tr>
+</tbody>
+</table></div>
+<p>Léelos en este orden.</p>
+<h2 id="game-bounties-asmdef"><a class="anchor" href="#game-bounties-asmdef" aria-hidden="true">#</a>Game.Bounties.asmdef</h2>
+<pre class="code"><code class="language-json"><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game.Bounties&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rootNamespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game.Bounties&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;references&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Shared&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;KitARPG.Data&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;KitARPG.Net&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;KitARPG.Client&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Mirror&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Unity.TextMeshPro&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;UnityEngine.UI&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;autoReferenced&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+<p>Las mismas referencias que la plantilla <strong>Game Assembly</strong>. La función compila sola y se puede quitar borrando la carpeta: nada del kit la referencia. Hay tres ensamblados más en subcarpetas:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Ensamblado</th>
+<th>Carpeta</th>
+<th>Restricción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Game.Bounties.Server</code></td>
+<td><code>Server/</code></td>
+<td><code>UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER</code>, referencia <code>KitARPG.Server</code></td>
+</tr>
+<tr>
+<td><code>Game.Bounties.Shared</code></td>
+<td><code>Shared/</code></td>
+<td><code>noEngineReferences: true</code>, sin referencias</td>
+</tr>
+<tr>
+<td><code>Game.Bounties.Editor</code></td>
+<td><code>Editor/</code></td>
+<td>Solo la plataforma Editor</td>
+</tr>
+</tbody>
+</table></div>
+<p>Consulta <a href="assemblies.html">Ensamblados</a>.</p>
+<h2 id="bountyboarddata-cs-the-data"><a class="anchor" href="#bountyboarddata-cs-the-data" aria-hidden="true">#</a>BountyBoardData.cs: los datos</h2>
+<pre class="code"><code class="language-csharp"><span class="na">[CreateAssetMenu(menuName = &quot;KitARPG/DevKit Example/Bounty Board&quot;, order = 900)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyBoardData</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ScriptableObject</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Bounty</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="na">[Tooltip(&quot;Paid on turning it in.&quot;)]</span>
+<span class="w">        </span><span class="na">[SerializeReference, PickType]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">GameAction</span><span class="p">[]</span><span class="w"> </span><span class="n">rewards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameAction</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Bounty</span><span class="p">[]</span><span class="w"> </span><span class="n">bounties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bounty</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Today&#39;s bounty for a character. The same all day, different between characters.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Pick</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">characterId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">day</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)((</span><span class="n">characterId</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">day</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Bounty</span><span class="w"> </span><span class="nf">At</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">bounties</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li>Un <code>ScriptableObject</code> común: solo el código del ejemplo apunta a él, así que no necesita ser un <code>GameData</code> con id.</li>
+<li><code>rewards</code> es una lista de acciones del kit con <code>[SerializeReference, PickType]</code>, así los diseñadores eligen <em>Give Currency</em>, <em>Experience</em>, <em>Give Item</em> o cualquier acción tuya del mismo menú que usan las misiones. Consulta <a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a>.</li>
+<li><code>Pick</code> saca la cacería del día del id del personaje y del número de día, así no hay que guardar nada para recordar qué cacería se ofreció.</li>
+</ul>
+<h2 id="bountyoption-cs-the-button"><a class="anchor" href="#bountyoption-cs-the-button" aria-hidden="true">#</a>BountyOption.cs: el botón</h2>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyOption</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NpcOption</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">BountyBoardData</span><span class="w"> </span><span class="n">board</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultLabel</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Bounties&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">LabelFor</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="n">Bounties</span><span class="p">.</span><span class="n">Current</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Turn in the bounty&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Today&#39;s bounty&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">AvailableTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">board</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Bounties</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="n">board</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bounties</span><span class="p">.</span><span class="n">Current</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Bounties</span><span class="p">.</span><span class="n">TurnIn</span><span class="p">(</span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Bounties</span><span class="p">.</span><span class="n">Take</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">board</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerChat</span><span class="w"> </span><span class="n">chat</span><span class="p">))</span><span class="w"> </span><span class="n">chat</span><span class="p">.</span><span class="n">Tell</span><span class="p">(</span><span class="n">answer</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li><code>LabelFor</code> le da a cada jugador su propio texto.</li>
+<li><code>AvailableTo</code> oculta el botón en un tablero sin datos.</li>
+<li><code>Run</code> ya sabe que el jugador está junto al tablero: el kit revisó el alcance antes de llamarlo. Responde en el chat con <code>PlayerChat.Tell</code> y devuelve null. Consulta <a href="npc-options.html">Opciones de NPC</a>.</li>
+</ul>
+<h2 id="bounties-cs-the-server-rules"><a class="anchor" href="#bounties-cs-the-server-rules" aria-hidden="true">#</a>Bounties.cs: las reglas del servidor</h2>
+<h3 id="progress-in-flags"><a class="anchor" href="#progress-in-flags" aria-hidden="true">#</a>El avance en marcas</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">BoardFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty.board&quot;</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">IndexFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty.index&quot;</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">KillsFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty.kills&quot;</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DayFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty.day&quot;</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DoneFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty.done&quot;</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">LogKind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty.done&quot;</span><span class="p">;</span>
+</code></pre>
+<p>Todo el avance son marcas del personaje, con <code>IPlayerActor.SetFlag</code> y <code>Flag</code>. Se guardan con el personaje en un jugador y en línea, y se sincronizan con el dueño, sin código de guardado. El tablero se guarda como un hash del nombre de su asset (<code>Animator.StringToHash(board.name)</code>), la cacería como su índice más uno (0 significa ninguna) y el día como días desde el 2020-01-01 UTC. Consulta <a href="saving-data.html">Guardar datos</a>.</p>
+<h3 id="finding-boards-after-a-restart"><a class="anchor" href="#finding-boards-after-a-restart" aria-hidden="true">#</a>Encontrar los tableros tras un reinicio</h3>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">BountyBoardData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">boards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">scanned</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="n">BountyBoardData</span><span class="w"> </span><span class="nf">Board</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">boards</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">BountyBoardData</span><span class="w"> </span><span class="n">board</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">scanned</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">board</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">FindObjectsByType</span><span class="o">&lt;</span><span class="n">Npc</span><span class="o">&gt;</span><span class="p">(</span><span class="n">FindObjectsSortMode</span><span class="p">.</span><span class="n">None</span><span class="p">))</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">NpcOption</span><span class="w"> </span><span class="n">option</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">npc</span><span class="p">.</span><span class="n">AllOptions</span><span class="p">())</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">option</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">BountyOption</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">board</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">Register</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">board</span><span class="p">);</span>
+<span class="w">    </span><span class="n">boards</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">board</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">board</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>Las marcas de un personaje apuntan a un tablero por su hash. Después de reiniciar el servidor nadie usó todavía un tablero, así que la primera búsqueda revisa una vez los NPCs de las escenas cargadas (<code>Npc.AllOptions()</code> incluye las opciones anidadas en las líneas de diálogo). Una escena nueva reinicia la búsqueda.</p>
+<h3 id="hooking-in"><a class="anchor" href="#hooking-in" aria-hidden="true">#</a>Engancharse</h3>
+<pre class="code"><code class="language-csharp"><span class="c1">// Cleared before anything subscribes, so listeners from other assemblies are never wiped.</span>
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">boards</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">scanned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ServerTurnedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">SceneManager</span><span class="p">.</span><span class="n">sceneLoaded</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnSceneLoaded</span><span class="p">;</span>
+<span class="w">    </span><span class="n">SceneManager</span><span class="p">.</span><span class="n">sceneLoaded</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnSceneLoaded</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">LocalSpawned</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">AskOnSpawn</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">LocalSpawned</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">AskOnSpawn</span><span class="p">;</span>
+<span class="w">    </span><span class="n">KitNetworkManager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KitNetworkManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">manager</span><span class="p">.</span><span class="n">ServerStarted</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">BountyAsk</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnAsk</span><span class="p">);</span>
+<span class="w">    </span><span class="n">manager</span><span class="p">.</span><span class="n">ClientConnected</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">BountyState</span><span class="o">&gt;</span><span class="p">(</span><span class="n">BountyTracker</span><span class="p">.</span><span class="n">Show</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li><code>ResetStatics</code> limpia el estado estático (<code>boards</code>, <code>scanned</code> y el evento <code>ServerTurnedIn</code>) en <code>SubsystemRegistration</code>, al comienzo de cada Play, porque el proyecto juega sin recarga de dominio. Limpiarlo ahí, antes de que nada se suscriba, permite que <code>BountyHunters</code> en <code>Game.Bounties.Server</code> se suscriba a <code>ServerTurnedIn</code> después sin que se borre (consulta <a href="domain-reload.html">Play sin recarga de dominio</a>).</li>
+<li><code>Hook</code> se suscribe a los eventos estáticos con <code>-=</code> primero, y antes de revisar el network manager, así que las muertes, las apariciones y las cargas de escena quedan enganchadas aunque la primera escena no tenga <code>KitNetworkManager</code>.</li>
+<li>Los manejadores de mensajes se registran en cada arranque del servidor y en cada conexión del cliente (consulta <a href="network-messages.html">Mensajes de red</a>).</li>
+<li><code>Monster.ServerKilled</code> cuenta las muertes en el servidor; <code>PlayerCharacter.LocalSpawned</code> pide el estado en el cliente.</li>
+</ul>
+<h3 id="taking-a-bounty"><a class="anchor" href="#taking-a-bounty" aria-hidden="true">#</a>Tomar una recompensa</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Take</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">BountyBoardData</span><span class="w"> </span><span class="n">board</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">DayFlag</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Today</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">IndexFlag</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;You already hunted today&#39;s bounty. Come back tomorrow.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">Pick</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Today</span><span class="p">);</span>
+<span class="w">    </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">bounty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">monster</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;The board is empty.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">BoardFlag</span><span class="p">,</span><span class="w"> </span><span class="n">Register</span><span class="p">(</span><span class="n">board</span><span class="p">));</span>
+<span class="w">    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">IndexFlag</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">KillsFlag</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">DayFlag</span><span class="p">,</span><span class="w"> </span><span class="n">Today</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Send</span><span class="p">(</span><span class="n">player</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Today&#39;s bounty: slay {bounty.count} {bounty.monster.DisplayName}.&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>Cada decisión usa el estado del servidor: las marcas del personaje y su id en la base de datos. Nada viene del cliente.</p>
+<h3 id="counting-kills"><a class="anchor" href="#counting-kills" aria-hidden="true">#</a>Contar las muertes</h3>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnKilled</span><span class="p">(</span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">killer</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">Data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">killer</span><span class="p">.</span><span class="n">Facts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">bounty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Current</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">_</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">monster</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">Data</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">KillsFlag</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kills</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">KillsFlag</span><span class="p">,</span><span class="w"> </span><span class="n">kills</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kills</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="n">killer</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">&quot;Bounty complete! Turn it in at the board.&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.85f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">));</span>
+<span class="w">    </span><span class="n">Send</span><span class="p">(</span><span class="n">killer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>ServerKilled</code> da el jugador que se ganó la muerte (puede ser null). La cuenta se detiene en el objetivo.</p>
+<h3 id="turning-in"><a class="anchor" href="#turning-in" aria-hidden="true">#</a>Entregar</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">TurnIn</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">bounty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Current</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">_</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;You have no bounty.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">KillsFlag</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kills</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;{kills} of {bounty.count} {bounty.monster.DisplayName} so far.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">why</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameAction</span><span class="p">.</span><span class="n">RunAll</span><span class="p">(</span><span class="n">bounty</span><span class="p">.</span><span class="n">rewards</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">why</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">why</span><span class="p">;</span>
+<span class="w">    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">IndexFlag</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">DoneFlag</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">DoneFlag</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogKind</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">itemId</span><span class="p">:</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">monster</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">:</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">count</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ServerTurnedIn</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">monster</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Send</span><span class="p">(</span><span class="n">player</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Bounty paid. Well hunted.&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li><code>GameAction.RunAll</code> revisa primero cada recompensa (una bolsa llena rechaza <em>Give Item</em>) y luego las paga todas.</li>
+<li><code>GameLog.Write</code> escribe una línea <code>bounty.done</code>; los moderadores la encuentran con <code>/logs</code> (consulta <a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a>).</li>
+<li><code>ServerTurnedIn</code> es el evento propio del ejemplo, que se lanza en <code>Game.Bounties</code> y escucha <code>Game.Bounties.Server</code>, que los clientes en línea no tienen.</li>
+</ul>
+<h3 id="telling-the-client"><a class="anchor" href="#telling-the-client" aria-hidden="true">#</a>Avisarle al cliente</h3>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Send</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">bounty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Current</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">_</span><span class="p">);</span>
+<span class="w">    </span><span class="n">player</span><span class="p">.</span><span class="n">connectionToClient</span><span class="o">?.</span><span class="n">Send</span><span class="p">(</span><span class="n">bounty</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyState</span><span class="p">()</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyState</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">monster</span><span class="p">.</span><span class="n">DisplayName</span><span class="p">,</span><span class="w"> </span><span class="n">kills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">KillsFlag</span><span class="p">),</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">count</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AskOnSpawn</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyAsk</span><span class="p">());</span>
+
+<span class="c1">// The connection says who asks; the message carries nothing to trust.</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAsk</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">BountyAsk</span><span class="w"> </span><span class="n">_</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">Send</span><span class="p">(</span><span class="n">player</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p>La petición del cliente está vacía: el servidor sabe quién preguntó por la conexión. Se limita con <code>CommandPacing</code>.</p>
+<h2 id="bountymessages-cs-the-messages"><a class="anchor" href="#bountymessages-cs-the-messages" aria-hidden="true">#</a>BountyMessages.cs: los mensajes</h2>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">BountyAsk</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">BountyState</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">monster</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kills</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">required</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>Dos mensajes de Mirror en vez de un <code>NetworkBehaviour</code> en el prefab del jugador, así instalar el ejemplo no toca ningún prefab.</p>
+<h2 id="bountytracker-cs-the-hud-line"><a class="anchor" href="#bountytracker-cs-the-hud-line" aria-hidden="true">#</a>BountyTracker.cs: la línea del HUD</h2>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Show</span><span class="p">(</span><span class="n">BountyState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">Build</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">monster</span><span class="p">);</span>
+<span class="w">    </span><span class="n">label</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="n">has</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">has</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">kills</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">required</span><span class="p">;</span>
+<span class="w">    </span><span class="n">label</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">done</span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="s">$&quot;&lt;color=#F5D67F&gt;Bounty: {state.monster} {state.kills}/{state.required}, turn it in&lt;/color&gt;&quot;</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;Bounty: {state.monster} {state.kills}/{state.required}&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Build</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">GameObject</span><span class="w"> </span><span class="n">hud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Hud</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Canvas</span><span class="w"> </span><span class="n">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hud</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">hud</span><span class="p">.</span><span class="n">GetComponentInChildren</span><span class="o">&lt;</span><span class="n">Canvas</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">canvas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">go</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameObject</span><span class="p">(</span><span class="s">&quot;Bounty Tracker&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">RectTransform</span><span class="p">));</span>
+<span class="w">    </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">SetParent</span><span class="p">(</span><span class="n">canvas</span><span class="p">.</span><span class="n">transform</span><span class="p">,</span><span class="w"> </span><span class="k">false</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// anchored to the top right, under the clock</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>GameInstance.Hud</code> es la instancia del HUD en ejecución. La línea se arma desde código la primera vez que llega un estado. En un juego real, pon tu interfaz en el prefab del HUD, para que los diseñadores puedan moverla y darle estilo (y llevarla a juegos existentes con una <a href="kit-updates-in-code.html">actualización del kit</a>). El <code>label</code> estático se reinicia en <code>SubsystemRegistration</code>.</p>
+<h2 id="bountiesdonecondition-cs-a-condition-for-designers"><a class="anchor" href="#bountiesdonecondition-cs-a-condition-for-designers" aria-hidden="true">#</a>BountiesDoneCondition.cs: una condición para diseñadores</h2>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountiesDoneCondition</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Condition</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">atLeast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Needs {atLeast} bounties done&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Met</span><span class="p">(</span><span class="n">IPlayerFacts</span><span class="w"> </span><span class="n">facts</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">facts</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">Bounties</span><span class="p">.</span><span class="n">DoneFlag</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">atLeast</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>Lee una marca, que el cliente del dueño también tiene, así las marcas de misión y las líneas bloqueadas se muestran bien. Los diseñadores pueden ponerla en una opción de tienda que se abre después de cinco recompensas, en una misión o en un saludo.</p>
+<h2 id="server-bountycommands-cs-the-gm-command"><a class="anchor" href="#server-bountycommands-cs-the-gm-command" aria-hidden="true">#</a>Server/BountyCommands.cs: el comando de GM</h2>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Admin</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounty reset|done [player]&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Clears a player&#39;s bounty for today, or fills its kills.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Target</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nobody by that name here.&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">Facts</span><span class="p">;</span>
+<span class="w">            </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Arg</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;reset&quot;</span><span class="p">:</span>
+<span class="w">                    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">Bounties</span><span class="p">.</span><span class="n">DayFlag</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">Bounties</span><span class="p">.</span><span class="n">IndexFlag</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;done&quot;</span><span class="p">:</span>
+<span class="w">                    </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">bounty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bounties</span><span class="p">.</span><span class="n">Current</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">_</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;{target.characterName} has no bounty.&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">Bounties</span><span class="p">.</span><span class="n">KillsFlag</span><span class="p">,</span><span class="w"> </span><span class="n">bounty</span><span class="p">.</span><span class="n">count</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Usage: /bounty reset|done [player]&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">Bounties</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Bounty of {target.characterName}: {c.Arg(0)}.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<p>Vive en <code>Game.Bounties.Server</code>, así que las builds de cliente lo dejan fuera. El nivel admin significa que cada uso queda auditado. Consulta <a href="gm-commands-in-code.html">Comandos de GM en código</a>.</p>
+<h2 id="server-bountyhunters-cs-central-and-saved-history"><a class="anchor" href="#server-bountyhunters-cs-central-and-saved-history" aria-hidden="true">#</a>Server/BountyHunters.cs: Central y el historial guardado</h2>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">HistoryKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bounties.history&quot;</span><span class="p">;</span>
+
+<span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">History</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">monsters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnTurnedIn</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">History</span><span class="w"> </span><span class="n">history</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">History</span><span class="o">&gt;</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">HistoryKey</span><span class="p">);</span>
+<span class="w">    </span><span class="n">history</span><span class="p">.</span><span class="n">monsters</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">DisplayName</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">history</span><span class="p">.</span><span class="n">monsters</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">HistorySize</span><span class="p">)</span><span class="w"> </span><span class="n">history</span><span class="p">.</span><span class="n">monsters</span><span class="p">.</span><span class="n">RemoveRange</span><span class="p">(</span><span class="n">HistorySize</span><span class="p">,</span><span class="w"> </span><span class="n">history</span><span class="p">.</span><span class="n">monsters</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">HistorySize</span><span class="p">);</span>
+<span class="w">    </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">HistoryKey</span><span class="p">,</span><span class="w"> </span><span class="n">history</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Offline the board just misses this one; the character&#39;s own history still has it.</span>
+<span class="w">    </span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyFinished</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">characterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">characterName</span><span class="p">,</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li>Cada personaje guarda sus diez últimas cacerías con <code>PlayerData</code>, que se guarda con el personaje y nunca se envía a los clientes.</li>
+<li>Cada recompensa pagada va a Central. <code>Send</code> devuelve false en un jugador o mientras Central no está, y no se pone nada en cola: al ranking le falta esa, al historial no.</li>
+</ul>
+<pre class="code"><code class="language-csharp"><span class="n">CentralMessages</span><span class="p">.</span><span class="n">On</span><span class="o">&lt;</span><span class="n">BountyBoardList</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnBoard</span><span class="p">);</span>
+<span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hunters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hunters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;The best bounty hunters on every map, and your last hunts.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">mine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Last</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">player</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Online</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;The hunters board is kept online.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span>
+<span class="w">        </span><span class="n">CentralMessages</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyBoardAsk</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">characterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Asking the guild of hunters...&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBoard</span><span class="p">(</span><span class="n">BountyBoardList</span><span class="w"> </span><span class="n">board</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="s">&quot;Best bounty hunters:&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">BountyHunter</span><span class="w"> </span><span class="n">hunter</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">top</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyHunter</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">        </span><span class="n">text</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">$&quot;\n{rank++}. {PlayerText.NoTags(hunter.name)}: {hunter.bounties}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">&quot;\nNobody yet.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">text</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">$&quot;\nYou: {board.mine}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">SocialHub</span><span class="p">.</span><span class="n">Notice</span><span class="p">(</span><span class="n">board</span><span class="p">.</span><span class="n">characterId</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li><code>/hunters</code> es un comando de nivel jugador: una función del chat, no una herramienta del equipo, así que no se audita.</li>
+<li>La respuesta llega después por <code>CentralMessages.On</code> y se muestra en el chat de quien preguntó con <code>SocialHub.Notice</code>.</li>
+<li>Los nombres que vienen de jugadores se muestran con <code>PlayerText.NoTags</code>.</li>
+</ul>
+<p>Consulta <a href="talking-to-central.html">Hablar con Central</a>.</p>
+<h2 id="shared-bountyboardmessages-cs-messages-for-central"><a class="anchor" href="#shared-bountyboardmessages-cs-messages-for-central" aria-hidden="true">#</a>Shared/BountyBoardMessages.cs: mensajes para Central</h2>
+<pre class="code"><code class="language-csharp"><span class="c1">// Messages between the map servers and the Bounties module in Central. Plain C# with public fields,</span>
+<span class="c1">// so Unity&#39;s JsonUtility and the service&#39;s System.Text.Json read them alike. The service links this file.</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game.Bounties</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Serializable]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyFinished</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">characterId</span><span class="p">;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">monster</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="na">[Serializable]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyBoardAsk</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">characterId</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="na">[Serializable]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyHunter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bounties</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="na">[Serializable]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyBoardList</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">characterId</span><span class="p">;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">BountyHunter</span><span class="p">[]</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyHunter</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mine</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Está en <code>Game.Bounties.Shared</code>, un ensamblado sin referencias al motor. Unity lo compila y el módulo de Central enlaza el mismo archivo, así los dos lados siempre coinciden.</p>
+<h2 id="editor-bountysetup-cs-the-setup-menu"><a class="anchor" href="#editor-bountysetup-cs-the-setup-menu" aria-hidden="true">#</a>Editor/BountySetup.cs: el menú de preparación</h2>
+<p><strong>KitARPG &gt; DevKit &gt; Add Bounty Board to the Open Scene</strong>:</p>
+<ul>
+<li>arma un tablero con tres cubos en el pivote de la vista Scene, con un <code>Npc</code> (id <code>bounty_board</code>, nombre <em>Bounty Board</em>), un <code>BoxCollider</code> para los clics y una <code>Nameplate</code>,</li>
+<li>agrega una <code>BountyOption</code> que apunta a <em>Sample Bounty Board</em>,</li>
+<li>crea <em>Sample Bounty Board</em> la primera vez, junto al script, con los dos primeros monstruos normales que tienen prefab en la base de datos del juego: 8 y 10 muertes, que pagan 150 y 200 de oro y 200 y 300 de experiencia,</li>
+<li>registra el Undo y marca la escena como modificada.</li>
+</ul>
+<p>Usa <code>ModulesWindow.Find()</code> para llegar a la base de datos del juego. Consulta <a href="editor-extensions.html">Extensiones del editor</a>.</p>
+<h2 id="the-central-module"><a class="anchor" href="#the-central-module" aria-hidden="true">#</a>El módulo de Central</h2>
+<p><code>Services/Examples/Bounties/</code> es el lado de Central:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Game.Bounties.Central.csproj</code></td>
+<td>Referencia el contrato de módulos sin copiarlo, enlaza <code>BountyBoardMessages.cs</code> y copia la compilación a <code>-p:KitModulesDir</code>.</td>
+</tr>
+<tr>
+<td><code>BountiesModule.cs</code></td>
+<td><code>ICentralModule</code> llamado <code>Bounties</code>. Registra <code>BountyContext</code>, atiende <code>BountyFinished</code> (valida el nombre, de 1 a 32 caracteres, y <code>m.Hosts(characterId)</code>, y luego suma uno a la fila bajo un <code>SemaphoreSlim</code>) y <code>BountyBoardAsk</code> (responde los 10 primeros y la cuenta propia de quien pregunta).</td>
+</tr>
+<tr>
+<td><code>BountyContext.cs</code></td>
+<td>La tabla <code>bounty_hunters</code>: <code>character_id</code> (clave), <code>name</code>, <code>count</code> (con índice).</td>
+</tr>
+<tr>
+<td><code>Migrations/</code></td>
+<td>Una migración sin tipos de columna, para que corra en SQLite y PostgreSQL.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Compílalo e instálalo:</p>
+<pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services
+dotnet<span class="w"> </span>build<span class="w"> </span>Examples/Bounties<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-p:KitModulesDir<span class="o">=</span>&lt;launcher<span class="w"> </span>folder&gt;/modules/central
+dotnet<span class="w"> </span>build<span class="w"> </span>Examples/Bounties<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-p:KitModulesDir<span class="o">=</span>../Deploy/modules/central<span class="w">   </span><span class="c1"># Docker</span>
+</code></pre>
+<p>Reinicia Central. Su log muestra <code>Module Bounties loaded from ...</code>. El código completo y las reglas para módulos están en <a href="service-modules.html">Módulos de servicios</a>.</p>
+<h2 id="make-it-yours"><a class="anchor" href="#make-it-yours" aria-hidden="true">#</a>Hazlo tuyo</h2>
+<ul>
+<li>Agrega cacerías a <em>Sample Bounty Board</em>, o crea otros assets de tablero con <strong>Create &gt; KitARPG &gt; DevKit Example &gt; Bounty Board</strong>. Sirve cualquier recompensa que puedan dar las acciones del kit.</li>
+<li>Cambia las marcas por un <a href="player-systems.html">sistema del jugador</a> cuando necesites estado sincronizado más allá de unos pocos números.</li>
+<li>Agrega un <a href="quest-objectives.html">objetivo de misión</a> que cuente recompensas, que avance desde <code>Bounties.ServerTurnedIn</code>.</li>
+<li>Copia la estructura de carpetas (ensamblado de la función, <code>.Server</code>, <code>.Shared</code>, <code>.Editor</code>) para tus propias funciones.</li>
+<li>En tu propio código, limpia los eventos estáticos en <code>SubsystemRegistration</code> y suscríbete a ellos en <code>AfterAssembliesLoaded</code> o después, así el orden de los métodos de inicio nunca importa.</li>
+<li>Borra <code>DevKit/Example/Bounties</code> para quitar el ejemplo. Primero quita el tablero de tus escenas: referencian <code>BountyOption</code>.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="devkit-overview.html">Resumen del DevKit</a></li>
+<li><a href="npc-options.html">Opciones de NPC</a></li>
+<li><a href="network-messages.html">Mensajes de red</a></li>
+<li><a href="talking-to-central.html">Hablar con Central</a></li>
+<li><a href="service-modules.html">Módulos de servicios</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="game-modes-in-code.html"><span>Anterior</span>Modos de juego en código</a><a class="next" href="domain-reload.html"><span>Siguiente</span>Play sin recarga de dominio</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fexample-bounty-board.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-it-does">Qué hace</a></li><li class="l2"><a href="#try-it">Pruébalo</a></li><li class="l2"><a href="#the-files">Los archivos</a></li><li class="l2"><a href="#game-bounties-asmdef">Game.Bounties.asmdef</a></li><li class="l2"><a href="#bountyboarddata-cs-the-data">BountyBoardData.cs: los datos</a></li><li class="l2"><a href="#bountyoption-cs-the-button">BountyOption.cs: el botón</a></li><li class="l2"><a href="#bounties-cs-the-server-rules">Bounties.cs: las reglas del servidor</a></li><li class="l3"><a href="#progress-in-flags">El avance en marcas</a></li><li class="l3"><a href="#finding-boards-after-a-restart">Encontrar los tableros tras un reinicio</a></li><li class="l3"><a href="#hooking-in">Engancharse</a></li><li class="l3"><a href="#taking-a-bounty">Tomar una recompensa</a></li><li class="l3"><a href="#counting-kills">Contar las muertes</a></li><li class="l3"><a href="#turning-in">Entregar</a></li><li class="l3"><a href="#telling-the-client">Avisarle al cliente</a></li><li class="l2"><a href="#bountymessages-cs-the-messages">BountyMessages.cs: los mensajes</a></li><li class="l2"><a href="#bountytracker-cs-the-hud-line">BountyTracker.cs: la línea del HUD</a></li><li class="l2"><a href="#bountiesdonecondition-cs-a-condition-for-designers">BountiesDoneCondition.cs: una condición para diseñadores</a></li><li class="l2"><a href="#server-bountycommands-cs-the-gm-command">Server/BountyCommands.cs: el comando de GM</a></li><li class="l2"><a href="#server-bountyhunters-cs-central-and-saved-history">Server/BountyHunters.cs: Central y el historial guardado</a></li><li class="l2"><a href="#shared-bountyboardmessages-cs-messages-for-central">Shared/BountyBoardMessages.cs: mensajes para Central</a></li><li class="l2"><a href="#editor-bountysetup-cs-the-setup-menu">Editor/BountySetup.cs: el menú de preparación</a></li><li class="l2"><a href="#the-central-module">El módulo de Central</a></li><li class="l2"><a href="#make-it-yours">Hazlo tuyo</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

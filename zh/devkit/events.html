@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>事件 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/events.html">English</option><option value="../../es/devkit/events.html">Español</option><option value="../../pt/devkit/events.html">Português</option><option value="events.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html" class="on" aria-current="page">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>事件</h1><p>套件触发的、你的代码可以监听的每个事件：它在哪里运行，它交给你什么，如何订阅才能在不重新加载域的 Play 中保持有效，以及示例。</p>
+<h2 id="static-events"><a class="anchor" href="#static-events" aria-hidden="true">#</a>静态事件</h2>
+<p>套件的大多数事件都是 <code>static</code>：你从自己的一个静态类中订阅一次，就能覆盖每个玩家或怪物。它们分为三类：</p>
+<ul>
+<li><strong>服务器事件</strong>以 <code>Server</code> 开头，在地图服务器（以及单人模式的主机）上运行。用它们实现规则：奖励、进度、日志。</li>
+<li><strong>所有者客户端事件</strong>在相关玩家的客户端上运行。用它们驱动界面。</li>
+<li><strong>客户端事件</strong>在每个能看到该对象的客户端上运行，例如战斗效果。</li>
+</ul>
+<h2 id="subscribing-correctly"><a class="anchor" href="#subscribing-correctly" aria-hidden="true">#</a>正确订阅</h2>
+<p>套件的项目在不重新加载域的情况下 Play，所以每个类都会在每次 Play 开始时，于一个 <code>SubsystemRegistration</code> 方法中清空自己的静态事件。Unity 没有规定各个 <code>SubsystemRegistration</code> 方法之间的顺序，所以要更晚订阅，在 <code>AfterAssembliesLoaded</code> 中：</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">LevelRewards</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnLevel</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>+=</code> 之前的 <code>-=</code> 可以防止方法再次运行时重复订阅。用具名方法订阅，不要用 lambda，这样 <code>-=</code> 才有效。<code>AfterSceneLoad</code> 也可以；它运行得更晚。</p>
+<p>完整规则参见<a href="domain-reload.html">不重新加载域的 Play</a>。</p>
+<h2 id="server-events"><a class="anchor" href="#server-events" aria-hidden="true">#</a>服务器事件</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>参数</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerCharacter.ServerSpawned</code></td>
+<td><code>PlayerCharacter</code></td>
+<td>玩家在此地图上生成，在其保存的状态加载之后。</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter.ServerLeveledUp</code></td>
+<td><code>PlayerCharacter</code></td>
+<td>升了一级或多级之后。</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter.ServerExperienceGained</code></td>
+<td><code>PlayerCharacter, long amount</code></td>
+<td>获得了经验，在升级之前。</td>
+</tr>
+<tr>
+<td><code>Monster.ServerKilled</code></td>
+<td><code>Monster, PlayerCharacter killer</code></td>
+<td>一个怪物死亡。killer 是获得这次击杀的玩家，或为 null。</td>
+</tr>
+<tr>
+<td><code>Monster.ServerPhaseStarted</code></td>
+<td><code>Monster, int phase</code></td>
+<td>首领开始了一个阶段；索引对应其数据中的 <code>phases</code>。</td>
+</tr>
+<tr>
+<td><code>PlayerQuests.ServerCompleted</code></td>
+<td><code>PlayerCharacter, QuestData</code></td>
+<td>交付了一个任务。</td>
+</tr>
+<tr>
+<td><code>PlayerTrade.ServerTraded</code></td>
+<td><code>PlayerCharacter a, PlayerCharacter b</code></td>
+<td>一次交易完成。</td>
+</tr>
+<tr>
+<td><code>PlayerForge.ServerUpgraded</code></td>
+<td><code>PlayerCharacter, string itemId, bool success, int level</code></td>
+<td>强化成功（true）或失败（false）；<code>level</code> 是最终等级，装备损坏时为 -1。</td>
+</tr>
+<tr>
+<td><code>PlayerProgress.ServerFlagChanged</code></td>
+<td><code>PlayerCharacter, string key, int value</code></td>
+<td>一个角色标记发生变化。</td>
+</tr>
+<tr>
+<td><code>PlayerProgress.ServerDiscovered</code></td>
+<td><code>PlayerCharacter, string placeId</code></td>
+<td>发现了一张地图或一个区域。</td>
+</tr>
+<tr>
+<td><code>PlayerPvp.ServerDefeated</code></td>
+<td><code>PlayerCharacter killer, PlayerCharacter victim, bool duel</code></td>
+<td>一名玩家在 PvP 或决斗中击败了另一名玩家。</td>
+</tr>
+<tr>
+<td><code>WorldTrigger.ServerFired</code></td>
+<td><code>WorldTrigger, PlayerCharacter</code></td>
+<td>一个世界触发器被触发（对于&quot;所有人&quot;触发器，是触发它的那名玩家）。</td>
+</tr>
+<tr>
+<td><code>GmCommands.ServerUsed</code></td>
+<td><code>PlayerCharacter, string line</code></td>
+<td>一条斜杠命令即将运行。仅服务器程序集。</td>
+</tr>
+<tr>
+<td><code>GmAudit.Recorded</code></td>
+<td><code>GmAuditEntry</code></td>
+<td>记录了一条 GM 审计。仅服务器程序集。</td>
+</tr>
+<tr>
+<td><code>MapInstances.ServerChanged</code></td>
+<td><code>string key, bool made</code></td>
+<td>一个副本地图的副本被创建（true）或被释放。仅服务器程序集。</td>
+</tr>
+<tr>
+<td><code>GameLog.Written</code></td>
+<td><code>GameLogEntry</code></td>
+<td>任何一条游戏日志，在写入时。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="per-object-server-events"><a class="anchor" href="#per-object-server-events" aria-hidden="true">#</a>单个对象上的服务器事件</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>所在对象</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServerStatsChanged</code></td>
+<td>一个 <code>PlayerCharacter</code></td>
+<td>属性或状态发生变化：速度、眩晕和定身可能不同了。</td>
+</tr>
+<tr>
+<td><code>ServerChanged</code></td>
+<td>一个 <code>PlayerInventory</code></td>
+<td>背包或装备被发布给所有者。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="owner-s-client-events"><a class="anchor" href="#owner-s-client-events" aria-hidden="true">#</a>所有者客户端事件</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>参数</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerCharacter.LocalSpawned</code></td>
+<td><code>PlayerCharacter</code></td>
+<td>本地玩家出现。这是向服务器询问你的功能状态的时机。</td>
+</tr>
+<tr>
+<td><code>PlayerInventory.LocalSpawned</code></td>
+<td><code>PlayerInventory</code></td>
+<td>本地玩家的背包出现。</td>
+</tr>
+<tr>
+<td><code>PlayerInventory.LootDropped</code>、<code>LootRemoved</code>、<code>LootOpened</code></td>
+<td><code>LootDrop</code>、<code>int</code>、<code>int</code></td>
+<td>个人掉落出现、消失，或打开了一个掉落。</td>
+</tr>
+<tr>
+<td><code>PlayerChat.Received</code></td>
+<td><code>ChatView</code></td>
+<td>收到一行聊天。</td>
+</tr>
+<tr>
+<td><code>PlayerMail.Arrived</code></td>
+<td><code>string from, string subject</code></td>
+<td>收到一封信（立即领取的商店信件不算）。</td>
+</tr>
+<tr>
+<td><code>PlayerMail.Opened</code></td>
+<td>无</td>
+<td>NPC 打开了邮箱。</td>
+</tr>
+<tr>
+<td><code>PlayerTrade.Asked</code>、<code>Opened</code>、<code>Changed</code>、<code>Closed</code></td>
+<td>名字；名字；双方报价；原因</td>
+<td>交易请求和交易窗口更新。</td>
+</tr>
+<tr>
+<td><code>PlayerParty.Invited</code></td>
+<td><code>string name</code></td>
+<td>一个队伍邀请。</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.Invited</code></td>
+<td><code>string from, string guild</code></td>
+<td>一个公会邀请。</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.AllianceInvited</code></td>
+<td><code>string alliance, string guild</code></td>
+<td>一个联盟邀请。</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.BankOpened</code>、<code>PlayerBank.Opened</code>、<code>PlayerMarket.Opened</code>、<code>PlayerForge.Opened</code></td>
+<td><code>bool open</code></td>
+<td>NPC 打开（true）或关闭（false）了该窗口。</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.FoundingOpened</code></td>
+<td>无</td>
+<td>NPC 打开了公会创建。</td>
+</tr>
+<tr>
+<td><code>PlayerForge.Result</code></td>
+<td><code>string text, bool good</code></td>
+<td>上一次锻造请求的结果。</td>
+</tr>
+<tr>
+<td><code>PlayerPvp.Challenged</code></td>
+<td><code>string name</code></td>
+<td>一个决斗挑战。</td>
+</tr>
+<tr>
+<td><code>PlayerQuests.Shown</code></td>
+<td><code>Npc, QuestData</code></td>
+<td>NPC 展示了一个任务。</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.Talked</code></td>
+<td><code>Npc, string text, int[] options, string[] labels, bool[] open</code></td>
+<td>NPC 作出回答：它的文本和屏幕上的选项行。</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.ShopOpened</code></td>
+<td><code>Npc, ShopOption, int[] stock</code></td>
+<td>打开了一个商店。</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.StockChanged</code>、<code>BuybackChanged</code></td>
+<td>库存；回购栏位和价格</td>
+<td>商店更新。</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.ErrorReceived</code></td>
+<td><code>string code</code></td>
+<td>NPC 请求被拒绝，或某个 NPC 选项返回了文本。</td>
+</tr>
+</tbody>
+</table></div>
+<p>单个对象上的所有者事件：<code>PlayerQuests</code>、<code>PlayerProgress</code>、<code>PlayerInventory</code>、<code>PlayerMail</code>、<code>PlayerParty</code>、<code>PlayerGuild</code>、<code>PlayerBank</code> 及其他系统上的 <code>Changed</code>（它们的同步状态发生变化）；<code>PlayerInventory</code> 上的 <code>ErrorReceived</code>（一个背包请求被拒绝）。</p>
+<h2 id="client-events-for-effects"><a class="anchor" href="#client-events-for-effects" aria-hidden="true">#</a>用于效果的客户端事件</h2>
+<p><code>CombatEvents</code>（命名空间 <code>Blunnyn.KitARPG.Net</code>）告诉每个客户端附近的战斗中发生了什么，用于动画、特效、伤害数字和音效：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CombatEvents.Damaged</code></td>
+<td><code>Transform who, int amount, bool critical, DamageElement element, GameData source</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.Healed</code></td>
+<td><code>Transform who, int amount, GameData cause</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.Announced</code></td>
+<td><code>Transform who, string text, Color color</code>（显示在某人头上的短文本，例如 &quot;+12 XP&quot;）</td>
+</tr>
+<tr>
+<td><code>CombatEvents.Shouted</code></td>
+<td><code>Transform boss, string text</code>（首领阶段台词）</td>
+</tr>
+<tr>
+<td><code>CombatEvents.SkillLanded</code></td>
+<td><code>Transform caster, SkillData skill, Vector3 point</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.ActionStarted</code></td>
+<td><code>ActionEvent</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.CastStarted</code>、<code>CastStopped</code></td>
+<td><code>Transform, SkillData, float seconds</code>；<code>Transform</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.Bounced</code></td>
+<td><code>SkillData, Transform from, Transform to</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.ZoneStarted</code></td>
+<td><code>SkillData, Vector3 where, float seconds</code></td>
+</tr>
+<tr>
+<td><code>FighterStatus.AnyChanged</code></td>
+<td><code>FighterStatus</code>（任何战斗者的状态发生变化）</td>
+</tr>
+</tbody>
+</table></div>
+<p>其他全客户端事件：<code>GameRates.Changed</code>（<code>RatesState</code>，经验或掉落活动开始或结束），<code>ClientOptions.Changed</code>（某个设置发生变化）。</p>
+<p>单个对象上的客户端事件：怪物上的 <code>Monster.Acted</code>（<code>CombatAction</code>）和 <code>DeadChanged</code>（<code>bool</code>），玩家上的 <code>DeadChanged</code>。</p>
+<h2 id="network-manager-events"><a class="anchor" href="#network-manager-events" aria-hidden="true">#</a>网络管理器事件</h2>
+<p><code>KitNetworkManager.Instance</code> 触发 <code>ServerStarted</code>、<code>ServerStopping</code>、<code>ServerDisconnecting</code>（<code>NetworkConnectionToClient</code>）、<code>ClientConnected</code> 和 <code>ClientDisconnected</code>。这些是实例事件，所在对象每次 Play 都会重新创建，旧对象会连同订阅者一起消失，所以在 <code>AfterSceneLoad</code> 中订阅，不需要 <code>-=</code>。静态事件仍然先 <code>-=</code>：在检查 <code>Instance</code> 是否为 null 之前订阅它们，这样即使场景中没有网络管理器也会订阅。参见<a href="network-messages.html">网络消息</a>。</p>
+<h2 id="examples"><a class="anchor" href="#examples" aria-hidden="true">#</a>示例</h2>
+<h3 id="reward-every-fifth-level"><a class="anchor" href="#reward-every-fifth-level" aria-hidden="true">#</a>每五级给一次奖励</h3>
+<p>服务器，在 <code>Game</code> 程序集中：</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MilestoneRewards</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnLevel</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">level</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// A flag per milestone, so leveling down and up again (death penalties) pays once.</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;mygame.milestone_{player.level}&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">actor</span><span class="p">.</span><span class="n">AddCurrency</span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">$&quot;Level {player.level} milestone!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.85f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="welcome-back-message"><a class="anchor" href="#welcome-back-message" aria-hidden="true">#</a>欢迎回来消息</h3>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerSpawned</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnSpawned</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerSpawned</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnSpawned</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnSpawned</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerChat</span><span class="w"> </span><span class="n">chat</span><span class="p">))</span><span class="w"> </span><span class="n">chat</span><span class="p">.</span><span class="n">Tell</span><span class="p">(</span><span class="s">$&quot;Welcome back, {player.characterName}.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>ServerSpawned</code> 在角色进入的每张地图上都会触发，不仅仅是在登录时。</p>
+<h3 id="kill-streaks-kept-in-memory"><a class="anchor" href="#kill-streaks-kept-in-memory" aria-hidden="true">#</a>连杀，保存在内存中</h3>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">streaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">streaks</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerPvp</span><span class="p">.</span><span class="n">ServerDefeated</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnDefeated</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerPvp</span><span class="p">.</span><span class="n">ServerDefeated</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnDefeated</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnKilled</span><span class="p">(</span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">streaks</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">killer</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="n">streaks</span><span class="p">[</span><span class="n">killer</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">killer</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">$&quot;{n} kills!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="n">yellow</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDefeated</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">victim</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">duel</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">streaks</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">victim</span><span class="p">);</span>
+</code></pre>
+<p>以玩家为键的字典会随着玩家来来去去而增长。在玩家离开时移除条目（<code>KitNetworkManager.ServerDisconnecting</code>），或跳过已销毁的条目（<code>player == null</code>）。</p>
+<h3 id="a-sound-on-critical-hits"><a class="anchor" href="#a-sound-on-critical-hits" aria-hidden="true">#</a>暴击时播放音效</h3>
+<p>客户端，在 <code>Game</code> 程序集中。音频片段从你自己的 <code>Resources</code> 文件夹加载：</p>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="n">AudioClip</span><span class="w"> </span><span class="n">clip</span><span class="p">;</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="o">&lt;</span><span class="n">AudioClip</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;MyGame/CriticalHit&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">CombatEvents</span><span class="p">.</span><span class="n">Damaged</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnDamaged</span><span class="p">;</span>
+<span class="w">    </span><span class="n">CombatEvents</span><span class="p">.</span><span class="n">Damaged</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnDamaged</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDamaged</span><span class="p">(</span><span class="n">Transform</span><span class="w"> </span><span class="n">who</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">critical</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">GameData</span><span class="w"> </span><span class="n">source</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">critical</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">clip</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">GameAudio</span><span class="p">.</span><span class="n">PlayAt</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span><span class="w"> </span><span class="n">who</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">SoundChannel</span><span class="p">.</span><span class="n">Effects</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>GameAudio.PlayAt</code> 遵循玩家的音量滑块。</p>
+<h3 id="send-rare-loot-to-a-webhook"><a class="anchor" href="#send-rare-loot-to-a-webhook" aria-hidden="true">#</a>把稀有掉落发送到 webhook</h3>
+<p><code>GameLog.Written</code> 能看到每一行日志，包括值得注意的掉落 <code>item.loot</code>。参见<a href="templates.html#game-log-listener">模板</a>中的 <strong>Game Log Listener</strong> 模板。</p>
+<h2 id="events-of-your-own"><a class="anchor" href="#events-of-your-own" aria-hidden="true">#</a>你自己的事件</h2>
+<p>用同样的方式触发你自己的静态事件，并在 <code>SubsystemRegistration</code> 中清空它们：</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="n">MonsterData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ServerTurnedIn</span><span class="p">;</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ServerTurnedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</code></pre>
+<p>然后 <code>Game.Server</code> 中的代码订阅在 <code>Game</code> 中触发的事件（参见<a href="assemblies.html#which-way-references-go">程序集</a>）。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li>**在 <code>SubsystemRegistration</code> 中订阅。**套件可能会在你订阅之后清空该事件。</li>
+<li>**用无法移除的 lambda 订阅，**而且所在方法可能运行两次。</li>
+<li>**在客户端代码中使用服务器事件。**它们在在线客户端上永远不会触发。</li>
+<li>**在 <code>CombatEvents</code> 或 <code>GameLog.Written</code> 中做繁重的工作。**它们触发得很频繁；处理函数要保持简短。</li>
+<li>**在处理函数中抛出异常。**排在你之后的其他订阅者可能不会运行。<code>GameLog.Written</code> 会捕获异常；大多数其他事件不会。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="domain-reload.html">不重新加载域的 Play</a></li>
+<li><a href="quest-objectives.html">任务目标</a></li>
+<li><a href="network-messages.html">网络消息</a></li>
+<li><a href="../gameplay/game-log-and-reports.html">游戏日志和举报</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="saving-data.html"><span>上一页</span>保存数据</a><a class="next" href="overriding-kit-behaviour.html"><span>下一页</span>重写套件的行为</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fevents.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#static-events">静态事件</a></li><li class="l2"><a href="#subscribing-correctly">正确订阅</a></li><li class="l2"><a href="#server-events">服务器事件</a></li><li class="l3"><a href="#per-object-server-events">单个对象上的服务器事件</a></li><li class="l2"><a href="#owner-s-client-events">所有者客户端事件</a></li><li class="l2"><a href="#client-events-for-effects">用于效果的客户端事件</a></li><li class="l2"><a href="#network-manager-events">网络管理器事件</a></li><li class="l2"><a href="#examples">示例</a></li><li class="l3"><a href="#reward-every-fifth-level">每五级给一次奖励</a></li><li class="l3"><a href="#welcome-back-message">欢迎回来消息</a></li><li class="l3"><a href="#kill-streaks-kept-in-memory">连杀，保存在内存中</a></li><li class="l3"><a href="#a-sound-on-critical-hits">暴击时播放音效</a></li><li class="l3"><a href="#send-rare-loot-to-a-webhook">把稀有掉落发送到 webhook</a></li><li class="l2"><a href="#events-of-your-own">你自己的事件</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

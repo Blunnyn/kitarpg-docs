@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>编辑器扩展 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/editor-extensions.html">English</option><option value="../../es/devkit/editor-extensions.html">Español</option><option value="../../pt/devkit/editor-extensions.html">Português</option><option value="editor-extensions.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html" class="on" aria-current="page">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>编辑器扩展</h1><p>如何向 KitARPG 窗口添加你自己的页面，向 Project Check 和构建前检查添加你自己的检查，以及如何在你的工具中使用套件的编辑器外观。</p>
+<p><strong>文件放在哪里：</strong><code>Game.Editor</code> 程序集（见<a href="assemblies.html">程序集</a>）。本页的所有内容都使用 <code>KitARPG.Editor</code> 和 <code>UnityEditor</code>，它们永远不会进入构建。</p>
+<h2 id="pages-in-the-kitarpg-window"><a class="anchor" href="#pages-in-the-kitarpg-window" aria-hidden="true">#</a>KitARPG 窗口中的页面</h2>
+<p>KitARPG 窗口（<strong>KitARPG &gt; Open KitARPG</strong>，<code>Ctrl/Cmd+Shift+K</code>）有一个页面侧边栏：Overview、Play &amp; Servers、Game Database、Game Settings、Shop、Modules 和 Project Check。每个非抽象且带无参构造函数的 <code>KitPage</code> 子类都会被 Unity 的 <code>TypeCache</code> 找到并加入侧边栏。不需要注册任何东西。</p>
+<h3 id="kitpage"><a class="anchor" href="#kitpage" aria-hidden="true">#</a>KitPage</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>作用</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abstract string Name</code></td>
+<td>页面在侧边栏中的名称。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtual string Group</code></td>
+<td>页面所在的侧边栏标题。套件依次使用 <code>&quot;&quot;</code>（顶部）、<code>&quot;Game&quot;</code> 和 <code>&quot;Project&quot;</code>；其他名称排在它们之后。</td>
+<td><code>&quot;Game&quot;</code></td>
+</tr>
+<tr>
+<td><code>virtual int Order</code></td>
+<td>在分组内的顺序，数值小的在前。然后按名称排序。</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>virtual string IconName</code></td>
+<td>内置编辑器图标的名称，例如 <code>&quot;Settings&quot;</code> 或 <code>&quot;d_Favorite&quot;</code>。</td>
+<td><code>&quot;ScriptableObject Icon&quot;</code></td>
+</tr>
+<tr>
+<td><code>virtual string Badge</code></td>
+<td>名称旁边的短文本，例如问题数量。为 null 时不显示。</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>virtual KitGUI.State BadgeState</code></td>
+<td>徽标的颜色。</td>
+<td><code>Off</code></td>
+</tr>
+<tr>
+<td><code>virtual bool FullWidth</code></td>
+<td>为 true 时页面占用整个区域，而不是居中的滚动列，适用于有自己分栏的页面。</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>virtual void OnEnable()</code>、<code>OnDisable()</code></td>
+<td>页面显示和隐藏时调用。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtual void Tick()</code></td>
+<td>窗口打开时每秒调用约十次，用于轮询。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>abstract void OnGUI()</code></td>
+<td>用 IMGUI 绘制页面。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>KitWindow Window</code></td>
+<td>窗口。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Rect Area</code></td>
+<td>页面绘制的区域。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>void Repaint()</code></td>
+<td>请求窗口重绘。</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>套件的页面使用以下顺序：Overview 0 和 Play &amp; Servers 1（分组 <code>&quot;&quot;</code>）；Game Database 10、Game Settings 20、Shop 25、Modules 30（分组 <code>&quot;Game&quot;</code>）；Project Check 10（分组 <code>&quot;Project&quot;</code>）。</p>
+<p><code>KitWindow.Show&lt;T&gt;()</code> 打开窗口并显示某个页面：<code>KitWindow.Show&lt;GameDatabaseWindow&gt;()</code>、<code>KitWindow.Show&lt;MyGamePage&gt;()</code>。</p>
+<h3 id="example-a-page-for-your-content"><a class="anchor" href="#example-a-page-for-your-content" aria-hidden="true">#</a>示例：为你的内容做一个页面</h3>
+<p>列出项目中的每个悬赏板，每个都有一个选中它的按钮，有空悬赏板时显示警告徽标。悬赏板类型位于示例的 <code>Game.Bounties</code> 程序集中，因此包含此页面的编辑器程序集要引用它。</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Game.Bounties</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyBoardsPage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitPage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">BountyBoardData</span><span class="p">[]</span><span class="w"> </span><span class="n">boards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyBoardData</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Bounty Boards&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Order</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">IconName</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;d_Favorite&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">Empty</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">boards</span><span class="p">.</span><span class="n">Count</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Badge</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Empty</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Empty</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="n">BadgeState</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">Warning</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnEnable</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Load</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Load</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">boards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">FindAssets</span><span class="p">(</span><span class="s">&quot;t:BountyBoardData&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">g</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">LoadAssetAtPath</span><span class="o">&lt;</span><span class="n">BountyBoardData</span><span class="o">&gt;</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GUIDToAssetPath</span><span class="p">(</span><span class="n">g</span><span class="p">)))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnGUI</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Header</span><span class="p">(</span><span class="s">&quot;Bounty Boards&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Every board asset in the project and its hunts.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">boards</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Empty</span><span class="p">(</span><span class="s">&quot;No boards yet&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Create one with Create &gt; KitARPG &gt; DevKit Example &gt; Bounty Board.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">BountyBoardData</span><span class="w"> </span><span class="n">board</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">boards</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">Warning</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">Done</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">string</span><span class="w"> </span><span class="n">detail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;No hunts&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;{board.bounties.Length} hunts&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Status</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">detail</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Select&quot;</span><span class="p">))</span><span class="w"> </span><span class="n">Selection</span><span class="p">.</span><span class="n">activeObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Line</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KitGUI</span><span class="p">.</span><span class="n">Secondary</span><span class="p">(</span><span class="s">&quot;Refresh&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">))</span><span class="w"> </span><span class="n">Load</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="the-kit-s-editor-look"><a class="anchor" href="#the-kit-s-editor-look" aria-hidden="true">#</a>套件的编辑器外观</h2>
+<p><code>KitGUI</code>（命名空间 <code>Blunnyn.KitARPG.Editor</code>）用普通的 IMGUI 绘制套件窗口中的卡片、标题、状态行和按钮，让你的页面与之风格一致。</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>绘制什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Header(text, sub, icon)</code></td>
+<td>下方带一条线的页面标题。</td>
+</tr>
+<tr>
+<td><code>BeginCard(heading, sub, stripe)</code> / <code>EndCard()</code>，或 <code>using (new KitGUI.CardScope(heading))</code></td>
+<td>圆角卡片。</td>
+</tr>
+<tr>
+<td><code>Status(state, heading, detail, button, primaryButton)</code></td>
+<td>带彩色指示灯和可选按钮的清单行；按下时返回 true。</td>
+</tr>
+<tr>
+<td><code>Primary(text, width, height)</code>、<code>Secondary(...)</code></td>
+<td>按钮；按下时返回 true。</td>
+</tr>
+<tr>
+<td><code>Segmented(value, options, height)</code></td>
+<td>分段控件；返回选中的索引。</td>
+</tr>
+<tr>
+<td><code>Switch(rect, on)</code></td>
+<td>开关。</td>
+</tr>
+<tr>
+<td><code>Pill(text, color)</code></td>
+<td>小的彩色标签。</td>
+</tr>
+<tr>
+<td><code>Tile(rect, value, caption, state)</code></td>
+<td>带说明文字的数字。</td>
+</tr>
+<tr>
+<td><code>Empty(heading, detail)</code></td>
+<td>空列表的占位内容。</td>
+</tr>
+<tr>
+<td><code>Message(text, state)</code></td>
+<td>一行彩色消息。</td>
+</tr>
+<tr>
+<td><code>Line(space)</code></td>
+<td>分隔线。</td>
+</tr>
+<tr>
+<td><code>Icon(name)</code></td>
+<td>内置编辑器图标。</td>
+</tr>
+<tr>
+<td><code>Accent</code>、<code>Good</code>、<code>Warn</code>、<code>Bad</code>、<code>Of(state)</code></td>
+<td>调色板，适用于浅色和深色编辑器皮肤。</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>KitGUI.State</code> 有 <code>Done</code>、<code>Todo</code>、<code>Warning</code>、<code>Error</code>、<code>Off</code> 和 <code>Busy</code>（闪烁的指示灯）。</p>
+<h3 id="inspectors-for-your-data"><a class="anchor" href="#inspectors-for-your-data" aria-hidden="true">#</a>你的数据的 Inspector</h3>
+<p>套件的游戏数据 Inspector（<code>GameDataEditor</code>）把每个 <code>GameData</code> 资源绘制成按其 <code>[Header]</code> 特性分隔的卡片，并且同样适用于子类。你自己的 <code>GameData</code> 类型无需专门的编辑器就能获得相同的外观。在字段上使用 <code>[Header]</code>、<code>[Tooltip]</code> 和 <code>[Range]</code>，它看起来就和套件自己的数据一样。</p>
+<h2 id="project-checks"><a class="anchor" href="#project-checks" aria-hidden="true">#</a>项目检查</h2>
+<p><strong>KitARPG &gt; Project Check</strong>（Project Check 页面）运行 <code>ProjectValidator.Checks</code> 中的每一项检查，并把发现的问题按错误、警告和提示列出，每条都有一个选中相关对象的按钮，如果有修复方法，还有一个修复按钮。同一份列表会在每次构建前运行，不打开场景，有错误时会中止构建（<code>BuildCheck</code>，可以在 Project Check 页面关闭）。</p>
+<h3 id="projectvalidator"><a class="anchor" href="#projectvalidator" aria-hidden="true">#</a>ProjectValidator</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static List&lt;Action&lt;List&lt;ValidationIssue&gt;&gt;&gt; Checks</code></td>
+<td>所有检查，按顺序排列。每项检查把发现的问题添加到传给它的列表中。把你的检查加进去。</td>
+</tr>
+<tr>
+<td><code>static List&lt;ValidationIssue&gt; Run(bool scenes = true)</code></td>
+<td>运行全部检查。<code>scenes</code> 为 false 时，跳过会打开场景的检查，与构建前一样。</td>
+</tr>
+<tr>
+<td><code>static bool IncludeScenes</code></td>
+<td>正在进行的这次运行是否会打开场景。在会打开场景的检查中读取它。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="validationissue"><a class="anchor" href="#validationissue" aria-hidden="true">#</a>ValidationIssue</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IssueLevel level</code></td>
+<td><code>Error</code>（中止构建）、<code>Warning</code> 或 <code>Info</code>。</td>
+</tr>
+<tr>
+<td><code>string area</code></td>
+<td>简短的分组名称，例如 &quot;My game&quot;。</td>
+</tr>
+<tr>
+<td><code>string message</code></td>
+<td>一行文字，说明哪里有问题。</td>
+</tr>
+<tr>
+<td><code>Object context</code></td>
+<td>问题相关的资源或对象；Select 按钮会高亮它。</td>
+</tr>
+<tr>
+<td><code>string fixLabel</code></td>
+<td>修复按钮的文字。</td>
+</tr>
+<tr>
+<td><code>Action fix</code></td>
+<td>修复按钮执行的操作。为 null 时不显示按钮。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="registering-a-check"><a class="anchor" href="#registering-a-check" aria-hidden="true">#</a>注册检查</h3>
+<p><code>ProjectValidator.Checks</code> 是一个静态列表，存活时间与编辑器的域相同。在 <code>[InitializeOnLoadMethod]</code> 中注册，它会在每次脚本重新加载后运行；添加之前先移除，这样检查永远不会运行两次：</p>
+<pre class="code"><code class="language-csharp"><span class="na">[InitializeOnLoadMethod]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-bounty-boards-with-empty-rewards-with-a-fix"><a class="anchor" href="#example-bounty-boards-with-empty-rewards-with-a-fix" aria-hidden="true">#</a>示例：奖励为空的悬赏板，带修复</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Game.Bounties</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyChecks</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[InitializeOnLoadMethod]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">            </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ValidationIssue</span><span class="o">&gt;</span><span class="w"> </span><span class="n">issues</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">guid</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">FindAssets</span><span class="p">(</span><span class="s">&quot;t:BountyBoardData&quot;</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">var</span><span class="w"> </span><span class="n">board</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">LoadAssetAtPath</span><span class="o">&lt;</span><span class="n">BountyBoardData</span><span class="o">&gt;</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GUIDToAssetPath</span><span class="p">(</span><span class="n">guid</span><span class="p">));</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">board</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">bounty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">bounties</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="p">.</span><span class="n">monster</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">                        </span><span class="n">issues</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ValidationIssue</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IssueLevel</span><span class="p">.</span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bounties&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;{board.name}: hunt {i + 1} has no monster.&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="p">});</span>
+<span class="w">                    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">bounty</span><span class="p">.</span><span class="n">rewards</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">BountyBoardData</span><span class="p">.</span><span class="n">Bounty</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bounty</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">issues</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ValidationIssue</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IssueLevel</span><span class="p">.</span><span class="n">Warning</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bounties&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">board</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;{board.name}: hunting {bounty.monster.DisplayName} pays nothing.&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">fixLabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Add 100 gold&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">fix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="n">Undo</span><span class="p">.</span><span class="n">RecordObject</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Add bounty reward&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="n">b</span><span class="p">.</span><span class="n">rewards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameAction</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GiveCurrencyAction</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="w">                                </span><span class="n">EditorUtility</span><span class="p">.</span><span class="n">SetDirty</span><span class="p">(</span><span class="n">board</span><span class="p">);</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">});</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="guidelines-for-checks"><a class="anchor" href="#guidelines-for-checks" aria-hidden="true">#</a>检查的编写准则</h3>
+<ul>
+<li><strong>错误会中止构建。</strong> 只有游戏中一定会出问题的情况才用 <code>Error</code>。可能的错误用 <code>Warning</code>，建议用 <code>Info</code>。</li>
+<li><strong>要快。</strong> 检查在每次构建前运行。除非 <code>ProjectValidator.IncludeScenes</code> 为 true，否则不要打开场景。</li>
+<li><strong>指向资源。</strong> 设置 <code>context</code>，让 Select 按钮能用。</li>
+<li><strong>修复要安全。</strong> 修复只能添加缺少的东西或纠正一处明确的问题，并使用 <code>Undo</code> 和 <code>SetDirty</code>。</li>
+</ul>
+<h2 id="finding-the-game-s-settings-and-database"><a class="anchor" href="#finding-the-game-s-settings-and-database" aria-hidden="true">#</a>找到游戏的设置和数据库</h2>
+<p><code>ModulesWindow.Find()</code> 返回项目的 <code>GameInstance</code>（位于 <code>KitNetwork</code> 预制体上的那个），并缓存几秒钟。它的 <code>database</code> 字段就是 <code>GameDatabase</code>：</p>
+<pre class="code"><code class="language-csharp"><span class="n">GameInstance</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">();</span>
+<span class="n">GameDatabase</span><span class="w"> </span><span class="n">database</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">game</span><span class="p">.</span><span class="n">database</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</code></pre>
+<p><code>GameDatabase.All&lt;T&gt;()</code> 列出某个类型的所有资源，<code>TryGet&lt;T&gt;(id, out T)</code> 按 id 查找一个资源。</p>
+<h2 id="menu-items"><a class="anchor" href="#menu-items" aria-hidden="true">#</a>菜单项</h2>
+<p>普通的 Unity <code>[MenuItem]</code> 照常可用。要把你的菜单项放在套件菜单旁边，使用 <code>KitARPG/</code> 根路径，就像示例中的 <strong>KitARPG &gt; DevKit &gt; Add Bounty Board to the Open Scene</strong> 那样：</p>
+<pre class="code"><code class="language-csharp"><span class="na">[MenuItem(&quot;KitARPG/My Game/Rebuild Recipes&quot;, priority = 200)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Rebuild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+</code></pre>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
+<ul>
+<li><strong>编辑器代码放在 <code>Game</code> 中。</strong> 它引用了 <code>UnityEditor</code>，构建会失败。请使用 <code>Game.Editor</code>。</li>
+<li><strong>注册检查前没有先移除。</strong> 每次脚本重新加载后它会多运行一次。</li>
+<li><strong><code>Tick</code> 或 <code>OnGUI</code> 太慢。</strong> 它们调用得很频繁；把加载的东西缓存起来，就像上面的页面在 <code>OnEnable</code> 中做的那样。</li>
+<li><strong>页面没有无参构造函数。</strong> 它不会被找到。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li>
+<li><a href="../editor/project-check.html">Project Check</a></li>
+<li><a href="kit-updates-in-code.html">代码中的套件更新</a></li>
+<li><a href="assemblies.html">程序集</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="menus-and-settings-options.html"><span>上一页</span>菜单和设置选项</a><a class="next" href="kit-updates-in-code.html"><span>下一页</span>代码中的套件更新</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Feditor-extensions.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#pages-in-the-kitarpg-window">KitARPG 窗口中的页面</a></li><li class="l3"><a href="#kitpage">KitPage</a></li><li class="l3"><a href="#example-a-page-for-your-content">示例：为你的内容做一个页面</a></li><li class="l2"><a href="#the-kit-s-editor-look">套件的编辑器外观</a></li><li class="l3"><a href="#inspectors-for-your-data">你的数据的 Inspector</a></li><li class="l2"><a href="#project-checks">项目检查</a></li><li class="l3"><a href="#projectvalidator">ProjectValidator</a></li><li class="l3"><a href="#validationissue">ValidationIssue</a></li><li class="l3"><a href="#registering-a-check">注册检查</a></li><li class="l3"><a href="#example-bounty-boards-with-empty-rewards-with-a-fix">示例：奖励为空的悬赏板，带修复</a></li><li class="l3"><a href="#guidelines-for-checks">检查的编写准则</a></li><li class="l2"><a href="#finding-the-game-s-settings-and-database">找到游戏的设置和数据库</a></li><li class="l2"><a href="#menu-items">菜单项</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

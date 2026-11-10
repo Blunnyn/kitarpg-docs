@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Opciones de menús y ajustes · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/menus-and-settings-options.html">English</option><option value="menus-and-settings-options.html" selected>Español</option><option value="../../pt/devkit/menus-and-settings-options.html">Português</option><option value="../../zh/devkit/menus-and-settings-options.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html">Efectos de skills</a></li><li><a href="item-effects.html">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html" class="on" aria-current="page">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html">Hablar con Central</a></li><li><a href="service-modules.html">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Opciones de menús y ajustes</h1><p>Cómo agregar líneas al menú de ítems y al menú del jugador, y opciones a la ventana Settings, desde código propio.</p>
+<p>Las tres son listas del cliente que el kit llena con sus propias entradas al inicio de cada Play. Tú agregas las tuyas después, desde un método estático en el ensamblado <code>Game</code>.</p>
+<h2 id="item-menu"><a class="anchor" href="#item-menu" aria-hidden="true">#</a>Menú de ítems</h2>
+<p>Hacer clic derecho en un ítem de la bolsa o del equipo abre el menú de ítems (<code>ItemMenu</code>). Sus líneas vienen de <code>ItemMenu.Entries</code>, en orden, empezando por las del kit: la acción de la ventana abierta junto a la bolsa (vender, guardar, ofrecer), Equip, Take off, Use, Split, Salvage all, Possible values, View set y Destroy.</p>
+<h3 id="itemmenuentry"><a class="anchor" href="#itemmenuentry" aria-hidden="true">#</a>ItemMenuEntry</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string label</code></td>
+<td>El texto de la línea.</td>
+</tr>
+<tr>
+<td><code>Func&lt;ItemMenuTarget, string&gt; labelFor</code></td>
+<td>El texto para este ítem, cuando cambia. Si es null se usa <code>label</code>.</td>
+</tr>
+<tr>
+<td><code>Func&lt;ItemMenuTarget, bool&gt; shows</code></td>
+<td>Si la línea se muestra para este ítem. Si es null se muestra siempre.</td>
+</tr>
+<tr>
+<td><code>Action&lt;ItemMenuTarget&gt; run</code></td>
+<td>Lo que hace elegir la línea.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemmenutarget"><a class="anchor" href="#itemmenutarget" aria-hidden="true">#</a>ItemMenuTarget</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UIItem view</code></td>
+<td>La casilla del ítem en pantalla.</td>
+</tr>
+<tr>
+<td><code>InventoryWindow window</code></td>
+<td>La ventana de inventario desde la que se abrió el menú.</td>
+</tr>
+<tr>
+<td><code>ItemContainer Container</code></td>
+<td><code>Bag</code>, <code>Equipment</code> o <code>Bank</code>.</td>
+</tr>
+<tr>
+<td><code>int Slot</code></td>
+<td>El índice de la casilla en ese contenedor.</td>
+</tr>
+<tr>
+<td><code>ItemSlotState State</code></td>
+<td>Lo que tiene la casilla: id del ítem, cantidad, nivel de mejora, tiradas.</td>
+</tr>
+<tr>
+<td><code>IItem Item</code></td>
+<td>Los datos del ítem (<code>ItemData</code> y sus subclases lo implementan).</td>
+</tr>
+<tr>
+<td><code>bool InBag</code></td>
+<td><code>Container == ItemContainer.Bag</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-compare-with-what-you-wear"><a class="anchor" href="#example-compare-with-what-you-wear" aria-hidden="true">#</a>Ejemplo: comparar con lo que llevas puesto</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CompareLine</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemMenuEntry</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Compare&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">InBag</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">Item</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">IEquippable</span><span class="p">,</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">CompareWindow</span><span class="p">.</span><span class="n">Instance</span><span class="o">?.</span><span class="n">Show</span><span class="p">((</span><span class="n">IEquippable</span><span class="p">)</span><span class="n">t</span><span class="p">.</span><span class="n">Item</span><span class="p">),</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>(<code>CompareWindow</code> representa una ventana tuya.)</p>
+<h3 id="example-insert-a-line-at-a-position"><a class="anchor" href="#example-insert-a-line-at-a-position" aria-hidden="true">#</a>Ejemplo: insertar una línea en una posición</h3>
+<p><code>Entries</code> es una <code>List&lt;ItemMenuEntry&gt;</code> común. Usa Insert para poner una línea antes del Destroy del kit:</p>
+<pre class="code"><code class="language-csharp"><span class="kt">int</span><span class="w"> </span><span class="n">destroy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">FindIndex</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Destroy&quot;</span><span class="p">);</span>
+<span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="n">destroy</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">destroy</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="n">myEntry</span><span class="p">);</span>
+</code></pre>
+<h3 id="lines-that-change-the-game"><a class="anchor" href="#lines-that-change-the-game" aria-hidden="true">#</a>Líneas que cambian el juego</h3>
+<p>El menú se ejecuta en el cliente. Una línea que le hace algo al juego se lo pide al servidor, con un comando de un sistema del jugador o un mensaje de red, y el servidor vuelve a revisar todo: que la casilla tenga ese ítem y que el jugador pueda hacerlo. Las líneas del kit llaman a <code>PlayerInventory.Local.Equip(slot)</code>, <code>Use(slot)</code> y similares, que son pedidos. Consulta <a href="player-systems.html">Sistemas del jugador</a> y <a href="network-messages.html">Mensajes de red</a>.</p>
+<h2 id="player-menu"><a class="anchor" href="#player-menu" aria-hidden="true">#</a>Menú del jugador</h2>
+<p>Hacer clic derecho sobre otro jugador en top-down, o sobre un nombre en el chat, abre el menú del jugador (<code>PlayerMenu</code>). Sus líneas vienen de <code>PlayerMenu.Entries</code>: Whisper, Trade, Invite to party, Make leader, Remove from party, Add friend, Invite to guild, Duel, Report y Give up the duel. Cada línea del kit se oculta sola cuando su módulo está apagado.</p>
+<h3 id="playermenuentry"><a class="anchor" href="#playermenuentry" aria-hidden="true">#</a>PlayerMenuEntry</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string label</code></td>
+<td>El texto de la línea.</td>
+</tr>
+<tr>
+<td><code>Func&lt;PlayerMenuTarget, bool&gt; shows</code></td>
+<td>Si la línea se muestra para este jugador. Si es null se muestra siempre.</td>
+</tr>
+<tr>
+<td><code>Action&lt;PlayerMenuTarget&gt; run</code></td>
+<td>Lo que hace elegir la línea.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playermenutarget"><a class="anchor" href="#playermenutarget" aria-hidden="true">#</a>PlayerMenuTarget</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string name</code></td>
+<td>El nombre del personaje.</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter character</code></td>
+<td>El jugador en pantalla, o null cuando solo se lo nombró en el chat.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-inspect-a-player-s-gear"><a class="anchor" href="#example-inspect-a-player-s-gear" aria-hidden="true">#</a>Ejemplo: inspeccionar el equipo de un jugador</h3>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">PlayerMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PlayerMenuEntry</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inspect&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">character</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">        </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">InspectWindow</span><span class="p">.</span><span class="n">Instance</span><span class="o">?.</span><span class="n">Show</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">character</span><span class="p">),</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<p>El equipo puesto se sincroniza con todos los que ven al jugador (<code>PlayerCharacter.gear</code>, ids de ítems por posición de equipo), así que una ventana de inspección puede leerlo en el cliente. La bolsa es privada del dueño.</p>
+<h3 id="example-a-line-for-one-of-your-modules"><a class="anchor" href="#example-a-line-for-one-of-your-modules" aria-hidden="true">#</a>Ejemplo: una línea para uno de tus módulos</h3>
+<pre class="code"><code class="language-csharp"><span class="n">PlayerMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PlayerMenuEntry</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Challenge to a race&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">character</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">RaceRules</span><span class="p">.</span><span class="n">Enabled</span><span class="p">,</span>
+<span class="w">    </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Races</span><span class="p">.</span><span class="n">Ask</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">name</span><span class="p">),</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>Races.Ask</code> envía un pedido por nombre; el servidor busca al jugador por nombre en su mapa (<code>PlayerCharacter.ServerFind(name)</code>) y revisa la distancia y las reglas.</p>
+<h2 id="settings-window"><a class="anchor" href="#settings-window" aria-hidden="true">#</a>Ventana Settings</h2>
+<p>La ventana Settings (Esc o el engranaje, luego Settings, y también en la pantalla de título) tiene pestañas: Graphics, Audio, Interface, además de Controls del modo top-down y cualquier página que agregues. Cada línea es una <code>GameOption</code> en <code>ClientOptions.All</code>. Los valores viven en la computadora del jugador y nunca llegan al servidor.</p>
+<h3 id="kinds-of-option"><a class="anchor" href="#kinds-of-option" aria-hidden="true">#</a>Tipos de opción</h3>
+<p>Todas tienen estos campos:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string page</code></td>
+<td>La pestaña: <code>ClientOptions.Graphics</code>, <code>ClientOptions.Audio</code>, <code>ClientOptions.Interface</code>, o un nombre nuevo, que se vuelve una pestaña nueva al final.</td>
+</tr>
+<tr>
+<td><code>string label</code></td>
+<td>El texto de la línea.</td>
+</tr>
+<tr>
+<td><code>string hint</code></td>
+<td>Una explicación corta.</td>
+</tr>
+<tr>
+<td><code>Func&lt;bool&gt; available</code></td>
+<td>Oculta la línea cuando dice que no, para opciones que una plataforma no tiene.</td>
+</tr>
+<tr>
+<td><code>Action reset</code></td>
+<td>Devuelve el valor a su estado inicial, para el botón Reset de la pestaña.</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Campos extra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ToggleOption</code></td>
+<td><code>Func&lt;bool&gt; get</code>, <code>Action&lt;bool&gt; set</code></td>
+</tr>
+<tr>
+<td><code>SliderOption</code></td>
+<td><code>int min</code> (0), <code>int max</code> (100), <code>int step</code> (5), <code>Func&lt;int&gt; get</code>, <code>Action&lt;int&gt; set</code>, <code>Func&lt;int, string&gt; format</code> (muestra <code>&quot;50%&quot;</code> por defecto)</td>
+</tr>
+<tr>
+<td><code>ChoiceOption</code></td>
+<td><code>Func&lt;string[]&gt; choices</code>, <code>Func&lt;int&gt; get</code>, <code>Action&lt;int&gt; set</code> (el índice)</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>ClientOptions.Add(option)</code> agrega una. Los cambios se aplican a medida que el jugador los hace; el kit guarda sus propios valores cuando se cierra la ventana, y tu <code>set</code> guarda los tuyos.</p>
+<h3 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Ejemplo: la plantilla</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// An option of your own in the Settings window. Kept on the player&#39;s computer and never sent</span>
+<span class="w">    </span><span class="c1">/// anywhere, so use it for how the game looks and sounds, not for anything the server decides.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MySettings</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyGame.ShowHints&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">ShowHints</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">get</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ToggleOption</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// A page name the kit doesn&#39;t have becomes a new tab.</span>
+<span class="w">                </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Interface</span><span class="p">,</span>
+<span class="w">                </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Show hints&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Short tips the first time something new shows up.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="p">,</span>
+<span class="w">                </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">,</span>
+<span class="w">                </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="example-a-slider-and-a-choice-on-a-page-of-your-own"><a class="anchor" href="#example-a-slider-and-a-choice-on-a-page-of-your-own" aria-hidden="true">#</a>Ejemplo: un deslizador y una elección en una página propia</h3>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SliderOption</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gameplay&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Screen shake&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Shake&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">),</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Shake&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">),</span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">DeleteKey</span><span class="p">(</span><span class="s">&quot;MyGame.Shake&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChoiceOption</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gameplay&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Damage numbers&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;All&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mine only&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;None&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Numbers&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="s">&quot;MyGame.Numbers&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">),</span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">DeleteKey</span><span class="p">(</span><span class="s">&quot;MyGame.Numbers&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+<p>Un deslizador se mueve en pasos enteros. Dale a cada opción un <code>reset</code>, para que el botón Reset de la pestaña la cubra.</p>
+<h3 id="example-an-option-only-on-some-platforms"><a class="anchor" href="#example-an-option-only-on-some-platforms" aria-hidden="true">#</a>Ejemplo: una opción solo en algunas plataformas</h3>
+<pre class="code"><code class="language-csharp"><span class="n">available</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Application</span><span class="p">.</span><span class="n">platform</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">RuntimePlatform</span><span class="p">.</span><span class="n">WindowsPlayer</span><span class="p">,</span>
+</code></pre>
+<h3 id="what-settings-are-for"><a class="anchor" href="#what-settings-are-for" aria-hidden="true">#</a>Para qué son los ajustes</h3>
+<p>Los ajustes son para cómo se ve, suena y se maneja el juego en esa computadora. Todo lo que afecte a otros jugadores o a las reglas (PvP encendido o apagado, reparto del botín) va en el servidor, en un sistema del jugador con un comando, no en <code>PlayerPrefs</code>. Para teclas propias, revisa <code>GameInstance.KeysOn</code> antes de leerlas: con la disposición de entrada <em>Touch</em> las teclas del juego están apagadas.</p>
+<h2 id="when-to-register"><a class="anchor" href="#when-to-register" aria-hidden="true">#</a>Cuándo registrar</h2>
+<p>El kit rearma <code>ItemMenu.Entries</code> y <code>PlayerMenu.Entries</code> con sus propias líneas, y vacía <code>ClientOptions.All</code>, en <code>SubsystemRegistration</code> al inicio de cada Play. Registra las tuyas en <code>AfterAssembliesLoaded</code> o después. La ventana Settings lee la lista cuando se abre, así que aparecen las opciones agregadas en cualquier momento antes de eso.</p>
+<p>Los servidores de mapa se ejecutan en modo batch y nunca abren estos menús; registrar ahí no hace daño.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
+<ul>
+<li><strong>Registrar en <code>SubsystemRegistration</code>.</strong> El kit puede reiniciar la lista después de ti.</li>
+<li><strong>Hacer el cambio en <code>run</code>.</strong> Los menús son código de cliente; pídeselo al servidor.</li>
+<li><strong>Sin <code>reset</code>.</strong> El botón Reset de la pestaña deja tu opción como estaba.</li>
+<li><strong>Reglas del juego en <code>PlayerPrefs</code>.</strong> Los jugadores pueden editarlas.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li>
+<li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li>
+<li><a href="player-systems.html">Sistemas del jugador</a></li>
+<li><a href="domain-reload.html">Play sin recarga de dominio</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="overriding-kit-behaviour.html"><span>Anterior</span>Cambiar el comportamiento del kit</a><a class="next" href="editor-extensions.html"><span>Siguiente</span>Extensiones del editor</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fmenus-and-settings-options.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#item-menu">Menú de ítems</a></li><li class="l3"><a href="#itemmenuentry">ItemMenuEntry</a></li><li class="l3"><a href="#itemmenutarget">ItemMenuTarget</a></li><li class="l3"><a href="#example-compare-with-what-you-wear">Ejemplo: comparar con lo que llevas puesto</a></li><li class="l3"><a href="#example-insert-a-line-at-a-position">Ejemplo: insertar una línea en una posición</a></li><li class="l3"><a href="#lines-that-change-the-game">Líneas que cambian el juego</a></li><li class="l2"><a href="#player-menu">Menú del jugador</a></li><li class="l3"><a href="#playermenuentry">PlayerMenuEntry</a></li><li class="l3"><a href="#playermenutarget">PlayerMenuTarget</a></li><li class="l3"><a href="#example-inspect-a-player-s-gear">Ejemplo: inspeccionar el equipo de un jugador</a></li><li class="l3"><a href="#example-a-line-for-one-of-your-modules">Ejemplo: una línea para uno de tus módulos</a></li><li class="l2"><a href="#settings-window">Ventana Settings</a></li><li class="l3"><a href="#kinds-of-option">Tipos de opción</a></li><li class="l3"><a href="#example-the-template">Ejemplo: la plantilla</a></li><li class="l3"><a href="#example-a-slider-and-a-choice-on-a-page-of-your-own">Ejemplo: un deslizador y una elección en una página propia</a></li><li class="l3"><a href="#example-an-option-only-on-some-platforms">Ejemplo: una opción solo en algunas plataformas</a></li><li class="l3"><a href="#what-settings-are-for">Para qué son los ajustes</a></li><li class="l2"><a href="#when-to-register">Cuándo registrar</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

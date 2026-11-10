@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Módulos de servicios · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/service-modules.html">English</option><option value="service-modules.html" selected>Español</option><option value="../../pt/devkit/service-modules.html">Português</option><option value="../../zh/devkit/service-modules.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Introducción al DevKit</a></li><li><a href="assemblies.html">Ensamblados</a></li><li><a href="templates.html">Plantillas</a></li><li><a href="skill-effects.html">Efectos de skills</a></li><li><a href="item-effects.html">Efectos de ítems</a></li><li><a href="conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="quest-objectives.html">Objetivos de misión</a></li><li><a href="npc-options.html">Opciones de NPC</a></li><li><a href="player-systems.html">Sistemas del jugador</a></li><li><a href="network-messages.html">Mensajes de red</a></li><li><a href="gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Guardar datos</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="editor-extensions.html">Extensiones del editor</a></li><li><a href="kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="talking-to-central.html">Hablar con Central</a></li><li><a href="service-modules.html" class="on" aria-current="page">Módulos de servicios</a></li><li><a href="game-modes-in-code.html">Modos de juego en código</a></li><li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="domain-reload.html">Play sin recarga de dominio</a></li><li><a href="security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Módulos de servicios</h1><p>Cómo ampliar los servicios Login y Central con módulos .NET propios: las interfaces de módulo, los mensajes de los mapas, los endpoints HTTP, tus propias tablas en la base de datos y sus migraciones, cómo compilar e instalar, y las reglas de seguridad para módulos.</p>
+<h2 id="what-a-module-is"><a class="anchor" href="#what-a-module-is" aria-hidden="true">#</a>Qué es un módulo</h2>
+<p>Login y Central son servicios ASP.NET Core (.NET 10). No los editas: un juego les agrega código como <strong>módulos</strong>, bibliotecas de clases que los servicios cargan al arrancar desde una carpeta. Un módulo puede:</p>
+<ul>
+<li>atender mensajes de los servidores de mapa y responderlos (Central),</li>
+<li>tener sus propias tablas en la base de datos del kit, con sus propias migraciones,</li>
+<li>agregar endpoints HTTP (Login o Central),</li>
+<li>registrar servicios en el contenedor de inyección de dependencias.</li>
+</ul>
+<p>Actualizar el kit reemplaza el código de los servicios pero nunca toca tus módulos.</p>
+<p>Escribe un módulo de Central para datos que abarcan varios mapas o personajes (rankings, eventos del mundo). Escribe un módulo de Login para funciones del lado de la cuenta a las que se llega por HTTP. Para el lado de Unity de los mensajes de mapa, consulta <a href="talking-to-central.html">Hablar con Central</a>.</p>
+<h2 id="the-contract"><a class="anchor" href="#the-contract" aria-hidden="true">#</a>El contrato</h2>
+<p>Los módulos referencian un proyecto pequeño, <code>Services/Modules/KitARPG.Services.Modules.csproj</code> (namespace <code>Blunnyn.KitARPG.Services.Modules</code>). Se mantiene pequeño para que los módulos sigan compilando entre actualizaciones del kit. En el paquete de la Asset Store los servicios están en <code>Assets/Blunnyn/KitARPG/Services~</code> (el kit los desempaqueta de <code>Services.zip</code>), así que la ruta es <code>Services~/Modules/...</code>.</p>
+<h3 id="ikitmodule"><a class="anchor" href="#ikitmodule" aria-hidden="true">#</a>IKitModule</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string Name</code></td>
+<td>Único entre los módulos del servicio: letras, dígitos y guiones bajos, hasta 40.</td>
+</tr>
+<tr>
+<td><code>void ConfigureServices(IServiceCollection services, IConfiguration configuration)</code></td>
+<td>Registra servicios y la base de datos del módulo. Corre antes de que se arme el servicio. Opcional.</td>
+</tr>
+<tr>
+<td><code>void MapEndpoints(IEndpointRouteBuilder endpoints)</code></td>
+<td>Agrega endpoints HTTP. Están abiertos a cualquiera salvo que llamen a <code>RequireAuthorization()</code>. Opcional.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Un módulo es una clase pública con un constructor público sin parámetros que implementa una de estas:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Interfaz</th>
+<th>Servicio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ILoginModule</code></td>
+<td>Login</td>
+</tr>
+<tr>
+<td><code>ICentralModule</code></td>
+<td>Central. Agrega <code>void OnMapLink(IMapLink link)</code>, que se llama una vez al arrancar: registra ahí cada manejador de mensajes de mapa.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="imaplink"><a class="anchor" href="#imaplink" aria-hidden="true">#</a>IMapLink</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IServiceProvider Services</code></td>
+<td>Los servicios de Central: scopes, loggers, tu <code>DbContext</code>.</td>
+</tr>
+<tr>
+<td><code>void On&lt;T&gt;(Func&lt;MapMessage&lt;T&gt;, Task&gt; handler)</code></td>
+<td>Atiende cada <code>T</code> que envía un mapa, por nombre de clase. Los nombres del kit, y los que ya tomó otro módulo, se rechazan al arrancar.</td>
+</tr>
+<tr>
+<td><code>bool Send(string mapId, object message)</code></td>
+<td>Envía a un mapa. False cuando no está conectado.</td>
+</tr>
+<tr>
+<td><code>bool SendToCharacter(long characterId, object message)</code></td>
+<td>Envía al mapa en el que está jugando el personaje. False cuando no está jugando.</td>
+</tr>
+<tr>
+<td><code>void Broadcast(object message)</code></td>
+<td>Envía a todos los mapas conectados.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapmessage-t"><a class="anchor" href="#mapmessage-t" aria-hidden="true">#</a>MapMessage&lt;T&gt;</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string MapId</code></td>
+<td>El mapa que lo envió.</td>
+</tr>
+<tr>
+<td><code>T Message</code></td>
+<td>El mensaje.</td>
+</tr>
+<tr>
+<td><code>void Reply(object message)</code></td>
+<td>Envía un mensaje de vuelta a ese mapa.</td>
+</tr>
+<tr>
+<td><code>bool Hosts(long characterId)</code></td>
+<td>True solo cuando ese personaje está jugando en el mapa que envió esto.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Un mapa está autenticado, pero habla por sus jugadores. Revisa <code>Hosts(characterId)</code> antes de actuar por un personaje, para que un mapa comprometido no pueda actuar por jugadores que no tiene.</p>
+<h3 id="addmoduledatabase"><a class="anchor" href="#addmoduledatabase" aria-hidden="true">#</a>AddModuleDatabase</h3>
+<pre class="code"><code class="language-csharp"><span class="n">services</span><span class="p">.</span><span class="n">AddModuleDatabase</span><span class="o">&lt;</span><span class="n">TContext</span><span class="o">&gt;</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</code></pre>
+<p>Registra tu <code>DbContext</code> sobre la base de datos y el proveedor del kit (<code>Database:Provider</code>, <code>Database:ConnectionString</code>), con su propia tabla de historial de migraciones <code>__ModuleMigrations_&lt;name&gt;</code>. Tus migraciones corren al arrancar, después de las del kit, cuando <code>Database:MigrateOnStartup</code> está encendido (el valor por defecto).</p>
+<h2 id="making-a-central-module-step-by-step"><a class="anchor" href="#making-a-central-module-step-by-step" aria-hidden="true">#</a>Crear un módulo de Central, paso a paso</h2>
+<h3 id="1-the-project"><a class="anchor" href="#1-the-project" aria-hidden="true">#</a>1. El proyecto</h3>
+<p>Crea una biblioteca de clases junto a tu proyecto de Unity, por ejemplo <code>Services/MyGame.Central/MyGame.Central.csproj</code>. El archivo de proyecto del ejemplo de recompensas:</p>
+<pre class="code"><code class="language-xml"><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+<span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+<span class="w">    </span><span class="nt">&lt;RootNamespace&gt;</span>Game.Bounties<span class="nt">&lt;/RootNamespace&gt;</span>
+<span class="w">    </span><span class="nt">&lt;EnableDynamicLoading&gt;</span>true<span class="nt">&lt;/EnableDynamicLoading&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- The linked messages are Unity code, written without nullable annotations. --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;NoWarn&gt;</span>$(NoWarn);CS8618<span class="nt">&lt;/NoWarn&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- Central already has these; Private and ExcludeAssets keep copies out of the module folder. --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ProjectReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;..\..\Modules\KitARPG.Services.Modules.csproj&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Private&gt;</span>false<span class="nt">&lt;/Private&gt;</span>
+<span class="w">      </span><span class="nt">&lt;ExcludeAssets&gt;</span>runtime;native<span class="nt">&lt;/ExcludeAssets&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ProjectReference&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- The same message file Unity compiles. --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Compile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;$(KitFolder)DevKit/Example/Bounties/Shared/BountyBoardMessages.cs&quot;</span><span class="w"> </span><span class="na">Link=</span><span class="s">&quot;Shared/BountyBoardMessages.cs&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;Target</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;CopyToKitModules&quot;</span><span class="w"> </span><span class="na">AfterTargets=</span><span class="s">&quot;Build&quot;</span><span class="w"> </span><span class="na">Condition=</span><span class="s">&quot;&#39;$(KitModulesDir)&#39; != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PropertyGroup&gt;</span>
+<span class="w">      </span><span class="nt">&lt;KitModuleFolder&gt;</span>$([System.IO.Path]::GetFullPath(&#39;$(KitModulesDir)&#39;,<span class="w"> </span>&#39;$(MSBuildStartupDirectory)&#39;))/$(AssemblyName)<span class="nt">&lt;/KitModuleFolder&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ItemGroup&gt;</span>
+<span class="w">      </span><span class="nt">&lt;ModuleFiles</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;$(OutDir)**/*&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ItemGroup&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Copy</span><span class="w"> </span><span class="na">SourceFiles=</span><span class="s">&quot;@(ModuleFiles)&quot;</span><span class="w"> </span><span class="na">DestinationFolder=</span><span class="s">&quot;$(KitModuleFolder)/%(RecursiveDir)&quot;</span><span class="w"> </span><span class="na">SkipUnchangedFiles=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Message</span><span class="w"> </span><span class="na">Importance=</span><span class="s">&quot;high&quot;</span><span class="w"> </span><span class="na">Text=</span><span class="s">&quot;Module copied to $(KitModuleFolder)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/Target&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre>
+<ul>
+<li><code>EnableDynamicLoading</code> hace que la salida de la compilación lleve lo que necesita un plugin.</li>
+<li><code>Private=false</code> deja la DLL del propio contrato fuera de la carpeta de tu módulo, y <code>ExcludeAssets=runtime;native</code> deja fuera los archivos de ejecución y nativos de los paquetes que llegan a través de él (EF Core, Npgsql). Tu código igual compila contra ellos; al ejecutarse se usan las copias del propio servicio.</li>
+<li><code>$(KitFolder)</code> viene de <code>Services/Directory.Build.props</code>: la carpeta del kit en el proyecto de Unity. Enlaza tu propio archivo de mensajes desde la carpeta de tu juego de la misma forma, con una ruta relativa.</li>
+<li>El target <code>CopyToKitModules</code> copia la compilación en <code>&lt;KitModulesDir&gt;/&lt;AssemblyName&gt;/</code> cuando pasas <code>-p:KitModulesDir=...</code>.</li>
+</ul>
+<p>Agrega los paquetes que necesite tu módulo. <code>Microsoft.EntityFrameworkCore</code> y los proveedores de SQLite y PostgreSQL llegan a través del contrato, solo para compilar, como se describe arriba.</p>
+<h3 id="2-the-module-class"><a class="anchor" href="#2-the-module-class" aria-hidden="true">#</a>2. La clase del módulo</h3>
+<p>El módulo del ejemplo de recompensas, que lleva un ranking de recompensas cumplidas:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Services.Modules</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Extensions.Configuration</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Extensions.DependencyInjection</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Extensions.Logging</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game.Bounties</span><span class="p">;</span>
+
+<span class="c1">/// &lt;summary&gt;Counts finished bounties per character and answers the board&#39;s ranking.&lt;/summary&gt;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountiesModule</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICentralModule</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TopCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MaxNameLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// One writer at a time, so two bounties finished together can&#39;t both insert the same row.</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="n">SemaphoreSlim</span><span class="w"> </span><span class="n">writing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">IServiceScopeFactory</span><span class="w"> </span><span class="n">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ILogger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Bounties&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span><span class="w"> </span><span class="n">services</span><span class="p">,</span><span class="w"> </span><span class="n">IConfiguration</span><span class="w"> </span><span class="n">configuration</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="n">services</span><span class="p">.</span><span class="n">AddModuleDatabase</span><span class="o">&lt;</span><span class="n">BountyContext</span><span class="o">&gt;</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMapLink</span><span class="p">(</span><span class="n">IMapLink</span><span class="w"> </span><span class="n">link</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">link</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">IServiceScopeFactory</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">link</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">ILoggerFactory</span><span class="o">&gt;</span><span class="p">().</span><span class="n">CreateLogger</span><span class="o">&lt;</span><span class="n">BountiesModule</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">link</span><span class="p">.</span><span class="n">On</span><span class="o">&lt;</span><span class="n">BountyFinished</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Finished</span><span class="p">);</span>
+<span class="w">        </span><span class="n">link</span><span class="p">.</span><span class="n">On</span><span class="o">&lt;</span><span class="n">BountyBoardAsk</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Ask</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">Finished</span><span class="p">(</span><span class="n">MapMessage</span><span class="o">&lt;</span><span class="n">BountyFinished</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">BountyFinished</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">Message</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="o">?.</span><span class="n">Trim</span><span class="p">()</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">MaxNameLength</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">m</span><span class="p">.</span><span class="n">Hosts</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">characterId</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">log</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Ignored a bounty from {Map} for character {Character}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">MapId</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">characterId</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">writing</span><span class="p">.</span><span class="n">WaitAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="k">try</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scopes</span><span class="p">.</span><span class="n">CreateScope</span><span class="p">();</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">BountyContext</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">Hunters</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">characterId</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">Hunters</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyHunterRow</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CharacterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">characterId</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">});</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">row</span><span class="p">.</span><span class="n">Count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">finally</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">writing</span><span class="p">.</span><span class="n">Release</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">Ask</span><span class="p">(</span><span class="n">MapMessage</span><span class="o">&lt;</span><span class="n">BountyBoardAsk</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">Message</span><span class="p">.</span><span class="n">characterId</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">m</span><span class="p">.</span><span class="n">Hosts</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scopes</span><span class="p">.</span><span class="n">CreateScope</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">BountyContext</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">Hunters</span><span class="p">.</span><span class="n">AsNoTracking</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">Count</span><span class="p">).</span><span class="n">ThenBy</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">CharacterId</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Take</span><span class="p">(</span><span class="n">TopCount</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BountyHunter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">bounties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="p">})</span>
+<span class="w">            </span><span class="p">.</span><span class="n">ToArrayAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">Hunters</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">CharacterId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">id</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">Count</span><span class="p">).</span><span class="n">FirstOrDefaultAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="n">m</span><span class="p">.</span><span class="n">Reply</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountyBoardList</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">characterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="n">mine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mine</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Puntos a copiar:</p>
+<ul>
+<li><strong>Una sola instancia del módulo atiende a todos los mapas.</strong> <code>DbContext</code> tiene alcance (scoped), así que cada manejador crea su propio scope con <code>IServiceScopeFactory</code>.</li>
+<li><strong>Los manejadores corren fuera del hilo de red y en paralelo.</strong> Dos mensajes pueden terminar en cualquier orden, y dos manejadores pueden correr a la vez. El ejemplo pone sus escrituras en fila con un <code>SemaphoreSlim</code>; un índice único con un reintento también serviría.</li>
+<li><strong>Valida cada campo</strong> (largos, rangos) y <strong>revisa <code>Hosts</code></strong> antes de actuar.</li>
+<li><strong>Registra los rechazos en el log</strong> con el id del mapa, para que un mapa que se porta mal aparezca en el log de Central.</li>
+</ul>
+<h3 id="3-your-tables"><a class="anchor" href="#3-your-tables" aria-hidden="true">#</a>3. Tus tablas</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game.Bounties</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyHunterRow</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">CharacterId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Count</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">/// &lt;summary&gt;The module&#39;s own table, next to the kit&#39;s in the same database.&lt;/summary&gt;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyContext</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">BountyContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="o">&lt;</span><span class="n">BountyContext</span><span class="o">&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">BountyHunterRow</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Hunters</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">BountyHunterRow</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span><span class="w"> </span><span class="n">model</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">model</span><span class="p">.</span><span class="n">Entity</span><span class="o">&lt;</span><span class="n">BountyHunterRow</span><span class="o">&gt;</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="n">ToTable</span><span class="p">(</span><span class="s">&quot;bounty_hunters&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="n">HasKey</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">CharacterId</span><span class="p">);</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">CharacterId</span><span class="p">).</span><span class="n">HasColumnName</span><span class="p">(</span><span class="s">&quot;character_id&quot;</span><span class="p">).</span><span class="n">ValueGeneratedNever</span><span class="p">();</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">HasColumnName</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="n">BountiesModule</span><span class="p">.</span><span class="n">MaxNameLength</span><span class="p">);</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">Count</span><span class="p">).</span><span class="n">HasColumnName</span><span class="p">(</span><span class="s">&quot;count&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="n">HasIndex</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Reglas para las tablas de módulos:</p>
+<ul>
+<li><strong>Nunca crees, cambies ni borres las tablas del kit.</strong> Eso es trabajo de las migraciones del kit, y una actualización se rompería contra tus cambios. Lee los datos del kit con mensajes desde los mapas, no a través de sus tablas.</li>
+<li><strong>Ponle prefijo a tus tablas</strong> con el nombre de tu función (<code>bounty_hunters</code>).</li>
+<li><strong>Los ids de personaje son estables.</strong> Usa <code>character_id</code> como clave de las filas por personaje, como hace el ejemplo. Las filas de personajes borrados se quedan hasta que las quites.</li>
+</ul>
+<h3 id="4-migrations"><a class="anchor" href="#4-migrations" aria-hidden="true">#</a>4. Migraciones</h3>
+<p>Genera las migraciones con las herramientas de EF Core. Necesitan <code>Microsoft.EntityFrameworkCore.Design</code> y una fábrica de tiempo de diseño mientras las corres:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.EntityFrameworkCore.Design</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game.Bounties</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountyContextFactory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IDesignTimeDbContextFactory</span><span class="o">&lt;</span><span class="n">BountyContext</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">BountyContext</span><span class="w"> </span><span class="nf">CreateDbContext</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="k">new</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DbContextOptionsBuilder</span><span class="o">&lt;</span><span class="n">BountyContext</span><span class="o">&gt;</span><span class="p">().</span><span class="n">UseSqlite</span><span class="p">(</span><span class="s">&quot;Data Source=design.db&quot;</span><span class="p">).</span><span class="n">Options</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services
+dotnet<span class="w"> </span>ef<span class="w"> </span>migrations<span class="w"> </span>add<span class="w"> </span>BountyHunters<span class="w"> </span>--project<span class="w"> </span>Examples/Bounties
+</code></pre>
+<p>Un solo juego de migraciones sirve para SQLite y PostgreSQL cuando los tipos de columna se dejan al proveedor. Quita cada argumento <code>type:</code> y cada llamada a <code>HasColumnType</code> de la migración generada, como hace el ejemplo:</p>
+<pre class="code"><code class="language-csharp"><span class="n">character_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">Column</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">nullable</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">),</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">Column</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">maxLength</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="n">nullable</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">),</span>
+<span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">Column</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">nullable</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">)</span>
+</code></pre>
+<p><code>AddModuleDatabase</code> registra en el log la advertencia de &quot;pending model changes&quot; en vez de fallar por ella, porque los tipos de la instantánea difieren entre proveedores. Si necesitas tipos propios de un proveedor, ten un contexto por proveedor.</p>
+<h3 id="5-build-and-install"><a class="anchor" href="#5-build-and-install" aria-hidden="true">#</a>5. Compilar e instalar</h3>
+<p>Cada servicio carga los módulos desde su <em>Modules Path</em> (<code>Modules:Path</code>, por defecto <code>modules</code>, relativo a la raíz de contenido del servicio): una carpeta por módulo, con el mismo nombre que su dll.</p>
+<pre class="code"><code class="language-">modules/
+    Game.Bounties.Central/
+        Game.Bounties.Central.dll
+        (its own dependencies)
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Cómo corres los servicios</th>
+<th>Carpeta de Login</th>
+<th>Carpeta de Central</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El lanzador (y Play &amp; Servers)</td>
+<td><code>modules/login</code> junto a <code>launcher.json</code> (<code>ModulesFolder</code> en <code>launcher.json</code>)</td>
+<td><code>modules/central</code></td>
+</tr>
+<tr>
+<td>Docker Compose</td>
+<td><code>Deploy/modules/login</code>, montada de solo lectura</td>
+<td><code>Deploy/modules/central</code>, montada de solo lectura</td>
+</tr>
+</tbody>
+</table></div>
+<p>Compila directo en la carpeta:</p>
+<pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services
+dotnet<span class="w"> </span>build<span class="w"> </span>Examples/Bounties<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-p:KitModulesDir<span class="o">=</span>&lt;launcher<span class="w"> </span>folder&gt;/modules/central
+dotnet<span class="w"> </span>build<span class="w"> </span>Examples/Bounties<span class="w"> </span>-c<span class="w"> </span>Release<span class="w"> </span>-p:KitModulesDir<span class="o">=</span>../Deploy/modules/central<span class="w">   </span><span class="c1"># Docker</span>
+</code></pre>
+<p>En el editor, <code>launcher.json</code> vive en <code>UserSettings/KitARPG</code>, así que la carpeta del lanzador es <code>UserSettings/KitARPG</code> y los módulos van en <code>UserSettings/KitARPG/modules/central</code>.</p>
+<p>Reinicia el servicio. Su log lista cada módulo: <code>Module Bounties loaded from .../Game.Bounties.Central.dll (SHA-256 ...)</code>. Los módulos se cargan una vez, al arrancar; para actualizar uno, reemplaza su carpeta y reinicia.</p>
+<h2 id="endpoints"><a class="anchor" href="#endpoints" aria-hidden="true">#</a>Endpoints</h2>
+<p><code>MapEndpoints</code> agrega endpoints de API mínima al servicio. Son públicos salvo que llamen a <code>RequireAuthorization()</code>, que revisa el token de Login del jugador (un JWT de vida corta). El id de la cuenta es el claim <code>sub</code> del token:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Security.Claims</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Services.Modules</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Builder</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Http</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Routing</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewsModule</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ILoginModule</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;News&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MapEndpoints</span><span class="p">(</span><span class="n">IEndpointRouteBuilder</span><span class="w"> </span><span class="n">endpoints</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Anyone, for the title screen.</span>
+<span class="w">        </span><span class="n">endpoints</span><span class="p">.</span><span class="n">MapGet</span><span class="p">(</span><span class="s">&quot;/api/news&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">Ok</span><span class="p">(</span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Welcome to the open beta.&quot;</span><span class="w"> </span><span class="p">}));</span>
+
+<span class="w">        </span><span class="c1">// Only logged-in players.</span>
+<span class="w">        </span><span class="n">endpoints</span><span class="p">.</span><span class="n">MapGet</span><span class="p">(</span><span class="s">&quot;/api/news/mine&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">ClaimsPrincipal</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="kt">long</span><span class="p">.</span><span class="n">TryParse</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">FindFirstValue</span><span class="p">(</span><span class="s">&quot;sub&quot;</span><span class="p">),</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">accountId</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">Unauthorized</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">Ok</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">accountId</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}).</span><span class="n">RequireAuthorization</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Ponle a tus rutas el prefijo del nombre de tu juego para no chocar con las del kit. Valida cada entrada y limita lo que cada llamada puede hacer o leer: los endpoints dan a internet.</p>
+<h2 id="loading-and-security"><a class="anchor" href="#loading-and-security" aria-hidden="true">#</a>Carga y seguridad</h2>
+<p>Un módulo corre dentro del servicio con todos sus permisos, igual que el código propio del kit. Solo el operador del servidor instala módulos.</p>
+<ul>
+<li>Solo se lee la carpeta configurada, nunca una ruta que venga de una petición o de un mapa.</li>
+<li><em>Modules Allow</em> (<code>Modules:Allow</code>, o <code>Modules__Allow__0</code>, <code>Modules__Allow__1</code> como variables de entorno) lista los nombres de dll permitidos. Si está puesto, cualquier otro módulo detiene el servicio.</li>
+<li>El log nombra cada módulo con su archivo y su SHA-256. El ensamblado se carga desde los mismos bytes a los que se les calculó el hash.</li>
+<li><strong>Falla cerrado:</strong> un módulo que no logra cargarse, configurar sus servicios, registrar sus manejadores de mensajes, mapear sus endpoints o migrar detiene el servicio con el error. Una dll suelta en la carpeta de módulos, o una carpeta sin su dll, también lo detienen.</li>
+<li>En Docker las carpetas de módulos se montan de solo lectura.</li>
+<li>Cada módulo tiene su propio contexto de carga. Los ensamblados que el servicio ya tiene (el kit, ASP.NET Core, EF Core, Npgsql) siempre vienen del servicio, así que las interfaces y entidades de tu módulo son los mismos tipos que ve el servicio; todo lo demás viene de la carpeta del módulo.</li>
+</ul>
+<h2 id="testing"><a class="anchor" href="#testing" aria-hidden="true">#</a>Pruebas</h2>
+<p><code>AddKitModule</code> registra un módulo creado en código, sin carpeta, para pruebas o para un host propio:</p>
+<pre class="code"><code class="language-csharp"><span class="n">services</span><span class="p">.</span><span class="n">AddKitModule</span><span class="o">&lt;</span><span class="n">ICentralModule</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BountiesModule</span><span class="p">(),</span><span class="w"> </span><span class="n">configuration</span><span class="p">);</span>
+</code></pre>
+<p>Las pruebas del propio kit (<code>Services/Tests/ModuleTests.cs</code>) corren Central con módulos de prueba de esta forma.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
+<ul>
+<li><strong>Copiar el contrato o EF Core en la carpeta del módulo.</strong> Usa <code>Private=false</code> y <code>ExcludeAssets</code> en la referencia.</li>
+<li><strong>Una clase de módulo sin constructor público sin parámetros.</strong> No se puede crear.</li>
+<li><strong>Atender un nombre de mensaje del kit.</strong> Central se niega a arrancar.</li>
+<li><strong>Actuar sin <code>Hosts</code>.</strong> Un mapa podría actuar por jugadores que no tiene.</li>
+<li><strong>Tipos de columna en las migraciones.</strong> Se rompen en el otro proveedor.</li>
+<li><strong>Endpoints sin <code>RequireAuthorization()</code></strong> que devuelven datos privados.</li>
+<li><strong>Trabajo largo en un manejador sin scope,</strong> o compartir un mismo <code>DbContext</code> entre manejadores.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="talking-to-central.html">Hablar con Central</a></li>
+<li><a href="../servers/services.html">Servicios</a></li>
+<li><a href="../servers/launcher.html">Lanzador</a></li>
+<li><a href="../servers/docker.html">Docker</a></li>
+<li><a href="../servers/database.html">Base de datos</a></li>
+<li><a href="example-bounty-board.html">Ejemplo: tablero de recompensas</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="talking-to-central.html"><span>Anterior</span>Hablar con Central</a><a class="next" href="game-modes-in-code.html"><span>Siguiente</span>Modos de juego en código</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fdevkit%2Fservice-modules.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-a-module-is">Qué es un módulo</a></li><li class="l2"><a href="#the-contract">El contrato</a></li><li class="l3"><a href="#ikitmodule">IKitModule</a></li><li class="l3"><a href="#imaplink">IMapLink</a></li><li class="l3"><a href="#mapmessage-t">MapMessage&amp;lt;T&amp;gt;</a></li><li class="l3"><a href="#addmoduledatabase">AddModuleDatabase</a></li><li class="l2"><a href="#making-a-central-module-step-by-step">Crear un módulo de Central, paso a paso</a></li><li class="l3"><a href="#1-the-project">1. El proyecto</a></li><li class="l3"><a href="#2-the-module-class">2. La clase del módulo</a></li><li class="l3"><a href="#3-your-tables">3. Tus tablas</a></li><li class="l3"><a href="#4-migrations">4. Migraciones</a></li><li class="l3"><a href="#5-build-and-install">5. Compilar e instalar</a></li><li class="l2"><a href="#endpoints">Endpoints</a></li><li class="l2"><a href="#loading-and-security">Carga y seguridad</a></li><li class="l2"><a href="#testing">Pruebas</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

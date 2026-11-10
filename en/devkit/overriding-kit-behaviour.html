@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overriding kit behaviour · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="overriding-kit-behaviour.html" selected>English</option><option value="../../es/devkit/overriding-kit-behaviour.html">Español</option><option value="../../pt/devkit/overriding-kit-behaviour.html">Português</option><option value="../../zh/devkit/overriding-kit-behaviour.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li><li><a href="npc-options.html">NPC options</a></li><li><a href="player-systems.html">Player systems</a></li><li><a href="network-messages.html">Network messages</a></li><li><a href="gm-commands-in-code.html">GM commands in code</a></li><li><a href="formulas.html">Formulas</a></li><li><a href="saving-data.html">Saving data</a></li><li><a href="events.html">Events</a></li><li><a href="overriding-kit-behaviour.html" class="on" aria-current="page">Overriding kit behaviour</a></li><li><a href="menus-and-settings-options.html">Menus and settings options</a></li><li><a href="editor-extensions.html">Editor extensions</a></li><li><a href="kit-updates-in-code.html">Kit updates in code</a></li><li><a href="talking-to-central.html">Talking to Central</a></li><li><a href="service-modules.html">Service modules</a></li><li><a href="game-modes-in-code.html">Game modes in code</a></li><li><a href="example-bounty-board.html">Example: bounty board</a></li><li><a href="domain-reload.html">Play without domain reload</a></li><li><a href="security-rules.html">Security rules</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/faq.html">FAQ</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li><li><a href="../reference/glossary.html">Glossary</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Overriding kit behaviour</h1><p>How to change what one of the kit's components does, without editing it: subclass the window, player system, monster or NPC component, override its virtual methods, and swap the component on the prefab.</p>
+<h2 id="when-to-override"><a class="anchor" href="#when-to-override" aria-hidden="true">#</a>When to override</h2>
+<p>Most changes need less than this. Before overriding, check:</p>
+<ul>
+<li>a setting in <strong>Game Settings</strong> or on the component,</li>
+<li>an event to react to (<a href="events.html">Events</a>),</li>
+<li>a formula (<a href="formulas.html">Formulas</a>),</li>
+<li>an effect, condition, action, objective or NPC option of your own.</li>
+</ul>
+<p>Override when the kit's own flow must go differently: a window that reads its text from your localization, a monster with its own way of taking damage, a mail system that refuses letters with links.</p>
+<p><strong>Where the file goes:</strong> the <code>Game</code> assembly, since the component lives on prefabs that every build loads.</p>
+<h2 id="what-can-be-overridden"><a class="anchor" href="#what-can-be-overridden" aria-hidden="true">#</a>What can be overridden</h2>
+<p>The kit keeps these open for subclasses:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>In</th>
+<th>What is virtual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows and HUD parts (<code>KitARPG.Client</code>)</td>
+<td>Unity methods (<code>Awake</code>, <code>OnEnable</code>, <code>OnDisable</code>, <code>Update</code>, <code>OnDestroy</code>) are <code>protected virtual</code>, plus methods meant to change, such as <code>ShopWindow.Describe</code> (error text)</td>
+</tr>
+<tr>
+<td>Player systems (<code>PlayerInventory</code>, <code>PlayerSkills</code>, <code>PlayerQuests</code>, <code>PlayerMail</code> and the rest)</td>
+<td>Unity methods <code>protected virtual</code>; server methods <code>Server...</code> <code>public virtual</code> (or <code>protected virtual</code> for internal steps, such as <code>PlayerMail.ServerAnnounce(MailList)</code>)</td>
+</tr>
+<tr>
+<td><code>Monster</code></td>
+<td>Unity methods, <code>ServerSetup</code>, <code>ServerDamage</code>, <code>ServerHeal</code>, <code>ServerAddBuff</code>, <code>ServerRemoveBuffs</code>, <code>ServerKnock</code>, <code>ServerRevive</code>, <code>ServerDespawn</code>, <code>Think</code>, <code>TryCast</code>, <code>RunPhase</code>, and more</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter</code></td>
+<td><code>ServerSetup</code>, <code>ServerHeal</code>, <code>ServerAddExperience</code>, <code>ServerTryAttack</code>, <code>ServerAnnounce(string, Color)</code> and other server methods</td>
+</tr>
+</tbody>
+</table></div>
+<p>The API reference in <code>Assets/Blunnyn/KitARPG/Documentation/API/</code> lists every <code>virtual</code> member. Methods that aren't virtual are not meant to change; read the class to find the virtual step that covers what you need.</p>
+<h2 id="how-to-swap-a-component"><a class="anchor" href="#how-to-swap-a-component" aria-hidden="true">#</a>How to swap a component</h2>
+<ol>
+<li>
+<p>Write your subclass and let it compile.</p>
+</li>
+<li>
+<p>Open the prefab that holds the kit's component:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Prefab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player systems, <code>PlayerCharacter</code></td>
+<td>Every player model prefab (<strong>KitARPG &gt; Game Database &gt; Models</strong>)</td>
+</tr>
+<tr>
+<td>Windows and HUD parts</td>
+<td>The HUD prefab (<code>GameInstance.hudPrefab</code>, in <strong>Game Settings &gt; Interface</strong>)</td>
+</tr>
+<tr>
+<td><code>Monster</code></td>
+<td>Each monster's prefab (the <em>Prefab</em> field of the monster in the Game Database)</td>
+</tr>
+<tr>
+<td><code>Npc</code></td>
+<td>The NPC object in its scene</td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li>
+<p>On the kit's component, open the menu (the three dots) and pick <strong>Copy Component</strong>.</p>
+</li>
+<li>
+<p>Add your component. On it, pick <strong>Paste Component Values</strong>: every field the kit's component had is copied, since your class inherits them.</p>
+</li>
+<li>
+<p>Remove the kit's component.</p>
+</li>
+<li>
+<p>Save the prefab. For player systems, repeat on every player model prefab.</p>
+</li>
+</ol>
+<p>Kit code finds components with <code>GetComponent&lt;PlayerMail&gt;()</code> and similar calls, which return your subclass too. Nothing else needs to change.</p>
+<div class="callout warning"><div class="callout-title">Warning</div><p>On networked prefabs (players, monsters), the position of the component in the list matters to Mirror. Replacing a component moves the new one to the end, which is fine as long as client and server builds use the same prefab. Never swap components at runtime or in one build only.</p>
+</div>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Player System Override</strong> makes a subclass of <code>PlayerMail</code>:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Central</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// Changes how one of the kit&#39;s player systems behaves, here the mail, without editing the kit.</span>
+<span class="w">    </span><span class="c1">/// On every player model prefab, remove the kit&#39;s component and add this one in its place</span>
+<span class="w">    </span><span class="c1">/// (Copy Component, then Paste Component Values, keeps the settings).</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyPlayerMail</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayerMail</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Server methods decide for every player; call base for whatever you keep.</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerAnnounce</span><span class="p">(</span><span class="n">MailList</span><span class="w"> </span><span class="n">list</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">base</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Unity methods are protected virtual too.</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">base</span><span class="p">.</span><span class="n">Awake</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="example-a-monster-that-halves-damage"><a class="anchor" href="#example-a-monster-that-halves-damage" aria-hidden="true">#</a>Example: a monster that halves damage</h2>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A monster with armor: every hit is reduced before it lands.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ArmoredMonster</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Monster</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[Range(0, 1)]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">reduction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerDamage</span><span class="p">(</span><span class="n">Hit</span><span class="w"> </span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">IFighter</span><span class="w"> </span><span class="n">source</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">hit</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">RoundToInt</span><span class="p">(</span><span class="n">hit</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">reduction</span><span class="p">)));</span>
+<span class="w">            </span><span class="k">base</span><span class="p">.</span><span class="n">ServerDamage</span><span class="p">(</span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Swap <code>Monster</code> for <code>ArmoredMonster</code> on that monster's prefab. Other monsters keep the kit's component.</p>
+<h2 id="example-localized-shop-messages"><a class="anchor" href="#example-localized-shop-messages" aria-hidden="true">#</a>Example: localized shop messages</h2>
+<p><code>ShopWindow.Describe</code> turns error codes into sentences and is meant to be overridden:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyShopWindow</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ShopWindow</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">NpcErrors</span><span class="p">.</span><span class="n">NotEnoughMoney</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Localize</span><span class="p">(</span><span class="s">&quot;shop.no_money&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">NpcErrors</span><span class="p">.</span><span class="n">OutOfStock</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Localize</span><span class="p">(</span><span class="s">&quot;shop.sold_out&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="k">default</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Describe</span><span class="p">(</span><span class="n">code</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Localize</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w"> </span><span class="c1">// your localization lookup</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Swap it on the HUD prefab, under its <em>Windows</em> group.</p>
+<h2 id="example-a-rule-on-every-item-use"><a class="anchor" href="#example-a-rule-on-every-item-use" aria-hidden="true">#</a>Example: a rule on every item use</h2>
+<p><code>PlayerInventory.UseItem</code> is the server step that makes an item do its thing. False keeps the item:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyPlayerInventory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayerInventory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">UseItem</span><span class="p">(</span><span class="n">IUsable</span><span class="w"> </span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// No potions inside the arena maps.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">CooldownGroup</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;potion&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">gameObject</span><span class="p">.</span><span class="n">scene</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&quot;Arena&quot;</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">UseItem</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="example-a-mailbox-that-opens-from-a-level"><a class="anchor" href="#example-a-mailbox-that-opens-from-a-level" aria-hidden="true">#</a>Example: a mailbox that opens from a level</h2>
+<p><code>PlayerMail.ServerOpen</code> runs when a mailbox NPC opens the mail for a player:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">LevelGatedMail</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayerMail</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">minLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">ServerOpen</span><span class="p">(</span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">level</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">minLevel</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">$&quot;The mailbox opens at level {minLevel}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.45f</span><span class="p">));</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">ServerOpen</span><span class="p">(</span><span class="n">npc</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>The same rule could be a condition on the mailbox NPC's option, with no code. Overriding is for rules that must hold wherever the system is reached from.</p>
+<p>Server methods decide for every player. Read the base method before overriding it, and call <code>base</code> for every step you keep.</p>
+<h2 id="server-and-client-overrides"><a class="anchor" href="#server-and-client-overrides" aria-hidden="true">#</a>Server and client overrides</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Override</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A <code>Server...</code> method</td>
+<td>Changes the rule for every player on that map server. Online, the map server build is what counts.</td>
+</tr>
+<tr>
+<td>A Unity method or a window method</td>
+<td>Changes what that player sees and how they ask. A modified client can undo it, so never rely on it for rules.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Anything a client-side override sends to the server must be checked again on the server, by the kit or by a server override of yours.</p>
+<h2 id="statics-in-the-base-class"><a class="anchor" href="#statics-in-the-base-class" aria-hidden="true">#</a>Statics in the base class</h2>
+<p>Player systems set statics such as <code>PlayerMail.Local</code> in their own <code>OnStartAuthority</code>. If you override <code>OnStartAuthority</code>, <code>OnStopAuthority</code>, <code>Awake</code> or any Unity method, call <code>base</code> first, or those statics stay empty and the kit's windows stop finding your component.</p>
+<h2 id="kit-updates-and-your-subclasses"><a class="anchor" href="#kit-updates-and-your-subclasses" aria-hidden="true">#</a>Kit updates and your subclasses</h2>
+<p>Kit updates check for the kit's components with <code>GetComponent</code> too, so a prefab with your subclass counts as having the component: the update doesn't add a second one. Updates that add fields to a kit component reach your subclass as well, since it inherits them.</p>
+<p>When a kit release changes a virtual method you override (new parameters, a method removed), your code stops compiling and the changelog says what changed. Keep overrides small and call <code>base</code> so new behaviour in the kit reaches your game.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Not calling <code>base</code></strong> in Unity methods. Statics, subscriptions and synced collections set up by the base class are missing.</li>
+<li><strong>Copying a whole kit class</strong> instead of subclassing. Updates no longer reach it.</li>
+<li><strong>Forgetting a player model.</strong> Each model is its own prefab; one with the kit's component behaves differently.</li>
+<li><strong>Client overrides that enforce rules.</strong> Do it on the server.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="player-systems.html">Player systems</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="kit-updates-in-code.html">Kit updates in code</a></li>
+<li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="events.html"><span>Previous</span>Events</a><a class="next" href="menus-and-settings-options.html"><span>Next</span>Menus and settings options</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Foverriding-kit-behaviour.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#when-to-override">When to override</a></li><li class="l2"><a href="#what-can-be-overridden">What can be overridden</a></li><li class="l2"><a href="#how-to-swap-a-component">How to swap a component</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-a-monster-that-halves-damage">Example: a monster that halves damage</a></li><li class="l2"><a href="#example-localized-shop-messages">Example: localized shop messages</a></li><li class="l2"><a href="#example-a-rule-on-every-item-use">Example: a rule on every item use</a></li><li class="l2"><a href="#example-a-mailbox-that-opens-from-a-level">Example: a mailbox that opens from a level</a></li><li class="l2"><a href="#server-and-client-overrides">Server and client overrides</a></li><li class="l2"><a href="#statics-in-the-base-class">Statics in the base class</a></li><li class="l2"><a href="#kit-updates-and-your-subclasses">Kit updates and your subclasses</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

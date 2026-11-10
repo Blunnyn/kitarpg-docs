@@ -1,187 +1,196 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Conditions and actions in code · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Condições e ações em código · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/conditions-and-actions-in-code.html">English</option><option value="../../es/devkit/conditions-and-actions-in-code.html">Español</option><option value="conditions-and-actions-in-code.html" selected>Português</option><option value="../../zh/devkit/conditions-and-actions-in-code.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html" class="on" aria-current="page">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">DevKit</div><h1>Conditions and actions in code</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>How to write your own conditions (rules a player must meet) and actions (things done to a player), what they can read and change, where the kit runs them, and how to use them in data of your own.</p>
-<h2 id="what-they-are"><a class="anchor" href="#what-they-are" aria-hidden="true">#</a>What they are</h2>
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Visão geral do DevKit</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Efeitos de habilidades</a></li><li><a href="item-effects.html">Efeitos de itens</a></li><li><a href="conditions-and-actions-in-code.html" class="on" aria-current="page">Condições e ações em código</a></li><li><a href="quest-objectives.html">Objetivos de missão</a></li><li><a href="npc-options.html">Opções de NPC</a></li><li><a href="player-systems.html">Sistemas do jogador</a></li><li><a href="network-messages.html">Mensagens de rede</a></li><li><a href="gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Salvando dados</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="editor-extensions.html">Extensões do editor</a></li><li><a href="kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="talking-to-central.html">Falando com o Central</a></li><li><a href="service-modules.html">Módulos de serviço</a></li><li><a href="game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="domain-reload.html">Play sem domain reload</a></li><li><a href="security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Condições e ações em código</h1><p>Como escrever as suas próprias condições (regras que um jogador precisa cumprir) e ações (coisas feitas a um jogador), o que elas podem ler e mudar, onde o kit as executa e como usá-las em dados seus.</p>
+<h2 id="what-they-are"><a class="anchor" href="#what-they-are" aria-hidden="true">#</a>O que são</h2>
 <ul>
-<li>A <strong>condition</strong> answers yes or no about a player: &quot;level 10 or more&quot;, &quot;has finished the Old Mill quest&quot;, &quot;it is night&quot;. Quests, NPC options, NPC greetings and world triggers have lists of them.</li>
-<li>An <strong>action</strong> changes a player: pay gold, take an item, set a story flag, start a quest. Dialogue lines, quests (on accept and on complete) and world triggers have lists of them.</li>
+<li>Uma <strong>condição</strong> responde sim ou não sobre um jogador: &quot;nível 10 ou mais&quot;, &quot;terminou a missão Old Mill&quot;, &quot;é noite&quot;. Missões, opções de NPC, saudações de NPC e gatilhos do mundo têm listas delas.</li>
+<li>Uma <strong>ação</strong> muda um jogador: pagar ouro, tirar um item, definir uma marca de história, iniciar uma missão. Falas de diálogo, missões (ao aceitar e ao concluir) e gatilhos do mundo têm listas delas.</li>
 </ul>
-<p>The designer-facing side is on <a href="../content/conditions-and-actions.html">Conditions and actions</a>. This page is about writing new kinds.</p>
-<p>Both are <code>[Serializable]</code> classes held with <code>[SerializeReference, PickType]</code>. Your class shows in every list's <strong>+</strong> menu once it compiles.</p>
-<p><strong>Where the files go:</strong> the <code>Game</code> assembly. Conditions run on the client too, so they must be in every build.</p>
-<h2 id="where-the-kit-uses-them"><a class="anchor" href="#where-the-kit-uses-them" aria-hidden="true">#</a>Where the kit uses them</h2>
+<p>O lado voltado para quem desenha o jogo está em <a href="../content/conditions-and-actions.html">Condições e ações</a>. Esta página trata de escrever tipos novos.</p>
+<p>As duas são classes <code>[Serializable]</code> guardadas com <code>[SerializeReference, PickType]</code>. A sua classe aparece no menu <strong>+</strong> de toda lista assim que compila.</p>
+<p><strong>Onde ficam os arquivos:</strong> no assembly <code>Game</code>. As condições também rodam no cliente, então precisam estar em todo build.</p>
+<h2 id="where-the-kit-uses-them"><a class="anchor" href="#where-the-kit-uses-them" aria-hidden="true">#</a>Onde o kit as usa</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Kind</th>
-<th>Checked or run on</th>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Verificado ou executado em</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>QuestData.conditions</code></td>
-<td>Conditions</td>
-<td>Server when taking the quest; owner's client for quest markers and the quest window</td>
+<td>Condições</td>
+<td>Servidor ao pegar a missão; cliente do dono para os marcadores de missão e a janela de missões</td>
 </tr>
 <tr>
 <td><code>QuestData.onAccept</code>, <code>QuestData.onComplete</code></td>
-<td>Actions</td>
-<td>Server</td>
+<td>Ações</td>
+<td>Servidor</td>
 </tr>
 <tr>
 <td><code>NpcOption.conditions</code></td>
-<td>Conditions</td>
-<td>Server, when listing an NPC's options</td>
+<td>Condições</td>
+<td>Servidor, ao listar as opções de um NPC</td>
 </tr>
 <tr>
 <td><code>Npc.greetings[].conditions</code></td>
-<td>Conditions</td>
-<td>Server, to pick the greeting</td>
+<td>Condições</td>
+<td>Servidor, para escolher a saudação</td>
 </tr>
 <tr>
 <td><code>DialogueOption.actions</code></td>
-<td>Actions</td>
-<td>Server, when the line is picked</td>
+<td>Ações</td>
+<td>Servidor, quando a fala é escolhida</td>
 </tr>
 <tr>
 <td><code>WorldTrigger.conditions</code>, <code>WorldTrigger.actions</code></td>
-<td>Both</td>
-<td>Server, when the trigger fires</td>
+<td>Ambos</td>
+<td>Servidor, quando o gatilho dispara</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="conditions"><a class="anchor" href="#conditions" aria-hidden="true">#</a>Conditions</h2>
-<h3 id="the-facts-a-condition-reads"><a class="anchor" href="#the-facts-a-condition-reads" aria-hidden="true">#</a>The facts a condition reads</h3>
-<p><code>Met(IPlayerFacts facts)</code> gets the player through <code>IPlayerFacts</code> (namespace <code>Blunnyn.KitARPG.Data</code>). Everything on it works both on the server and on the owner's client.</p>
+<h2 id="conditions"><a class="anchor" href="#conditions" aria-hidden="true">#</a>Condições</h2>
+<h3 id="the-facts-a-condition-reads"><a class="anchor" href="#the-facts-a-condition-reads" aria-hidden="true">#</a>Os fatos que uma condição lê</h3>
+<p><code>Met(IPlayerFacts facts)</code> recebe o jogador por meio de <code>IPlayerFacts</code> (namespace <code>Blunnyn.KitARPG.Data</code>). Tudo nela funciona tanto no servidor quanto no cliente do dono.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it returns</th>
+<th>Membro</th>
+<th>O que devolve</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>int Level</code></td>
-<td>The character's level.</td>
+<td>O nível do personagem.</td>
 </tr>
 <tr>
 <td><code>CharacterClass Class</code></td>
-<td>Its class.</td>
+<td>A sua classe.</td>
 </tr>
 <tr>
 <td><code>MapData Map</code></td>
-<td>The map it is on, if the map is in the database.</td>
+<td>O mapa em que ele está, se o mapa estiver no banco de dados.</td>
 </tr>
 <tr>
 <td><code>int CountItem(string itemId)</code></td>
-<td>How many of an item it carries in the bag.</td>
+<td>Quantos de um item ele carrega na bolsa.</td>
 </tr>
 <tr>
 <td><code>bool Wears(string itemId)</code></td>
-<td>Whether it wears the item (cosmetics not counted).</td>
+<td>Se ele veste o item (cosméticos não contam).</td>
 </tr>
 <tr>
 <td><code>long Balance(CurrencyData currency)</code></td>
-<td>Gold for a null currency, or that currency's amount.</td>
+<td>Ouro para uma moeda null, ou a quantia dessa moeda.</td>
 </tr>
 <tr>
 <td><code>int SkillRank(SkillData skill)</code></td>
-<td>Rank of a skill, 0 when not learned.</td>
+<td>O rank de uma habilidade, 0 se não aprendida.</td>
 </tr>
 <tr>
 <td><code>int Attribute(AttributeData attribute)</code></td>
-<td>The attribute's total: class, spent points and gear.</td>
+<td>O total do atributo: classe, pontos gastos e equipamento.</td>
 </tr>
 <tr>
 <td><code>bool HasStatus(StatusData status)</code></td>
-<td>Whether the status is on it now.</td>
+<td>Se o estado está nele agora.</td>
 </tr>
 <tr>
 <td><code>QuestState QuestStateOf(QuestData quest)</code></td>
-<td>Locked, Available, Active, Ready or Done.</td>
+<td>Locked, Available, Active, Ready ou Done.</td>
 </tr>
 <tr>
 <td><code>bool HasDone(QuestData quest)</code></td>
-<td>Turned in at least once.</td>
+<td>Entregue pelo menos uma vez.</td>
 </tr>
 <tr>
 <td><code>bool HasDiscovered(string placeId)</code></td>
-<td>A map or zone id it has been to.</td>
+<td>Um id de mapa ou de zona em que ele já esteve.</td>
 </tr>
 <tr>
 <td><code>int Flag(string key)</code></td>
-<td>A story flag; 0 when never set.</td>
+<td>Uma marca de história; 0 se nunca definida.</td>
 </tr>
 </tbody>
 </table></div>
-<p>The object behind it is a <code>PlayerActor</code>, which also implements <code>IPlayerActor</code>. When you need a component of the player, cast and use <code>Self</code>:</p>
+<p>O objeto por trás é um <code>PlayerActor</code>, que também implementa <code>IPlayerActor</code>. Quando você precisar de um componente do jogador, faça o cast e use <code>Self</code>:</p>
 <pre class="code"><code class="language-csharp"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">facts</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Self</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre>
-<h3 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h3>
+<h3 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>A classe base</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
+<th>Membro</th>
+<th>O que faz</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>string failText</code></td>
-<td>Inspector field <em>Fail Text</em>: shown when the condition isn't met. Empty uses <code>DefaultText</code>.</td>
+<td>Campo do inspector <em>Fail Text</em>: mostrado quando a condição não é cumprida. Vazio usa <code>DefaultText</code>.</td>
 </tr>
 <tr>
 <td><code>string Text</code></td>
-<td><code>failText</code> or <code>DefaultText</code>.</td>
+<td><code>failText</code> ou <code>DefaultText</code>.</td>
 </tr>
 <tr>
-<td><code>abstract string DefaultText { get; }</code></td>
-<td>Your default reason, like &quot;Needs level 5&quot;. Required.</td>
+<td><code>protected abstract string DefaultText { get; }</code></td>
+<td>O seu motivo padrão, como &quot;Needs level 5&quot;. Obrigatório.</td>
 </tr>
 <tr>
 <td><code>abstract bool Met(IPlayerFacts facts)</code></td>
-<td>Your rule. Required.</td>
+<td>A sua regra. Obrigatório.</td>
 </tr>
 <tr>
 <td><code>virtual void Visit(Action&lt;GameData&gt; visit)</code></td>
-<td>Hand over every asset the condition points at.</td>
+<td>Entrega todo asset para o qual a condição aponta.</td>
 </tr>
 <tr>
 <td><code>static string Check(Condition[] conditions, IPlayerFacts facts)</code></td>
-<td>The first condition not met, as text, or null when all are. Use it on your own lists.</td>
+<td>A primeira condição não cumprida, como texto, ou null quando todas são. Use nas suas próprias listas.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h3>
-<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewCondition</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Condition</span>
+<h3 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Exemplo: o template</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.mark&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">atLeast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A rule quests, dialog lines and NPC options can ask for. Lists of conditions show it on their own.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewCondition</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Condition</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.mark&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">atLeast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Not yet&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Not yet&quot;</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Met</span><span class="p">(</span><span class="n">IPlayerFacts</span><span class="w"> </span><span class="n">facts</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">facts</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">atLeast</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Runs on the server and on the owner&#39;s client, so the client can show what is locked.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Met</span><span class="p">(</span><span class="n">IPlayerFacts</span><span class="w"> </span><span class="n">facts</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">facts</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">atLeast</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="example-health-above-a-share"><a class="anchor" href="#example-health-above-a-share" aria-hidden="true">#</a>Example: health above a share</h3>
-<p>Uses <code>Self</code> to read the player's health, which is synced to everyone, so it works on both sides.</p>
+<h3 id="example-health-above-a-share"><a class="anchor" href="#example-health-above-a-share" aria-hidden="true">#</a>Exemplo: vida acima de uma fração</h3>
+<p>Usa <code>Self</code> para ler a vida do jogador, que é sincronizada para todos, então funciona dos dois lados.</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
@@ -204,8 +213,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="example-wears-an-item-from-a-set"><a class="anchor" href="#example-wears-an-item-from-a-set" aria-hidden="true">#</a>Example: wears an item from a set</h3>
-<p>Reads assets, so it hands them to <code>Visit</code>.</p>
+<h3 id="example-wears-an-item-from-a-set"><a class="anchor" href="#example-wears-an-item-from-a-set" aria-hidden="true">#</a>Exemplo: veste um item de um conjunto</h3>
+<p>Lê assets, então os entrega a <code>Visit</code>.</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">WearsAnyCondition</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Condition</span>
 <span class="p">{</span>
@@ -226,136 +235,145 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="built-in-conditions"><a class="anchor" href="#built-in-conditions" aria-hidden="true">#</a>Built-in conditions</h3>
-<p><code>LevelCondition</code>, <code>ClassCondition</code>, <code>QuestCondition</code> (with <code>QuestCheck</code>: NotStarted, Available, Taken, InProgress, Ready, Done, NotDone, NotTaken), <code>ItemCondition</code>, <code>EquippedCondition</code>, <code>CurrencyCondition</code>, <code>DiscoveredCondition</code>, <code>MapCondition</code>, <code>SkillCondition</code>, <code>AttributeCondition</code>, <code>StatusCondition</code>, <code>FlagCondition</code> (Equal, NotEqual, AtLeast, AtMost), <code>TimeCondition</code> (game hours or real UTC days and hours), and the groups <code>AnyCondition</code>, <code>AllCondition</code> and <code>NotCondition</code>. Combine those before writing a new one: &quot;level 10 and not on the quest&quot; is two existing conditions.</p>
-<h3 id="conditions-run-on-the-client"><a class="anchor" href="#conditions-run-on-the-client" aria-hidden="true">#</a>Conditions run on the client</h3>
-<p>The owner's client evaluates quest conditions to show quest markers over NPCs and the state in the quest window. That has two consequences:</p>
+<h3 id="built-in-conditions"><a class="anchor" href="#built-in-conditions" aria-hidden="true">#</a>Condições incluídas</h3>
+<p><code>LevelCondition</code>, <code>ClassCondition</code>, <code>QuestCondition</code> (com <code>QuestCheck</code>: NotStarted, Available, Taken, InProgress, Ready, Done, NotDone, NotTaken), <code>ItemCondition</code>, <code>EquippedCondition</code>, <code>CurrencyCondition</code>, <code>DiscoveredCondition</code>, <code>MapCondition</code>, <code>SkillCondition</code>, <code>AttributeCondition</code>, <code>StatusCondition</code>, <code>FlagCondition</code> (Equal, NotEqual, AtLeast, AtMost), <code>TimeCondition</code> (horas do jogo ou dias e horas reais em UTC), e os grupos <code>AnyCondition</code>, <code>AllCondition</code> e <code>NotCondition</code>. Combine essas antes de escrever uma nova: &quot;nível 10 e sem a missão&quot; são duas condições que já existem.</p>
+<h3 id="conditions-run-on-the-client"><a class="anchor" href="#conditions-run-on-the-client" aria-hidden="true">#</a>As condições rodam no cliente</h3>
+<p>O cliente do dono avalia as condições de missão para mostrar os marcadores de missão sobre os NPCs e o estado na janela de missões. Isso tem duas consequências:</p>
 <ul>
-<li><strong>Read only what the owner's client has.</strong> Flags, quests, the bag, gear, skills, statuses and level are synced to the owner. <code>PlayerData</code> values are not (they never leave the server), so a condition that reads them is always false on the client.</li>
-<li><strong>Never trust the client's answer.</strong> The server checks again before anything happens. A condition is a filter, not a lock the client holds.</li>
+<li><strong>Leia só o que o cliente do dono tem.</strong> Marcas, missões, a bolsa, o equipamento, as habilidades, os estados e o nível são sincronizados para o dono. Os valores de <code>PlayerData</code> não são (eles nunca saem do servidor), então uma condição que os lê é sempre falsa no cliente.</li>
+<li><strong>Nunca confie na resposta do cliente.</strong> O servidor verifica de novo antes de qualquer coisa acontecer. Uma condição é um filtro, não uma tranca que o cliente segura.</li>
 </ul>
-<h2 id="actions"><a class="anchor" href="#actions" aria-hidden="true">#</a>Actions</h2>
-<h3 id="what-an-action-can-do"><a class="anchor" href="#what-an-action-can-do" aria-hidden="true">#</a>What an action can do</h3>
-<p><code>Run(IPlayerActor actor)</code> gets the player through <code>IPlayerActor</code>, which extends <code>IPlayerFacts</code>. Its own members work on the server only.</p>
+<h2 id="actions"><a class="anchor" href="#actions" aria-hidden="true">#</a>Ações</h2>
+<h3 id="what-an-action-can-do"><a class="anchor" href="#what-an-action-can-do" aria-hidden="true">#</a>O que uma ação pode fazer</h3>
+<p><code>Run(IPlayerActor actor)</code> recebe o jogador por meio de <code>IPlayerActor</code>, que estende <code>IPlayerFacts</code>. Os membros próprios dela funcionam só no servidor.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
+<th>Membro</th>
+<th>O que faz</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>GameObject Self</code></td>
-<td>The player object, for components the interface doesn't cover.</td>
+<td>O objeto do jogador, para componentes que a interface não cobre.</td>
 </tr>
 <tr>
 <td><code>IItemUser User</code></td>
-<td>The player as items see it: experience, levels, points, skills, statuses, travel. See <a href="item-effects.html#iitemuser">Item effects</a>.</td>
+<td>O jogador como os itens o veem: experiência, níveis, pontos, habilidades, estados, viagem. Veja <a href="item-effects.html#iitemuser">Efeitos de itens</a>.</td>
 </tr>
 <tr>
 <td><code>string RoomFor(ItemData item, int amount)</code></td>
-<td>Why these won't fit in the bag, or null.</td>
+<td>Por que estes não cabem na bolsa, ou null.</td>
 </tr>
 <tr>
 <td><code>void GiveItem(ItemData item, int amount)</code></td>
-<td>Puts items in the bag.</td>
+<td>Coloca itens na bolsa.</td>
 </tr>
 <tr>
 <td><code>void TakeItem(ItemData item, int amount)</code></td>
-<td>Takes items from the bag.</td>
+<td>Tira itens da bolsa.</td>
 </tr>
 <tr>
 <td><code>void AddCurrency(CurrencyData currency, long amount)</code></td>
-<td>Negative takes. Gold for a null currency. Premium currencies go to the account through the shop service.</td>
+<td>Negativo tira. Ouro para uma moeda null. Moedas premium vão para a conta pelo serviço da loja.</td>
 </tr>
 <tr>
 <td><code>void SetFlag(string key, int value)</code></td>
-<td>Sets a story flag; 0 clears it. Saved with the character.</td>
+<td>Define uma marca de história; 0 a apaga. Salva com o personagem.</td>
 </tr>
 <tr>
 <td><code>void Discover(string placeId, string placeName)</code></td>
-<td>Marks a place as found.</td>
+<td>Marca um lugar como encontrado.</td>
 </tr>
 <tr>
 <td><code>string StartQuest(QuestData quest)</code></td>
-<td>Starts a quest. Returns why not, or null.</td>
+<td>Inicia uma missão. Devolve o motivo da recusa, ou null.</td>
 </tr>
 <tr>
 <td><code>void DropQuest(QuestData quest)</code></td>
-<td>Abandons it.</td>
+<td>Abandona a missão.</td>
 </tr>
 <tr>
 <td><code>void RemoveStatus(StatusData status)</code></td>
-<td>Takes a status off.</td>
+<td>Tira um estado.</td>
 </tr>
 <tr>
 <td><code>void Say(string text, Color color)</code></td>
-<td>Floating text over the player, only they see it.</td>
+<td>Texto flutuante sobre o jogador, que só ele vê.</td>
 </tr>
 <tr>
 <td><code>string FireTrigger(string triggerId)</code></td>
-<td>Sets off a world trigger on the player's map. Returns why not, or null.</td>
+<td>Dispara um gatilho do mundo no mapa do jogador. Devolve o motivo da recusa, ou null.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="the-base-class-2"><a class="anchor" href="#the-base-class-2" aria-hidden="true">#</a>The base class</h3>
+<h3 id="the-base-class-2"><a class="anchor" href="#the-base-class-2" aria-hidden="true">#</a>A classe base</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Membro</th>
+<th>O que faz</th>
+<th>Padrão</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>virtual string Check(IPlayerActor actor)</code></td>
-<td>Why it can't run now, or null.</td>
+<td>Por que ela não pode rodar agora, ou null.</td>
 <td><code>null</code></td>
 </tr>
 <tr>
 <td><code>abstract void Run(IPlayerActor actor)</code></td>
-<td>Does it. Required.</td>
+<td>Executa a ação. Obrigatório.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>virtual string Cost</code></td>
-<td>A price to show next to the dialogue line that runs it, like &quot;50 Gold&quot;.</td>
+<td>Um preço para mostrar ao lado da fala de diálogo que a executa, como &quot;50 Gold&quot;.</td>
 <td><code>null</code></td>
 </tr>
 <tr>
 <td><code>virtual void Visit(Action&lt;GameData&gt; visit)</code></td>
-<td>Hand over every asset it points at.</td>
-<td>Nothing</td>
+<td>Entrega todo asset para o qual ela aponta.</td>
+<td>Nada</td>
 </tr>
 <tr>
 <td><code>static string RunAll(GameAction[] actions, IPlayerActor actor)</code></td>
-<td>Checks every action, then runs them all. Returns the first reason it can't, or null.</td>
+<td>Verifica todas as ações e depois executa todas. Devolve o primeiro motivo pelo qual não pode, ou null.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>static string Costs(GameAction[] actions)</code></td>
-<td>The costs of a list joined, or null.</td>
+<td>Os custos de uma lista juntos, ou null.</td>
 <td></td>
 </tr>
 </tbody>
 </table></div>
-<p>A list is all or nothing: <code>RunAll</code> calls every <code>Check</code> first and only then every <code>Run</code>. Put every reason to refuse in <code>Check</code> and never fail inside <code>Run</code>.</p>
-<h3 id="example-the-template-2"><a class="anchor" href="#example-the-template-2" aria-hidden="true">#</a>Example: the template</h3>
-<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewAction</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">GameAction</span>
+<p>Uma lista é tudo ou nada: <code>RunAll</code> chama todo <code>Check</code> primeiro e só depois todo <code>Run</code>. Coloque todo motivo de recusa em <code>Check</code> e nunca falhe dentro de <code>Run</code>.</p>
+<h3 id="example-the-template-2"><a class="anchor" href="#example-the-template-2" aria-hidden="true">#</a>Exemplo: o template</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.mark&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Something done to a player from a dialog line or a quest reward. Server only.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewAction</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">GameAction</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.mark&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Every action of a list is checked before any runs; return why not, or null.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">add</span><span class="p">);</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">add</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="example-give-items-never-lose-them"><a class="anchor" href="#example-give-items-never-lose-them" aria-hidden="true">#</a>Example: give items, never lose them</h3>
-<p>The kit's <code>GiveItemAction</code> refuses when the bag is full. This one gives anyway: the bag, then the bank, then held until there is room.</p>
+<h3 id="example-give-items-never-lose-them"><a class="anchor" href="#example-give-items-never-lose-them" aria-hidden="true">#</a>Exemplo: dar itens, sem nunca perdê-los</h3>
+<p>O <code>GiveItemAction</code> do kit recusa quando a bolsa está cheia. Este dá de qualquer jeito: na bolsa, depois no banco, depois retido até haver espaço.</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
@@ -382,8 +400,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="example-a-priced-service-with-a-log-line"><a class="anchor" href="#example-a-priced-service-with-a-log-line" aria-hidden="true">#</a>Example: a priced service with a log line</h3>
-<p>Shows <code>Cost</code>, so the dialogue line reads &quot;Repair my armor (200 Gold)&quot;, and writes a game log line moderators can search.</p>
+<h3 id="example-a-priced-service-with-a-log-line"><a class="anchor" href="#example-a-priced-service-with-a-log-line" aria-hidden="true">#</a>Exemplo: um serviço pago com uma linha de registro</h3>
+<p>Mostra <code>Cost</code>, então uma fala de diálogo com o rótulo &quot;Heal me&quot; aparece como &quot;Heal me (200 Gold)&quot;, e escreve uma linha no registro do jogo que os moderadores podem pesquisar.</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PaidHealAction</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">GameAction</span>
 <span class="p">{</span>
@@ -405,10 +423,10 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="built-in-actions"><a class="anchor" href="#built-in-actions" aria-hidden="true">#</a>Built-in actions</h3>
-<p><code>GiveItemAction</code>, <code>TakeItemAction</code>, <code>GiveCurrencyAction</code>, <code>ChargeCurrencyAction</code>, <code>ExperienceAction</code>, <code>PointsAction</code>, <code>ResetAttributesAction</code>, <code>TeachSkillAction</code>, <code>AddStatusAction</code>, <code>RemoveStatusAction</code>, <code>RestoreAction</code>, <code>TravelAction</code>, <code>SetFlagAction</code>, <code>StartQuestAction</code>, <code>DropQuestAction</code>, <code>DiscoverAction</code>, <code>MessageAction</code> and <code>FireTriggerAction</code>.</p>
-<h2 id="using-lists-in-your-own-data"><a class="anchor" href="#using-lists-in-your-own-data" aria-hidden="true">#</a>Using lists in your own data</h2>
-<p>Any <code>ScriptableObject</code> or serializable class of yours can hold lists that designers fill from the same menus:</p>
+<h3 id="built-in-actions"><a class="anchor" href="#built-in-actions" aria-hidden="true">#</a>Ações incluídas</h3>
+<p><code>GiveItemAction</code>, <code>TakeItemAction</code>, <code>GiveCurrencyAction</code>, <code>ChargeCurrencyAction</code>, <code>ExperienceAction</code>, <code>PointsAction</code>, <code>ResetAttributesAction</code>, <code>TeachSkillAction</code>, <code>AddStatusAction</code>, <code>RemoveStatusAction</code>, <code>RestoreAction</code>, <code>TravelAction</code>, <code>SetFlagAction</code>, <code>StartQuestAction</code>, <code>DropQuestAction</code>, <code>DiscoverAction</code>, <code>MessageAction</code> e <code>FireTriggerAction</code>.</p>
+<h2 id="using-lists-in-your-own-data"><a class="anchor" href="#using-lists-in-your-own-data" aria-hidden="true">#</a>Usar listas nos seus próprios dados</h2>
+<p>Qualquer <code>ScriptableObject</code> ou classe serializável sua pode ter listas que os designers preenchem pelos mesmos menus:</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
 
@@ -419,58 +437,58 @@
 <span class="w">    </span><span class="na">[SerializeReference, PickType]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">GameAction</span><span class="p">[]</span><span class="w"> </span><span class="n">rewards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameAction</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre>
-<p>On the server:</p>
+<p>No servidor:</p>
 <pre class="code"><code class="language-csharp"><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">;</span>
 <span class="kt">string</span><span class="w"> </span><span class="n">why</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Condition</span><span class="p">.</span><span class="n">Check</span><span class="p">(</span><span class="n">chest</span><span class="p">.</span><span class="n">conditions</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="n">GameAction</span><span class="p">.</span><span class="n">RunAll</span><span class="p">(</span><span class="n">chest</span><span class="p">.</span><span class="n">rewards</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">);</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">why</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="n">why</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.45f</span><span class="p">));</span>
 </code></pre>
-<p>Without <code>[PickType]</code> the inspector shows a <code>[SerializeReference]</code> list with no way to pick a type. The bounty example's <code>BountyBoardData.rewards</code> is a list like this.</p>
-<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<p>Sem <code>[PickType]</code>, o inspector mostra uma lista <code>[SerializeReference]</code> sem como escolher um tipo. O <code>BountyBoardData.rewards</code> do exemplo de recompensas é uma lista assim.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Servidor e cliente</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Server</th>
-<th>Owner's client</th>
+<th>Servidor</th>
+<th>Cliente do dono</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Condition.Met</code></td>
-<td>Yes, and its answer is final</td>
-<td>Yes, to show locked content</td>
+<td>Sim, e a resposta é final</td>
+<td>Sim, para mostrar conteúdo bloqueado</td>
 </tr>
 <tr>
 <td><code>GameAction.Check</code>, <code>Run</code></td>
-<td>Yes</td>
-<td>Never</td>
+<td>Sim</td>
+<td>Nunca</td>
 </tr>
 <tr>
 <td><code>DefaultText</code>, <code>Cost</code></td>
-<td>Yes (sent as text)</td>
-<td>Yes</td>
+<td>Sim (enviado como texto)</td>
+<td>Sim</td>
 </tr>
 </tbody>
 </table></div>
-<p>Single player runs both on the same machine, with the same answers.</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<p>Em um jogador, os dois rodam na mesma máquina, com as mesmas respostas.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Erros comuns</h2>
 <ul>
-<li><strong>Reading server-only data in a condition</strong> (<code>PlayerData</code>, private server fields). The client shows the wrong state.</li>
-<li><strong>Failing inside <code>Run</code>.</strong> The list has already passed its checks, so the other actions ran. Check in <code>Check</code>.</li>
-<li><strong>Giving items through the raw inventory.</strong> Use <code>GiveItem</code>, <code>TakeItem</code> or <code>PlayerInventory</code> so the bag syncs and the save stays right.</li>
-<li><strong>Keeping per-player state in fields.</strong> One instance serves every player. Use flags or <code>PlayerData</code>.</li>
-<li><strong>Forgetting <code>Visit</code>.</strong> Assets only your class references may be left out of the game database.</li>
+<li><strong>Ler dados só de servidor em uma condição</strong> (<code>PlayerData</code>, campos privados do servidor). O cliente mostra o estado errado.</li>
+<li><strong>Falhar dentro de <code>Run</code>.</strong> A lista já passou pelas verificações, então as outras ações rodaram. Verifique em <code>Check</code>.</li>
+<li><strong>Dar itens pelo inventário cru.</strong> Use <code>GiveItem</code>, <code>TakeItem</code> ou <code>PlayerInventory</code> para que a bolsa sincronize e o salvamento fique certo.</li>
+<li><strong>Guardar estado por jogador em campos.</strong> Uma instância atende todos os jogadores. Use marcas ou <code>PlayerData</code>.</li>
+<li><strong>Esquecer <code>Visit</code>.</strong> Assets referenciados só pela sua classe podem ficar fora do banco de dados do jogo.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
-<li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li>
-<li><a href="../content/dialogues.html">Dialogues</a></li>
-<li><a href="quest-objectives.html">Quest objectives</a></li>
-<li><a href="npc-options.html">NPC options</a></li>
-<li><a href="saving-data.html">Saving data</a></li>
+<li><a href="../content/conditions-and-actions.html">Condições e ações</a></li>
+<li><a href="../content/dialogues.html">Diálogos</a></li>
+<li><a href="quest-objectives.html">Objetivos de missão</a></li>
+<li><a href="npc-options.html">Opções de NPC</a></li>
+<li><a href="saving-data.html">Salvar dados</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="item-effects.html"><span>Anterior</span>Item effects</a><a class="next" href="quest-objectives.html"><span>Próximo</span>Quest objectives</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fdevkit%2Fconditions-and-actions-in-code.html">Relatar um problema nesta página</a></div></main>
-  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-they-are">What they are</a></li><li class="l2"><a href="#where-the-kit-uses-them">Where the kit uses them</a></li><li class="l2"><a href="#conditions">Conditions</a></li><li class="l3"><a href="#the-facts-a-condition-reads">The facts a condition reads</a></li><li class="l3"><a href="#the-base-class">The base class</a></li><li class="l3"><a href="#example-the-template">Example: the template</a></li><li class="l3"><a href="#example-health-above-a-share">Example: health above a share</a></li><li class="l3"><a href="#example-wears-an-item-from-a-set">Example: wears an item from a set</a></li><li class="l3"><a href="#built-in-conditions">Built-in conditions</a></li><li class="l3"><a href="#conditions-run-on-the-client">Conditions run on the client</a></li><li class="l2"><a href="#actions">Actions</a></li><li class="l3"><a href="#what-an-action-can-do">What an action can do</a></li><li class="l3"><a href="#the-base-class-2">The base class</a></li><li class="l3"><a href="#example-the-template-2">Example: the template</a></li><li class="l3"><a href="#example-give-items-never-lose-them">Example: give items, never lose them</a></li><li class="l3"><a href="#example-a-priced-service-with-a-log-line">Example: a priced service with a log line</a></li><li class="l3"><a href="#built-in-actions">Built-in actions</a></li><li class="l2"><a href="#using-lists-in-your-own-data">Using lists in your own data</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="item-effects.html"><span>Anterior</span>Efeitos de itens</a><a class="next" href="quest-objectives.html"><span>Próximo</span>Objetivos de missão</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fdevkit%2Fconditions-and-actions-in-code.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-they-are">O que são</a></li><li class="l2"><a href="#where-the-kit-uses-them">Onde o kit as usa</a></li><li class="l2"><a href="#conditions">Condições</a></li><li class="l3"><a href="#the-facts-a-condition-reads">Os fatos que uma condição lê</a></li><li class="l3"><a href="#the-base-class">A classe base</a></li><li class="l3"><a href="#example-the-template">Exemplo: o template</a></li><li class="l3"><a href="#example-health-above-a-share">Exemplo: vida acima de uma fração</a></li><li class="l3"><a href="#example-wears-an-item-from-a-set">Exemplo: veste um item de um conjunto</a></li><li class="l3"><a href="#built-in-conditions">Condições incluídas</a></li><li class="l3"><a href="#conditions-run-on-the-client">As condições rodam no cliente</a></li><li class="l2"><a href="#actions">Ações</a></li><li class="l3"><a href="#what-an-action-can-do">O que uma ação pode fazer</a></li><li class="l3"><a href="#the-base-class-2">A classe base</a></li><li class="l3"><a href="#example-the-template-2">Exemplo: o template</a></li><li class="l3"><a href="#example-give-items-never-lose-them">Exemplo: dar itens, sem nunca perdê-los</a></li><li class="l3"><a href="#example-a-priced-service-with-a-log-line">Exemplo: um serviço pago com uma linha de registro</a></li><li class="l3"><a href="#built-in-actions">Ações incluídas</a></li><li class="l2"><a href="#using-lists-in-your-own-data">Usar listas nos seus próprios dados</a></li><li class="l2"><a href="#server-and-client">Servidor e cliente</a></li><li class="l2"><a href="#common-mistakes">Erros comuns</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
 <script src="../../assets/search-pt.js"></script>

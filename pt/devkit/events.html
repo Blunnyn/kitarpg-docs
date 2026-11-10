@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eventos · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/events.html">English</option><option value="../../es/devkit/events.html">Español</option><option value="events.html" selected>Português</option><option value="../../zh/devkit/events.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Visão geral do DevKit</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Efeitos de habilidades</a></li><li><a href="item-effects.html">Efeitos de itens</a></li><li><a href="conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="quest-objectives.html">Objetivos de missão</a></li><li><a href="npc-options.html">Opções de NPC</a></li><li><a href="player-systems.html">Sistemas do jogador</a></li><li><a href="network-messages.html">Mensagens de rede</a></li><li><a href="gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Salvando dados</a></li><li><a href="events.html" class="on" aria-current="page">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="editor-extensions.html">Extensões do editor</a></li><li><a href="kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="talking-to-central.html">Falando com o Central</a></li><li><a href="service-modules.html">Módulos de serviço</a></li><li><a href="game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="domain-reload.html">Play sem domain reload</a></li><li><a href="security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Eventos</h1><p>Todos os eventos que o kit dispara e que o seu código pode escutar, onde rodam, o que entregam, como se inscrever para que sobrevivam ao Play sem domain reload, e exemplos.</p>
+<h2 id="static-events"><a class="anchor" href="#static-events" aria-hidden="true">#</a>Eventos estáticos</h2>
+<p>A maioria dos eventos do kit é <code>static</code>: você se inscreve uma vez, para todos os jogadores ou monstros, a partir de uma classe estática sua. Eles são de três tipos:</p>
+<ul>
+<li><strong>Eventos do servidor</strong> começam com <code>Server</code> e rodam no servidor de mapa (e no host em um jogador). Use-os para regras: recompensas, progresso, registro.</li>
+<li><strong>Eventos do cliente do dono</strong> rodam no cliente do jogador em questão. Use-os para a interface.</li>
+<li><strong>Eventos do cliente</strong> rodam em todo cliente que vê aquilo, como os efeitos de combate.</li>
+</ul>
+<h2 id="subscribing-correctly"><a class="anchor" href="#subscribing-correctly" aria-hidden="true">#</a>Inscrevendo-se do jeito certo</h2>
+<p>O projeto do kit roda o Play sem domain reload, então toda classe limpa os seus eventos estáticos em um método <code>SubsystemRegistration</code> no início de cada Play. O Unity não define a ordem entre métodos <code>SubsystemRegistration</code>, então inscreva-se depois, em <code>AfterAssembliesLoaded</code>:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">LevelRewards</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnLevel</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>O <code>-=</code> antes do <code>+=</code> evita que você se inscreva duas vezes se o método rodar de novo. Inscreva-se com métodos nomeados, não com lambdas, para que o <code>-=</code> funcione. <code>AfterSceneLoad</code> também funciona; ele roda depois.</p>
+<p>Veja <a href="domain-reload.html">Play sem domain reload</a> para as regras completas.</p>
+<h2 id="server-events"><a class="anchor" href="#server-events" aria-hidden="true">#</a>Eventos do servidor</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Evento</th>
+<th>Argumentos</th>
+<th>Disparado quando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerCharacter.ServerSpawned</code></td>
+<td><code>PlayerCharacter</code></td>
+<td>Um jogador aparece neste mapa, depois de carregar o estado salvo.</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter.ServerLeveledUp</code></td>
+<td><code>PlayerCharacter</code></td>
+<td>Depois de ganhar um ou mais níveis.</td>
+</tr>
+<tr>
+<td><code>PlayerCharacter.ServerExperienceGained</code></td>
+<td><code>PlayerCharacter, long amount</code></td>
+<td>Experiência foi ganha, antes das subidas de nível.</td>
+</tr>
+<tr>
+<td><code>Monster.ServerKilled</code></td>
+<td><code>Monster, PlayerCharacter killer</code></td>
+<td>Um monstro morreu. O killer é o jogador que ganhou o abate, ou null.</td>
+</tr>
+<tr>
+<td><code>Monster.ServerPhaseStarted</code></td>
+<td><code>Monster, int phase</code></td>
+<td>Um chefe começou uma fase; o índice se refere a <code>phases</code> dos dados dele.</td>
+</tr>
+<tr>
+<td><code>PlayerQuests.ServerCompleted</code></td>
+<td><code>PlayerCharacter, QuestData</code></td>
+<td>Uma missão foi entregue.</td>
+</tr>
+<tr>
+<td><code>PlayerTrade.ServerTraded</code></td>
+<td><code>PlayerCharacter a, PlayerCharacter b</code></td>
+<td>Uma troca foi concluída.</td>
+</tr>
+<tr>
+<td><code>PlayerForge.ServerUpgraded</code></td>
+<td><code>PlayerCharacter, string itemId, bool success, int level</code></td>
+<td>Um aprimoramento deu certo (true) ou falhou (false); <code>level</code> é onde terminou, -1 quando a peça quebrou.</td>
+</tr>
+<tr>
+<td><code>PlayerProgress.ServerFlagChanged</code></td>
+<td><code>PlayerCharacter, string key, int value</code></td>
+<td>Uma marca do personagem mudou.</td>
+</tr>
+<tr>
+<td><code>PlayerProgress.ServerDiscovered</code></td>
+<td><code>PlayerCharacter, string placeId</code></td>
+<td>Um mapa ou zona foi descoberto.</td>
+</tr>
+<tr>
+<td><code>PlayerPvp.ServerDefeated</code></td>
+<td><code>PlayerCharacter killer, PlayerCharacter victim, bool duel</code></td>
+<td>Um jogador venceu outro, em PvP ou em duelo.</td>
+</tr>
+<tr>
+<td><code>WorldTrigger.ServerFired</code></td>
+<td><code>WorldTrigger, PlayerCharacter</code></td>
+<td>Um disparador do mundo foi acionado (nos disparadores &quot;para todos&quot;, o jogador que o acionou).</td>
+</tr>
+<tr>
+<td><code>GmCommands.ServerUsed</code></td>
+<td><code>PlayerCharacter, string line</code></td>
+<td>Um comando de barra está prestes a rodar. Assembly só de servidor.</td>
+</tr>
+<tr>
+<td><code>GmAudit.Recorded</code></td>
+<td><code>GmAuditEntry</code></td>
+<td>Uma linha de auditoria de GM foi registrada. Assembly só de servidor.</td>
+</tr>
+<tr>
+<td><code>MapInstances.ServerChanged</code></td>
+<td><code>string key, bool made</code></td>
+<td>Uma cópia de um mapa instanciado foi criada (true) ou liberada. Assembly só de servidor.</td>
+</tr>
+<tr>
+<td><code>GameLog.Written</code></td>
+<td><code>GameLogEntry</code></td>
+<td>Qualquer linha do registro do jogo, no momento em que é escrita.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="per-object-server-events"><a class="anchor" href="#per-object-server-events" aria-hidden="true">#</a>Eventos do servidor por objeto</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Evento</th>
+<th>Em</th>
+<th>Disparado quando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServerStatsChanged</code></td>
+<td>um <code>PlayerCharacter</code></td>
+<td>Stats ou estados mudaram: velocidade, atordoamentos e enraizamentos podem ser outros.</td>
+</tr>
+<tr>
+<td><code>ServerChanged</code></td>
+<td>um <code>PlayerInventory</code></td>
+<td>A bolsa ou o equipamento foi publicado para o dono.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="owner-s-client-events"><a class="anchor" href="#owner-s-client-events" aria-hidden="true">#</a>Eventos do cliente do dono</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Evento</th>
+<th>Argumentos</th>
+<th>Disparado quando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerCharacter.LocalSpawned</code></td>
+<td><code>PlayerCharacter</code></td>
+<td>O jogador local apareceu. É o momento de pedir ao servidor o estado do seu recurso.</td>
+</tr>
+<tr>
+<td><code>PlayerInventory.LocalSpawned</code></td>
+<td><code>PlayerInventory</code></td>
+<td>O inventário do jogador local apareceu.</td>
+</tr>
+<tr>
+<td><code>PlayerInventory.LootDropped</code>, <code>LootRemoved</code>, <code>LootOpened</code></td>
+<td><code>LootDrop</code>, <code>int</code>, <code>int</code></td>
+<td>Um saque pessoal apareceu, sumiu, ou um drop foi aberto.</td>
+</tr>
+<tr>
+<td><code>PlayerChat.Received</code></td>
+<td><code>ChatView</code></td>
+<td>Chegou uma linha de chat.</td>
+</tr>
+<tr>
+<td><code>PlayerMail.Arrived</code></td>
+<td><code>string from, string subject</code></td>
+<td>Chegou uma carta (cartas da loja retiradas na hora não contam).</td>
+</tr>
+<tr>
+<td><code>PlayerMail.Opened</code></td>
+<td>nenhum</td>
+<td>Um NPC abriu a caixa de correio.</td>
+</tr>
+<tr>
+<td><code>PlayerTrade.Asked</code>, <code>Opened</code>, <code>Changed</code>, <code>Closed</code></td>
+<td>nome; nome; duas ofertas; motivo</td>
+<td>Pedidos de troca e atualizações da janela de troca.</td>
+</tr>
+<tr>
+<td><code>PlayerParty.Invited</code></td>
+<td><code>string name</code></td>
+<td>Um convite de grupo.</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.Invited</code></td>
+<td><code>string from, string guild</code></td>
+<td>Um convite de guilda.</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.AllianceInvited</code></td>
+<td><code>string alliance, string guild</code></td>
+<td>Um convite de aliança.</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.BankOpened</code>, <code>PlayerBank.Opened</code>, <code>PlayerMarket.Opened</code>, <code>PlayerForge.Opened</code></td>
+<td><code>bool open</code></td>
+<td>Um NPC abriu (true) ou fechou (false) essa janela.</td>
+</tr>
+<tr>
+<td><code>PlayerGuild.FoundingOpened</code></td>
+<td>nenhum</td>
+<td>Um NPC abriu a fundação de guilda.</td>
+</tr>
+<tr>
+<td><code>PlayerForge.Result</code></td>
+<td><code>string text, bool good</code></td>
+<td>O que o último pedido à forja fez.</td>
+</tr>
+<tr>
+<td><code>PlayerPvp.Challenged</code></td>
+<td><code>string name</code></td>
+<td>Um desafio de duelo.</td>
+</tr>
+<tr>
+<td><code>PlayerQuests.Shown</code></td>
+<td><code>Npc, QuestData</code></td>
+<td>Um NPC mostrou uma missão.</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.Talked</code></td>
+<td><code>Npc, string text, int[] options, string[] labels, bool[] open</code></td>
+<td>Um NPC respondeu: o texto dele e as linhas na tela.</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.ShopOpened</code></td>
+<td><code>Npc, ShopOption, int[] stock</code></td>
+<td>Uma loja abriu.</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.StockChanged</code>, <code>BuybackChanged</code></td>
+<td>estoque; espaços e preços de recompra</td>
+<td>Atualizações da loja.</td>
+</tr>
+<tr>
+<td><code>PlayerInteraction.ErrorReceived</code></td>
+<td><code>string code</code></td>
+<td>Um pedido a um NPC foi recusado, ou uma opção de NPC devolveu texto.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Eventos do dono por objeto: <code>Changed</code> em <code>PlayerQuests</code>, <code>PlayerProgress</code>, <code>PlayerInventory</code>, <code>PlayerMail</code>, <code>PlayerParty</code>, <code>PlayerGuild</code>, <code>PlayerBank</code> e outros sistemas (o estado sincronizado deles mudou); <code>ErrorReceived</code> em <code>PlayerInventory</code> (um pedido de inventário foi recusado).</p>
+<h2 id="client-events-for-effects"><a class="anchor" href="#client-events-for-effects" aria-hidden="true">#</a>Eventos do cliente para efeitos</h2>
+<p><code>CombatEvents</code> (namespace <code>Blunnyn.KitARPG.Net</code>) conta a todo cliente o que aconteceu em combate por perto, para animações, efeitos, números de dano e sons:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Evento</th>
+<th>Argumentos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CombatEvents.Damaged</code></td>
+<td><code>Transform who, int amount, bool critical, DamageElement element, GameData source</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.Healed</code></td>
+<td><code>Transform who, int amount, GameData cause</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.Announced</code></td>
+<td><code>Transform who, string text, Color color</code> (texto curto sobre alguém, como &quot;+12 XP&quot;)</td>
+</tr>
+<tr>
+<td><code>CombatEvents.Shouted</code></td>
+<td><code>Transform boss, string text</code> (uma fala de fase de chefe)</td>
+</tr>
+<tr>
+<td><code>CombatEvents.SkillLanded</code></td>
+<td><code>Transform caster, SkillData skill, Vector3 point</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.ActionStarted</code></td>
+<td><code>ActionEvent</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.CastStarted</code>, <code>CastStopped</code></td>
+<td><code>Transform, SkillData, float seconds</code>; <code>Transform</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.Bounced</code></td>
+<td><code>SkillData, Transform from, Transform to</code></td>
+</tr>
+<tr>
+<td><code>CombatEvents.ZoneStarted</code></td>
+<td><code>SkillData, Vector3 where, float seconds</code></td>
+</tr>
+<tr>
+<td><code>FighterStatus.AnyChanged</code></td>
+<td><code>FighterStatus</code> (os estados de qualquer lutador mudaram)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Outros eventos gerais do cliente: <code>GameRates.Changed</code> (<code>RatesState</code>, um evento de experiência ou de saque começou ou terminou), <code>ClientOptions.Changed</code> (uma configuração mudou).</p>
+<p>Eventos do cliente por objeto: <code>Monster.Acted</code> (<code>CombatAction</code>) e <code>DeadChanged</code> (<code>bool</code>) nos monstros, <code>DeadChanged</code> nos jogadores.</p>
+<h2 id="network-manager-events"><a class="anchor" href="#network-manager-events" aria-hidden="true">#</a>Eventos do network manager</h2>
+<p><code>KitNetworkManager.Instance</code> dispara <code>ServerStarted</code>, <code>ServerStopping</code>, <code>ServerDisconnecting</code> (<code>NetworkConnectionToClient</code>), <code>ClientConnected</code> e <code>ClientDisconnected</code>. São eventos de instância em um objeto que é criado de novo a cada Play, e o objeto antigo some com seus inscritos, então inscreva-se em <code>AfterSceneLoad</code> sem <code>-=</code>. Eventos estáticos continuam com <code>-=</code> primeiro: inscreva-se neles antes de verificar se <code>Instance</code> é null, para que fiquem inscritos mesmo numa cena sem network manager. Veja <a href="network-messages.html">Mensagens de rede</a>.</p>
+<h2 id="examples"><a class="anchor" href="#examples" aria-hidden="true">#</a>Exemplos</h2>
+<h3 id="reward-every-fifth-level"><a class="anchor" href="#reward-every-fifth-level" aria-hidden="true">#</a>Recompensar a cada cinco níveis</h3>
+<p>Servidor, no assembly <code>Game</code>:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MilestoneRewards</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnLevel</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">level</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// A flag per milestone, so leveling down and up again (death penalties) pays once.</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;mygame.milestone_{player.level}&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">actor</span><span class="p">.</span><span class="n">AddCurrency</span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">$&quot;Level {player.level} milestone!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.85f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="welcome-back-message"><a class="anchor" href="#welcome-back-message" aria-hidden="true">#</a>Mensagem de boas-vindas</h3>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerSpawned</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnSpawned</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerSpawned</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnSpawned</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnSpawned</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerChat</span><span class="w"> </span><span class="n">chat</span><span class="p">))</span><span class="w"> </span><span class="n">chat</span><span class="p">.</span><span class="n">Tell</span><span class="p">(</span><span class="s">$&quot;Welcome back, {player.characterName}.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>ServerSpawned</code> dispara em cada mapa em que um personagem entra, não só ao fazer login.</p>
+<h3 id="kill-streaks-kept-in-memory"><a class="anchor" href="#kill-streaks-kept-in-memory" aria-hidden="true">#</a>Sequências de abates, guardadas na memória</h3>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">streaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">streaks</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerPvp</span><span class="p">.</span><span class="n">ServerDefeated</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnDefeated</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PlayerPvp</span><span class="p">.</span><span class="n">ServerDefeated</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnDefeated</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnKilled</span><span class="p">(</span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">streaks</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">killer</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="n">streaks</span><span class="p">[</span><span class="n">killer</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">killer</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">$&quot;{n} kills!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="n">yellow</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDefeated</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">victim</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">duel</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">streaks</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">victim</span><span class="p">);</span>
+</code></pre>
+<p>Dicionários com jogadores como chave crescem conforme os jogadores entram e saem. Remova as entradas quando eles saem (<code>KitNetworkManager.ServerDisconnecting</code>) ou ignore os destruídos (<code>player == null</code>).</p>
+<h3 id="a-sound-on-critical-hits"><a class="anchor" href="#a-sound-on-critical-hits" aria-hidden="true">#</a>Um som nos acertos críticos</h3>
+<p>Cliente, no assembly <code>Game</code>. O clipe é carregado de uma pasta <code>Resources</code> sua:</p>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="n">AudioClip</span><span class="w"> </span><span class="n">clip</span><span class="p">;</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="o">&lt;</span><span class="n">AudioClip</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;MyGame/CriticalHit&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">CombatEvents</span><span class="p">.</span><span class="n">Damaged</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnDamaged</span><span class="p">;</span>
+<span class="w">    </span><span class="n">CombatEvents</span><span class="p">.</span><span class="n">Damaged</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnDamaged</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDamaged</span><span class="p">(</span><span class="n">Transform</span><span class="w"> </span><span class="n">who</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">critical</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">GameData</span><span class="w"> </span><span class="n">source</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">critical</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">clip</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">GameAudio</span><span class="p">.</span><span class="n">PlayAt</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span><span class="w"> </span><span class="n">who</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">SoundChannel</span><span class="p">.</span><span class="n">Effects</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>GameAudio.PlayAt</code> respeita os controles de volume do jogador.</p>
+<h3 id="send-rare-loot-to-a-webhook"><a class="anchor" href="#send-rare-loot-to-a-webhook" aria-hidden="true">#</a>Enviar saques raros para um webhook</h3>
+<p><code>GameLog.Written</code> vê todas as linhas do registro, incluindo <code>item.loot</code> para drops notáveis. Veja o template <strong>Game Log Listener</strong> em <a href="templates.html#game-log-listener">Templates</a>.</p>
+<h2 id="events-of-your-own"><a class="anchor" href="#events-of-your-own" aria-hidden="true">#</a>Eventos seus</h2>
+<p>Dispare os seus próprios eventos estáticos do mesmo jeito e limpe-os em <code>SubsystemRegistration</code>:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="n">MonsterData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ServerTurnedIn</span><span class="p">;</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ServerTurnedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</code></pre>
+<p>O código em <code>Game.Server</code> então se inscreve em eventos disparados em <code>Game</code> (veja <a href="assemblies.html#which-way-references-go">Assemblies</a>).</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Erros comuns</h2>
+<ul>
+<li><strong>Inscrever-se em <code>SubsystemRegistration</code>.</strong> O kit pode limpar o evento depois que você se inscreveu.</li>
+<li><strong>Inscrever-se com uma lambda que você não consegue remover,</strong> em um método que pode rodar duas vezes.</li>
+<li><strong>Eventos do servidor em código do cliente.</strong> Eles nunca disparam em um cliente online.</li>
+<li><strong>Trabalho pesado em <code>CombatEvents</code> ou <code>GameLog.Written</code>.</strong> Eles disparam com frequência; mantenha os handlers curtos.</li>
+<li><strong>Lançar exceção em um handler.</strong> Outros inscritos depois de você podem não rodar. <code>GameLog.Written</code> captura exceções; a maioria dos outros eventos, não.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="domain-reload.html">Play sem domain reload</a></li>
+<li><a href="quest-objectives.html">Objetivos de missão</a></li>
+<li><a href="network-messages.html">Mensagens de rede</a></li>
+<li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="saving-data.html"><span>Anterior</span>Salvando dados</a><a class="next" href="overriding-kit-behaviour.html"><span>Próximo</span>Sobrescrevendo o comportamento do kit</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fdevkit%2Fevents.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#static-events">Eventos estáticos</a></li><li class="l2"><a href="#subscribing-correctly">Inscrevendo-se do jeito certo</a></li><li class="l2"><a href="#server-events">Eventos do servidor</a></li><li class="l3"><a href="#per-object-server-events">Eventos do servidor por objeto</a></li><li class="l2"><a href="#owner-s-client-events">Eventos do cliente do dono</a></li><li class="l2"><a href="#client-events-for-effects">Eventos do cliente para efeitos</a></li><li class="l2"><a href="#network-manager-events">Eventos do network manager</a></li><li class="l2"><a href="#examples">Exemplos</a></li><li class="l3"><a href="#reward-every-fifth-level">Recompensar a cada cinco níveis</a></li><li class="l3"><a href="#welcome-back-message">Mensagem de boas-vindas</a></li><li class="l3"><a href="#kill-streaks-kept-in-memory">Sequências de abates, guardadas na memória</a></li><li class="l3"><a href="#a-sound-on-critical-hits">Um som nos acertos críticos</a></li><li class="l3"><a href="#send-rare-loot-to-a-webhook">Enviar saques raros para um webhook</a></li><li class="l2"><a href="#events-of-your-own">Eventos seus</a></li><li class="l2"><a href="#common-mistakes">Erros comuns</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

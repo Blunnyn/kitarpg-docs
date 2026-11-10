@@ -1,295 +1,295 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Inventory and bank · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Inventario y banco · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/inventory-and-bank.html">English</option><option value="inventory-and-bank.html" selected>Español</option><option value="../../pt/gameplay/inventory-and-bank.html">Português</option><option value="../../zh/gameplay/inventory-and-bank.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de juego</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html" class="on" aria-current="page">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Sistemas de juego</div><h1>Inventory and bank</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>How the bag, the worn gear, money, loot pickup and the account bank work for the player, every setting that changes them, the limits the server enforces and how they differ between single player and MMO.</p>
-<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>What it is</h2>
-<p>Every character has a <strong>bag</strong>, a set of <strong>equipment positions</strong> and a <strong>purse</strong> of gold and other currencies. The account also has a <strong>bank</strong>: slots and gold that every character of the account shares, opened at a banker NPC.</p>
-<p>The server owns all of it. The client only sends requests (move, wear, use, split, store) and the server answers with the new slots or an error code. Only the owner receives the contents of the bag and bank; other players see only the worn gear, through the character's appearance.</p>
-<p>The rules live in one shared class, <code>Inventory</code> (<code>Runtime/Shared/Items/Inventory.cs</code>), used by the map server, the single player host and the services alike. On the player prefab the network side is <code>PlayerInventory</code> (bag, gear, money) and <code>PlayerBank</code> (bank).</p>
-<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
-<p>All bag, loot and bank settings are on the <code>GameInstance</code> component of the <code>KitNetwork</code> prefab. Edit them in <strong>KitARPG &gt; Game Settings</strong> (or the Game Settings page of the KitARPG window, <code>Ctrl/Cmd+Shift+K</code>).</p>
-<h3 id="bag"><a class="anchor" href="#bag" aria-hidden="true">#</a>Bag</h3>
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section" open><summary>Sistemas de juego</summary><ul><li><a href="control-modes.html">Modos de control</a></li><li><a href="touch-controls.html">Controles táctiles</a></li><li><a href="combat.html">Combate</a></li><li><a href="recovery-and-death.html">Recuperación y muerte</a></li><li><a href="inventory-and-bank.html" class="on" aria-current="page">Inventario y banco</a></li><li><a href="trade.html">Intercambio</a></li><li><a href="forge.html">Forja</a></li><li><a href="market.html">Mercado</a></li><li><a href="mail.html">Correo</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Amigos y grupos</a></li><li><a href="guilds.html">Gremios</a></li><li><a href="tax-collectors.html">Recaudadores</a></li><li><a href="pvp-and-duels.html">PvP y duelos</a></li><li><a href="dungeons.html">Mazmorras</a></li><li><a href="day-and-night.html">Día y noche</a></li><li><a href="bestiary.html">Bestiario</a></li><li><a href="cash-shop.html">Tienda del juego</a></li><li><a href="gm-tools.html">Herramientas de GM</a></li><li><a href="game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="hud-and-windows.html">HUD y ventanas</a></li><li><a href="player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Introducción al DevKit</a></li><li><a href="../devkit/assemblies.html">Ensamblados</a></li><li><a href="../devkit/templates.html">Plantillas</a></li><li><a href="../devkit/skill-effects.html">Efectos de skills</a></li><li><a href="../devkit/item-effects.html">Efectos de ítems</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de misión</a></li><li><a href="../devkit/npc-options.html">Opciones de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas del jugador</a></li><li><a href="../devkit/network-messages.html">Mensajes de red</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Guardar datos</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="../devkit/editor-extensions.html">Extensiones del editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="../devkit/talking-to-central.html">Hablar con Central</a></li><li><a href="../devkit/service-modules.html">Módulos de servicios</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de juego en código</a></li><li><a href="../devkit/example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sin recarga de dominio</a></li><li><a href="../devkit/security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de juego</div><h1>Inventario y banco</h1><p>Cómo funcionan para el jugador la bolsa, el equipo puesto, el dinero, la recogida del botín y el banco de la cuenta, cada opción que los cambia, los límites que impone el servidor y en qué se diferencian entre un jugador y MMO.</p>
+<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>Qué es</h2>
+<p>Cada personaje tiene una <strong>bolsa</strong>, un conjunto de <strong>posiciones de equipo</strong> y un <strong>monedero</strong> con oro y otras monedas. La cuenta además tiene un <strong>banco</strong>: casillas y oro que comparten todos los personajes de la cuenta, que se abre con un NPC banquero.</p>
+<p>El servidor es dueño de todo eso. El cliente solo envía peticiones (mover, equipar, usar, dividir, guardar) y el servidor responde con las casillas nuevas o un código de error. Solo el dueño recibe el contenido de la bolsa y el banco; los demás jugadores ven solo el equipo puesto, a través de la apariencia del personaje.</p>
+<p>Las reglas viven en una sola clase compartida, <code>Inventory</code> (<code>Runtime/Shared/Items/Inventory.cs</code>), que usan por igual el servidor de mapa, el host de un jugador y los servicios. En el prefab del jugador la parte de red es <code>PlayerInventory</code> (bolsa, equipo, dinero) y <code>PlayerBank</code> (banco).</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Opciones</h2>
+<p>Todas las opciones de bolsa, botín y banco están en el componente <code>GameInstance</code> del prefab <code>KitNetwork</code>. Edítalas en <strong>KitARPG &gt; Game Settings</strong> (o la página Game Settings de la ventana KitARPG, <code>Ctrl/Cmd+Shift+K</code>).</p>
+<h3 id="bag"><a class="anchor" href="#bag" aria-hidden="true">#</a>Bolsa</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Bag Mode</em> (<code>bagMode</code>)</td>
-<td><code>Slots</code>: a fixed number of slots. <code>Weight</code>: anything fits up to a weight limit.</td>
+<td><code>Slots</code>: una cantidad fija de casillas. <code>Weight</code>: cabe cualquier cosa hasta un límite de peso.</td>
 <td><code>Slots</code></td>
 </tr>
 <tr>
 <td><em>Bag Slots</em> (<code>bagSlots</code>)</td>
-<td>Slots in a bag in <code>Slots</code> mode.</td>
+<td>Casillas de una bolsa en modo <code>Slots</code>.</td>
 <td>40</td>
 </tr>
 <tr>
 <td><em>Weight Mode Slots</em> (<code>weightModeSlots</code>)</td>
-<td>In <code>Weight</code> mode, how many different stacks a bag can hold, so it can't grow forever.</td>
+<td>En modo <code>Weight</code>, cuántas pilas distintas puede tener una bolsa, para que no crezca para siempre.</td>
 <td>200</td>
 </tr>
 <tr>
 <td><em>Carry Weight</em> (<code>carryWeight</code>)</td>
-<td>In <code>Weight</code> mode, what anyone can carry. Gear and attributes add their carry weight stat on top.</td>
-<td>1,000</td>
+<td>En modo <code>Weight</code>, lo que cualquiera puede cargar. El equipo y los atributos suman encima su stat de peso cargable.</td>
+<td>1.000</td>
 </tr>
 <tr>
 <td><em>Bank Slots</em> (<code>bankSlots</code>)</td>
-<td>Slots in the account bank. The bank has no weight limit.</td>
+<td>Casillas del banco de la cuenta. El banco no tiene límite de peso.</td>
 <td>80</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="loot"><a class="anchor" href="#loot" aria-hidden="true">#</a>Loot</h3>
+<h3 id="loot"><a class="anchor" href="#loot" aria-hidden="true">#</a>Botín</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Loot Mode</em> (<code>lootMode</code>)</td>
-<td><code>Ground</code>: each item falls next to the monster. <code>Corpse</code>: items stay in the body and clicking it opens a loot window. <code>Automatic</code>: items go straight to the bag, and what doesn't fit falls on the ground.</td>
+<td><code>Ground</code>: cada objeto cae junto al monstruo. <code>Corpse</code>: los objetos quedan en el cuerpo y hacer clic en él abre una ventana de botín. <code>Automatic</code>: los objetos van directo a la bolsa, y lo que no cabe cae al suelo.</td>
 <td><code>Ground</code></td>
 </tr>
 <tr>
 <td><em>Auto Gold</em> (<code>autoGold</code>)</td>
-<td>Gold goes straight to the player. Off: it drops like the items, on the ground or in the body.</td>
-<td>On</td>
+<td>El oro va directo al jugador. Desactivado: cae como los objetos, en el suelo o en el cuerpo.</td>
+<td>Activado</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="interface-and-economy"><a class="anchor" href="#interface-and-economy" aria-hidden="true">#</a>Interface and economy</h3>
+<h3 id="interface-and-economy"><a class="anchor" href="#interface-and-economy" aria-hidden="true">#</a>Interfaz y economía</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>Item Details On Hover</em> (<code>itemDetailsOnHover</code>)</td>
-<td>On: pointing at an item shows its card. Off: click an item to pin its card beside it.</td>
-<td>Off</td>
+<td>Activado: apuntar a un objeto muestra su ficha. Desactivado: haz clic en un objeto para fijar su ficha a su lado.</td>
+<td>Desactivado</td>
 </tr>
 <tr>
 <td><em>Players Sell To Npcs</em> (<code>playersSellToNpcs</code>)</td>
-<td>Shops buy what players bring. Off, nothing is sold to NPCs. See <a href="../content/npc-shops.html">NPC shops</a>.</td>
-<td>Off</td>
+<td>Las tiendas compran lo que traen los jugadores. Desactivado, no se vende nada a NPCs. Consulta <a href="../content/npc-shops.html">Tiendas de NPC</a>.</td>
+<td>Desactivado</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="modules"><a class="anchor" href="#modules" aria-hidden="true">#</a>Modules</h3>
-<p>The bank is the <strong>Bank</strong> module. Turn it off in <strong>KitARPG &gt; Modules</strong> and the banker option disappears from NPCs and the server refuses to open the bank. The bag itself is not a module; it is always there.</p>
-<h3 id="on-the-player-prefab"><a class="anchor" href="#on-the-player-prefab" aria-hidden="true">#</a>On the player prefab</h3>
+<h3 id="modules"><a class="anchor" href="#modules" aria-hidden="true">#</a>Módulos</h3>
+<p>El banco es el módulo <strong>Bank</strong>. Desactívalo en <strong>KitARPG &gt; Modules</strong> y la opción de banquero desaparece de los NPCs y el servidor se niega a abrir el banco. La bolsa en sí no es un módulo; siempre está.</p>
+<h3 id="on-the-player-prefab"><a class="anchor" href="#on-the-player-prefab" aria-hidden="true">#</a>En el prefab del jugador</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Component and field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Componente y campo</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>PlayerInventory.maxRequestsPerSecond</code></td>
-<td>Bag requests per second before the extra ones are ignored.</td>
+<td>Peticiones de bolsa por segundo antes de que las de más se ignoren.</td>
 <td>15</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="on-the-map-server"><a class="anchor" href="#on-the-map-server" aria-hidden="true">#</a>On the map server</h3>
-<p>The <code>Rewards</code> component (on the map server object) decides how long loot stays and how close the player must be.</p>
+<h3 id="on-the-map-server"><a class="anchor" href="#on-the-map-server" aria-hidden="true">#</a>En el servidor de mapa</h3>
+<p>El componente <code>Rewards</code> (en el objeto del servidor de mapa) decide cuánto dura el botín y qué tan cerca debe estar el jugador.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>Campo</th>
+<th>Qué hace</th>
+<th>Predeterminado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>dropLifetime</code></td>
-<td>Seconds a drop stays before it disappears.</td>
+<td>Segundos que queda un botín antes de desaparecer.</td>
 <td>90</td>
 </tr>
 <tr>
 <td><code>pickupRange</code></td>
-<td>Meters from the drop to pick it up.</td>
+<td>Metros desde el botín para recogerlo.</td>
 <td>2</td>
 </tr>
 <tr>
 <td><code>scatter</code></td>
-<td>Ground drops land within this many meters of the monster.</td>
-<td>1.2</td>
+<td>El botín en el suelo cae a esta cantidad de metros o menos del monstruo.</td>
+<td>1,2</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="the-inventory-window"><a class="anchor" href="#the-inventory-window" aria-hidden="true">#</a>The inventory window</h2>
-<p>Press <code>I</code> to open or close the inventory. <code>Esc</code> first puts away a pinned item card, then closes the window. The HUD has a bag button that does the same.</p>
-<p>The window has two parts.</p>
-<p><strong>The character.</strong> A live portrait of the character in its gear, with its name, level and class, surrounded by the equipment positions:</p>
+<h2 id="the-inventory-window"><a class="anchor" href="#the-inventory-window" aria-hidden="true">#</a>La ventana del inventario</h2><figure class="shot"><a href="../../assets/img/game/inventory.png" target="_blank"><img src="../../assets/img/game/inventory.png" alt="La ventana de inventario." loading="lazy"></a><figcaption>La ventana de inventario.</figcaption></figure>
+<p>Presiona <code>I</code> para abrir o cerrar el inventario. <code>Esc</code> primero guarda una ficha de objeto fijada, luego cierra la ventana. El HUD tiene un botón de bolsa que hace lo mismo.</p>
+<p>La ventana tiene dos partes.</p>
+<p><strong>El personaje.</strong> Un retrato en vivo del personaje con su equipo, con su nombre, nivel y clase, rodeado por las posiciones de equipo:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Position</th>
-<th>Holds</th>
+<th>Posición</th>
+<th>Lleva</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Head, Chest, Hands, Legs, Feet, Back</td>
-<td>Armour pieces for each body region.</td>
+<td>Piezas de armadura para cada región del cuerpo.</td>
 </tr>
 <tr>
 <td>Main hand, Off hand</td>
-<td>Weapons, shields and off-hand items.</td>
+<td>Armas, escudos y objetos de mano secundaria.</td>
 </tr>
 <tr>
 <td>Ring, Second ring</td>
-<td>Two rings. A ring goes to the second position when the first is taken.</td>
+<td>Dos anillos. Un anillo va a la segunda posición cuando la primera está ocupada.</td>
 </tr>
 <tr>
 <td>Amulet</td>
-<td>One amulet.</td>
+<td>Un amuleto.</td>
 </tr>
 <tr>
 <td>Ammo</td>
-<td>A stack of arrows or bolts for weapons that use ammunition.</td>
+<td>Una pila de flechas o virotes para las armas que usan munición.</td>
 </tr>
 </tbody>
 </table></div>
-<p>The <strong>Show cosmetics</strong> button switches these slots to the eight cosmetic positions (Head, Chest, Hands, Legs, Feet, Back, Main hand, Off hand). Cosmetics change how the region looks and give no stats. The button then reads <strong>Show gear</strong>. Opening the Cosmetics tab of the bag switches to the cosmetic positions on its own. See <a href="../content/equipment.html">Equipment</a>.</p>
-<p><strong>The bag.</strong> A grid of slots with:</p>
+<p>El botón <strong>Show cosmetics</strong> cambia estas casillas a las ocho posiciones cosméticas (Head, Chest, Hands, Legs, Feet, Back, Main hand, Off hand). Los cosméticos cambian cómo se ve la región y no dan stats. El botón pasa a decir <strong>Show gear</strong>. Abrir la pestaña Cosmetics de la bolsa cambia solo a las posiciones cosméticas. Consulta <a href="../content/equipment.html">Equipo</a>.</p>
+<p><strong>La bolsa.</strong> Una grilla de casillas con:</p>
 <ul>
-<li><strong>Tabs</strong>: All, Equipment, Consumables, Resources and Cosmetics. Resources are items that are neither gear nor usable.</li>
-<li><strong>Search</strong>: filters by name as you type.</li>
-<li><strong>Sort list</strong>: By slot, By name, By type, By rarity, By weight. This only changes the view; the items keep their slots.</li>
-<li><strong>Type list</strong>: narrows the tab to one item category. It is filled from what is in the bag.</li>
-<li><strong>Sort button</strong>: asks the server to tidy the bag. It joins stacks and packs everything from the first slot: gear first (by equipment position), then the rest by item id.</li>
-<li><strong>Capacity bar</strong>: used slots out of the bag size, or weight out of the limit in <code>Weight</code> mode. It turns red at 90 % full. When the character is overloaded the label reads &quot;Too heavy to move&quot; in red.</li>
-<li><strong>Money</strong>: gold, and below it every other currency marked to show in the inventory. See <a href="../content/currencies.html">Currencies</a>.</li>
+<li><strong>Pestañas</strong>: All, Equipment, Consumables, Resources y Cosmetics. Los recursos son objetos que no son equipo ni usables.</li>
+<li><strong>Búsqueda</strong>: filtra por nombre mientras escribes.</li>
+<li><strong>Lista de orden</strong>: By slot, By name, By type, By rarity, By weight. Esto solo cambia la vista; los objetos conservan sus casillas.</li>
+<li><strong>Lista de tipos</strong>: reduce la pestaña a una categoría de objeto. Se llena con lo que hay en la bolsa.</li>
+<li><strong>Botón de ordenar</strong>: le pide al servidor ordenar la bolsa. Junta pilas y acomoda todo desde la primera casilla: primero el equipo (por posición de equipo), luego el resto por id de objeto.</li>
+<li><strong>Barra de capacidad</strong>: casillas usadas sobre el tamaño de la bolsa, o peso sobre el límite en modo <code>Weight</code>. Se pone roja al 90 % de lo lleno. Cuando el personaje tiene sobrepeso la etiqueta dice &quot;Too heavy to move&quot; en rojo.</li>
+<li><strong>Dinero</strong>: el oro, y debajo cada otra moneda marcada para mostrarse en el inventario. Consulta <a href="../content/currencies.html">Monedas</a>.</li>
 </ul>
-<p>With the All tab, no search, no type and &quot;By slot&quot;, the grid shows every slot in order. With any filter, or in <code>Weight</code> mode, the grid shows only the matching items packed together, followed by some empty slots to drop onto.</p>
-<h3 id="mouse-actions"><a class="anchor" href="#mouse-actions" aria-hidden="true">#</a>Mouse actions</h3>
+<p>Con la pestaña All, sin búsqueda, sin tipo y &quot;By slot&quot;, la grilla muestra cada casilla en orden. Con cualquier filtro, o en modo <code>Weight</code>, la grilla muestra solo los objetos que coinciden juntos, seguidos de algunas casillas vacías donde soltar.</p>
+<h3 id="mouse-actions"><a class="anchor" href="#mouse-actions" aria-hidden="true">#</a>Acciones con el mouse</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Action</th>
-<th>What it does</th>
+<th>Acción</th>
+<th>Qué hace</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Drag an item onto another slot</td>
-<td>Moves it. Onto the same item it tops up the stack; onto a different item it swaps them.</td>
+<td>Arrastrar un objeto a otra casilla</td>
+<td>Lo mueve. Sobre el mismo objeto completa la pila; sobre un objeto distinto los intercambia.</td>
 </tr>
 <tr>
-<td>Drag onto an equipment position</td>
-<td>Wears it. Whatever was there takes its place in the bag.</td>
+<td>Arrastrar a una posición de equipo</td>
+<td>Lo equipa. Lo que estaba ahí toma su lugar en la bolsa.</td>
 </tr>
 <tr>
-<td>Double click a bag item</td>
-<td>Wears gear, uses a consumable. With a bank, trade, market or forge open beside the bag, does what that window does instead (store, offer, sell, put in the forge).</td>
+<td>Doble clic en un objeto de la bolsa</td>
+<td>Equipa el equipo, usa un consumible. Con un banco, intercambio, mercado o forja abierto junto a la bolsa, hace lo que hace esa ventana (guardar, ofrecer, vender, poner en la forja).</td>
 </tr>
 <tr>
-<td>Double click worn gear</td>
-<td>Takes it off into the first free bag slot.</td>
+<td>Doble clic en equipo puesto</td>
+<td>Se lo quita a la primera casilla libre de la bolsa.</td>
 </tr>
 <tr>
-<td><code>Shift</code> + double click a stack</td>
-<td>Splits off half into the first free slot.</td>
+<td><code>Shift</code> + doble clic en una pila</td>
+<td>Separa la mitad en la primera casilla libre.</td>
 </tr>
 <tr>
-<td>Right click</td>
-<td>Opens the item menu.</td>
+<td>Clic derecho</td>
+<td>Abre el menú del objeto.</td>
 </tr>
 <tr>
-<td>Click (details on hover off)</td>
-<td>Pins the item card beside the item. Click again, or an empty slot, to put it away.</td>
+<td>Clic (detalles al pasar el puntero desactivado)</td>
+<td>Fija la ficha del objeto a su lado. Haz clic otra vez, o en una casilla vacía, para guardarla.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="the-item-menu"><a class="anchor" href="#the-item-menu" aria-hidden="true">#</a>The item menu</h3>
-<p>Right click an item in the bag or the gear to open <code>ItemMenu</code>. It lists only the lines that apply:</p>
+<h3 id="the-item-menu"><a class="anchor" href="#the-item-menu" aria-hidden="true">#</a>El menú del objeto</h3>
+<p>Clic derecho en un objeto de la bolsa o del equipo para abrir <code>ItemMenu</code>. Lista solo las líneas que corresponden:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Line</th>
-<th>Shows when</th>
+<th>Línea</th>
+<th>Aparece cuando</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>The open window's action (Store, Offer, Put in the forge...)</td>
-<td>A bank, trade, market or forge window is open beside the bag.</td>
+<td>La acción de la ventana abierta (Store, Offer, Put in the forge...)</td>
+<td>Hay una ventana de banco, intercambio, mercado o forja abierta junto a la bolsa.</td>
 </tr>
 <tr>
 <td>Equip</td>
-<td>The bag item is gear.</td>
+<td>El objeto de la bolsa es equipo.</td>
 </tr>
 <tr>
 <td>Take off</td>
-<td>The item is worn.</td>
+<td>El objeto está puesto.</td>
 </tr>
 <tr>
 <td>Use</td>
-<td>The bag item is usable and not gear.</td>
+<td>El objeto de la bolsa es usable y no es equipo.</td>
 </tr>
 <tr>
 <td>Split</td>
-<td>The stack has more than one. Asks how many, half to start with, up to one less than the stack.</td>
+<td>La pila tiene más de uno. Pregunta cuántos, la mitad para empezar, hasta uno menos que la pila.</td>
 </tr>
 <tr>
 <td>Salvage all (N)</td>
-<td>The forge is open and the bag has more than one plain copy of this piece. See <a href="forge.html#salvage-all">Forge</a>.</td>
+<td>La forja está abierta y la bolsa tiene más de una copia simple de esta pieza. Consulta <a href="forge.html#salvage-all">Forja</a>.</td>
 </tr>
 <tr>
 <td>Possible values</td>
-<td>The piece has random bonuses: pins its card with the range each bonus could have had.</td>
+<td>La pieza tiene bonificaciones aleatorias: fija su ficha con el rango que podría haber tenido cada bonificación.</td>
 </tr>
 <tr>
 <td>View set</td>
-<td>The piece belongs to a set: opens the set window. See <a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a>.</td>
+<td>La pieza pertenece a un set: abre la ventana del set. Consulta <a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a>.</td>
 </tr>
 <tr>
 <td>Destroy</td>
-<td>The item is in the bag. Asks to confirm, then deletes it for good. Worn gear has to come off first.</td>
+<td>El objeto está en la bolsa. Pide confirmación y luego lo borra para siempre. El equipo puesto tiene que quitarse primero.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Games add their own lines to <code>ItemMenu.Entries</code>.</p>
-<h3 id="messages"><a class="anchor" href="#messages" aria-hidden="true">#</a>Messages</h3>
-<p>When the server refuses a request, the window shows a short message for 3 seconds:</p>
+<p>Los juegos agregan sus propias líneas a <code>ItemMenu.Entries</code>.</p>
+<h3 id="messages"><a class="anchor" href="#messages" aria-hidden="true">#</a>Mensajes</h3>
+<p>Cuando el servidor rechaza una petición, la ventana muestra un mensaje corto durante 3 segundos:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Message</th>
+<th>Código</th>
+<th>Mensaje</th>
 </tr>
 </thead>
 <tbody>
@@ -327,226 +327,226 @@
 </tr>
 </tbody>
 </table></div>
-<p>Override <code>InventoryWindow.Describe</code> to translate them.</p>
-<h2 id="bag-rules"><a class="anchor" href="#bag-rules" aria-hidden="true">#</a>Bag rules</h2>
-<p>These rules are the same in single player and MMO, because both run the same <code>Inventory</code> class on the server.</p>
-<h3 id="stacks"><a class="anchor" href="#stacks" aria-hidden="true">#</a>Stacks</h3>
+<p>Sobrescribe <code>InventoryWindow.Describe</code> para traducirlos.</p>
+<h2 id="bag-rules"><a class="anchor" href="#bag-rules" aria-hidden="true">#</a>Reglas de la bolsa</h2>
+<p>Estas reglas son iguales en un jugador y en MMO, porque ambos corren la misma clase <code>Inventory</code> en el servidor.</p>
+<h3 id="stacks"><a class="anchor" href="#stacks" aria-hidden="true">#</a>Pilas</h3>
 <ul>
-<li>Each item has a <em>Max Stack</em> (<code>maxStack</code>): 99 for plain items by default, 1 for gear.</li>
-<li>Adding an item tops up existing stacks first, then fills free slots.</li>
-<li>Bound and unbound copies of the same item never share a stack.</li>
-<li>A copy with <strong>random bonuses</strong> (rolls) never stacks: each one is its own, with its own values. See <a href="../content/items.html">Items</a>.</li>
-<li>Taking items for a cost (a quest, an upgrade) takes from the smallest stacks first.</li>
+<li>Cada objeto tiene un <em>Max Stack</em> (<code>maxStack</code>): 99 para objetos simples por defecto, 1 para el equipo.</li>
+<li>Agregar un objeto completa primero las pilas existentes, luego llena casillas libres.</li>
+<li>Las copias ligadas y no ligadas del mismo objeto nunca comparten pila.</li>
+<li>Una copia con <strong>bonificaciones aleatorias</strong> (tiradas) nunca se apila: cada una es propia, con sus propios valores. Consulta <a href="../content/items.html">Objetos</a>.</li>
+<li>Tomar objetos como costo (una misión, una mejora) toma primero de las pilas más chicas.</li>
 </ul>
-<h3 id="wearing-gear"><a class="anchor" href="#wearing-gear" aria-hidden="true">#</a>Wearing gear</h3>
+<h3 id="wearing-gear"><a class="anchor" href="#wearing-gear" aria-hidden="true">#</a>Equipar</h3>
 <ul>
-<li>The server checks the level and the class the piece asks for before it goes on.</li>
-<li>A two-handed weapon and an off-hand item can't be worn together. The one already worn goes to the bag; if the bag has no free slot, nothing changes and you see &quot;Your bag is full.&quot;</li>
-<li>A one-handed weapon whose type allows dual wielding goes to the free off hand when the main hand already holds one that allows it too.</li>
-<li>Taking gear off onto a bag item that can't go where the gear was puts the gear in any free slot instead.</li>
-<li>Every move either completes or leaves everything as it was.</li>
+<li>El servidor revisa el nivel y la clase que pide la pieza antes de ponerla.</li>
+<li>Un arma a dos manos y un objeto de mano secundaria no se pueden llevar juntos. El que ya estaba puesto va a la bolsa; si la bolsa no tiene casilla libre, nada cambia y ves &quot;Your bag is full.&quot;</li>
+<li>Un arma a una mano cuyo tipo permite llevar dos armas va a la mano secundaria libre cuando la mano principal ya tiene una que también lo permite.</li>
+<li>Quitarse equipo sobre un objeto de la bolsa que no puede ir donde estaba el equipo pone el equipo en cualquier casilla libre.</li>
+<li>Cada movimiento se completa o deja todo como estaba.</li>
 </ul>
-<h3 id="using-items"><a class="anchor" href="#using-items" aria-hidden="true">#</a>Using items</h3>
-<p>Double click or <strong>Use</strong> a consumable. Items in the same cooldown group share one cooldown. Consumables lose one per use. Drag an item onto the hotbar to use it with a number key; the key uses the first stack of that item in the bag.</p>
-<h3 id="bag-in-weight-mode"><a class="anchor" href="#bag-in-weight-mode" aria-hidden="true">#</a>Bag in Weight mode</h3>
+<h3 id="using-items"><a class="anchor" href="#using-items" aria-hidden="true">#</a>Usar objetos</h3>
+<p>Doble clic o <strong>Use</strong> en un consumible. Los objetos del mismo grupo de reutilización comparten un tiempo de reutilización. Los consumibles pierden uno por uso. Arrastra un objeto a la barra rápida para usarlo con una tecla numérica; la tecla usa la primera pila de ese objeto en la bolsa.</p>
+<h3 id="bag-in-weight-mode"><a class="anchor" href="#bag-in-weight-mode" aria-hidden="true">#</a>Bolsa en modo Weight</h3>
 <ul>
-<li>The limit is <code>carryWeight</code> plus the character's <em>carry weight</em> stat. In the sample, each point of Strength adds 5, and backpacks add 10 or 20.</li>
-<li>The weight counts everything the character has, <strong>worn gear included</strong>.</li>
-<li>Each item has a <em>Weight</em> (<code>weight</code>), 1 by default. Items with weight 0 never count.</li>
-<li><code>weightModeSlots</code> still limits how many different stacks fit.</li>
+<li>El límite es <code>carryWeight</code> más la stat <em>carry weight</em> del personaje. En la muestra, cada punto de Strength suma 5, y las mochilas suman 10 o 20.</li>
+<li>El peso cuenta todo lo que tiene el personaje, <strong>incluido el equipo puesto</strong>.</li>
+<li>Cada objeto tiene un <em>Weight</em> (<code>weight</code>), 1 por defecto. Los objetos con peso 0 nunca cuentan.</li>
+<li><code>weightModeSlots</code> igual limita cuántas pilas distintas caben.</li>
 </ul>
-<h3 id="overloaded"><a class="anchor" href="#overloaded" aria-hidden="true">#</a>Overloaded</h3>
-<p>Loot is the one thing that may go past the weight limit. When picked-up loot puts the character over it, the character is <strong>overloaded</strong>:</p>
+<h3 id="overloaded"><a class="anchor" href="#overloaded" aria-hidden="true">#</a>Sobrepeso</h3>
+<p>El botín es lo único que puede pasar el límite de peso. Cuando el botín recogido pone al personaje por encima, el personaje tiene <strong>sobrepeso</strong>:</p>
 <ul>
-<li>It can't walk. Click-to-move is refused and the current path stops, in top-down and in third person.</li>
-<li>The server says &quot;Too heavy to move. Drop, sell or store something.&quot; The bag shows the weight in red.</li>
-<li>Drop, destroy, store or sell something to walk again.</li>
+<li>No puede caminar. Se rechaza el clic para moverse y se detiene el camino actual, en top-down y en tercera persona.</li>
+<li>El servidor dice &quot;Too heavy to move. Drop, sell or store something.&quot; La bolsa muestra el peso en rojo.</li>
+<li>Suelta, destruye, guarda o vende algo para volver a caminar.</li>
 </ul>
-<p>Everything else that adds items (buying, trading, taking from the bank or the mail) refuses when it would go over the limit.</p>
-<h3 id="when-the-bag-gets-smaller"><a class="anchor" href="#when-the-bag-gets-smaller" aria-hidden="true">#</a>When the bag gets smaller</h3>
-<p>If you lower <code>bagSlots</code>, or two saved items end up in the same slot, the bag moves the extra items to free slots when it loads. Nothing is deleted.</p>
-<h2 id="money"><a class="anchor" href="#money" aria-hidden="true">#</a>Money</h2>
+<p>Todo lo demás que agrega objetos (comprar, intercambiar, sacar del banco o del correo) se rechaza cuando pasaría el límite.</p>
+<h3 id="when-the-bag-gets-smaller"><a class="anchor" href="#when-the-bag-gets-smaller" aria-hidden="true">#</a>Cuando la bolsa se achica</h3>
+<p>Si bajas <code>bagSlots</code>, o dos objetos guardados quedan en la misma casilla, la bolsa mueve los objetos de más a casillas libres cuando carga. No se borra nada.</p>
+<h2 id="money"><a class="anchor" href="#money" aria-hidden="true">#</a>Dinero</h2>
 <ul>
-<li>Gold is the purse currency. Its <em>Max Amount</em> (<code>maxAmount</code>) on the gold <code>CurrencyData</code> caps the purse; 0 means no cap.</li>
-<li>Gold the purse can't hold (from loot, mail, the guild or quests) goes to the <strong>bank gold</strong> instead of being lost. The server says &quot;(some to the bank)&quot;.</li>
-<li>Other currencies show under the gold when their <code>showInInventory</code> is on.</li>
-<li>Premium currency is never in the purse. It belongs to the account and is handled by the shop service. See <a href="cash-shop.html">Cash shop</a>.</li>
+<li>El oro es la moneda del monedero. Su <em>Max Amount</em> (<code>maxAmount</code>) en el <code>CurrencyData</code> del oro pone tope al monedero; 0 significa sin tope.</li>
+<li>El oro que el monedero no puede guardar (del botín, el correo, el gremio o las misiones) va al <strong>oro del banco</strong> en vez de perderse. El servidor dice &quot;(some to the bank)&quot;.</li>
+<li>Las otras monedas aparecen bajo el oro cuando su <code>showInInventory</code> está activado.</li>
+<li>La moneda premium nunca está en el monedero. Pertenece a la cuenta y la maneja el servicio de la tienda. Consulta <a href="cash-shop.html">Tienda del juego</a>.</li>
 </ul>
-<h2 id="picking-up-loot"><a class="anchor" href="#picking-up-loot" aria-hidden="true">#</a>Picking up loot</h2>
-<p>Loot belongs only to the player who earned the kill. Nobody else sees it or can take it. It lives on the server for <code>dropLifetime</code> seconds (90) and then disappears.</p>
+<h2 id="picking-up-loot"><a class="anchor" href="#picking-up-loot" aria-hidden="true">#</a>Recoger el botín</h2>
+<p>El botín pertenece solo al jugador que se ganó la muerte. Nadie más lo ve ni puede tomarlo. Vive en el servidor <code>dropLifetime</code> segundos (90) y luego desaparece.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Loot mode</th>
-<th>What the player sees</th>
+<th>Modo de botín</th>
+<th>Lo que ve el jugador</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Ground</code></td>
-<td>Each item floats on the ground with its icon and its name in its rarity colour, plus a pile of gold when <code>autoGold</code> is off. Click it to walk there and pick it up.</td>
+<td>Cada objeto flota en el suelo con su ícono y su nombre en el color de su rareza, más una pila de oro cuando <code>autoGold</code> está desactivado. Haz clic para caminar hasta ahí y recogerlo.</td>
 </tr>
 <tr>
 <td><code>Corpse</code></td>
-<td>The monster's grey body stays. Click it to walk there; the loot window opens with one row per item and a gold row. Click a row to take it, or <strong>Take all</strong>. The window closes when the body is empty, when you walk away or with <code>Esc</code>.</td>
+<td>El cuerpo gris del monstruo se queda. Haz clic en él para caminar hasta ahí; la ventana de botín se abre con una fila por objeto y una fila de oro. Haz clic en una fila para tomarla, o <strong>Take all</strong>. La ventana se cierra cuando el cuerpo queda vacío, cuando te alejas o con <code>Esc</code>.</td>
 </tr>
 <tr>
 <td><code>Automatic</code></td>
-<td>Items go straight to the bag with a &quot;+Item&quot; message. What doesn't fit falls on the ground.</td>
+<td>Los objetos van directo a la bolsa con un mensaje &quot;+Item&quot;. Lo que no cabe cae al suelo.</td>
 </tr>
 </tbody>
 </table></div>
-<p>You must be within <code>pickupRange</code> (2 m) of the drop, with 1.5 m of extra room while the loot window is open. When the bag has no free slot, what doesn't fit stays on the ground or in the body and you see the reason.</p>
-<h2 id="items-from-elsewhere-never-get-lost"><a class="anchor" href="#items-from-elsewhere-never-get-lost" aria-hidden="true">#</a>Items from elsewhere never get lost</h2>
-<p>Items that come from somewhere other than loot or a shop (a letter, the guild bank, a tax collector, a quest reward) follow this order:</p>
+<p>Tienes que estar a <code>pickupRange</code> (2 m) o menos del botín, con 1,5 m extra de margen mientras la ventana de botín está abierta. Cuando la bolsa no tiene casilla libre, lo que no cabe queda en el suelo o en el cuerpo y ves el motivo.</p>
+<h2 id="items-from-elsewhere-never-get-lost"><a class="anchor" href="#items-from-elsewhere-never-get-lost" aria-hidden="true">#</a>Los objetos que vienen de otro lado nunca se pierden</h2>
+<p>Los objetos que vienen de algo que no es el botín o una tienda (una carta, el banco del gremio, un recaudador, una recompensa de misión) siguen este orden:</p>
 <ol>
-<li>The bag.</li>
-<li>The bank, if the bag is full or too heavy.</li>
-<li>Held outside the bag grid, if the bank is full too.</li>
+<li>La bolsa.</li>
+<li>El banco, si la bolsa está llena o es demasiado pesada.</li>
+<li>Retenidos fuera de la grilla de la bolsa, si el banco también está lleno.</li>
 </ol>
-<p>A held item counts, is saved and takes the first free slot the next time the bag loads (on the next map change or login). Before taking a letter or withdrawing from the guild bank, the map server checks that everything fits in the bag or the bank, and refuses with a message if it doesn't.</p>
-<h2 id="the-bank"><a class="anchor" href="#the-bank" aria-hidden="true">#</a>The bank</h2>
-<p>The bank is one per <strong>account</strong>: every character of the account sees the same slots and the same bank gold. It has <code>bankSlots</code> slots (80) and no weight limit.</p>
-<h3 id="opening-it"><a class="anchor" href="#opening-it" aria-hidden="true">#</a>Opening it</h3>
-<p>Talk to an NPC with a <strong>Bank</strong> option (<code>BankOption</code>, see <a href="../content/npcs.html">NPCs</a>). In the sample it is Odette, the banker in Town. The bank window opens with the bag beside it.</p>
-<p>The bank only works while you stand next to the banker: within the NPC's <em>Talk Range</em> (<code>talkRange</code>, 3 m by default) plus half a meter. Walk away, die or leave the map and the window closes.</p>
-<h3 id="the-bank-window"><a class="anchor" href="#the-bank-window" aria-hidden="true">#</a>The bank window</h3>
+<p>Un objeto retenido cuenta, se guarda y toma la primera casilla libre la próxima vez que carga la bolsa (en el próximo cambio de mapa o inicio de sesión). Antes de tomar una carta o sacar del banco del gremio, el servidor de mapa revisa que todo quepa en la bolsa o en el banco, y se niega con un mensaje si no.</p>
+<h2 id="the-bank"><a class="anchor" href="#the-bank" aria-hidden="true">#</a>El banco</h2>
+<p>Hay un banco por <strong>cuenta</strong>: todos los personajes de la cuenta ven las mismas casillas y el mismo oro del banco. Tiene <code>bankSlots</code> casillas (80) y no tiene límite de peso.</p>
+<h3 id="opening-it"><a class="anchor" href="#opening-it" aria-hidden="true">#</a>Abrirlo</h3>
+<p>Habla con un NPC que tenga una opción <strong>Bank</strong> (<code>BankOption</code>, consulta <a href="../content/npcs.html">NPCs</a>). En la muestra es Odette, la banquera de Town. La ventana del banco se abre con la bolsa al lado.</p>
+<p>El banco solo funciona mientras estás junto al banquero: dentro del <em>Talk Range</em> del NPC (<code>talkRange</code>, 3 m por defecto) más medio metro. Si te alejas, mueres o sales del mapa, la ventana se cierra.</p>
+<h3 id="the-bank-window"><a class="anchor" href="#the-bank-window" aria-hidden="true">#</a>La ventana del banco</h3>
 <ul>
-<li>The title reads <strong>BANK</strong>.</li>
-<li>A grid with every bank slot.</li>
-<li>A <strong>Sort</strong> button that joins stacks and packs the bank, like the bag's.</li>
-<li>The gold area: the bank gold, a number field and <strong>Deposit</strong> and <strong>Withdraw</strong> buttons.</li>
+<li>El título dice <strong>BANK</strong>.</li>
+<li>Una grilla con cada casilla del banco.</li>
+<li>Un botón <strong>Sort</strong> que junta pilas y acomoda el banco, como el de la bolsa.</li>
+<li>La zona del oro: el oro del banco, un campo numérico y los botones <strong>Deposit</strong> y <strong>Withdraw</strong>.</li>
 </ul>
-<h3 id="storing-and-taking-out"><a class="anchor" href="#storing-and-taking-out" aria-hidden="true">#</a>Storing and taking out</h3>
+<h3 id="storing-and-taking-out"><a class="anchor" href="#storing-and-taking-out" aria-hidden="true">#</a>Guardar y sacar</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Action</th>
-<th>What it does</th>
+<th>Acción</th>
+<th>Qué hace</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Double click a bag item, or <strong>Store</strong> in its menu</td>
-<td>Stores it.</td>
+<td>Doble clic en un objeto de la bolsa, o <strong>Store</strong> en su menú</td>
+<td>Lo guarda.</td>
 </tr>
 <tr>
-<td>Drag a bag item onto the bank</td>
-<td>Stores it.</td>
+<td>Arrastrar un objeto de la bolsa al banco</td>
+<td>Lo guarda.</td>
 </tr>
 <tr>
-<td>Double click or right click a bank item</td>
-<td>Takes it out to the bag.</td>
+<td>Doble clic o clic derecho en un objeto del banco</td>
+<td>Lo saca a la bolsa.</td>
 </tr>
 <tr>
-<td>Drag inside the bank</td>
-<td>Moves, stacks or swaps bank items.</td>
+<td>Arrastrar dentro del banco</td>
+<td>Mueve, apila o intercambia objetos del banco.</td>
 </tr>
 </tbody>
 </table></div>
-<p>For stacks, the amount follows the keys held:</p>
+<p>Para las pilas, la cantidad depende de las teclas que mantienes:</p>
 <ul>
-<li><code>Shift</code>: one.</li>
-<li><code>Ctrl</code> or <code>Cmd</code>: the whole stack.</li>
-<li>No key: a dialog asks how many, starting at the whole stack.</li>
+<li><code>Shift</code>: uno.</li>
+<li><code>Ctrl</code> o <code>Cmd</code>: la pila entera.</li>
+<li>Ninguna tecla: un diálogo pregunta cuántos, empezando por la pila entera.</li>
 </ul>
-<p>For gold, type an amount and press <strong>Deposit</strong> or <strong>Withdraw</strong>. Withdrawing stops at what the purse can still hold, so no gold vanishes.</p>
-<h3 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>What the server checks</h3>
+<p>Para el oro, escribe una cantidad y presiona <strong>Deposit</strong> o <strong>Withdraw</strong>. Retirar se detiene en lo que el monedero todavía puede guardar, así no desaparece oro.</p>
+<h3 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>Lo que revisa el servidor</h3>
 <ul>
-<li>You are at an open bank, alive and in reach of the banker.</li>
-<li><strong>Quest items can't be stored</strong>: &quot;Quest items stay with you.&quot; They follow the character's quests.</li>
-<li><strong>Bound items can be stored</strong>, because they stay in the same account.</li>
-<li>A full bank refuses with &quot;The bank is full.&quot;</li>
-<li>Taking out needs room in the bag (slots and weight): &quot;Make room in your bag first.&quot;</li>
-<li>Every deposit and withdrawal goes to the game log. See <a href="game-log-and-reports.html">Game log and reports</a>.</li>
+<li>Estás en un banco abierto, vivo y al alcance del banquero.</li>
+<li><strong>Los objetos de misión no se pueden guardar</strong>: &quot;Quest items stay with you.&quot; Siguen las misiones del personaje.</li>
+<li><strong>Los objetos ligados sí se pueden guardar</strong>, porque quedan en la misma cuenta.</li>
+<li>Un banco lleno se niega con &quot;The bank is full.&quot;</li>
+<li>Sacar necesita lugar en la bolsa (casillas y peso): &quot;Make room in your bag first.&quot;</li>
+<li>Cada depósito y retiro va al registro del juego. Consulta <a href="game-log-and-reports.html">Registro del juego y reportes</a>.</li>
 </ul>
-<p>The bank is never smaller than what it holds. If you lower <code>bankSlots</code> below what an account already stores, that account's bank keeps enough slots.</p>
-<h3 id="the-guild-bank"><a class="anchor" href="#the-guild-bank" aria-hidden="true">#</a>The guild bank</h3>
-<p>The guild bank uses the same window, opened from an NPC with a <strong>Guild bank</strong> option. Its title is the guild's name, it has no Sort button, and depositing and withdrawing gold depend on the member's role. Its size is set in Central (<code>GuildStorageSlots</code>, 50). See <a href="guilds.html">Guilds</a>.</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>El banco nunca es más chico que lo que contiene. Si bajas <code>bankSlots</code> por debajo de lo que una cuenta ya guarda, el banco de esa cuenta conserva casillas suficientes.</p>
+<h3 id="the-guild-bank"><a class="anchor" href="#the-guild-bank" aria-hidden="true">#</a>El banco del gremio</h3>
+<p>El banco del gremio usa la misma ventana, que se abre desde un NPC con una opción <strong>Guild bank</strong>. Su título es el nombre del gremio, no tiene botón Sort, y depositar y retirar oro depende del rol del miembro. Su tamaño se define en Central (<code>GuildStorageSlots</code>, 50). Consulta <a href="guilds.html">Gremios</a>.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Un jugador y MMO</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Single player</th>
+<th>Un jugador</th>
 <th>MMO</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Rules</td>
-<td>Same <code>Inventory</code> rules, run by the host.</td>
-<td>Same rules, run by the map server.</td>
+<td>Reglas</td>
+<td>Las mismas reglas de <code>Inventory</code>, las corre el host.</td>
+<td>Las mismas reglas, las corre el servidor de mapa.</td>
 </tr>
 <tr>
-<td>Bag and gear saved in</td>
-<td>The character's JSON in the local SQLite save.</td>
-<td>Rows of <code>item_instances</code> owned by the character, through Central.</td>
+<td>La bolsa y el equipo se guardan en</td>
+<td>El JSON del personaje en el guardado SQLite local.</td>
+<td>Filas de <code>item_instances</code> cuyo dueño es el personaje, a través de Central.</td>
 </tr>
 <tr>
-<td>Bank saved in</td>
-<td>An <code>account</code> table in the local save, shared by all characters.</td>
-<td>Rows of <code>item_instances</code> owned by the account, and <code>accounts.BankGold</code>.</td>
+<td>El banco se guarda en</td>
+<td>Una tabla <code>account</code> en el guardado local, compartida por todos los personajes.</td>
+<td>Filas de <code>item_instances</code> cuyo dueño es la cuenta, y <code>accounts.BankGold</code>.</td>
 </tr>
 <tr>
-<td>Copies</td>
-<td>Each copy has a unique id (<code>uid</code>).</td>
-<td>Each copy is one row with exactly one owner. Central's <code>ItemLedger</code> moves rows between owners in transactions and refuses a <code>uid</code> another owner holds.</td>
+<td>Copias</td>
+<td>Cada copia tiene un id único (<code>uid</code>).</td>
+<td>Cada copia es una fila con exactamente un dueño. El <code>ItemLedger</code> de Central mueve filas entre dueños en transacciones y rechaza un <code>uid</code> que tiene otro dueño.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Because there is one session per account, the character in play carries the account bank and saves it with itself. In MMO this means the bank can't be open on two characters at once.</p>
-<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
-<h3 id="make-the-bag-limited-by-weight"><a class="anchor" href="#make-the-bag-limited-by-weight" aria-hidden="true">#</a>Make the bag limited by weight</h3>
+<p>Como hay una sesión por cuenta, el personaje en juego lleva el banco de la cuenta y lo guarda consigo. En MMO esto significa que el banco no puede estar abierto en dos personajes a la vez.</p>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Paso a paso</h2>
+<h3 id="make-the-bag-limited-by-weight"><a class="anchor" href="#make-the-bag-limited-by-weight" aria-hidden="true">#</a>Hacer que la bolsa se limite por peso</h3>
 <ol>
-<li>Open <strong>KitARPG &gt; Game Settings</strong>, section Bag.</li>
-<li>Set <em>Bag Mode</em> to <code>Weight</code>.</li>
-<li>Set <em>Carry Weight</em> to the base everyone carries, for example 1,000.</li>
-<li>Give items a <em>Weight</em> in the Game Database. Gear and materials that should be free get 0.</li>
-<li>Add the <em>carry weight</em> stat to attributes or gear (for example per point of Strength, or on backpacks).</li>
-<li>Press Play and open the bag: the bar now shows weight out of the limit.</li>
+<li>Abre <strong>KitARPG &gt; Game Settings</strong>, sección Bag.</li>
+<li>Pon <em>Bag Mode</em> en <code>Weight</code>.</li>
+<li>Pon <em>Carry Weight</em> en la base que carga todo el mundo, por ejemplo 1.000.</li>
+<li>Dales un <em>Weight</em> a los objetos en la Game Database. El equipo y los materiales que deben ser gratis llevan 0.</li>
+<li>Agrega la stat <em>carry weight</em> a atributos o equipo (por ejemplo por punto de Strength, o en las mochilas).</li>
+<li>Presiona Play y abre la bolsa: la barra ahora muestra el peso sobre el límite.</li>
 </ol>
-<h3 id="add-a-banker"><a class="anchor" href="#add-a-banker" aria-hidden="true">#</a>Add a banker</h3>
+<h3 id="add-a-banker"><a class="anchor" href="#add-a-banker" aria-hidden="true">#</a>Agregar un banquero</h3>
 <ol>
-<li>Place an NPC in a map scene (see <a href="../content/npcs.html">NPCs</a>).</li>
-<li>In its options add <strong>Bank Option</strong>. The label defaults to &quot;Bank&quot;.</li>
-<li>Make sure the Bank module is on in <strong>KitARPG &gt; Modules</strong>.</li>
-<li>Press Play, talk to the NPC and choose Bank.</li>
+<li>Coloca un NPC en una escena de mapa (consulta <a href="../content/npcs.html">NPCs</a>).</li>
+<li>En sus opciones agrega <strong>Bank Option</strong>. La etiqueta por defecto es &quot;Bank&quot;.</li>
+<li>Asegúrate de que el módulo Bank esté activado en <strong>KitARPG &gt; Modules</strong>.</li>
+<li>Presiona Play, habla con el NPC y elige Bank.</li>
 </ol>
-<h3 id="switch-to-loot-in-the-body"><a class="anchor" href="#switch-to-loot-in-the-body" aria-hidden="true">#</a>Switch to loot in the body</h3>
+<h3 id="switch-to-loot-in-the-body"><a class="anchor" href="#switch-to-loot-in-the-body" aria-hidden="true">#</a>Cambiar al botín en el cuerpo</h3>
 <ol>
-<li>In <strong>KitARPG &gt; Game Settings</strong>, section Loot, set <em>Loot Mode</em> to <code>Corpse</code>.</li>
-<li>Turn <em>Auto Gold</em> off if gold should wait in the body too.</li>
-<li>Kill a monster and click its body to open the loot window.</li>
+<li>En <strong>KitARPG &gt; Game Settings</strong>, sección Loot, pon <em>Loot Mode</em> en <code>Corpse</code>.</li>
+<li>Desactiva <em>Auto Gold</em> si el oro también debe esperar en el cuerpo.</li>
+<li>Mata un monstruo y haz clic en su cuerpo para abrir la ventana de botín.</li>
 </ol>
-<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Consejos</h2>
 <ul>
-<li>Turn <em>Item Details On Hover</em> on for a Diablo-like feel; leave it off for a Dofus-like detail card you pin with a click.</li>
-<li>The view sort (By rarity, By weight) is free and instant. The Sort button changes the real slots on the server.</li>
-<li>Players who carry a lot should store materials in the bank: it has no weight limit.</li>
+<li>Activa <em>Item Details On Hover</em> para una sensación estilo Diablo; déjalo desactivado para una ficha de detalle estilo Dofus que fijas con un clic.</li>
+<li>El orden de la vista (By rarity, By weight) es gratis e instantáneo. El botón Sort cambia las casillas reales en el servidor.</li>
+<li>Los jugadores que cargan mucho deberían guardar materiales en el banco: no tiene límite de peso.</li>
 </ul>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Errores comunes</h2>
 <ul>
-<li><strong>&quot;Your bag is full&quot; when equipping a two-handed weapon.</strong> The off-hand item has to go to the bag and there is no free slot.</li>
-<li><strong>Character won't move after looting.</strong> It is overloaded in <code>Weight</code> mode. Store or drop something.</li>
-<li><strong>Quest items won't go in the bank.</strong> That is by design.</li>
-<li><strong>The bank closes by itself.</strong> You walked out of the banker's reach.</li>
-<li><strong>Lowering Bag Slots to shrink existing bags.</strong> Existing items are kept and moved to free slots; if there aren't enough slots they wait outside the grid.</li>
+<li><strong>&quot;Your bag is full&quot; al equipar un arma a dos manos.</strong> El objeto de la mano secundaria tiene que ir a la bolsa y no hay casilla libre.</li>
+<li><strong>El personaje no se mueve después de recoger botín.</strong> Tiene sobrepeso en modo <code>Weight</code>. Guarda o suelta algo.</li>
+<li><strong>Los objetos de misión no entran al banco.</strong> Es a propósito.</li>
+<li><strong>El banco se cierra solo.</strong> Saliste del alcance del banquero.</li>
+<li><strong>Bajar Bag Slots para achicar bolsas existentes.</strong> Los objetos existentes se conservan y se mueven a casillas libres; si no hay casillas suficientes esperan fuera de la grilla.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
-<li><a href="../content/items.html">Items</a></li>
-<li><a href="../content/equipment.html">Equipment</a></li>
-<li><a href="../content/currencies.html">Currencies</a></li>
-<li><a href="../content/loot.html">Loot</a></li>
-<li><a href="trade.html">Trade</a></li>
-<li><a href="forge.html">Forge</a></li>
-<li><a href="market.html">Market</a></li>
-<li><a href="mail.html">Mail</a></li>
-<li><a href="guilds.html">Guilds</a></li>
+<li><a href="../content/items.html">Objetos</a></li>
+<li><a href="../content/equipment.html">Equipo</a></li>
+<li><a href="../content/currencies.html">Monedas</a></li>
+<li><a href="../content/loot.html">Botín</a></li>
+<li><a href="trade.html">Intercambio</a></li>
+<li><a href="forge.html">Forja</a></li>
+<li><a href="market.html">Mercado</a></li>
+<li><a href="mail.html">Correo</a></li>
+<li><a href="guilds.html">Gremios</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="recovery-and-death.html"><span>Anterior</span>Recovery and death</a><a class="next" href="trade.html"><span>Siguiente</span>Trade</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fgameplay%2Finventory-and-bank.html">Reportar un problema en esta página</a></div></main>
-  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-it-is">What it is</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#bag">Bag</a></li><li class="l3"><a href="#loot">Loot</a></li><li class="l3"><a href="#interface-and-economy">Interface and economy</a></li><li class="l3"><a href="#modules">Modules</a></li><li class="l3"><a href="#on-the-player-prefab">On the player prefab</a></li><li class="l3"><a href="#on-the-map-server">On the map server</a></li><li class="l2"><a href="#the-inventory-window">The inventory window</a></li><li class="l3"><a href="#mouse-actions">Mouse actions</a></li><li class="l3"><a href="#the-item-menu">The item menu</a></li><li class="l3"><a href="#messages">Messages</a></li><li class="l2"><a href="#bag-rules">Bag rules</a></li><li class="l3"><a href="#stacks">Stacks</a></li><li class="l3"><a href="#wearing-gear">Wearing gear</a></li><li class="l3"><a href="#using-items">Using items</a></li><li class="l3"><a href="#bag-in-weight-mode">Bag in Weight mode</a></li><li class="l3"><a href="#overloaded">Overloaded</a></li><li class="l3"><a href="#when-the-bag-gets-smaller">When the bag gets smaller</a></li><li class="l2"><a href="#money">Money</a></li><li class="l2"><a href="#picking-up-loot">Picking up loot</a></li><li class="l2"><a href="#items-from-elsewhere-never-get-lost">Items from elsewhere never get lost</a></li><li class="l2"><a href="#the-bank">The bank</a></li><li class="l3"><a href="#opening-it">Opening it</a></li><li class="l3"><a href="#the-bank-window">The bank window</a></li><li class="l3"><a href="#storing-and-taking-out">Storing and taking out</a></li><li class="l3"><a href="#what-the-server-checks">What the server checks</a></li><li class="l3"><a href="#the-guild-bank">The guild bank</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#make-the-bag-limited-by-weight">Make the bag limited by weight</a></li><li class="l3"><a href="#add-a-banker">Add a banker</a></li><li class="l3"><a href="#switch-to-loot-in-the-body">Switch to loot in the body</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="recovery-and-death.html"><span>Anterior</span>Recuperación y muerte</a><a class="next" href="trade.html"><span>Siguiente</span>Intercambio</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fgameplay%2Finventory-and-bank.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-it-is">Qué es</a></li><li class="l2"><a href="#settings">Opciones</a></li><li class="l3"><a href="#bag">Bolsa</a></li><li class="l3"><a href="#loot">Botín</a></li><li class="l3"><a href="#interface-and-economy">Interfaz y economía</a></li><li class="l3"><a href="#modules">Módulos</a></li><li class="l3"><a href="#on-the-player-prefab">En el prefab del jugador</a></li><li class="l3"><a href="#on-the-map-server">En el servidor de mapa</a></li><li class="l2"><a href="#the-inventory-window">La ventana del inventario</a></li><li class="l3"><a href="#mouse-actions">Acciones con el mouse</a></li><li class="l3"><a href="#the-item-menu">El menú del objeto</a></li><li class="l3"><a href="#messages">Mensajes</a></li><li class="l2"><a href="#bag-rules">Reglas de la bolsa</a></li><li class="l3"><a href="#stacks">Pilas</a></li><li class="l3"><a href="#wearing-gear">Equipar</a></li><li class="l3"><a href="#using-items">Usar objetos</a></li><li class="l3"><a href="#bag-in-weight-mode">Bolsa en modo Weight</a></li><li class="l3"><a href="#overloaded">Sobrepeso</a></li><li class="l3"><a href="#when-the-bag-gets-smaller">Cuando la bolsa se achica</a></li><li class="l2"><a href="#money">Dinero</a></li><li class="l2"><a href="#picking-up-loot">Recoger el botín</a></li><li class="l2"><a href="#items-from-elsewhere-never-get-lost">Los objetos que vienen de otro lado nunca se pierden</a></li><li class="l2"><a href="#the-bank">El banco</a></li><li class="l3"><a href="#opening-it">Abrirlo</a></li><li class="l3"><a href="#the-bank-window">La ventana del banco</a></li><li class="l3"><a href="#storing-and-taking-out">Guardar y sacar</a></li><li class="l3"><a href="#what-the-server-checks">Lo que revisa el servidor</a></li><li class="l3"><a href="#the-guild-bank">El banco del gremio</a></li><li class="l2"><a href="#single-player-and-mmo">Un jugador y MMO</a></li><li class="l2"><a href="#step-by-step">Paso a paso</a></li><li class="l3"><a href="#make-the-bag-limited-by-weight">Hacer que la bolsa se limite por peso</a></li><li class="l3"><a href="#add-a-banker">Agregar un banquero</a></li><li class="l3"><a href="#switch-to-loot-in-the-body">Cambiar al botín en el cuerpo</a></li><li class="l2"><a href="#tips">Consejos</a></li><li class="l2"><a href="#common-mistakes">Errores comunes</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
 <script src="../../assets/search-es.js"></script>

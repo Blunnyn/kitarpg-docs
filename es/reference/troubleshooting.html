@@ -1,397 +1,397 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Troubleshooting · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Solución de problemas · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/reference/troubleshooting.html">English</option><option value="troubleshooting.html" selected>Español</option><option value="../../pt/reference/troubleshooting.html">Português</option><option value="../../zh/reference/troubleshooting.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section" open><summary>Referencia</summary><ul><li><a href="keys.html">Keys</a></li><li><a href="gm-commands.html">GM commands</a></li><li><a href="troubleshooting.html" class="on" aria-current="page">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Referencia</div><h1>Troubleshooting</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>Problems you can run into with KitARPG, what each message means, why it happens and how to fix it. Find your symptom by section: setup, playing, MMO services, signing in, builds, databases, servers and GM tools.</p>
-<h2 id="first-checks"><a class="anchor" href="#first-checks" aria-hidden="true">#</a>First checks</h2>
-<p>Before looking for a specific problem, these four checks solve most of them:</p>
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Introducción al DevKit</a></li><li><a href="../devkit/assemblies.html">Ensamblados</a></li><li><a href="../devkit/templates.html">Plantillas</a></li><li><a href="../devkit/skill-effects.html">Efectos de skills</a></li><li><a href="../devkit/item-effects.html">Efectos de ítems</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de misión</a></li><li><a href="../devkit/npc-options.html">Opciones de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas del jugador</a></li><li><a href="../devkit/network-messages.html">Mensajes de red</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Guardar datos</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="../devkit/editor-extensions.html">Extensiones del editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="../devkit/talking-to-central.html">Hablar con Central</a></li><li><a href="../devkit/service-modules.html">Módulos de servicios</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de juego en código</a></li><li><a href="../devkit/example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sin recarga de dominio</a></li><li><a href="../devkit/security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section" open><summary>Referencia</summary><ul><li><a href="keys.html">Teclas</a></li><li><a href="gm-commands.html">Comandos de GM</a></li><li><a href="faq.html">Preguntas frecuentes</a></li><li><a href="troubleshooting.html" class="on" aria-current="page">Solución de problemas</a></li><li><a href="glossary.html">Glosario</a></li><li><a href="changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Referencia</div><h1>Solución de problemas</h1><p>Problemas con los que te puedes encontrar en KitARPG, qué significa cada mensaje, por qué pasa y cómo corregirlo. Busca tu síntoma por sección: configuración, jugar, servicios MMO, inicio de sesión, builds, bases de datos, servidores y herramientas de GM.</p>
+<h2 id="first-checks"><a class="anchor" href="#first-checks" aria-hidden="true">#</a>Primeras revisiones</h2>
+<p>Antes de buscar un problema concreto, estas cuatro revisiones resuelven la mayoría:</p>
 <ol>
-<li><strong>Stop Play.</strong> Many settings are locked during Play.</li>
-<li><strong>Open Project Check</strong> (<strong>KitARPG &gt; Project Check</strong>) and fix every error. Most have a fix button.</li>
-<li><strong>Apply pending kit updates</strong> in Overview.</li>
-<li><strong>In MMO, rebuild and restart</strong>: Play &amp; Servers &gt; <strong>Rebuild</strong> the services, <strong>Rebuild</strong> the map server, then <strong>Restart</strong>.</li>
+<li><strong>Detén Play.</strong> Muchos ajustes están bloqueados durante Play.</li>
+<li><strong>Abre Project Check</strong> (<strong>KitARPG &gt; Project Check</strong>) y corrige cada error. La mayoría tienen un botón de corrección.</li>
+<li><strong>Aplica las actualizaciones del kit pendientes</strong> en Overview.</li>
+<li><strong>En MMO, vuelve a compilar y reinicia</strong>: Play &amp; Servers &gt; <strong>Rebuild</strong> de los servicios, <strong>Rebuild</strong> del servidor de mapa, y luego <strong>Restart</strong>.</li>
 </ol>
-<p>Logs to read:</p>
+<p>Registros para leer:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Log</th>
-<th>Where</th>
+<th>Registro</th>
+<th>Dónde</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Unity Console</td>
+<td>Console de Unity</td>
 <td><strong>Window &gt; General &gt; Console</strong></td>
 </tr>
 <tr>
-<td>Services started from the editor</td>
-<td>Play &amp; Servers &gt; <strong>Log</strong> card, or <code>UserSettings/KitARPG/services.log</code></td>
+<td>Servicios iniciados desde el editor</td>
+<td>Play &amp; Servers &gt; tarjeta <strong>Log</strong>, o <code>UserSettings/KitARPG/services.log</code></td>
 </tr>
 <tr>
-<td>Each map server</td>
+<td>Cada servidor de mapa</td>
 <td><code>UserSettings/KitARPG/data/logs/map-&lt;id&gt;.log</code></td>
 </tr>
 <tr>
-<td>Shop started from the editor</td>
+<td>Shop iniciado desde el editor</td>
 <td><code>UserSettings/KitARPG/shop.log</code></td>
 </tr>
 <tr>
-<td>Play mode tests</td>
+<td>Pruebas de modo Play</td>
 <td><code>Logs/KitARPG-PlayMode-Tests.xml</code></td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="setup-and-import"><a class="anchor" href="#setup-and-import" aria-hidden="true">#</a>Setup and import</h2>
-<h3 id="materials-are-pink"><a class="anchor" href="#materials-are-pink" aria-hidden="true">#</a>Materials are pink</h3>
-<p>URP isn't the active render pipeline, or a quality level still uses another pipeline. The kit's materials are URP materials.</p>
-<p><strong>Fix:</strong> open <strong>KitARPG &gt; Setup Wizard</strong> and press <strong>Set everything up</strong>. It sets URP as the default pipeline and on every quality level, and sets Linear color. To check by hand: <strong>Project Settings &gt; Graphics &gt; Default Render Pipeline</strong> and <strong>Project Settings &gt; Quality</strong>, every level.</p>
-<h3 id="labels-have-no-text-or-font"><a class="anchor" href="#labels-have-no-text-or-font" aria-hidden="true">#</a>Labels have no text or font</h3>
-<p>TextMesh Pro's essential resources aren't in the project. Project Check shows the error &quot;TextMesh Pro's essential resources aren't in the project, so every label in the kit's UI and sample has no font.&quot;</p>
-<p><strong>Fix:</strong> press <strong>Set everything up</strong> in the Setup Wizard, or the import button on the Project Check error, or <strong>Window &gt; TextMeshPro &gt; Import TMP Essential Resources</strong>. In batch mode the import is queued and doesn't finish before Unity exits; run it once in the normal editor.</p>
-<h3 id="menus-don-t-take-clicks"><a class="anchor" href="#menus-don-t-take-clicks" aria-hidden="true">#</a>Menus don't take clicks</h3>
-<p>A scene's EventSystem has the UI module of the other input system. Project Check warns: &quot;&lt;scene&gt;'s EventSystem has the UI module of the other input system, so menus may not take clicks.&quot;</p>
-<p><strong>Fix:</strong> press <strong>Fix scenes</strong> on the warning, or <strong>Set everything up</strong> in the Setup Wizard. The kit also switches the module when a scene loads under the Input System, as a fallback.</p>
-<h3 id="invalidoperationexception-about-the-input-class-when-pressing-play"><a class="anchor" href="#invalidoperationexception-about-the-input-class-when-pressing-play" aria-hidden="true">#</a><code>InvalidOperationException</code> about the <code>Input</code> class when pressing Play</h3>
-<p>The project uses only the Input System (new Unity templates do) and some script reads <code>UnityEngine.Input</code> directly. The kit's own code never does.</p>
-<p><strong>Fix:</strong> in your scripts, call <code>KitInput.GetKey</code>, <code>KitInput.GetKeyDown</code>, <code>KitInput.GetMouseButton</code>, <code>KitInput.mousePosition</code> and the rest instead of <code>Input</code>. They work in both kinds of project. Or set <strong>Project Settings &gt; Player &gt; Active Input Handling</strong> to <strong>Both</strong>.</p>
-<h3 id="changes-in-game-settings-don-t-reach-a-scene"><a class="anchor" href="#changes-in-game-settings-don-t-reach-a-scene" aria-hidden="true">#</a>Changes in Game Settings don't reach a scene</h3>
-<p>The scene overrides fields of the Game Instance prefab, so Game Settings (which edits the prefab) doesn't reach it. A common case: the touch controls show up with <em>Input Layout</em> set to Mouse And Keys. Project Check warns: &quot;&lt;scene&gt; overrides Game Settings on its Game Instance (...), so changes in Game Settings don't reach that scene.&quot;</p>
-<p><strong>Fix:</strong> press <strong>Fix scenes</strong> in Project Check. It reverts the overrides so the scene follows the prefab.</p>
-<h3 id="scenes-in-build-settings-is-red"><a class="anchor" href="#scenes-in-build-settings-is-red" aria-hidden="true">#</a>&quot;Scenes in Build Settings&quot; is red</h3>
-<p>Title isn't the first enabled scene, or, in MMO, Server isn't listed. The detail reads &quot;The first scene must be Title, and Server must be listed.&quot;</p>
-<p><strong>Fix:</strong> press <strong>Use starter scenes</strong>. It puts Title, Server, Town, Forest and Crypt in Build Settings, Title first. If the sample doesn't exist yet, it offers to build it.</p>
-<h3 id="sqlite-library-for-this-platform-is-missing"><a class="anchor" href="#sqlite-library-for-this-platform-is-missing" aria-hidden="true">#</a>&quot;SQLite library for this platform&quot; is missing</h3>
-<p>The single player save needs the native SQLite library in <code>Assets/Blunnyn/KitARPG/Plugins/SQLite/</code> (<code>macOS/libe_sqlite3.dylib</code>, <code>Windows/e_sqlite3.dll</code> or <code>Linux/libe_sqlite3.so</code>).</p>
-<p><strong>Fix:</strong> import the KitARPG package again with the <code>Plugins/SQLite</code> folder ticked.</p>
+<h2 id="setup-and-import"><a class="anchor" href="#setup-and-import" aria-hidden="true">#</a>Configuración e importación</h2>
+<h3 id="materials-are-pink"><a class="anchor" href="#materials-are-pink" aria-hidden="true">#</a>Los materiales se ven rosados</h3>
+<p>URP no es el render pipeline activo, o un nivel de calidad todavía usa otro pipeline. Los materiales del kit son materiales de URP.</p>
+<p><strong>Solución:</strong> abre <strong>KitARPG &gt; Setup Wizard</strong> y presiona <strong>Set everything up</strong>. Pone URP como pipeline predeterminado y en cada nivel de calidad, y pone el color Linear. Para revisarlo a mano: <strong>Project Settings &gt; Graphics &gt; Default Render Pipeline</strong> y <strong>Project Settings &gt; Quality</strong>, cada nivel.</p>
+<h3 id="labels-have-no-text-or-font"><a class="anchor" href="#labels-have-no-text-or-font" aria-hidden="true">#</a>Las etiquetas no tienen texto ni fuente</h3>
+<p>Los recursos esenciales de TextMesh Pro no están en el proyecto. Project Check muestra el error &quot;TextMesh Pro's essential resources aren't in the project, so every label in the kit's UI and sample has no font.&quot;</p>
+<p><strong>Solución:</strong> presiona <strong>Set everything up</strong> en el Setup Wizard, o el botón de importar del error de Project Check, o <strong>Window &gt; TextMeshPro &gt; Import TMP Essential Resources</strong>. En modo batch la importación queda en cola y no termina antes de que Unity salga; córrela una vez en el editor normal.</p>
+<h3 id="menus-don-t-take-clicks"><a class="anchor" href="#menus-don-t-take-clicks" aria-hidden="true">#</a>Los menús no reciben clics</h3>
+<p>El EventSystem de una escena tiene el módulo de UI del otro sistema de input. Project Check avisa: &quot;&lt;scene&gt;'s EventSystem has the UI module of the other input system, so menus may not take clicks.&quot;</p>
+<p><strong>Solución:</strong> presiona <strong>Fix scenes</strong> en la advertencia, o <strong>Set everything up</strong> en el Setup Wizard. El kit también cambia el módulo cuando una escena se carga con el Input System, como respaldo.</p>
+<h3 id="invalidoperationexception-about-the-input-class-when-pressing-play"><a class="anchor" href="#invalidoperationexception-about-the-input-class-when-pressing-play" aria-hidden="true">#</a><code>InvalidOperationException</code> sobre la clase <code>Input</code> al presionar Play</h3>
+<p>El proyecto usa solo el Input System (las plantillas nuevas de Unity lo hacen) y algún script lee <code>UnityEngine.Input</code> directamente. El código propio del kit nunca lo hace.</p>
+<p><strong>Solución:</strong> en tus scripts, llama a <code>KitInput.GetKey</code>, <code>KitInput.GetKeyDown</code>, <code>KitInput.GetMouseButton</code>, <code>KitInput.mousePosition</code> y los demás en lugar de <code>Input</code>. Funcionan en los dos tipos de proyecto. O pon <strong>Project Settings &gt; Player &gt; Active Input Handling</strong> en <strong>Both</strong>.</p>
+<h3 id="changes-in-game-settings-don-t-reach-a-scene"><a class="anchor" href="#changes-in-game-settings-don-t-reach-a-scene" aria-hidden="true">#</a>Los cambios en Game Settings no llegan a una escena</h3>
+<p>La escena cambia campos del prefab Game Instance, así que Game Settings (que edita el prefab) no le llega. Un caso común: los controles táctiles aparecen con <em>Input Layout</em> en Mouse And Keys. Project Check avisa: &quot;&lt;scene&gt; overrides Game Settings on its Game Instance (...), so changes in Game Settings don't reach that scene.&quot;</p>
+<p><strong>Solución:</strong> presiona <strong>Fix scenes</strong> en Project Check. Revierte esos cambios para que la escena siga al prefab.</p>
+<h3 id="scenes-in-build-settings-is-red"><a class="anchor" href="#scenes-in-build-settings-is-red" aria-hidden="true">#</a>&quot;Scenes in Build Settings&quot; está en rojo</h3>
+<p>Title no es la primera escena activa, o, en MMO, Server no está en la lista. El detalle dice &quot;The first scene must be Title, and Server must be listed.&quot;</p>
+<p><strong>Solución:</strong> presiona <strong>Use starter scenes</strong>. Pone Title, Server, Town, Forest y Crypt en Build Settings, Title primero. Si la muestra todavía no existe, ofrece armarla.</p>
+<h3 id="sqlite-library-for-this-platform-is-missing"><a class="anchor" href="#sqlite-library-for-this-platform-is-missing" aria-hidden="true">#</a>Falta &quot;SQLite library for this platform&quot;</h3>
+<p>El guardado de un jugador necesita la biblioteca nativa de SQLite en <code>Assets/Blunnyn/KitARPG/Plugins/SQLite/</code> (<code>macOS/libe_sqlite3.dylib</code>, <code>Windows/e_sqlite3.dll</code> o <code>Linux/libe_sqlite3.so</code>).</p>
+<p><strong>Solución:</strong> vuelve a importar el paquete de KitARPG con la carpeta <code>Plugins/SQLite</code> marcada.</p>
 <h3 id="stop-play-before-building-the-starter-sample"><a class="anchor" href="#stop-play-before-building-the-starter-sample" aria-hidden="true">#</a>&quot;Stop Play before building the starter sample.&quot;</h3>
-<p>Building the sample during Play would save broken objects into its prefabs.</p>
-<p><strong>Fix:</strong> stop Play and build again.</p>
-<h3 id="the-setup-wizard-doesn-t-open"><a class="anchor" href="#the-setup-wizard-doesn-t-open" aria-hidden="true">#</a>The Setup Wizard doesn't open</h3>
-<p>It opens by itself once per project. After that, <code>UserSettings/KitARPG/setup-done</code> keeps it closed.</p>
-<p><strong>Fix:</strong> open <strong>KitARPG &gt; Setup Wizard</strong>.</p>
-<h2 id="playing-in-the-editor"><a class="anchor" href="#playing-in-the-editor" aria-hidden="true">#</a>Playing in the editor</h2>
-<h3 id="i-can-t-change-game-settings-or-modules"><a class="anchor" href="#i-can-t-change-game-settings-or-modules" aria-hidden="true">#</a>I can't change Game Settings or Modules</h3>
-<p>Their fields are locked during Play, because they are saved in the network prefab.</p>
-<p><strong>Fix:</strong> stop Play first.</p>
+<p>Armar la muestra durante Play guardaría objetos rotos en sus prefabs.</p>
+<p><strong>Solución:</strong> detén Play y vuelve a armarla.</p>
+<h3 id="the-setup-wizard-doesn-t-open"><a class="anchor" href="#the-setup-wizard-doesn-t-open" aria-hidden="true">#</a>El Setup Wizard no se abre</h3>
+<p>Se abre solo una vez por proyecto. Después, <code>UserSettings/KitARPG/setup-done</code> lo mantiene cerrado.</p>
+<p><strong>Solución:</strong> abre <strong>KitARPG &gt; Setup Wizard</strong>.</p>
+<h2 id="playing-in-the-editor"><a class="anchor" href="#playing-in-the-editor" aria-hidden="true">#</a>Jugar en el editor</h2>
+<h3 id="i-can-t-change-game-settings-or-modules"><a class="anchor" href="#i-can-t-change-game-settings-or-modules" aria-hidden="true">#</a>No puedo cambiar Game Settings ni Modules</h3>
+<p>Sus campos están bloqueados durante Play, porque se guardan en el prefab de red.</p>
+<p><strong>Solución:</strong> detén Play primero.</p>
 <h3 id="add-the-title-scene-to-build-settings-first"><a class="anchor" href="#add-the-title-scene-to-build-settings-first" aria-hidden="true">#</a>&quot;Add the Title scene to Build Settings first.&quot;</h3>
-<p>Play &amp; Servers opens Title from Build Settings.</p>
-<p><strong>Fix:</strong> press <strong>Use starter scenes</strong>, or add your Title scene as the first scene.</p>
-<h3 id="the-game-starts-without-a-title-screen"><a class="anchor" href="#the-game-starts-without-a-title-screen" aria-hidden="true">#</a>The game starts without a title screen</h3>
-<p>Unity's Play button plays the open scene. A map scene alone has no session.</p>
-<p><strong>Fix:</strong> open Title, or use <strong>Play</strong> in Overview or Play &amp; Servers, which open Title for you.</p>
-<h3 id="players-or-monsters-don-t-move-on-a-new-map"><a class="anchor" href="#players-or-monsters-don-t-move-on-a-new-map" aria-hidden="true">#</a>Players or monsters don't move on a new map</h3>
-<p>The map's scene has no baked NavMesh. Movement and monsters use the NavMesh on the server.</p>
-<p><strong>Fix:</strong> add a <code>NavMeshSurface</code> to the scene and bake it. Duplicating the sample's Forest gives you one already set up. See <a href="../content/maps.html">Maps</a>.</p>
-<h3 id="players-arriving-on-a-map-have-nowhere-to-stand"><a class="anchor" href="#players-arriving-on-a-map-have-nowhere-to-stand" aria-hidden="true">#</a>Players arriving on a map have nowhere to stand</h3>
+<p>Play &amp; Servers abre Title desde Build Settings.</p>
+<p><strong>Solución:</strong> presiona <strong>Use starter scenes</strong>, o agrega tu escena Title como primera escena.</p>
+<h3 id="the-game-starts-without-a-title-screen"><a class="anchor" href="#the-game-starts-without-a-title-screen" aria-hidden="true">#</a>El juego empieza sin pantalla de título</h3>
+<p>El botón Play de Unity juega la escena abierta. Una escena de mapa sola no tiene sesión.</p>
+<p><strong>Solución:</strong> abre Title, o usa <strong>Play</strong> en Overview o en Play &amp; Servers, que abren Title por ti.</p>
+<h3 id="players-or-monsters-don-t-move-on-a-new-map"><a class="anchor" href="#players-or-monsters-don-t-move-on-a-new-map" aria-hidden="true">#</a>Los jugadores o los monstruos no se mueven en un mapa nuevo</h3>
+<p>La escena del mapa no tiene un NavMesh horneado. El movimiento y los monstruos usan el NavMesh en el servidor.</p>
+<p><strong>Solución:</strong> agrega un <code>NavMeshSurface</code> a la escena y hornéalo. Duplicar el Forest de la muestra te da uno ya configurado. Consulta <a href="../content/maps.html">Mapas</a>.</p>
+<h3 id="players-arriving-on-a-map-have-nowhere-to-stand"><a class="anchor" href="#players-arriving-on-a-map-have-nowhere-to-stand" aria-hidden="true">#</a>Los jugadores que llegan a un mapa no tienen dónde pararse</h3>
 <p>Project Check: &quot;&lt;scene&gt; has no SpawnPoint; players arriving at '&lt;map&gt;' have nowhere to stand.&quot;</p>
-<p><strong>Fix:</strong> add a <code>SpawnPoint</code> to the scene.</p>
-<h3 id="single-player-features-answer-only-on-an-online-server"><a class="anchor" href="#single-player-features-answer-only-on-an-online-server" aria-hidden="true">#</a>Single player features answer &quot;Only on an online server.&quot;</h3>
-<p>Friends, parties, guilds, mail, the market, tax collectors, the in-game shop and some moderation commands need a server.</p>
-<p><strong>Fix:</strong> switch to MMO in Play &amp; Servers, or turn those systems off in <a href="../editor/modules.html">Modules</a> so they don't show.</p>
-<h2 id="mmo-services"><a class="anchor" href="#mmo-services" aria-hidden="true">#</a>MMO services</h2>
-<h3 id="the-net-10-sdk-isn-t-found"><a class="anchor" href="#the-net-10-sdk-isn-t-found" aria-hidden="true">#</a>The .NET 10 SDK isn't found</h3>
-<p>The row reads &quot;dotnet was not found. Install the .NET 10 SDK, then check again.&quot; or &quot;Found ...; the services need 10.&quot; Unity doesn't always get your shell's <code>PATH</code>.</p>
-<p><strong>Fix:</strong> install the .NET 10 SDK (not only the runtime) from https://dotnet.microsoft.com/download/dotnet/10.0, then press <strong>Check again</strong>. If it is installed in an unusual place, put a link to <code>dotnet</code> in one of the folders the kit searches: <code>/usr/local/share/dotnet</code>, <code>/usr/local/bin</code>, <code>/opt/homebrew/bin</code>, <code>~/.dotnet</code> on Mac and Linux, <code>C:\Program Files\dotnet</code> on Windows. Restarting Unity Hub and Unity after installing also refreshes <code>PATH</code>.</p>
+<p><strong>Solución:</strong> agrega un <code>SpawnPoint</code> a la escena.</p>
+<h3 id="single-player-features-answer-only-on-an-online-server"><a class="anchor" href="#single-player-features-answer-only-on-an-online-server" aria-hidden="true">#</a>Funciones en un jugador responden &quot;Only on an online server.&quot;</h3>
+<p>Amigos, grupos, gremios, correo, el mercado, los recaudadores, la tienda del juego y algunos comandos de moderación necesitan un servidor.</p>
+<p><strong>Solución:</strong> cambia a MMO en Play &amp; Servers, o apaga esos sistemas en <a href="../editor/modules.html">Modules</a> para que no aparezcan.</p>
+<h2 id="mmo-services"><a class="anchor" href="#mmo-services" aria-hidden="true">#</a>Servicios MMO</h2>
+<h3 id="the-net-10-sdk-isn-t-found"><a class="anchor" href="#the-net-10-sdk-isn-t-found" aria-hidden="true">#</a>No se encuentra el SDK de .NET 10</h3>
+<p>La fila dice &quot;dotnet was not found. Install the .NET 10 SDK, then check again.&quot; o &quot;Found ...; the services need 10.&quot; Unity no siempre recibe el <code>PATH</code> de tu shell.</p>
+<p><strong>Solución:</strong> instala el SDK de .NET 10 (no solo el runtime) desde https://dotnet.microsoft.com/download/dotnet/10.0, y luego presiona <strong>Check again</strong>. Si está instalado en un lugar poco común, pon un enlace a <code>dotnet</code> en una de las carpetas que revisa el kit: <code>/usr/local/share/dotnet</code>, <code>/usr/local/bin</code>, <code>/opt/homebrew/bin</code>, <code>~/.dotnet</code> en Mac y Linux, <code>C:\Program Files\dotnet</code> en Windows. Reiniciar Unity Hub y Unity después de instalar también refresca el <code>PATH</code>.</p>
 <h3 id="services-source-not-found"><a class="anchor" href="#services-source-not-found" aria-hidden="true">#</a>&quot;Services source: Not found.&quot;</h3>
-<p>The kit didn't find a folder with <code>KitARPG.Services.slnx</code>. It looks next to your Unity project folder (<code>../Services</code>), inside it (<code>Services</code>), and in <code>Assets/Blunnyn/KitARPG/Services~</code>.</p>
-<p><strong>Fix:</strong> wait for the editor to finish loading (it unpacks <code>Services.zip</code> on load), or press <strong>Browse</strong> and pick the folder. If <code>Services~</code> doesn't exist, check that <code>Assets/Blunnyn/KitARPG/Services.zip</code> was imported.</p>
+<p>El kit no encontró una carpeta con <code>KitARPG.Services.slnx</code>. Busca junto a la carpeta de tu proyecto de Unity (<code>../Services</code>), dentro de ella (<code>Services</code>) y en <code>Assets/Blunnyn/KitARPG/Services~</code>.</p>
+<p><strong>Solución:</strong> espera a que el editor termine de cargar (desempaqueta <code>Services.zip</code> al cargar), o presiona <strong>Browse</strong> y elige la carpeta. Si <code>Services~</code> no existe, revisa que <code>Assets/Blunnyn/KitARPG/Services.zip</code> se haya importado.</p>
 <h3 id="dotnet-build-failed"><a class="anchor" href="#dotnet-build-failed" aria-hidden="true">#</a>&quot;dotnet build failed.&quot;</h3>
-<p>The services didn't compile. Play &amp; Servers shows the first error lines. &quot;dotnet build failed. Run it in a terminal to see why.&quot; means there were none to show.</p>
-<p><strong>Fix:</strong> open a terminal in the services folder and run <code>dotnet build</code>. Common causes: no internet the first time (NuGet packages are downloaded), an SDK older than 10, or files changed by hand in <code>Services~</code>. Importing the kit again restores the services.</p>
+<p>Los servicios no compilaron. Play &amp; Servers muestra las primeras líneas del error. &quot;dotnet build failed. Run it in a terminal to see why.&quot; significa que no había ninguna para mostrar.</p>
+<p><strong>Solución:</strong> abre una terminal en la carpeta de los servicios y corre <code>dotnet build</code>. Causas comunes: sin internet la primera vez (se descargan los paquetes NuGet), un SDK más viejo que el 10, o archivos cambiados a mano en <code>Services~</code>. Volver a importar el kit restaura los servicios.</p>
 <h3 id="something-else-is-using-port"><a class="anchor" href="#something-else-is-using-port" aria-hidden="true">#</a>&quot;Something else is using port ...&quot;</h3>
-<p>Services started from a terminal or an earlier session hold the ports 5100, 5200 or 7700. They may run older code.</p>
-<p><strong>Fix:</strong> stop them. If Play &amp; Servers shows &quot;Services from an earlier editor session are still running (process ...)&quot;, press <strong>Stop the old services</strong>. Otherwise find the process (on Mac and Linux <code>lsof -i :5100</code>, on Windows <code>netstat -ano | findstr 5100</code>) and end it.</p>
+<p>Servicios iniciados desde una terminal o desde una sesión anterior ocupan los puertos 5100, 5200 o 7700. Pueden estar corriendo código más viejo.</p>
+<p><strong>Solución:</strong> detenlos. Si Play &amp; Servers muestra &quot;Services from an earlier editor session are still running (process ...)&quot;, presiona <strong>Stop the old services</strong>. Si no, busca el proceso (en Mac y Linux <code>lsof -i :5100</code>, en Windows <code>netstat -ano | findstr 5100</code>) y termínalo.</p>
 <h3 id="the-services-or-the-map-server-were-rebuilt-after-they-started-so-they-still-run-the-old-code-restart-them"><a class="anchor" href="#the-services-or-the-map-server-were-rebuilt-after-they-started-so-they-still-run-the-old-code-restart-them" aria-hidden="true">#</a>&quot;The services or the map server were rebuilt after they started, so they still run the old code. Restart them.&quot;</h3>
-<p>You rebuilt while they ran.</p>
-<p><strong>Fix:</strong> press <strong>Restart</strong>.</p>
+<p>Compilaste mientras corrían.</p>
+<p><strong>Solución:</strong> presiona <strong>Restart</strong>.</p>
 <h3 id="no-map-reached-central"><a class="anchor" href="#no-map-reached-central" aria-hidden="true">#</a>&quot;No map reached Central&quot;</h3>
-<p>Overview shows it when the services run but no map server registered. Usually the map server build is missing or out of date.</p>
-<p><strong>Fix:</strong> build the map server (Play &amp; Servers, step 1) and restart the services. If it persists, read <code>UserSettings/KitARPG/data/logs/map-town.log</code>.</p>
-<h3 id="the-map-server-build-missing-the-scene-of-a-map"><a class="anchor" href="#the-map-server-build-missing-the-scene-of-a-map" aria-hidden="true">#</a>The map server build &quot;Missing the scene of a map&quot;</h3>
-<p>The build lacks a map's scene, so players travelling there end up back at the login.</p>
-<p><strong>Fix:</strong> press <strong>Rebuild</strong>. Builds take their scenes from the maps in the Game Database. If the build itself says &quot;No scene file named ...&quot;, the map names a scene that doesn't exist: fix the name on the map's page.</p>
+<p>Overview lo muestra cuando los servicios corren pero ningún servidor de mapa se registró. Por lo general falta la build del servidor de mapa o está desactualizada.</p>
+<p><strong>Solución:</strong> compila el servidor de mapa (Play &amp; Servers, paso 1) y reinicia los servicios. Si sigue, lee <code>UserSettings/KitARPG/data/logs/map-town.log</code>.</p>
+<h3 id="the-map-server-build-missing-the-scene-of-a-map"><a class="anchor" href="#the-map-server-build-missing-the-scene-of-a-map" aria-hidden="true">#</a>La build del servidor de mapa: &quot;Missing the scene of a map&quot;</h3>
+<p>A la build le falta la escena de un mapa, así que los jugadores que viajan ahí terminan de vuelta en el inicio de sesión.</p>
+<p><strong>Solución:</strong> presiona <strong>Rebuild</strong>. Las builds toman sus escenas de los mapas de la Game Database. Si la build misma dice &quot;No scene file named ...&quot;, el mapa nombra una escena que no existe: corrige el nombre en la página del mapa.</p>
 <h3 id="two-players-need-the-mmo-mode"><a class="anchor" href="#two-players-need-the-mmo-mode" aria-hidden="true">#</a>&quot;Two players need the MMO mode&quot;</h3>
-<p>Play with two players only works in MMO.</p>
-<p><strong>Fix:</strong> switch to MMO in Play &amp; Servers.</p>
-<h3 id="play-with-two-players-doesn-t-start-player-2"><a class="anchor" href="#play-with-two-players-doesn-t-start-player-2" aria-hidden="true">#</a>Play with two players doesn't start Player 2</h3>
-<p>Unity's Multiplayer Play Mode couldn't activate the second player by itself. The Console says to turn on Player 2.</p>
-<p><strong>Fix:</strong> in <strong>Window &gt; Multiplayer &gt; Multiplayer Play Mode</strong>, turn on Player 2, then press <strong>Play with two</strong> again. The first launch imports the project in the second editor, which takes a while. If the dialog says &quot;Build the services first&quot;, do step 1 of Play &amp; Servers.</p>
-<h3 id="i-can-t-change-the-database"><a class="anchor" href="#i-can-t-change-the-database" aria-hidden="true">#</a>I can't change the database</h3>
+<p>Play with two players solo funciona en MMO.</p>
+<p><strong>Solución:</strong> cambia a MMO en Play &amp; Servers.</p>
+<h3 id="play-with-two-players-doesn-t-start-player-2"><a class="anchor" href="#play-with-two-players-doesn-t-start-player-2" aria-hidden="true">#</a>Play with two players no inicia Player 2</h3>
+<p>Multiplayer Play Mode de Unity no pudo activar solo al segundo jugador. La Console dice que prendas Player 2.</p>
+<p><strong>Solución:</strong> en <strong>Window &gt; Multiplayer &gt; Multiplayer Play Mode</strong>, prende Player 2, y luego presiona <strong>Play with two</strong> otra vez. El primer arranque importa el proyecto en el segundo editor, lo que tarda un rato. Si el diálogo dice &quot;Build the services first&quot;, haz el paso 1 de Play &amp; Servers.</p>
+<h3 id="i-can-t-change-the-database"><a class="anchor" href="#i-can-t-change-the-database" aria-hidden="true">#</a>No puedo cambiar la base de datos</h3>
 <p>&quot;Stop the services to change the database.&quot;</p>
-<p><strong>Fix:</strong> press <strong>Stop</strong> in step 3, change it, start again.</p>
-<h2 id="signing-in-and-entering-a-map"><a class="anchor" href="#signing-in-and-entering-a-map" aria-hidden="true">#</a>Signing in and entering a map</h2>
-<p>These are the messages players see on the title screen.</p>
+<p><strong>Solución:</strong> presiona <strong>Stop</strong> en el paso 3, cámbiala e inicia otra vez.</p>
+<h2 id="signing-in-and-entering-a-map"><a class="anchor" href="#signing-in-and-entering-a-map" aria-hidden="true">#</a>Iniciar sesión y entrar a un mapa</h2>
+<p>Estos son los mensajes que ven los jugadores en la pantalla de título.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Message</th>
-<th>Code</th>
-<th>Cause</th>
-<th>Fix</th>
+<th>Mensaje</th>
+<th>Código</th>
+<th>Causa</th>
+<th>Solución</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>&quot;Can't reach the server.&quot;</td>
 <td><code>network</code></td>
-<td>Login or Central doesn't answer at the address in <code>KitARPGSettings</code></td>
-<td>Start the services; in a build, check <em>Login Url</em> and <em>Central Url</em> and that HTTPS works</td>
+<td>Login o Central no responden en la dirección de <code>KitARPGSettings</code></td>
+<td>Inicia los servicios; en una build, revisa <em>Login Url</em> y <em>Central Url</em> y que HTTPS funcione</td>
 </tr>
 <tr>
 <td>&quot;Usernames are 3-16 letters, digits or _.&quot;</td>
 <td><code>invalid_username</code></td>
-<td>Username too short, too long or with other characters</td>
-<td>Pick another</td>
+<td>Nombre de usuario muy corto, muy largo o con otros caracteres</td>
+<td>Elige otro</td>
 </tr>
 <tr>
 <td>&quot;Passwords need at least 8 characters.&quot;</td>
 <td><code>invalid_password</code></td>
-<td>Password under 8 characters (or over 128)</td>
-<td>Use a longer one</td>
+<td>Contraseña de menos de 8 caracteres (o de más de 128)</td>
+<td>Usa una más larga</td>
 </tr>
 <tr>
 <td>&quot;That username is taken.&quot;</td>
 <td><code>username_taken</code></td>
-<td>Another account has it</td>
-<td>Pick another</td>
+<td>Otra cuenta lo tiene</td>
+<td>Elige otro</td>
 </tr>
 <tr>
 <td>&quot;Wrong username or password.&quot;</td>
 <td><code>wrong_credentials</code></td>
-<td>Bad login</td>
-<td>Check both</td>
+<td>Datos de inicio de sesión incorrectos</td>
+<td>Revisa los dos</td>
 </tr>
 <tr>
 <td>&quot;Too many attempts, wait a minute.&quot;</td>
 <td><code>too_many_requests</code></td>
-<td>More than 10 requests a minute from one address to <code>/api/auth</code></td>
-<td>Wait a minute</td>
+<td>Más de 10 pedidos por minuto desde una dirección a <code>/api/auth</code></td>
+<td>Espera un minuto</td>
 </tr>
 <tr>
 <td>&quot;Too many wrong passwords. Wait a few minutes and try again.&quot;</td>
 <td><code>login_locked</code></td>
-<td>5 wrong passwords for the username in 15 minutes. Also sent for unknown names</td>
-<td>Wait 15 minutes</td>
+<td>5 contraseñas equivocadas para el nombre de usuario en 15 minutos. También se envía para nombres desconocidos</td>
+<td>Espera 15 minutos</td>
 </tr>
 <tr>
 <td>&quot;This account is banned.&quot;</td>
 <td><code>account_banned</code></td>
-<td>A GM banned the account</td>
-<td><code>/ban player 0</code> lifts it</td>
+<td>Un GM baneó la cuenta</td>
+<td><code>/ban player 0</code> lo levanta</td>
 </tr>
 <tr>
 <td>&quot;Please sign in with your password again.&quot;</td>
 <td><code>session_expired</code></td>
-<td>The &quot;Remember me&quot; token is used, expired or unknown</td>
-<td>Sign in with the password</td>
+<td>El token de &quot;Remember me&quot; está usado, vencido o es desconocido</td>
+<td>Inicia sesión con la contraseña</td>
 </tr>
 <tr>
 <td>&quot;Names are 3-16 letters or digits, starting with a letter.&quot;</td>
 <td><code>invalid_character_name</code></td>
-<td>Bad character name</td>
-<td>Pick another</td>
+<td>Nombre de personaje inválido</td>
+<td>Elige otro</td>
 </tr>
 <tr>
 <td>&quot;That name is taken.&quot;</td>
 <td><code>character_name_taken</code></td>
-<td>Another character has it</td>
-<td>Pick another</td>
+<td>Otro personaje lo tiene</td>
+<td>Elige otro</td>
 </tr>
 <tr>
 <td>&quot;No free character slots.&quot;</td>
 <td><code>character_limit</code></td>
-<td>The account has the most characters allowed (6 by default)</td>
-<td>Delete one, or raise <code>maxCharactersPerAccount</code> in the Game Database settings</td>
+<td>La cuenta tiene el máximo de personajes permitido (6 por defecto)</td>
+<td>Borra uno, o sube <code>maxCharactersPerAccount</code> en los ajustes de la Game Database</td>
 </tr>
 <tr>
 <td>&quot;That map is not running right now. Try again in a moment.&quot;</td>
 <td><code>map_unavailable</code></td>
-<td>Central couldn't start or reach the character's map</td>
-<td>See below</td>
+<td>Central no pudo iniciar ni alcanzar el mapa del personaje</td>
+<td>Ver abajo</td>
 </tr>
 <tr>
 <td>&quot;The game and the server are different versions. Update the game.&quot;</td>
 <td><code>version_mismatch</code></td>
-<td>Client and map server built from different code</td>
-<td>See below</td>
+<td>Cliente y servidor de mapa compilados con código distinto</td>
+<td>Ver abajo</td>
 </tr>
 <tr>
 <td>&quot;The server plays a different game mode. Update the game.&quot;</td>
 <td><code>mode_mismatch</code></td>
-<td>Client and map server built with different control modes</td>
-<td>See below</td>
+<td>Cliente y servidor de mapa compilados con modos de control distintos</td>
+<td>Ver abajo</td>
 </tr>
 <tr>
 <td>&quot;Your character is still being saved. Try again in a moment.&quot;</td>
 <td><code>session_busy</code></td>
-<td>See below</td>
-<td>Wait a few seconds</td>
+<td>Ver abajo</td>
+<td>Espera unos segundos</td>
 </tr>
 <tr>
 <td>&quot;You logged in from somewhere else.&quot;</td>
 <td><code>logged_in_elsewhere</code></td>
-<td>The same account signed in elsewhere</td>
-<td>One session per account</td>
+<td>La misma cuenta inició sesión en otro lado</td>
+<td>Una sesión por cuenta</td>
 </tr>
 <tr>
 <td>&quot;Lost connection to the map.&quot;</td>
 <td><code>disconnected</code></td>
-<td>The map server closed the connection or stopped</td>
-<td>Check the map's log</td>
+<td>El servidor de mapa cerró la conexión o se detuvo</td>
+<td>Revisa el registro del mapa</td>
 </tr>
 </tbody>
 </table></div>
 <h3 id="version_mismatch-the-game-and-the-server-are-different-versions"><a class="anchor" href="#version_mismatch-the-game-and-the-server-are-different-versions" aria-hidden="true">#</a>version_mismatch: &quot;The game and the server are different versions&quot;</h3>
-<p>The client sends a short hash of everything that travels over the network (synced fields, lists and messages). The map server compares it with its own and refuses a client built from different code, instead of failing later when reading data.</p>
-<p><strong>Fix:</strong> rebuild the map server (or the client) so both come from the same code, then restart the services. This happens often after changing code, updating the kit, or leaving an old map server running.</p>
+<p>El cliente envía un hash corto de todo lo que viaja por la red (campos sincronizados, listas y mensajes). El servidor de mapa lo compara con el suyo y rechaza a un cliente compilado con código distinto, en lugar de fallar después al leer los datos.</p>
+<p><strong>Solución:</strong> vuelve a compilar el servidor de mapa (o el cliente) para que los dos salgan del mismo código, y luego reinicia los servicios. Pasa seguido después de cambiar código, actualizar el kit o dejar corriendo un servidor de mapa viejo.</p>
 <h3 id="mode_mismatch-the-server-plays-a-different-game-mode"><a class="anchor" href="#mode_mismatch-the-server-plays-a-different-game-mode" aria-hidden="true">#</a>mode_mismatch: &quot;The server plays a different game mode&quot;</h3>
-<p>The client and the map server were built with different Game Settings &gt; <em>Control Mode</em> (<code>controlMode</code>).</p>
-<p><strong>Fix:</strong> build both with the same mode. After changing the mode, rebuild the map server and every client.</p>
+<p>El cliente y el servidor de mapa se compilaron con distinto Game Settings &gt; <em>Control Mode</em> (<code>controlMode</code>).</p>
+<p><strong>Solución:</strong> compila los dos con el mismo modo. Después de cambiar el modo, vuelve a compilar el servidor de mapa y cada cliente.</p>
 <h3 id="session_busy-your-character-is-still-being-saved"><a class="anchor" href="#session_busy-your-character-is-still-being-saved" aria-hidden="true">#</a>session_busy: &quot;Your character is still being saved&quot;</h3>
-<p>You signed in again while your character was still on a map. Central asks that map to save and drop the character and waits up to 5 seconds (<code>Central:KickWaitSeconds</code>). If the save hasn't arrived, it answers <code>session_busy</code> instead of risking an old save overwriting newer items.</p>
-<p><strong>Fix:</strong> wait a few seconds and press Play again. If it never clears, the old map server is stuck: check its log or restart the services.</p>
+<p>Volviste a iniciar sesión mientras tu personaje todavía estaba en un mapa. Central le pide a ese mapa que guarde y saque al personaje y espera hasta 5 segundos (<code>Central:KickWaitSeconds</code>). Si el guardado no llegó, responde <code>session_busy</code> en lugar de arriesgar que un guardado viejo sobrescriba ítems más nuevos.</p>
+<p><strong>Solución:</strong> espera unos segundos y presiona Play otra vez. Si nunca se resuelve, el servidor de mapa viejo está trabado: revisa su registro o reinicia los servicios.</p>
 <h3 id="map_unavailable-that-map-is-not-running-right-now"><a class="anchor" href="#map_unavailable-that-map-is-not-running-right-now" aria-hidden="true">#</a>map_unavailable: &quot;That map is not running right now&quot;</h3>
-<p>Central couldn't start the map server in time (<code>Central:LaunchTimeoutSeconds</code>, 60), or the map isn't in its list.</p>
-<p><strong>Fix:</strong> check that the map server build exists and runs, that the map's port is free, and the map's log. In Docker, check that the map has its own service in <code>docker-compose.yml</code> and a <code>Central__Maps__N</code> entry.</p>
-<h3 id="players-who-travel-to-a-new-map-end-up-back-at-the-login"><a class="anchor" href="#players-who-travel-to-a-new-map-end-up-back-at-the-login" aria-hidden="true">#</a>Players who travel to a new map end up back at the login</h3>
-<p>The map server build lacks that map's scene, or Central doesn't know the map.</p>
-<p><strong>Fix:</strong> rebuild the map server; Play &amp; Servers names the missing scene. For Docker, add the map's service and its entry in Central's maps list.</p>
-<h3 id="kicked-for-flooding"><a class="anchor" href="#kicked-for-flooding" aria-hidden="true">#</a>&quot;Kicked&quot; for flooding</h3>
-<p>A client that sends far more commands than a person could (well above 30 a second) is disconnected with the reason <code>flooding</code>. It happens with modified clients or bots.</p>
-<p><strong>Fix:</strong> nothing for normal players. If your own code sends a command every frame, send it less often.</p>
+<p>Central no pudo iniciar el servidor de mapa a tiempo (<code>Central:LaunchTimeoutSeconds</code>, 60), o el mapa no está en su lista.</p>
+<p><strong>Solución:</strong> revisa que la build del servidor de mapa exista y corra, que el puerto del mapa esté libre, y el registro del mapa. En Docker, revisa que el mapa tenga su propio servicio en <code>docker-compose.yml</code> y una entrada <code>Central__Maps__N</code>.</p>
+<h3 id="players-who-travel-to-a-new-map-end-up-back-at-the-login"><a class="anchor" href="#players-who-travel-to-a-new-map-end-up-back-at-the-login" aria-hidden="true">#</a>Los jugadores que viajan a un mapa nuevo terminan de vuelta en el inicio de sesión</h3>
+<p>A la build del servidor de mapa le falta la escena de ese mapa, o Central no conoce el mapa.</p>
+<p><strong>Solución:</strong> vuelve a compilar el servidor de mapa; Play &amp; Servers nombra la escena que falta. Para Docker, agrega el servicio del mapa y su entrada en la lista de mapas de Central.</p>
+<h3 id="kicked-for-flooding"><a class="anchor" href="#kicked-for-flooding" aria-hidden="true">#</a>&quot;Kicked&quot; por saturación</h3>
+<p>Un cliente que envía muchos más comandos de los que podría una persona (bastante más de 30 por segundo) se desconecta con el motivo <code>flooding</code>. Pasa con clientes modificados o bots.</p>
+<p><strong>Solución:</strong> nada para los jugadores normales. Si tu propio código envía un comando en cada frame, envíalo con menos frecuencia.</p>
 <h2 id="builds"><a class="anchor" href="#builds" aria-hidden="true">#</a>Builds</h2>
 <h3 id="kitarpg-found-n-problem-s"><a class="anchor" href="#kitarpg-found-n-problem-s" aria-hidden="true">#</a>&quot;KitARPG found N problem(s)&quot;</h3>
-<p>Project Check runs before every build and stops it on errors.</p>
-<p><strong>Fix:</strong> open Project Check, fix the errors, build again. You can turn the stop off in Project Check with <strong>Stop builds on errors</strong>, but the problems remain.</p>
+<p>Project Check corre antes de cada build y la detiene si hay errores.</p>
+<p><strong>Solución:</strong> abre Project Check, corrige los errores y vuelve a compilar. Puedes apagar la detención en Project Check con <strong>Stop builds on errors</strong>, pero los problemas siguen ahí.</p>
 <h3 id="the-client-talks-to-without-https"><a class="anchor" href="#the-client-talks-to-without-https" aria-hidden="true">#</a>&quot;The client talks to ... without HTTPS&quot;</h3>
-<p>A release MMO client must reach Login and Central over HTTPS, except on this computer. The build stops: &quot;... so passwords and tokens would cross the internet readable.&quot;</p>
-<p><strong>Fix:</strong> set <em>Login Url</em> and <em>Central Url</em> in <code>Assets/Settings/Resources/KitARPGSettings.asset</code> to your <code>https://</code> addresses. To test against a server without HTTPS, use the test client, never for players.</p>
+<p>Un cliente MMO de release debe llegar a Login y Central por HTTPS, salvo en esta computadora. La build se detiene: &quot;... so passwords and tokens would cross the internet readable.&quot;</p>
+<p><strong>Solución:</strong> pon <em>Login Url</em> y <em>Central Url</em> en <code>Assets/Settings/Resources/KitARPGSettings.asset</code> con tus direcciones <code>https://</code>. Para probar contra un servidor sin HTTPS, usa el cliente de prueba, nunca para jugadores.</p>
 <h3 id="the-client-is-built-with-mono"><a class="anchor" href="#the-client-is-built-with-mono" aria-hidden="true">#</a>&quot;The client is built with Mono&quot;</h3>
-<p>A release MMO client must be built with IL2CPP, or its code ships as readable DLLs.</p>
-<p><strong>Fix:</strong> set <strong>Player Settings &gt; Scripting Backend</strong> to IL2CPP. Build Windows clients on Windows and Mac clients on a Mac; IL2CPP doesn't cross-compile between them.</p>
+<p>Un cliente MMO de release debe compilarse con IL2CPP, o su código se publica como DLLs legibles.</p>
+<p><strong>Solución:</strong> pon <strong>Player Settings &gt; Scripting Backend</strong> en IL2CPP. Compila los clientes de Windows en Windows y los de Mac en una Mac; IL2CPP no hace compilación cruzada entre ellos.</p>
 <h3 id="goes-into-the-online-client-but-uses-which-is-server-code"><a class="anchor" href="#goes-into-the-online-client-but-uses-which-is-server-code" aria-hidden="true">#</a>&quot;... goes into the online client but uses ..., which is server code.&quot;</h3>
-<p>An assembly that goes into the client references server code.</p>
-<p><strong>Fix:</strong> move the code that needs the server into an assembly whose name ends in <code>.Server</code> (<strong>Create &gt; KitARPG &gt; Scripts &gt; Game Server Assembly</strong>). <strong>KitARPG &gt; Check Build Separation</strong> shows what goes where.</p>
+<p>Un ensamblado que va al cliente referencia código de servidor.</p>
+<p><strong>Solución:</strong> mueve el código que necesita el servidor a un ensamblado cuyo nombre termine en <code>.Server</code> (<strong>Create &gt; KitARPG &gt; Scripts &gt; Game Server Assembly</strong>). <strong>KitARPG &gt; Check Build Separation</strong> muestra qué va dónde.</p>
 <h3 id="single-player-hosts-its-own-world-and-needs"><a class="anchor" href="#single-player-hosts-its-own-world-and-needs" aria-hidden="true">#</a>&quot;Single player hosts its own world and needs ...&quot;</h3>
-<p>A single player build made outside the kit's menus lacks the server code or the local save.</p>
-<p><strong>Fix:</strong> build with <strong>KitARPG &gt; Starter &gt; Build Mac Single Player</strong> or <strong>Build Windows Single Player</strong>, which add the defines <code>KITARPG_SERVER</code> and <code>KITARPG_SINGLEPLAYER</code>.</p>
-<h3 id="a-build-fails-inside-urp-after-play"><a class="anchor" href="#a-build-fails-inside-urp-after-play" aria-hidden="true">#</a>A build fails inside URP after Play</h3>
-<p>If a Play session ended without putting the project's render pipeline back, a quality level can point to a destroyed copy. The kit repairs this by itself when Play ends and before every build.</p>
-<p><strong>Fix:</strong> if it still happens, open <strong>Project Settings &gt; Quality</strong> and set the URP asset on each level, or run <strong>Set everything up</strong> again.</p>
-<h3 id="the-linux-server-build-fails-on-a-mac"><a class="anchor" href="#the-linux-server-build-fails-on-a-mac" aria-hidden="true">#</a>The Linux server build fails on a Mac</h3>
-<p>Building a Linux server from a Mac needs Linux Dedicated Server Build Support and the <code>com.unity.toolchain.macos-arm64-linux</code> package.</p>
-<p><strong>Fix:</strong> add the module in Unity Hub and the package in the Package Manager.</p>
-<h2 id="databases"><a class="anchor" href="#databases" aria-hidden="true">#</a>Databases</h2>
-<h3 id="postgresql-setup-messages"><a class="anchor" href="#postgresql-setup-messages" aria-hidden="true">#</a>PostgreSQL setup messages</h3>
-<p><strong>Set up PostgreSQL...</strong> reports each common problem in plain words:</p>
+<p>A una build de un jugador hecha fuera de los menús del kit le falta el código de servidor o el guardado local.</p>
+<p><strong>Solución:</strong> compila con <strong>KitARPG &gt; Starter &gt; Build Mac Single Player</strong> o <strong>Build Windows Single Player</strong>, que agregan los símbolos <code>KITARPG_SERVER</code> y <code>KITARPG_SINGLEPLAYER</code>.</p>
+<h3 id="a-build-fails-inside-urp-after-play"><a class="anchor" href="#a-build-fails-inside-urp-after-play" aria-hidden="true">#</a>Una build falla dentro de URP después de Play</h3>
+<p>Si una sesión de Play terminó sin devolver el render pipeline del proyecto, un nivel de calidad puede apuntar a una copia destruida. El kit lo repara solo cuando termina Play y antes de cada build.</p>
+<p><strong>Solución:</strong> si igual pasa, abre <strong>Project Settings &gt; Quality</strong> y pon el asset de URP en cada nivel, o corre <strong>Set everything up</strong> otra vez.</p>
+<h3 id="the-linux-server-build-fails-on-a-mac"><a class="anchor" href="#the-linux-server-build-fails-on-a-mac" aria-hidden="true">#</a>La build del servidor Linux falla en una Mac</h3>
+<p>Compilar un servidor Linux desde una Mac necesita Linux Dedicated Server Build Support y el paquete <code>com.unity.toolchain.macos-arm64-linux</code>.</p>
+<p><strong>Solución:</strong> agrega el módulo en Unity Hub y el paquete en el Package Manager.</p>
+<h2 id="databases"><a class="anchor" href="#databases" aria-hidden="true">#</a>Bases de datos</h2>
+<h3 id="postgresql-setup-messages"><a class="anchor" href="#postgresql-setup-messages" aria-hidden="true">#</a>Mensajes de la configuración de PostgreSQL</h3>
+<p><strong>Set up PostgreSQL...</strong> informa cada problema común en palabras simples:</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Message</th>
-<th>Fix</th>
+<th>Mensaje</th>
+<th>Solución</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>&quot;Wrong user or password.&quot;</td>
-<td>Check the login</td>
+<td>Revisa los datos de inicio de sesión</td>
 </tr>
 <tr>
 <td>&quot;That database doesn't exist. Create it from here with an admin login.&quot;</td>
-<td>Use <strong>Create the database for me</strong></td>
+<td>Usa <strong>Create the database for me</strong></td>
 </tr>
 <tr>
 <td>&quot;The server doesn't take this login from this computer (pg_hba.conf): ...&quot;</td>
-<td>Allow your address in the server's <code>pg_hba.conf</code>, or use the host it allows</td>
+<td>Permite tu dirección en el <code>pg_hba.conf</code> del servidor, o usa el host que permite</td>
 </tr>
 <tr>
 <td>&quot;That login isn't allowed to do this: ...&quot;</td>
-<td>Use an admin login to create, or a user that owns the database</td>
+<td>Usa un usuario administrador para crear, o un usuario dueño de la base de datos</td>
 </tr>
 <tr>
 <td>&quot;No server answered there. Check the host and port, and that PostgreSQL is running.&quot;</td>
-<td>Start PostgreSQL, check host and port</td>
+<td>Inicia PostgreSQL, revisa el host y el puerto</td>
 </tr>
 <tr>
 <td>&quot;The server didn't answer in time. Check the host, the port and the firewall.&quot;</td>
-<td>Open the port in the firewall</td>
+<td>Abre el puerto en el firewall</td>
 </tr>
 <tr>
 <td>&quot;Connected to PostgreSQL ..., but ... can't create tables in ...&quot;</td>
-<td>Make the user the database owner, or create the database from the window</td>
+<td>Haz al usuario dueño de la base de datos, o crea la base de datos desde la ventana</td>
 </tr>
 <tr>
 <td>&quot;Use a password of 8 characters or more.&quot;</td>
-<td>A longer password</td>
+<td>Una contraseña más larga</td>
 </tr>
 </tbody>
 </table></div>
-<p>Hosted servers (RDS, Supabase, Neon) usually need <strong>SSL: Require</strong>.</p>
-<h3 id="docker-on-this-computer-doesn-t-start"><a class="anchor" href="#docker-on-this-computer-doesn-t-start" aria-hidden="true">#</a>Docker on this computer doesn't start</h3>
-<p>The Docker option needs Docker Desktop running. It starts a container named <code>kitarpg-postgres</code> on the first free port from 5432.</p>
-<p><strong>Fix:</strong> start Docker Desktop and try again. If a container from before exists, the kit reuses its volume and sets a new password.</p>
-<h3 id="where-is-the-local-database"><a class="anchor" href="#where-is-the-local-database" aria-hidden="true">#</a>Where is the local database?</h3>
-<p><code>UserSettings/KitARPG/data/kitarpg.db</code> for the MMO on your computer. The single player save is <code>savegame.db</code> in the persistent data folder; Play &amp; Servers shows its path.</p>
-<h2 id="servers-in-production"><a class="anchor" href="#servers-in-production" aria-hidden="true">#</a>Servers in production</h2>
-<h3 id="a-service-refuses-to-start-is-empty-too-short-or-a-sample-value"><a class="anchor" href="#a-service-refuses-to-start-is-empty-too-short-or-a-sample-value" aria-hidden="true">#</a>A service refuses to start: &quot;... is empty, too short or a sample value&quot;</h3>
-<p>Outside Development, Login, Central and the Shop refuse sample or missing secrets: the signing key, the map key, the database password, the shop keys.</p>
-<p><strong>Fix:</strong> set long random values in <code>Deploy/.env</code> (the signing key needs at least 32 characters). See <a href="../servers/security.html">Security</a>.</p>
-<h3 id="clients-can-t-connect-to-maps-on-the-server"><a class="anchor" href="#clients-can-t-connect-to-maps-on-the-server" aria-hidden="true">#</a>Clients can't connect to maps on the server</h3>
-<p>Map servers use UDP. Players need the map ports open.</p>
-<p><strong>Fix:</strong> open UDP 7777 to 7779 (one per map) on the server's firewall, and TCP 80 and 443 for Caddy. Never publish the map link (UDP 7700) to the internet.</p>
-<h3 id="login-rate-limits-count-everyone-as-one-player"><a class="anchor" href="#login-rate-limits-count-everyone-as-one-player" aria-hidden="true">#</a>Login rate limits count everyone as one player</h3>
-<p>Behind a proxy, every request seems to come from the proxy's address.</p>
-<p><strong>Fix:</strong> turn on the <code>Proxy</code> settings with your proxy's address. The Docker Compose file already trusts its own Caddy. See <a href="../servers/configuration.html">Configuration</a>.</p>
-<h2 id="gm-tools"><a class="anchor" href="#gm-tools" aria-hidden="true">#</a>GM tools</h2>
-<h3 id="gm-commands-say-unknown-command"><a class="anchor" href="#gm-commands-say-unknown-command" aria-hidden="true">#</a>GM commands say &quot;Unknown command&quot;</h3>
-<p>Your account's level is below the command's. Commands above your level answer as if they didn't exist.</p>
-<p><strong>Fix:</strong> set the first admin in the database (see <a href="gm-commands.html#setting-the-first-admin">GM commands</a>), then use <code>/role</code> for others. A raised level takes effect the next time the player enters a map. Check also Game Settings &gt; <em>Gm Command Levels</em>.</p>
+<p>Los servidores alojados (RDS, Supabase, Neon) suelen necesitar <strong>SSL: Require</strong>.</p>
+<h3 id="docker-on-this-computer-doesn-t-start"><a class="anchor" href="#docker-on-this-computer-doesn-t-start" aria-hidden="true">#</a>Docker en esta computadora no inicia</h3>
+<p>La opción Docker necesita Docker Desktop corriendo. Inicia un contenedor llamado <code>kitarpg-postgres</code> en el primer puerto libre desde 5432.</p>
+<p><strong>Solución:</strong> inicia Docker Desktop y vuelve a intentar. Si existe un contenedor de antes, el kit reutiliza su volumen y pone una contraseña nueva.</p>
+<h3 id="where-is-the-local-database"><a class="anchor" href="#where-is-the-local-database" aria-hidden="true">#</a>¿Dónde está la base de datos local?</h3>
+<p><code>UserSettings/KitARPG/data/kitarpg.db</code> para el MMO en tu computadora. El guardado de un jugador es <code>savegame.db</code> en la carpeta de datos persistentes; Play &amp; Servers muestra su ruta.</p>
+<h2 id="servers-in-production"><a class="anchor" href="#servers-in-production" aria-hidden="true">#</a>Servidores en producción</h2>
+<h3 id="a-service-refuses-to-start-is-empty-too-short-or-a-sample-value"><a class="anchor" href="#a-service-refuses-to-start-is-empty-too-short-or-a-sample-value" aria-hidden="true">#</a>Un servicio se niega a iniciar: &quot;... is empty, too short or a sample value&quot;</h3>
+<p>Fuera de Development, Login, Central y Shop rechazan secretos de muestra o vacíos: la clave de firma, la clave de mapas, la contraseña de la base de datos, las claves de la tienda.</p>
+<p><strong>Solución:</strong> pon valores largos y aleatorios en <code>Deploy/.env</code> (la clave de firma necesita al menos 32 caracteres). Consulta <a href="../servers/security.html">Seguridad</a>.</p>
+<h3 id="clients-can-t-connect-to-maps-on-the-server"><a class="anchor" href="#clients-can-t-connect-to-maps-on-the-server" aria-hidden="true">#</a>Los clientes no pueden conectarse a los mapas del servidor</h3>
+<p>Los servidores de mapa usan UDP. Los jugadores necesitan los puertos de los mapas abiertos.</p>
+<p><strong>Solución:</strong> abre UDP 7777 a 7779 (uno por mapa) en el firewall del servidor, y TCP 80 y 443 para Caddy. Nunca publiques el enlace de los mapas (UDP 7700) en internet.</p>
+<h3 id="login-rate-limits-count-everyone-as-one-player"><a class="anchor" href="#login-rate-limits-count-everyone-as-one-player" aria-hidden="true">#</a>Los límites de Login cuentan a todos como un solo jugador</h3>
+<p>Detrás de un proxy, cada pedido parece venir de la dirección del proxy.</p>
+<p><strong>Solución:</strong> prende los ajustes <code>Proxy</code> con la dirección de tu proxy. El archivo Docker Compose ya confía en su propio Caddy. Consulta <a href="../servers/configuration.html">Configuración</a>.</p>
+<h2 id="gm-tools"><a class="anchor" href="#gm-tools" aria-hidden="true">#</a>Herramientas de GM</h2>
+<h3 id="gm-commands-say-unknown-command"><a class="anchor" href="#gm-commands-say-unknown-command" aria-hidden="true">#</a>Los comandos de GM dicen &quot;Unknown command&quot;</h3>
+<p>El nivel de tu cuenta está por debajo del del comando. Los comandos por encima de tu nivel responden como si no existieran.</p>
+<p><strong>Solución:</strong> nombra al primer admin en la base de datos (consulta <a href="gm-commands.html#setting-the-first-admin">Comandos de GM</a>), y luego usa <code>/role</code> para los demás. Un nivel subido se aplica la próxima vez que el jugador entra a un mapa. Revisa también Game Settings &gt; <em>Gm Command Levels</em>.</p>
 <h3 id="gm-commands-are-paused-they-can-t-be-recorded-right-now"><a class="anchor" href="#gm-commands-are-paused-they-can-t-be-recorded-right-now" aria-hidden="true">#</a>&quot;GM commands are paused: they can't be recorded right now.&quot;</h3>
-<p>Staff commands only run when they can be recorded in the audit, and the map can't reach Central at the moment.</p>
-<p><strong>Fix:</strong> wait and try again. If it lasts, check that Central runs and the map is linked to it.</p>
-<h3 id="the-gm-panel-doesn-t-open"><a class="anchor" href="#the-gm-panel-doesn-t-open" aria-hidden="true">#</a>The GM panel doesn't open</h3>
-<p><code>F8</code> and <code>/gm</code> open it only for level 2 or more (&quot;Unknown command /gm. Try /help.&quot; otherwise).</p>
-<p><strong>Fix:</strong> raise the account's level.</p>
-<h2 id="the-in-game-shop"><a class="anchor" href="#the-in-game-shop" aria-hidden="true">#</a>The in-game shop</h2>
-<h3 id="the-shop-button-doesn-t-show"><a class="anchor" href="#the-shop-button-doesn-t-show" aria-hidden="true">#</a>The shop button doesn't show</h3>
-<p>The shop works online only, with the In-game shop module on and the Shop service running. Single player has no shop.</p>
-<p><strong>Fix:</strong> check <a href="../editor/modules.html">Modules</a>, turn the shop on in the Shop page and start the Shop service. The shop window says when it is loading or can't reach the service.</p>
-<h3 id="this-map-has-no-shop-service-after-currency-gems"><a class="anchor" href="#this-map-has-no-shop-service-after-currency-gems" aria-hidden="true">#</a>&quot;This map has no Shop service.&quot; after <code>/currency gems</code></h3>
-<p>The map server wasn't given the Shop's address and key.</p>
-<p><strong>Fix:</strong> start the Shop with <strong>Premium shop</strong> on, so Central passes <code>KITARPG_SHOP_URL</code> and <code>KITARPG_SHOP_KEY</code> to the maps it starts. A map run in the editor doesn't receive them.</p>
-<h2 id="tests"><a class="anchor" href="#tests" aria-hidden="true">#</a>Tests</h2>
-<h3 id="running-the-kit-s-tests"><a class="anchor" href="#running-the-kit-s-tests" aria-hidden="true">#</a>Running the kit's tests</h3>
-<p><strong>KitARPG &gt; Run Play Mode Tests</strong> runs the kit's Play mode tests in single player, on a throwaway save, so your characters are untouched. The Console shows how many passed and the results go to <code>Logs/KitARPG-PlayMode-Tests.xml</code>. From the command line:</p>
+<p>Los comandos del equipo solo corren cuando se pueden registrar en la auditoría, y el mapa no puede llegar a Central en este momento.</p>
+<p><strong>Solución:</strong> espera y vuelve a intentar. Si sigue, revisa que Central esté corriendo y que el mapa esté enlazado a él.</p>
+<h3 id="the-gm-panel-doesn-t-open"><a class="anchor" href="#the-gm-panel-doesn-t-open" aria-hidden="true">#</a>El panel de GM no se abre</h3>
+<p><code>F8</code> y <code>/gm</code> lo abren solo para el nivel 2 o más (si no, &quot;Unknown command /gm. Try /help.&quot;).</p>
+<p><strong>Solución:</strong> sube el nivel de la cuenta.</p>
+<h2 id="the-in-game-shop"><a class="anchor" href="#the-in-game-shop" aria-hidden="true">#</a>La tienda del juego</h2>
+<h3 id="the-shop-button-doesn-t-show"><a class="anchor" href="#the-shop-button-doesn-t-show" aria-hidden="true">#</a>El botón de la tienda no aparece</h3>
+<p>La tienda funciona solo en línea, con el módulo In-game shop prendido y el servicio Shop corriendo. Un jugador no tiene tienda.</p>
+<p><strong>Solución:</strong> revisa <a href="../editor/modules.html">Modules</a>, prende la tienda en la página Shop e inicia el servicio Shop. La ventana de la tienda dice cuando está cargando o no puede llegar al servicio.</p>
+<h3 id="this-map-has-no-shop-service-after-currency-gems"><a class="anchor" href="#this-map-has-no-shop-service-after-currency-gems" aria-hidden="true">#</a>&quot;This map has no Shop service.&quot; después de <code>/currency gems</code></h3>
+<p>Al servidor de mapa no se le dieron la dirección y la clave de Shop.</p>
+<p><strong>Solución:</strong> inicia Shop con <strong>The game has an in-game shop</strong> prendido, para que Central les pase <code>KITARPG_SHOP_URL</code> y <code>KITARPG_SHOP_KEY</code> a los mapas que inicia. Un mapa que corre en el editor no los recibe.</p>
+<h2 id="tests"><a class="anchor" href="#tests" aria-hidden="true">#</a>Pruebas</h2>
+<h3 id="running-the-kit-s-tests"><a class="anchor" href="#running-the-kit-s-tests" aria-hidden="true">#</a>Correr las pruebas del kit</h3>
+<p><strong>KitARPG &gt; Run Play Mode Tests</strong> corre las pruebas de modo Play del kit en un jugador, sobre un guardado descartable, así que tus personajes quedan intactos. La Console muestra cuántas pasaron y los resultados van a <code>Logs/KitARPG-PlayMode-Tests.xml</code>. Desde la línea de comandos:</p>
 <pre class="code"><code class="language-bash">Unity<span class="w"> </span>-projectPath<span class="w"> </span>.<span class="w"> </span>-batchmode<span class="w"> </span>-executeMethod<span class="w"> </span>Blunnyn.KitARPG.Editor.KitTests.RunPlayMode
 </code></pre>
-<p>In batch mode Unity exits with code 1 when a test fails. The menu needs the Test Framework package; without it the menu isn't there.</p>
-<h2 id="still-stuck"><a class="anchor" href="#still-stuck" aria-hidden="true">#</a>Still stuck</h2>
+<p>En modo batch, Unity sale con código 1 cuando falla una prueba. El menú necesita el paquete Test Framework; sin él, el menú no está.</p>
+<h2 id="still-stuck"><a class="anchor" href="#still-stuck" aria-hidden="true">#</a>Si sigues trabado</h2>
 <ul>
-<li>Read the <a href="faq.html">FAQ</a>.</li>
-<li>Search the <a href="glossary.html">Glossary</a> for a word you don't know.</li>
-<li>Check the services' <code>README.md</code> in <code>Services~</code> for endpoints and settings.</li>
+<li>Lee las <a href="faq.html">Preguntas frecuentes</a>.</li>
+<li>Busca en el <a href="glossary.html">Glosario</a> una palabra que no conozcas.</li>
+<li>Revisa el <code>README.md</code> de los servicios en <code>Services~</code> para los endpoints y los ajustes.</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
 <li><a href="../editor/project-check.html">Project Check</a></li>
 <li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li>
-<li><a href="../servers/security.html">Security</a></li>
+<li><a href="../servers/security.html">Seguridad</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="gm-commands.html"><span>Anterior</span>GM commands</a><a class="next" href="../api/index.html"><span>Siguiente</span>Referencia de la API</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Freference%2Ftroubleshooting.html">Reportar un problema en esta página</a></div></main>
-  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#first-checks">First checks</a></li><li class="l2"><a href="#setup-and-import">Setup and import</a></li><li class="l3"><a href="#materials-are-pink">Materials are pink</a></li><li class="l3"><a href="#labels-have-no-text-or-font">Labels have no text or font</a></li><li class="l3"><a href="#menus-don-t-take-clicks">Menus don&#x27;t take clicks</a></li><li class="l3"><a href="#invalidoperationexception-about-the-input-class-when-pressing-play">InvalidOperationException about the Input class when pressing Play</a></li><li class="l3"><a href="#changes-in-game-settings-don-t-reach-a-scene">Changes in Game Settings don&#x27;t reach a scene</a></li><li class="l3"><a href="#scenes-in-build-settings-is-red">&amp;quot;Scenes in Build Settings&amp;quot; is red</a></li><li class="l3"><a href="#sqlite-library-for-this-platform-is-missing">&amp;quot;SQLite library for this platform&amp;quot; is missing</a></li><li class="l3"><a href="#stop-play-before-building-the-starter-sample">&amp;quot;Stop Play before building the starter sample.&amp;quot;</a></li><li class="l3"><a href="#the-setup-wizard-doesn-t-open">The Setup Wizard doesn&#x27;t open</a></li><li class="l2"><a href="#playing-in-the-editor">Playing in the editor</a></li><li class="l3"><a href="#i-can-t-change-game-settings-or-modules">I can&#x27;t change Game Settings or Modules</a></li><li class="l3"><a href="#add-the-title-scene-to-build-settings-first">&amp;quot;Add the Title scene to Build Settings first.&amp;quot;</a></li><li class="l3"><a href="#the-game-starts-without-a-title-screen">The game starts without a title screen</a></li><li class="l3"><a href="#players-or-monsters-don-t-move-on-a-new-map">Players or monsters don&#x27;t move on a new map</a></li><li class="l3"><a href="#players-arriving-on-a-map-have-nowhere-to-stand">Players arriving on a map have nowhere to stand</a></li><li class="l3"><a href="#single-player-features-answer-only-on-an-online-server">Single player features answer &amp;quot;Only on an online server.&amp;quot;</a></li><li class="l2"><a href="#mmo-services">MMO services</a></li><li class="l3"><a href="#the-net-10-sdk-isn-t-found">The .NET 10 SDK isn&#x27;t found</a></li><li class="l3"><a href="#services-source-not-found">&amp;quot;Services source: Not found.&amp;quot;</a></li><li class="l3"><a href="#dotnet-build-failed">&amp;quot;dotnet build failed.&amp;quot;</a></li><li class="l3"><a href="#something-else-is-using-port">&amp;quot;Something else is using port ...&amp;quot;</a></li><li class="l3"><a href="#the-services-or-the-map-server-were-rebuilt-after-they-started-so-they-still-run-the-old-code-restart-them">&amp;quot;The services or the map server were rebuilt after they started, so they still run the old code. Restart them.&amp;quot;</a></li><li class="l3"><a href="#no-map-reached-central">&amp;quot;No map reached Central&amp;quot;</a></li><li class="l3"><a href="#the-map-server-build-missing-the-scene-of-a-map">The map server build &amp;quot;Missing the scene of a map&amp;quot;</a></li><li class="l3"><a href="#two-players-need-the-mmo-mode">&amp;quot;Two players need the MMO mode&amp;quot;</a></li><li class="l3"><a href="#play-with-two-players-doesn-t-start-player-2">Play with two players doesn&#x27;t start Player 2</a></li><li class="l3"><a href="#i-can-t-change-the-database">I can&#x27;t change the database</a></li><li class="l2"><a href="#signing-in-and-entering-a-map">Signing in and entering a map</a></li><li class="l3"><a href="#version_mismatch-the-game-and-the-server-are-different-versions">version_mismatch: &amp;quot;The game and the server are different versions&amp;quot;</a></li><li class="l3"><a href="#mode_mismatch-the-server-plays-a-different-game-mode">mode_mismatch: &amp;quot;The server plays a different game mode&amp;quot;</a></li><li class="l3"><a href="#session_busy-your-character-is-still-being-saved">session_busy: &amp;quot;Your character is still being saved&amp;quot;</a></li><li class="l3"><a href="#map_unavailable-that-map-is-not-running-right-now">map_unavailable: &amp;quot;That map is not running right now&amp;quot;</a></li><li class="l3"><a href="#players-who-travel-to-a-new-map-end-up-back-at-the-login">Players who travel to a new map end up back at the login</a></li><li class="l3"><a href="#kicked-for-flooding">&amp;quot;Kicked&amp;quot; for flooding</a></li><li class="l2"><a href="#builds">Builds</a></li><li class="l3"><a href="#kitarpg-found-n-problem-s">&amp;quot;KitARPG found N problem(s)&amp;quot;</a></li><li class="l3"><a href="#the-client-talks-to-without-https">&amp;quot;The client talks to ... without HTTPS&amp;quot;</a></li><li class="l3"><a href="#the-client-is-built-with-mono">&amp;quot;The client is built with Mono&amp;quot;</a></li><li class="l3"><a href="#goes-into-the-online-client-but-uses-which-is-server-code">&amp;quot;... goes into the online client but uses ..., which is server code.&amp;quot;</a></li><li class="l3"><a href="#single-player-hosts-its-own-world-and-needs">&amp;quot;Single player hosts its own world and needs ...&amp;quot;</a></li><li class="l3"><a href="#a-build-fails-inside-urp-after-play">A build fails inside URP after Play</a></li><li class="l3"><a href="#the-linux-server-build-fails-on-a-mac">The Linux server build fails on a Mac</a></li><li class="l2"><a href="#databases">Databases</a></li><li class="l3"><a href="#postgresql-setup-messages">PostgreSQL setup messages</a></li><li class="l3"><a href="#docker-on-this-computer-doesn-t-start">Docker on this computer doesn&#x27;t start</a></li><li class="l3"><a href="#where-is-the-local-database">Where is the local database?</a></li><li class="l2"><a href="#servers-in-production">Servers in production</a></li><li class="l3"><a href="#a-service-refuses-to-start-is-empty-too-short-or-a-sample-value">A service refuses to start: &amp;quot;... is empty, too short or a sample value&amp;quot;</a></li><li class="l3"><a href="#clients-can-t-connect-to-maps-on-the-server">Clients can&#x27;t connect to maps on the server</a></li><li class="l3"><a href="#login-rate-limits-count-everyone-as-one-player">Login rate limits count everyone as one player</a></li><li class="l2"><a href="#gm-tools">GM tools</a></li><li class="l3"><a href="#gm-commands-say-unknown-command">GM commands say &amp;quot;Unknown command&amp;quot;</a></li><li class="l3"><a href="#gm-commands-are-paused-they-can-t-be-recorded-right-now">&amp;quot;GM commands are paused: they can&#x27;t be recorded right now.&amp;quot;</a></li><li class="l3"><a href="#the-gm-panel-doesn-t-open">The GM panel doesn&#x27;t open</a></li><li class="l2"><a href="#the-in-game-shop">The in-game shop</a></li><li class="l3"><a href="#the-shop-button-doesn-t-show">The shop button doesn&#x27;t show</a></li><li class="l3"><a href="#this-map-has-no-shop-service-after-currency-gems">&amp;quot;This map has no Shop service.&amp;quot; after /currency gems</a></li><li class="l2"><a href="#tests">Tests</a></li><li class="l3"><a href="#running-the-kit-s-tests">Running the kit&#x27;s tests</a></li><li class="l2"><a href="#still-stuck">Still stuck</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="faq.html"><span>Anterior</span>Preguntas frecuentes</a><a class="next" href="glossary.html"><span>Siguiente</span>Glosario</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Freference%2Ftroubleshooting.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#first-checks">Primeras revisiones</a></li><li class="l2"><a href="#setup-and-import">Configuración e importación</a></li><li class="l3"><a href="#materials-are-pink">Los materiales se ven rosados</a></li><li class="l3"><a href="#labels-have-no-text-or-font">Las etiquetas no tienen texto ni fuente</a></li><li class="l3"><a href="#menus-don-t-take-clicks">Los menús no reciben clics</a></li><li class="l3"><a href="#invalidoperationexception-about-the-input-class-when-pressing-play">InvalidOperationException sobre la clase Input al presionar Play</a></li><li class="l3"><a href="#changes-in-game-settings-don-t-reach-a-scene">Los cambios en Game Settings no llegan a una escena</a></li><li class="l3"><a href="#scenes-in-build-settings-is-red">&amp;quot;Scenes in Build Settings&amp;quot; está en rojo</a></li><li class="l3"><a href="#sqlite-library-for-this-platform-is-missing">Falta &amp;quot;SQLite library for this platform&amp;quot;</a></li><li class="l3"><a href="#stop-play-before-building-the-starter-sample">&amp;quot;Stop Play before building the starter sample.&amp;quot;</a></li><li class="l3"><a href="#the-setup-wizard-doesn-t-open">El Setup Wizard no se abre</a></li><li class="l2"><a href="#playing-in-the-editor">Jugar en el editor</a></li><li class="l3"><a href="#i-can-t-change-game-settings-or-modules">No puedo cambiar Game Settings ni Modules</a></li><li class="l3"><a href="#add-the-title-scene-to-build-settings-first">&amp;quot;Add the Title scene to Build Settings first.&amp;quot;</a></li><li class="l3"><a href="#the-game-starts-without-a-title-screen">El juego empieza sin pantalla de título</a></li><li class="l3"><a href="#players-or-monsters-don-t-move-on-a-new-map">Los jugadores o los monstruos no se mueven en un mapa nuevo</a></li><li class="l3"><a href="#players-arriving-on-a-map-have-nowhere-to-stand">Los jugadores que llegan a un mapa no tienen dónde pararse</a></li><li class="l3"><a href="#single-player-features-answer-only-on-an-online-server">Funciones en un jugador responden &amp;quot;Only on an online server.&amp;quot;</a></li><li class="l2"><a href="#mmo-services">Servicios MMO</a></li><li class="l3"><a href="#the-net-10-sdk-isn-t-found">No se encuentra el SDK de .NET 10</a></li><li class="l3"><a href="#services-source-not-found">&amp;quot;Services source: Not found.&amp;quot;</a></li><li class="l3"><a href="#dotnet-build-failed">&amp;quot;dotnet build failed.&amp;quot;</a></li><li class="l3"><a href="#something-else-is-using-port">&amp;quot;Something else is using port ...&amp;quot;</a></li><li class="l3"><a href="#the-services-or-the-map-server-were-rebuilt-after-they-started-so-they-still-run-the-old-code-restart-them">&amp;quot;The services or the map server were rebuilt after they started, so they still run the old code. Restart them.&amp;quot;</a></li><li class="l3"><a href="#no-map-reached-central">&amp;quot;No map reached Central&amp;quot;</a></li><li class="l3"><a href="#the-map-server-build-missing-the-scene-of-a-map">La build del servidor de mapa: &amp;quot;Missing the scene of a map&amp;quot;</a></li><li class="l3"><a href="#two-players-need-the-mmo-mode">&amp;quot;Two players need the MMO mode&amp;quot;</a></li><li class="l3"><a href="#play-with-two-players-doesn-t-start-player-2">Play with two players no inicia Player 2</a></li><li class="l3"><a href="#i-can-t-change-the-database">No puedo cambiar la base de datos</a></li><li class="l2"><a href="#signing-in-and-entering-a-map">Iniciar sesión y entrar a un mapa</a></li><li class="l3"><a href="#version_mismatch-the-game-and-the-server-are-different-versions">version_mismatch: &amp;quot;The game and the server are different versions&amp;quot;</a></li><li class="l3"><a href="#mode_mismatch-the-server-plays-a-different-game-mode">mode_mismatch: &amp;quot;The server plays a different game mode&amp;quot;</a></li><li class="l3"><a href="#session_busy-your-character-is-still-being-saved">session_busy: &amp;quot;Your character is still being saved&amp;quot;</a></li><li class="l3"><a href="#map_unavailable-that-map-is-not-running-right-now">map_unavailable: &amp;quot;That map is not running right now&amp;quot;</a></li><li class="l3"><a href="#players-who-travel-to-a-new-map-end-up-back-at-the-login">Los jugadores que viajan a un mapa nuevo terminan de vuelta en el inicio de sesión</a></li><li class="l3"><a href="#kicked-for-flooding">&amp;quot;Kicked&amp;quot; por saturación</a></li><li class="l2"><a href="#builds">Builds</a></li><li class="l3"><a href="#kitarpg-found-n-problem-s">&amp;quot;KitARPG found N problem(s)&amp;quot;</a></li><li class="l3"><a href="#the-client-talks-to-without-https">&amp;quot;The client talks to ... without HTTPS&amp;quot;</a></li><li class="l3"><a href="#the-client-is-built-with-mono">&amp;quot;The client is built with Mono&amp;quot;</a></li><li class="l3"><a href="#goes-into-the-online-client-but-uses-which-is-server-code">&amp;quot;... goes into the online client but uses ..., which is server code.&amp;quot;</a></li><li class="l3"><a href="#single-player-hosts-its-own-world-and-needs">&amp;quot;Single player hosts its own world and needs ...&amp;quot;</a></li><li class="l3"><a href="#a-build-fails-inside-urp-after-play">Una build falla dentro de URP después de Play</a></li><li class="l3"><a href="#the-linux-server-build-fails-on-a-mac">La build del servidor Linux falla en una Mac</a></li><li class="l2"><a href="#databases">Bases de datos</a></li><li class="l3"><a href="#postgresql-setup-messages">Mensajes de la configuración de PostgreSQL</a></li><li class="l3"><a href="#docker-on-this-computer-doesn-t-start">Docker en esta computadora no inicia</a></li><li class="l3"><a href="#where-is-the-local-database">¿Dónde está la base de datos local?</a></li><li class="l2"><a href="#servers-in-production">Servidores en producción</a></li><li class="l3"><a href="#a-service-refuses-to-start-is-empty-too-short-or-a-sample-value">Un servicio se niega a iniciar: &amp;quot;... is empty, too short or a sample value&amp;quot;</a></li><li class="l3"><a href="#clients-can-t-connect-to-maps-on-the-server">Los clientes no pueden conectarse a los mapas del servidor</a></li><li class="l3"><a href="#login-rate-limits-count-everyone-as-one-player">Los límites de Login cuentan a todos como un solo jugador</a></li><li class="l2"><a href="#gm-tools">Herramientas de GM</a></li><li class="l3"><a href="#gm-commands-say-unknown-command">Los comandos de GM dicen &amp;quot;Unknown command&amp;quot;</a></li><li class="l3"><a href="#gm-commands-are-paused-they-can-t-be-recorded-right-now">&amp;quot;GM commands are paused: they can&#x27;t be recorded right now.&amp;quot;</a></li><li class="l3"><a href="#the-gm-panel-doesn-t-open">El panel de GM no se abre</a></li><li class="l2"><a href="#the-in-game-shop">La tienda del juego</a></li><li class="l3"><a href="#the-shop-button-doesn-t-show">El botón de la tienda no aparece</a></li><li class="l3"><a href="#this-map-has-no-shop-service-after-currency-gems">&amp;quot;This map has no Shop service.&amp;quot; después de /currency gems</a></li><li class="l2"><a href="#tests">Pruebas</a></li><li class="l3"><a href="#running-the-kit-s-tests">Correr las pruebas del kit</a></li><li class="l2"><a href="#still-stuck">Si sigues trabado</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
 <script src="../../assets/search-es.js"></script>

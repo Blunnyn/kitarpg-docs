@@ -1,164 +1,164 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Item effects · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>代码中的物品效果 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/item-effects.html">English</option><option value="../../es/devkit/item-effects.html">Español</option><option value="../../pt/devkit/item-effects.html">Português</option><option value="item-effects.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html" class="on" aria-current="page">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">开发套件</div><h1>Item effects</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>How to write your own effects for consumable items: the <code>ItemEffect</code> base class, the <code>IItemUser</code> interface it works with, how using an item flows on the server, and complete examples.</p>
-<h2 id="what-an-item-effect-is"><a class="anchor" href="#what-an-item-effect-is" aria-hidden="true">#</a>What an item effect is</h2>
-<p>A consumable (<code>ConsumableData</code>: potions, scrolls, food) restores health and mana with its own fields, then runs a list of effects (<code>ConsumableData.effects</code>). The kit ships effects for experience, levels, learning skills, attribute and skill points, resetting attributes, casting a skill, adding a status and traveling. Anything else an item should do is a new effect class.</p>
-<p>Effects are <code>[Serializable]</code> classes held by reference with <code>[SerializeReference, PickType]</code>. Once yours compiles, it shows in the <strong>+</strong> type menu of <em>Effects</em> on every Consumable in <strong>KitARPG &gt; Game Database &gt; Items</strong>.</p>
-<p><strong>Where the file goes:</strong> the <code>Game</code> assembly. Tooltips on the client read the effect too.</p>
-<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h2>
-<p><code>ItemEffect</code> lives in <code>Blunnyn.KitARPG.Data</code>.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html" class="on" aria-current="page">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>代码中的物品效果</h1><p>如何为消耗品编写你自己的效果：<code>ItemEffect</code> 基类、与它配合的 <code>IItemUser</code> 接口、服务器上使用物品的流程，以及完整的示例。</p>
+<h2 id="what-an-item-effect-is"><a class="anchor" href="#what-an-item-effect-is" aria-hidden="true">#</a>物品效果是什么</h2>
+<p>消耗品（<code>ConsumableData</code>：药水、卷轴、食物）先用自己的字段恢复生命和法力，然后运行一个效果列表（<code>ConsumableData.effects</code>）。套件自带的效果包括：经验、等级、学习技能、属性点和技能点、重置属性、施放技能、添加状态和传送。物品要做的其他任何事情都是一个新的效果类。</p>
+<p>效果是 <code>[Serializable]</code> 类，通过 <code>[SerializeReference, PickType]</code> 以引用方式保存。你的效果编译通过后，就会出现在 <strong>KitARPG &gt; Game Database &gt; Items</strong> 中每个 Consumable 的 <em>Effects</em> 的 <strong>+</strong> 类型菜单里。</p>
+<p><strong>文件放在哪里：</strong><code>Game</code> 程序集。客户端上的提示框也会读取效果。</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>基类</h2>
+<p><code>ItemEffect</code> 位于 <code>Blunnyn.KitARPG.Data</code>。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
-<th>Default</th>
+<th>成员</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>string Summary</code></td>
-<td>Short text in the item editor and the default tooltip line.</td>
-<td>The class name</td>
+<td>物品编辑器中的短文本，也是默认的提示框行。</td>
+<td>类名</td>
 </tr>
 <tr>
 <td><code>string Check(IItemUser user)</code></td>
-<td><strong>Server.</strong> Why this user can't use it now, or null. Every effect of the item is checked before any runs.</td>
+<td><strong>服务器。</strong> 此用户现在不能使用它的原因，或 null。在任何效果运行之前，会先检查物品的每个效果。</td>
 <td><code>null</code></td>
 </tr>
 <tr>
 <td><code>void Use(IItemUser user, ItemData item)</code></td>
-<td><strong>Server.</strong> Does the effect. <code>item</code> is what was used, to give back if something fails later. Required.</td>
+<td><strong>服务器。</strong> 执行效果。<code>item</code> 是被使用的物品，以便之后失败时退还。必须实现。</td>
 <td></td>
 </tr>
 <tr>
 <td><code>void Describe(ItemDescription description, IItemUser viewer)</code></td>
-<td>Lines for the item's tooltip. <code>viewer</code> can be null (a tooltip in the editor, or for another player's item).</td>
-<td>Adds <code>Summary</code></td>
+<td>物品提示框中的行。<code>viewer</code> 可能为 null（编辑器中的提示框，或其他玩家物品的提示框）。</td>
+<td>添加 <code>Summary</code></td>
 </tr>
 <tr>
 <td><code>void Visit(Action&lt;GameData&gt; visit)</code></td>
-<td>Hands the game database every asset the effect points at.</td>
-<td>Nothing</td>
+<td>把效果引用的每个资源交给游戏数据库。</td>
+<td>什么都不做</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="what-happens-when-a-player-uses-an-item"><a class="anchor" href="#what-happens-when-a-player-uses-an-item" aria-hidden="true">#</a>What happens when a player uses an item</h2>
+<h2 id="what-happens-when-a-player-uses-an-item"><a class="anchor" href="#what-happens-when-a-player-uses-an-item" aria-hidden="true">#</a>玩家使用物品时发生什么</h2>
 <ol>
-<li>The owner's client asks (<code>PlayerInventory.Use(slot)</code>, from the bag, the item menu or a hotbar slot).</li>
-<li>On the server, <code>PlayerInventory</code> checks its own pace, that the slot holds an item, and that the item is usable (<code>IUsable</code>).</li>
-<li>It checks the cooldown of the item's <em>Cooldown Group</em> (<code>cooldownGroup</code>, default <code>potion</code>).</li>
-<li>It calls <code>ConsumableData.CheckUse(player)</code>: dead players can't use items, then every effect's <code>Check</code> runs in order and the first non-null answer stops everything. That answer is shown over the player's head.</li>
-<li>A consumable with no effects is usable only while it would restore something.</li>
-<li><code>ConsumableData.Use</code> restores health and mana, then calls every effect's <code>Use</code> in order.</li>
-<li>The cooldown starts and one item is taken from the stack.</li>
+<li>拥有者的客户端发出请求（<code>PlayerInventory.Use(slot)</code>，来自背包、物品菜单或快捷栏格子）。</li>
+<li>在服务器上，<code>PlayerInventory</code> 检查自己的请求频率、该格子里有物品，并且物品可以使用（<code>IUsable</code>）。</li>
+<li>它检查物品 <em>Cooldown Group</em>（<code>cooldownGroup</code>，默认 <code>potion</code>）的冷却时间。</li>
+<li>它调用 <code>ConsumableData.CheckUse(player)</code>：死亡的玩家不能使用物品，然后按顺序运行每个效果的 <code>Check</code>，第一个非 null 的结果会中止一切。这个结果显示在玩家头顶上。</li>
+<li>没有效果的消耗品只有在能恢复某些东西时才能使用。</li>
+<li><code>ConsumableData.Use</code> 恢复生命和法力，然后按顺序调用每个效果的 <code>Use</code>。</li>
+<li>冷却开始，并从该堆叠中扣除一个物品。</li>
 </ol>
-<p>Because every <code>Check</code> runs before any <code>Use</code>, an item with three effects either does all three or none. Put every reason to refuse in <code>Check</code>. Once <code>Use</code> runs, the item is spent.</p>
+<p>因为所有 <code>Check</code> 都在任何 <code>Use</code> 之前运行，带三个效果的物品要么三个都生效，要么一个都不生效。把所有拒绝的理由都放在 <code>Check</code> 中。一旦 <code>Use</code> 运行，物品就已经消耗了。</p>
 <h2 id="iitemuser"><a class="anchor" href="#iitemuser" aria-hidden="true">#</a>IItemUser</h2>
-<p>The player as items see it. On the server it is the <code>PlayerCharacter</code>; on the client, tooltips get the local player.</p>
+<p>物品眼中的玩家。在服务器上它是 <code>PlayerCharacter</code>；在客户端上，提示框拿到的是本地玩家。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Member</th>
-<th>What it does</th>
-<th>Where</th>
+<th>成员</th>
+<th>作用</th>
+<th>在哪里</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>CharacterClass Class</code>, <code>int Level</code></td>
-<td>Class and level.</td>
-<td>Both</td>
+<td><code>CharacterClass Class</code>、<code>int Level</code></td>
+<td>职业和等级。</td>
+<td>两端</td>
 </tr>
 <tr>
 <td><code>IReadOnlyList&lt;string&gt; WornItemIds</code></td>
-<td>Item id at each equipment position, empty where nothing is worn.</td>
-<td>Both</td>
+<td>每个装备位置上的物品 id，没有穿戴时为空。</td>
+<td>两端</td>
 </tr>
 <tr>
-<td><code>bool IsDead</code>, <code>int Health</code>, <code>int MaxHealth</code>, <code>int Mana</code>, <code>int MaxMana</code></td>
-<td>Current state.</td>
-<td>Both</td>
+<td><code>bool IsDead</code>、<code>int Health</code>、<code>int MaxHealth</code>、<code>int Mana</code>、<code>int MaxMana</code></td>
+<td>当前状态。</td>
+<td>两端</td>
 </tr>
 <tr>
-<td><code>void RestoreHealth(int)</code>, <code>void RestoreMana(int)</code></td>
-<td>Restores.</td>
-<td>Server</td>
+<td><code>void RestoreHealth(int)</code>、<code>void RestoreMana(int)</code></td>
+<td>恢复。</td>
+<td>服务器</td>
 </tr>
 <tr>
 <td><code>long ExperienceToNext</code></td>
-<td>Experience still needed, 0 at the highest level.</td>
-<td>Both</td>
+<td>还需要的经验，最高等级时为 0。</td>
+<td>两端</td>
 </tr>
 <tr>
 <td><code>void GainExperience(long)</code></td>
-<td>Adds experience, with level ups.</td>
-<td>Server</td>
+<td>增加经验，包括升级。</td>
+<td>服务器</td>
 </tr>
 <tr>
 <td><code>void GainLevel()</code></td>
-<td>One level up, as if the experience had been earned.</td>
-<td>Server</td>
+<td>升一级，就像获得了所需经验一样。</td>
+<td>服务器</td>
 </tr>
 <tr>
 <td><code>void GainPoints(int attributePoints, int skillPoints)</code></td>
-<td>Adds points to spend.</td>
-<td>Server</td>
+<td>增加可分配的点数。</td>
+<td>服务器</td>
 </tr>
 <tr>
 <td><code>int SpentAttributePoints</code></td>
-<td>Points spent so far.</td>
-<td>Both</td>
+<td>到目前为止已分配的点数。</td>
+<td>两端</td>
 </tr>
 <tr>
 <td><code>void ResetAttributes()</code></td>
-<td>Gives back every spent attribute point.</td>
-<td>Server</td>
+<td>退还所有已分配的属性点。</td>
+<td>服务器</td>
 </tr>
 <tr>
-<td><code>string CanLearnSkill(SkillData, int rank)</code>, <code>void LearnSkill(SkillData, int rank)</code></td>
-<td>Skill learning within the skill's rules.</td>
-<td>Check both, learn server</td>
+<td><code>string CanLearnSkill(SkillData, int rank)</code>、<code>void LearnSkill(SkillData, int rank)</code></td>
+<td>按技能自身的规则学习技能。</td>
+<td>检查在两端，学习在服务器</td>
 </tr>
 <tr>
-<td><code>string CanCastFromItem(SkillData)</code>, <code>void CastFromItem(SkillData, int rank)</code></td>
-<td>Casts a skill without knowing it, with no mana cost or cooldown.</td>
-<td>Check both, cast server</td>
+<td><code>string CanCastFromItem(SkillData)</code>、<code>void CastFromItem(SkillData, int rank)</code></td>
+<td>不需要学会就能施放技能，不消耗法力，也没有冷却。</td>
+<td>检查在两端，施放在服务器</td>
 </tr>
 <tr>
 <td><code>void AddStatus(StatusData, int level, float seconds)</code></td>
-<td>Adds a status.</td>
-<td>Server</td>
+<td>添加状态。</td>
+<td>服务器</td>
 </tr>
 <tr>
 <td><code>void TravelTo(MapData, Vector3, ItemData refund)</code></td>
-<td>Moves the player to a map; gives <code>refund</code> back if the trip fails.</td>
-<td>Server</td>
+<td>把玩家送到某张地图；传送失败时退还 <code>refund</code>。</td>
+<td>服务器</td>
 </tr>
 </tbody>
 </table></div>
-<p>For anything not on the interface, cast to <code>PlayerCharacter</code> (namespace <code>Blunnyn.KitARPG.Net</code>) and use its components. The <code>Game</code> assembly references <code>KitARPG.Net</code>, so this works:</p>
+<p>接口上没有的东西，把它转换为 <code>PlayerCharacter</code>（命名空间 <code>Blunnyn.KitARPG.Net</code>）并使用它的组件。<code>Game</code> 程序集引用了 <code>KitARPG.Net</code>，所以这样可行：</p>
 <pre class="code"><code class="language-csharp"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
 <span class="kt">var</span><span class="w"> </span><span class="n">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerInventory</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre>
-<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
-<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Item Effect</strong> makes an experience effect. See <a href="templates.html#item-effect">Templates</a>.</p>
-<h2 id="example-gold-pouch"><a class="anchor" href="#example-gold-pouch" aria-hidden="true">#</a>Example: gold pouch</h2>
-<p>Opens into a random amount of gold. The purse limit is respected; what doesn't fit goes to the bank.</p>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>示例：模板</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Item Effect</strong> 会生成一个经验效果。见<a href="templates.html#item-effect">模板</a>。</p>
+<h2 id="example-gold-pouch"><a class="anchor" href="#example-gold-pouch" aria-hidden="true">#</a>示例：金币袋</h2>
+<p>打开后得到随机数量的金币。钱包已满时无法打开（<code>Check</code> 以 &quot;Your purse is full&quot; 拒绝）；钱包还有空间但放不下全部时，<code>ServerReceiveGold</code> 把剩下的送进银行。</p>
 <pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
@@ -194,9 +194,9 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p><code>Check</code> and <code>Use</code> run on the server, so the cast is safe there. <code>Describe</code> never casts the viewer: it may be null.</p>
-<h2 id="example-recall-to-town"><a class="anchor" href="#example-recall-to-town" aria-hidden="true">#</a>Example: recall to town</h2>
-<p>Sends the player to the game's start map. If the trip fails, the scroll comes back.</p>
+<p><code>Check</code> 和 <code>Use</code> 在服务器上运行，所以在那里做类型转换是安全的。<code>Describe</code> 从不转换 viewer：它可能为 null。</p>
+<h2 id="example-recall-to-town"><a class="anchor" href="#example-recall-to-town" aria-hidden="true">#</a>示例：回城</h2>
+<p>把玩家送到游戏的起始地图。如果传送失败，卷轴会退还。</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">RecallEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
 <span class="p">{</span>
@@ -218,9 +218,9 @@
 <span class="w">        </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Takes you back to town&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<p>The kit's <code>TravelItemEffect</code> does the same for a fixed map and position set in the inspector.</p>
-<h2 id="example-an-elixir-that-grants-a-box-of-items"><a class="anchor" href="#example-an-elixir-that-grants-a-box-of-items" aria-hidden="true">#</a>Example: an elixir that grants a box of items</h2>
-<p>Gives items from a list, only when they all fit. <code>IPlayerActor</code> (the player as actions see it) has <code>RoomFor</code> and <code>GiveItem</code>; get it from <code>PlayerCharacter.Facts</code>.</p>
+<p>套件的 <code>TravelItemEffect</code> 做的是同样的事，只是地图和位置固定，在 Inspector 中设置。</p>
+<h2 id="example-a-box-of-items"><a class="anchor" href="#example-a-box-of-items" aria-hidden="true">#</a>示例：一箱物品</h2>
+<p>打开后给予列表中的每个物品；只要有一项放不进背包，就无法使用。<code>IPlayerActor</code>（动作眼中的玩家）有 <code>RoomFor</code> 和 <code>GiveItem</code>；从 <code>PlayerCharacter.Facts</code> 获取它。</p>
 <pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BoxEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
 <span class="p">{</span>
@@ -266,79 +266,79 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p><code>RoomFor</code> checks each entry on its own against the current bag. Several entries that each fit alone may not fit together; for an exact check, test the whole list with <code>PlayerInventory.ServerRoomFor</code>, or give with <code>GiveOrBank</code> so nothing is ever lost (see <a href="../gameplay/inventory-and-bank.html">Inventory and bank</a>).</p>
-<h2 id="tooltips"><a class="anchor" href="#tooltips" aria-hidden="true">#</a>Tooltips</h2>
-<p><code>Describe</code> builds the tooltip lines. <code>ItemDescription.Add(text, kind, icon)</code> adds a line; the kinds are:</p>
+<p><code>RoomFor</code> 针对当前背包单独检查每一项。几项单独都放得下，合在一起却可能放不下；要精确检查，用 <code>PlayerInventory.ServerRoomFor</code> 测试整个列表，或者用 <code>GiveOrBank</code> 给予，这样永远不会丢失任何东西（见<a href="../gameplay/inventory-and-bank.html">背包与银行</a>）。</p>
+<h2 id="tooltips"><a class="anchor" href="#tooltips" aria-hidden="true">#</a>提示框</h2>
+<p><code>Describe</code> 构建提示框的行。<code>ItemDescription.Add(text, kind, icon)</code> 添加一行；类型有：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Kind</th>
-<th>Used for</th>
+<th>类型</th>
+<th>用于</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Normal</code></td>
-<td>Plain text.</td>
+<td>普通文本。</td>
 </tr>
 <tr>
 <td><code>Heading</code></td>
-<td>A section title.</td>
+<td>小节标题。</td>
 </tr>
 <tr>
 <td><code>Effect</code></td>
-<td>What the item does.</td>
+<td>物品的作用。</td>
 </tr>
 <tr>
 <td><code>Muted</code></td>
-<td>Secondary details, like requirements the viewer meets.</td>
+<td>次要信息，例如查看者已满足的需求。</td>
 </tr>
 <tr>
 <td><code>Warning</code></td>
-<td>Requirements the viewer doesn't meet.</td>
+<td>查看者未满足的需求。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Use the <code>viewer</code> to color requirements: <code>Warning</code> when the local player can't use it, <code>Muted</code> when they can. Always handle <code>viewer == null</code>.</p>
-<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<p>用 <code>viewer</code> 给需求上色：本地玩家不能使用时用 <code>Warning</code>，能使用时用 <code>Muted</code>。始终处理 <code>viewer == null</code> 的情况。</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>服务器与客户端</h2>
 <div class="table"><table>
 <thead>
 <tr>
 <th></th>
-<th>Runs on</th>
+<th>运行在</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Check</code>, <code>Use</code></td>
-<td>Server. The client never decides whether an item works.</td>
+<td><code>Check</code>、<code>Use</code></td>
+<td>服务器。客户端从不决定物品是否生效。</td>
 </tr>
 <tr>
-<td><code>Describe</code>, <code>Summary</code></td>
-<td>Client (tooltips) and editor.</td>
+<td><code>Describe</code>、<code>Summary</code></td>
+<td>客户端（提示框）和编辑器。</td>
 </tr>
 </tbody>
 </table></div>
-<p>In single player both sides run on the same machine, with the same code.</p>
-<h2 id="other-kinds-of-usable-items"><a class="anchor" href="#other-kinds-of-usable-items" aria-hidden="true">#</a>Other kinds of usable items</h2>
-<p>Effects cover consumables. For a whole new kind of item, subclass <code>ItemData</code> (or <code>ConsumableData</code>) and implement the interfaces that apply (<code>IUsable</code>, <code>IConsumable</code>, <code>IEquippable</code>). <code>ConsumableData.CheckUse</code> and <code>Use</code> are <code>virtual</code>. To step in for every item use, override <code>PlayerInventory.UseItem</code> in a subclass of <code>PlayerInventory</code> (see <a href="overriding-kit-behaviour.html">Overriding kit behaviour</a>).</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<p>在单人模式中，两端在同一台机器上运行同样的代码。</p>
+<h2 id="other-kinds-of-usable-items"><a class="anchor" href="#other-kinds-of-usable-items" aria-hidden="true">#</a>其他类型的可使用物品</h2>
+<p>效果针对的是消耗品。要做一种全新的物品，继承 <code>ItemData</code>（或 <code>ConsumableData</code>）并实现适用的接口（<code>IUsable</code>、<code>IConsumable</code>、<code>IEquippable</code>）。<code>ConsumableData.CheckUse</code> 和 <code>Use</code> 是 <code>virtual</code> 的。要介入每一次物品使用，在 <code>PlayerInventory</code> 的子类中重写 <code>PlayerInventory.UseItem</code>（见<a href="overriding-kit-behaviour.html">重写套件的行为</a>）。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>Refusing inside <code>Use</code>.</strong> By then the item is spent. Refuse in <code>Check</code>.</li>
-<li><strong>Reading <code>viewer</code> without a null check</strong> in <code>Describe</code>.</li>
-<li><strong>Giving items with <code>Inventory.Add</code> straight on the inventory.</strong> Go through <code>PlayerInventory</code> (<code>Give</code>, <code>GiveOrBank</code>, <code>ServerReceive</code>) or <code>IPlayerActor.GiveItem</code>, so the bag syncs, weight updates and saving stays right.</li>
-<li><strong>Forgetting <code>Visit</code></strong> for items, statuses, maps or skills the effect points at.</li>
-<li><strong>Storing state in fields at runtime.</strong> One effect instance serves every copy of the item for every player.</li>
+<li><strong>在 <code>Use</code> 中拒绝。</strong> 到那时物品已经消耗了。在 <code>Check</code> 中拒绝。</li>
+<li>在 <code>Describe</code> 中<strong>读取 <code>viewer</code> 而不检查 null</strong>。</li>
+<li><strong>直接在背包数据上用 <code>Inventory.Add</code> 给予物品。</strong> 要通过 <code>PlayerInventory</code>（<code>Give</code>、<code>GiveOrBank</code>、<code>ServerReceive</code>）或 <code>IPlayerActor.GiveItem</code>，这样背包会同步、重量会更新、保存也不会出错。</li>
+<li><strong>忘记 <code>Visit</code></strong> 效果引用的物品、状态、地图或技能。</li>
+<li><strong>运行时在字段中保存状态。</strong> 一个效果实例为所有玩家的该物品的每个副本服务。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="../content/items.html">Items</a></li>
-<li><a href="skill-effects.html">Skill effects</a></li>
-<li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li>
-<li><a href="templates.html">Templates</a></li>
+<li><a href="../content/items.html">物品</a></li>
+<li><a href="skill-effects.html">代码中的技能效果</a></li>
+<li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li>
+<li><a href="templates.html">模板</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="skill-effects.html"><span>上一页</span>Skill effects</a><a class="next" href="conditions-and-actions-in-code.html"><span>下一页</span>Conditions and actions in code</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fitem-effects.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-an-item-effect-is">What an item effect is</a></li><li class="l2"><a href="#the-base-class">The base class</a></li><li class="l2"><a href="#what-happens-when-a-player-uses-an-item">What happens when a player uses an item</a></li><li class="l2"><a href="#iitemuser">IItemUser</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-gold-pouch">Example: gold pouch</a></li><li class="l2"><a href="#example-recall-to-town">Example: recall to town</a></li><li class="l2"><a href="#example-an-elixir-that-grants-a-box-of-items">Example: an elixir that grants a box of items</a></li><li class="l2"><a href="#tooltips">Tooltips</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#other-kinds-of-usable-items">Other kinds of usable items</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="skill-effects.html"><span>上一页</span>技能效果</a><a class="next" href="conditions-and-actions-in-code.html"><span>下一页</span>代码中的条件和动作</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fitem-effects.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-an-item-effect-is">物品效果是什么</a></li><li class="l2"><a href="#the-base-class">基类</a></li><li class="l2"><a href="#what-happens-when-a-player-uses-an-item">玩家使用物品时发生什么</a></li><li class="l2"><a href="#iitemuser">IItemUser</a></li><li class="l2"><a href="#example-the-template">示例：模板</a></li><li class="l2"><a href="#example-gold-pouch">示例：金币袋</a></li><li class="l2"><a href="#example-recall-to-town">示例：回城</a></li><li class="l2"><a href="#example-a-box-of-items">示例：一箱物品</a></li><li class="l2"><a href="#tooltips">提示框</a></li><li class="l2"><a href="#server-and-client">服务器与客户端</a></li><li class="l2"><a href="#other-kinds-of-usable-items">其他类型的可使用物品</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

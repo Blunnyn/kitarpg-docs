@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game modes in code · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="game-modes-in-code.html" selected>English</option><option value="../../es/devkit/game-modes-in-code.html">Español</option><option value="../../pt/devkit/game-modes-in-code.html">Português</option><option value="../../zh/devkit/game-modes-in-code.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li><li><a href="npc-options.html">NPC options</a></li><li><a href="player-systems.html">Player systems</a></li><li><a href="network-messages.html">Network messages</a></li><li><a href="gm-commands-in-code.html">GM commands in code</a></li><li><a href="formulas.html">Formulas</a></li><li><a href="saving-data.html">Saving data</a></li><li><a href="events.html">Events</a></li><li><a href="overriding-kit-behaviour.html">Overriding kit behaviour</a></li><li><a href="menus-and-settings-options.html">Menus and settings options</a></li><li><a href="editor-extensions.html">Editor extensions</a></li><li><a href="kit-updates-in-code.html">Kit updates in code</a></li><li><a href="talking-to-central.html">Talking to Central</a></li><li><a href="service-modules.html">Service modules</a></li><li><a href="game-modes-in-code.html" class="on" aria-current="page">Game modes in code</a></li><li><a href="example-bounty-board.html">Example: bounty board</a></li><li><a href="domain-reload.html">Play without domain reload</a></li><li><a href="security-rules.html">Security rules</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/faq.html">FAQ</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li><li><a href="../reference/glossary.html">Glossary</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Game modes in code</h1><p>How control modes are built and registered, what a mode's client and server halves must do, and a complete skeleton for a mode of your own.</p>
+<h2 id="how-modes-work"><a class="anchor" href="#how-modes-work" aria-hidden="true">#</a>How modes work</h2>
+<p>The game's control mode is a string in <strong>Game Settings &gt; Game mode</strong> (<code>GameInstance.controlMode</code>): <code>TopDown</code>, <code>FreeCamera</code> or <code>ThirdPerson</code> in the kit. The same scenes play in every mode. Each mode is a set of components:</p>
+<ul>
+<li><strong>Client components</strong>, added to the main camera of each map scene: the camera and the input. They read the mouse, keys and touch controls, aim, and send requests to the server.</li>
+<li><strong>Server components</strong>, added to the network manager on the map server (and on the single player host): they receive the movement and action requests, check them, and move and act for the player.</li>
+</ul>
+<p><code>GameModes</code> (namespace <code>Blunnyn.KitARPG.Net</code>) keeps the list. When a map loads, the kit adds the playing mode's components and switches off every other mode's. The kit's modes live in their own assemblies: <code>KitARPG.Modes.TopDown</code> with <code>KitARPG.Modes.TopDown.Server</code>, and <code>KitARPG.Modes.ThirdPerson</code> with <code>KitARPG.Modes.ThirdPerson.Server</code> (which serves both third person and free camera).</p>
+<h2 id="gamemodes"><a class="anchor" href="#gamemodes" aria-hidden="true">#</a>GameModes</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>const string TopDown</code>, <code>ThirdPerson</code>, <code>FreeCamera</code></td>
+<td>The kit's mode names.</td>
+</tr>
+<tr>
+<td><code>string Current</code></td>
+<td>The playing mode: <code>GameInstance.controlMode</code>, or <code>TopDown</code> when empty.</td>
+</tr>
+<tr>
+<td><code>bool Is(string mode)</code></td>
+<td>Whether that mode is playing (ignores case).</td>
+</tr>
+<tr>
+<td><code>IEnumerable&lt;string&gt; Known</code></td>
+<td>Every mode a component was registered for.</td>
+</tr>
+<tr>
+<td><code>void AddServer(string mode, Type component)</code></td>
+<td>Registers a server component for a mode.</td>
+</tr>
+<tr>
+<td><code>void AddClient(string mode, Type component)</code></td>
+<td>Registers a client component for a mode.</td>
+</tr>
+<tr>
+<td><code>void EquipServer(GameObject host)</code>, <code>EquipClient(GameObject camera)</code></td>
+<td>Adds the playing mode's components and turns the rest off. The kit calls them.</td>
+</tr>
+<tr>
+<td><code>bool HasClientParts(GameObject target)</code></td>
+<td>Whether the object carries a client component of any mode.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="when-the-kit-equips"><a class="anchor" href="#when-the-kit-equips" aria-hidden="true">#</a>When the kit equips</h3>
+<ul>
+<li><strong>Server:</strong> when a map server starts, or the single player host starts a map, <code>EquipServer</code> runs on the network manager's object.</li>
+<li><strong>Client:</strong> when a scene loads whose main camera already carries a mode's client component, and again when the local player spawns, <code>EquipClient</code> runs on <code>Camera.main</code>. A component another mode registered is disabled; one the playing mode registered is added if missing and enabled.</li>
+</ul>
+<p>Components shared between modes stay on: the kit's third person and free camera modes register the same classes.</p>
+<h3 id="registering"><a class="anchor" href="#registering" aria-hidden="true">#</a>Registering</h3>
+<p>Register from <code>SubsystemRegistration</code>. Unlike the kit's other statics, the mode tables are never cleared, so registration order doesn't matter, and adding the same type twice is ignored:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">RegisterMode</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">GameModes</span><span class="p">.</span><span class="n">AddClient</span><span class="p">(</span><span class="s">&quot;Grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">GridCamera</span><span class="p">));</span>
+<span class="w">    </span><span class="n">GameModes</span><span class="p">.</span><span class="n">AddClient</span><span class="p">(</span><span class="s">&quot;Grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">GridInput</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+<p>Server registration goes in a server-only assembly, with the server component:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">RegisterMode</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameModes</span><span class="p">.</span><span class="n">AddServer</span><span class="p">(</span><span class="s">&quot;Grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">GridServer</span><span class="p">));</span>
+</code></pre>
+<h3 id="picking-your-mode"><a class="anchor" href="#picking-your-mode" aria-hidden="true">#</a>Picking your mode</h3>
+<p>The <em>Game mode</em> dropdown lists the kit's three modes plus every name in <code>GameModes.Known</code>. Registrations run when Play starts, so press Play once with your code compiled, then pick your mode from the dropdown. The name stays saved in <code>GameInstance</code> after that.</p>
+<h3 id="server-and-client-must-match"><a class="anchor" href="#server-and-client-must-match" aria-hidden="true">#</a>Server and client must match</h3>
+<p>The client sends its mode with its ticket. A map server playing another mode refuses it with <code>mode_mismatch</code> (&quot;The server plays a different game mode. Update the game.&quot;), because the client would send requests the server has no handler for. Build the client and the map server with the same <em>Game mode</em>.</p>
+<h2 id="what-a-client-half-does"><a class="anchor" href="#what-a-client-half-does" aria-hidden="true">#</a>What a client half does</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Job</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Camera</td>
+<td>Follow <code>PlayerCharacter.Local</code> (null until the player spawns).</td>
+</tr>
+<tr>
+<td>Movement input</td>
+<td>Read <code>KitInput</code> (keys and mouse) and <code>TouchControls.Axis(&quot;Move&quot;)</code>; send requests.</td>
+</tr>
+<tr>
+<td>Aim</td>
+<td>Set <code>AimInput.Pointer</code> to where the player aims: <code>AimInput.Mouse</code>, <code>AimInput.Center</code> (a crosshair) or a function of your own. The kit's skill aiming, previews and hotbar use it.</td>
+</tr>
+<tr>
+<td>Actions</td>
+<td>Attack, talk, pick up: send the kit's messages or your own.</td>
+</tr>
+<tr>
+<td>Respect the layout</td>
+<td>Check <code>GameInstance.KeysOn</code> before reading game keys: with the <em>Touch</em> layout the keys are off.</td>
+</tr>
+<tr>
+<td>Turn itself off</td>
+<td>In <code>OnEnable</code>, return early when <code>!GameModes.Is(&quot;YourMode&quot;)</code>: scenes may carry your components while another mode plays.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The kit's own client code also sends requests that your server must answer, whatever the mode:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Sent by</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CastSkillMessage</code></td>
+<td>Skill aiming and the hotbar (<code>AimInput</code>)</td>
+<td><code>skillId</code>, <code>target</code> (netId), <code>point</code></td>
+</tr>
+<tr>
+<td><code>PickupMessage</code></td>
+<td>Interact on touch and the F key (<code>Interactables</code>)</td>
+<td><code>drop</code></td>
+</tr>
+<tr>
+<td><code>TalkMessage</code></td>
+<td>Same</td>
+<td><code>npc</code> (the NPC's id)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Other messages the kit's modes use, which yours may reuse: <code>MoveToMessage</code> (<code>destination</code>), <code>MoveDirectionMessage</code> (<code>direction</code>), <code>AttackMessage</code> (<code>target</code>), <code>SwingMessage</code> (<code>aim</code>, <code>target</code>), <code>PlayerInputMessage</code> and <code>MoveAckMessage</code> (third person's predicted movement). They live in <code>KitARPG.Net</code>.</p>
+<h2 id="what-a-server-half-does"><a class="anchor" href="#what-a-server-half-does" aria-hidden="true">#</a>What a server half does</h2>
+<p>A server half is a <code>MonoBehaviour</code> on the network manager's object. It:</p>
+<ol>
+<li>Registers its message handlers on every server start (the single player host restarts on each map change): subscribe to <code>KitNetworkManager.ServerStarted</code> and also register at once if <code>NetworkServer.active</code>.</li>
+<li>Takes over each player as it spawns (<code>PlayerCharacter.ServerSpawned</code>): its <code>NavMeshAgent</code>, its speed.</li>
+<li>Checks every request: pace, the sender's player from <code>conn.identity</code>, alive and loaded, finite positions, distances, line of sight (<code>Sight.Clear</code>), targets through <code>Fighters.TargetFor</code>.</li>
+<li>Acts through the kit's server methods:</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>To</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic attack</td>
+<td><code>player.ServerTryAttack(target)</code> (false while it recharges)</td>
+</tr>
+<tr>
+<td>Cast a skill</td>
+<td><code>player.GetComponent&lt;PlayerSkills&gt;().ServerCast(skill, target, point)</code> (checks mana, cooldown, range and target; returns why not)</td>
+</tr>
+<tr>
+<td>Pick up</td>
+<td><code>Rewards.Instance.Pickup(player, dropId)</code> (checks reach; returns an error code)</td>
+</tr>
+<tr>
+<td>Talk</td>
+<td><code>player.GetComponent&lt;PlayerInteraction&gt;().ServerTalk(npc)</code> after <code>npc.InReach(...)</code></td>
+</tr>
+<tr>
+<td>Can it move</td>
+<td><code>player.Statuses.CanMove</code>, <code>!player.Motion.Busy</code>, <code>!inventory.Overloaded</code></td>
+</tr>
+<tr>
+<td>How fast</td>
+<td><code>player.Stats.moveSpeed</code></td>
+</tr>
+<tr>
+<td>Attack reach</td>
+<td><code>player.AttackRange</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><code>TopDownServer</code> and <code>ThirdPersonServer</code> are complete examples; read them before writing your own.</p>
+<h2 id="a-complete-skeleton-a-grid-mode"><a class="anchor" href="#a-complete-skeleton-a-grid-mode" aria-hidden="true">#</a>A complete skeleton: a grid mode</h2>
+<p>A mode that walks one tile at a time with the arrow keys, on a 1 m grid, with a fixed camera. It reuses the kit's messages for actions.</p>
+<h3 id="shared-message-game-assembly"><a class="anchor" href="#shared-message-game-assembly" aria-hidden="true">#</a>Shared message (Game assembly)</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Client to server: one tile in a direction (-1, 0 or 1 on each axis).&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">GridStepMessage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">sbyte</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">sbyte</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="client-half-game-assembly"><a class="anchor" href="#client-half-game-assembly" aria-hidden="true">#</a>Client half (Game assembly)</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GridCamera</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Vector3</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">8</span><span class="p">);</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">RegisterMode</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GameModes</span><span class="p">.</span><span class="n">AddClient</span><span class="p">(</span><span class="s">&quot;Grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">GridCamera</span><span class="p">));</span>
+<span class="w">            </span><span class="n">GameModes</span><span class="p">.</span><span class="n">AddClient</span><span class="p">(</span><span class="s">&quot;Grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">GridInput</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">LateUpdate</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">Local</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">offset</span><span class="p">;</span>
+<span class="w">            </span><span class="n">transform</span><span class="p">.</span><span class="n">LookAt</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GridInput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">repeatSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.25f</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnEnable</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">GameModes</span><span class="p">.</span><span class="n">Is</span><span class="p">(</span><span class="s">&quot;Grid&quot;</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">AimInput</span><span class="p">.</span><span class="n">Pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AimInput</span><span class="p">.</span><span class="n">Mouse</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Update</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">ready</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">Local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">GameInstance</span><span class="p">.</span><span class="n">KeysOn</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Time</span><span class="p">.</span><span class="n">unscaledTime</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">KitInput</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">RightArrow</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">KitInput</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">LeftArrow</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">KitInput</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">UpArrow</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">KitInput</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">DownArrow</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Vector2</span><span class="w"> </span><span class="n">stick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TouchControls</span><span class="p">.</span><span class="n">Axis</span><span class="p">(</span><span class="s">&quot;Move&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">stick</span><span class="p">.</span><span class="n">sqrMagnitude</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.25f</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">RoundToInt</span><span class="p">(</span><span class="n">stick</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+<span class="w">                </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">RoundToInt</span><span class="p">(</span><span class="n">stick</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Time</span><span class="p">.</span><span class="n">unscaledTime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">repeatSeconds</span><span class="p">;</span>
+<span class="w">            </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GridStepMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">sbyte</span><span class="p">)</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">sbyte</span><span class="p">)</span><span class="n">z</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="server-half-game-server-assembly"><a class="anchor" href="#server-half-game-server-assembly" aria-hidden="true">#</a>Server half (Game.Server assembly)</h3>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Server</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine.AI</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GridServer</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Color</span><span class="w"> </span><span class="n">Refused</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.45f</span><span class="p">);</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">RegisterMode</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameModes</span><span class="p">.</span><span class="n">AddServer</span><span class="p">(</span><span class="s">&quot;Grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">GridServer</span><span class="p">));</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnEnable</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerSpawned</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">TakeOver</span><span class="p">;</span>
+<span class="w">            </span><span class="n">KitNetworkManager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">KitNetworkManager</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">manager</span><span class="p">.</span><span class="n">ServerStarted</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Register</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">active</span><span class="p">)</span><span class="w"> </span><span class="n">Register</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDisable</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerSpawned</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">TakeOver</span><span class="p">;</span>
+<span class="w">            </span><span class="n">KitNetworkManager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">KitNetworkManager</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">manager</span><span class="p">.</span><span class="n">ServerStarted</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">Register</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">GridStepMessage</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnStep</span><span class="p">);</span>
+<span class="w">            </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">AttackMessage</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnAttack</span><span class="p">);</span>
+<span class="w">            </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">CastSkillMessage</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnCastSkill</span><span class="p">);</span>
+<span class="w">            </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">PickupMessage</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnPickup</span><span class="p">);</span>
+<span class="w">            </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">TalkMessage</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnTalk</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">TakeOver</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">NavMeshAgent</span><span class="w"> </span><span class="n">agent</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">agent</span><span class="p">.</span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">agent</span><span class="p">.</span><span class="n">Warp</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">);</span>
+<span class="w">            </span><span class="n">agent</span><span class="p">.</span><span class="n">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Stats</span><span class="p">.</span><span class="n">moveSpeed</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Stats</span><span class="p">.</span><span class="n">moveSpeed</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">3.5f</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">TryGetPlayer</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">Released</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">IsDead</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStep</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">GridStepMessage</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">TryGetPlayer</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Mathf</span><span class="p">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">Statuses</span><span class="p">.</span><span class="n">CanMove</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Motion</span><span class="p">.</span><span class="n">Busy</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerInventory</span><span class="w"> </span><span class="n">inventory</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">inventory</span><span class="p">.</span><span class="n">Overloaded</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">NavMeshAgent</span><span class="w"> </span><span class="n">agent</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">agent</span><span class="p">.</span><span class="n">isOnNavMesh</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Vector3</span><span class="w"> </span><span class="n">here</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Vector3</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="n">Mathf</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">here</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">here</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">here</span><span class="p">.</span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">NavMesh</span><span class="p">.</span><span class="n">SamplePosition</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">NavMeshHit</span><span class="w"> </span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">,</span><span class="w"> </span><span class="n">NavMesh</span><span class="p">.</span><span class="n">AllAreas</span><span class="p">))</span><span class="w"> </span><span class="n">agent</span><span class="p">.</span><span class="n">SetDestination</span><span class="p">(</span><span class="n">hit</span><span class="p">.</span><span class="n">position</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAttack</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">AttackMessage</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">TryGetPlayer</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">ICombatant</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fighters</span><span class="p">.</span><span class="n">TargetFor</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">target</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">IsDead</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">Fighters</span><span class="p">.</span><span class="n">Enemies</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Vector3</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+<span class="w">            </span><span class="n">to</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="p">.</span><span class="n">magnitude</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">AttackRange</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5f</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">Sight</span><span class="p">.</span><span class="n">Clear</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">&quot;Too far&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Refused</span><span class="p">);</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="p">.</span><span class="n">sqrMagnitude</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.001f</span><span class="p">)</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Quaternion</span><span class="p">.</span><span class="n">LookRotation</span><span class="p">(</span><span class="n">to</span><span class="p">);</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">ServerTryAttack</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">OnCastSkill</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">CastSkillMessage</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">TryGetPlayer</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerSkills</span><span class="w"> </span><span class="n">skills</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">skills</span><span class="p">.</span><span class="n">IsBusy</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">skillId</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">SkillData</span><span class="w"> </span><span class="n">skill</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Vector3</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">point</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="kt">float</span><span class="p">.</span><span class="n">IsFinite</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="kt">float</span><span class="p">.</span><span class="n">IsFinite</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="kt">float</span><span class="p">.</span><span class="n">IsFinite</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">z</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">ICombatant</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fighters</span><span class="p">.</span><span class="n">TargetFor</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">target</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">skills</span><span class="p">.</span><span class="n">ServerCast</span><span class="p">(</span><span class="n">skill</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="n">error</span><span class="p">,</span><span class="w"> </span><span class="n">Refused</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">OnPickup</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">PickupMessage</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">TryGetPlayer</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">Rewards</span><span class="p">.</span><span class="n">Instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rewards</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">Pickup</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">drop</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerInventory</span><span class="w"> </span><span class="n">inventory</span><span class="p">))</span><span class="w"> </span><span class="n">inventory</span><span class="p">.</span><span class="n">ServerError</span><span class="p">(</span><span class="n">error</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">OnTalk</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">TalkMessage</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">TryGetPlayer</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Npc</span><span class="p">.</span><span class="n">TryFind</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">npc</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerInteraction</span><span class="w"> </span><span class="n">interaction</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">npc</span><span class="p">.</span><span class="n">InReach</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">&quot;Too far&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Refused</span><span class="p">);</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">interaction</span><span class="p">.</span><span class="n">ServerTalk</span><span class="p">(</span><span class="n">npc</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This skeleton leaves out what the kit's modes add on top: walking into range before attacking or casting, chasing targets, refreshing speed when stats change (<code>player.ServerStatsChanged</code>), and the third person mode's client prediction. Copy those parts from <code>TopDownServer</code> or <code>ThirdPersonServer</code> as your mode needs them.</p>
+<h2 id="reusing-a-kit-mode-s-parts"><a class="anchor" href="#reusing-a-kit-mode-s-parts" aria-hidden="true">#</a>Reusing a kit mode's parts</h2>
+<p>You can register the kit's components under your own mode name, for example <code>TopDownServer</code> with a camera of yours. Read each component first: <code>TopDownInput.OnEnable</code> only sets up aiming when <code>GameModes.Is(GameModes.TopDown)</code>, so under another name it leaves <code>AimInput.Pointer</code> to you. A mode that only changes the camera is often simpler as a different <code>CameraSettings</code> asset (third person and free camera read theirs from <code>GameInstance.thirdPersonCamera</code> and <code>freeCamera</code>).</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The same components run in both. In single player the host runs the server half and the client half in one process; the host restarts on each map change, which is why server halves register their handlers on every <code>ServerStarted</code>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Server code in the client assembly.</strong> Put the server half in a <code>.Server</code> assembly so clients don't carry it.</li>
+<li><strong>Forgetting the kit's own messages.</strong> Without handlers for <code>CastSkillMessage</code>, <code>PickupMessage</code> and <code>TalkMessage</code>, the hotbar and the interact button do nothing in your mode.</li>
+<li><strong>Trusting positions from the client.</strong> Clamp distances, sample the NavMesh, check line of sight.</li>
+<li><strong>Client components that don't check <code>GameModes.Is</code>.</strong> They run in scenes where another mode plays.</li>
+<li><strong>Different modes on client and map server.</strong> Players get <code>mode_mismatch</code>.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../gameplay/control-modes.html">Control modes</a></li>
+<li><a href="../gameplay/touch-controls.html">Touch controls</a></li>
+<li><a href="network-messages.html">Network messages</a></li>
+<li><a href="security-rules.html">Security rules</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="service-modules.html"><span>Previous</span>Service modules</a><a class="next" href="example-bounty-board.html"><span>Next</span>Example: bounty board</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Fgame-modes-in-code.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#how-modes-work">How modes work</a></li><li class="l2"><a href="#gamemodes">GameModes</a></li><li class="l3"><a href="#when-the-kit-equips">When the kit equips</a></li><li class="l3"><a href="#registering">Registering</a></li><li class="l3"><a href="#picking-your-mode">Picking your mode</a></li><li class="l3"><a href="#server-and-client-must-match">Server and client must match</a></li><li class="l2"><a href="#what-a-client-half-does">What a client half does</a></li><li class="l2"><a href="#what-a-server-half-does">What a server half does</a></li><li class="l2"><a href="#a-complete-skeleton-a-grid-mode">A complete skeleton: a grid mode</a></li><li class="l3"><a href="#shared-message-game-assembly">Shared message (Game assembly)</a></li><li class="l3"><a href="#client-half-game-assembly">Client half (Game assembly)</a></li><li class="l3"><a href="#server-half-game-server-assembly">Server half (Game.Server assembly)</a></li><li class="l2"><a href="#reusing-a-kit-mode-s-parts">Reusing a kit mode&#x27;s parts</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,676 +1,676 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Control modes · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>操作模式 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/control-modes.html">English</option><option value="../../es/gameplay/control-modes.html">Español</option><option value="../../pt/gameplay/control-modes.html">Português</option><option value="control-modes.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html" class="on" aria-current="page">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">游戏系统</div><h1>Control modes</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>KitARPG plays in three control modes: top-down (Diablo style), free camera and third person. This page covers what each mode does for the player, every setting that changes it, what the server checks, and how to switch modes in single player and MMO.</p>
-<h2 id="what-a-control-mode-is"><a class="anchor" href="#what-a-control-mode-is" aria-hidden="true">#</a>What a control mode is</h2>
-<p>The control mode decides three things: how the camera follows the player, how the player walks, and where attacks and skills are aimed. Everything else (combat rules, skills, items, quests, the HUD) is the same in every mode.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html" class="on" aria-current="page">操作模式</a></li><li><a href="touch-controls.html">触控操作</a></li><li><a href="combat.html">战斗</a></li><li><a href="recovery-and-death.html">恢复与死亡</a></li><li><a href="inventory-and-bank.html">背包与银行</a></li><li><a href="trade.html">交易</a></li><li><a href="forge.html">锻造</a></li><li><a href="market.html">市场</a></li><li><a href="mail.html">邮件</a></li><li><a href="chat.html">聊天</a></li><li><a href="friends-and-parties.html">好友与队伍</a></li><li><a href="guilds.html">公会</a></li><li><a href="tax-collectors.html">收税官</a></li><li><a href="pvp-and-duels.html">PvP 与决斗</a></li><li><a href="dungeons.html">地下城</a></li><li><a href="day-and-night.html">昼夜</a></li><li><a href="bestiary.html">怪物图鉴</a></li><li><a href="cash-shop.html">商城</a></li><li><a href="gm-tools.html">GM 工具</a></li><li><a href="game-log-and-reports.html">游戏日志与举报</a></li><li><a href="hud-and-windows.html">HUD 与窗口</a></li><li><a href="player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏系统</div><h1>操作模式</h1><p>KitARPG 有三种操作模式：俯视角（Diablo 风格）、自由视角和第三人称。本页介绍每种模式对玩家意味着什么、影响它的所有设置、服务器检查的内容，以及如何在单人模式和 MMO 中切换模式。</p>
+<h2 id="what-a-control-mode-is"><a class="anchor" href="#what-a-control-mode-is" aria-hidden="true">#</a>操作模式是什么</h2>
+<p>操作模式决定三件事：镜头如何跟随玩家，玩家如何行走，以及攻击和技能瞄准哪里。其他一切（战斗规则、技能、物品、任务、HUD）在每种模式下都相同。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>Camera</th>
-<th>Cursor</th>
-<th>Aim</th>
-<th>Walking</th>
+<th>模式</th>
+<th>镜头</th>
+<th>光标</th>
+<th>瞄准</th>
+<th>行走</th>
 <th>Space</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Top-down (click or keys)</strong></td>
-<td>Fixed angle above the player, Diablo style</td>
-<td>Free</td>
-<td>The mouse</td>
-<td>Click the ground, or WASD and the arrows</td>
-<td>Attacks the nearest enemy</td>
+<td>玩家上方的固定角度，Diablo 风格</td>
+<td>自由</td>
+<td>鼠标</td>
+<td>点击地面，或 WASD 和方向键</td>
+<td>攻击最近的敌人</td>
 </tr>
 <tr>
 <td><strong>Free camera (cursor, right button turns)</strong></td>
-<td>Orbits behind the player; hold the right button to turn it</td>
-<td>Free</td>
-<td>The mouse</td>
-<td>WASD and the arrows</td>
-<td>Dodges</td>
+<td>环绕在玩家身后；按住右键转动</td>
+<td>自由</td>
+<td>鼠标</td>
+<td>WASD 和方向键</td>
+<td>闪避</td>
 </tr>
 <tr>
 <td><strong>Third person (crosshair aim)</strong></td>
-<td>Orbits over the shoulder; the mouse turns it</td>
-<td>Hidden, with a crosshair</td>
-<td>The middle of the screen</td>
-<td>WASD and the arrows</td>
-<td>Dodges</td>
+<td>环绕在肩膀上方；鼠标转动它</td>
+<td>隐藏，显示准星</td>
+<td>屏幕中心</td>
+<td>WASD 和方向键</td>
+<td>闪避</td>
 </tr>
 </tbody>
 </table></div>
-<p>The same scenes play in all three. When a map loads, the kit puts the playing mode's camera and input components on the map's main camera and switches off the others. On the server it does the same on the network manager object. You never need to rebuild a scene to change mode.</p>
-<div class="callout warning"><div class="callout-title">警告</div><p>The map server and every client must play the same mode. A client in another mode is refused when it enters a map (see <a href="#server-checks">Server checks</a>).</p>
+<p>同样的场景在三种模式下都能玩。地图加载时，套件会把当前模式的镜头和输入组件放到地图的主摄像机上，并关闭其他组件。在服务器上，它对网络管理器对象做同样的事。你永远不需要为了换模式而重新构建场景。</p>
+<div class="callout warning"><div class="callout-title">警告</div><p>地图服务器和每个客户端必须使用同一种模式。另一种模式的客户端在进入地图时会被拒绝（参见<a href="#server-checks">服务器检查</a>）。</p>
 </div>
-<h2 id="choosing-the-mode"><a class="anchor" href="#choosing-the-mode" aria-hidden="true">#</a>Choosing the mode</h2>
-<p>The mode is a game setting, not a player setting. Players can't switch it.</p>
+<h2 id="choosing-the-mode"><a class="anchor" href="#choosing-the-mode" aria-hidden="true">#</a>选择模式</h2>
+<p>模式是游戏设置，不是玩家设置。玩家无法切换它。</p>
 <ol>
-<li>Open <strong>KitARPG &gt; Game Settings</strong> (or the Game Settings page of the KitARPG window).</li>
-<li>In the <strong>Game mode</strong> section, pick <em>Control Mode</em> (<code>controlMode</code>): <strong>Top-down (click or keys)</strong>, <strong>Free camera (cursor, right button turns)</strong> or <strong>Third person (crosshair aim)</strong>. Modes added by your own code show up in the same list by name.</li>
-<li>For free camera and third person, set the camera assets below it.</li>
-<li>In MMO, rebuild the map server and restart the services (see <a href="#single-player-and-mmo">Single player and MMO</a>).</li>
+<li>打开 <strong>KitARPG &gt; Game Settings</strong>（或 KitARPG 窗口的 Game Settings 页面）。</li>
+<li>在 <strong>Game mode</strong> 部分，选择 <em>Control Mode</em>（<code>controlMode</code>）：<strong>Top-down (click or keys)</strong>、<strong>Free camera (cursor, right button turns)</strong> 或 <strong>Third person (crosshair aim)</strong>。你自己代码添加的模式会按名称出现在同一个列表中。</li>
+<li>对于自由视角和第三人称，设置下方的镜头资源。</li>
+<li>在 MMO 中，重新构建地图服务器并重启服务（参见<a href="#single-player-and-mmo">单人模式与 MMO</a>）。</li>
 </ol>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Control Mode</em> (<code>controlMode</code>)</td>
-<td>How the game is played. Stored as a name: <code>TopDown</code>, <code>FreeCamera</code> or <code>ThirdPerson</code>. Empty means <code>TopDown</code>.</td>
-<td><code>TopDown</code> (the sample's <code>KitNetwork</code> prefab ships set to <code>FreeCamera</code>)</td>
+<td><em>Control Mode</em>（<code>controlMode</code>）</td>
+<td>游戏的玩法。以名称保存：<code>TopDown</code>、<code>FreeCamera</code> 或 <code>ThirdPerson</code>。留空表示 <code>TopDown</code>。</td>
+<td><code>TopDown</code>（示例的 <code>KitNetwork</code> 预制体出厂设为 <code>FreeCamera</code>）</td>
 </tr>
 <tr>
-<td><em>Third Person Camera</em> (<code>thirdPersonCamera</code>)</td>
-<td>The <a href="#camera-settings">Camera Settings</a> asset for third person. Empty: the kit's built-in defaults.</td>
-<td>Sample: <code>Camera Third Person</code></td>
+<td><em>Third Person Camera</em>（<code>thirdPersonCamera</code>）</td>
+<td>第三人称的 <a href="#camera-settings">Camera Settings</a> 资源。留空：使用套件的内置默认值。</td>
+<td>示例：<code>Camera Third Person</code></td>
 </tr>
 <tr>
-<td><em>Free Camera</em> (<code>freeCamera</code>)</td>
-<td>The <a href="#camera-settings">Camera Settings</a> asset for free camera. Empty: the kit's built-in defaults.</td>
-<td>Sample: <code>Camera Free</code></td>
+<td><em>Free Camera</em>（<code>freeCamera</code>）</td>
+<td>自由视角的 <a href="#camera-settings">Camera Settings</a> 资源。留空：使用套件的内置默认值。</td>
+<td>示例：<code>Camera Free</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>These fields live on the <code>GameInstance</code> component of the <code>KitNetwork</code> prefab, which is what Game Settings edits. See <a href="../editor/game-settings.html">Game Settings</a>.</p>
-<h2 id="top-down"><a class="anchor" href="#top-down" aria-hidden="true">#</a>Top-down</h2>
-<p>Top-down is click-to-move with the server pathing the character over the NavMesh. It also plays with the keys, twin-stick style.</p>
-<h3 id="playing-top-down"><a class="anchor" href="#playing-top-down" aria-hidden="true">#</a>Playing top-down</h3>
+<p>这些字段位于 <code>KitNetwork</code> 预制体的 <code>GameInstance</code> 组件上，Game Settings 编辑的就是它。参见 <a href="../editor/game-settings.html">Game Settings</a>。</p>
+<h2 id="top-down"><a class="anchor" href="#top-down" aria-hidden="true">#</a>俯视角</h2>
+<p>俯视角是点击移动，由服务器在 NavMesh 上为角色寻路。它也可以用键盘玩，类似双摇杆风格。</p>
+<h3 id="playing-top-down"><a class="anchor" href="#playing-top-down" aria-hidden="true">#</a>玩俯视角</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Input</th>
-<th>What happens</th>
+<th>输入</th>
+<th>结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Left click the ground</td>
-<td>Walks there. Holding the button keeps steering toward the pointer.</td>
+<td>左键点击地面</td>
+<td>走到那里。按住按钮会持续朝指针方向移动。</td>
 </tr>
 <tr>
-<td>Left click a monster</td>
-<td>Walks into attack range and keeps attacking until it dies or you give another order. Clicking the same target again keeps the swing going.</td>
+<td>左键点击怪物</td>
+<td>走到攻击范围内并持续攻击，直到它死亡或你下达其他命令。再次点击同一目标会继续挥击。</td>
 </tr>
 <tr>
-<td>Left click another player</td>
-<td>Attacks them, when PvP or a duel allows it (see <a href="pvp-and-duels.html">PvP and duels</a>).</td>
+<td>左键点击另一位玩家</td>
+<td>在 PvP 或决斗允许时攻击对方（参见 <a href="pvp-and-duels.html">PvP 与决斗</a>）。</td>
 </tr>
 <tr>
-<td>Left click loot on the ground</td>
-<td>Walks to it and picks it up.</td>
+<td>左键点击地上的掉落</td>
+<td>走过去并拾取。</td>
 </tr>
 <tr>
-<td>Left click an NPC</td>
-<td>Walks to it and opens its dialog.</td>
+<td>左键点击 NPC</td>
+<td>走过去并打开对话。</td>
 </tr>
 <tr>
-<td>Left click a tax collector that isn't fighting</td>
-<td>Talks to it through its spot.</td>
+<td>左键点击未在战斗的收税官</td>
+<td>通过它的位置与它对话。</td>
 </tr>
 <tr>
-<td>Right click another player</td>
-<td>Opens the player menu (trade, party, friend, duel and the rest).</td>
+<td>右键点击另一位玩家</td>
+<td>打开玩家菜单（交易、队伍、好友、决斗等）。</td>
 </tr>
 <tr>
-<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> or the arrows</td>
-<td>Walk in that direction, relative to the camera.</td>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> 或方向键</td>
+<td>相对镜头朝该方向行走。</td>
 </tr>
 <tr>
 <td><code>Space</code></td>
-<td>Attacks the nearest enemy within 10 m, slightly favoring the one in front. Held, it moves on to the next enemy when the current one falls.</td>
+<td>攻击 10 米内最近的敌人，略微优先前方的敌人。按住时，当前敌人倒下后会转向下一个。</td>
 </tr>
 <tr>
 <td><code>F</code></td>
-<td>Picks up the nearest loot within 4 m or, when there is none, talks to the nearest NPC. Loot always wins.</td>
+<td>拾取 4 米内最近的掉落，没有掉落时与最近的 NPC 对话。掉落总是优先。</td>
 </tr>
 <tr>
-<td>Mouse wheel</td>
-<td>Zooms between 5 and 18 m. It does nothing while the pointer is over a window, so scrolling a bag doesn't move the camera.</td>
+<td>鼠标滚轮</td>
+<td>在 5 到 18 米之间缩放。指针在窗口上时没有作用，所以滚动背包不会移动镜头。</td>
 </tr>
 <tr>
-<td><code>1</code> to <code>0</code></td>
-<td>Hotbar slots 1 to 10: cast the skill or use the item there.</td>
+<td><code>1</code> 到 <code>0</code></td>
+<td>快捷栏格子 1 到 10：施放该处的技能或使用该处的物品。</td>
 </tr>
 </tbody>
 </table></div>
-<p>When you cast a skill, top-down walks into the skill's range on its own and casts once it gets there. Behind a wall, it keeps walking until the target comes into view. Any new order (a click, a key direction, another attack) stops a swing or a cast in progress. A skill whose cast already finished plays out.</p>
-<p>While you type in the chat, the movement keys do nothing, and a key held when the chat opened stops the character. Dead characters ignore every movement order.</p>
-<h3 id="movement-click-keys-or-both"><a class="anchor" href="#movement-click-keys-or-both" aria-hidden="true">#</a>Movement: click, keys or both</h3>
-<p>Each player can choose how they walk in <strong>Settings &gt; Controls &gt; Movement</strong>:</p>
+<p>施放技能时，俯视角会自动走到技能范围内，到达后施放。目标在墙后时，会继续走，直到能看到目标。任何新命令（点击、方向键、另一次攻击）都会停止正在进行的挥击或施法。施法已完成的技能会继续生效。</p>
+<p>在聊天中输入时，移动键没有作用，聊天打开时按住的键会让角色停下。死亡的角色忽略所有移动命令。</p>
+<h3 id="movement-click-keys-or-both"><a class="anchor" href="#movement-click-keys-or-both" aria-hidden="true">#</a>移动：点击、按键或两者</h3>
+<p>每位玩家可以在 <strong>Settings &gt; Controls &gt; Movement</strong> 中选择行走方式：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Choice</th>
-<th>What it does</th>
+<th>选项</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Click and keys</strong></td>
-<td>Both work. While a key walks, a held mouse button doesn't fight it.</td>
+<td>两者都可用。按键行走时，按住的鼠标按钮不会与之冲突。</td>
 </tr>
 <tr>
 <td><strong>Click only</strong></td>
-<td>The keys don't walk. <code>Space</code> and <code>F</code> still work.</td>
+<td>按键不能行走。<code>Space</code> 和 <code>F</code> 仍然可用。</td>
 </tr>
 <tr>
 <td><strong>Keys only</strong></td>
-<td>Clicking the ground doesn't walk. Clicking monsters, loot, NPCs and players still works.</td>
+<td>点击地面不会行走。点击怪物、掉落、NPC 和玩家仍然有效。</td>
 </tr>
 </tbody>
 </table></div>
-<p>The setting is stored per computer in <code>PlayerPrefs</code> (<code>KitARPG.Movement</code>). Its starting value comes from the <code>TopDownInput</code> component.</p>
-<h3 id="topdowninput-fields"><a class="anchor" href="#topdowninput-fields" aria-hidden="true">#</a>TopDownInput fields</h3>
-<p><code>TopDownInput</code> sits on the main camera of each map scene (the sample's Town, Forest and Crypt have it). Change it there to tune a map.</p>
+<p>该设置按电脑保存在 <code>PlayerPrefs</code>（<code>KitARPG.Movement</code>）中。它的初始值来自 <code>TopDownInput</code> 组件。</p>
+<h3 id="topdowninput-fields"><a class="anchor" href="#topdowninput-fields" aria-hidden="true">#</a>TopDownInput 字段</h3>
+<p><code>TopDownInput</code> 位于每个地图场景的主摄像机上（示例的 Town、Forest 和 Crypt 都有）。在那里修改它来调整一张地图。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Controls</em> (<code>controls</code>)</td>
-<td>Click and keys, click only or keys only. The starting choice when players choose, the only choice when they don't.</td>
+<td><em>Controls</em>（<code>controls</code>）</td>
+<td>点击和按键、仅点击或仅按键。玩家可以选择时是初始选项，不能选择时是唯一选项。</td>
 <td><code>ClickAndKeys</code></td>
 </tr>
 <tr>
-<td><em>Player Chooses</em> (<code>playerChooses</code>)</td>
-<td>Adds <strong>Movement</strong> to Settings &gt; Controls, so each player picks for themselves.</td>
-<td>On</td>
+<td><em>Player Chooses</em>（<code>playerChooses</code>）</td>
+<td>在 Settings &gt; Controls 中添加 <strong>Movement</strong>，让每位玩家自己选择。</td>
+<td>开</td>
 </tr>
 <tr>
-<td><em>Attack Key</em> (<code>attackKey</code>)</td>
-<td>Attacks the nearest enemy.</td>
+<td><em>Attack Key</em>（<code>attackKey</code>）</td>
+<td>攻击最近的敌人。</td>
 <td><code>Space</code></td>
 </tr>
 <tr>
-<td><em>Interact Key</em> (<code>interactKey</code>)</td>
-<td>Picks up or talks to the nearest thing.</td>
+<td><em>Interact Key</em>（<code>interactKey</code>）</td>
+<td>拾取最近的东西或与之对话。</td>
 <td><code>F</code></td>
 </tr>
 <tr>
-<td><em>Key Attack Range</em> (<code>keyAttackRange</code>)</td>
-<td>Meters around the player in which <code>Space</code> looks for an enemy.</td>
+<td><em>Key Attack Range</em>（<code>keyAttackRange</code>）</td>
+<td><code>Space</code> 在玩家周围寻找敌人的米数。</td>
 <td>10</td>
 </tr>
 <tr>
-<td><em>Key Interact Range</em> (<code>keyInteractRange</code>)</td>
-<td>Meters around the player in which <code>F</code> finds loot or an NPC.</td>
+<td><em>Key Interact Range</em>（<code>keyInteractRange</code>）</td>
+<td><code>F</code> 在玩家周围寻找掉落或 NPC 的米数。</td>
 <td>4</td>
 </tr>
 <tr>
-<td><em>Key Repeat Seconds</em> (<code>keyRepeatSeconds</code>)</td>
-<td>Seconds between direction updates while a key is held. A new direction is sent at once.</td>
+<td><em>Key Repeat Seconds</em>（<code>keyRepeatSeconds</code>）</td>
+<td>按住按键时方向更新的间隔秒数。新方向会立即发送。</td>
 <td>0.12</td>
 </tr>
 <tr>
-<td><em>Ground Mask</em> (<code>groundMask</code>)</td>
-<td>Layers a click can land on.</td>
+<td><em>Ground Mask</em>（<code>groundMask</code>）</td>
+<td>点击可以落在的层。</td>
 <td>Everything</td>
 </tr>
 <tr>
-<td><em>Repeat Seconds</em> (<code>repeatSeconds</code>)</td>
-<td>Seconds between steering updates while the mouse button is held.</td>
+<td><em>Repeat Seconds</em>（<code>repeatSeconds</code>）</td>
+<td>按住鼠标按钮时转向更新的间隔秒数。</td>
 <td>0.15</td>
 </tr>
 <tr>
-<td><em>View</em> (<code>view</code>)</td>
-<td>Camera used for clicks. Empty: the main camera.</td>
-<td>Empty</td>
+<td><em>View</em>（<code>view</code>）</td>
+<td>用于点击的摄像机。留空：主摄像机。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Player Menu Button</em> (<code>playerMenuButton</code>)</td>
-<td>Mouse button that opens the menu on another player: 0 left, 1 right, 2 middle.</td>
+<td><em>Player Menu Button</em>（<code>playerMenuButton</code>）</td>
+<td>在另一位玩家身上打开菜单的鼠标按钮：0 左键，1 右键，2 中键。</td>
 <td>1</td>
 </tr>
 <tr>
-<td><em>Player Pick Pixels</em> (<code>playerPickPixels</code>)</td>
-<td>Pixels at 1080p from a player's body at which the pointer still picks them. Players have no click collider, so the pick is done on screen.</td>
+<td><em>Player Pick Pixels</em>（<code>playerPickPixels</code>）</td>
+<td>在 1080p 下，指针距离玩家身体多少像素内仍能选中对方。玩家没有点击碰撞体，所以选取在屏幕上进行。</td>
 <td>40</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="topdowncamera-fields"><a class="anchor" href="#topdowncamera-fields" aria-hidden="true">#</a>TopDownCamera fields</h3>
-<p><code>TopDownCamera</code> sits next to <code>TopDownInput</code> on the map camera.</p>
+<h3 id="topdowncamera-fields"><a class="anchor" href="#topdowncamera-fields" aria-hidden="true">#</a>TopDownCamera 字段</h3>
+<p><code>TopDownCamera</code> 位于地图摄像机上，与 <code>TopDownInput</code> 在一起。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>angles</code></td>
-<td>Rotation of the camera in degrees (down, around, roll).</td>
+<td>镜头的旋转角度（向下、环绕、翻滚）。</td>
 <td>(50, 45, 0)</td>
 </tr>
 <tr>
 <td><code>distance</code></td>
-<td>Meters from the player when the map starts.</td>
+<td>地图开始时与玩家的距离（米）。</td>
 <td>9</td>
 </tr>
 <tr>
 <td><code>zoomRange</code></td>
-<td>Closest and farthest the wheel or a pinch zooms.</td>
-<td>5 to 18</td>
+<td>滚轮或双指缩放的最近和最远距离。</td>
+<td>5 到 18</td>
 </tr>
 <tr>
 <td><code>followSharpness</code></td>
-<td>How tightly it trails the player. Higher is tighter.</td>
+<td>跟随玩家的紧密程度。越高越紧。</td>
 <td>10</td>
 </tr>
 </tbody>
 </table></div>
-<p>The top-down camera never turns. It looks one meter above the player's feet.</p>
-<h3 id="topdownserver-fields"><a class="anchor" href="#topdownserver-fields" aria-hidden="true">#</a>TopDownServer fields</h3>
-<p>The server half, <code>TopDownServer</code>, sits on the map server object (in the sample, the <code>Server</code> scene). When it's missing the kit adds it with these defaults.</p>
+<p>俯视角镜头从不转动。它看向玩家脚上方一米处。</p>
+<h3 id="topdownserver-fields"><a class="anchor" href="#topdownserver-fields" aria-hidden="true">#</a>TopDownServer 字段</h3>
+<p>服务器部分 <code>TopDownServer</code> 位于地图服务器对象上（示例中在 <code>Server</code> 场景）。缺少它时，套件会用这些默认值添加它。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Move Speed</em> (<code>moveSpeed</code>)</td>
-<td>Walking speed when the class gives no move speed stat.</td>
+<td><em>Move Speed</em>（<code>moveSpeed</code>）</td>
+<td>职业没有提供移动速度数值时的行走速度。</td>
 <td>3.5</td>
 </tr>
 <tr>
-<td><em>Max Move Distance</em> (<code>maxMoveDistance</code>)</td>
-<td>Clicks farther than this are pulled in to this distance. Attacks, talks and skills aimed farther away are ignored.</td>
+<td><em>Max Move Distance</em>（<code>maxMoveDistance</code>）</td>
+<td>比这更远的点击会被拉近到这个距离。瞄准更远处的攻击、对话和技能会被忽略。</td>
 <td>40</td>
 </tr>
 <tr>
-<td><em>Max Messages Per Second</em> (<code>maxMessagesPerSecond</code>)</td>
-<td>Movement and action requests per second before the connection is dropped as flooding.</td>
+<td><em>Max Messages Per Second</em>（<code>maxMessagesPerSecond</code>）</td>
+<td>每秒的移动和动作请求数，超过则连接被当作刷屏断开。</td>
 <td>20</td>
 </tr>
 <tr>
-<td><em>Chase Repath</em> (<code>chaseRepath</code>)</td>
-<td>Seconds between path updates while chasing a target.</td>
+<td><em>Chase Repath</em>（<code>chaseRepath</code>）</td>
+<td>追击目标时更新路径的间隔秒数。</td>
 <td>0.25</td>
 </tr>
 <tr>
-<td><em>Steer Timeout</em> (<code>steerTimeout</code>)</td>
-<td>Seconds a key direction keeps walking without a new one, in case the key release never arrives.</td>
+<td><em>Steer Timeout</em>（<code>steerTimeout</code>）</td>
+<td>没有新方向时，按键方向持续行走的秒数，以防松开按键的消息没有到达。</td>
 <td>0.5</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="free-camera-and-third-person"><a class="anchor" href="#free-camera-and-third-person" aria-hidden="true">#</a>Free camera and third person</h2>
-<p>Free camera and third person share the same input, camera and server components. They differ in the cursor, the aim and where the character faces.</p>
-<h3 id="playing-free-camera"><a class="anchor" href="#playing-free-camera" aria-hidden="true">#</a>Playing free camera</h3>
+<h2 id="free-camera-and-third-person"><a class="anchor" href="#free-camera-and-third-person" aria-hidden="true">#</a>自由视角和第三人称</h2><figure class="shot"><a href="../../assets/img/game/third-person.png" target="_blank"><img src="../../assets/img/game/third-person.png" alt="带准星的第三人称。" loading="lazy"></a><figcaption>带准星的第三人称。</figcaption></figure>
+<p>自由视角和第三人称共用相同的输入、镜头和服务器组件。它们在光标、瞄准和角色朝向上有所不同。</p>
+<h3 id="playing-free-camera"><a class="anchor" href="#playing-free-camera" aria-hidden="true">#</a>玩自由视角</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Input</th>
-<th>What happens</th>
+<th>输入</th>
+<th>结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> or the arrows</td>
-<td>Walk relative to the camera.</td>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> 或方向键</td>
+<td>相对镜头行走。</td>
 </tr>
 <tr>
-<td>Hold right mouse button and move</td>
-<td>Turns the camera. The cursor hides while you turn.</td>
+<td>按住鼠标右键并移动</td>
+<td>转动镜头。转动时光标隐藏。</td>
 </tr>
 <tr>
-<td>Right click without turning</td>
-<td>Opens the menu on the player under the pointer. A click counts when it's shorter than 0.35 seconds and the mouse barely moved.</td>
+<td>右键点击但不转动</td>
+<td>在指针下的玩家身上打开菜单。按下时间短于 0.35 秒且鼠标几乎没动才算点击。</td>
 </tr>
 <tr>
-<td>Left click</td>
-<td>Picks up the loot, talks to the NPC or tax collector under the pointer. Anywhere else it swings toward the pointer. Held, it keeps swinging.</td>
+<td>左键点击</td>
+<td>拾取指针下的掉落，或与指针下的 NPC 或收税官对话。在其他地方则朝指针挥击。按住时持续挥击。</td>
 </tr>
 <tr>
 <td><code>Space</code></td>
-<td>Dodges.</td>
+<td>闪避。</td>
 </tr>
 <tr>
 <td><code>F</code></td>
-<td>Picks up the nearest loot within 4 m or talks to the nearest NPC.</td>
+<td>拾取 4 米内最近的掉落，或与最近的 NPC 对话。</td>
 </tr>
 <tr>
-<td>Mouse wheel</td>
-<td>Zooms within the camera's zoom range.</td>
+<td>鼠标滚轮</td>
+<td>在镜头的缩放范围内缩放。</td>
 </tr>
 <tr>
-<td><code>1</code> to <code>0</code></td>
-<td>Hotbar slots. Skills go toward the pointer.</td>
+<td><code>1</code> 到 <code>0</code></td>
+<td>快捷栏格子。技能朝指针施放。</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="playing-third-person"><a class="anchor" href="#playing-third-person" aria-hidden="true">#</a>Playing third person</h3>
+<h3 id="playing-third-person"><a class="anchor" href="#playing-third-person" aria-hidden="true">#</a>玩第三人称</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Input</th>
-<th>What happens</th>
+<th>输入</th>
+<th>结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Move the mouse</td>
-<td>Turns the camera. The cursor is hidden and a crosshair (a small ring with a dot) sits in the middle of the screen.</td>
+<td>移动鼠标</td>
+<td>转动镜头。光标隐藏，屏幕中央显示准星（一个带点的小圆环）。</td>
 </tr>
 <tr>
-<td>Hold <code>Left Alt</code></td>
-<td>Gives the cursor back while held, to click the HUD. Opening any window, a dialog, the settings or the chat also gives it back. The crosshair stays on screen, faded.</td>
+<td>按住 <code>Left Alt</code></td>
+<td>按住时恢复光标，用于点击 HUD。打开任何窗口、对话框、设置或聊天也会恢复光标。准星仍留在屏幕上，变淡。</td>
 </tr>
 <tr>
-<td>Left click</td>
-<td>Picks up, talks or swings at what the crosshair covers. Held, it keeps swinging.</td>
+<td>左键点击</td>
+<td>拾取、对话或挥击准星覆盖的东西。按住时持续挥击。</td>
 </tr>
 <tr>
-<td>Right click</td>
-<td>Opens the menu on the player under the crosshair.</td>
+<td>右键点击</td>
+<td>在准星下的玩家身上打开菜单。</td>
 </tr>
 <tr>
-<td><code>W</code> <code>A</code> <code>S</code> <code>D</code>, <code>Space</code>, <code>F</code>, wheel, <code>1</code> to <code>0</code></td>
-<td>As in free camera.</td>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code>、<code>Space</code>、<code>F</code>、滚轮、<code>1</code> 到 <code>0</code></td>
+<td>与自由视角相同。</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="free-aiming"><a class="anchor" href="#free-aiming" aria-hidden="true">#</a>Free aiming</h3>
-<p>In free camera and third person nothing needs a target. A left click sends a swing toward the aimed point, with the enemy under the aim as a hint. The server decides who is hit:</p>
+<h3 id="free-aiming"><a class="anchor" href="#free-aiming" aria-hidden="true">#</a>自由瞄准</h3>
+<p>在自由视角和第三人称中，什么都不需要目标。左键点击会朝瞄准点发出一次挥击，并把瞄准处的敌人作为提示。由服务器决定命中谁：</p>
 <ul>
-<li><strong>Melee weapons</strong> (attack range up to 3 m) hit the nearest enemy inside a 60 degree arc either side of the aimed direction, the one most in front winning a tie.</li>
-<li><strong>Ranged weapons</strong> (attack range over 3 m) hit the first enemy on the aimed line, within 0.9 m of it.</li>
-<li>The client's hint only counts when that enemy really is in that direction, within reach and in sight.</li>
-<li>With no enemy there, the character swings at the air: the attack animation plays, ammunition is spent and the attack timer runs.</li>
+<li><strong>近战武器</strong>（攻击距离不超过 3 米）命中瞄准方向两侧 60 度弧内最近的敌人，距离相同时最靠前的优先。</li>
+<li><strong>远程武器</strong>（攻击距离超过 3 米）命中瞄准线上 0.9 米以内的第一个敌人。</li>
+<li>只有当该敌人确实在那个方向、在范围内且在视线内时，客户端的提示才有效。</li>
+<li>那里没有敌人时，角色对空挥击：播放攻击动画，消耗弹药，攻击计时器继续运行。</li>
 </ul>
-<p>Holding the button repeats the swing every 0.25 seconds on the client. The server still applies the real attack speed of the weapon, so holding never attacks faster.</p>
-<p>Skills go to the aimed point too. The server cuts the point to the skill's range and stops it at walls. A single-target enemy skill aimed at nobody takes the first enemy on the line; if there is none, the cast fails. Area and ground skills still show their preview first (see <a href="#skill-aiming">Skill aiming</a>).</p>
-<h3 id="where-the-character-faces"><a class="anchor" href="#where-the-character-faces" aria-hidden="true">#</a>Where the character faces</h3>
-<p>The character faces where it walks or strikes. After an attack or a cast it keeps facing the target for 0.6 seconds (<code>faceAimSeconds</code>), even while walking another way, so backing off with <code>S</code> and striking still shows the strike toward the enemy.</p>
-<p>In third person with a melee weapon, a swing made <strong>while walking</strong> goes where the character walks, not where the camera looks. Standing still, it goes to the crosshair. Shots and skills always go to the crosshair.</p>
-<p>Third person adds a player option, <strong>Settings &gt; Controls &gt; Turn with the camera</strong>: the character always faces where the camera looks, to strafe. It's off by default and only shows in third person.</p>
-<h3 id="dodge"><a class="anchor" href="#dodge" aria-hidden="true">#</a>Dodge</h3>
-<p><code>Space</code> dodges 4 m in the direction you walk, or straight ahead when standing, over 0.3 seconds. It stops at the first wall and cancels the current attack. The server keeps the cooldown (1.2 seconds), so pressing faster does nothing. A dodge doesn't make the character invulnerable. Stuns, roots, a cast in progress and an overloaded bag prevent it.</p>
-<h3 id="movement-and-prediction"><a class="anchor" href="#movement-and-prediction" aria-hidden="true">#</a>Movement and prediction</h3>
-<p>The character moves at once when you press a key: the client runs fixed ticks (30 per second), moves itself over the NavMesh and sends each tick to the server. The server runs the same step on the same NavMesh and answers every 0.05 seconds with the real position. When the answers disagree, the client replays the ticks the server hasn't seen yet from that position: small differences ease out, and differences over 6 m jump straight there.</p>
-<p>Other players see your character through the normal network sync. A pushed-halfway stick walks at half speed.</p>
-<p>There is no jump: movement stays on the NavMesh, sliding along its edges, and slopes and stairs carry the character up and down.</p>
-<h3 id="thirdpersoninput-fields"><a class="anchor" href="#thirdpersoninput-fields" aria-hidden="true">#</a>ThirdPersonInput fields</h3>
-<p><code>ThirdPersonInput</code> and <code>ThirdPersonCamera</code> are added to the map's main camera at run time when the mode plays. To change their fields, add them to the camera of your map scene and set them there.</p>
+<p>按住按钮时，客户端每 0.25 秒重复一次挥击。服务器仍按武器的真实攻击速度计算，所以按住不会让攻击变快。</p>
+<p>技能也朝瞄准点施放。服务器会把该点截断到技能范围内，并在墙处停下。瞄准空处的单体敌对技能会选中瞄准线上的第一个敌人；如果没有，施法失败。范围技能和地面技能仍会先显示预览（参见<a href="#skill-aiming">技能瞄准</a>）。</p>
+<h3 id="where-the-character-faces"><a class="anchor" href="#where-the-character-faces" aria-hidden="true">#</a>角色的朝向</h3>
+<p>角色面向它行走或攻击的方向。攻击或施法后，它会在 0.6 秒内（<code>faceAimSeconds</code>）继续面向目标，即使正朝另一方向走，所以用 <code>S</code> 后退并攻击时仍会显示朝向敌人的攻击。</p>
+<p>在第三人称中使用近战武器时，<strong>行走中</strong> 的挥击朝角色行走的方向，而不是镜头看向的方向。站着不动时，朝准星方向。射击和技能总是朝准星方向。</p>
+<p>第三人称增加了一个玩家选项 <strong>Settings &gt; Controls &gt; Turn with the camera</strong>：角色始终面向镜头看向的方向，用于侧移。默认关闭，只在第三人称中显示。</p>
+<h3 id="dodge"><a class="anchor" href="#dodge" aria-hidden="true">#</a>闪避</h3>
+<p><code>Space</code> 在 0.3 秒内朝你行走的方向闪避 4 米，站着时朝正前方。遇到第一面墙时停下，并取消当前攻击。服务器保留冷却（1.2 秒），所以按得更快也没有用。闪避不会让角色无敌。眩晕、定身、正在进行的施法和超重的背包会阻止闪避。</p>
+<h3 id="movement-and-prediction"><a class="anchor" href="#movement-and-prediction" aria-hidden="true">#</a>移动与预测</h3>
+<p>按下按键时角色会立即移动：客户端运行固定的 tick（每秒 30 次），自己在 NavMesh 上移动，并把每个 tick 发送给服务器。服务器在同一个 NavMesh 上执行同样的步骤，每 0.05 秒回复真实位置。回复不一致时，客户端从该位置重放服务器尚未处理的 tick：小的差异会平滑消除，超过 6 米的差异则直接跳过去。</p>
+<p>其他玩家通过正常的网络同步看到你的角色。摇杆推到一半时以一半速度行走。</p>
+<p>没有跳跃：移动保持在 NavMesh 上，沿其边缘滑动，斜坡和楼梯会带着角色上下。</p>
+<h3 id="thirdpersoninput-fields"><a class="anchor" href="#thirdpersoninput-fields" aria-hidden="true">#</a>ThirdPersonInput 字段</h3>
+<p>当前模式运行时，<code>ThirdPersonInput</code> 和 <code>ThirdPersonCamera</code> 会在运行时添加到地图的主摄像机上。要修改它们的字段，把它们添加到你地图场景的摄像机上并在那里设置。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>view</code></td>
-<td>Camera used for aiming. Empty: the main camera.</td>
-<td>Empty</td>
+<td>用于瞄准的摄像机。留空：主摄像机。</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>orbit</code></td>
-<td>The <code>ThirdPersonCamera</code> it reads the camera direction from. Empty: the one on the same object.</td>
-<td>Empty</td>
+<td>读取镜头方向的 <code>ThirdPersonCamera</code>。留空：同一对象上的那个。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Dodge Key</em> (<code>dodgeKey</code>)</td>
-<td>Dodges.</td>
+<td><em>Dodge Key</em>（<code>dodgeKey</code>）</td>
+<td>闪避。</td>
 <td><code>Space</code></td>
 </tr>
 <tr>
-<td><em>Interact Key</em> (<code>interactKey</code>)</td>
-<td>Picks up or talks to the nearest thing.</td>
+<td><em>Interact Key</em>（<code>interactKey</code>）</td>
+<td>拾取最近的东西或与之对话。</td>
 <td><code>F</code></td>
 </tr>
 <tr>
-<td><em>Interact Range</em> (<code>interactRange</code>)</td>
-<td>Meters around the player in which <code>F</code> finds loot or an NPC.</td>
+<td><em>Interact Range</em>（<code>interactRange</code>）</td>
+<td><code>F</code> 在玩家周围寻找掉落或 NPC 的米数。</td>
 <td>4</td>
 </tr>
 <tr>
-<td><em>Swing Repeat</em> (<code>swingRepeat</code>)</td>
-<td>Seconds between swings while the button is held. The server keeps the real attack speed.</td>
+<td><em>Swing Repeat</em>（<code>swingRepeat</code>）</td>
+<td>按住按钮时挥击的间隔秒数。服务器保持真实的攻击速度。</td>
 <td>0.25</td>
 </tr>
 <tr>
 <td><code>turnSharpness</code></td>
-<td>How fast the character turns to its new facing.</td>
+<td>角色转向新朝向的速度。</td>
 <td>14</td>
 </tr>
 <tr>
-<td><em>Face Aim Seconds</em> (<code>faceAimSeconds</code>)</td>
-<td>Seconds the character keeps facing what it attacked or cast at.</td>
+<td><em>Face Aim Seconds</em>（<code>faceAimSeconds</code>）</td>
+<td>角色持续面向它攻击或施法对象的秒数。</td>
 <td>0.6</td>
 </tr>
 <tr>
-<td><em>Snap Distance</em> (<code>snapDistance</code>)</td>
-<td>Meters off the server at which the character jumps there instead of easing over.</td>
+<td><em>Snap Distance</em>（<code>snapDistance</code>）</td>
+<td>与服务器偏差多少米时，角色直接跳过去而不是平滑过渡。</td>
 <td>6</td>
 </tr>
 <tr>
-<td><em>Correction Sharpness</em> (<code>correctionSharpness</code>)</td>
-<td>How fast a small correction eases out.</td>
+<td><em>Correction Sharpness</em>（<code>correctionSharpness</code>）</td>
+<td>小的修正平滑消除的速度。</td>
 <td>10</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="thirdpersoncamera-fields"><a class="anchor" href="#thirdpersoncamera-fields" aria-hidden="true">#</a>ThirdPersonCamera fields</h3>
+<h3 id="thirdpersoncamera-fields"><a class="anchor" href="#thirdpersoncamera-fields" aria-hidden="true">#</a>ThirdPersonCamera 字段</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>settings</code></td>
-<td>A <a href="#camera-settings">Camera Settings</a> asset for this camera only. Empty: the one in Game Settings for the playing mode.</td>
-<td>Empty</td>
+<td>仅用于这台摄像机的 <a href="#camera-settings">Camera Settings</a> 资源。留空：使用 Game Settings 中当前模式的资源。</td>
+<td>空</td>
 </tr>
 <tr>
 <td><code>blockers</code></td>
-<td>Layers the camera can't go through. Monsters, players, loot and triggers never block it.</td>
-<td>Default layer</td>
+<td>镜头无法穿过的层。怪物、玩家、掉落和触发器从不阻挡它。</td>
+<td>Default 层</td>
 </tr>
 <tr>
 <td><code>blockerRadius</code></td>
-<td>Radius of the sphere used to find walls behind the player.</td>
+<td>用于寻找玩家身后墙壁的球体半径。</td>
 <td>0.25</td>
 </tr>
 <tr>
-<td><em>Look Button</em> (<code>lookButton</code>)</td>
-<td>Free camera: mouse button held to turn. 0 left, 1 right, 2 middle.</td>
+<td><em>Look Button</em>（<code>lookButton</code>）</td>
+<td>自由视角：按住以转动的鼠标按钮。0 左键，1 右键，2 中键。</td>
 <td>1</td>
 </tr>
 <tr>
-<td><em>Free Cursor Key</em> (<code>freeCursorKey</code>)</td>
-<td>Third person: held to get the cursor back.</td>
+<td><em>Free Cursor Key</em>（<code>freeCursorKey</code>）</td>
+<td>第三人称：按住以恢复光标。</td>
 <td><code>Left Alt</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>When a wall comes between the camera and the player, the camera pulls in at once and eases back out when the wall is gone.</p>
-<h3 id="thirdpersonserver-fields"><a class="anchor" href="#thirdpersonserver-fields" aria-hidden="true">#</a>ThirdPersonServer fields</h3>
-<p><code>ThirdPersonServer</code> serves both free camera and third person. It's added to the map server object at run time; add it there yourself to change its fields.</p>
+<p>当墙挡在镜头和玩家之间时，镜头立即拉近，墙消失后再平滑拉远。</p>
+<h3 id="thirdpersonserver-fields"><a class="anchor" href="#thirdpersonserver-fields" aria-hidden="true">#</a>ThirdPersonServer 字段</h3>
+<p><code>ThirdPersonServer</code> 同时服务于自由视角和第三人称。它在运行时添加到地图服务器对象上；要修改它的字段，自己把它添加到那里。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Move Speed</em> (<code>moveSpeed</code>)</td>
-<td>Walking speed when the class gives no move speed stat.</td>
+<td><em>Move Speed</em>（<code>moveSpeed</code>）</td>
+<td>职业没有提供移动速度数值时的行走速度。</td>
 <td>3.5</td>
 </tr>
 <tr>
-<td><em>Max Messages Per Second</em> (<code>maxMessagesPerSecond</code>)</td>
-<td>Attacks, swings, skills, pickups and talks per second before the connection is dropped as flooding.</td>
+<td><em>Max Messages Per Second</em>（<code>maxMessagesPerSecond</code>）</td>
+<td>每秒的攻击、挥击、技能、拾取和对话次数，超过则连接被当作刷屏断开。</td>
 <td>20</td>
 </tr>
 <tr>
-<td><em>Max Queued Ticks</em> (<code>maxQueuedTicks</code>)</td>
-<td>Movement ticks waiting per player. More are dropped and the client corrects itself.</td>
+<td><em>Max Queued Ticks</em>（<code>maxQueuedTicks</code>）</td>
+<td>每位玩家等待处理的移动 tick 数。多出的会被丢弃，客户端会自行修正。</td>
 <td>12</td>
 </tr>
 <tr>
-<td><em>Ack Seconds</em> (<code>ackSeconds</code>)</td>
-<td>Seconds between position replies to the owner.</td>
+<td><em>Ack Seconds</em>（<code>ackSeconds</code>）</td>
+<td>向所有者回复位置的间隔秒数。</td>
 <td>0.05</td>
 </tr>
 <tr>
-<td><em>Reach Slack</em> (<code>reachSlack</code>)</td>
-<td>Meters past the attack or skill range still accepted, for a target taking a step.</td>
+<td><em>Reach Slack</em>（<code>reachSlack</code>）</td>
+<td>超出攻击或技能范围但仍被接受的米数，用于目标移动了一步的情况。</td>
 <td>0.6</td>
 </tr>
 <tr>
-<td><em>Melee Arc</em> (<code>meleeArc</code>)</td>
-<td>Half the angle, in degrees, in which a melee swing finds its enemy.</td>
+<td><em>Melee Arc</em>（<code>meleeArc</code>）</td>
+<td>近战挥击寻找敌人的角度的一半（度）。</td>
 <td>60</td>
 </tr>
 <tr>
-<td><em>Aim Width</em> (<code>aimWidth</code>)</td>
-<td>Meters either side of the aimed line in which a ranged attack or single-target skill finds its enemy.</td>
+<td><em>Aim Width</em>（<code>aimWidth</code>）</td>
+<td>远程攻击或单体技能在瞄准线两侧寻找敌人的米数。</td>
 <td>0.9</td>
 </tr>
 <tr>
 <td><code>dodgeDistance</code></td>
-<td>Meters a dodge covers.</td>
+<td>闪避的距离（米）。</td>
 <td>4</td>
 </tr>
 <tr>
 <td><code>dodgeSeconds</code></td>
-<td>Seconds a dodge takes.</td>
+<td>闪避所需的秒数。</td>
 <td>0.3</td>
 </tr>
 <tr>
 <td><code>dodgeCooldown</code></td>
-<td>Seconds between dodges.</td>
+<td>两次闪避之间的秒数。</td>
 <td>1.2</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="camera-settings"><a class="anchor" href="#camera-settings" aria-hidden="true">#</a>Camera settings</h2>
-<p>The framing of the free camera and third person modes is part of the game's design, the same for every player, so nobody gains an edge by pulling the camera far back. It comes from a <strong>Camera Settings</strong> asset.</p>
-<p>To make one: <strong>Create &gt; KitARPG &gt; Camera Settings</strong>, then assign it to <em>Third Person Camera</em> or <em>Free Camera</em> in Game Settings. The sample has <code>Camera Third Person</code> and <code>Camera Free</code> in <code>Samples/Starter/Data</code>.</p>
-<p>The camera reads the asset every frame. Edit it in Play mode to try values: the camera follows at once and the changes stay after Play, because the asset is a file in your project.</p>
+<h2 id="camera-settings"><a class="anchor" href="#camera-settings" aria-hidden="true">#</a>镜头设置</h2>
+<p>自由视角和第三人称模式的取景是游戏设计的一部分，对每位玩家都一样，所以没人能通过把镜头拉远获得优势。它来自一个 <strong>Camera Settings</strong> 资源。</p>
+<p>创建方法：<strong>Create &gt; KitARPG &gt; Camera Settings</strong>，然后在 Game Settings 中把它指定给 <em>Third Person Camera</em> 或 <em>Free Camera</em>。示例在 <code>Samples/Starter/Data</code> 中有 <code>Camera Third Person</code> 和 <code>Camera Free</code>。</p>
+<p>镜头每帧都读取该资源。在 Play 模式下编辑它来尝试数值：镜头会立即跟随，而且 Play 结束后改动仍保留，因为该资源是你项目中的一个文件。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Distance</em> (<code>distance</code>)</td>
-<td>Meters behind the player when the game starts, from 0.5 to 30. Clamped into the zoom range.</td>
+<td><em>Distance</em>（<code>distance</code>）</td>
+<td>游戏开始时在玩家身后的米数，0.5 到 30。会被限制在缩放范围内。</td>
 <td>6</td>
 </tr>
 <tr>
-<td><em>Zoom Range</em> (<code>zoomRange</code>)</td>
-<td>Closest and farthest the wheel zooms. The same value twice locks the zoom. The closest is never under 0.5.</td>
-<td>2 to 14</td>
+<td><em>Zoom Range</em>（<code>zoomRange</code>）</td>
+<td>滚轮缩放的最近和最远距离。两个值相同会锁定缩放。最近距离不低于 0.5。</td>
+<td>2 到 14</td>
 </tr>
 <tr>
-<td><em>Height</em> (<code>height</code>)</td>
-<td>Meters above the feet the camera looks at, from -2 to 6.</td>
+<td><em>Height</em>（<code>height</code>）</td>
+<td>镜头看向脚上方的米数，-2 到 6。</td>
 <td>1.6</td>
 </tr>
 <tr>
-<td><em>Side</em> (<code>side</code>)</td>
-<td>Meters beside the player, right above zero and left below, from -4 to 4. Moves the player off the crosshair.</td>
+<td><em>Side</em>（<code>side</code>）</td>
+<td>在玩家旁边的米数，大于零为右侧，小于零为左侧，-4 到 4。让玩家偏离准星。</td>
 <td>0.6</td>
 </tr>
 <tr>
-<td><em>Field Of View</em> (<code>fieldOfView</code>)</td>
-<td>Camera field of view, 30 to 110 degrees.</td>
+<td><em>Field Of View</em>（<code>fieldOfView</code>）</td>
+<td>镜头视野，30 到 110 度。</td>
 <td>60</td>
 </tr>
 <tr>
-<td><em>Turning</em> (<code>turning</code>)</td>
-<td><strong>Free</strong> turns all the way round. <strong>Limited</strong> stays within <em>Yaw Range</em> of <em>Yaw</em>. <strong>Fixed</strong> always faces <em>Yaw</em>.</td>
+<td><em>Turning</em>（<code>turning</code>）</td>
+<td><strong>Free</strong> 可以完全转一圈。<strong>Limited</strong> 保持在 <em>Yaw</em> 的 <em>Yaw Range</em> 之内。<strong>Fixed</strong> 始终朝向 <em>Yaw</em>。</td>
 <td>Free</td>
 </tr>
 <tr>
-<td><em>Yaw</em> (<code>yaw</code>)</td>
-<td>World direction in degrees the camera faces when Limited or Fixed, and where it starts. 45 gives an isometric look.</td>
+<td><em>Yaw</em>（<code>yaw</code>）</td>
+<td>Limited 或 Fixed 时镜头朝向的世界方向（度），也是它的起始方向。45 呈现等距视角。</td>
 <td>0</td>
 </tr>
 <tr>
-<td><em>Yaw Range</em> (<code>yawRange</code>)</td>
-<td>Limited: degrees it may turn left (below zero) and right of <em>Yaw</em>.</td>
-<td>-45 to 45</td>
+<td><em>Yaw Range</em>（<code>yawRange</code>）</td>
+<td>Limited：可以向 <em>Yaw</em> 左侧（小于零）和右侧转动的度数。</td>
+<td>-45 到 45</td>
 </tr>
 <tr>
-<td><em>Pitch</em> (<code>pitch</code>)</td>
-<td>Degrees the camera starts looking down, -89 to 89.</td>
+<td><em>Pitch</em>（<code>pitch</code>）</td>
+<td>镜头开始时向下看的度数，-89 到 89。</td>
 <td>18</td>
 </tr>
 <tr>
-<td><em>Lock Pitch</em> (<code>lockPitch</code>)</td>
-<td>Keeps the camera at <em>Pitch</em>, never tilting.</td>
-<td>Off</td>
+<td><em>Lock Pitch</em>（<code>lockPitch</code>）</td>
+<td>让镜头保持在 <em>Pitch</em>，从不倾斜。</td>
+<td>关</td>
 </tr>
 <tr>
-<td><em>Pitch Range</em> (<code>pitchRange</code>)</td>
-<td>How far it can look up (below zero) and down.</td>
-<td>-35 to 75</td>
+<td><em>Pitch Range</em>（<code>pitchRange</code>）</td>
+<td>向上（小于零）和向下能看多远。</td>
+<td>-35 到 75</td>
 </tr>
 <tr>
-<td><em>Sensitivity</em> (<code>sensitivity</code>)</td>
-<td>Degrees per unit of mouse movement. Players scale it in Settings.</td>
+<td><em>Sensitivity</em>（<code>sensitivity</code>）</td>
+<td>每单位鼠标移动对应的度数。玩家可在 Settings 中缩放。</td>
 <td>3</td>
 </tr>
 <tr>
-<td><em>Follow Sharpness</em> (<code>followSharpness</code>)</td>
-<td>How quickly it catches up with the player. Higher is tighter.</td>
+<td><em>Follow Sharpness</em>（<code>followSharpness</code>）</td>
+<td>追上玩家的速度。越高越紧。</td>
 <td>18</td>
 </tr>
 </tbody>
 </table></div>
-<p>The sample assets use these values:</p>
+<p>示例资源使用以下数值：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Asset</th>
+<th>资源</th>
 <th>Distance</th>
 <th>Zoom range</th>
 <th>Height</th>
@@ -683,7 +683,7 @@
 <tr>
 <td><code>Camera Third Person</code></td>
 <td>6</td>
-<td>2 to 14</td>
+<td>2 到 14</td>
 <td>0.84</td>
 <td>0.4</td>
 <td>45</td>
@@ -691,8 +691,8 @@
 </tr>
 <tr>
 <td><code>Camera Free</code></td>
-<td>5 (starts at 7, the zoom minimum)</td>
-<td>7 to 13</td>
+<td>5（从缩放最小值 7 开始）</td>
+<td>7 到 13</td>
 <td>1.6</td>
 <td>0</td>
 <td>45</td>
@@ -700,160 +700,160 @@
 </tr>
 </tbody>
 </table></div>
-<div class="callout tip"><div class="callout-title">提示</div><p><em>Turning</em> Fixed with <em>Lock Pitch</em> on makes a camera that can't turn at all. The cursor then stays free and aims with the mouse even in third person, which gives a fixed-angle action camera with WASD movement and dodge.</p>
+<div class="callout tip"><div class="callout-title">提示</div><p><em>Turning</em> 设为 Fixed 并开启 <em>Lock Pitch</em>，会得到一个完全不能转动的镜头。此时即使在第三人称中光标也保持自由并用鼠标瞄准，从而得到一个带 WASD 移动和闪避的固定角度动作镜头。</p>
 </div>
-<h3 id="player-camera-options"><a class="anchor" href="#player-camera-options" aria-hidden="true">#</a>Player camera options</h3>
-<p>Players only change how the mouse feels, in <strong>Settings &gt; Controls</strong>. These options appear in free camera and third person:</p>
+<h3 id="player-camera-options"><a class="anchor" href="#player-camera-options" aria-hidden="true">#</a>玩家镜头选项</h3>
+<p>玩家只能在 <strong>Settings &gt; Controls</strong> 中修改鼠标手感。这些选项在自由视角和第三人称中出现：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Option</th>
-<th>What it does</th>
-<th>Default</th>
+<th>选项</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Mouse sensitivity</strong></td>
-<td>Scales the asset's <em>Sensitivity</em>, from 20 to 300 percent in steps of 10.</td>
+<td>缩放资源的 <em>Sensitivity</em>，20% 到 300%，步长 10。</td>
 <td>100</td>
 </tr>
 <tr>
 <td><strong>Invert mouse</strong></td>
-<td>Moving the mouse up looks up.</td>
-<td>Off</td>
+<td>向上移动鼠标时向上看。</td>
+<td>关</td>
 </tr>
 <tr>
 <td><strong>Turn with the camera</strong></td>
-<td>Third person only: the character faces where the camera looks.</td>
-<td>Off</td>
+<td>仅第三人称：角色面向镜头看向的方向。</td>
+<td>关</td>
 </tr>
 </tbody>
 </table></div>
-<p>They're saved per computer in <code>PlayerPrefs</code>. See <a href="player-settings.html">Player settings</a>.</p>
-<h2 id="skill-aiming"><a class="anchor" href="#skill-aiming" aria-hidden="true">#</a>Skill aiming</h2>
-<p>In every mode, area and ground skills first show where they land:</p>
+<p>它们按电脑保存在 <code>PlayerPrefs</code> 中。参见<a href="player-settings.html">玩家设置</a>。</p>
+<h2 id="skill-aiming"><a class="anchor" href="#skill-aiming" aria-hidden="true">#</a>技能瞄准</h2>
+<p>在每种模式中，范围技能和地面技能都会先显示落点：</p>
 <ul>
-<li>A faint white ring around the player shows the skill's range.</li>
-<li>The skill's circle, cone or line follows the aim. It's gold when the cast can go, red when the point is out of range. Top-down never shows red, because it walks into range on its own.</li>
-<li>Left click or the same hotbar key casts it. Right click or <code>Escape</code> calls it off.</li>
+<li>玩家周围一个淡白色圆环显示技能范围。</li>
+<li>技能的圆形、锥形或直线跟随瞄准。可以施放时为金色，点超出范围时为红色。俯视角从不显示红色，因为它会自己走到范围内。</li>
+<li>左键点击或相同的快捷栏按键施放。右键点击或 <code>Escape</code> 取消。</li>
 </ul>
-<p>Self skills and single-target skills (aimed at an enemy or ally) go at once. Outside of aiming, a red ring under an enemy marks the one your attack or skill would hit.</p>
-<p>Players who prefer speed pick <strong>Settings &gt; Controls &gt; Skills &gt; Cast at once</strong>: area skills go straight to the aim with no preview. The default is <strong>Show the area, then click</strong>. The choice is stored in <code>PlayerPrefs</code> (<code>KitARPG.QuickCast</code>).</p>
-<p>What a skill needs before it's sent, checked on the client to save a round trip: the skill is learned, not passive, no other cast is running, its cooldown is over and there is enough mana. The messages are &quot;You haven't learned that&quot;, &quot;That can't be cast&quot;, &quot;Already casting&quot;, &quot;<em>Skill</em> isn't ready&quot; and &quot;Not enough mana&quot;. In top-down, an enemy skill with no enemy under the pointer says &quot;No target&quot;. The server checks all of it again. See <a href="../content/skills.html">Skills</a> and <a href="combat.html">Combat</a>.</p>
-<h2 id="server-checks"><a class="anchor" href="#server-checks" aria-hidden="true">#</a>Server checks</h2>
-<p>The client only asks. Every mode's server half checks each request:</p>
+<p>自身技能和单体技能（瞄准敌人或盟友）立即施放。不在瞄准时，敌人脚下的红色圆环标出你的攻击或技能会命中的那个。</p>
+<p>喜欢速度的玩家可以选择 <strong>Settings &gt; Controls &gt; Skills &gt; Cast at once</strong>：范围技能直接朝瞄准点施放，没有预览。默认是 <strong>Show the area, then click</strong>。该选择保存在 <code>PlayerPrefs</code>（<code>KitARPG.QuickCast</code>）中。</p>
+<p>技能发送前在客户端检查的条件，用来省去一次往返：技能已学会、不是被动技能、没有其他施法正在进行、冷却已结束且法力足够。对应消息是 &quot;You haven't learned that&quot;、&quot;That can't be cast&quot;、&quot;Already casting&quot;、&quot;<em>Skill</em> isn't ready&quot; 和 &quot;Not enough mana&quot;。在俯视角中，指针下没有敌人时，敌对技能会显示 &quot;No target&quot;。服务器会再次检查所有条件。参见<a href="../content/skills.html">技能</a>和<a href="combat.html">战斗</a>。</p>
+<h2 id="server-checks"><a class="anchor" href="#server-checks" aria-hidden="true">#</a>服务器检查</h2>
+<p>客户端只发出请求。每种模式的服务器部分都会检查每个请求：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Check</th>
-<th>Top-down</th>
-<th>Free camera and third person</th>
+<th>检查</th>
+<th>俯视角</th>
+<th>自由视角和第三人称</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mode matches</td>
-<td>The client sends its mode with its map ticket. Another mode is refused with <code>mode_mismatch</code>.</td>
-<td>Same</td>
+<td>模式一致</td>
+<td>客户端随地图票据发送它的模式。其他模式会以 <code>mode_mismatch</code> 被拒绝。</td>
+<td>相同</td>
 </tr>
 <tr>
-<td>Request rate</td>
-<td>More than 20 requests a second drops the connection as flooding.</td>
-<td>Same for actions. Movement ticks: more than 70 a second drops a remote client.</td>
+<td>请求频率</td>
+<td>每秒超过 20 个请求会把连接当作刷屏断开。</td>
+<td>动作相同。移动 tick：每秒超过 70 个会断开远程客户端。</td>
 </tr>
 <tr>
-<td>Bad numbers</td>
-<td>Points and directions that aren't finite numbers are ignored.</td>
-<td>Same</td>
+<td>错误的数字</td>
+<td>不是有限数的点和方向会被忽略。</td>
+<td>相同</td>
 </tr>
 <tr>
-<td>Speed</td>
-<td>The server paths the character at its own speed.</td>
-<td>Ticks run against a real-time budget per player: sending ticks faster never moves faster. Each tick counts at most 0.1 seconds, old tick numbers are dropped.</td>
+<td>速度</td>
+<td>服务器以它自己的速度为角色寻路。</td>
+<td>tick 按每位玩家的实时预算运行：更快地发送 tick 永远不会移动得更快。每个 tick 最多计 0.1 秒，旧的 tick 编号会被丢弃。</td>
 </tr>
 <tr>
-<td>Movement blocked</td>
-<td>Stuns, roots, knockbacks, death and an overloaded bag stop walking. An overloaded player sees the overload message at most every 3 seconds.</td>
-<td>Same, and a cast in progress holds the caster in place.</td>
+<td>移动受阻</td>
+<td>眩晕、定身、击退、死亡和超重的背包会停止行走。超重的玩家最多每 3 秒看到一次超重消息。</td>
+<td>相同，此外正在进行的施法会让施法者停在原地。</td>
 </tr>
 <tr>
-<td>Reach</td>
-<td>Clicks over 40 m are pulled in; targets, NPCs and skill points over 40 m are ignored. The character walks the rest.</td>
-<td>Nothing walks on its own: attacks need attack range plus 0.6 m and line of sight (&quot;Too far&quot;, &quot;Not in sight&quot;), talks need the NPC's talk range (&quot;Too far&quot;), pickups the loot's pickup range, skills their range (&quot;Out of range&quot;).</td>
+<td>距离</td>
+<td>超过 40 米的点击会被拉近；超过 40 米的目标、NPC 和技能点会被忽略。角色走完剩下的路。</td>
+<td>什么都不会自己走动：攻击需要攻击距离加 0.6 米且在视线内（&quot;Too far&quot;、&quot;Not in sight&quot;），对话需要在 NPC 的对话范围内（&quot;Too far&quot;），拾取需要在掉落的拾取范围内，技能需要在其范围内（&quot;Out of range&quot;）。</td>
 </tr>
 <tr>
-<td>Targets</td>
-<td>Only targets this client can see; enemies only when they really are enemies (PvP and duels included).</td>
-<td>Same</td>
+<td>目标</td>
+<td>只接受该客户端能看到的目标；敌人只在确实是敌人时（包括 PvP 和决斗）才接受。</td>
+<td>相同</td>
 </tr>
 <tr>
-<td>Orders from another mode</td>
-<td>Not handled.</td>
-<td>Top-down move orders are ignored instead of disconnecting the client.</td>
+<td>来自其他模式的命令</td>
+<td>不处理。</td>
+<td>俯视角的移动命令会被忽略，而不是断开客户端。</td>
 </tr>
 </tbody>
 </table></div>
-<p>Line of sight follows Game Settings &gt; Combat (see <a href="combat.html">Combat</a>).</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p><strong>Single player.</strong> The game is its own host, so client and server always play the same mode. There is no prediction in free camera and third person: the host sends one tick per frame and moves the character in the same process. Change the mode in Game Settings and press Play.</p>
-<p><strong>MMO.</strong> The map servers are separate builds. The mode is compiled into them from Game Settings at build time.</p>
+<p>视线遵循 Game Settings &gt; Combat（参见<a href="combat.html">战斗</a>）。</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式与 MMO</h2>
+<p><strong>单人模式。</strong> 游戏是它自己的主机，所以客户端和服务器总是使用同一种模式。在自由视角和第三人称中没有预测：主机每帧发送一个 tick，并在同一进程中移动角色。在 Game Settings 中修改模式并按 Play 即可。</p>
+<p><strong>MMO。</strong> 地图服务器是独立的构建。模式在构建时从 Game Settings 编译进去。</p>
 <ol>
-<li>Change <em>Control Mode</em> in Game Settings.</li>
-<li>Rebuild the map server in <strong>KitARPG &gt; Play and Servers</strong> (or <strong>KitARPG &gt; Build</strong> for Linux and Docker).</li>
-<li>Restart the services.</li>
-<li>Build and ship new clients.</li>
+<li>在 Game Settings 中修改 <em>Control Mode</em>。</li>
+<li>在 <strong>KitARPG &gt; Play and Servers</strong> 中重新构建地图服务器（Linux 和 Docker 用 <strong>KitARPG &gt; Build</strong>）。</li>
+<li>重启服务。</li>
+<li>构建并发布新的客户端。</li>
 </ol>
-<p>A client that plays another mode than the map server is refused at the door. The title screen shows &quot;The server plays a different game mode. Update the game.&quot; In the editor, the Console also says the map server plays another mode and tells you to rebuild it. See <a href="../editor/play-and-servers.html">Play and Servers</a> and <a href="../servers/builds.html">Builds</a>.</p>
-<h2 id="input-system-and-input-manager"><a class="anchor" href="#input-system-and-input-manager" aria-hidden="true">#</a>Input System and Input Manager</h2>
-<p>The kit reads the keyboard and mouse through <code>KitInput</code>, which works with both the Input System package and the old Input Manager, depending on your project's <em>Active Input Handling</em>. Every key and mouse button above works the same in both. Scenes with a <code>StandaloneInputModule</code> get an <code>InputSystemUIInputModule</code> when they load under the Input System.</p>
-<p>On phones and tablets the modes read the on-screen controls instead. See <a href="touch-controls.html">Touch controls</a>.</p>
-<h2 id="common-setups"><a class="anchor" href="#common-setups" aria-hidden="true">#</a>Common setups</h2>
-<h3 id="a-classic-diablo-style-game"><a class="anchor" href="#a-classic-diablo-style-game" aria-hidden="true">#</a>A classic Diablo-style game</h3>
+<p>与地图服务器模式不同的客户端会在门口被拒绝。标题画面显示 &quot;The server plays a different game mode. Update the game.&quot;。在编辑器中，Console 也会说明地图服务器使用的是另一种模式，并提示你重新构建它。参见 <a href="../editor/play-and-servers.html">Play and Servers</a> 和<a href="../servers/builds.html">构建</a>。</p>
+<h2 id="input-system-and-input-manager"><a class="anchor" href="#input-system-and-input-manager" aria-hidden="true">#</a>Input System 和 Input Manager</h2>
+<p>套件通过 <code>KitInput</code> 读取键盘和鼠标，它根据项目的 <em>Active Input Handling</em>，同时支持 Input System 包和旧的 Input Manager。上面所有按键和鼠标按钮在两者中的表现都一样。在 Input System 下加载时，带 <code>StandaloneInputModule</code> 的场景会得到一个 <code>InputSystemUIInputModule</code>。</p>
+<p>在手机和平板上，各模式改为读取屏幕上的操作控件。参见<a href="touch-controls.html">触控操作</a>。</p>
+<h2 id="common-setups"><a class="anchor" href="#common-setups" aria-hidden="true">#</a>常见设置</h2>
+<h3 id="a-classic-diablo-style-game"><a class="anchor" href="#a-classic-diablo-style-game" aria-hidden="true">#</a>经典 Diablo 风格游戏</h3>
 <ol>
-<li>Game Settings &gt; Game mode &gt; <em>Control Mode</em>: <strong>Top-down (click or keys)</strong>.</li>
-<li>On each map camera's <code>TopDownInput</code>, leave <em>Controls</em> on <code>ClickAndKeys</code> and <em>Player Chooses</em> on.</li>
-<li>To change the camera angle or zoom, edit <code>TopDownCamera</code> on each map camera.</li>
+<li>Game Settings &gt; Game mode &gt; <em>Control Mode</em>：<strong>Top-down (click or keys)</strong>。</li>
+<li>在每台地图摄像机的 <code>TopDownInput</code> 上，<em>Controls</em> 保持 <code>ClickAndKeys</code>，<em>Player Chooses</em> 保持开启。</li>
+<li>要修改镜头角度或缩放，编辑每台地图摄像机上的 <code>TopDownCamera</code>。</li>
 </ol>
-<h3 id="click-only-no-wasd"><a class="anchor" href="#click-only-no-wasd" aria-hidden="true">#</a>Click only, no WASD</h3>
+<h3 id="click-only-no-wasd"><a class="anchor" href="#click-only-no-wasd" aria-hidden="true">#</a>仅点击，不用 WASD</h3>
 <ol>
-<li>On every map camera's <code>TopDownInput</code>, set <em>Controls</em> to <strong>Click</strong> and turn off <em>Player Chooses</em>.</li>
-<li><code>Space</code> and <code>F</code> still work. Clear <em>Attack Key</em> and <em>Interact Key</em> (set them to <code>None</code>) to remove them too.</li>
+<li>在每台地图摄像机的 <code>TopDownInput</code> 上，将 <em>Controls</em> 设为 <strong>Click</strong>，并关闭 <em>Player Chooses</em>。</li>
+<li><code>Space</code> 和 <code>F</code> 仍然可用。清空 <em>Attack Key</em> 和 <em>Interact Key</em>（设为 <code>None</code>）也可以把它们移除。</li>
 </ol>
-<h3 id="an-action-game-with-a-crosshair"><a class="anchor" href="#an-action-game-with-a-crosshair" aria-hidden="true">#</a>An action game with a crosshair</h3>
+<h3 id="an-action-game-with-a-crosshair"><a class="anchor" href="#an-action-game-with-a-crosshair" aria-hidden="true">#</a>带准星的动作游戏</h3>
 <ol>
-<li><em>Control Mode</em>: <strong>Third person (crosshair aim)</strong>.</li>
-<li>Assign a Camera Settings asset to <em>Third Person Camera</em>. Start from the sample's <code>Camera Third Person</code>.</li>
-<li>Press Play, open the asset and tune <em>Distance</em>, <em>Height</em> and <em>Side</em> until the crosshair clears the character.</li>
-<li>In MMO, rebuild the map server.</li>
+<li><em>Control Mode</em>：<strong>Third person (crosshair aim)</strong>。</li>
+<li>给 <em>Third Person Camera</em> 指定一个 Camera Settings 资源。从示例的 <code>Camera Third Person</code> 开始。</li>
+<li>按 Play，打开该资源，调整 <em>Distance</em>、<em>Height</em> 和 <em>Side</em>，直到准星不被角色挡住。</li>
+<li>在 MMO 中，重新构建地图服务器。</li>
 </ol>
-<h3 id="an-isometric-camera-with-wasd-and-dodge"><a class="anchor" href="#an-isometric-camera-with-wasd-and-dodge" aria-hidden="true">#</a>An isometric camera with WASD and dodge</h3>
+<h3 id="an-isometric-camera-with-wasd-and-dodge"><a class="anchor" href="#an-isometric-camera-with-wasd-and-dodge" aria-hidden="true">#</a>带 WASD 和闪避的等距镜头</h3>
 <ol>
-<li><em>Control Mode</em>: <strong>Free camera (cursor, right button turns)</strong>.</li>
-<li>In the <em>Free Camera</em> asset set <em>Turning</em> to <strong>Fixed</strong>, <em>Yaw</em> to 45, <em>Pitch</em> to about 50 and turn on <em>Lock Pitch</em>.</li>
-<li>The camera can't turn, the cursor aims and <code>Space</code> dodges.</li>
+<li><em>Control Mode</em>：<strong>Free camera (cursor, right button turns)</strong>。</li>
+<li>在 <em>Free Camera</em> 资源中，将 <em>Turning</em> 设为 <strong>Fixed</strong>，<em>Yaw</em> 设为 45，<em>Pitch</em> 设为约 50，并开启 <em>Lock Pitch</em>。</li>
+<li>镜头不能转动，光标用于瞄准，<code>Space</code> 闪避。</li>
 </ol>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>Changing the mode and not rebuilding the map server.</strong> Clients get &quot;The server plays a different game mode&quot;. Rebuild and restart the services after every mode change.</li>
-<li><strong>Expecting players to switch modes.</strong> The mode belongs to the game. Players only choose movement in top-down, skill casting, mouse sensitivity, invert mouse and turn with the camera.</li>
-<li><strong>Editing a Camera Settings asset in Play and expecting it to reset.</strong> Changes stay, like any asset. Duplicate the asset before experimenting if you want to keep the original.</li>
-<li><strong>Setting fields on <code>ThirdPersonCamera</code> or <code>ThirdPersonServer</code> that aren't in the scene.</strong> They're added at run time with defaults. Add them to the map camera or the map server object to keep your values.</li>
-<li><strong>No NavMesh on a map.</strong> Every mode walks on the NavMesh. A map without a baked <code>NavMeshSurface</code> doesn't let anyone move. See <a href="../content/maps.html">Maps</a>.</li>
-<li><strong>A huge <code>Side</code> value in third person.</strong> The camera's side offset can push it into walls on narrow paths; the camera pulls in, but the view jumps. Keep it under 1 m.</li>
-<li><strong>Expecting a jump or invulnerable dodge.</strong> Neither exists in the kit's modes.</li>
+<li><strong>修改了模式但没有重新构建地图服务器。</strong> 客户端会收到 &quot;The server plays a different game mode&quot;。每次修改模式后都要重新构建并重启服务。</li>
+<li><strong>期望玩家切换模式。</strong> 模式属于游戏。玩家只能选择俯视角中的移动方式、技能施放方式、鼠标灵敏度、反转鼠标和随镜头转向。</li>
+<li><strong>在 Play 中编辑 Camera Settings 资源并期望它会恢复。</strong> 改动会保留，和任何资源一样。如果想保留原版，在试验前先复制该资源。</li>
+<li><strong>设置不在场景中的 <code>ThirdPersonCamera</code> 或 <code>ThirdPersonServer</code> 的字段。</strong> 它们在运行时以默认值添加。把它们添加到地图摄像机或地图服务器对象上，才能保留你的数值。</li>
+<li><strong>地图上没有 NavMesh。</strong> 每种模式都在 NavMesh 上行走。没有烘焙 <code>NavMeshSurface</code> 的地图上，谁都无法移动。参见<a href="../content/maps.html">地图</a>。</li>
+<li><strong>第三人称中 <code>Side</code> 值过大。</strong> 镜头的侧向偏移在狭窄的路上可能把它推进墙里；镜头会拉近，但画面会跳动。保持在 1 米以下。</li>
+<li><strong>期望有跳跃或无敌闪避。</strong> 套件的各模式中都没有这两样。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="touch-controls.html">Touch controls</a>: the same modes on phones and tablets.</li>
-<li><a href="combat.html">Combat</a>: attacks, damage and line of sight.</li>
-<li><a href="../content/skills.html">Skills</a>: ranges, areas and targets.</li>
-<li><a href="player-settings.html">Player settings</a>: the Settings window players use.</li>
-<li><a href="../reference/keys.html">Keys</a>: every key in one table.</li>
-<li><a href="../devkit/game-modes-in-code.html">Game modes in code</a>: writing a mode of your own.</li>
+<li><a href="touch-controls.html">触控操作</a>：手机和平板上的相同模式。</li>
+<li><a href="combat.html">战斗</a>：攻击、伤害和视线。</li>
+<li><a href="../content/skills.html">技能</a>：范围、区域和目标。</li>
+<li><a href="player-settings.html">玩家设置</a>：玩家使用的 Settings 窗口。</li>
+<li><a href="../reference/keys.html">按键</a>：一张表列出所有按键。</li>
+<li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a>：编写你自己的模式。</li>
 </ul>
-<nav class="pager"><a class="prev" href="../content/world-triggers.html"><span>上一页</span>World triggers</a><a class="next" href="touch-controls.html"><span>下一页</span>Touch controls</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fcontrol-modes.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-a-control-mode-is">What a control mode is</a></li><li class="l2"><a href="#choosing-the-mode">Choosing the mode</a></li><li class="l2"><a href="#top-down">Top-down</a></li><li class="l3"><a href="#playing-top-down">Playing top-down</a></li><li class="l3"><a href="#movement-click-keys-or-both">Movement: click, keys or both</a></li><li class="l3"><a href="#topdowninput-fields">TopDownInput fields</a></li><li class="l3"><a href="#topdowncamera-fields">TopDownCamera fields</a></li><li class="l3"><a href="#topdownserver-fields">TopDownServer fields</a></li><li class="l2"><a href="#free-camera-and-third-person">Free camera and third person</a></li><li class="l3"><a href="#playing-free-camera">Playing free camera</a></li><li class="l3"><a href="#playing-third-person">Playing third person</a></li><li class="l3"><a href="#free-aiming">Free aiming</a></li><li class="l3"><a href="#where-the-character-faces">Where the character faces</a></li><li class="l3"><a href="#dodge">Dodge</a></li><li class="l3"><a href="#movement-and-prediction">Movement and prediction</a></li><li class="l3"><a href="#thirdpersoninput-fields">ThirdPersonInput fields</a></li><li class="l3"><a href="#thirdpersoncamera-fields">ThirdPersonCamera fields</a></li><li class="l3"><a href="#thirdpersonserver-fields">ThirdPersonServer fields</a></li><li class="l2"><a href="#camera-settings">Camera settings</a></li><li class="l3"><a href="#player-camera-options">Player camera options</a></li><li class="l2"><a href="#skill-aiming">Skill aiming</a></li><li class="l2"><a href="#server-checks">Server checks</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#input-system-and-input-manager">Input System and Input Manager</a></li><li class="l2"><a href="#common-setups">Common setups</a></li><li class="l3"><a href="#a-classic-diablo-style-game">A classic Diablo-style game</a></li><li class="l3"><a href="#click-only-no-wasd">Click only, no WASD</a></li><li class="l3"><a href="#an-action-game-with-a-crosshair">An action game with a crosshair</a></li><li class="l3"><a href="#an-isometric-camera-with-wasd-and-dodge">An isometric camera with WASD and dodge</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="../content/world-triggers.html"><span>上一页</span>世界触发器</a><a class="next" href="touch-controls.html"><span>下一页</span>触控操作</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fcontrol-modes.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-a-control-mode-is">操作模式是什么</a></li><li class="l2"><a href="#choosing-the-mode">选择模式</a></li><li class="l2"><a href="#top-down">俯视角</a></li><li class="l3"><a href="#playing-top-down">玩俯视角</a></li><li class="l3"><a href="#movement-click-keys-or-both">移动：点击、按键或两者</a></li><li class="l3"><a href="#topdowninput-fields">TopDownInput 字段</a></li><li class="l3"><a href="#topdowncamera-fields">TopDownCamera 字段</a></li><li class="l3"><a href="#topdownserver-fields">TopDownServer 字段</a></li><li class="l2"><a href="#free-camera-and-third-person">自由视角和第三人称</a></li><li class="l3"><a href="#playing-free-camera">玩自由视角</a></li><li class="l3"><a href="#playing-third-person">玩第三人称</a></li><li class="l3"><a href="#free-aiming">自由瞄准</a></li><li class="l3"><a href="#where-the-character-faces">角色的朝向</a></li><li class="l3"><a href="#dodge">闪避</a></li><li class="l3"><a href="#movement-and-prediction">移动与预测</a></li><li class="l3"><a href="#thirdpersoninput-fields">ThirdPersonInput 字段</a></li><li class="l3"><a href="#thirdpersoncamera-fields">ThirdPersonCamera 字段</a></li><li class="l3"><a href="#thirdpersonserver-fields">ThirdPersonServer 字段</a></li><li class="l2"><a href="#camera-settings">镜头设置</a></li><li class="l3"><a href="#player-camera-options">玩家镜头选项</a></li><li class="l2"><a href="#skill-aiming">技能瞄准</a></li><li class="l2"><a href="#server-checks">服务器检查</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式与 MMO</a></li><li class="l2"><a href="#input-system-and-input-manager">Input System 和 Input Manager</a></li><li class="l2"><a href="#common-setups">常见设置</a></li><li class="l3"><a href="#a-classic-diablo-style-game">经典 Diablo 风格游戏</a></li><li class="l3"><a href="#click-only-no-wasd">仅点击，不用 WASD</a></li><li class="l3"><a href="#an-action-game-with-a-crosshair">带准星的动作游戏</a></li><li class="l3"><a href="#an-isometric-camera-with-wasd-and-dodge">带 WASD 和闪避的等距镜头</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

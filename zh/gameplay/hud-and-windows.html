@@ -1,250 +1,250 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HUD and windows · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>HUD 与窗口 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/hud-and-windows.html">English</option><option value="../../es/gameplay/hud-and-windows.html">Español</option><option value="../../pt/gameplay/hud-and-windows.html">Português</option><option value="hud-and-windows.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html" class="on" aria-current="page">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">游戏系统</div><h1>HUD and windows</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>The HUD is everything on screen while playing: the bars, the quick bar, the chat, the icon bar, the minimap and every game window. It is one prefab you can restyle, rearrange and extend. This page covers what the player sees and the keys, how the HUD prefab is organized, its inspector, and how to restyle it or move a window.</p>
-<h2 id="for-the-player"><a class="anchor" href="#for-the-player" aria-hidden="true">#</a>For the player</h2>
-<p>The layout keeps the middle of the screen free and puts everything on the edges.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">操作模式</a></li><li><a href="touch-controls.html">触控操作</a></li><li><a href="combat.html">战斗</a></li><li><a href="recovery-and-death.html">恢复与死亡</a></li><li><a href="inventory-and-bank.html">背包与银行</a></li><li><a href="trade.html">交易</a></li><li><a href="forge.html">锻造</a></li><li><a href="market.html">市场</a></li><li><a href="mail.html">邮件</a></li><li><a href="chat.html">聊天</a></li><li><a href="friends-and-parties.html">好友与队伍</a></li><li><a href="guilds.html">公会</a></li><li><a href="tax-collectors.html">收税官</a></li><li><a href="pvp-and-duels.html">PvP 与决斗</a></li><li><a href="dungeons.html">地下城</a></li><li><a href="day-and-night.html">昼夜</a></li><li><a href="bestiary.html">怪物图鉴</a></li><li><a href="cash-shop.html">商城</a></li><li><a href="gm-tools.html">GM 工具</a></li><li><a href="game-log-and-reports.html">游戏日志与举报</a></li><li><a href="hud-and-windows.html" class="on" aria-current="page">HUD 与窗口</a></li><li><a href="player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏系统</div><h1>HUD 与窗口</h1><p>HUD 是游戏时屏幕上的所有内容：各种条、快捷栏、聊天、图标栏、小地图以及每个游戏窗口。它是一个预制体，你可以修改样式、重新排列和扩展。本页介绍玩家看到的内容和按键、HUD 预制体的组织方式、它的检视器，以及如何修改样式或移动窗口。</p>
+<h2 id="for-the-player"><a class="anchor" href="#for-the-player" aria-hidden="true">#</a>玩家看到的内容</h2><figure class="shot"><a href="../../assets/img/game/quest-tracker.png" target="_blank"><img src="../../assets/img/game/quest-tracker.png" alt="小地图下方的任务追踪。" loading="lazy"></a><figcaption>小地图下方的任务追踪。</figcaption></figure><figure class="shot"><a href="../../assets/img/game/hud.png" target="_blank"><img src="../../assets/img/game/hud.png" alt="HUD：左下角聊天，快捷栏，右上角窗口图标和小地图。" loading="lazy"></a><figcaption>HUD：左下角聊天，快捷栏，右上角窗口图标和小地图。</figcaption></figure>
+<p>布局让屏幕中央保持空白，把所有内容放在边缘。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Where</th>
-<th>What</th>
+<th>位置</th>
+<th>内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Bottom left</td>
-<td><strong>Chat</strong> (500 × 270), with a &quot;CHAT&quot; strip</td>
+<td>左下</td>
+<td><strong>聊天</strong>（500 × 270），带一条 &quot;CHAT&quot; 标签</td>
 </tr>
 <tr>
-<td>Bottom, centered in the space the chat leaves</td>
-<td><strong>Bottom bar</strong>: health, mana, level, experience and the 10 quick bar slots, with buffs</td>
+<td>底部，在聊天留出的空间内居中</td>
+<td><strong>底部栏</strong>：生命、法力、等级、经验和快捷栏的 10 个格子，以及增益</td>
 </tr>
 <tr>
-<td>Top right</td>
-<td><strong>Icon bar</strong>: one button per window, plus the shop, the world map, the bestiary and the game menu</td>
+<td>右上</td>
+<td><strong>图标栏</strong>：每个窗口一个按钮，另有商城、世界地图、怪物图鉴和游戏菜单</td>
 </tr>
 <tr>
-<td>Left of the icon bar</td>
-<td><strong>Clock</strong>: day or night and the hour</td>
+<td>图标栏左侧</td>
+<td><strong>时钟</strong>：白天或夜晚以及时刻</td>
 </tr>
 <tr>
-<td>Under the icon bar</td>
-<td><strong>Minimap</strong>, then the <strong>quest tracker</strong></td>
+<td>图标栏下方</td>
+<td><strong>小地图</strong>，然后是<strong>任务追踪</strong></td>
 </tr>
 </tbody>
 </table></div>
-<p>The <strong>boss bar</strong> appears when a boss or elite is close, and the <strong>party frames</strong> list your party members with their health.</p>
-<h3 id="the-icon-bar"><a class="anchor" href="#the-icon-bar" aria-hidden="true">#</a>The icon bar</h3>
-<p>Hovering a button shows the window's name and key. Unspent attribute or skill points show as a small badge on their button, and unread mail as a count on the Mail button. When a letter arrives, &quot;New mail&quot; floats over the player. Buttons of modules your game turned off don't appear, and the shop button only shows in online games.</p>
-<h3 id="keys"><a class="anchor" href="#keys" aria-hidden="true">#</a>Keys</h3>
+<p>附近有首领或精英时会出现<strong>首领血条</strong>，<strong>队伍框</strong>列出你的队伍成员及其生命。</p>
+<h3 id="the-icon-bar"><a class="anchor" href="#the-icon-bar" aria-hidden="true">#</a>图标栏</h3>
+<p>鼠标悬停在按钮上会显示窗口名称和按键。未分配的属性点或技能点在对应按钮上显示为小徽标，未读邮件在 Mail 按钮上显示为数量。收到信件时，&quot;New mail&quot; 会浮现在玩家上方。你的游戏关闭的模块，其按钮不会出现；商城按钮只在联网游戏中显示。</p>
+<h3 id="keys"><a class="anchor" href="#keys" aria-hidden="true">#</a>按键</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Key</th>
-<th>Window</th>
+<th>按键</th>
+<th>窗口</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>I</code></td>
-<td>Bag</td>
+<td>背包</td>
 </tr>
 <tr>
 <td><code>C</code></td>
-<td>Character</td>
+<td>角色</td>
 </tr>
 <tr>
 <td><code>K</code></td>
-<td>Skills</td>
+<td>技能</td>
 </tr>
 <tr>
 <td><code>L</code></td>
-<td>Quest log</td>
+<td>任务日志</td>
 </tr>
 <tr>
 <td><code>M</code></td>
-<td>World map</td>
+<td>世界地图</td>
 </tr>
 <tr>
 <td><code>B</code></td>
-<td>Bestiary</td>
+<td>怪物图鉴</td>
 </tr>
 <tr>
 <td><code>O</code></td>
-<td>Friends</td>
+<td>好友</td>
 </tr>
 <tr>
 <td><code>G</code></td>
-<td>Guild</td>
+<td>公会</td>
 </tr>
 <tr>
 <td><code>N</code></td>
-<td>Mail</td>
+<td>邮件</td>
 </tr>
 <tr>
 <td><code>P</code></td>
-<td>Cash shop</td>
+<td>商城</td>
 </tr>
 <tr>
 <td><code>F8</code></td>
-<td>GM panel (moderators and up)</td>
+<td>GM 面板（版主及以上）</td>
 </tr>
 <tr>
 <td><code>Enter</code></td>
-<td>Write in the chat</td>
+<td>在聊天中输入</td>
 </tr>
 <tr>
 <td><code>Esc</code></td>
-<td>Close the open window, or open the game menu</td>
+<td>关闭打开的窗口，或打开游戏菜单</td>
 </tr>
 </tbody>
 </table></div>
-<p>Each window's key is a field on its script in the HUD prefab (<em>Toggle Key</em>), so you can change it. The full list of keys is in <a href="../reference/keys.html">Keys</a>.</p>
-<h3 id="chat"><a class="anchor" href="#chat" aria-hidden="true">#</a>Chat</h3>
-<p>Press <code>Enter</code> or click anywhere in the chat box to type. <code>Enter</code> sends and lets go of the keyboard, <code>Esc</code> cancels. The box darkens while you type. See <a href="chat.html">Chat</a>.</p>
-<h3 id="escape"><a class="anchor" href="#escape" aria-hidden="true">#</a>Escape</h3>
-<p><code>Esc</code> first closes whatever window or popup is open. Only when nothing was open does it open the <a href="player-settings.html#game-menu">game menu</a>. While you type in the chat, answer a confirmation or have Settings open, <code>Esc</code> doesn't open the menu.</p>
-<h3 id="minimap"><a class="anchor" href="#minimap" aria-hidden="true">#</a>Minimap</h3>
-<p>The round minimap shows the map name on top and the area around you. A camera looks down from above and turns with the game camera, so up on the minimap is up on screen. Portals, party members and bosses stay on the edge when they are far. Zoom with the <strong>+</strong> and <strong>−</strong> buttons or the mouse wheel. Click it to open the world map. At night it looks dark, like the scene.</p>
-<h3 id="world-map"><a class="anchor" href="#world-map" aria-hidden="true">#</a>World map</h3>
-<p><code>M</code> opens a view from above of the whole map, with the names of NPCs, bosses and party members, and where each portal leads. Clicking a point sends your character walking there; the server finds the path. It also works inside dungeon copies.</p>
-<p>The marks are NPCs, portals, monsters (normal, elite and boss), other players and your party, refreshed every 0,4 seconds.</p>
-<h3 id="item-and-player-menus"><a class="anchor" href="#item-and-player-menus" aria-hidden="true">#</a>Item and player menus</h3>
+<p>每个窗口的按键是 HUD 预制体中其脚本上的一个字段（<em>Toggle Key</em>），所以你可以修改。完整按键列表见<a href="../reference/keys.html">按键</a>。</p>
+<h3 id="chat"><a class="anchor" href="#chat" aria-hidden="true">#</a>聊天</h3>
+<p>按 <code>Enter</code> 或点击聊天框任意位置即可输入。<code>Enter</code> 发送并释放键盘，<code>Esc</code> 取消。输入时聊天框会变暗。见<a href="chat.html">聊天</a>。</p>
+<h3 id="escape"><a class="anchor" href="#escape" aria-hidden="true">#</a>Esc 键</h3>
+<p><code>Esc</code> 首先关闭当前打开的窗口或弹窗。只有在没有任何窗口打开时，它才会打开<a href="player-settings.html#game-menu">游戏菜单</a>。当你在聊天中输入、回答确认框或打开 Settings 时，<code>Esc</code> 不会打开菜单。</p>
+<h3 id="minimap"><a class="anchor" href="#minimap" aria-hidden="true">#</a>小地图</h3>
+<p>圆形小地图顶部显示地图名称，并显示你周围的区域。一台摄像机从上方俯视，并随游戏摄像机旋转，所以小地图的上方就是屏幕的上方。传送门、队伍成员和首领离得远时会停留在边缘。用 <strong>+</strong> 和 <strong>−</strong> 按钮或鼠标滚轮缩放。点击它会打开世界地图。夜晚时它会像场景一样变暗。</p>
+<h3 id="world-map"><a class="anchor" href="#world-map" aria-hidden="true">#</a>世界地图</h3>
+<p><code>M</code> 打开整张地图的俯视图，显示 NPC、首领和队伍成员的名字，以及每个传送门通往哪里。点击一个点，你的角色会走过去；路径由服务器计算。它在地下城副本中也能使用。</p>
+<p>标记包括 NPC、传送门、怪物（普通、精英和首领）、其他玩家和你的队伍，每 0.4 秒刷新一次。</p>
+<h3 id="item-and-player-menus"><a class="anchor" href="#item-and-player-menus" aria-hidden="true">#</a>物品菜单和玩家菜单</h3>
 <ul>
-<li>Right click an item in the bag or the equipment for the <a href="inventory-and-bank.html">item menu</a>.</li>
-<li>Right click another player (in top-down), or their name in chat, for the player menu: Whisper, Trade, Invite to party, Add friend, Invite to guild, Duel and Report.</li>
+<li>在背包或装备中右键点击物品，打开<a href="inventory-and-bank.html">物品菜单</a>。</li>
+<li>右键点击其他玩家（俯视角模式下），或在聊天中右键点击其名字，打开玩家菜单：Whisper、Trade、Invite to party、Add friend、Invite to guild、Duel 和 Report。</li>
 </ul>
-<h2 id="the-hud-prefab"><a class="anchor" href="#the-hud-prefab" aria-hidden="true">#</a>The HUD prefab</h2>
-<p>The HUD is the prefab in <strong>Game Settings &gt; Interface &gt; Hud Prefab</strong> (<code>hudPrefab</code>). The sample's is <code>Samples/Starter/Prefabs/GameHud.prefab</code>. It is made once on each client when the game starts and kept between maps. A server without graphics doesn't make it.</p>
+<h2 id="the-hud-prefab"><a class="anchor" href="#the-hud-prefab" aria-hidden="true">#</a>HUD 预制体</h2>
+<p>HUD 是 <strong>Game Settings &gt; Interface &gt; Hud Prefab</strong>（<code>hudPrefab</code>）中设置的预制体。示例使用的是 <code>Samples/Starter/Prefabs/GameHud.prefab</code>。游戏启动时它在每个客户端上创建一次，并在切换地图时保留。没有图形的服务器不会创建它。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Hud Prefab</em> (<code>hudPrefab</code>)</td>
-<td>Canvas with the HUD and the game windows. Empty: the scenes bring their own</td>
-<td>Sample: GameHud</td>
+<td><em>Hud Prefab</em>（<code>hudPrefab</code>）</td>
+<td>包含 HUD 和游戏窗口的画布。留空：由场景自带</td>
+<td>示例：GameHud</td>
 </tr>
 <tr>
-<td><em>Item Details On Hover</em> (<code>itemDetailsOnHover</code>)</td>
-<td>Pointing at an item shows its stats. Off: click the item to see them</td>
-<td>Off</td>
+<td><em>Item Details On Hover</em>（<code>itemDetailsOnHover</code>）</td>
+<td>指向物品时显示其数值。关闭：点击物品才显示</td>
+<td>关闭</td>
 </tr>
 </tbody>
 </table></div>
-<p>The canvas scales with the screen from a reference of 1920 × 1080. Players scale it further with <em>Interface scale</em> in <a href="player-settings.html#interface">Settings</a>.</p>
-<h3 id="how-it-is-organized"><a class="anchor" href="#how-it-is-organized" aria-hidden="true">#</a>How it is organized</h3>
-<p>The root of the prefab has four groups, drawn in this order (later ones on top):</p>
+<p>画布以 1920 × 1080 为参考随屏幕缩放。玩家可以在 <a href="player-settings.html#interface">Settings</a> 中用 <em>Interface scale</em> 进一步缩放。</p>
+<h3 id="how-it-is-organized"><a class="anchor" href="#how-it-is-organized" aria-hidden="true">#</a>组织方式</h3>
+<p>预制体的根节点有四个组，按此顺序绘制（后面的在上层）：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Group</th>
-<th>What it holds</th>
+<th>组</th>
+<th>包含内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>HUD</strong></td>
-<td>Bottom bar, boss bar, quest tracker, icon bar, clock, chat, party frames, minimap</td>
+<td>底部栏、首领血条、任务追踪、图标栏、时钟、聊天、队伍框、小地图</td>
 </tr>
 <tr>
 <td><strong>Windows</strong></td>
-<td>Bag, character, skills, loot, NPC dialogs, quests, friends, guild and its alliance, emblem and history windows, trade, bank, forge, NPC shop, mail, sets, market, bestiary, world map, cash shop, GM panel, settings</td>
+<td>背包、角色、技能、拾取、NPC 对话、任务、好友、公会及其联盟、徽章和历史窗口、交易、银行、锻造、NPC 商店、邮件、套装、市场、怪物图鉴、世界地图、商城、GM 面板、设置</td>
 </tr>
 <tr>
 <td><strong>Popups</strong></td>
-<td>Player menu, item menu and the confirmation dialog</td>
+<td>玩家菜单、物品菜单和确认对话框</td>
 </tr>
 <tr>
 <td><strong>Overlay</strong></td>
-<td>The item tooltip and the dragged item icon, shared by many windows</td>
+<td>物品提示框和拖动中的物品图标，由多个窗口共用</td>
 </tr>
 </tbody>
 </table></div>
-<p>Inside each group, <strong>every script has its own object</strong>, stretched to the whole screen and with no image, holding the panels it shows and hides. The panel is a child of that object, so the script keeps running while its panel is closed (that is how window keys work).</p>
-<p>The set window and the confirmation dialog move their own object to the top when they open, so they cover other windows.</p>
-<h3 id="rows-are-prefabs"><a class="anchor" href="#rows-are-prefabs" aria-hidden="true">#</a>Rows are prefabs</h3>
-<p>Windows that show lists (guild members, mail, bank slots, quest rows, shop cards) copy a row for each entry. Those rows are prefabs in <code>Samples/Starter/Prefabs/UI</code>, such as <code>Guild Row</code>, <code>Mail Row</code>, <code>Bank Slot</code>, <code>Cash Shop Offer</code> or <code>Bestiary Row</code>. Edit the prefab once and every row changes. Rows that are instances of another prefab, like the item slot (<code>UIItem</code>), are prefab variants.</p>
-<p>Each window's fields ending in <em>Template</em> point at these rows. A row template can also sit inside the window, hidden; the window then puts copies next to it.</p>
-<h3 id="the-inspector-of-a-hud-piece"><a class="anchor" href="#the-inspector-of-a-hud-piece" aria-hidden="true">#</a>The inspector of a HUD piece</h3>
-<p>Select any HUD script's object and its inspector shows:</p>
+<p>在每个组中，<strong>每个脚本都有自己的对象</strong>，拉伸到整个屏幕且没有图像，下面放着它显示和隐藏的面板。面板是该对象的子对象，所以面板关闭时脚本仍在运行（窗口按键就是这样工作的）。</p>
+<p>套装窗口和确认对话框打开时会把自己的对象移到最上层，从而盖住其他窗口。</p>
+<h3 id="rows-are-prefabs"><a class="anchor" href="#rows-are-prefabs" aria-hidden="true">#</a>列表行是预制体</h3>
+<p>显示列表的窗口（公会成员、邮件、银行格子、任务行、商城卡片）为每个条目复制一行。这些行是 <code>Samples/Starter/Prefabs/UI</code> 中的预制体，例如 <code>Guild Row</code>、<code>Mail Row</code>、<code>Bank Slot</code>、<code>Cash Shop Offer</code> 或 <code>Bestiary Row</code>。修改一次预制体，所有行都会改变。作为其他预制体实例的行，比如物品格子（<code>UIItem</code>），是预制体变体。</p>
+<p>每个窗口中以 <em>Template</em> 结尾的字段指向这些行。行模板也可以隐藏地放在窗口内部，这时窗口会把副本放在它旁边。</p>
+<h3 id="the-inspector-of-a-hud-piece"><a class="anchor" href="#the-inspector-of-a-hud-piece" aria-hidden="true">#</a>HUD 部件的检视器</h3>
+<p>选中任意 HUD 脚本的对象，它的检视器会显示：</p>
 <ul>
-<li>What the piece does, and which of its parts are still empty (&quot;All parts set&quot; or &quot;3 empty&quot;). Some parts are optional; the tooltips say which.</li>
-<li><strong>Select panel</strong> and <strong>Show panel</strong> / <strong>Hide panel</strong>, to see a closed window while you edit it.</li>
-<li><strong>Rows it copies</strong>: each row prefab with <strong>Open</strong>, or <strong>Select</strong> when the row lives in the window.</li>
-<li>The fields in cards, by section.</li>
+<li>这个部件的作用，以及哪些部分还是空的（&quot;All parts set&quot; 或 &quot;3 empty&quot;）。有些部分是可选的，提示框会说明是哪些。</li>
+<li><strong>Select panel</strong> 和 <strong>Show panel</strong> / <strong>Hide panel</strong>，让你在编辑时看到关闭的窗口。</li>
+<li><strong>Rows it copies</strong>：每个行预制体带 <strong>Open</strong> 按钮，行在窗口内部时则为 <strong>Select</strong>。</li>
+<li>按区域分成卡片的字段。</li>
 </ul>
-<h2 id="step-by-step-restyle-the-hud"><a class="anchor" href="#step-by-step-restyle-the-hud" aria-hidden="true">#</a>Step by step: restyle the HUD</h2>
+<h2 id="step-by-step-restyle-the-hud"><a class="anchor" href="#step-by-step-restyle-the-hud" aria-hidden="true">#</a>分步操作：修改 HUD 样式</h2>
 <ol>
-<li><strong>Work on your own copy.</strong> Duplicate <code>GameHud.prefab</code> into your game's folder (<code>Ctrl/Cmd+D</code>, then move it). Set <em>Hud Prefab</em> in <strong>Game Settings &gt; Interface</strong> to the copy. Rebuilding the sample starts it from scratch, so never edit the sample's prefab for your game.</li>
-<li><strong>Open the prefab</strong> (double click). Expand <strong>Windows</strong> and select the window you want, for example <strong>Inventory Window</strong>.</li>
-<li>Press <strong>Show panel</strong> in its inspector to see it.</li>
-<li>Change images, colors, fonts (TextMeshPro) and sizes on its panel's children like any uGUI. Keep the names of children a window looks up by name (the tooltips list them, such as <code>Name</code>, <code>Status</code>, <code>Label</code>, <code>Art</code>, <code>Badge</code>).</li>
-<li>For list rows, press <strong>Open</strong> next to the row under <strong>Rows it copies</strong> and edit the row prefab.</li>
-<li>Press <strong>Hide panel</strong>, save the prefab and press Play.</li>
+<li><strong>在你自己的副本上工作。</strong> 把 <code>GameHud.prefab</code> 复制到你游戏的文件夹（<code>Ctrl/Cmd+D</code>，然后移动）。在 <strong>Game Settings &gt; Interface</strong> 中把 <em>Hud Prefab</em> 设为这个副本。重建示例会从头生成它，所以不要为你的游戏修改示例的预制体。</li>
+<li><strong>打开预制体</strong>（双击）。展开 <strong>Windows</strong>，选中你要的窗口，例如 <strong>Inventory Window</strong>。</li>
+<li>在它的检视器中按 <strong>Show panel</strong> 来查看它。</li>
+<li>像任何 uGUI 一样修改面板子对象的图像、颜色、字体（TextMeshPro）和尺寸。保留窗口按名字查找的子对象的名字（提示框列出了这些名字，例如 <code>Name</code>、<code>Status</code>、<code>Label</code>、<code>Art</code>、<code>Badge</code>）。</li>
+<li>对于列表行，在 <strong>Rows it copies</strong> 下按行旁边的 <strong>Open</strong>，然后编辑行预制体。</li>
+<li>按 <strong>Hide panel</strong>，保存预制体，然后按 Play。</li>
 </ol>
-<div class="callout tip"><div class="callout-title">提示</div><p>Colors that change with state, such as tab colors, row highlight, the chat's typing color or badge colors, are fields on the window's script, not on the images. Look in the script's cards.</p>
+<div class="callout tip"><div class="callout-title">提示</div><p>随状态变化的颜色，例如标签页颜色、行高亮、聊天输入时的颜色或徽标颜色，是窗口脚本上的字段，而不是在图像上。去脚本的卡片中找。</p>
 </div>
-<h2 id="step-by-step-move-a-window"><a class="anchor" href="#step-by-step-move-a-window" aria-hidden="true">#</a>Step by step: move a window</h2>
+<h2 id="step-by-step-move-a-window"><a class="anchor" href="#step-by-step-move-a-window" aria-hidden="true">#</a>分步操作：移动窗口</h2>
 <ol>
-<li>Open your HUD prefab and select the window's panel (its object's inspector has <strong>Select panel</strong>).</li>
-<li>In the Rect Transform, change the anchors and position. For example, to put the bag on the left: anchor preset middle left, pivot (0, 0.5), position X 20.</li>
-<li>Keep the panel under its script's object, so the script keeps running while the panel is closed and kit updates find it.</li>
-<li>Save and press Play.</li>
+<li>打开你的 HUD 预制体，选中窗口的面板（它所属对象的检视器有 <strong>Select panel</strong>）。</li>
+<li>在 Rect Transform 中修改锚点和位置。例如，把背包放到左侧：锚点预设选左中，轴心 (0, 0.5)，位置 X 设为 20。</li>
+<li>让面板保持在它脚本的对象下面，这样面板关闭时脚本仍在运行，套件更新也能找到它。</li>
+<li>保存并按 Play。</li>
 </ol>
-<p>To move a whole HUD piece, such as the minimap or the icon bar, move its panel the same way inside the <strong>HUD</strong> group.</p>
-<h2 id="step-by-step-change-a-window-key"><a class="anchor" href="#step-by-step-change-a-window-key" aria-hidden="true">#</a>Step by step: change a window key</h2>
+<p>要移动整个 HUD 部件，例如小地图或图标栏，以同样方式在 <strong>HUD</strong> 组内移动它的面板。</p>
+<h2 id="step-by-step-change-a-window-key"><a class="anchor" href="#step-by-step-change-a-window-key" aria-hidden="true">#</a>分步操作：修改窗口按键</h2>
 <ol>
-<li>Select the window's script object in the HUD prefab, for example <strong>Bestiary Window</strong>.</li>
-<li>Change <em>Toggle Key</em>.</li>
-<li>Update the hint on its icon bar button if you show the key there.</li>
+<li>在 HUD 预制体中选中窗口的脚本对象，例如 <strong>Bestiary Window</strong>。</li>
+<li>修改 <em>Toggle Key</em>。</li>
+<li>如果你在图标栏按钮上显示了按键，同时更新按钮上的提示。</li>
 </ol>
-<h2 id="removing-a-piece"><a class="anchor" href="#removing-a-piece" aria-hidden="true">#</a>Removing a piece</h2>
-<p>Turn off a module in <a href="../editor/modules.html">Modules</a> instead of deleting its window: buttons and keys of modules that are off go away by themselves. To drop a piece the game doesn't need, such as the clock, delete its object from the HUD group. Most links between pieces are optional, and the inspector shows what each piece still has empty.</p>
-<h2 id="kit-updates-and-your-hud"><a class="anchor" href="#kit-updates-and-your-hud" aria-hidden="true">#</a>Kit updates and your HUD</h2>
-<p>When a newer kit version adds windows or buttons, it does so with kit updates that work on the prefab in <em>Hud Prefab</em>, adding what is missing without rebuilding the rest. Examples: <strong>Guild roles, emblem, history and alliance windows in the HUD</strong>, <strong>Shop window in the HUD</strong>, <strong>New shop window: categories, banner and offer pages</strong>. Overview lists the ones your project needs with <strong>Apply</strong>. See <a href="../start/updating-the-kit.html">Updating the kit</a>.</p>
-<h2 id="touch-screens"><a class="anchor" href="#touch-screens" aria-hidden="true">#</a>Touch screens</h2>
-<p>On phones and tablets the touch controls sit on their own canvas next to the HUD, and fit the HUD around them. See <a href="touch-controls.html">Touch controls</a>.</p>
-<h2 id="in-code"><a class="anchor" href="#in-code" aria-hidden="true">#</a>In code</h2>
-<p>Every window is a <code>MonoBehaviour</code> with virtual methods, so you can subclass one and swap it in the prefab. <code>MapPoints.Extra</code> adds marks of your own to the minimap and world map. The item and player menus take extra lines through <code>ItemMenu.Entries</code> and <code>PlayerMenu.Entries</code>. See <a href="../devkit/overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>The HUD is the same in both. Windows of online-only systems (guild, mail, market, cash shop) show messages such as &quot;Only on an online server.&quot; or don't open in single player.</p>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="removing-a-piece"><a class="anchor" href="#removing-a-piece" aria-hidden="true">#</a>移除部件</h2>
+<p>在<a href="../editor/modules.html">模块</a>中关闭模块，而不是删除它的窗口：关闭的模块，其按钮和按键会自动消失。要去掉游戏不需要的部件，例如时钟，从 HUD 组中删除它的对象。部件之间的大部分关联是可选的，检视器会显示每个部件还有哪些部分是空的。</p>
+<h2 id="kit-updates-and-your-hud"><a class="anchor" href="#kit-updates-and-your-hud" aria-hidden="true">#</a>套件更新与你的 HUD</h2>
+<p>当套件的新版本添加窗口或按钮时，它通过作用于 <em>Hud Prefab</em> 中预制体的套件更新来添加，只补上缺少的部分，不重建其余内容。例如：<strong>Guild roles, emblem, history and alliance windows in the HUD</strong>、<strong>Shop window in the HUD</strong>、<strong>New shop window: categories, banner and offer pages</strong>。Overview 会列出你的项目需要的更新，并带有 <strong>Apply</strong> 按钮。见<a href="../start/updating-the-kit.html">更新套件</a>。</p>
+<h2 id="touch-screens"><a class="anchor" href="#touch-screens" aria-hidden="true">#</a>触屏</h2>
+<p>在手机和平板上，触控操作位于 HUD 旁边自己的画布上，并让 HUD 围绕它们排布。见<a href="touch-controls.html">触控操作</a>。</p>
+<h2 id="in-code"><a class="anchor" href="#in-code" aria-hidden="true">#</a>在代码中</h2>
+<p>每个窗口都是带虚方法的 <code>MonoBehaviour</code>，所以你可以继承一个窗口并在预制体中替换它。<code>MapPoints.Extra</code> 可以在小地图和世界地图上添加你自己的标记。物品菜单和玩家菜单通过 <code>ItemMenu.Entries</code> 和 <code>PlayerMenu.Entries</code> 添加额外的条目。见<a href="../devkit/overriding-kit-behaviour.html">覆盖套件行为</a>。</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式与 MMO</h2>
+<p>两种模式下 HUD 相同。仅限联网的系统（公会、邮件、市场、商城）的窗口在单人模式下会显示 &quot;Only on an online server.&quot; 之类的消息，或者不会打开。</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>My changes to the HUD are gone.</strong> You edited the sample's <code>GameHud.prefab</code> and rebuilt the sample. Work on a copy.</li>
-<li><strong>A window doesn't open with its key.</strong> Its module is off, its <em>Toggle Key</em> changed, or its script's object was disabled. Disable the panel, never the object holding the script.</li>
-<li><strong>Rows show empty.</strong> A child the window looks up by name was renamed. Check the <em>Template</em> field's tooltip for the names.</li>
+<li><strong>我对 HUD 的修改不见了。</strong> 你修改了示例的 <code>GameHud.prefab</code>，然后重建了示例。请在副本上工作。</li>
+<li><strong>窗口按按键打不开。</strong> 它的模块被关闭、它的 <em>Toggle Key</em> 被改了，或者它脚本的对象被禁用了。要禁用面板，永远不要禁用放着脚本的对象。</li>
+<li><strong>列表行显示为空。</strong> 窗口按名字查找的某个子对象被改名了。查看 <em>Template</em> 字段的提示框以了解这些名字。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="player-settings.html">Player settings</a></li>
-<li><a href="chat.html">Chat</a></li>
-<li><a href="inventory-and-bank.html">Inventory and bank</a></li>
-<li><a href="touch-controls.html">Touch controls</a></li>
-<li><a href="../reference/keys.html">Keys</a></li>
-<li><a href="../devkit/editor-extensions.html">Editor extensions</a></li>
+<li><a href="player-settings.html">玩家设置</a></li>
+<li><a href="chat.html">聊天</a></li>
+<li><a href="inventory-and-bank.html">背包与银行</a></li>
+<li><a href="touch-controls.html">触控操作</a></li>
+<li><a href="../reference/keys.html">按键</a></li>
+<li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="game-log-and-reports.html"><span>上一页</span>Game log and reports</a><a class="next" href="player-settings.html"><span>下一页</span>Player settings</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fhud-and-windows.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#for-the-player">For the player</a></li><li class="l3"><a href="#the-icon-bar">The icon bar</a></li><li class="l3"><a href="#keys">Keys</a></li><li class="l3"><a href="#chat">Chat</a></li><li class="l3"><a href="#escape">Escape</a></li><li class="l3"><a href="#minimap">Minimap</a></li><li class="l3"><a href="#world-map">World map</a></li><li class="l3"><a href="#item-and-player-menus">Item and player menus</a></li><li class="l2"><a href="#the-hud-prefab">The HUD prefab</a></li><li class="l3"><a href="#how-it-is-organized">How it is organized</a></li><li class="l3"><a href="#rows-are-prefabs">Rows are prefabs</a></li><li class="l3"><a href="#the-inspector-of-a-hud-piece">The inspector of a HUD piece</a></li><li class="l2"><a href="#step-by-step-restyle-the-hud">Step by step: restyle the HUD</a></li><li class="l2"><a href="#step-by-step-move-a-window">Step by step: move a window</a></li><li class="l2"><a href="#step-by-step-change-a-window-key">Step by step: change a window key</a></li><li class="l2"><a href="#removing-a-piece">Removing a piece</a></li><li class="l2"><a href="#kit-updates-and-your-hud">Kit updates and your HUD</a></li><li class="l2"><a href="#touch-screens">Touch screens</a></li><li class="l2"><a href="#in-code">In code</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="game-log-and-reports.html"><span>上一页</span>游戏日志与举报</a><a class="next" href="player-settings.html"><span>下一页</span>玩家设置</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fhud-and-windows.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#for-the-player">玩家看到的内容</a></li><li class="l3"><a href="#the-icon-bar">图标栏</a></li><li class="l3"><a href="#keys">按键</a></li><li class="l3"><a href="#chat">聊天</a></li><li class="l3"><a href="#escape">Esc 键</a></li><li class="l3"><a href="#minimap">小地图</a></li><li class="l3"><a href="#world-map">世界地图</a></li><li class="l3"><a href="#item-and-player-menus">物品菜单和玩家菜单</a></li><li class="l2"><a href="#the-hud-prefab">HUD 预制体</a></li><li class="l3"><a href="#how-it-is-organized">组织方式</a></li><li class="l3"><a href="#rows-are-prefabs">列表行是预制体</a></li><li class="l3"><a href="#the-inspector-of-a-hud-piece">HUD 部件的检视器</a></li><li class="l2"><a href="#step-by-step-restyle-the-hud">分步操作：修改 HUD 样式</a></li><li class="l2"><a href="#step-by-step-move-a-window">分步操作：移动窗口</a></li><li class="l2"><a href="#step-by-step-change-a-window-key">分步操作：修改窗口按键</a></li><li class="l2"><a href="#removing-a-piece">移除部件</a></li><li class="l2"><a href="#kit-updates-and-your-hud">套件更新与你的 HUD</a></li><li class="l2"><a href="#touch-screens">触屏</a></li><li class="l2"><a href="#in-code">在代码中</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式与 MMO</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>

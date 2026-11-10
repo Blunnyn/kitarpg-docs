@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安全规则 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/security-rules.html">English</option><option value="../../es/devkit/security-rules.html">Español</option><option value="../../pt/devkit/security-rules.html">Português</option><option value="security-rules.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit 概览</a></li><li><a href="assemblies.html">程序集</a></li><li><a href="templates.html">模板</a></li><li><a href="skill-effects.html">技能效果</a></li><li><a href="item-effects.html">代码中的物品效果</a></li><li><a href="conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="quest-objectives.html">任务目标</a></li><li><a href="npc-options.html">NPC 选项</a></li><li><a href="player-systems.html">玩家系统</a></li><li><a href="network-messages.html">网络消息</a></li><li><a href="gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="formulas.html">公式</a></li><li><a href="saving-data.html">保存数据</a></li><li><a href="events.html">事件</a></li><li><a href="overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="editor-extensions.html">编辑器扩展</a></li><li><a href="kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="talking-to-central.html">与 Central 通信</a></li><li><a href="service-modules.html">服务模块</a></li><li><a href="game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="example-bounty-board.html">示例：悬赏板</a></li><li><a href="domain-reload.html">不重新加载域的 Play</a></li><li><a href="security-rules.html" class="on" aria-current="page">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>安全规则</h1><p>这些规则让基于 KitARPG 构建的在线游戏免受被修改的客户端攻击，本页也说明如何在你自己的代码中遵守它们：服务器权威、请求限速、身份、校验、物品和货币、客户端能收到什么、构建中包含什么，以及服务。</p>
+<h2 id="assume-the-client-is-hostile"><a class="anchor" href="#assume-the-client-is-hostile" aria-hidden="true">#</a>假定客户端是恶意的</h2>
+<p>在线时，玩家在自己的机器上运行你的客户端。任何人都可以修改它，或者编写一个使用你的网络协议通信的程序。这样的客户端可以：</p>
+<ul>
+<li>调用任何 <code>[Command]</code> 并发送任何网络消息，携带任意参数，频率只受连接本身限制，</li>
+<li>读取你的服务器发给它的每一个值，</li>
+<li>跳过你的客户端代码所做的每一项检查，</li>
+<li>修改自己的内存：生命条、冷却计时器、原本隐藏的按钮。</li>
+</ul>
+<p>它无法改变服务器的决定。整个模型就是这样：<strong>客户端请求，服务器决定。</strong> 下面的每条规则都由此而来。</p>
+<p>单人模式中没有其他玩家需要保护，但同一份代码也在那里运行，所以遵守这些规则没有任何代价。</p>
+<h2 id="1-the-server-decides-everything-that-matters"><a class="anchor" href="#1-the-server-decides-everything-that-matters" aria-hidden="true">#</a>1. 服务器决定一切重要的事情</h2>
+<p>伤害、治疗、物品、金币、经验、任务进度、冷却、位置、谁能看到什么：所有这些都由服务器代码决定（在线时是地图服务器，单人模式中是主机）。客户端代码显示结果并发送请求。</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>属于服务器</th>
+<th>属于客户端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Server...</code> 方法、<code>[Command]</code> 方法体、<code>NetworkServer</code> 上的消息处理函数</td>
+<td>窗口、菜单、相机、输入、声音、特效</td>
+</tr>
+<tr>
+<td>技能效果的 <code>Apply</code>、物品效果的 <code>Use</code>、动作的 <code>Run</code>、NPC 选项的 <code>Run</code></td>
+<td>提示（<code>Describe</code>）、标签</td>
+</tr>
+<tr>
+<td>公式</td>
+<td><code>PlayerPrefs</code> 中的设置</td>
+</tr>
+</tbody>
+</table></div>
+<p>客户端所做的检查（把按钮变灰、范围圈）只是对玩家的方便。在服务器上要再检查一次。</p>
+<h2 id="2-pace-every-request"><a class="anchor" href="#2-pace-every-request" aria-hidden="true">#</a>2. 为每个请求限速</h2>
+<p><code>CommandPacing</code>（命名空间 <code>Blunnyn.KitARPG.Net</code>）为每个连接提供一个由所有组件和处理函数共享的额度：每秒 30 个请求，突发上限 60。远超额度的连接会以 <code>KickReasons.Flooding</code> 断开。会给 Central 带来工作的请求（邮件、公会、好友、举报，以及你自己任何最终调用 <code>CentralMessages.Send</code> 的请求）还会消耗一个更严格的额度：每秒 2 个，突发上限 10。</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Command]</span>
+<span class="k">void</span><span class="w"> </span><span class="nf">CmdDoThing</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">Allow</span><span class="p">(</span><span class="n">connectionToClient</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnRequest</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">MyRequest</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CommandPacing</span><span class="p">.</span><span class="n">AllowCentral</span><span class="p">(</span><span class="n">conn</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">   </span><span class="c1">// this one reaches Central</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>被拒绝的请求同样计数，所以持续发送的客户端会越陷越深，直到被踢出。单人模式中主机自己的连接永远不受限制。</p>
+<h2 id="3-identity-comes-from-the-connection"><a class="anchor" href="#3-identity-comes-from-the-connection" aria-hidden="true">#</a>3. 身份来自连接</h2>
+<p>服务器知道是谁发送了请求：连接的玩家对象（<code>conn.identity</code>，或在 <code>[Command]</code> 中组件所属的玩家）。永远不要把&quot;我是谁&quot;放进请求里。</p>
+<pre class="code"><code class="language-csharp"><span class="c1">// Wrong: any client can claim any id.</span>
+<span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">GiftRequest</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">fromCharacterId</span><span class="p">;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">toName</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// Right: the sender is the connection&#39;s player.</span>
+<span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">GiftRequest</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">toName</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnGift</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">GiftRequest</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="k">from</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>Central 模块也是如此：消息携带角色 id，模块检查 <code>m.Hosts(characterId)</code>，这样一张地图只能代表它所持有的玩家发言。</p>
+<h2 id="4-validate-every-argument"><a class="anchor" href="#4-validate-every-argument" aria-hidden="true">#</a>4. 校验每个参数</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>检查</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符串</td>
+<td>不为 null、长度限制，存储或展示给其他人之前使用 <code>PlayerText.Clean</code></td>
+</tr>
+<tr>
+<td>整数</td>
+<td>范围，在没有意义的地方绝不为负，<code>long.MinValue</code> 和溢出（先与上限比较，不要先相加）</td>
+</tr>
+<tr>
+<td>浮点数和向量</td>
+<td>对每个分量使用 <code>float.IsFinite</code>，限制距离</td>
+</tr>
+<tr>
+<td>游戏数据的 id</td>
+<td>存在于数据库中（<code>GameInstance.Database.TryGet</code>）</td>
+</tr>
+<tr>
+<td>栏位和索引</td>
+<td>在容器范围内；栏位中确实是客户端所说的东西</td>
+</tr>
+<tr>
+<td>世界中的事物</td>
+<td>在服务器上解析并且在可及范围内（见下文）</td>
+</tr>
+<tr>
+<td>数组</td>
+<td>循环之前先限制长度</td>
+</tr>
+</tbody>
+</table></div>
+<p>溢出是真实的风险：套件曾有一个 bug，一笔很大的金币数额加上邮费后回绕成一个很小的数字。要比较 <code>amount &gt; limit - fee</code>，而不是 <code>amount + fee &gt; limit</code>。</p>
+<h2 id="5-resolve-the-world-on-the-server"><a class="anchor" href="#5-resolve-the-world-on-the-server" aria-hidden="true">#</a>5. 在服务器上解析世界</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>客户端指定的是</th>
+<th>解析方式</th>
+<th>然后检查</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>怪物或玩家（通过 <code>netId</code>）</td>
+<td><code>Fighters.TargetFor(conn, player, netId)</code>：对于该客户端视野之外的任何东西、隐身的敌人、为别人生成的事件怪物，返回 null</td>
+<td><code>Fighters.Enemies</code>、距离、<code>Sight.Clear</code></td>
+</tr>
+<tr>
+<td>NPC（通过 id）</td>
+<td><code>Npc.TryFind(id, out npc)</code></td>
+<td><code>npc.InReach(player.transform.position)</code></td>
+</tr>
+<tr>
+<td>掉落物</td>
+<td><code>Rewards.Instance.Pickup(player, id)</code>（自己会检查可及范围）</td>
+<td></td>
+</tr>
+<tr>
+<td>按名称指定的玩家</td>
+<td><code>PlayerCharacter.ServerFind(name)</code>（本地图）</td>
+<td>距离、同意、规则</td>
+</tr>
+<tr>
+<td>地面上的一个点</td>
+<td>限制距离、<code>NavMesh.SamplePosition</code>、<code>Sight.Clear</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-move-items-and-currencies-through-the-kit"><a class="anchor" href="#6-move-items-and-currencies-through-the-kit" aria-hidden="true">#</a>6. 通过套件转移物品和货币</h2>
+<p>物品在任何时候都只有一个所有者，所有者之间的每次转移都是 Central 中的一笔事务。你的代码通过套件来保持这一点：</p>
+<ul>
+<li>背包和装备：<code>PlayerInventory</code>（<code>Give</code>、<code>GiveOrBank</code>、<code>ServerReceive</code>、<code>ServerReceiveGold</code>、<code>AddGold</code>、<code>AddCurrency</code>），或 <code>IPlayerActor</code>（<code>GiveItem</code>、<code>TakeItem</code>、<code>AddCurrency</code>）。</li>
+<li>玩家之间：使用套件的交易、邮件和市场。不要用两次独立的保存自己实现转移；两次保存之间如果崩溃，就会复制或丢失物品。</li>
+<li>高级货币属于账号，只能在游戏内商店中花费，由商店服务检查余额。对高级货币调用 <code>AddCurrency</code> 会通过商店服务发放；扣除则会被拒绝。</li>
+<li>用 <code>GameLog.Write(&quot;mygame.kind&quot;, player, ...)</code> 记录客服会需要的信息。记录会写入 <code>game_logs</code> 表，管理员用 <code>/logs</code> 读取。</li>
+</ul>
+<h2 id="7-send-clients-only-what-they-may-know"><a class="anchor" href="#7-send-clients-only-what-they-may-know" aria-hidden="true">#</a>7. 只发送客户端可以知道的内容</h2>
+<ul>
+<li><em>Sync Mode</em> 为 Observers 的 <code>NetworkBehaviour</code> 会把它的同步值发送给每个能看到该玩家的客户端。私有数据（背包、任务、标记、你自己的系统）使用 Owner。</li>
+<li><code>[ClientRpc]</code> 发给每个观察者；<code>[TargetRpc]</code> 只发给所有者。</li>
+<li><code>PlayerData</code> 永远不会离开服务器。只同步界面需要的内容。</li>
+<li>不要发送客户端看不到的事物的位置、生命值或属性；套件的兴趣管理已经限制了每个客户端收到的内容。</li>
+<li>玩家写的文字用 <code>PlayerText.NoTags</code> 显示（或在服务器上用 <code>PlayerText.Clean</code> 清理），这样就没人能把 TextMeshPro 标签注入到其他玩家的屏幕上。</li>
+</ul>
+<h2 id="8-keep-server-code-out-of-client-builds"><a class="anchor" href="#8-keep-server-code-out-of-client-builds" aria-hidden="true">#</a>8. 让服务器代码远离客户端构建</h2>
+<p>仅服务器代码放在带有 <code>UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER</code> 约束的程序集中（<code>Game.Server</code>）。这样在线客户端就不会携带 GM 命令、Central 消息或你的服务器规则，因此它们无法被读取或调用。</p>
+<p>每次构建之前，<code>BuildSeparation</code> 会阻止携带服务器代码、单人模式存档或测试工具的客户端构建。正式发布的客户端使用 IL2CPP 构建（该检查要求如此），这让它们更难被读懂。永远不要把密钥、密码或连接字符串放进客户端构建包含的任何内容中：地图服务器从 <code>KITARPG_CENTRAL_KEY</code> 读取 Central 密钥，从 <code>KITARPG_SHOP_KEY</code> 读取商店密钥。</p>
+<p>参见<a href="assemblies.html">程序集</a>和<a href="../servers/builds.html">构建</a>。</p>
+<h2 id="9-staff-commands-are-audited"><a class="anchor" href="#9-staff-commands-are-audited" aria-hidden="true">#</a>9. 管理人员命令会被审计</h2>
+<p>GM 命令位于仅服务器程序集中，在运行前检查玩家的等级，每一次管理人员级别（等级 2 或以上）的使用都会写入 GM 审计和游戏日志。当审计无法写入时，管理人员命令会暂停。你的命令通过 <code>GmCommands.Register</code> 获得以上所有功能。用 <code>GmCommands.MaxItems</code>、<code>MaxGold</code> 以及其他上限限制它们能发放的数量。参见<a href="gm-commands-in-code.html">代码中的 GM 命令</a>。</p>
+<h2 id="10-the-services"><a class="anchor" href="#10-the-services" aria-hidden="true">#</a>10. 服务</h2>
+<ul>
+<li><strong>Central 模块</strong>处理地图为其玩家发送的内容：校验每个字段，检查 <code>m.Hosts(characterId)</code>，并带上地图 id 记录拒绝。</li>
+<li>模块中的 <strong>HTTP 端点</strong>是公开的，除非它们调用 <code>RequireAuthorization()</code>。从令牌的 <code>sub</code> 声明中读取账号，永远不要从参数中读取。</li>
+<li><strong>模块以服务的全部权限运行。</strong> 只有服务器运维人员会安装它们；<code>Modules:Allow</code> 限制哪些 dll 可以加载。参见<a href="service-modules.html">服务模块</a>。</li>
+<li><strong>永远不要</strong>在模块中<strong>修改套件的表</strong>。</li>
+</ul>
+<h2 id="a-review-checklist"><a class="anchor" href="#a-review-checklist" aria-hidden="true">#</a>审查清单</h2>
+<p>在发布一个功能之前，逐一检查客户端能发送的每个请求：</p>
+<ul>
+<li>[ ] 它用 <code>CommandPacing.Allow</code>（或 <code>AllowCentral</code>）限速。</li>
+<li>[ ] 发送者来自连接，而不是消息。</li>
+<li>[ ] 每个字符串、数字、向量和数组都经过检查。</li>
+<li>[ ] 每个 id 都在服务器上查找；每个世界对象都用套件的辅助方法解析，并检查可及范围和视线。</li>
+<li>[ ] 物品、金币和货币通过 <code>PlayerInventory</code> 或 <code>IPlayerActor</code> 转移。</li>
+<li>[ ] 回应和任何同步值都不会泄露玩家不该知道的东西。</li>
+<li>[ ] 仅服务器代码位于 <code>.Server</code> 程序集中。</li>
+<li>[ ] 客服会问到的任何事情都记录在游戏日志中。</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
+<ul>
+<li><a href="../servers/security.html">安全</a></li>
+<li><a href="network-messages.html">网络消息</a></li>
+<li><a href="player-systems.html">玩家系统</a></li>
+<li><a href="assemblies.html">程序集</a></li>
+<li><a href="service-modules.html">服务模块</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="domain-reload.html"><span>上一页</span>不重新加载域的 Play</a><a class="next" href="../reference/keys.html"><span>下一页</span>按键</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fsecurity-rules.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#assume-the-client-is-hostile">假定客户端是恶意的</a></li><li class="l2"><a href="#1-the-server-decides-everything-that-matters">1. 服务器决定一切重要的事情</a></li><li class="l2"><a href="#2-pace-every-request">2. 为每个请求限速</a></li><li class="l2"><a href="#3-identity-comes-from-the-connection">3. 身份来自连接</a></li><li class="l2"><a href="#4-validate-every-argument">4. 校验每个参数</a></li><li class="l2"><a href="#5-resolve-the-world-on-the-server">5. 在服务器上解析世界</a></li><li class="l2"><a href="#6-move-items-and-currencies-through-the-kit">6. 通过套件转移物品和货币</a></li><li class="l2"><a href="#7-send-clients-only-what-they-may-know">7. 只发送客户端可以知道的内容</a></li><li class="l2"><a href="#8-keep-server-code-out-of-client-builds">8. 让服务器代码远离客户端构建</a></li><li class="l2"><a href="#9-staff-commands-are-audited">9. 管理人员命令会被审计</a></li><li class="l2"><a href="#10-the-services">10. 服务</a></li><li class="l2"><a href="#a-review-checklist">审查清单</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

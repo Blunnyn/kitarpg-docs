@@ -1,319 +1,319 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Architecture · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>Arquitectura · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/architecture.html">English</option><option value="architecture.html" selected>Español</option><option value="../../pt/servers/architecture.html">Português</option><option value="../../zh/servers/architecture.html">中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
   <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>Servidores y despliegue</summary><ul><li><a href="architecture.html" class="on" aria-current="page">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">Servidores y despliegue</div><h1>Architecture</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>How an online KitARPG game is put together: the client, the Login, Central and Shop services, the map servers and the database, what each one owns, the ports and protocols between them, and what happens from sign in to changing maps.</p>
-<h2 id="the-pieces"><a class="anchor" href="#the-pieces" aria-hidden="true">#</a>The pieces</h2>
-<p>An online (MMO) game is five kinds of programs. A single player game is one: the client hosts its own map and saves to a local file (see <a href="#single-player">Single player</a>).</p>
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section" open><summary>Servidores y despliegue</summary><ul><li><a href="architecture.html" class="on" aria-current="page">Arquitectura</a></li><li><a href="services.html">Servicios</a></li><li><a href="launcher.html">Lanzador</a></li><li><a href="database.html">Base de datos</a></li><li><a href="configuration.html">Configuración</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Seguridad</a></li><li><a href="shop-service.html">Servicio Shop</a></li><li><a href="performance.html">Rendimiento</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Introducción al DevKit</a></li><li><a href="../devkit/assemblies.html">Ensamblados</a></li><li><a href="../devkit/templates.html">Plantillas</a></li><li><a href="../devkit/skill-effects.html">Efectos de skills</a></li><li><a href="../devkit/item-effects.html">Efectos de ítems</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de misión</a></li><li><a href="../devkit/npc-options.html">Opciones de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas del jugador</a></li><li><a href="../devkit/network-messages.html">Mensajes de red</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Guardar datos</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="../devkit/editor-extensions.html">Extensiones del editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="../devkit/talking-to-central.html">Hablar con Central</a></li><li><a href="../devkit/service-modules.html">Módulos de servicios</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de juego en código</a></li><li><a href="../devkit/example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sin recarga de dominio</a></li><li><a href="../devkit/security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Servidores y despliegue</div><h1>Arquitectura</h1><p>Cómo se arma un juego KitARPG en línea: el cliente, los servicios Login, Central y Shop, los servidores de mapa y la base de datos, de qué es dueño cada uno, los puertos y protocolos entre ellos, y qué pasa desde el inicio de sesión hasta el cambio de mapa.</p>
+<h2 id="the-pieces"><a class="anchor" href="#the-pieces" aria-hidden="true">#</a>Las piezas</h2>
+<p>Un juego en línea (MMO) son cinco tipos de programas. Un juego de un jugador es uno solo: el cliente aloja su propio mapa y guarda en un archivo local (consulta <a href="#single-player">Un jugador</a>).</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Piece</th>
-<th>What it is</th>
-<th>Made with</th>
-<th>Owns</th>
+<th>Pieza</th>
+<th>Qué es</th>
+<th>Hecho con</th>
+<th>Es dueño de</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Client</td>
-<td>The game players install</td>
+<td>Cliente</td>
+<td>El juego que instalan los jugadores</td>
 <td>Unity, Mirror</td>
-<td>Nothing. It only asks; the servers decide</td>
+<td>Nada. Solo pide; los servidores deciden</td>
 </tr>
 <tr>
 <td>Login</td>
-<td>Web service for accounts and characters</td>
+<td>Servicio web para cuentas y personajes</td>
 <td>.NET 10, ASP.NET Core</td>
-<td>Accounts, passwords, access tokens, &quot;Remember me&quot; tokens, character creation and deletion, the item and skill catalog in the database</td>
+<td>Cuentas, contraseñas, tokens de acceso, tokens de &quot;Remember me&quot;, creación y borrado de personajes, el catálogo de objetos y habilidades en la base de datos</td>
 </tr>
 <tr>
 <td>Central</td>
-<td>Web service plus a UDP link for the map servers</td>
+<td>Servicio web más un enlace UDP para los servidores de mapa</td>
 <td>.NET 10, ASP.NET Core, LiteNetLib</td>
-<td>Sessions (one per account), map tickets, the list of running maps, character saves, chat between maps, friends, parties, guilds, alliances, mail, the market, tax collectors, reports, GM audit, every move of an item between owners</td>
+<td>Sesiones (una por cuenta), tickets de mapa, la lista de mapas en marcha, guardados de personajes, chat entre mapas, amigos, grupos, gremios, alianzas, correo, el mercado, recaudadores, reportes, auditoría de GM, cada movimiento de un objeto entre dueños</td>
 </tr>
 <tr>
-<td>Map servers</td>
-<td>One Unity server per map, without graphics</td>
-<td>Unity, Mirror with KCP</td>
-<td>The live world of its map: players, monsters, combat, loot, NPCs, dungeon copies. It never touches the database</td>
+<td>Servidores de mapa</td>
+<td>Un servidor Unity por mapa, sin gráficos</td>
+<td>Unity, Mirror con KCP</td>
+<td>El mundo vivo de su mapa: jugadores, monstruos, combate, botín, NPCs, copias de mazmorra. Nunca toca la base de datos</td>
 </tr>
 <tr>
-<td>Shop (optional)</td>
-<td>Web service for the premium shop</td>
+<td>Shop (opcional)</td>
+<td>Servicio web para la tienda premium</td>
 <td>.NET 10, ASP.NET Core</td>
-<td>The shop catalog, premium balances, premium purchases and gifts, real-money payment webhooks</td>
+<td>El catálogo de la tienda, los saldos premium, las compras y regalos premium, los webhooks de pagos con dinero real</td>
 </tr>
 <tr>
-<td>Database</td>
-<td>SQLite file or PostgreSQL</td>
+<td>Base de datos</td>
+<td>Archivo SQLite o PostgreSQL</td>
 <td>EF Core</td>
-<td>Everything that lasts. Login, Central and the Shop share one database</td>
+<td>Todo lo que perdura. Login, Central y Shop comparten una base de datos</td>
 </tr>
 </tbody>
 </table></div>
-<p>All three services and the map servers are separate processes. On your computer the launcher starts them for you (<a href="launcher.html">Launcher</a>); on a server Docker Compose does (<a href="docker.html">Docker</a>).</p>
-<h2 id="how-they-talk"><a class="anchor" href="#how-they-talk" aria-hidden="true">#</a>How they talk</h2>
+<p>Los tres servicios y los servidores de mapa son procesos aparte. En tu computadora los levanta el lanzador por ti (<a href="launcher.html">Lanzador</a>); en un servidor lo hace Docker Compose (<a href="docker.html">Docker</a>).</p>
+<h2 id="how-they-talk"><a class="anchor" href="#how-they-talk" aria-hidden="true">#</a>Cómo se comunican</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>From</th>
-<th>To</th>
-<th>Protocol</th>
-<th>Default port</th>
-<th>What travels</th>
-<th>Who can reach it</th>
+<th>De</th>
+<th>A</th>
+<th>Protocolo</th>
+<th>Puerto predeterminado</th>
+<th>Qué viaja</th>
+<th>Quién puede alcanzarlo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Client</td>
+<td>Cliente</td>
 <td>Login</td>
-<td>HTTP (HTTPS in production)</td>
-<td>5100 locally, 443 behind Caddy</td>
-<td>Register, sign in, &quot;Remember me&quot;, character list, create, delete</td>
-<td>Everyone</td>
+<td>HTTP (HTTPS en producción)</td>
+<td>5100 en local, 443 detrás de Caddy</td>
+<td>Registro, inicio de sesión, &quot;Remember me&quot;, lista de personajes, crear, borrar</td>
+<td>Todos</td>
 </tr>
 <tr>
-<td>Client</td>
+<td>Cliente</td>
 <td>Central</td>
-<td>HTTP (HTTPS in production)</td>
-<td>5200 locally, 443 behind Caddy</td>
-<td><code>POST /api/play</code>: which map, its address and a one-use ticket</td>
-<td>Everyone</td>
+<td>HTTP (HTTPS en producción)</td>
+<td>5200 en local, 443 detrás de Caddy</td>
+<td><code>POST /api/play</code>: qué mapa, su dirección y un ticket de un solo uso</td>
+<td>Todos</td>
 </tr>
 <tr>
-<td>Client</td>
-<td>Map server</td>
-<td>Mirror over KCP (UDP)</td>
-<td>7777 town, 7778 forest, 7779 crypt</td>
-<td>The game itself: the ticket first, then input, world state, chat, windows</td>
-<td>Everyone</td>
+<td>Cliente</td>
+<td>Servidor de mapa</td>
+<td>Mirror sobre KCP (UDP)</td>
+<td>7777 town, 7778 forest, 7779 crypt, 7780 guild_hall</td>
+<td>El juego en sí: primero el ticket, luego entrada, estado del mundo, chat, ventanas</td>
+<td>Todos</td>
 </tr>
 <tr>
-<td>Map server</td>
+<td>Servidor de mapa</td>
 <td>Central</td>
-<td>LiteNetLib (UDP), key in the connection request</td>
+<td>LiteNetLib (UDP), clave en la petición de conexión</td>
 <td>7700</td>
-<td>Registration, heartbeats, ticket checks, character saves, map changes, chat, social, guild, mail, market, GM audit, game log</td>
-<td>Only map servers. Never the internet</td>
+<td>Registro, latidos, revisión de tickets, guardados de personajes, cambios de mapa, chat, social, gremio, correo, mercado, auditoría de GM, registro del juego</td>
+<td>Solo los servidores de mapa. Nunca internet</td>
 </tr>
 <tr>
-<td>Map server</td>
+<td>Servidor de mapa</td>
 <td>Shop</td>
-<td>HTTP with the <code>X-Shop-Key</code> header</td>
+<td>HTTP con la cabecera <code>X-Shop-Key</code></td>
 <td>5300</td>
-<td>Catalog, balances, buys, grants</td>
-<td>Only map servers. Never the internet</td>
+<td>Catálogo, saldos, compras, entregas</td>
+<td>Solo los servidores de mapa. Nunca internet</td>
 </tr>
 <tr>
-<td>Payment provider</td>
+<td>Proveedor de pagos</td>
 <td>Shop</td>
-<td>HTTPS through Caddy</td>
+<td>HTTPS a través de Caddy</td>
 <td>443</td>
-<td>Signed webhooks on <code>/api/shop/webhooks/{provider}</code></td>
-<td>Everyone, checked by signature</td>
+<td>Webhooks firmados en <code>/api/shop/webhooks/{provider}</code></td>
+<td>Todos, revisado por firma</td>
 </tr>
 <tr>
-<td>Editor or operator</td>
+<td>Editor u operador</td>
 <td>Shop</td>
-<td>HTTP with the <code>X-Admin-Key</code> header</td>
+<td>HTTP con la cabecera <code>X-Admin-Key</code></td>
 <td>5300</td>
-<td>Admin API: publish the catalog, grant, balances, history</td>
-<td>The server itself only (<code>127.0.0.1</code>)</td>
+<td>API de administración: publicar el catálogo, entregar, saldos, historial</td>
+<td>Solo el servidor mismo (<code>127.0.0.1</code>)</td>
 </tr>
 <tr>
 <td>Login, Central, Shop</td>
-<td>Database</td>
-<td>SQLite file or PostgreSQL protocol</td>
-<td>5432 for PostgreSQL</td>
-<td>All lasting data</td>
-<td>The services only</td>
+<td>Base de datos</td>
+<td>Archivo SQLite o protocolo de PostgreSQL</td>
+<td>5432 para PostgreSQL</td>
+<td>Todos los datos que perduran</td>
+<td>Solo los servicios</td>
 </tr>
 </tbody>
 </table></div>
-<p>During play the client holds a single network connection: the one with its map server. Chat, friends, parties and guild messages go through the map, which forwards them to Central over the map link. The client never talks to the Shop: shop windows ask the map, and the map asks the Shop.</p>
-<h3 id="the-picture-in-words"><a class="anchor" href="#the-picture-in-words" aria-hidden="true">#</a>The picture, in words</h3>
-<p>Read it from top to bottom:</p>
+<p>Durante el juego el cliente mantiene una sola conexión de red: la de su servidor de mapa. Los mensajes de chat, amigos, grupos y gremio pasan por el mapa, que los reenvía a Central por el enlace del mapa. El cliente nunca habla con Shop: las ventanas de la tienda le piden al mapa, y el mapa le pide a Shop.</p>
+<h3 id="the-picture-in-words"><a class="anchor" href="#the-picture-in-words" aria-hidden="true">#</a>El diagrama, en palabras</h3>
+<p>Léelo de arriba hacia abajo:</p>
 <ol>
-<li>At the top is the <strong>client</strong>. It has two HTTPS lines going up-left to <strong>Login</strong> and <strong>Central</strong>, and one UDP line going right to its <strong>map server</strong>.</li>
-<li>In the middle row sit <strong>Login</strong>, <strong>Central</strong> and the <strong>map servers</strong>. Central and each map server are joined by a two-way UDP line, the map link, on port 7700. The map servers also have an HTTP line to the <strong>Shop</strong>, which sits next to Central.</li>
-<li>At the bottom is one <strong>database</strong>. Login, Central and the Shop each have a line down to it. The map servers have none.</li>
-<li>In production a <strong>Caddy</strong> box sits in front of Login, Central and the Shop's webhook route, turning HTTPS from the internet into plain HTTP on the private network.</li>
+<li>Arriba está el <strong>cliente</strong>. Tiene dos líneas HTTPS que suben hacia la izquierda a <strong>Login</strong> y <strong>Central</strong>, y una línea UDP que va a la derecha a su <strong>servidor de mapa</strong>.</li>
+<li>En la fila del medio están <strong>Login</strong>, <strong>Central</strong> y los <strong>servidores de mapa</strong>. Central y cada servidor de mapa están unidos por una línea UDP de ida y vuelta, el enlace del mapa, en el puerto 7700. Los servidores de mapa también tienen una línea HTTP a <strong>Shop</strong>, que está junto a Central.</li>
+<li>Abajo hay una <strong>base de datos</strong>. Login, Central y Shop tienen cada uno una línea hacia ella. Los servidores de mapa no tienen ninguna.</li>
+<li>En producción una caja <strong>Caddy</strong> está delante de Login, Central y la ruta de webhooks de Shop, convirtiendo el HTTPS de internet en HTTP simple en la red privada.</li>
 </ol>
-<h2 id="what-each-piece-owns"><a class="anchor" href="#what-each-piece-owns" aria-hidden="true">#</a>What each piece owns</h2>
-<p>Each kind of data has one owner, so two programs never fight over it.</p>
+<h2 id="what-each-piece-owns"><a class="anchor" href="#what-each-piece-owns" aria-hidden="true">#</a>De qué es dueña cada pieza</h2>
+<p>Cada tipo de dato tiene un dueño, así dos programas nunca se pelean por él.</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Data</th>
-<th>Owner</th>
-<th>Notes</th>
+<th>Dato</th>
+<th>Dueño</th>
+<th>Notas</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Accounts and passwords</td>
+<td>Cuentas y contraseñas</td>
 <td>Login</td>
-<td>Argon2id hashes. Bans are read by every service on each request</td>
+<td>Hashes Argon2id. Cada servicio lee los baneos en cada petición</td>
 </tr>
 <tr>
-<td>Access tokens (JWT)</td>
-<td>Login signs, Central validates</td>
-<td>Same signing keys in both. 30 minutes by default</td>
+<td>Tokens de acceso (JWT)</td>
+<td>Login los firma, Central los valida</td>
+<td>Las mismas claves de firma en ambos. 30 minutos por defecto</td>
 </tr>
 <tr>
-<td>Characters (creation, deletion)</td>
+<td>Personajes (creación, borrado)</td>
 <td>Login</td>
-<td>Start values come from <code>gamedata.json</code>, exported from your Game Database</td>
+<td>Los valores iniciales vienen de <code>gamedata.json</code>, exportado de tu Game Database</td>
 </tr>
 <tr>
-<td>Characters (everything after creation)</td>
+<td>Personajes (todo después de la creación)</td>
 <td>Central</td>
-<td>Saved by the map that holds the character, through Central. A version number refuses old saves</td>
+<td>Los guarda el mapa que tiene al personaje, a través de Central. Un número de versión rechaza guardados viejos</td>
 </tr>
 <tr>
-<td>Sessions and tickets</td>
-<td>Central, in memory</td>
-<td>One session per account. Lost if Central restarts, which ends every session</td>
+<td>Sesiones y tickets</td>
+<td>Central, en memoria</td>
+<td>Una sesión por cuenta. Se pierden si Central se reinicia, lo que termina todas las sesiones</td>
 </tr>
 <tr>
-<td>Parties</td>
-<td>Central, in memory</td>
-<td>Rebuilt by players after a Central restart</td>
+<td>Grupos</td>
+<td>Central, en memoria</td>
+<td>Los jugadores los vuelven a armar después de un reinicio de Central</td>
 </tr>
 <tr>
-<td>Item copies changing owner</td>
+<td>Copias de objetos que cambian de dueño</td>
 <td>Central (<code>ItemLedger</code>)</td>
-<td>Bag, bank, guild storage, letters, collectors and market lots are all rows of one table with exactly one owner</td>
+<td>Bolsa, banco, almacén del gremio, cartas, recaudadores y lotes del mercado son todos filas de una tabla con exactamente un dueño</td>
 </tr>
 <tr>
-<td>Item and skill catalog</td>
+<td>Catálogo de objetos y habilidades</td>
 <td>Login</td>
-<td>Copied from <code>gamedata.json</code> at every start. Manual edits are overwritten</td>
+<td>Se copia de <code>gamedata.json</code> en cada arranque. Las ediciones a mano se sobrescriben</td>
 </tr>
 <tr>
-<td>Live world state</td>
-<td>Map server</td>
-<td>Monsters, positions, combat, buffs, dungeon copies. Saved characters are the only part that lasts</td>
+<td>Estado del mundo en vivo</td>
+<td>Servidor de mapa</td>
+<td>Monstruos, posiciones, combate, buffs, copias de mazmorra. Los personajes guardados son la única parte que perdura</td>
 </tr>
 <tr>
-<td>Premium currency and shop buys</td>
+<td>Moneda premium y compras de la tienda</td>
 <td>Shop</td>
-<td>A ledger of rows in <code>currency_ledger</code>; the balance is their sum</td>
+<td>Un registro de filas en <code>currency_ledger</code>; el saldo es su suma</td>
 </tr>
 <tr>
-<td>Game log, GM audit, reports</td>
-<td>Central (and Login, Shop for their own lines)</td>
-<td>Tables <code>game_logs</code>, <code>gm_audit</code>, <code>reports</code></td>
+<td>Registro del juego, auditoría de GM, reportes</td>
+<td>Central (y Login, Shop para sus propias líneas)</td>
+<td>Tablas <code>game_logs</code>, <code>gm_audit</code>, <code>reports</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>Details per table are in <a href="database.html#tables">Database</a>.</p>
-<h2 id="from-sign-in-to-playing"><a class="anchor" href="#from-sign-in-to-playing" aria-hidden="true">#</a>From sign in to playing</h2>
+<p>El detalle por tabla está en <a href="database.html#tables">Base de datos</a>.</p>
+<h2 id="from-sign-in-to-playing"><a class="anchor" href="#from-sign-in-to-playing" aria-hidden="true">#</a>Del inicio de sesión a jugar</h2>
 <ol>
-<li><strong>Sign in.</strong> The client sends the username and password to Login over HTTPS (<code>POST /api/auth/login</code>). Login checks the Argon2id hash and answers with an access token that lives <code>Auth:TokenMinutes</code> (30) and, with &quot;Remember me&quot;, a one-use remember token.</li>
-<li><strong>Pick a character.</strong> The client lists characters (<code>GET /api/characters</code>) and can create one (<code>POST /api/characters</code>). Login creates it with the class, start map, position, health, mana and start items from <code>gamedata.json</code>.</li>
-<li><strong>Ask to play.</strong> The client sends the access token and the character id to Central (<code>POST /api/play</code>). Central:
+<li><strong>Iniciar sesión.</strong> El cliente envía el usuario y la contraseña a Login por HTTPS (<code>POST /api/auth/login</code>). Login revisa el hash Argon2id y responde con un token de acceso que vive <code>Auth:TokenMinutes</code> (30) y, con &quot;Remember me&quot;, un token de recordar de un solo uso.</li>
+<li><strong>Elegir un personaje.</strong> El cliente lista los personajes (<code>GET /api/characters</code>) y puede crear uno (<code>POST /api/characters</code>). Login lo crea con la clase, el mapa inicial, la posición, la vida, el maná y los objetos iniciales de <code>gamedata.json</code>.</li>
+<li><strong>Pedir jugar.</strong> El cliente envía el token de acceso y el id del personaje a Central (<code>POST /api/play</code>). Central:
 <ul>
-<li>checks that the character belongs to the account and that the account isn't banned;</li>
-<li>if the account is already in a map, tells that map to save and drop the character, and waits up to <code>Central:KickWaitSeconds</code> (5) for the save (see <a href="#logging-in-twice">Logging in twice</a>);</li>
-<li>makes sure the character's map runs: a running map is used, a map with an executable is launched and waited for up to <code>Central:LaunchTimeoutSeconds</code> (60), and a map without one (Docker, the editor) gets 3 seconds to register;</li>
-<li>opens a session and answers with the map's address, port and a random ticket that expires after <code>Central:TicketSeconds</code> (30).</li>
+<li>revisa que el personaje pertenezca a la cuenta y que la cuenta no esté baneada;</li>
+<li>si la cuenta ya está en un mapa, le dice a ese mapa que guarde y suelte al personaje, y espera hasta <code>Central:KickWaitSeconds</code> (5) el guardado (consulta <a href="#logging-in-twice">Iniciar sesión dos veces</a>);</li>
+<li>se asegura de que el mapa del personaje esté corriendo: se usa un mapa que ya corre, un mapa con ejecutable se lanza y se espera hasta <code>Central:LaunchTimeoutSeconds</code> (60), y un mapa sin ejecutable (Docker, el editor) recibe 3 segundos para registrarse;</li>
+<li>abre una sesión y responde con la dirección del mapa, el puerto y un ticket aleatorio que vence después de <code>Central:TicketSeconds</code> (30).</li>
 </ul>
 </li>
-<li><strong>Join the map.</strong> The client connects to the map server with Mirror and presents the ticket, its network version and its control mode. The map server sends the ticket to Central over the map link. Central redeems it once, loads the character from the database and sends it back. The map refuses a client built from different network code (<code>version_mismatch</code>) or with another control mode (<code>mode_mismatch</code>).</li>
-<li><strong>Play.</strong> The client sends requests; the map server validates and applies them. The map saves each character every 60 seconds (<code>MapServer.saveIntervalSeconds</code>), when they leave and when they change maps. Each character has one save in flight at a time, and Central refuses a save from a map that doesn't hold the character or with an old version.</li>
-<li><strong>Change maps.</strong> When a player takes a portal, the map saves the character with its destination and sends a transfer request to Central. Central checks the session, starts the target map if needed, saves the new position and returns a ticket for the target. The client shows the loading screen and joins the new map with that ticket.</li>
-<li><strong>Leave.</strong> The map saves the character with <code>leaving</code> set and Central closes the session. If the map server stops or loses Central, every session on it ends and the players go back to the title.</li>
+<li><strong>Entrar al mapa.</strong> El cliente se conecta al servidor de mapa con Mirror y presenta el ticket, su versión de red y su modo de control. El servidor de mapa envía el ticket a Central por el enlace del mapa. Central lo canjea una vez, carga el personaje de la base de datos y lo devuelve. El mapa rechaza un cliente compilado con un código de red distinto (<code>version_mismatch</code>) o con otro modo de control (<code>mode_mismatch</code>).</li>
+<li><strong>Jugar.</strong> El cliente envía peticiones; el servidor de mapa las valida y las aplica. El mapa guarda cada personaje cada 60 segundos (<code>MapServer.saveIntervalSeconds</code>), cuando se va y cuando cambia de mapa. Cada personaje tiene un guardado en curso a la vez, y Central rechaza un guardado de un mapa que no tiene al personaje o con una versión vieja.</li>
+<li><strong>Cambiar de mapa.</strong> Cuando un jugador toma un portal, el mapa guarda al personaje con su destino y envía una petición de traslado a Central. Central revisa la sesión, arranca el mapa de destino si hace falta, guarda la nueva posición y devuelve un ticket para el destino. El cliente muestra la pantalla de carga y entra al nuevo mapa con ese ticket.</li>
+<li><strong>Salir.</strong> El mapa guarda al personaje con <code>leaving</code> activado y Central cierra la sesión. Si el servidor de mapa se detiene o pierde a Central, cada sesión en él termina y los jugadores vuelven al título.</li>
 </ol>
-<h2 id="logging-in-twice"><a class="anchor" href="#logging-in-twice" aria-hidden="true">#</a>Logging in twice</h2>
-<p>There is one session per account. When an account asks to play while its character is still in a map:</p>
+<h2 id="logging-in-twice"><a class="anchor" href="#logging-in-twice" aria-hidden="true">#</a>Iniciar sesión dos veces</h2>
+<p>Hay una sesión por cuenta. Cuando una cuenta pide jugar mientras su personaje todavía está en un mapa:</p>
 <ul>
-<li>Central sends that map a kick with the reason <code>logged_in_elsewhere</code>. The map saves the character and drops it.</li>
-<li>Central waits up to <code>Central:KickWaitSeconds</code> (5) for the save to arrive.</li>
-<li>If it arrives, Central reads the character again and hands out the new ticket.</li>
-<li>If it hasn't, <code>/api/play</code> answers HTTP 503 with <code>session_busy</code> and no ticket. The client tries again a moment later. Handing out a ticket before the save lands would load the character from before it, and anything the old session moved (gold, items) would exist twice.</li>
-<li>If the old map is gone, the session is dropped at once.</li>
+<li>Central le envía a ese mapa una expulsión con el motivo <code>logged_in_elsewhere</code>. El mapa guarda al personaje y lo suelta.</li>
+<li>Central espera hasta <code>Central:KickWaitSeconds</code> (5) a que llegue el guardado.</li>
+<li>Si llega, Central vuelve a leer al personaje y entrega el nuevo ticket.</li>
+<li>Si no llegó, <code>/api/play</code> responde HTTP 503 con <code>session_busy</code> y sin ticket. El cliente lo intenta de nuevo un momento después. Entregar un ticket antes de que llegue el guardado cargaría al personaje de antes, y todo lo que movió la sesión vieja (oro, objetos) existiría dos veces.</li>
+<li>Si el mapa viejo ya no está, la sesión se descarta al instante.</li>
 </ul>
-<h2 id="scaling-model"><a class="anchor" href="#scaling-model" aria-hidden="true">#</a>Scaling model</h2>
+<h2 id="scaling-model"><a class="anchor" href="#scaling-model" aria-hidden="true">#</a>Modelo de escalado</h2>
 <ul>
-<li><strong>One process per map.</strong> Each map id runs in exactly one map server. Central refuses a second registration of the same map id while the first is connected. More players means more maps (or bigger hardware for a busy map), not copies of the same map.</li>
-<li><strong>Dungeons run inside their map server.</strong> An instanced map (<code>MapData.instanced</code>) gives each party, or each player alone, its own copy of the scene, loaded again inside the same process and moved <code>instanceSpacing</code> (1000) meters away from the others. An empty copy is unloaded after <code>emptyMinutes</code> (5). See <a href="../gameplay/dungeons.html">Dungeons</a>.</li>
-<li><strong>Map servers can run on other machines.</strong> They register with Central over the map link from anywhere Central allows (<code>Central:MapNetworks</code>). The link isn't encrypted, so other machines reach it over a private network or a WireGuard tunnel. See <a href="docker.html#adding-map-servers">Docker</a>.</li>
-<li><strong>Exactly one Central per database.</strong> Sessions, tickets, parties and the item lock live in its memory. Two Centrals on one database could hand out the same item twice.</li>
-<li><strong>Exactly one Shop per database.</strong> Buys are serialized by a lock in its process.</li>
-<li><strong>Login can run several times</strong> behind the proxy, but each copy keeps its own rate limits and failed-login counters.</li>
+<li><strong>Un proceso por mapa.</strong> Cada id de mapa corre en exactamente un servidor de mapa. Central rechaza un segundo registro del mismo id de mapa mientras el primero está conectado. Más jugadores significa más mapas (o más hardware para un mapa concurrido), no copias del mismo mapa.</li>
+<li><strong>Las mazmorras corren dentro de su servidor de mapa.</strong> Un mapa instanciado (<code>MapData.instanced</code>) le da a cada grupo, o a cada jugador solo, su propia copia de la escena, cargada otra vez dentro del mismo proceso y movida <code>instanceSpacing</code> (1.000) metros de las demás. Una copia vacía se descarga después de <code>emptyMinutes</code> (5). Consulta <a href="../gameplay/dungeons.html">Mazmorras</a>.</li>
+<li><strong>Los servidores de mapa pueden correr en otras máquinas.</strong> Se registran en Central por el enlace del mapa desde donde Central lo permita (<code>Central:MapNetworks</code>). El enlace no está cifrado, así que las otras máquinas lo alcanzan por una red privada o un túnel WireGuard. Consulta <a href="docker.html#adding-map-servers">Docker</a>.</li>
+<li><strong>Exactamente un Central por base de datos.</strong> Las sesiones, los tickets, los grupos y el bloqueo de objetos viven en su memoria. Dos Central sobre una base de datos podrían entregar el mismo objeto dos veces.</li>
+<li><strong>Exactamente un Shop por base de datos.</strong> Las compras se ordenan con un bloqueo en su proceso.</li>
+<li><strong>Login puede correr varias veces</strong> detrás del proxy, pero cada copia lleva sus propios límites de ritmo y contadores de inicios de sesión fallidos.</li>
 </ul>
-<p>Targets and tuning are in <a href="performance.html">Performance</a>.</p>
-<h2 id="when-something-stops"><a class="anchor" href="#when-something-stops" aria-hidden="true">#</a>When something stops</h2>
+<p>Los objetivos y el ajuste están en <a href="performance.html">Rendimiento</a>.</p>
+<h2 id="when-something-stops"><a class="anchor" href="#when-something-stops" aria-hidden="true">#</a>Cuando algo se detiene</h2>
 <div class="table"><table>
 <thead>
 <tr>
-<th>What stops</th>
-<th>What players see</th>
-<th>What happens</th>
+<th>Qué se detiene</th>
+<th>Lo que ven los jugadores</th>
+<th>Qué pasa</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>A map server</td>
-<td>Everyone on it is disconnected</td>
-<td>Central ends their sessions. The last save stands (at most 60 seconds old by default, newer if they traded, changed map or did something Central handles). Central launches the map again on the next player who needs it, if it has an executable</td>
+<td>Un servidor de mapa</td>
+<td>Todos los que están en él se desconectan</td>
+<td>Central termina sus sesiones. Vale el último guardado (de 60 segundos como máximo por defecto, más nuevo si intercambiaron, cambiaron de mapa o hicieron algo que atiende Central). Central vuelve a lanzar el mapa con el próximo jugador que lo necesite, si tiene ejecutable</td>
 </tr>
 <tr>
 <td>Central</td>
-<td>Players stay on their map, but nobody new can get a ticket, and map changes, saves, chat between maps, mail, guilds and the market fail</td>
-<td>Maps retry the link every 3 seconds (<code>CentralLink.retrySeconds</code>). GM commands of level 2 or more don't run while Central can't record them. Game log lines wait in the map (up to 5,000). Sessions and parties live in Central's memory, so after a restart Central refuses the saves of players who were already on a map until they sign in again. Restart Central only with players out</td>
+<td>Los jugadores siguen en su mapa, pero nadie nuevo puede conseguir un ticket, y fallan los cambios de mapa, los guardados, el chat entre mapas, el correo, los gremios y el mercado</td>
+<td>Los mapas reintentan el enlace cada 3 segundos (<code>CentralLink.retrySeconds</code>). Los comandos de GM de nivel 2 o más no corren mientras Central no puede registrarlos. Las líneas del registro del juego esperan en el mapa (hasta 5.000). Las sesiones y los grupos viven en la memoria de Central, así que después de un reinicio Central rechaza los guardados de los jugadores que ya estaban en un mapa hasta que vuelven a iniciar sesión. Reinicia Central solo sin jugadores dentro</td>
 </tr>
 <tr>
 <td>Login</td>
-<td>Nobody can sign in or create characters</td>
-<td>Players already in a map keep playing</td>
+<td>Nadie puede iniciar sesión ni crear personajes</td>
+<td>Los jugadores que ya están en un mapa siguen jugando</td>
 </tr>
 <tr>
 <td>Shop</td>
-<td>The shop window says it can't reach the service</td>
-<td>Everything else keeps working</td>
+<td>La ventana de la tienda dice que no puede alcanzar el servicio</td>
+<td>Todo lo demás sigue funcionando</td>
 </tr>
 <tr>
-<td>Database</td>
-<td>Services answer errors</td>
-<td>Map servers keep the world running but saves fail until it is back</td>
+<td>Base de datos</td>
+<td>Los servicios responden errores</td>
+<td>Los servidores de mapa mantienen el mundo andando pero los guardados fallan hasta que vuelve</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="single-player"><a class="anchor" href="#single-player" aria-hidden="true">#</a>Single player</h2>
-<p>A single player game uses the same map code with none of the services:</p>
+<h2 id="single-player"><a class="anchor" href="#single-player" aria-hidden="true">#</a>Un jugador</h2>
+<p>Un juego de un jugador usa el mismo código de mapa sin ninguno de los servicios:</p>
 <ul>
-<li>The client starts a Mirror host for the map (<code>MapServer.Host</code>) that takes no outside connections.</li>
-<li>The <code>KitARPG.Local</code> assembly replaces Login and Central with a local backend that saves to a SQLite file in the player's persistent data folder (<code>KitSettings.saveFile</code>, <code>savegame.db</code> by default).</li>
-<li>Each map change restarts the host with the new map, using the same ticket and transfer flow as the MMO.</li>
-<li>There is no shop, no mail between players, no guilds across players and no market.</li>
+<li>El cliente arranca un host de Mirror para el mapa (<code>MapServer.Host</code>) que no acepta conexiones de afuera.</li>
+<li>El ensamblado <code>KitARPG.Local</code> reemplaza a Login y Central con un backend local que guarda en un archivo SQLite en la carpeta de datos persistentes del jugador (<code>KitSettings.saveFile</code>, <code>savegame.db</code> por defecto).</li>
+<li>Cada cambio de mapa reinicia el host con el nuevo mapa, usando el mismo flujo de ticket y traslado que el MMO.</li>
+<li>No hay tienda, ni correo entre jugadores, ni gremios entre jugadores, ni mercado.</li>
 </ul>
-<p>The mode is chosen in <strong>KitARPG &gt; Play and Servers</strong> and stored in <code>Assets/Settings/Resources/KitARPGSettings.asset</code>. See <a href="../editor/play-and-servers.html">Play &amp; Servers</a>.</p>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<p>El modo se elige en <strong>KitARPG &gt; Play and Servers</strong> y se guarda en <code>Assets/Settings/Resources/KitARPGSettings.asset</code>. Consulta <a href="../editor/play-and-servers.html">Play &amp; Servers</a>.</p>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
 <ul>
-<li><a href="services.html">Services</a>: every endpoint and what Login, Central and the Shop do.</li>
-<li><a href="configuration.html">Configuration</a>: every setting and environment variable.</li>
-<li><a href="security.html">Security</a>: the rules that keep this design safe.</li>
-<li><a href="../start/quick-start-mmo.html">Quick start: MMO</a>: run all of it on your computer.</li>
+<li><a href="services.html">Servicios</a>: cada endpoint y lo que hacen Login, Central y Shop.</li>
+<li><a href="configuration.html">Configuración</a>: cada opción y variable de entorno.</li>
+<li><a href="security.html">Seguridad</a>: las reglas que mantienen seguro este diseño.</li>
+<li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a>: corre todo en tu computadora.</li>
 </ul>
-<nav class="pager"><a class="prev" href="../gameplay/player-settings.html"><span>Anterior</span>Player settings</a><a class="next" href="services.html"><span>Siguiente</span>Services</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fservers%2Farchitecture.html">Reportar un problema en esta página</a></div></main>
-  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#the-pieces">The pieces</a></li><li class="l2"><a href="#how-they-talk">How they talk</a></li><li class="l3"><a href="#the-picture-in-words">The picture, in words</a></li><li class="l2"><a href="#what-each-piece-owns">What each piece owns</a></li><li class="l2"><a href="#from-sign-in-to-playing">From sign in to playing</a></li><li class="l2"><a href="#logging-in-twice">Logging in twice</a></li><li class="l2"><a href="#scaling-model">Scaling model</a></li><li class="l2"><a href="#when-something-stops">When something stops</a></li><li class="l2"><a href="#single-player">Single player</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="../gameplay/player-settings.html"><span>Anterior</span>Ajustes del jugador</a><a class="next" href="services.html"><span>Siguiente</span>Servicios</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fservers%2Farchitecture.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#the-pieces">Las piezas</a></li><li class="l2"><a href="#how-they-talk">Cómo se comunican</a></li><li class="l3"><a href="#the-picture-in-words">El diagrama, en palabras</a></li><li class="l2"><a href="#what-each-piece-owns">De qué es dueña cada pieza</a></li><li class="l2"><a href="#from-sign-in-to-playing">Del inicio de sesión a jugar</a></li><li class="l2"><a href="#logging-in-twice">Iniciar sesión dos veces</a></li><li class="l2"><a href="#scaling-model">Modelo de escalado</a></li><li class="l2"><a href="#when-something-stops">Cuando algo se detiene</a></li><li class="l2"><a href="#single-player">Un jugador</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
 <script src="../../assets/search-es.js"></script>

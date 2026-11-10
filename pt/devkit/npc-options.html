@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Opções de NPC · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/npc-options.html">English</option><option value="../../es/devkit/npc-options.html">Español</option><option value="npc-options.html" selected>Português</option><option value="../../zh/devkit/npc-options.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Visão geral do DevKit</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Efeitos de habilidades</a></li><li><a href="item-effects.html">Efeitos de itens</a></li><li><a href="conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="quest-objectives.html">Objetivos de missão</a></li><li><a href="npc-options.html" class="on" aria-current="page">Opções de NPC</a></li><li><a href="player-systems.html">Sistemas do jogador</a></li><li><a href="network-messages.html">Mensagens de rede</a></li><li><a href="gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Salvando dados</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="editor-extensions.html">Extensões do editor</a></li><li><a href="kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="talking-to-central.html">Falando com o Central</a></li><li><a href="service-modules.html">Módulos de serviço</a></li><li><a href="game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="domain-reload.html">Play sem domain reload</a></li><li><a href="security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Opções de NPC</h1><p>Como adicionar seus próprios botões aos NPCs: a classe base <code>NpcOption</code>, o que o servidor verifica antes de executá-la, como responder ao jogador, como abrir uma janela sua e exemplos completos.</p>
+<h2 id="what-an-npc-option-is"><a class="anchor" href="#what-an-npc-option-is" aria-hidden="true">#</a>O que é uma opção de NPC</h2>
+<p>Um componente <code>Npc</code> em uma cena tem uma lista de opções (<code>Npc.options</code>). Quando um jogador fala com o NPC, o servidor lista as opções que esse jogador pode ver, o cliente as mostra como botões e, quando o jogador escolhe uma, o servidor a executa. As opções do kit abrem lojas, teletransportam, ensinam habilidades, oferecem missões, executam falas de diálogo, abrem o banco, o mercado, o banco da guilda, a forja, o correio, os coletores, a fundação de guilda e as sedes de guilda, e disparam gatilhos do mundo.</p>
+<p>Um tipo novo é uma classe. <code>NpcOption</code> é <code>[Serializable]</code> e a lista é <code>[SerializeReference, PickType]</code>, então a sua aparece no menu <strong>+</strong> de <em>Options</em> de todo NPC e nas <em>Options</em> aninhadas de toda fala de diálogo.</p>
+<p><strong>Onde o arquivo fica:</strong> no assembly <code>Game</code>. As cenas guardam a opção no NPC, então os dois builds carregam a classe, embora só o servidor a execute.</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>A classe base</h2>
+<p><code>NpcOption</code> fica em <code>Blunnyn.KitARPG.Net</code>.</p>
+<h3 id="inspector-fields"><a class="anchor" href="#inspector-fields" aria-hidden="true">#</a>Campos do Inspector</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>O que faz</th>
+<th>Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Label</em> (<code>label</code>)</td>
+<td>Texto do botão. Vazio usa <code>DefaultLabel</code>.</td>
+<td>vazio</td>
+</tr>
+<tr>
+<td><em>Required Level</em> (<code>requiredLevel</code>)</td>
+<td>Fica oculta para personagens abaixo deste nível.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Conditions</em> (<code>conditions</code>)</td>
+<td>Fica oculta enquanto uma delas não for cumprida.</td>
+<td>nenhuma</td>
+</tr>
+<tr>
+<td><em>Show When Locked</em> (<code>showWhenLocked</code>)</td>
+<td>Mostra a opção em cinza com o motivo em vez de ocultá-la.</td>
+<td>desligado</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="members-to-override"><a class="anchor" href="#members-to-override" aria-hidden="true">#</a>Membros para sobrescrever</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Membro</th>
+<th>O que faz</th>
+<th>Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>protected abstract string DefaultLabel { get; }</code></td>
+<td>Texto do botão quando <em>Label</em> está vazio. Obrigatório.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtual string LabelFor(PlayerCharacter player)</code></td>
+<td><strong>Servidor.</strong> O texto que este jogador vê, para rótulos que mudam por jogador.</td>
+<td><code>Label</code></td>
+</tr>
+<tr>
+<td><code>virtual bool AvailableTo(PlayerCharacter player)</code></td>
+<td><strong>Servidor.</strong> False oculta a opção deste jogador, mesmo com <em>Show When Locked</em>.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>virtual KitModule Module</code></td>
+<td>O módulo do kit a que pertence. Quando esse módulo está desligado em <strong>KitARPG &gt; Modules</strong>, a opção desaparece.</td>
+<td><code>KitModule.None</code></td>
+</tr>
+<tr>
+<td><code>abstract string Run(Npc npc, PlayerCharacter player)</code></td>
+<td><strong>Servidor.</strong> Executa a opção. Retorna um código de erro para o jogador, ou null. Obrigatório.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="helpers-you-can-call"><a class="anchor" href="#helpers-you-can-call" aria-hidden="true">#</a>Auxiliares que você pode chamar</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Membro</th>
+<th>O que retorna</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string Label</code></td>
+<td><em>Label</em> ou <code>DefaultLabel</code>.</td>
+</tr>
+<tr>
+<td><code>string Locked(PlayerCharacter player)</code></td>
+<td>Por que o jogador não pode escolhê-la (nível, depois condições), ou null.</td>
+</tr>
+<tr>
+<td><code>bool Offered(PlayerCharacter player)</code></td>
+<td>Módulo ligado, não bloqueada e <code>AvailableTo</code>.</td>
+</tr>
+<tr>
+<td><code>bool Listed(PlayerCharacter player)</code></td>
+<td>Se o jogador a vê, podendo escolhê-la ou não.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="what-the-server-checks-before-run"><a class="anchor" href="#what-the-server-checks-before-run" aria-hidden="true">#</a>O que o servidor verifica antes de <code>Run</code></h2>
+<p>O cliente do dono pede por meio de <code>PlayerInteraction</code>. Antes de o seu <code>Run</code> ser chamado, o servidor já:</p>
+<ol>
+<li>Confirmou que o jogador está vivo, carregado e falando com aquele NPC.</li>
+<li>Gastou do orçamento de pedidos por jogador (<em>Max Requests Per Second</em>, <code>maxRequestsPerSecond</code>, 10 em <code>PlayerInteraction</code>).</li>
+<li>Verificou que o jogador está dentro do <em>Talk Range</em> do NPC (<code>talkRange</code>, 3 m, mais meio metro). Longe demais responde <code>too_far</code>.</li>
+<li>Encontrou a opção pelo seu índice na lista mostrada na tela e verificou <code>Offered(player)</code>: módulo, nível, condições e <code>AvailableTo</code>.</li>
+</ol>
+<p>Então, dentro de <code>Run</code>, você sabe que o jogador está ao lado do NPC e tem permissão para escolher a opção. Qualquer custo ou requisito da sua opção além disso, verifique de novo em <code>Run</code>.</p>
+<h2 id="answering-the-player"><a class="anchor" href="#answering-the-player" aria-hidden="true">#</a>Respondendo ao jogador</h2>
+<p><code>Run</code> retorna uma string que é enviada ao cliente do dono como <code>PlayerInteraction.ErrorReceived</code>. Das janelas do kit, só a janela da loja mostra essas strings, enquanto está aberta, e ela transforma os códigos conhecidos (<code>NpcErrors.NotEnoughMoney</code>, <code>NpcErrors.TooFar</code> e os erros do inventário) em frases.</p>
+<p>Para uma opção de diálogo comum, avise o jogador você mesmo e retorne null:</p>
+<pre class="code"><code class="language-csharp"><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">&quot;Blessed!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.85f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">));</span><span class="w">    </span><span class="c1">// floating text over the player</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerChat</span><span class="w"> </span><span class="n">chat</span><span class="p">))</span><span class="w"> </span><span class="n">chat</span><span class="p">.</span><span class="n">Tell</span><span class="p">(</span><span class="s">&quot;The priest blesses you.&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// a system line in the chat</span>
+<span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</code></pre>
+<p><code>DialogueOption</code> faz o mesmo com os motivos de recusa das suas ações. A opção do exemplo de recompensas usa <code>PlayerChat.Tell</code>.</p>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Exemplo: o template</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; NPC Option</strong> cria uma bênção que cura em troca de ouro, e avisa o jogador no chat quando ele não pode pagar. Veja <a href="templates.html#npc-option">Templates</a>.</p>
+<h2 id="example-blessing-answered-in-the-chat"><a class="anchor" href="#example-blessing-answered-in-the-chat" aria-hidden="true">#</a>Exemplo: bênção, respondida no chat</h2>
+<p>O template com um rótulo que mostra o preço, um estado de bênção em vez de uma cura completa e uma linha no chat depois da bênção:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BlessingOption</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NpcOption</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">StatusData</span><span class="w"> </span><span class="n">blessing</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultLabel</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Bless me&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">LabelFor</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="s">$&quot;{Label} ({price:N0} {GameInstance.Database.GoldName})&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">AvailableTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">blessing</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerInventory</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inventory</span><span class="p">.</span><span class="n">gold</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Tell</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="s">$&quot;That costs {price:N0} {GameInstance.Database.GoldName}.&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">inventory</span><span class="p">.</span><span class="n">AddGold</span><span class="p">(</span><span class="o">-</span><span class="n">price</span><span class="p">);</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">AddStatus</span><span class="p">(</span><span class="n">blessing</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">seconds</span><span class="p">);</span>
+<span class="w">            </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;mygame.blessing&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">gold</span><span class="p">:</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">detail</span><span class="p">:</span><span class="w"> </span><span class="n">npc</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Tell</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="s">$&quot;{npc.displayName} blesses you.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Tell</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerChat</span><span class="w"> </span><span class="n">chat</span><span class="p">))</span><span class="w"> </span><span class="n">chat</span><span class="p">.</span><span class="n">Tell</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>PlayerCharacter.AddStatus</code> é o método de <code>IItemUser</code>; o jogador o implementa.</p>
+<h2 id="example-an-option-that-opens-your-own-window"><a class="anchor" href="#example-an-option-that-opens-your-own-window" aria-hidden="true">#</a>Exemplo: uma opção que abre uma janela sua</h2>
+<p>As opções rodam no servidor, então, para abrir uma janela no cliente, a opção envia uma mensagem ao dono. Esta abre uma janela de &quot;baú&quot; e informa à janela de qual NPC ela veio.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">OpenStashMessage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">npcId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">StashOption</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NpcOption</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultLabel</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Open the stash&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">connectionToClient</span><span class="o">?.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">OpenStashMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">npcId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npc</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="p">});</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">StashClient</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">Npc</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Opened</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Opened</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">KitNetworkManager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KitNetworkManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">manager</span><span class="p">.</span><span class="n">ClientConnected</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">OpenStashMessage</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnOpen</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnOpen</span><span class="p">(</span><span class="n">OpenStashMessage</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Npc</span><span class="p">.</span><span class="n">TryFind</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">npcId</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">))</span><span class="w"> </span><span class="n">Opened</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">npc</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Sua janela se inscreve em <code>StashClient.Opened</code>, abre e se fecha sozinha quando o jogador sai de <code>npc.InReach(PlayerCharacter.Local.transform.position)</code>. Todo pedido que a janela envia de volta precisa verificar de novo no servidor que o jogador está perto daquele NPC (<code>npc.InReach(player.transform.position)</code>). Veja <a href="network-messages.html">Mensagens de rede</a>.</p>
+<h2 id="example-a-label-that-changes-per-player"><a class="anchor" href="#example-a-label-that-changes-per-player" aria-hidden="true">#</a>Exemplo: um rótulo que muda por jogador</h2>
+<p>A opção do exemplo de recompensas diz &quot;Today's bounty&quot; ou &quot;Turn in the bounty&quot;, dependendo do jogador:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">LabelFor</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="n">Bounties</span><span class="p">.</span><span class="n">Current</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Turn in the bounty&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Today&#39;s bounty&quot;</span><span class="p">;</span>
+</code></pre>
+<h2 id="example-belonging-to-a-module"><a class="anchor" href="#example-belonging-to-a-module" aria-hidden="true">#</a>Exemplo: pertencer a um módulo</h2>
+<p>Uma opção que pertence a um dos módulos do kit desaparece quando esse módulo está desligado:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">KitModule</span><span class="w"> </span><span class="n">Module</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">KitModule</span><span class="p">.</span><span class="n">Guilds</span><span class="p">;</span>
+</code></pre>
+<h2 id="state-on-an-option"><a class="anchor" href="#state-on-an-option" aria-hidden="true">#</a>Estado em uma opção</h2>
+<p>Uma instância de opção vive em um NPC em uma cena, e todos os jogadores que falam com aquele NPC a compartilham. Use campos de instância só para estado do NPC, nunca de um jogador. Marque os campos que só existem em tempo de execução com <code>[NonSerialized]</code> para que não acabem salvos na cena. O <code>ShopOption</code> do kit guarda assim seu estoque limitado por NPC:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[NonSerialized]</span><span class="w"> </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+</code></pre>
+<p>Para estado por jogador, use flags, <code>PlayerData</code> ou um sistema do jogador (veja <a href="saving-data.html">Salvando dados</a>).</p>
+<h2 id="adding-the-option-to-an-npc"><a class="anchor" href="#adding-the-option-to-an-npc" aria-hidden="true">#</a>Adicionando a opção a um NPC</h2>
+<ol>
+<li>Selecione o NPC na cena dele (um GameObject com o componente <code>Npc</code>).</li>
+<li>Em <em>Options</em>, pressione <strong>+</strong> e escolha sua classe no menu.</li>
+<li>Preencha os campos dela, seu <em>Label</em>, <em>Required Level</em> e <em>Conditions</em>.</li>
+<li>Dentro de uma opção <em>Dialogue</em>, a lista aninhada <em>Options</em> também aceita sua classe, então ela pode aparecer depois de uma fala.</li>
+</ol>
+<p>Opções com <em>Label</em> vazio usam seu <code>DefaultLabel</code>. Quando um NPC não tem saudação e tem só uma opção, falar com ele executa essa opção na hora.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Servidor e cliente</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Roda em</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LabelFor</code>, <code>AvailableTo</code>, <code>Locked</code>, <code>Offered</code>, <code>Run</code></td>
+<td>Servidor</td>
+</tr>
+<tr>
+<td>Rótulos e motivos de bloqueio</td>
+<td>Enviados como texto ao cliente</td>
+</tr>
+<tr>
+<td>O componente <code>Npc</code></td>
+<td>Ambos: os clientes o usam para nome, posição e alcance</td>
+</tr>
+</tbody>
+</table></div>
+<p>No modo um jogador, o host roda a metade do servidor no mesmo processo.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Erros comuns</h2>
+<ul>
+<li><strong>Retornar uma frase de <code>Run</code> e esperar que o diálogo a mostre.</strong> Use <code>ServerAnnounce</code> ou <code>PlayerChat.Tell</code>.</li>
+<li><strong>Confiar na janela que vem depois.</strong> Uma janela aberta por uma opção envia seus próprios pedidos; cada um precisa verificar alcance e regras de novo.</li>
+<li><strong>Guardar dados por jogador na opção.</strong> Ela é compartilhada por todos que falam com aquele NPC.</li>
+<li><strong>Mudar a ordem das opções enquanto um jogador está conversando.</strong> O cliente escolhe pelo índice; reordene no editor, não em tempo de execução.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="../content/npcs.html">NPCs</a></li>
+<li><a href="../content/npc-shops.html">Lojas de NPC</a></li>
+<li><a href="../content/dialogues.html">Diálogos</a></li>
+<li><a href="network-messages.html">Mensagens de rede</a></li>
+<li><a href="conditions-and-actions-in-code.html">Condições e ações em código</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="quest-objectives.html"><span>Anterior</span>Objetivos de missão</a><a class="next" href="player-systems.html"><span>Próximo</span>Sistemas do jogador</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fdevkit%2Fnpc-options.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-an-npc-option-is">O que é uma opção de NPC</a></li><li class="l2"><a href="#the-base-class">A classe base</a></li><li class="l3"><a href="#inspector-fields">Campos do Inspector</a></li><li class="l3"><a href="#members-to-override">Membros para sobrescrever</a></li><li class="l3"><a href="#helpers-you-can-call">Auxiliares que você pode chamar</a></li><li class="l2"><a href="#what-the-server-checks-before-run">O que o servidor verifica antes de Run</a></li><li class="l2"><a href="#answering-the-player">Respondendo ao jogador</a></li><li class="l2"><a href="#example-the-template">Exemplo: o template</a></li><li class="l2"><a href="#example-blessing-answered-in-the-chat">Exemplo: bênção, respondida no chat</a></li><li class="l2"><a href="#example-an-option-that-opens-your-own-window">Exemplo: uma opção que abre uma janela sua</a></li><li class="l2"><a href="#example-a-label-that-changes-per-player">Exemplo: um rótulo que muda por jogador</a></li><li class="l2"><a href="#example-belonging-to-a-module">Exemplo: pertencer a um módulo</a></li><li class="l2"><a href="#state-on-an-option">Estado em uma opção</a></li><li class="l2"><a href="#adding-the-option-to-an-npc">Adicionando a opção a um NPC</a></li><li class="l2"><a href="#server-and-client">Servidor e cliente</a></li><li class="l2"><a href="#common-mistakes">Erros comuns</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

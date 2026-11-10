@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Play without domain reload · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="domain-reload.html" selected>English</option><option value="../../es/devkit/domain-reload.html">Español</option><option value="../../pt/devkit/domain-reload.html">Português</option><option value="../../zh/devkit/domain-reload.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li><li><a href="npc-options.html">NPC options</a></li><li><a href="player-systems.html">Player systems</a></li><li><a href="network-messages.html">Network messages</a></li><li><a href="gm-commands-in-code.html">GM commands in code</a></li><li><a href="formulas.html">Formulas</a></li><li><a href="saving-data.html">Saving data</a></li><li><a href="events.html">Events</a></li><li><a href="overriding-kit-behaviour.html">Overriding kit behaviour</a></li><li><a href="menus-and-settings-options.html">Menus and settings options</a></li><li><a href="editor-extensions.html">Editor extensions</a></li><li><a href="kit-updates-in-code.html">Kit updates in code</a></li><li><a href="talking-to-central.html">Talking to Central</a></li><li><a href="service-modules.html">Service modules</a></li><li><a href="game-modes-in-code.html">Game modes in code</a></li><li><a href="example-bounty-board.html">Example: bounty board</a></li><li><a href="domain-reload.html" class="on" aria-current="page">Play without domain reload</a></li><li><a href="security-rules.html">Security rules</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/faq.html">FAQ</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li><li><a href="../reference/glossary.html">Glossary</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Play without domain reload</h1><p>Why static state in your code must be reset by hand, when each startup method runs, and the patterns the kit uses so that every Play starts clean.</p>
+<h2 id="what-domain-reload-is"><a class="anchor" href="#what-domain-reload-is" aria-hidden="true">#</a>What domain reload is</h2>
+<p>When you press Play, Unity can reload the scripting domain: throw away every loaded assembly and every static value, and load them again. That makes each Play start clean, and it takes many seconds in a project the size of KitARPG.</p>
+<p>The kit's project turns it off: <em>Project Settings &gt; Editor &gt; Enter Play Mode Settings</em> has <em>Reload Domain</em> off (scenes are still reloaded). Play then starts in a second or two. The price is that <strong>static fields keep their values from the last Play</strong>:</p>
+<ul>
+<li>a static list still holds the entries added last time,</li>
+<li>a static event still has last Play's subscribers, which point at destroyed objects,</li>
+<li>a static <code>Local</code> still points at the previous local player,</li>
+<li>a static counter keeps counting.</li>
+</ul>
+<p>Builds always start clean. These problems only show in the editor, and only on the second Play and after, which makes them easy to miss. Your project may have <em>Reload Domain</em> on; write your code so it works either way.</p>
+<h2 id="the-startup-moments"><a class="anchor" href="#the-startup-moments" aria-hidden="true">#</a>The startup moments</h2>
+<p><code>[RuntimeInitializeOnLoadMethod]</code> runs a static method at a fixed moment of each Play (and each build launch):</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Load type</th>
+<th>When</th>
+<th>Use it to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SubsystemRegistration</code></td>
+<td>First, before anything else</td>
+<td>Clear your own statics.</td>
+</tr>
+<tr>
+<td><code>AfterAssembliesLoaded</code></td>
+<td>After all assemblies are loaded</td>
+<td>Subscribe to other classes' static events; add menu entries and options.</td>
+</tr>
+<tr>
+<td><code>BeforeSplashScreen</code></td>
+<td>Before the splash screen</td>
+<td>(rarely needed)</td>
+</tr>
+<tr>
+<td><code>BeforeSceneLoad</code></td>
+<td>Before the first scene loads</td>
+<td>Install formulas and other replacements.</td>
+</tr>
+<tr>
+<td><code>AfterSceneLoad</code></td>
+<td>After the first scene loaded</td>
+<td>Things that need scene objects: <code>KitNetworkManager.Instance</code>, GM commands.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Within one load type, Unity doesn't define the order between methods of different classes. The kit's rules come from that.</p>
+<h2 id="the-kit-s-rules"><a class="anchor" href="#the-kit-s-rules" aria-hidden="true">#</a>The kit's rules</h2>
+<ol>
+<li><strong>Every class clears its own statics in <code>SubsystemRegistration</code>.</strong> Fields, events, collections and caches that hold state go back to their starting values in a method usually called <code>ResetStatics</code>.</li>
+<li><strong>Subscribe to another class's static events in <code>AfterAssembliesLoaded</code> or later.</strong> That class clears them in <code>SubsystemRegistration</code>; if you subscribed in the same phase, your subscription might be cleared after you made it.</li>
+<li><strong>Lists the kit fills with its own entries are rebuilt in <code>SubsystemRegistration</code></strong> (<code>ItemMenu.Entries</code>, <code>PlayerMenu.Entries</code>, <code>ClientOptions.All</code>, the GM commands). Add yours later.</li>
+<li><strong>The kit's formulas go back to its own in <code>SubsystemRegistration</code></strong> (<code>GameInstance.Formula</code>, <code>GameInstance.Combat</code>). Install yours in <code>BeforeSceneLoad</code>.</li>
+<li><strong>A class that registers something of its own in <code>SubsystemRegistration</code> clears and registers in the same method,</strong> so the order with other classes doesn't matter (<code>GmCommands</code>).</li>
+<li><strong>Work buffers emptied on every use and caches that stay valid are not cleared.</strong> A static <code>List</code> used as scratch space, or a computed value that can't change during the session, can stay.</li>
+</ol>
+<p>The game mode tables (<code>GameModes</code>) are an exception: they are never cleared, so mode assemblies can register from <code>SubsystemRegistration</code> in any order.</p>
+<h2 id="the-pattern-for-your-code"><a class="anchor" href="#the-pattern-for-your-code" aria-hidden="true">#</a>The pattern for your code</h2>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Kills</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// State of this class.</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ServerCounted</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 1. Clear own state first.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">counts</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<span class="w">            </span><span class="n">ServerCounted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// 2. Subscribe to the kit&#39;s events after the kit cleared them.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Monster</span><span class="p">.</span><span class="n">ServerKilled</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnKilled</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnKilled</span><span class="p">(</span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">killer</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">killer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">killer</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">counts</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">killer</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">            </span><span class="n">counts</span><span class="p">[</span><span class="n">killer</span><span class="p">.</span><span class="n">State</span><span class="p">.</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">;</span>
+<span class="w">            </span><span class="n">ServerCounted</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">killer</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>-=</code> before <code>+=</code> makes the subscription safe even if the method runs twice. Named methods (not lambdas) make <code>-=</code> possible.</p>
+<h3 id="statics-on-components"><a class="anchor" href="#statics-on-components" aria-hidden="true">#</a>Statics on components</h3>
+<p>A <code>NetworkBehaviour</code> or <code>MonoBehaviour</code> with static members follows the same rule:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerPet</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">PlayerPet</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Told</span><span class="p">;</span>
+
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Told</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStartAuthority</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStopAuthority</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>The templates for player systems and saved data already do this.</p>
+<h3 id="things-that-live-on-scene-objects"><a class="anchor" href="#things-that-live-on-scene-objects" aria-hidden="true">#</a>Things that live on scene objects</h3>
+<p>Events on objects that are created again on each Play (the network manager, a window in the HUD) don't need clearing: the old object is gone with its subscribers. That is why the kit's templates subscribe to <code>KitNetworkManager.ServerStarted</code> in <code>AfterSceneLoad</code> without unsubscribing.</p>
+<h3 id="lazy-caches"><a class="anchor" href="#lazy-caches" aria-hidden="true">#</a>Lazy caches</h3>
+<pre class="code"><code class="language-csharp"><span class="k">static</span><span class="w"> </span><span class="n">AttributeData</span><span class="w"> </span><span class="n">toughness</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">AttributeData</span><span class="w"> </span><span class="n">Toughness</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">get</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toughness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="s">&quot;toughness&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">toughness</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">toughness</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">toughness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</code></pre>
+<p>A cache of an asset survives Play harmlessly if the asset can't change, but clearing it costs nothing and covers edits made between Plays.</p>
+<h2 id="checklist"><a class="anchor" href="#checklist" aria-hidden="true">#</a>Checklist</h2>
+<p>For every <code>static</code> in your code, ask:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>It is</th>
+<th>Do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A value that changes during play (a counter, a <code>Local</code>, a dictionary of players)</td>
+<td>Reset in <code>SubsystemRegistration</code>.</td>
+</tr>
+<tr>
+<td>A static event of your class</td>
+<td>Set to null in <code>SubsystemRegistration</code>.</td>
+</tr>
+<tr>
+<td>A subscription to someone else's static event</td>
+<td>Make it in <code>AfterAssembliesLoaded</code> or later, with <code>-=</code> first.</td>
+</tr>
+<tr>
+<td>An entry in a kit list (menus, options, commands, validator checks in the editor)</td>
+<td>Add it after the kit filled the list.</td>
+</tr>
+<tr>
+<td>A <code>const</code> or <code>static readonly</code> value that never changes</td>
+<td>Nothing.</td>
+</tr>
+<tr>
+<td>A scratch buffer cleared before each use</td>
+<td>Nothing.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Editor-only statics (validator checks, pages) follow the editor's own lifetime, not Play: register them from <code>[InitializeOnLoadMethod]</code> and remove before adding (see <a href="editor-extensions.html">Editor extensions</a>).</p>
+<h2 id="testing-it"><a class="anchor" href="#testing-it" aria-hidden="true">#</a>Testing it</h2>
+<ol>
+<li>Press Play, do what your feature does, stop.</li>
+<li>Press Play again and do it again.</li>
+<li>Watch for doubled messages, events firing twice, counts that didn't start at zero, and <code>MissingReferenceException</code> from destroyed objects.</li>
+</ol>
+<p>The kit itself was tested this way: two Plays in a row in single player give the same subscribers, commands and menu entries.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Subscribing in <code>SubsystemRegistration</code>.</strong> The kit may clear the event after you. Subscribe in <code>AfterAssembliesLoaded</code> or later.</li>
+<li><strong>Clearing someone else's event.</strong> Each class clears only its own.</li>
+<li><strong>Clearing your event in one startup method and subscribing to it in another of the same type.</strong> The order is undefined: clear in <code>SubsystemRegistration</code>, subscribe in a later phase.</li>
+<li><strong>Lambdas in <code>+=</code> that run every Play</strong> on an event that isn't cleared.</li>
+<li><strong>Static references to scene objects</strong> without a reset: they become destroyed objects that compare equal to null but still hold memory.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="events.html">Events</a></li>
+<li><a href="templates.html">Templates</a></li>
+<li><a href="formulas.html">Formulas</a></li>
+<li><a href="menus-and-settings-options.html">Menus and settings options</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="example-bounty-board.html"><span>Previous</span>Example: bounty board</a><a class="next" href="security-rules.html"><span>Next</span>Security rules</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Fdomain-reload.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#what-domain-reload-is">What domain reload is</a></li><li class="l2"><a href="#the-startup-moments">The startup moments</a></li><li class="l2"><a href="#the-kit-s-rules">The kit&#x27;s rules</a></li><li class="l2"><a href="#the-pattern-for-your-code">The pattern for your code</a></li><li class="l3"><a href="#statics-on-components">Statics on components</a></li><li class="l3"><a href="#things-that-live-on-scene-objects">Things that live on scene objects</a></li><li class="l3"><a href="#lazy-caches">Lazy caches</a></li><li class="l2"><a href="#checklist">Checklist</a></li><li class="l2"><a href="#testing-it">Testing it</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

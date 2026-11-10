@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atualizações do kit em código · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/kit-updates-in-code.html">English</option><option value="../../es/devkit/kit-updates-in-code.html">Español</option><option value="kit-updates-in-code.html" selected>Português</option><option value="../../zh/devkit/kit-updates-in-code.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">Visão geral do DevKit</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Efeitos de habilidades</a></li><li><a href="item-effects.html">Efeitos de itens</a></li><li><a href="conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="quest-objectives.html">Objetivos de missão</a></li><li><a href="npc-options.html">Opções de NPC</a></li><li><a href="player-systems.html">Sistemas do jogador</a></li><li><a href="network-messages.html">Mensagens de rede</a></li><li><a href="gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="formulas.html">Fórmulas</a></li><li><a href="saving-data.html">Salvando dados</a></li><li><a href="events.html">Eventos</a></li><li><a href="overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="editor-extensions.html">Extensões do editor</a></li><li><a href="kit-updates-in-code.html" class="on" aria-current="page">Atualizações do kit em código</a></li><li><a href="talking-to-central.html">Falando com o Central</a></li><li><a href="service-modules.html">Módulos de serviço</a></li><li><a href="game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="domain-reload.html">Play sem domain reload</a></li><li><a href="security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Atualizações do kit em código</h1><p>Como entregar mudanças para jogos que já foram feitos com o seu pacote ou template: a classe <code>KitUpdate</code>, como o Overview encontra e aplica atualizações e exemplos completos que adicionam um componente a todo prefab de jogador e uma configuração ao jogo.</p>
+<h2 id="what-a-kit-update-is"><a class="anchor" href="#what-a-kit-update-is" aria-hidden="true">#</a>O que é uma atualização do kit</h2>
+<p>Quando uma nova versão do KitARPG adiciona algo de que um jogo precisa (uma moeda, um componente no jogador, uma janela no HUD), ela não pode reconstruir os prefabs e os dados do comprador: isso apagaria as mudanças dele. Em vez disso, ela traz uma atualização: uma classe pequena que verifica se aquilo está faltando e, quando pedido, adiciona só isso.</p>
+<p>Você pode fazer o mesmo. Se você vende ou reutiliza um pacote feito sobre o KitARPG (um jogo template, um módulo que você compartilha entre seus projetos), cada versão sua pode trazer atualizações para os jogos já feitos com ele. Elas aparecem na mesma lista das atualizações do próprio kit.</p>
+<p><strong>Onde o arquivo fica:</strong> em um assembly <code>Game.Editor</code> (ou no assembly de editor do seu pacote).</p>
+<h2 id="where-updates-show"><a class="anchor" href="#where-updates-show" aria-hidden="true">#</a>Onde as atualizações aparecem</h2>
+<ul>
+<li><strong>Overview</strong> na janela KitARPG mostra quantas atualizações estão esperando, com <strong>Apply</strong>.</li>
+<li><strong>Project Check</strong> lista cada uma como um aviso com um botão <strong>Apply</strong>.</li>
+<li>Play &amp; Servers e a página Shop avisam quando há atualizações esperando.</li>
+</ul>
+<p><strong>Apply</strong> abre um diálogo que lista toda atualização pendente com seu <code>Title</code> e suas <code>Changes</code>, seguido de &quot;Nothing else changes&quot;. Depois de confirmar, cada atualização que ainda é necessária roda na ordem de <code>Order</code>. Atualizações não podem ser aplicadas durante o Play.</p>
+<h2 id="the-kitupdate-class"><a class="anchor" href="#the-kitupdate-class" aria-hidden="true">#</a>A classe KitUpdate</h2>
+<p><code>KitUpdate</code> fica em <code>Blunnyn.KitARPG.Editor</code>. Toda subclasse não abstrata com um construtor sem parâmetros é encontrada pelo <code>TypeCache</code> da Unity.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Membro</th>
+<th>O que faz</th>
+<th>Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abstract string Title</code></td>
+<td>Uma linha, como &quot;Shop window in the HUD&quot;.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>abstract string Changes</code></td>
+<td>Exatamente o que <code>Apply</code> vai mudar, mostrado antes de rodar. Nomeie os assets e os campos.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>abstract bool Needed()</code></td>
+<td>True quando o projeto não tem aquilo. Chamado a cada poucos segundos pelas janelas (a resposta fica em cache por cerca de dois segundos), então mantenha-o barato.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>abstract string Apply()</code></td>
+<td>Faz a mudança e retorna o que fez. Lance uma exceção para informar que não conseguiu.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtual int Order</code></td>
+<td>Menor roda primeiro, para atualizações que dependem de outra. O kit usa de 10 a 80.</td>
+<td><code>100</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><code>KitUpdates</code> as executa:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Membro</th>
+<th>O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KitUpdates.All</code></td>
+<td>Todas as atualizações, em ordem.</td>
+</tr>
+<tr>
+<td><code>KitUpdates.Pending()</code></td>
+<td>As atualizações cujo <code>Needed()</code> é true agora.</td>
+</tr>
+<tr>
+<td><code>KitUpdates.Run(update, out string result)</code></td>
+<td>Roda uma, salva os assets e registra o resultado no log. False quando lançou uma exceção.</td>
+</tr>
+<tr>
+<td><code>KitUpdates.ApplyAll(updates)</code></td>
+<td>Pergunta uma vez com a lista e depois roda as que ainda são necessárias.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Uma exceção em <code>Needed()</code> é registrada como aviso e a atualização é tratada como não necessária.</p>
+<h2 id="rules-for-a-good-update"><a class="anchor" href="#rules-for-a-good-update" aria-hidden="true">#</a>Regras para uma boa atualização</h2>
+<ul>
+<li><strong>Adicione só o que falta.</strong> Verifique a coisa exata (um componente, o valor de um campo, um asset) e adicione só isso.</li>
+<li><strong>Nunca reconstrua.</strong> Não recrie um prefab, um HUD ou um asset de dados; carregue-o, mude uma coisa e salve.</li>
+<li><strong>Encontre as coisas do jeito que o jogo as tem.</strong> Os compradores renomeiam e movem assets. Procure-os por meio do <code>GameInstance</code> e do game database (<code>ModulesWindow.Find()</code>), não pelo caminho.</li>
+<li><strong>Seja idempotente.</strong> Depois de <code>Apply</code>, <code>Needed()</code> precisa retornar false. Rodar duas vezes não pode mudar nada na segunda vez.</li>
+<li><strong>Diga o que mudou.</strong> <code>Changes</code> antes, a string retornada depois.</li>
+</ul>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Exemplo: o template</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Kit Update (Editor)</strong> adiciona uma palavra ao filtro do chat:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// Something your own package adds to games already made with it. It shows in Overview with Apply</span>
+<span class="w">    </span><span class="c1">/// next to the kit&#39;s updates. Only add what is missing; never rebuild what the game changed.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyGameUpdate</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitUpdate</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;badword&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;My game: chat filter word&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Game Settings &gt; Chat: adds \&quot;{Word}\&quot; to the blocked words.&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Needed</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GameInstance</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">game</span><span class="p">.</span><span class="n">blockedWords</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">Word</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Apply</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GameInstance</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">();</span>
+<span class="w">            </span><span class="n">game</span><span class="p">.</span><span class="n">blockedWords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">game</span><span class="p">.</span><span class="n">blockedWords</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="n">Word</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+<span class="w">            </span><span class="n">EditorUtility</span><span class="p">.</span><span class="n">SetDirty</span><span class="p">(</span><span class="n">game</span><span class="p">);</span>
+<span class="w">            </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">SaveAssets</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Added \&quot;{Word}\&quot; to the blocked words.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="example-add-a-player-system-to-every-player-model"><a class="anchor" href="#example-add-a-player-system-to-every-player-model" aria-hidden="true">#</a>Exemplo: adicionar um sistema do jogador a todo modelo de jogador</h2>
+<p>Um componente seu (veja <a href="player-systems.html">Sistemas do jogador</a>) precisa estar em todo prefab de modelo de jogador, incluindo modelos que o comprador fizer depois. Esta atualização encontra os modelos pelo game database e adiciona o componente onde ele falta:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AddReputationUpdate</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitUpdate</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Reputation on every player model&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="s">&quot;Adds the Player Reputation component to each player model prefab that doesn&#39;t have it: &quot;</span>
+<span class="w">            </span><span class="o">+</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Missing</span><span class="p">().</span><span class="n">Select</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">name</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;. Nothing else on the prefabs changes.&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Order</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">GameObject</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Missing</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GameInstance</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">game</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">game</span><span class="p">.</span><span class="n">database</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Enumerable</span><span class="p">.</span><span class="n">Empty</span><span class="o">&lt;</span><span class="n">GameObject</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">game</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="n">playerModels</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerReputation</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Needed</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Missing</span><span class="p">().</span><span class="n">Any</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Apply</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">GameObject</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">Missing</span><span class="p">().</span><span class="n">ToList</span><span class="p">())</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetAssetPath</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
+<span class="w">                </span><span class="n">GameObject</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PrefabUtility</span><span class="p">.</span><span class="n">LoadPrefabContents</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">                </span><span class="k">try</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerReputation</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&lt;</span><span class="n">PlayerReputation</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">PrefabUtility</span><span class="p">.</span><span class="n">SaveAsPrefabAsset</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">done</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">PrefabUtility</span><span class="p">.</span><span class="n">UnloadPrefabContents</span><span class="p">(</span><span class="n">root</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">done</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Every model already had it.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Added to &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">done</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>LoadPrefabContents</code> e <code>SaveAsPrefabAsset</code> editam o próprio asset do prefab, do mesmo jeito que as atualizações do kit fazem. Como o Mirror precisa dos mesmos componentes no cliente e no servidor, refaça os dois builds depois de aplicar.</p>
+<h2 id="example-add-a-window-under-the-hud"><a class="anchor" href="#example-add-a-window-under-the-hud" aria-hidden="true">#</a>Exemplo: adicionar uma janela no HUD</h2>
+<p>As atualizações do kit que adicionam janelas ao HUD carregam o prefab do HUD de <code>GameInstance.hudPrefab</code>, encontram o grupo a que pertencem, adicionam seu objeto e salvam. A mesma estrutura para uma janela sua:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AddReputationWindowUpdate</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitUpdate</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Reputation window in the HUD&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Adds a Reputation Window object under Windows in the HUD prefab.&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">GameObject</span><span class="w"> </span><span class="n">Hud</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">()</span><span class="o">?.</span><span class="n">hudPrefab</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Needed</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GameObject</span><span class="w"> </span><span class="n">hud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hud</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">hud</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hud</span><span class="p">.</span><span class="n">GetComponentInChildren</span><span class="o">&lt;</span><span class="n">ReputationWindow</span><span class="o">&gt;</span><span class="p">(</span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Apply</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GameObject</span><span class="w"> </span><span class="n">hud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hud</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">InvalidOperationException</span><span class="p">(</span><span class="s">&quot;The GameInstance has no HUD prefab.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetAssetPath</span><span class="p">(</span><span class="n">hud</span><span class="p">);</span>
+<span class="w">        </span><span class="n">GameObject</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PrefabUtility</span><span class="p">.</span><span class="n">LoadPrefabContents</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">        </span><span class="k">try</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">GetComponentInChildren</span><span class="o">&lt;</span><span class="n">ReputationWindow</span><span class="o">&gt;</span><span class="p">(</span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;The HUD already had it.&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Transform</span><span class="w"> </span><span class="n">windows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="n">GetComponentsInChildren</span><span class="o">&lt;</span><span class="n">Transform</span><span class="o">&gt;</span><span class="p">(</span><span class="k">true</span><span class="p">).</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Windows&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">go</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameObject</span><span class="p">(</span><span class="s">&quot;Reputation Window&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">RectTransform</span><span class="p">));</span>
+<span class="w">            </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">SetParent</span><span class="p">(</span><span class="n">windows</span><span class="p">,</span><span class="w"> </span><span class="k">false</span><span class="p">);</span>
+<span class="w">            </span><span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&lt;</span><span class="n">ReputationWindow</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="n">PrefabUtility</span><span class="p">.</span><span class="n">SaveAsPrefabAsset</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Added the window to {hud.name}.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">PrefabUtility</span><span class="p">.</span><span class="n">UnloadPrefabContents</span><span class="p">(</span><span class="n">root</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>(<code>ReputationWindow</code> representa um componente de janela seu.) Procure os grupos do HUD pelo nome com uma alternativa, já que os compradores podem reorganizar o HUD. A estrutura do HUD está descrita em <a href="../gameplay/hud-and-windows.html">HUD e janelas</a>.</p>
+<h2 id="example-add-a-game-data-asset"><a class="anchor" href="#example-add-a-game-data-asset" aria-hidden="true">#</a>Exemplo: adicionar um asset de dados do jogo</h2>
+<p>Algumas atualizações adicionam conteúdo: uma moeda, um item de que o novo recurso precisa. Crie o asset ao lado do game database do jogo e liste-o lá:</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AddTokenCurrencyUpdate</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitUpdate</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Arena Token currency&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Creates the Arena Token currency next to the game database and lists it under Currencies.&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">GameDatabase</span><span class="w"> </span><span class="n">Database</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">()</span><span class="o">?.</span><span class="n">database</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Needed</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GameDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Database</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">db</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="s">&quot;arena_token&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">CurrencyData</span><span class="w"> </span><span class="n">_</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Apply</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GameDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Database</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">InvalidOperationException</span><span class="p">(</span><span class="s">&quot;No game database.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">Path</span><span class="p">.</span><span class="n">GetDirectoryName</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetAssetPath</span><span class="p">(</span><span class="n">db</span><span class="p">));</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScriptableObject</span><span class="p">.</span><span class="n">CreateInstance</span><span class="o">&lt;</span><span class="n">CurrencyData</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">token</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Arena Token&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">CreateAsset</span><span class="p">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GenerateUniqueAssetPath</span><span class="p">(</span><span class="s">$&quot;{folder}/Arena Token.asset&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="c1">// GameData ids are made from the name when empty.</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">so</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SerializedObject</span><span class="p">(</span><span class="n">token</span><span class="p">);</span>
+<span class="w">        </span><span class="n">so</span><span class="p">.</span><span class="n">FindProperty</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">).</span><span class="n">stringValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arena_token&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">so</span><span class="p">.</span><span class="n">ApplyModifiedPropertiesWithoutUndo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">db</span><span class="p">.</span><span class="n">currencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">currencies</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="n">token</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+<span class="w">        </span><span class="n">EditorUtility</span><span class="p">.</span><span class="n">SetDirty</span><span class="p">(</span><span class="n">db</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Created Arena Token and added it to the database.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>O id é definido por meio de <code>SerializedObject</code> porque <code>GameData.id</code> é um campo serializado privado. Escolha o id uma vez só; os salvamentos o guardam.</p>
+<h2 id="updates-and-start-over"><a class="anchor" href="#updates-and-start-over" aria-hidden="true">#</a>Atualizações e Start over</h2>
+<p>As atualizações são para jogos que mantêm seu conteúdo. <strong>Start over</strong> no Overview, em vez disso, monta a amostra inicial do zero, perdendo as mudanças feitas na amostra. Suas atualizações também devem funcionar em uma amostra nova: depois de Start over, <code>Needed()</code> decide de novo.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Erros comuns</h2>
+<ul>
+<li><strong><code>Needed()</code> que carrega todo prefab do projeto.</strong> Ele roda a cada poucos segundos. Passe pelas listas do database.</li>
+<li><strong>Reconstruir em vez de adicionar.</strong> As mudanças do comprador se perdem.</li>
+<li><strong>Caminhos para assets.</strong> Os compradores os movem e renomeiam.</li>
+<li><strong><code>Needed()</code> ainda true depois de <code>Apply</code>.</strong> A atualização aparece para sempre.</li>
+<li><strong>Código de editor em um assembly de runtime.</strong> As atualizações ficam em um assembly de editor.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Páginas relacionadas</h2>
+<ul>
+<li><a href="../start/updating-the-kit.html">Atualizando o kit</a></li>
+<li><a href="../editor/overview.html">Overview</a></li>
+<li><a href="editor-extensions.html">Extensões do editor</a></li>
+<li><a href="player-systems.html">Sistemas do jogador</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="editor-extensions.html"><span>Anterior</span>Extensões do editor</a><a class="next" href="talking-to-central.html"><span>Próximo</span>Falando com o Central</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fdevkit%2Fkit-updates-in-code.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-a-kit-update-is">O que é uma atualização do kit</a></li><li class="l2"><a href="#where-updates-show">Onde as atualizações aparecem</a></li><li class="l2"><a href="#the-kitupdate-class">A classe KitUpdate</a></li><li class="l2"><a href="#rules-for-a-good-update">Regras para uma boa atualização</a></li><li class="l2"><a href="#example-the-template">Exemplo: o template</a></li><li class="l2"><a href="#example-add-a-player-system-to-every-player-model">Exemplo: adicionar um sistema do jogador a todo modelo de jogador</a></li><li class="l2"><a href="#example-add-a-window-under-the-hud">Exemplo: adicionar uma janela no HUD</a></li><li class="l2"><a href="#example-add-a-game-data-asset">Exemplo: adicionar um asset de dados do jogo</a></li><li class="l2"><a href="#updates-and-start-over">Atualizações e Start over</a></li><li class="l2"><a href="#common-mistakes">Erros comuns</a></li><li class="l2"><a href="#related-pages">Páginas relacionadas</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

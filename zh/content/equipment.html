@@ -1,633 +1,633 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Equipment · KitARPG</title>
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<title>装备 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
 <script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top">
   <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
-  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0-rc.1</span></a>
   <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
   <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/equipment.html">English</option><option value="../../es/content/equipment.html">Español</option><option value="../../pt/content/equipment.html">Português</option><option value="equipment.html" selected>中文</option></select>
   <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
   <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
 </header>
 <div class="layout">
-  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>游戏内容</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html" class="on" aria-current="page">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
-  <main class="content"><div class="crumb">游戏内容</div><h1>Equipment</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>Equipment is everything a character wears or holds: armor, accessories, weapons, shields, ammo and cosmetics. This page covers the equipment slots, every field of armor, weapons, weapon types and ammo, random bonuses rolled per copy, cosmetics, and how to make a weapon step by step.</p>
-<h2 id="slots"><a class="anchor" href="#slots" aria-hidden="true">#</a>Slots</h2>
-<p>Every piece of gear has one slot (<code>EquipSlot</code>). The character has twelve gear positions, plus eight cosmetic positions over them.</p>
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section" open><summary>游戏内容</summary><ul><li><a href="classes.html">职业</a></li><li><a href="attributes-and-stats.html">属性与数值</a></li><li><a href="player-models.html">玩家模型</a></li><li><a href="items.html">物品</a></li><li><a href="equipment.html" class="on" aria-current="page">装备</a></li><li><a href="sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="currencies.html">货币</a></li><li><a href="skills.html">技能</a></li><li><a href="statuses-and-buffs.html">状态与增益</a></li><li><a href="monsters.html">怪物</a></li><li><a href="bosses.html">首领</a></li><li><a href="loot.html">掉落</a></li><li><a href="maps.html">地图</a></li><li><a href="npcs.html">NPC</a></li><li><a href="npc-shops.html">NPC 商店</a></li><li><a href="quests.html">任务</a></li><li><a href="conditions-and-actions.html">条件与动作</a></li><li><a href="dialogues.html">对话</a></li><li><a href="world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏内容</div><h1>装备</h1><p>装备是角色穿戴或持握的所有东西：盔甲、饰品、武器、盾牌、弹药和时装。本页介绍装备栏位、盔甲、武器、武器类型和弹药的每个字段、按副本随机的加成、时装，以及如何一步步制作武器。</p>
+<h2 id="slots"><a class="anchor" href="#slots" aria-hidden="true">#</a>栏位</h2><figure class="shot"><a href="../../assets/img/game/inventory.png" target="_blank"><img src="../../assets/img/game/inventory.png" alt="背包界面：角色周围是装备栏，右侧是背包。" loading="lazy"></a><figcaption>背包界面：角色周围是装备栏，右侧是背包。</figcaption></figure>
+<p>每件装备有一个栏位（<code>EquipSlot</code>）。角色有十二个装备位置，外加覆盖其上的八个时装位置。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Slot</th>
-<th>Position</th>
-<th>What goes there</th>
-<th>Shows on the body</th>
+<th>栏位</th>
+<th>位置</th>
+<th>放什么</th>
+<th>在身体上的显示</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Head</td>
 <td>0</td>
-<td>Hats, helmets, hoods, crowns</td>
-<td>Replaces the head region (and hides the hair, unless <em>Keeps Hair</em>)</td>
+<td>帽子、头盔、兜帽、王冠</td>
+<td>替换头部区域（并隐藏头发，除非设置了 <em>Keeps Hair</em>）</td>
 </tr>
 <tr>
 <td>Chest</td>
 <td>1</td>
-<td>Armor, robes, shirts</td>
-<td>Replaces the chest region</td>
+<td>盔甲、长袍、衬衫</td>
+<td>替换胸部区域</td>
 </tr>
 <tr>
 <td>Hands</td>
 <td>2</td>
-<td>Gloves, gauntlets, bracers</td>
-<td>Replaces the hands region</td>
+<td>手套、护手、护腕</td>
+<td>替换手部区域</td>
 </tr>
 <tr>
 <td>Legs</td>
 <td>3</td>
-<td>Pants, skirts, greaves</td>
-<td>Replaces the legs region</td>
+<td>裤子、裙子、护胫</td>
+<td>替换腿部区域</td>
 </tr>
 <tr>
 <td>Feet</td>
 <td>4</td>
-<td>Boots, shoes</td>
-<td>Replaces the feet region</td>
+<td>靴子、鞋</td>
+<td>替换脚部区域</td>
 </tr>
 <tr>
 <td>MainHand</td>
 <td>5</td>
-<td>Weapons</td>
-<td>Held in the right hand bone (or left, for items marked <em>Left Hand</em>)</td>
+<td>武器</td>
+<td>持于右手骨骼（标记了 <em>Left Hand</em> 的物品持于左手）</td>
 </tr>
 <tr>
 <td>OffHand</td>
 <td>6</td>
-<td>Shields, off hand items, a second one-handed weapon whose type allows dual wield</td>
-<td>Held in the left hand bone</td>
+<td>盾牌、副手物品、武器类型允许双持的第二把单手武器</td>
+<td>持于左手骨骼</td>
 </tr>
 <tr>
 <td>Ring</td>
-<td>7 and 9</td>
-<td>Rings. A character wears two: a ring fits either ring position.</td>
-<td>Not shown</td>
+<td>7 和 9</td>
+<td>戒指。角色可戴两枚：戒指可以放在任一戒指位置。</td>
+<td>不显示</td>
 </tr>
 <tr>
 <td>Amulet</td>
 <td>8</td>
-<td>Necklaces and amulets</td>
-<td>Not shown</td>
+<td>项链和护身符</td>
+<td>不显示</td>
 </tr>
 <tr>
 <td>Ammo</td>
 <td>10</td>
-<td>Arrows, bolts</td>
-<td>Not shown</td>
+<td>箭、弩矢</td>
+<td>不显示</td>
 </tr>
 <tr>
 <td>Back</td>
 <td>11</td>
-<td>Capes, packs, wings</td>
-<td>Added on the back (the body has nothing there)</td>
+<td>披风、背包、翅膀</td>
+<td>添加在背部（身体在那里没有任何东西）</td>
 </tr>
 </tbody>
 </table></div>
-<p>Rules the server enforces when equipping:</p>
+<p>装备时服务器执行的规则：</p>
 <ul>
-<li>The character must meet the item's <em>Required Level</em> and be one of its <em>Classes</em> (when the list isn't empty).</li>
-<li>A two-handed weapon and an off hand item don't go together. Equipping one sends the other back to the bag; if the bag has no room, the equip is refused.</li>
-<li>A one-handed weapon fits the off hand only when its weapon type has <em>Dual Wield</em>.</li>
-<li>Cosmetic-only items go only in cosmetic positions.</li>
+<li>角色必须满足物品的 <em>Required Level</em>，并且是其 <em>Classes</em> 之一（列表不为空时）。</li>
+<li>双手武器和副手物品不能同时装备。装备其中一个会把另一个送回背包；如果背包没有空间，装备会被拒绝。</li>
+<li>单手武器只有在其武器类型带有 <em>Dual Wield</em> 时才能放入副手。</li>
+<li>纯时装物品只能放在时装位置。</li>
 </ul>
-<p>Players equip by dragging from the bag to a slot, or with right click on an item in the bag; right click on a worn item takes it off. Worn gear still counts toward the bag's weight when bags are limited by weight. See <a href="../gameplay/inventory-and-bank.html">Inventory and bank</a>.</p>
-<h2 id="where-gear-is-in-the-editor"><a class="anchor" href="#where-gear-is-in-the-editor" aria-hidden="true">#</a>Where gear is in the editor</h2>
-<p><strong>Game Database &gt; Items &gt; Items</strong> has a subcategory per kind of gear: Weapons, Shields, Hats, Cloaks, Amulets, Rings, Chest, Gloves, Legs, Boots, Cosmetics and Ammo. A new entry made in one of them already has the right slot. You can also create assets with <strong>Create &gt; KitARPG &gt; Items &gt; Armor</strong>, <strong>Weapon</strong> and <strong>Ammo</strong>.</p>
-<p>The item page shows the tooltip as players see it, with random bonuses as ranges. Gear with fixed bonuses shows a card offering <strong>Make them roll</strong> (see <a href="#random-bonuses-rolled-per-copy">random bonuses</a>).</p>
-<h2 id="armor-fields"><a class="anchor" href="#armor-fields" aria-hidden="true">#</a>Armor fields</h2>
-<p>Armor (<code>EquipmentData</code>) has every <a href="items.html#fields-every-item-has">field items have</a>, plus these, grouped in cards.</p>
-<h3 id="slot-and-cosmetic"><a class="anchor" href="#slot-and-cosmetic" aria-hidden="true">#</a>Slot and cosmetic</h3>
+<p>玩家通过把物品从背包拖到栏位，或在背包中右键点击物品来装备；右键点击已穿戴的物品会卸下它。背包按重量限制时，穿戴的装备仍计入背包重量。参见<a href="../gameplay/inventory-and-bank.html">背包与仓库</a>。</p>
+<h2 id="where-gear-is-in-the-editor"><a class="anchor" href="#where-gear-is-in-the-editor" aria-hidden="true">#</a>装备在编辑器中的位置</h2>
+<p><strong>Game Database &gt; Items &gt; Items</strong> 为每类装备设有一个子分类：Weapons、Shields、Hats、Cloaks、Amulets、Rings、Chest、Gloves、Legs、Boots、Cosmetics 和 Ammo。在其中创建的新条目已带有正确的栏位。你也可以用 <strong>Create &gt; KitARPG &gt; Items &gt; Armor</strong>、<strong>Weapon</strong> 和 <strong>Ammo</strong> 创建资源。</p>
+<p>物品页面显示玩家看到的提示框，随机加成显示为范围。带有固定加成的装备会显示一张提供 <strong>Make them roll</strong> 的卡片（参见<a href="#random-bonuses-rolled-per-copy">随机加成</a>）。</p>
+<h2 id="armor-fields"><a class="anchor" href="#armor-fields" aria-hidden="true">#</a>盔甲字段</h2>
+<p>盔甲（<code>EquipmentData</code>）拥有<a href="items.html#fields-every-item-has">物品的所有字段</a>，外加以下字段，分组在卡片中。</p>
+<h3 id="slot-and-cosmetic"><a class="anchor" href="#slot-and-cosmetic" aria-hidden="true">#</a>栏位与时装</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Slot</em> (<code>slot</code>)</td>
-<td>Where it is worn.</td>
+<td><em>Slot</em>（<code>slot</code>）</td>
+<td>穿戴的位置。</td>
 <td>Chest</td>
 </tr>
 <tr>
-<td><em>Cosmetic</em> (<code>cosmetic</code>)</td>
-<td>Only changes the look. Worn in the cosmetic position over its region, never gives stats, and goes nowhere else.</td>
+<td><em>Cosmetic</em>（<code>cosmetic</code>）</td>
+<td>只改变外观。穿在其区域上方的时装位置，永不提供数值，也不能放在其他地方。</td>
 <td>Off</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="who-can-use-it"><a class="anchor" href="#who-can-use-it" aria-hidden="true">#</a>Who can use it</h3>
+<h3 id="who-can-use-it"><a class="anchor" href="#who-can-use-it" aria-hidden="true">#</a>谁可以使用</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Required Level</em> (<code>requiredLevel</code>)</td>
-<td>Lowest character level that can wear it. The tooltip shows &quot;Requires level N&quot;, in orange when the reader is below it.</td>
+<td><em>Required Level</em>（<code>requiredLevel</code>）</td>
+<td>可以穿戴它的最低角色等级。提示框显示 &quot;Requires level N&quot;，阅读者低于该等级时以橙色显示。</td>
 <td>1</td>
 </tr>
 <tr>
-<td><em>Classes</em> (<code>classes</code>)</td>
-<td>Classes that can wear or wield it. Empty means any class. The tooltip says &quot;Your class can't use this&quot; when it doesn't fit.</td>
-<td>Empty</td>
+<td><em>Classes</em>（<code>classes</code>）</td>
+<td>可以穿戴或持握它的职业。留空表示任何职业。不符合时提示框显示 &quot;Your class can't use this&quot;。</td>
+<td>空</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="bonuses"><a class="anchor" href="#bonuses" aria-hidden="true">#</a>Bonuses</h3>
+<h3 id="bonuses"><a class="anchor" href="#bonuses" aria-hidden="true">#</a>加成</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Random Bonuses</em> (<code>randomBonuses</code>)</td>
-<td>Stats, attributes, damage and resistances, each with a minimum and a maximum. Every copy rolls its own value when it is made and keeps it. Same minimum and maximum never changes. See below.</td>
-<td>Empty</td>
+<td><em>Random Bonuses</em>（<code>randomBonuses</code>）</td>
+<td>数值、属性、伤害和抗性，各带最小值和最大值。每个副本在生成时随机取自己的值并永久保留。最小值和最大值相同则永不变化。见下文。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Bonuses</em> (<code>bonuses</code>)</td>
-<td>Bonuses that never roll, like skill ranks. A full <a href="attributes-and-stats.html#the-modifier-bundle">modifier bundle</a>.</td>
-<td>Empty</td>
+<td><em>Bonuses</em>（<code>bonuses</code>）</td>
+<td>永不随机的加成，例如技能等级。一个完整的<a href="attributes-and-stats.html#the-modifier-bundle">修正值组合</a>。</td>
+<td>空</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="look-and-wear"><a class="anchor" href="#look-and-wear" aria-hidden="true">#</a>Look and wear</h3>
+<h3 id="look-and-wear"><a class="anchor" href="#look-and-wear" aria-hidden="true">#</a>外观与穿戴</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Model Variants</em> (<code>modelVariants</code>)</td>
-<td>Other pieces for player models that need their own fit: <em>Model Id</em> (a player model's id) and <em>Model</em>. A character uses the variant for its model, or <em>Model</em> when there is none.</td>
-<td>Empty</td>
+<td><em>Model Variants</em>（<code>modelVariants</code>）</td>
+<td>为需要自己适配的玩家模型提供的其他部件：<em>Model Id</em>（玩家模型的 id）和 <em>Model</em>。角色使用其模型对应的变体，没有时使用 <em>Model</em>。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Keeps Hair</em> (<code>keepsHair</code>)</td>
-<td>Head gear that sits over the hair instead of replacing it, like a crown or a headband.</td>
+<td><em>Keeps Hair</em>（<code>keepsHair</code>）</td>
+<td>覆盖在头发上而不是替换头发的头部装备，例如王冠或头带。</td>
 <td>Off</td>
 </tr>
 <tr>
-<td><em>Max Durability</em> (<code>maxDurability</code>)</td>
-<td><code>0</code> means it never wears out. Each copy has a durability value saved with it; the kit's own systems don't lower it, so it is there for your own rules.</td>
+<td><em>Max Durability</em>（<code>maxDurability</code>）</td>
+<td><code>0</code> 表示永不损耗。每个副本都随之保存一个耐久值；套件自身的系统不会降低它，因此它留给你自己的规则使用。</td>
 <td>0</td>
 </tr>
 <tr>
-<td><em>Set</em> (<code>set</code>)</td>
-<td>The <a href="sets-upgrades-and-sockets.html#equipment-sets">equipment set</a> this piece belongs to.</td>
+<td><em>Set</em>（<code>set</code>）</td>
+<td>该部件所属的<a href="sets-upgrades-and-sockets.html#equipment-sets">装备套装</a>。</td>
 <td>None</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="upgrades-and-sockets"><a class="anchor" href="#upgrades-and-sockets" aria-hidden="true">#</a>Upgrades and sockets</h3>
+<h3 id="upgrades-and-sockets"><a class="anchor" href="#upgrades-and-sockets" aria-hidden="true">#</a>强化与镶孔</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Upgradable</em> (<code>upgradable</code>)</td>
-<td>Can be upgraded at the forge (+1, +2...).</td>
+<td><em>Upgradable</em>（<code>upgradable</code>）</td>
+<td>可以在锻造台强化（+1、+2……）。</td>
 <td>On</td>
 </tr>
 <tr>
-<td><em>Upgrade</em> (<code>upgrade</code>)</td>
-<td>Its own upgrade rules. Empty uses the game database's.</td>
+<td><em>Upgrade</em>（<code>upgrade</code>）</td>
+<td>它自己的强化规则。留空则使用游戏数据库的规则。</td>
 <td>None</td>
 </tr>
 <tr>
-<td><em>Sockets</em> (<code>sockets</code>)</td>
-<td>How many gems it holds.</td>
+<td><em>Sockets</em>（<code>sockets</code>）</td>
+<td>能镶嵌多少颗宝石。</td>
 <td>0</td>
 </tr>
 <tr>
-<td><em>Salvage</em> (<code>salvage</code>)</td>
-<td>What salvaging or breaking it gives. Empty uses the upgrade rules'.</td>
-<td>Empty</td>
+<td><em>Salvage</em>（<code>salvage</code>）</td>
+<td>分解或损坏时给予什么。留空则使用强化规则中的设置。</td>
+<td>空</td>
 </tr>
 </tbody>
 </table></div>
-<p>All of this is on <a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a>.</p>
-<h3 id="held-in-hand"><a class="anchor" href="#held-in-hand" aria-hidden="true">#</a>Held in hand</h3>
+<p>以上内容详见<a href="sets-upgrades-and-sockets.html">套装、强化与镶孔</a>。</p>
+<h3 id="held-in-hand"><a class="anchor" href="#held-in-hand" aria-hidden="true">#</a>手持</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Left Hand</em> (<code>leftHand</code>)</td>
-<td>Weapons and shields: the model is held by the left hand bone. The sample's bows use it.</td>
+<td><em>Left Hand</em>（<code>leftHand</code>）</td>
+<td>武器和盾牌：模型由左手骨骼持握。示例中的弓使用它。</td>
 <td>Off</td>
 </tr>
 <tr>
-<td><em>Hold Position</em> (<code>holdPosition</code>)</td>
-<td>Offset from the hand bone, in meters.</td>
+<td><em>Hold Position</em>（<code>holdPosition</code>）</td>
+<td>相对于手部骨骼的偏移，单位为米。</td>
 <td>0, 0, 0</td>
 </tr>
 <tr>
-<td><em>Hold Rotation</em> (<code>holdRotation</code>)</td>
-<td>Rotation from the hand bone, in degrees.</td>
+<td><em>Hold Rotation</em>（<code>holdRotation</code>）</td>
+<td>相对于手部骨骼的旋转，单位为度。</td>
 <td>0, 0, 0</td>
 </tr>
 <tr>
-<td><em>Worn Effect</em> (<code>wornEffect</code>)</td>
-<td>A looping effect while worn. Held gear carries it on its model, and particle systems shaped as a Mesh Renderer with no renderer set emit from the weapon's mesh (turn on Read/Write on the weapon mesh). Body gear carries it on its region's bone, one per hand or foot.</td>
+<td><em>Worn Effect</em>（<code>wornEffect</code>）</td>
+<td>穿戴期间循环播放的特效。手持装备把它挂在其模型上，形状设为 Mesh Renderer 但未指定渲染器的粒子系统会从武器网格发射（请在武器网格上开启 Read/Write）。身体装备把它挂在其区域的骨骼上，每只手或脚一个。</td>
 <td>None</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="weapons"><a class="anchor" href="#weapons" aria-hidden="true">#</a>Weapons</h2>
-<p>A weapon (<code>WeaponData</code>) is armor in the main hand with damage and a weapon type. A new weapon starts in the MainHand slot with a stack of 1.</p>
+<h2 id="weapons"><a class="anchor" href="#weapons" aria-hidden="true">#</a>武器</h2><figure class="shot"><a href="../../assets/img/editor/db-items-weapons.png" target="_blank"><img src="../../assets/img/editor/db-items-weapons.png" alt="Game Database 中的一件武器及其随机加成。" loading="lazy"></a><figcaption>Game Database 中的一件武器及其随机加成。</figcaption></figure><figure class="shot"><a href="../../assets/img/art/weapons.png" target="_blank"><img src="../../assets/img/art/weapons.png" alt="各类武器。" loading="lazy"></a><figcaption>各类武器。</figcaption></figure>
+<p>武器（<code>WeaponData</code>）是主手中的盔甲，带有伤害和武器类型。新武器从 MainHand 栏位开始，堆叠上限为 1。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Weapon Type</em> (<code>weaponType</code>)</td>
-<td>Sword, bow, staff... Sets range, speed, hands, ammo and attack effects. Skills can require it.</td>
+<td><em>Weapon Type</em>（<code>weaponType</code>）</td>
+<td>剑、弓、法杖……决定射程、速度、单双手、弹药和攻击特效。技能可以要求它。</td>
 <td>None</td>
 </tr>
 <tr>
-<td><em>Damages</em> (<code>damages</code>)</td>
-<td>Rolls of a basic attack, one per element: <em>Element</em> (empty is the default element), <em>Min</em> and <em>Max</em>. Each roll is a hit of its own element.</td>
-<td>One neutral roll, 4 to 6</td>
+<td><em>Damages</em>（<code>damages</code>）</td>
+<td>普通攻击的伤害取值，每种元素一个：<em>Element</em>（留空为默认元素）、<em>Min</em> 和 <em>Max</em>。每个取值都是其元素的一次独立命中。</td>
+<td>一个中性取值，4 到 6</td>
 </tr>
 </tbody>
 </table></div>
-<p>A basic attack rolls every entry between its min and max, adds the attacker's damage for that element, multiplies by power, takes off the defender's resistance and percent resistance for that element, and adds the elements up. A critical multiplies the total. The full formula is on <a href="../gameplay/combat.html">Combat</a>.</p>
-<p>Upgrading a weapon grows its damage rolls by the upgrade's percent, rounded: a 10 to 14 sword at +20% hits 12 to 17.</p>
-<p>Weapons are what skills scale with: a damage effect with <em>Weapon Scale</em> adds the weapon's rolls times that scale. See <a href="skills.html#damage">Skills</a>.</p>
-<h3 id="weapon-types"><a class="anchor" href="#weapon-types" aria-hidden="true">#</a>Weapon types</h3>
-<p>Weapon types are in <strong>Game Database &gt; Combat &gt; Weapon Types</strong>. Create one with <strong>Create &gt; KitARPG &gt; Items &gt; Weapon Type</strong>.</p>
+<p>普通攻击会在每个条目的最小值和最大值之间取值，加上攻击者对该元素的伤害，乘以威力，扣除防御者对该元素的抗性和百分比抗性，再把各元素相加。暴击会乘以总值。完整公式见<a href="../gameplay/combat.html">战斗</a>。</p>
+<p>强化武器会按强化百分比提高其伤害取值并取整：10 到 14 的剑在 +20% 时打出 12 到 17。</p>
+<p>技能随武器成长：带有 <em>Weapon Scale</em> 的伤害效果会加上武器取值乘以该比例。参见<a href="skills.html#damage">技能</a>。</p>
+<h3 id="weapon-types"><a class="anchor" href="#weapon-types" aria-hidden="true">#</a>武器类型</h3>
+<p>武器类型位于 <strong>Game Database &gt; Combat &gt; Weapon Types</strong>。用 <strong>Create &gt; KitARPG &gt; Items &gt; Weapon Type</strong> 创建一个。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Id</em>, <em>Display Name</em>, <em>Description</em>, <em>Icon</em></td>
-<td>As for every game data asset. The display name is the weapon's category in tooltips.</td>
+<td><em>Id</em>、<em>Display Name</em>、<em>Description</em>、<em>Icon</em></td>
+<td>与所有游戏数据资源相同。显示名称是武器在提示框中的分类。</td>
 <td></td>
 </tr>
 <tr>
-<td><em>Two Handed</em> (<code>twoHanded</code>)</td>
-<td>Takes both hands, so nothing goes in the off hand.</td>
+<td><em>Two Handed</em>（<code>twoHanded</code>）</td>
+<td>占用双手，因此副手不能放任何东西。</td>
 <td>Off</td>
 </tr>
 <tr>
-<td><em>Dual Wield</em> (<code>dualWield</code>)</td>
-<td>One-handed weapons of this type can also go in the off hand. Basic attacks then take turns between both hands; skills use the main hand.</td>
+<td><em>Dual Wield</em>（<code>dualWield</code>）</td>
+<td>该类型的单手武器也可以放在副手。此时普通攻击在两只手之间轮流进行；技能使用主手。</td>
 <td>Off</td>
 </tr>
 <tr>
-<td><em>Uses Ammo</em> (<code>usesAmmo</code>)</td>
-<td>Each basic attack, and each skill that uses the weapon attack, spends one ammo from the ammo slot. With no fitting ammo the weapon can't attack.</td>
+<td><em>Uses Ammo</em>（<code>usesAmmo</code>）</td>
+<td>每次普通攻击以及每个使用武器攻击的技能，都会消耗弹药栏位中的一发弹药。没有合适的弹药时武器无法攻击。</td>
 <td>Off</td>
 </tr>
 <tr>
-<td><em>Attack Range</em> (<code>attackRange</code>)</td>
-<td>Distance of the basic attack, in meters.</td>
+<td><em>Attack Range</em>（<code>attackRange</code>）</td>
+<td>普通攻击的距离，单位为米。</td>
 <td>2</td>
 </tr>
 <tr>
-<td><em>Attacks Per Second</em> (<code>attacksPerSecond</code>)</td>
-<td>Basic attacks per second before the character's attack speed.</td>
+<td><em>Attacks Per Second</em>（<code>attacksPerSecond</code>）</td>
+<td>在计入角色攻击速度之前的每秒普通攻击次数。</td>
 <td>1</td>
 </tr>
 <tr>
-<td><em>Effects</em> (<code>effects</code>)</td>
-<td>The basic attack's effects: <em>Launch Effect</em> on the attacker at each hit (a swing trail or flash), <em>Projectile</em> (prefab, the socket it leaves from and its speed in meters per second; damage lands when it arrives) and <em>Hit Effect</em> on whoever is hit (empty uses the element's).</td>
-<td>Launch effect on the right hand, no projectile</td>
+<td><em>Effects</em>（<code>effects</code>）</td>
+<td>普通攻击的特效：每次命中时攻击者身上的 <em>Launch Effect</em>（挥砍轨迹或闪光）、<em>Projectile</em>（预制体、发射的挂点以及以米每秒计的速度；伤害在到达时生效）以及被击中者身上的 <em>Hit Effect</em>（留空则使用元素的特效）。</td>
+<td>右手上的发射特效，无投射物</td>
 </tr>
 </tbody>
 </table></div>
-<p>The attack animation for each weapon type is set per character, in the player model's Character Animations. See <a href="player-models.html#animations">Animations</a>.</p>
-<p>The sample has 16 weapon types:</p>
+<p>每种武器类型的攻击动画在每个角色上设置，即玩家模型的 Character Animations 中。参见<a href="player-models.html#animations">动画</a>。</p>
+<p>示例中有 16 种武器类型：</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Hands</th>
-<th>Range</th>
-<th>Attacks per second</th>
-<th>Other</th>
+<th>类型</th>
+<th>单双手</th>
+<th>射程</th>
+<th>每秒攻击次数</th>
+<th>其他</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Sword</td>
-<td>One</td>
+<td>单手</td>
 <td>2</td>
 <td>1.2</td>
-<td>Dual wield</td>
+<td>双持</td>
 </tr>
 <tr>
 <td>Greatsword</td>
-<td>Two</td>
+<td>双手</td>
 <td>2.5</td>
 <td>0.8</td>
 <td></td>
 </tr>
 <tr>
 <td>Spear</td>
-<td>Two</td>
+<td>双手</td>
 <td>3</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
 <td>Bow</td>
-<td>Two</td>
+<td>双手</td>
 <td>12</td>
 <td>1</td>
-<td>Uses ammo, arrow projectile</td>
+<td>使用弹药，箭矢投射物</td>
 </tr>
 <tr>
 <td>Axe</td>
-<td>One</td>
+<td>单手</td>
 <td>2</td>
 <td>1.1</td>
-<td>Dual wield</td>
+<td>双持</td>
 </tr>
 <tr>
 <td>Mace</td>
-<td>One</td>
+<td>单手</td>
 <td>2</td>
 <td>0.9</td>
 <td></td>
 </tr>
 <tr>
 <td>Halberd</td>
-<td>Two</td>
+<td>双手</td>
 <td>3.2</td>
 <td>0.8</td>
 <td></td>
 </tr>
 <tr>
 <td>Scythe</td>
-<td>Two</td>
+<td>双手</td>
 <td>2.8</td>
 <td>0.85</td>
 <td></td>
 </tr>
 <tr>
 <td>Crossbow</td>
-<td>Two</td>
+<td>双手</td>
 <td>14</td>
 <td>0.7</td>
-<td>Uses ammo, arrow projectile</td>
+<td>使用弹药，箭矢投射物</td>
 </tr>
 <tr>
 <td>Wand</td>
-<td>One</td>
+<td>单手</td>
 <td>9</td>
 <td>1.1</td>
-<td>Orb projectile</td>
+<td>法球投射物</td>
 </tr>
 <tr>
 <td>Staff</td>
-<td>Two</td>
+<td>双手</td>
 <td>11</td>
 <td>0.8</td>
-<td>Orb projectile</td>
+<td>法球投射物</td>
 </tr>
 <tr>
 <td>Scepter</td>
-<td>One</td>
+<td>单手</td>
 <td>9</td>
 <td>1</td>
-<td>Orb projectile</td>
+<td>法球投射物</td>
 </tr>
 <tr>
 <td>Tome</td>
-<td>One</td>
+<td>单手</td>
 <td>10</td>
 <td>0.9</td>
-<td>Orb projectile</td>
+<td>法球投射物</td>
 </tr>
 <tr>
 <td>Orb</td>
-<td>One</td>
+<td>单手</td>
 <td>10</td>
 <td>1</td>
-<td>Orb projectile</td>
+<td>法球投射物</td>
 </tr>
 <tr>
 <td>Dagger</td>
-<td>One</td>
+<td>单手</td>
 <td>1.6</td>
 <td>1.5</td>
-<td>Dual wield</td>
+<td>双持</td>
 </tr>
 <tr>
 <td>Fist</td>
-<td>One</td>
+<td>单手</td>
 <td>1.6</td>
 <td>1.4</td>
-<td>Dual wield</td>
+<td>双持</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="ammo"><a class="anchor" href="#ammo" aria-hidden="true">#</a>Ammo</h2>
-<p>Ammo (<code>AmmoData</code>) is gear worn in the ammo slot. A new ammo item starts with a stack of 500, weight 0 and <em>Upgradable</em> off.</p>
+<h2 id="ammo"><a class="anchor" href="#ammo" aria-hidden="true">#</a>弹药</h2>
+<p>弹药（<code>AmmoData</code>）是穿戴在弹药栏位中的装备。新弹药物品的堆叠上限为 500，重量为 0，<em>Upgradable</em> 关闭。</p>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Weapon Types</em> (<code>weaponTypes</code>)</td>
-<td>Weapon types that shoot it. Empty means any type with <em>Uses Ammo</em>.</td>
-<td>Empty</td>
+<td><em>Weapon Types</em>（<code>weaponTypes</code>）</td>
+<td>可以发射它的武器类型。留空表示任何带有 <em>Uses Ammo</em> 的类型。</td>
+<td>空</td>
 </tr>
 </tbody>
 </table></div>
-<p>Every other armor field applies. Ammo bonuses count while it is worn, so fire arrows can add fire damage to every shot. The sample has Arrows and Fire Arrows (+4 Fire damage) for bows, and Bolts and Frost Bolts (+4 Water damage) for crossbows. Hunters start with 200 Arrows worn.</p>
-<div class="callout warning"><div class="callout-title">警告</div><p>Ammo stacks, so it must not have random bonuses: a copy with its own rolls can't share a stack. Put ammo bonuses in <em>Bonuses</em>. <strong>Project Check</strong> warns about any gear that stacks and rolls, and offers <strong>Make bonuses fixed</strong>.</p>
+<p>所有其他盔甲字段都适用。弹药在穿戴期间其加成生效，因此火焰箭可以为每次射击增加火焰伤害。示例中有供弓使用的 Arrows 和 Fire Arrows（+4 Fire 伤害），以及供弩使用的 Bolts 和 Frost Bolts（+4 Water 伤害）。Hunter 开始时穿戴着 200 支 Arrows。</p>
+<div class="callout warning"><div class="callout-title">警告</div><p>弹药会堆叠，因此不能有随机加成：带有自己取值的副本无法共享一个堆叠。把弹药加成放在 <em>Bonuses</em> 中。<strong>Project Check</strong> 会对任何既堆叠又随机的装备发出警告，并提供 <strong>Make bonuses fixed</strong>。</p>
 </div>
-<h2 id="random-bonuses-rolled-per-copy"><a class="anchor" href="#random-bonuses-rolled-per-copy" aria-hidden="true">#</a>Random bonuses rolled per copy</h2>
-<p>Every bonus on gear can have a minimum and a maximum. When a copy is made (dropped as loot, bought, given as a start item, a quest reward), the server rolls a whole number between them for each bonus, and that copy keeps its values for good. Two Knight Helms are rarely the same.</p>
-<h3 id="fields-of-a-random-bonus"><a class="anchor" href="#fields-of-a-random-bonus" aria-hidden="true">#</a>Fields of a random bonus</h3>
+<h2 id="random-bonuses-rolled-per-copy"><a class="anchor" href="#random-bonuses-rolled-per-copy" aria-hidden="true">#</a>按副本随机的加成</h2>
+<p>装备上的每项加成都可以有最小值和最大值。生成副本时（作为掉落、购买、作为初始物品、任务奖励），服务器会为每项加成在两者之间随机取一个整数，该副本永久保留这些值。两顶 Knight Helm 很少完全相同。</p>
+<h3 id="fields-of-a-random-bonus"><a class="anchor" href="#fields-of-a-random-bonus" aria-hidden="true">#</a>随机加成的字段</h3>
 <div class="table"><table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
-<th>Default</th>
+<th>字段</th>
+<th>作用</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Target</em> (<code>target</code>)</td>
-<td>What it raises: <strong>Stat</strong> (flat), <strong>Stat Percent</strong> (percent of the stat's total), <strong>Damage</strong> (flat element damage), <strong>Resistance</strong> (flat element resistance), <strong>Resistance Percent</strong> or <strong>Attribute</strong> (points).</td>
+<td><em>Target</em>（<code>target</code>）</td>
+<td>它提升什么：<strong>Stat</strong>（固定值）、<strong>Stat Percent</strong>（数值总值的百分比）、<strong>Damage</strong>（固定元素伤害）、<strong>Resistance</strong>（固定元素抗性）、<strong>Resistance Percent</strong> 或 <strong>Attribute</strong>（点数）。</td>
 <td>Stat</td>
 </tr>
 <tr>
-<td><em>Stat</em> (<code>stat</code>)</td>
-<td>The stat, picked from a list. Only for Stat and Stat Percent.</td>
-<td>Empty</td>
+<td><em>Stat</em>（<code>stat</code>）</td>
+<td>数值，从列表中选择。仅用于 Stat 和 Stat Percent。</td>
+<td>空</td>
 </tr>
 <tr>
-<td><em>Element</em> (<code>element</code>)</td>
-<td>Only for Damage, Resistance and Resistance Percent. Empty is the default element.</td>
+<td><em>Element</em>（<code>element</code>）</td>
+<td>仅用于 Damage、Resistance 和 Resistance Percent。留空为默认元素。</td>
 <td>None</td>
 </tr>
 <tr>
-<td><em>Attribute</em> (<code>attribute</code>)</td>
-<td>Only for Attribute.</td>
+<td><em>Attribute</em>（<code>attribute</code>）</td>
+<td>仅用于 Attribute。</td>
 <td>None</td>
 </tr>
 <tr>
-<td><em>Min</em> (<code>min</code>)</td>
-<td>Lowest value, a whole number.</td>
+<td><em>Min</em>（<code>min</code>）</td>
+<td>最小值，整数。</td>
 <td>0</td>
 </tr>
 <tr>
-<td><em>Max</em> (<code>max</code>)</td>
-<td>Highest value. If you swap min and max, the kit uses the lower one as the minimum.</td>
+<td><em>Max</em>（<code>max</code>）</td>
+<td>最大值。如果你把最小值和最大值填反，套件会把较小的值作为最小值。</td>
 <td>0</td>
 </tr>
 </tbody>
 </table></div>
-<p>Percents count in whole points: <code>5</code> is 5%. That covers Stat Percent, Resistance Percent and Stat on a stat shown as a percent (critical, power, attack speed and so on): a Stat roll on <code>critChance</code> from 1 to 3 gives 1% to 3% critical.</p>
-<h3 id="what-players-see"><a class="anchor" href="#what-players-see" aria-hidden="true">#</a>What players see</h3>
+<p>百分比以整数点计算：<code>5</code> 是 5%。这包括 Stat Percent、Resistance Percent，以及以百分比显示的数值上的 Stat（暴击、威力、攻击速度等）：<code>critChance</code> 上从 1 到 3 的 Stat 取值提供 1% 到 3% 的暴击。</p>
+<h3 id="what-players-see"><a class="anchor" href="#what-players-see" aria-hidden="true">#</a>玩家看到什么</h3>
 <ul>
-<li>A copy's tooltip shows its value: &quot;+7 Health&quot;. Where the tooltip shows ranges, it adds the range: &quot;+7 Health (3-9)&quot;.</li>
-<li>Without a copy (in a shop, in the Game Database), it shows the range: &quot;+(3-9) Health&quot;.</li>
-<li>A bonus with the same min and max shows as a plain &quot;+5 Health&quot;.</li>
+<li>副本的提示框显示其取值：&quot;+7 Health&quot;。在提示框显示范围的地方，会附上范围：&quot;+7 Health (3-9)&quot;。</li>
+<li>没有副本时（在商店中、在 Game Database 中），显示范围：&quot;+(3-9) Health&quot;。</li>
+<li>最小值和最大值相同的加成显示为普通的 &quot;+5 Health&quot;。</li>
 </ul>
-<h3 id="how-rolls-work-step-by-step"><a class="anchor" href="#how-rolls-work-step-by-step" aria-hidden="true">#</a>How rolls work, step by step</h3>
+<h3 id="how-rolls-work-step-by-step"><a class="anchor" href="#how-rolls-work-step-by-step" aria-hidden="true">#</a>取值如何运作，逐步说明</h3>
 <ol>
-<li>The item's <em>Random Bonuses</em> list is read in order.</li>
-<li>For each entry, a whole number from min to max (both included) is picked.</li>
-<li>The values are saved with the copy, by position in the list.</li>
-<li>While the copy is worn, each value is added to the item's fixed <em>Bonuses</em>, then the upgrade percent (if any) grows the total, fixed and rolled bonuses alike.</li>
-<li>Gems in the copy's sockets add their own bonuses, and set bonuses are added once per set.</li>
+<li>按顺序读取物品的 <em>Random Bonuses</em> 列表。</li>
+<li>对每个条目，从最小值到最大值（两端都包含）中选取一个整数。</li>
+<li>这些值按其在列表中的位置随副本保存。</li>
+<li>副本被穿戴时，每个值加到物品的固定 <em>Bonuses</em> 上，然后强化百分比（如果有）会提升总值，固定加成和随机加成都一样。</li>
+<li>副本镶孔中的宝石加上它们自己的加成，套装加成每个套装加一次。</li>
 </ol>
-<p>If you change an item's ranges later, saved copies keep their values, pulled into the new range if they fall outside it. Copies made before the item had rolls get fresh values when they are loaded. Because values are stored by position, <strong>add new bonuses at the end of the list</strong>; reordering moves values to other bonuses.</p>
-<p>Copies with rolls never stack. When a character or bank is loaded, loose copies of an item that now stacks (for example ammo saved back when it had rolls) are merged into stacks.</p>
-<h3 id="turning-fixed-bonuses-into-rolls"><a class="anchor" href="#turning-fixed-bonuses-into-rolls" aria-hidden="true">#</a>Turning fixed bonuses into rolls</h3>
-<p>A piece with fixed bonuses shows a card on its Game Database page: &quot;N fixed bonuses that never roll. Turn them into min and max ranges, 25% up and down?&quot; with <strong>Make them roll</strong>. It turns each fixed stat, percent, damage, resistance and attribute into a range around its value, 25% up and down (<code>8</code> becomes <code>6</code> to <code>10</code>; values below 2 don't spread). A bonus to something already in <em>Random Bonuses</em> widens that one; the rest go at the end. Skill ranks can't roll, so they stay in <em>Bonuses</em>.</p>
-<p>The sample's gear was built this way: every fixed bonus became a range when the sample was built.</p>
-<p>The reverse, <strong>Make bonuses fixed</strong> in <strong>Project Check</strong>, turns each range into its middle value and clears <em>Random Bonuses</em>. Use it for items that stack.</p>
-<h2 id="cosmetics"><a class="anchor" href="#cosmetics" aria-hidden="true">#</a>Cosmetics</h2>
-<p>A cosmetic changes how a region looks without touching stats: a player keeps wearing a hat with good bonuses, and shows another hat over it.</p>
+<p>如果你以后修改物品的范围，已保存的副本保留其值，超出新范围的会被拉回新范围内。在物品还没有随机加成时生成的副本，会在加载时获得新的取值。由于值按位置保存，<strong>请在列表末尾添加新的加成</strong>；重新排序会把值移到其他加成上。</p>
+<p>带有取值的副本永远不会堆叠。加载角色或仓库时，现在可以堆叠的物品的零散副本（例如还带有取值时保存的弹药）会被合并成堆叠。</p>
+<h3 id="turning-fixed-bonuses-into-rolls"><a class="anchor" href="#turning-fixed-bonuses-into-rolls" aria-hidden="true">#</a>把固定加成变为随机取值</h3>
+<p>带有固定加成的装备在其 Game Database 页面上会显示一张卡片：&quot;N fixed bonuses that never roll. Turn them into min and max ranges, 25% up and down?&quot;，并附带 <strong>Make them roll</strong>。它把每项固定数值、百分比、伤害、抗性和属性变为以其值为中心、上下浮动 25% 的范围（<code>8</code> 变为 <code>6</code> 到 <code>10</code>；小于 2 的值不会展开）。对已在 <em>Random Bonuses</em> 中的目标的加成会扩大那一项；其余的加在末尾。技能等级不能随机，因此它们保留在 <em>Bonuses</em> 中。</p>
+<p>示例中的装备就是这样制作的：构建示例时每项固定加成都变成了范围。</p>
+<p>反向操作是 <strong>Project Check</strong> 中的 <strong>Make bonuses fixed</strong>，它把每个范围变为其中间值并清空 <em>Random Bonuses</em>。用于会堆叠的物品。</p>
+<h2 id="cosmetics"><a class="anchor" href="#cosmetics" aria-hidden="true">#</a>时装</h2><figure class="shot"><a href="../../assets/img/game/inventory-cosmetics.png" target="_blank"><img src="../../assets/img/game/inventory-cosmetics.png" alt="Show cosmetics：装备之上的外观栏。" loading="lazy"></a><figcaption>Show cosmetics：装备之上的外观栏。</figcaption></figure>
+<p>时装改变某个区域的外观而不影响数值：玩家可以继续戴着加成好的帽子，同时在其上显示另一顶帽子。</p>
 <ul>
-<li>There are 8 cosmetic positions, over Head, Chest, Hands, Legs, Feet, Back, MainHand and OffHand.</li>
-<li>Any piece for that region can go in its cosmetic position, even gear with stats; there it counts only for its look.</li>
-<li>Items with <em>Cosmetic</em> on go only in cosmetic positions. Equipping one from the bag puts it in its cosmetic position.</li>
-<li>Class and level rules still apply.</li>
-<li>Cosmetic positions give nothing: no stats, no set pieces, no conditions.</li>
-<li>A cosmetic weapon shows only over a real weapon of the same weapon type, so attacks still match the animation.</li>
+<li>有 8 个时装位置，分别覆盖 Head、Chest、Hands、Legs、Feet、Back、MainHand 和 OffHand。</li>
+<li>该区域的任何部件都可以放在其时装位置，即使是带有数值的装备；在那里它只算作外观。</li>
+<li>开启了 <em>Cosmetic</em> 的物品只能放在时装位置。从背包装备它会把它放到其时装位置。</li>
+<li>职业和等级规则仍然适用。</li>
+<li>时装位置不提供任何东西：没有数值、不算套装部件、不满足条件。</li>
+<li>时装武器只在同一武器类型的真实武器上方显示，因此攻击仍与动画匹配。</li>
 </ul>
-<p>In the game, the character panel of the bag has <strong>Show cosmetics / Show gear</strong> to switch the slots between gear and looks, and the bag has a <strong>Cosmetics</strong> tab. In the Game Database, cosmetics have their own subcategory.</p>
-<p>The sample sells costumes and outfits at the hatter: Cat Hood, Bunny Hood, Witch Hat, Pirate Coat, Fairy Wings Costume, the Snowman and Skeleton outfits, Party Balloons and Gift Box.</p>
-<h2 id="make-a-weapon"><a class="anchor" href="#make-a-weapon" aria-hidden="true">#</a>Make a weapon</h2>
-<p>This example makes a <strong>Storm Spear</strong>: a level 8 two-handed spear for warriors and hunters that hits with neutral and air damage, rolls a bit of air damage and agility, and holds one gem.</p>
+<p>在游戏中，背包的角色面板有 <strong>Show cosmetics / Show gear</strong>，用于在装备和外观之间切换栏位，背包还有一个 <strong>Cosmetics</strong> 标签页。在 Game Database 中，时装有自己的子分类。</p>
+<p>示例中的帽子商人出售服装和套装：Cat Hood、Bunny Hood、Witch Hat、Pirate Coat、Fairy Wings Costume、Snowman 和 Skeleton 套装、Party Balloons 以及 Gift Box。</p>
+<h2 id="make-a-weapon"><a class="anchor" href="#make-a-weapon" aria-hidden="true">#</a>制作武器</h2>
+<p>本例制作一把 <strong>Storm Spear</strong>：一把 8 级、供战士和猎人使用的双手长矛，造成中性和风属性伤害，随机附带少量风伤害和敏捷，并能镶嵌一颗宝石。</p>
 <ol>
-<li>Open <strong>Game Database &gt; Items &gt; Weapons</strong> and press <strong>+ New weapon</strong>; pick <strong>Spear</strong> from the weapon types. Type <code>storm_spear</code> in <em>Id</em> and <code>Storm Spear</code> in <em>Display Name</em>, and write a <em>Description</em>.</li>
-<li>Set <em>Rarity</em> to Rare, <em>Sell Price</em> to 60 and <em>Weight</em> to 6. Leave <em>Max Stack</em> at 1.</li>
-<li>In <em>Damages</em>, set the first roll to Neutral 5 to 8, and add a second roll: Air 6 to 9.</li>
-<li>In <strong>Who can use it</strong>, set <em>Required Level</em> to 8, and add Warrior and Hunter to <em>Classes</em>.</li>
-<li>In <strong>Bonuses</strong>, add two <em>Random Bonuses</em>:
+<li>打开 <strong>Game Database &gt; Items &gt; Weapons</strong> 并按 <strong>+ New weapon</strong>；从武器类型中选择 <strong>Spear</strong>。在 <em>Id</em> 中输入 <code>storm_spear</code>，在 <em>Display Name</em> 中输入 <code>Storm Spear</code>，并写一段 <em>Description</em>。</li>
+<li>把 <em>Rarity</em> 设为 Rare，<em>Sell Price</em> 设为 60，<em>Weight</em> 设为 6。<em>Max Stack</em> 保持为 1。</li>
+<li>在 <em>Damages</em> 中，把第一个取值设为 Neutral 5 到 8，并添加第二个取值：Air 6 到 9。</li>
+<li>在 <strong>Who can use it</strong> 中，把 <em>Required Level</em> 设为 8，并把 Warrior 和 Hunter 加入 <em>Classes</em>。</li>
+<li>在 <strong>Bonuses</strong> 中，添加两项 <em>Random Bonuses</em>：
 <ul>
-<li><em>Target</em> Damage, <em>Element</em> Air, <em>Min</em> 1, <em>Max</em> 3.</li>
-<li><em>Target</em> Attribute, <em>Attribute</em> Agility, <em>Min</em> 0, <em>Max</em> 3.</li>
+<li><em>Target</em> Damage、<em>Element</em> Air、<em>Min</em> 1、<em>Max</em> 3。</li>
+<li><em>Target</em> Attribute、<em>Attribute</em> Agility、<em>Min</em> 0、<em>Max</em> 3。</li>
 </ul>
 </li>
-<li>Put fixed bonuses in <em>Bonuses</em> only if they should never roll, like <code>+1</code> rank to Charge in <em>Skills</em>.</li>
-<li>In <strong>Upgrades and sockets</strong>, set <em>Sockets</em> to 1. Leave <em>Upgrade</em> empty to use the database's rules.</li>
-<li>In <strong>Look and wear</strong> and <strong>Held in hand</strong>, set <em>Model</em> to the spear's model and adjust <em>Hold Position</em> and <em>Hold Rotation</em> until it sits in the hand. Play and look at it in the bag's character portrait.</li>
-<li>Run <strong>KitARPG &gt; Render Missing Item Icons</strong> for the icon.</li>
-<li>Add it to a monster's loot table or a shop. In the bag, the tooltip shows &quot;5 to 8 neutral damage&quot;, &quot;6 to 9 air damage&quot;, then &quot;+(1-3) Air damage&quot; and &quot;+(0-3) Agility&quot; until a copy exists.</li>
+<li>只有永不应随机的加成才放在 <em>Bonuses</em> 中，例如 <em>Skills</em> 中 Charge 的 <code>+1</code> 等级。</li>
+<li>在 <strong>Upgrades and sockets</strong> 中，把 <em>Sockets</em> 设为 1。<em>Upgrade</em> 留空以使用数据库的规则。</li>
+<li>在 <strong>Look and wear</strong> 和 <strong>Held in hand</strong> 中，把 <em>Model</em> 设为长矛的模型，并调整 <em>Hold Position</em> 和 <em>Hold Rotation</em> 直到它稳稳地握在手中。进入 Play 并在背包的角色肖像中查看。</li>
+<li>运行 <strong>KitARPG &gt; Render Missing Item Icons</strong> 生成图标。</li>
+<li>把它加入某个怪物的掉落表或某个商店。在背包中，提示框显示 &quot;5 to 8 neutral damage&quot;、&quot;6 to 9 air damage&quot;，然后在副本存在之前显示 &quot;+(1-3) Air damage&quot; 和 &quot;+(0-3) Agility&quot;。</li>
 </ol>
-<p>To make the spear usable by any class, leave <em>Classes</em> empty. To make skills require spears, add the Spear type to the skill's <em>Weapons</em>.</p>
-<h2 id="make-a-piece-of-armor"><a class="anchor" href="#make-a-piece-of-armor" aria-hidden="true">#</a>Make a piece of armor</h2>
+<p>要让任何职业都能使用该长矛，让 <em>Classes</em> 保持为空。要让技能要求长矛，把 Spear 类型加入技能的 <em>Weapons</em>。</p>
+<h2 id="make-a-piece-of-armor"><a class="anchor" href="#make-a-piece-of-armor" aria-hidden="true">#</a>制作一件盔甲</h2>
 <ol>
-<li>Open <strong>Game Database &gt; Items &gt; Chest</strong> and press <strong>+ New chest piece</strong>. Set <em>Id</em> and <em>Display Name</em>.</li>
-<li>Set <em>Model</em> to a model that holds a mesh named <code>&lt;Name&gt;_Chest</code>, rigged to your bodies' skeleton. For other bodies, add <em>Model Variants</em> entries with their model ids.</li>
-<li>Set <em>Required Level</em>, <em>Classes</em>, <em>Random Bonuses</em> and <em>Sockets</em> as for a weapon.</li>
-<li>Set <em>Set</em> if it belongs to an <a href="sets-upgrades-and-sockets.html#equipment-sets">equipment set</a>.</li>
+<li>打开 <strong>Game Database &gt; Items &gt; Chest</strong> 并按 <strong>+ New chest piece</strong>。设置 <em>Id</em> 和 <em>Display Name</em>。</li>
+<li>把 <em>Model</em> 设为一个包含名为 <code>&lt;Name&gt;_Chest</code> 的网格、绑定到你身体骨骼的模型。对于其他身体，添加以其模型 id 为键的 <em>Model Variants</em> 条目。</li>
+<li>像武器一样设置 <em>Required Level</em>、<em>Classes</em>、<em>Random Bonuses</em> 和 <em>Sockets</em>。</li>
+<li>如果它属于某个<a href="sets-upgrades-and-sockets.html#equipment-sets">装备套装</a>，设置 <em>Set</em>。</li>
 </ol>
-<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
-<p>Gear rules are the same in both modes and run on the server. Each copy's rolls, upgrade level and gems travel to its owner for the tooltip. Other players only receive the item id at each position, which is all they need to draw the gear.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>单人模式和 MMO</h2>
+<p>装备规则在两种模式下相同，并在服务器上运行。每个副本的取值、强化等级和宝石会发送给其拥有者用于提示框。其他玩家只接收每个位置上的物品 id，这正是他们绘制装备所需的全部信息。</p>
 <ul>
-<li>In MMO, rolls, upgrade level and gems are saved in the copy's row of <code>item_instances</code>, in its <code>Extra</code> column.</li>
-<li>In single player, they are saved inside the character's JSON.</li>
+<li>在 MMO 中，取值、强化等级和宝石保存在 <code>item_instances</code> 中该副本所在行的 <code>Extra</code> 列中。</li>
+<li>在单人模式中，它们保存在角色的 JSON 内。</li>
 </ul>
-<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>提示</h2>
 <ul>
-<li>Give chest pieces bigger rolls than gloves. The sample scales each piece's bonuses by its size: a chest gives three times what gloves do.</li>
-<li>Keep <em>Min</em> above 0 for the bonus that defines an item, so no copy feels empty.</li>
-<li>Use <em>Classes</em> on gear, never a list of weapons on classes: one place to edit per item.</li>
+<li>给胸甲比手套更大的取值。示例按每件装备的大小缩放其加成：胸甲提供的是手套的三倍。</li>
+<li>对于定义物品特色的加成，让 <em>Min</em> 大于 0，这样就没有副本会显得空洞。</li>
+<li>在装备上使用 <em>Classes</em>，永远不要在职业上列出武器：每个物品只需在一个地方编辑。</li>
 </ul>
-<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>常见错误</h2>
 <ul>
-<li><strong>Two copies of an item won't stack.</strong> The item has random bonuses. Stacking gear must use fixed bonuses.</li>
-<li><strong>Rolled values moved to the wrong bonus.</strong> Entries in <em>Random Bonuses</em> were reordered or one in the middle was removed. Add new ones at the end.</li>
-<li><strong>A bow can't attack.</strong> Its type uses ammo and no fitting ammo is worn. Check the ammo's <em>Weapon Types</em>.</li>
-<li><strong>A dagger won't go in the off hand.</strong> The Dagger weapon type needs <em>Dual Wield</em>, and the dagger must not be two-handed.</li>
+<li><strong>某物品的两个副本无法堆叠。</strong> 该物品有随机加成。会堆叠的装备必须使用固定加成。</li>
+<li><strong>随机值移到了错误的加成上。</strong> <em>Random Bonuses</em> 中的条目被重新排序，或中间的某一项被删除了。请在末尾添加新条目。</li>
+<li><strong>弓无法攻击。</strong> 它的类型使用弹药，但没有穿戴合适的弹药。检查弹药的 <em>Weapon Types</em>。</li>
+<li><strong>匕首无法放入副手。</strong> Dagger 武器类型需要 <em>Dual Wield</em>，且匕首不能是双手武器。</li>
 </ul>
-<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>相关页面</h2>
 <ul>
-<li><a href="items.html">Items</a></li>
-<li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li>
-<li><a href="attributes-and-stats.html">Attributes and stats</a></li>
-<li><a href="player-models.html">Player models</a></li>
-<li><a href="../gameplay/combat.html">Combat</a></li>
-<li><a href="../gameplay/forge.html">Forge</a></li>
+<li><a href="items.html">物品</a></li>
+<li><a href="sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li>
+<li><a href="attributes-and-stats.html">属性与数值</a></li>
+<li><a href="player-models.html">玩家模型</a></li>
+<li><a href="../gameplay/combat.html">战斗</a></li>
+<li><a href="../gameplay/forge.html">锻造</a></li>
 <li><a href="../editor/project-check.html">Project Check</a></li>
 </ul>
-<nav class="pager"><a class="prev" href="items.html"><span>上一页</span>Items</a><a class="next" href="sets-upgrades-and-sockets.html"><span>下一页</span>Sets, upgrades and sockets</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fcontent%2Fequipment.html">报告此页面的问题</a></div></main>
-  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#slots">Slots</a></li><li class="l2"><a href="#where-gear-is-in-the-editor">Where gear is in the editor</a></li><li class="l2"><a href="#armor-fields">Armor fields</a></li><li class="l3"><a href="#slot-and-cosmetic">Slot and cosmetic</a></li><li class="l3"><a href="#who-can-use-it">Who can use it</a></li><li class="l3"><a href="#bonuses">Bonuses</a></li><li class="l3"><a href="#look-and-wear">Look and wear</a></li><li class="l3"><a href="#upgrades-and-sockets">Upgrades and sockets</a></li><li class="l3"><a href="#held-in-hand">Held in hand</a></li><li class="l2"><a href="#weapons">Weapons</a></li><li class="l3"><a href="#weapon-types">Weapon types</a></li><li class="l2"><a href="#ammo">Ammo</a></li><li class="l2"><a href="#random-bonuses-rolled-per-copy">Random bonuses rolled per copy</a></li><li class="l3"><a href="#fields-of-a-random-bonus">Fields of a random bonus</a></li><li class="l3"><a href="#what-players-see">What players see</a></li><li class="l3"><a href="#how-rolls-work-step-by-step">How rolls work, step by step</a></li><li class="l3"><a href="#turning-fixed-bonuses-into-rolls">Turning fixed bonuses into rolls</a></li><li class="l2"><a href="#cosmetics">Cosmetics</a></li><li class="l2"><a href="#make-a-weapon">Make a weapon</a></li><li class="l2"><a href="#make-a-piece-of-armor">Make a piece of armor</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+<nav class="pager"><a class="prev" href="items.html"><span>上一页</span>物品</a><a class="next" href="sets-upgrades-and-sockets.html"><span>下一页</span>套装、强化与镶孔</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fcontent%2Fequipment.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#slots">栏位</a></li><li class="l2"><a href="#where-gear-is-in-the-editor">装备在编辑器中的位置</a></li><li class="l2"><a href="#armor-fields">盔甲字段</a></li><li class="l3"><a href="#slot-and-cosmetic">栏位与时装</a></li><li class="l3"><a href="#who-can-use-it">谁可以使用</a></li><li class="l3"><a href="#bonuses">加成</a></li><li class="l3"><a href="#look-and-wear">外观与穿戴</a></li><li class="l3"><a href="#upgrades-and-sockets">强化与镶孔</a></li><li class="l3"><a href="#held-in-hand">手持</a></li><li class="l2"><a href="#weapons">武器</a></li><li class="l3"><a href="#weapon-types">武器类型</a></li><li class="l2"><a href="#ammo">弹药</a></li><li class="l2"><a href="#random-bonuses-rolled-per-copy">按副本随机的加成</a></li><li class="l3"><a href="#fields-of-a-random-bonus">随机加成的字段</a></li><li class="l3"><a href="#what-players-see">玩家看到什么</a></li><li class="l3"><a href="#how-rolls-work-step-by-step">取值如何运作，逐步说明</a></li><li class="l3"><a href="#turning-fixed-bonuses-into-rolls">把固定加成变为随机取值</a></li><li class="l2"><a href="#cosmetics">时装</a></li><li class="l2"><a href="#make-a-weapon">制作武器</a></li><li class="l2"><a href="#make-a-piece-of-armor">制作一件盔甲</a></li><li class="l2"><a href="#single-player-and-mmo">单人模式和 MMO</a></li><li class="l2"><a href="#tips">提示</a></li><li class="l2"><a href="#common-mistakes">常见错误</a></li><li class="l2"><a href="#related-pages">相关页面</a></li></ul></aside>
 </div>
 <script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
 <script src="../../assets/search-zh.js"></script>
