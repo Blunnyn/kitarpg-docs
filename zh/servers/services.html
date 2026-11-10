@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/services.html">English</option><option value="../../es/servers/services.html">Español</option><option value="../../pt/servers/services.html">Português</option><option value="services.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html" class="on" aria-current="page">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">服务器与部署</div><h1>Services</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>Login, Central and the Shop are .NET 10 web services that run next to your map servers. This page covers what each one does, every endpoint, the map link messages and the shared pieces they are built on.</p>
+<h2 id="where-they-are"><a class="anchor" href="#where-they-are" aria-hidden="true">#</a>Where they are</h2>
+<p>The services are a .NET solution, <code>KitARPG.Services.slnx</code>, with these projects:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Project</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Shared</code></td>
+<td>Compiles the contracts and rules in <code>Assets/Blunnyn/KitARPG/Runtime/Shared/</code>, so the services and Unity use the same code</td>
+</tr>
+<tr>
+<td><code>Data</code></td>
+<td>EF Core: the tables, one database context per provider (SQLite and PostgreSQL) and their migrations. See <a href="database.html">Database</a></td>
+</tr>
+<tr>
+<td><code>Hosting</code></td>
+<td>What every service shares: token checks, JSON, request size limits, proxy headers, refusing sample secrets, the game log writer, ban checks</td>
+</tr>
+<tr>
+<td><code>Modules</code></td>
+<td>The contract and loader for your own Login and Central modules. See <a href="../devkit/service-modules.html">Service modules</a></td>
+</tr>
+<tr>
+<td><code>Login</code></td>
+<td>Accounts and characters</td>
+</tr>
+<tr>
+<td><code>Central</code></td>
+<td>Sessions, tickets, the map link and everything shared between maps</td>
+</tr>
+<tr>
+<td><code>Shop</code></td>
+<td>The optional premium shop. See <a href="shop-service.html">Shop service</a></td>
+</tr>
+<tr>
+<td><code>Launcher</code></td>
+<td>Starts everything with one button or one command. See <a href="launcher.html">Launcher</a></td>
+</tr>
+<tr>
+<td><code>Examples/Bounties</code></td>
+<td>An example Central module with its own table</td>
+</tr>
+<tr>
+<td><code>Tests</code></td>
+<td>Tests for the rules, Login, Central (with a fake map server), the Shop and modules, on SQLite</td>
+</tr>
+</tbody>
+</table></div>
+<p>In the Asset Store package they come as <code>Assets/Blunnyn/KitARPG/Services.zip</code>. The editor unpacks them to <code>Assets/Blunnyn/KitARPG/Services~</code> the first time it opens, and again when a kit update brings a new zip. Unity doesn't import folders whose name ends in <code>~</code>. <strong>KitARPG &gt; Play and Servers</strong> builds them for you; from a terminal:</p>
+<pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Assets/Blunnyn/KitARPG/Services~
+dotnet<span class="w"> </span>build
+dotnet<span class="w"> </span><span class="nb">test</span>
+</code></pre>
+<h2 id="what-every-service-shares"><a class="anchor" href="#what-every-service-shares" aria-hidden="true">#</a>What every service shares</h2>
+<ul>
+<li><strong>JSON.</strong> Requests and answers are JSON with camelCase names. The shared contracts use public fields so Unity's <code>JsonUtility</code> reads them too.</li>
+<li><strong>Errors.</strong> A refused request answers <code>{ &quot;code&quot;: &quot;...&quot;, &quot;message&quot;: &quot;...&quot; }</code>. The codes are in <code>ErrorCodes</code> in the shared code, for example <code>wrong_credentials</code>, <code>login_locked</code>, <code>account_banned</code>, <code>session_busy</code>, <code>map_unavailable</code>, <code>character_limit</code>.</li>
+<li><strong>Body size.</strong> Requests over 64 KB are refused. The Shop's catalog publish has its own limit of 2 MB.</li>
+<li><strong>Health.</strong> <code>GET /health</code> answers <code>ok</code> on Login, Central and the Shop. Use it for load balancers and monitoring.</li>
+<li><strong>Migrations.</strong> With <code>Database:MigrateOnStartup</code> on (the default), each service brings the database schema up to date when it starts.</li>
+<li><strong>Sample secrets.</strong> Outside the <code>Development</code> environment a service refuses to start while a key or the database password is empty, short or a sample value. See <a href="security.html#secrets">Security</a>.</li>
+<li><strong>Game log.</strong> Each service writes its own lines to <code>game_logs</code> in batches, off the request path. Lines older than <code>Logs:Days</code> (180) are deleted once an hour; 0 keeps them.</li>
+</ul>
+<h2 id="login"><a class="anchor" href="#login" aria-hidden="true">#</a>Login</h2>
+<p>Login owns accounts and characters. Clients reach it over HTTPS in production.</p>
+<h3 id="endpoints"><a class="anchor" href="#endpoints" aria-hidden="true">#</a>Endpoints</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>Needs</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/register</code></td>
+<td>Nothing</td>
+<td>Creates an account: <code>username</code>, <code>password</code>, <code>email</code> (optional). 201, or 409 <code>username_taken</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/login</code></td>
+<td>Nothing</td>
+<td><code>username</code>, <code>password</code>, <code>remember</code>. Answers <code>token</code>, <code>expiresAt</code> (Unix seconds), <code>accountId</code>, <code>username</code> and, with <code>remember</code>, a <code>rememberToken</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/resume</code></td>
+<td>A remember token</td>
+<td>Trades the remember token for a new access token and the next remember token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/forget</code></td>
+<td>A remember token</td>
+<td>Deletes that token's family (sign out on this computer)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/forget-all</code></td>
+<td>Access token</td>
+<td>Deletes every remember token of the account (sign out everywhere)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/characters</code></td>
+<td>Access token</td>
+<td>The account's characters and <code>maxCharacters</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/characters</code></td>
+<td>Access token</td>
+<td>Creates a character: <code>name</code>, <code>classId</code>, <code>appearance</code></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/characters/{id}</code></td>
+<td>Access token</td>
+<td>Deletes one of the account's characters and everything it holds</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/health</code></td>
+<td>Nothing</td>
+<td><code>ok</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Every <code>/api/auth/*</code> route counts against the rate limit below.</p>
+<h3 id="passwords"><a class="anchor" href="#passwords" aria-hidden="true">#</a>Passwords</h3>
+<p>Passwords are hashed with Argon2id: 19 MiB of memory, 2 passes, 16-byte salt, 32-byte hash. The parameters are stored inside each hash, so they can be raised later without breaking existing accounts. When a username doesn't exist, Login still hashes a dummy password, so a wrong username takes as long as a wrong password.</p>
+<h3 id="access-tokens"><a class="anchor" href="#access-tokens" aria-hidden="true">#</a>Access tokens</h3>
+<ul>
+<li>A JWT signed with HMAC-SHA256 with the first key of <code>Auth:SigningKeys</code> (or <code>Auth:SigningKey</code>).</li>
+<li>Lives <code>Auth:TokenMinutes</code> (30). Issuer and audience are <code>Auth:Issuer</code> (<code>kitarpg</code>).</li>
+<li>Carries the account id (<code>sub</code>), the username and the GM level.</li>
+<li>Central validates it with the same keys. A banned or deleted account loses access within <code>Auth:BanCheckSeconds</code> (5), with HTTP 403 <code>account_banned</code>.</li>
+</ul>
+<h3 id="remember-me"><a class="anchor" href="#remember-me" aria-hidden="true">#</a>Remember me</h3>
+<ul>
+<li>With <code>remember: true</code>, sign in returns a random 32-byte token. The database keeps only its SHA-256 in <code>remember_tokens</code>, with the account, the address and an expiry of <code>Auth:RememberDays</code> (30).</li>
+<li><code>POST /api/auth/resume</code> uses the token once and returns the next one of the same family.</li>
+<li>A spent token that comes back means someone copied it. Login deletes the whole family, so both the owner and the copier must sign in with the password again. The line <code>remember token reused</code> goes to the game log.</li>
+<li>An account keeps at most 10 remembered computers; signing in on one more drops the oldest.</li>
+<li>The client stores the username, the check boxes and the token, never the password.</li>
+</ul>
+<h3 id="rate-limits"><a class="anchor" href="#rate-limits" aria-hidden="true">#</a>Rate limits</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Setting</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requests to <code>/api/auth/*</code> per client and minute</td>
+<td><code>Auth:AttemptsPerMinute</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td>Wrong passwords per username before it is locked</td>
+<td><code>Auth:FailedLoginsPerAccount</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td>Lock length, in minutes</td>
+<td><code>Auth:FailedLoginMinutes</code></td>
+<td>15</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Clients are counted by IPv4 address, or by the /64 of an IPv6 address.</li>
+<li>A locked username answers HTTP 429 <code>login_locked</code>. Unknown usernames are counted the same way, so the answer never says whether an account exists. A correct password clears the count.</li>
+<li>The counters live in memory: a restart forgets them, and each Login copy counts on its own.</li>
+<li>Behind a reverse proxy, turn on the <code>Proxy</code> settings, or every player looks like the proxy's address. See <a href="security.html#reverse-proxy">Security</a>.</li>
+</ul>
+<h3 id="characters-and-gamedata-json"><a class="anchor" href="#characters-and-gamedata-json" aria-hidden="true">#</a>Characters and gamedata.json</h3>
+<p>Login creates characters from <code>gamedata.json</code>, a file exported from your Game Database: the player models, the classes each model can take, each class's start map, position, health, mana and start items, the item and skill catalog, and the most characters per account (<code>maxCharactersPerAccount</code> in the Game Database, 6 by default).</p>
+<ul>
+<li><code>Characters:GameDataFile</code> says where it is (<code>gamedata.json</code> next to the service by default).</li>
+<li><strong>KitARPG &gt; Play and Servers</strong> exports it each time it starts the services, to <code>UserSettings/KitARPG/gamedata.json</code>.</li>
+<li><strong>KitARPG &gt; Export Game Data for Services</strong> writes it to <code>Services/Login/gamedata.json</code>, so a build or a Docker image of Login carries it. Run it before building Login for a server.</li>
+<li>Without the file, Login logs an error and nobody can create characters.</li>
+<li>A character can only take a class its model offers. Names are unique across the game.</li>
+</ul>
+<p>At every start Login copies the items and skills from the file into the <code>items</code> and <code>skills</code> tables. A removed item isn't deleted: it is marked retired, since copies may still point to it. If the file has no items, the catalog is left as it was.</p>
+<h2 id="central"><a class="anchor" href="#central" aria-hidden="true">#</a>Central</h2>
+<p>Central is the hub of the online world. Clients call it once per map entry; map servers stay connected to it the whole time.</p>
+<h3 id="http-endpoints"><a class="anchor" href="#http-endpoints" aria-hidden="true">#</a>HTTP endpoints</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>Needs</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/play</code></td>
+<td>Access token</td>
+<td><code>characterId</code>. Answers <code>mapId</code>, <code>address</code>, <code>port</code> and a one-use <code>ticket</code>. 404 <code>character_not_found</code>, 403 <code>account_banned</code>, 503 <code>map_unavailable</code> or <code>session_busy</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/maps</code></td>
+<td>Nothing</td>
+<td>The registered maps and the players on each: <code>[{ &quot;mapId&quot;: &quot;town&quot;, &quot;players&quot;: 3 }]</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/health</code></td>
+<td>Nothing</td>
+<td><code>ok</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Modules add their own endpoints. See <a href="../devkit/talking-to-central.html">Talking to Central</a>.</p>
+<h3 id="tickets-and-sessions"><a class="anchor" href="#tickets-and-sessions" aria-hidden="true">#</a>Tickets and sessions</h3>
+<ul>
+<li><code>/api/play</code> opens a session for the account in the <code>Pending</code> state with a random 24-byte ticket. It expires after <code>Central:TicketSeconds</code> (30).</li>
+<li>The map server sends the ticket to Central; Central redeems it once, for that map only, and the session becomes <code>InMap</code>.</li>
+<li>Only the map holding the session may save the character or ask to move it.</li>
+<li>Logging in again while playing kicks the old session first. See <a href="architecture.html#logging-in-twice">Logging in twice</a>.</li>
+</ul>
+<h3 id="starting-map-servers"><a class="anchor" href="#starting-map-servers" aria-hidden="true">#</a>Starting map servers</h3>
+<p>Central knows the maps from <code>Central:Maps</code>. For each map:</p>
+<ul>
+<li>With an <code>Executable</code>, Central starts it with <code>Arguments</code> when a player needs it, or at startup with <code>AutoStart</code>, and waits up to <code>Central:LaunchTimeoutSeconds</code> (60) for it to register. The map key goes to the process in the <code>KITARPG_CENTRAL_KEY</code> environment variable.</li>
+<li>Without one, the map is started by someone else (Docker, the editor in Play, a service manager). Central waits 3 seconds for it to register.</li>
+<li>A map that registers but isn't listed still works while it runs; listing it lets Central wait for it.</li>
+<li>Stopping Central kills the map servers it started.</li>
+</ul>
+<p>See <a href="configuration.html#central">Configuration</a> for every field.</p>
+<h3 id="the-map-link"><a class="anchor" href="#the-map-link" aria-hidden="true">#</a>The map link</h3>
+<p>Map servers connect to Central on UDP <code>Central:MapLinkPort</code> (7700) with LiteNetLib. The connection request must carry <code>Central:MapKey</code>, and the sender's address must be in <code>Central:MapNetworks</code> when that list isn't empty. Each message is its class name followed by a JSON body, sent reliable and ordered.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Message from the map</th>
+<th>What Central does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MapRegister</code></td>
+<td>Adds the map with its id, public address and port. Refused if another server already holds that map id</td>
+</tr>
+<tr>
+<td><code>MapHeartbeat</code></td>
+<td>Updates the player count (every 5 seconds)</td>
+</tr>
+<tr>
+<td><code>TicketCheck</code></td>
+<td>Redeems a ticket and sends the character</td>
+</tr>
+<tr>
+<td><code>CharacterSave</code></td>
+<td>Saves the character if this map holds it and the version matches; ends the session when the player leaves</td>
+</tr>
+<tr>
+<td><code>TransferRequest</code></td>
+<td>Saves the new position, starts the target map if needed and returns a ticket for it</td>
+</tr>
+<tr>
+<td><code>ChatRelay</code>, <code>FriendCommand</code>, <code>PartyCommand</code>, <code>CharacterLevel</code></td>
+<td>Chat between maps, friends, parties, level changes</td>
+</tr>
+<tr>
+<td><code>GuildCommand</code>, <code>AllianceCommand</code>, <code>GuildExperience</code>, <code>GuildStorageCommand</code></td>
+<td>Guilds, alliances, guild levels and the guild bank</td>
+</tr>
+<tr>
+<td><code>MailSend</code>, <code>MailCommand</code></td>
+<td>Mail</td>
+</tr>
+<tr>
+<td><code>MarketCommand</code></td>
+<td>The market between players</td>
+</tr>
+<tr>
+<td><code>CollectorCommand</code></td>
+<td>Tax collectors</td>
+</tr>
+<tr>
+<td><code>BanRequest</code>, <code>RoleChange</code>, <code>GmAuditBatch</code>, <code>RatesChange</code></td>
+<td>GM actions; audit lines are confirmed only once stored</td>
+</tr>
+<tr>
+<td><code>PlayerReport</code>, <code>ReportCommand</code></td>
+<td>Player reports</td>
+</tr>
+<tr>
+<td><code>GameLogBatch</code></td>
+<td>Game log lines, stamped with the sender's map id</td>
+</tr>
+<tr>
+<td>Any other class name</td>
+<td>Handed to a module that registered it, or logged as unknown</td>
+</tr>
+</tbody>
+</table></div>
+<p>Central checks that a message about a player comes from the map that player is on, so a map can only speak for its own players.</p>
+<h3 id="items-move-through-one-ledger"><a class="anchor" href="#items-move-through-one-ledger" aria-hidden="true">#</a>Items move through one ledger</h3>
+<p>Every copy of an item is one row of <code>item_instances</code> with exactly one owner: a character, an account bank, a guild, a letter, a tax collector or a market lot. Central's <code>ItemLedger</code> changes owners one move at a time, inside a transaction:</p>
+<ul>
+<li>A move only happens if the copy is where the sender says it is. A copy held by someone else is refused and logged.</li>
+<li>An item the catalog doesn't know never reaches the database. The map keeps it and tries again after Login has the new export.</li>
+<li>Market, mail, guild storage and collectors raise the character's <code>Deliveries</code> counter in the same transaction. The map records the last delivery it applied, so a save made before a delivery can't erase it.</li>
+</ul>
+<p>This is why there must be exactly one Central per database: the lock lives in its process.</p>
+<h3 id="limits-central-enforces"><a class="anchor" href="#limits-central-enforces" aria-hidden="true">#</a>Limits Central enforces</h3>
+<p>Central's own settings (friends, party and guild sizes, mail and market rules) are listed in <a href="configuration.html#central">Configuration</a>. Some limits are fixed in code:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gold or postage in one letter</td>
+<td>1,000,000,000,000,000</td>
+</tr>
+<tr>
+<td>Price of one market lot</td>
+<td>1,000,000,000,000</td>
+</tr>
+<tr>
+<td>Reports one player can send per day</td>
+<td>10</td>
+</tr>
+<tr>
+<td>GM audit lines per batch from a map</td>
+<td>500</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="shop"><a class="anchor" href="#shop" aria-hidden="true">#</a>Shop</h2>
+<p>The Shop is optional and separate: Central doesn't know it exists. Map servers call its internal API with a key; payment providers call its webhooks; you manage it with the admin API. Everything about it is in <a href="shop-service.html">Shop service</a>.</p>
+<h2 id="running-a-service-by-hand"><a class="anchor" href="#running-a-service-by-hand" aria-hidden="true">#</a>Running a service by hand</h2>
+<p>The launcher is the easy way. To run one service on its own, for debugging:</p>
+<pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services
+<span class="nv">ASPNETCORE_ENVIRONMENT</span><span class="o">=</span>Development<span class="w"> </span><span class="se">\</span>
+<span class="nv">ASPNETCORE_URLS</span><span class="o">=</span>http://127.0.0.1:5100<span class="w"> </span><span class="se">\</span>
+<span class="nv">Database__ConnectionString</span><span class="o">=</span><span class="s2">&quot;Data Source=</span><span class="nv">$PWD</span><span class="s2">/kitarpg.db&quot;</span><span class="w"> </span><span class="se">\</span>
+dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Login
+</code></pre>
+<ul>
+<li><code>Development</code> uses the test keys in <code>appsettings.Development.json</code>. Never use it on a server.</li>
+<li>Without <code>ASPNETCORE_URLS</code>, <code>dotnet run</code> uses the ports in the project's <code>Properties/launchSettings.json</code> (5022 for Login, 5091 for Central, 5300 for the Shop), not the 5100 and 5200 the client expects.</li>
+<li>With SQLite, give every service the same absolute file. The default <code>Data Source=kitarpg.db</code> is relative to each service's folder, so Login and Central would each make their own database.</li>
+<li>Central started this way has the maps from <code>appsettings.json</code> without executables: start the map servers yourself with <code>-central 127.0.0.1:7700</code> and the development map key.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Nobody can create characters.</strong> Login didn't find <code>gamedata.json</code>. Its log says where it looked. Export it and restart Login.</li>
+<li><strong>&quot;Map ... is not running.&quot;</strong> The map isn't registered: the map server build is missing, its executable path is wrong, it crashed (see its log), or its key or address isn't allowed. Central logs <code>Refused a map link</code> and <code>Map registration refused</code> with the reason.</li>
+<li><strong>Players get <code>session_busy</code>.</strong> The old map didn't confirm the save within <code>KickWaitSeconds</code>. It usually clears in a few seconds. If it keeps happening, look at that map's log.</li>
+<li><strong>Tokens fail between Login and Central.</strong> Both must have the same signing keys and issuer.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="architecture.html">Architecture</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="launcher.html">Launcher</a></li>
+<li><a href="../devkit/service-modules.html">Service modules</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="architecture.html"><span>上一页</span>Architecture</a><a class="next" href="launcher.html"><span>下一页</span>Launcher</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Fservices.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#where-they-are">Where they are</a></li><li class="l2"><a href="#what-every-service-shares">What every service shares</a></li><li class="l2"><a href="#login">Login</a></li><li class="l3"><a href="#endpoints">Endpoints</a></li><li class="l3"><a href="#passwords">Passwords</a></li><li class="l3"><a href="#access-tokens">Access tokens</a></li><li class="l3"><a href="#remember-me">Remember me</a></li><li class="l3"><a href="#rate-limits">Rate limits</a></li><li class="l3"><a href="#characters-and-gamedata-json">Characters and gamedata.json</a></li><li class="l2"><a href="#central">Central</a></li><li class="l3"><a href="#http-endpoints">HTTP endpoints</a></li><li class="l3"><a href="#tickets-and-sessions">Tickets and sessions</a></li><li class="l3"><a href="#starting-map-servers">Starting map servers</a></li><li class="l3"><a href="#the-map-link">The map link</a></li><li class="l3"><a href="#items-move-through-one-ledger">Items move through one ledger</a></li><li class="l3"><a href="#limits-central-enforces">Limits Central enforces</a></li><li class="l2"><a href="#shop">Shop</a></li><li class="l2"><a href="#running-a-service-by-hand">Running a service by hand</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loot · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/loot.html">English</option><option value="../../es/content/loot.html">Español</option><option value="../../pt/content/loot.html">Português</option><option value="loot.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>游戏内容</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html" class="on" aria-current="page">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏内容</div><h1>Loot</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>A loot table says what a monster drops when it dies: an amount of gold and a list of items, each with its chance. This page covers every field of a loot table, how drops are rolled, quest drops, how loot reaches the player, and the settings and stats that change the odds.</p>
+<h2 id="what-a-loot-table-is"><a class="anchor" href="#what-a-loot-table-is" aria-hidden="true">#</a>What a loot table is</h2>
+<p>A loot table is a <code>LootTable</code> asset in the Game Database. A monster points to one in its <em>Loot</em> field (<code>loot</code>). Several monsters can share one table: the sample's Slime and Giant Slime both use <strong>Slime Loot</strong>.</p>
+<p>When a monster dies, the server rolls its table once for the player who earned the kill. Loot is only for that player: nobody else sees it or can take it.</p>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<p><strong>Game Database &gt; Items &gt; Loot</strong>. The list shows every table; <strong>+ New loot table</strong> makes one in a <code>Loot</code> folder next to the database and adds it to the database's <code>lootTables</code> list. You can also use <strong>Create &gt; KitARPG &gt; Loot Table</strong> in the Project window.</p>
+<p>On a table's card, each drop is a row with the item's icon. The chance column shows <strong>Chance %</strong>: the data stores 0 to 1, the editor shows and takes percent.</p>
+<h2 id="fields"><a class="anchor" href="#fields" aria-hidden="true">#</a>Fields</h2>
+<h3 id="the-table"><a class="anchor" href="#the-table" aria-hidden="true">#</a>The table</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em>, <em>Display Name</em>, <em>Description</em>, <em>Icon</em></td>
+<td>Common to every database asset. Only the id matters for loot tables.</td>
+<td>From the file name</td>
+</tr>
+<tr>
+<td><em>Gold</em> (<code>gold</code>)</td>
+<td>Minimum and maximum gold dropped (x and y, both included).</td>
+<td>1 to 5</td>
+</tr>
+<tr>
+<td><em>Drops</em> (<code>drops</code>)</td>
+<td>The items it can drop, in order.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Max Drops</em> (<code>maxDrops</code>)</td>
+<td>Most items one kill can drop. 0 means no limit.</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="each-drop"><a class="anchor" href="#each-drop" aria-hidden="true">#</a>Each drop</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Item</em> (<code>item</code>)</td>
+<td>The item. Project Check warns about a drop with no item.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Chance</em> (<code>chance</code>)</td>
+<td>Chance of dropping, shown as a percent (0 to 100).</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Min Amount</em> (<code>minAmount</code>)</td>
+<td>Fewest of the item when it drops.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Max Amount</em> (<code>maxAmount</code>)</td>
+<td>Most of the item when it drops.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Quest</em> (<code>quest</code>)</td>
+<td>Drops only for a killer on this quest who still needs the item. Empty: drops for anyone.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>The amount is a random whole number from <em>Min Amount</em> to <em>Max Amount</em>, both included, and never less than 1. A drop with both at 0 drops one.</p>
+<h2 id="how-a-kill-is-rolled"><a class="anchor" href="#how-a-kill-is-rolled" aria-hidden="true">#</a>How a kill is rolled</h2>
+<p>When a monster dies, the server's <code>Rewards</code> component pays the player who dealt the most damage:</p>
+<ol>
+<li><strong>Experience</strong> goes to the killer, or is split with party members nearby. See <a href="monsters.html#experience">Monsters</a>.</li>
+<li><strong>Gold:</strong> a random amount from <em>Gold</em>, times the server's gold rate. A guild tax collector nearby takes its share first. See <a href="../gameplay/tax-collectors.html">Tax collectors</a>.</li>
+<li><strong>Items:</strong> each drop is checked in list order:
+<ol>
+<li>A drop with a <em>Quest</em> is skipped unless the killer has that quest open and carries fewer of the item than its collect objective asks for.</li>
+<li>A random roll against the drop's chance (see <a href="#odds">Odds</a>). On a hit, the item and its amount are added.</li>
+<li>When the number of items added reaches <em>Max Drops</em>, the rest of the list isn't rolled.</li>
+</ol>
+</li>
+<li><strong>Delivery:</strong> the gold and items reach the player the way <strong>Game Settings &gt; Loot</strong> says (see <a href="#how-loot-reaches-the-player">How loot reaches the player</a>).</li>
+</ol>
+<p>Because the list stops at <em>Max Drops</em>, order matters. Put drops you never want cut first. The sample puts its quest drops at the top of Slime Loot and Mushroom Loot for this reason.</p>
+<h3 id="odds"><a class="anchor" href="#odds" aria-hidden="true">#</a>Odds</h3>
+<p>For each item that isn't a quest drop, the chance used is:</p>
+<p><code>chance x (1 + the killer's Loot Chance stat) x the server's loot rate</code>, capped at 100%.</p>
+<ul>
+<li><em>Loot Chance</em> (<code>lootChance</code>) is a <a href="attributes-and-stats.html">stat</a>. 0.1 is +10% of each chance, not +10 points: a 5% drop becomes 5.5%. In the sample, each point of Luck gives +0.5%.</li>
+<li>The loot rate is <strong>Game Settings &gt; Rates &gt; Loot Rate</strong> (<code>lootRate</code>, default 1) times a rates event a GM may have started with <code>/rates loot 2 60</code>.</li>
+<li><strong>Quest drops keep their own chance.</strong> Luck and rates never make a quest easier.</li>
+</ul>
+<p>Gold uses <strong>Gold Rate</strong> (<code>goldRate</code>, default 1) the same way. See <a href="../editor/game-settings.html">Game settings</a> and <a href="../reference/gm-commands.html">GM commands</a>.</p>
+<h2 id="how-loot-reaches-the-player"><a class="anchor" href="#how-loot-reaches-the-player" aria-hidden="true">#</a>How loot reaches the player</h2>
+<p><strong>Game Settings &gt; Loot</strong> has two settings (<code>GameInstance</code>, on the KitNetwork prefab):</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Loot Mode</em> (<code>lootMode</code>)</td>
+<td>How players get what monsters drop. Only the player who earned the kill sees it.</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td><em>Auto Gold</em> (<code>autoGold</code>)</td>
+<td>Gold goes straight to the player. Off: it drops like the items, on the ground or in the body.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>The loot modes:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>What the player sees</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ground</strong></td>
+<td>Each item falls on the ground next to the monster, scattered within about 1.2 m, as its icon with its name in its rarity color. Clicking one walks there and picks it up. Gold (when <em>Auto Gold</em> is off) falls as a pile.</td>
+</tr>
+<tr>
+<td><strong>Corpse</strong></td>
+<td>Items stay in the monster's body, which lies grey where it died. Clicking it opens the loot window, to take items one by one or all.</td>
+</tr>
+<tr>
+<td><strong>Automatic</strong></td>
+<td>Items go straight to the bag. What doesn't fit falls on the ground.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Details that apply in every mode:</p>
+<ul>
+<li>Loot waits 90 seconds, then disappears. It also disappears when its owner leaves the map.</li>
+<li>The player picks it up within 2 m (a little more while the loot window is open).</li>
+<li>Loot may put the bag over its weight limit. The character then can't walk until it drops, sells or stores something. See <a href="../gameplay/inventory-and-bank.html">Inventory and bank</a>.</li>
+<li>Gold that doesn't fit in the purse goes to the bank.</li>
+<li>Items of <strong>Game Settings &gt; Logs &gt; Log Loot From</strong> rarity or better (Rare by default) are written to the game log. See <a href="../gameplay/game-log-and-reports.html">Game log and reports</a>.</li>
+</ul>
+<p>Loot never exists as a network object. The server keeps it in memory and tells only its owner where it is. Another client, even a modified one, can't see it or pick it up.</p>
+<h2 id="build-a-loot-table"><a class="anchor" href="#build-a-loot-table" aria-hidden="true">#</a>Build a loot table</h2>
+<p>This builds a table for a wolf, with a quest drop.</p>
+<ol>
+<li><strong>Game Database &gt; Items &gt; Loot &gt; + New loot table</strong>. Rename it <strong>Wolf Loot</strong>.</li>
+<li>Set <strong>Gold</strong> to 2 and 7.</li>
+<li>Set <strong>Max Drops</strong> to 2.</li>
+<li>Add the quest drop first: <em>Item</em> Wolf Pelt, <em>Chance %</em> 60, <em>Min Amount</em> 1, <em>Max Amount</em> 1, <em>Quest</em> &quot;Pelts for the Tanner&quot;.</li>
+<li>Add the normal drops: Health Potion at 25%, 1 to 1; a rune at 15%, 1 to 2; a rare cloak at 2%, 1 to 1.</li>
+<li>Open <strong>World &gt; Monsters &gt; Wolf</strong> and pick <strong>Wolf Loot</strong> in <em>Loot</em>.</li>
+<li>Make the quest: a <code>CollectObjective</code> for 5 Wolf Pelts. Mark the pelt as a quest item (<strong>Items &gt; Quest items</strong> makes it so). See <a href="quests.html">Quests</a>.</li>
+<li>Test: <code>/spawn wolf 5</code>, kill them with the quest open and without it. Without the quest, no pelts drop.</li>
+</ol>
+<div class="callout tip"><div class="callout-title">提示</div><p>A boss with guaranteed drops: give those items 100%, and raise <em>Max Drops</em> so the other drops still have room. The sample's Mushroom King always drops Holy Water and has <em>Max Drops</em> 5.</p>
+</div>
+<h2 id="the-bestiary"><a class="anchor" href="#the-bestiary" aria-hidden="true">#</a>The bestiary</h2>
+<p>The <a href="../gameplay/bestiary.html">bestiary</a> (B) lists each monster's drops with the chance the player has, including their loot stat. Turn a monster's <em>In Bestiary</em> off to hide it there.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The rolls are the same in both. In MMO they happen on the map server where the monster died, and only the owner's client is told about the loot. In a single player game they happen on the host. In MMO, every item in the player's bag is a row in the database with one owner; loot becomes such a row when it is picked up.</p>
+<h2 id="for-programmers"><a class="anchor" href="#for-programmers" aria-hidden="true">#</a>For programmers</h2>
+<p><code>Rewards.OnKilled</code>, <code>Rewards.DropChance</code> and <code>Rewards.ShareExperience</code> are virtual. Override <code>DropChance</code> to change the odds rule, or <code>OnKilled</code> to share loot with a party. <code>Rewards.Instance.Pay(...)</code> hands items and gold to a player following the loot mode, for loot of your own. See <a href="../devkit/overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>A drop never falls.</strong> Its chance is 0, <em>Max Drops</em> is reached by drops above it, or it has a <em>Quest</em> the killer doesn't have open.</li>
+<li><strong>A quest item stops dropping.</strong> The player already carries as many as the objective asks for. This is on purpose.</li>
+<li><strong>Drops seem too generous.</strong> The loot rate in Game Settings, a GM rates event, or a high Loot Chance stat. Check <code>/rates</code>.</li>
+<li><strong>The party wonders why only one got the loot.</strong> Loot goes to the top damage dealer. Experience and quest kill counts are shared; items aren't.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="monsters.html">Monsters</a>, <a href="bosses.html">Bosses</a></li>
+<li><a href="items.html">Items</a>, <a href="currencies.html">Currencies</a></li>
+<li><a href="quests.html">Quests</a></li>
+<li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li>
+<li><a href="../editor/game-settings.html">Game settings</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="bosses.html"><span>上一页</span>Bosses</a><a class="next" href="maps.html"><span>下一页</span>Maps</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fcontent%2Floot.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-a-loot-table-is">What a loot table is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#fields">Fields</a></li><li class="l3"><a href="#the-table">The table</a></li><li class="l3"><a href="#each-drop">Each drop</a></li><li class="l2"><a href="#how-a-kill-is-rolled">How a kill is rolled</a></li><li class="l3"><a href="#odds">Odds</a></li><li class="l2"><a href="#how-loot-reaches-the-player">How loot reaches the player</a></li><li class="l2"><a href="#build-a-loot-table">Build a loot table</a></li><li class="l2"><a href="#the-bestiary">The bestiary</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#for-programmers">For programmers</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

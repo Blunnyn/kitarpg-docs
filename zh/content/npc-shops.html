@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NPC shops · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/npc-shops.html">English</option><option value="../../es/content/npc-shops.html">Español</option><option value="../../pt/content/npc-shops.html">Português</option><option value="npc-shops.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>游戏内容</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html" class="on" aria-current="page">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏内容</div><h1>NPC shops</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>An NPC shop is a <code>ShopData</code> asset that lists what an NPC sells, at what price and in what currency, with optional limited stock that refills over time. This page covers every field of a shop, buying, selling and buying back, how stock works, and a step by step NPC with a shop.</p>
+<h2 id="what-a-shop-is"><a class="anchor" href="#what-a-shop-is" aria-hidden="true">#</a>What a shop is</h2>
+<p>A shop has two parts:</p>
+<ul>
+<li><strong>The shop data</strong> (<code>ShopData</code>, <strong>Game Database &gt; Items &gt; Shops</strong>): its currency, its entries and whether it buys from players.</li>
+<li><strong>A Shop option on an NPC</strong> that opens it. Several NPCs can share one shop data, each with its own stock.</li>
+</ul>
+<p>The sample has eight shops: the Alchemist (Mira), Armory (Brann), Hatter (Pip), Tailor (Doran), Cobbler (Wren), Arcanist (Selis), Blacksmith (Garrick) and the Guild Registrar (Edda, guild charters).</p>
+<p>Shops sell for gold or another in-game currency. The in-game shop that sells for premium currency is a different system: see <a href="../gameplay/cash-shop.html">Cash shop</a>.</p>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<p><strong>Game Database &gt; Items &gt; Shops</strong>. <strong>+ New shop</strong> makes one in a <code>Shops</code> folder next to the database and adds it to the database's <code>shops</code> list. You can also use <strong>Create &gt; KitARPG &gt; Shop</strong>. The entries show as rows with each item's icon.</p>
+<h2 id="fields"><a class="anchor" href="#fields" aria-hidden="true">#</a>Fields</h2>
+<h3 id="the-shop"><a class="anchor" href="#the-shop" aria-hidden="true">#</a>The shop</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em>, <em>Display Name</em>, <em>Description</em>, <em>Icon</em></td>
+<td>Common to every database asset.</td>
+<td>From the file name</td>
+</tr>
+<tr>
+<td><em>Currency</em> (<code>currency</code>)</td>
+<td>What it charges in. Empty is gold. A premium currency is an error in Project Check: premium currency is only spent at the in-game shop.</td>
+<td>Empty (gold)</td>
+</tr>
+<tr>
+<td><em>Items</em> (<code>items</code>)</td>
+<td>What it sells, in the order the window lists them.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Buys Items</em> (<code>buysItems</code>)</td>
+<td>Players can sell their items here, for gold. Only when Game Settings lets players sell to NPCs at all.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Buyback Slots</em> (<code>buybackSlots</code>)</td>
+<td>Last items each player sold, which they can buy back for what they got until they leave the shop. 0 turns it off.</td>
+<td>10</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="each-entry"><a class="anchor" href="#each-entry" aria-hidden="true">#</a>Each entry</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Item</em> (<code>item</code>)</td>
+<td>What it sells. Project Check warns about an entry with no item.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Price</em> (<code>price</code>)</td>
+<td>Price of one, in the shop's currency. 0 uses the item's buy price.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Stock</em> (<code>stock</code>)</td>
+<td>How many it has. 0 never runs out.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Restock Minutes</em> (<code>restockMinutes</code>)</td>
+<td>Minutes to get one back once some are sold. 0 only refills when the map restarts.</td>
+<td>5</td>
+</tr>
+</tbody>
+</table></div>
+<p>The item's buy price is its <em>Buy Price</em> (<code>buyPrice</code>), or four times its <em>Sell Price</em> (<code>sellPrice</code>) when <em>Buy Price</em> is 0. See <a href="items.html">Items</a>.</p>
+<h3 id="in-game-settings"><a class="anchor" href="#in-game-settings" aria-hidden="true">#</a>In Game Settings</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Players Sell To Npcs</em> (<code>playersSellToNpcs</code>, <strong>Game Settings &gt; Economy</strong>)</td>
+<td>Shops buy what players bring. Off, nothing is sold to NPCs: items go between players, to the market or to the forge, and loot never turns into gold. A shop can still refuse on its own with <em>Buys Items</em> off.</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table></div>
+<p>A shop buys only when both its <em>Buys Items</em> and the game's <em>Players Sell To Npcs</em> are on. With the default settings, no shop buys.</p>
+<h2 id="buying"><a class="anchor" href="#buying" aria-hidden="true">#</a>Buying</h2>
+<p>The shop window lists each entry with its icon, name, price and the stock left for limited entries, and a <strong>Buy</strong> button.</p>
+<ul>
+<li><strong>Buy</strong> or right click on an entry buys one.</li>
+<li>With <code>Shift</code>, it buys a stack: up to the item's maximum stack, or what is left in stock.</li>
+<li>The server checks the entry exists, there is stock, the player can pay the price times the amount in the shop's currency, and the bag has room.</li>
+<li>Errors show in the window: &quot;You can't afford that.&quot;, &quot;Sold out. Come back later.&quot;, &quot;You're too far away.&quot;, or the bag's own reason.</li>
+</ul>
+<p>Every purchase is written to the game log (<code>ShopBuy</code>) with the shop, item, amount and price.</p>
+<h2 id="selling"><a class="anchor" href="#selling" aria-hidden="true">#</a>Selling</h2>
+<p>When the shop buys, opening it also opens the bag beside it, and the bag sells while the shop is open:</p>
+<ul>
+<li>Right click a bag item to sell it, or drag it onto the shop. The bag's hint line shows the other ways (double click, <code>Shift</code> for one, <code>Ctrl</code> for all).</li>
+<li>A stack asks how many.</li>
+<li>The player gets the item's <em>Sell Price</em> times the amount, always in gold, whatever the shop's currency.</li>
+<li>Items with a <em>Sell Price</em> of 0, and quest items, can't be sold: &quot;Nobody would buy that.&quot;</li>
+<li>With the shop not buying: &quot;This shop doesn't buy items.&quot;</li>
+</ul>
+<p>Every sale is written to the game log (<code>ShopSell</code>).</p>
+<h2 id="buying-back"><a class="anchor" href="#buying-back" aria-hidden="true">#</a>Buying back</h2>
+<p>Each sale goes to the top of the player's buyback row, up to <em>Buyback Slots</em> items. Right click one to get it back for the gold the player received. The item comes back exactly as it was sold, with its rolled bonuses and upgrades. The row starts empty every time the shop is opened.</p>
+<h2 id="stock"><a class="anchor" href="#stock" aria-hidden="true">#</a>Stock</h2>
+<ul>
+<li>Stock is kept per NPC while the map runs. Two NPCs with the same shop data have separate stock.</li>
+<li>A limited entry starts full (<em>Stock</em>). Once one is sold, a clock starts: every <em>Restock Minutes</em>, one comes back, until the entry is full again.</li>
+<li>With <em>Restock Minutes</em> 0, sold items only come back when the map server restarts.</li>
+<li>Everyone on the map shares the stock of an NPC. In MMO, each map server, and each copy of an instanced map, has its own.</li>
+</ul>
+<p>The sample's Armory sells its better weapons with stock 1 to 3, refilled every 5 to 10 minutes: &quot;The good pieces sell out.&quot;</p>
+<h2 id="place-an-npc-with-a-shop"><a class="anchor" href="#place-an-npc-with-a-shop" aria-hidden="true">#</a>Place an NPC with a shop</h2>
+<p>This makes a herbalist who sells potions and a rare elixir.</p>
+<ol>
+<li>
+<p><strong>Make the shop.</strong> <strong>Game Database &gt; Items &gt; Shops &gt; + New shop</strong>. Rename it <strong>Herbalist</strong>.</p>
+</li>
+<li>
+<p>Leave <em>Currency</em> empty (gold).</p>
+</li>
+<li>
+<p>Add entries to <em>Items</em>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Price</th>
+<th>Stock</th>
+<th>Restock Minutes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health Potion</td>
+<td>20</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Mana Potion</td>
+<td>20</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Antidote</td>
+<td>0 (uses its buy price)</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Fortitude Elixir</td>
+<td>45</td>
+<td>3</td>
+<td>10</td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li>
+<p>Leave <em>Buys Items</em> on if your game lets players sell to NPCs.</p>
+</li>
+<li>
+<p><strong>Place the NPC.</strong> Open the map scene. Add the character model and name the object <code>Herbalist</code>.</p>
+</li>
+<li>
+<p><strong>Add Component &gt; Npc</strong>. <em>Npc Id</em> <code>herbalist</code>, <em>Display Name</em> <code>Hanna</code>, <em>Greeting</em> &quot;Herbs for every ache.&quot;</p>
+</li>
+<li>
+<p><strong>Add Component &gt; Capsule Collider</strong> and fit it to the body.</p>
+</li>
+<li>
+<p>In the <code>Npc</code> inspector, press <strong>Shop</strong> under <strong>Add option</strong>. In the new option, pick <strong>Herbalist</strong> in <em>Shop</em>. Leave <em>Label</em> empty for &quot;Trade&quot;, or type &quot;Browse herbs&quot;.</p>
+</li>
+<li>
+<p>Save the scene and press Play. Click Hanna, then <strong>Trade</strong>.</p>
+</li>
+</ol>
+<p>With a single option and an empty <em>Greeting</em>, clicking the NPC opens the shop directly.</p>
+<h3 id="a-shop-that-opens-later"><a class="anchor" href="#a-shop-that-opens-later" aria-hidden="true">#</a>A shop that opens later</h3>
+<p>Give the Shop option <em>Conditions</em>, for example a <code>QuestCondition</code> on &quot;Help Hanna&quot; set to <em>Done</em>, and turn on <em>Show When Locked</em> so players see &quot;Trade (Finish Help Hanna first)&quot; greyed out until then. See <a href="conditions-and-actions.html">Conditions and actions</a>.</p>
+<h3 id="a-shop-inside-a-conversation"><a class="anchor" href="#a-shop-inside-a-conversation" aria-hidden="true">#</a>A shop inside a conversation</h3>
+<p>A Shop option can sit inside a <a href="dialogues.html">dialogue</a> line's <em>Options</em>, so the shop opens after some talk.</p>
+<h3 id="a-shop-in-another-currency"><a class="anchor" href="#a-shop-in-another-currency" aria-hidden="true">#</a>A shop in another currency</h3>
+<p>Set <em>Currency</em> to a currency of your game, for example tokens from a quest. The price is in that currency; selling still pays gold. See <a href="currencies.html">Currencies</a>.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The rules are the same. In MMO the map server checks every purchase and sale; the client only asks. Stock lives on the map server, so it starts over when that map server restarts.</p>
+<h2 id="for-programmers"><a class="anchor" href="#for-programmers" aria-hidden="true">#</a>For programmers</h2>
+<p><code>PlayerInteraction.ServerBuy</code>, <code>ServerSell</code> and <code>ServerBuyBack</code> are virtual: override them to change prices (a discount for a guild, a reputation price) or add rules. <code>ShopWindow.Describe</code> turns error codes into text; override it to translate them. See <a href="../devkit/overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Players can't sell anything.</strong> <em>Players Sell To Npcs</em> is off in Game Settings, which is the default. Turn it on, or keep it off on purpose and point players to the <a href="../gameplay/market.html">market</a> and the <a href="../gameplay/forge.html">forge</a>.</li>
+<li><strong>An item costs four times what you expected.</strong> The entry's <em>Price</em> is 0 and the item has no <em>Buy Price</em>, so it uses four times the sell price.</li>
+<li><strong>Stock never refills.</strong> <em>Restock Minutes</em> is 0.</li>
+<li><strong>Project Check error about premium currency.</strong> The shop charges in a premium currency. Use the in-game shop for those.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="npcs.html">NPCs</a></li>
+<li><a href="items.html">Items</a>, <a href="currencies.html">Currencies</a></li>
+<li><a href="../gameplay/market.html">Market</a>, <a href="../gameplay/forge.html">Forge</a>, <a href="../gameplay/cash-shop.html">Cash shop</a></li>
+<li><a href="../editor/game-settings.html">Game settings</a></li>
+<li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="npcs.html"><span>上一页</span>NPCs</a><a class="next" href="quests.html"><span>下一页</span>Quests</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fcontent%2Fnpc-shops.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-a-shop-is">What a shop is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#fields">Fields</a></li><li class="l3"><a href="#the-shop">The shop</a></li><li class="l3"><a href="#each-entry">Each entry</a></li><li class="l3"><a href="#in-game-settings">In Game Settings</a></li><li class="l2"><a href="#buying">Buying</a></li><li class="l2"><a href="#selling">Selling</a></li><li class="l2"><a href="#buying-back">Buying back</a></li><li class="l2"><a href="#stock">Stock</a></li><li class="l2"><a href="#place-an-npc-with-a-shop">Place an NPC with a shop</a></li><li class="l3"><a href="#a-shop-that-opens-later">A shop that opens later</a></li><li class="l3"><a href="#a-shop-inside-a-conversation">A shop inside a conversation</a></li><li class="l3"><a href="#a-shop-in-another-currency">A shop in another currency</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#for-programmers">For programmers</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

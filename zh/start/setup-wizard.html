@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Setup Wizard · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/start/setup-wizard.html">English</option><option value="../../es/start/setup-wizard.html">Español</option><option value="../../pt/start/setup-wizard.html">Português</option><option value="setup-wizard.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section" open><summary>入门</summary><ul><li><a href="introduction.html">Introduction</a></li><li><a href="features.html">Features</a></li><li><a href="requirements.html">Requirements</a></li><li><a href="installation.html">Installation</a></li><li><a href="setup-wizard.html" class="on" aria-current="page">Setup Wizard</a></li><li><a href="quick-start-single-player.html">Quick start: single player</a></li><li><a href="quick-start-mmo.html">Quick start: MMO</a></li><li><a href="project-structure.html">Project structure</a></li><li><a href="updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">入门</div><h1>Setup Wizard</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>The Setup Wizard takes a fresh import to a playable project in two steps: pick how your game runs, then press one button that sets up rendering, fonts, the sample and the scenes. This page explains every step, every check it makes, what it changes in your project and what to do when something is left.</p>
+<h2 id="where-it-is"><a class="anchor" href="#where-it-is" aria-hidden="true">#</a>Where it is</h2>
+<ul>
+<li>It opens by itself the first time the editor loads after importing KitARPG.</li>
+<li><strong>KitARPG &gt; Setup Wizard</strong> opens it any time.</li>
+<li>The <strong>Setup wizard</strong> button at the bottom of the KitARPG window's sidebar, and the <strong>Setup wizard &gt; Open</strong> tool in <a href="../editor/overview.html">Overview</a>, open it too.</li>
+</ul>
+<p>The window is titled <strong>KitARPG Setup</strong>. At the top a bar shows the two steps, <strong>Your game</strong> and <strong>Get ready</strong>, with the current one highlighted and a check mark on the finished one.</p>
+<h2 id="when-it-opens-by-itself"><a class="anchor" href="#when-it-opens-by-itself" aria-hidden="true">#</a>When it opens by itself</h2>
+<p>The wizard opens on its own once per project. It writes the file <code>UserSettings/KitARPG/setup-done</code> when you finish it or close it, and doesn't open by itself again while that file exists.</p>
+<p>It never opens by itself:</p>
+<ul>
+<li>in batch mode (command line builds and tests);</li>
+<li>in the second editor that <strong>Play with two players</strong> opens;</li>
+<li>while the editor is entering Play mode.</li>
+</ul>
+<p>To see it again on its own, delete <code>UserSettings/KitARPG/setup-done</code>. Opening it from the menu works whether or not the file exists.</p>
+<h2 id="step-1-your-game"><a class="anchor" href="#step-1-your-game" aria-hidden="true">#</a>Step 1: Your game</h2>
+<p>The heading reads <strong>Welcome to KitARPG</strong>. Below it, <strong>How does your game run?</strong> shows two large cards:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Card</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single player</strong></td>
+<td>The game hosts its own world and saves on the player's computer. No servers to run</td>
+</tr>
+<tr>
+<td><strong>MMO</strong></td>
+<td>Players log in to your servers: Login, Central and one server per map</td>
+</tr>
+</tbody>
+</table></div>
+<p>Click a card to pick it. The text under the cards explains the choice:</p>
+<ul>
+<li>With <strong>Single player</strong>: &quot;Nothing else to install. You can turn it into an MMO later; the maps and their code stay the same.&quot;</li>
+<li>With <strong>MMO</strong>: the servers run on your computer while you make the game, with a local database. You start them from the KitARPG window and choose PostgreSQL there when you go live.</li>
+</ul>
+<p>Your choice is saved at once in <code>Assets/Settings/Resources/KitARPGSettings.asset</code> (field <code>mode</code>). The asset is created if it doesn't exist. A new settings asset starts on <strong>MMO</strong> (<code>Online</code>).</p>
+<div class="callout tip"><div class="callout-title">提示</div><p>Not sure? Pick <strong>Single player</strong>. It needs nothing outside Unity and you can switch to MMO later in <a href="../editor/play-and-servers.html">Play &amp; Servers</a> without changing any content.</p>
+</div>
+<p>Buttons at the bottom:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Not now</strong></td>
+<td>Closes the wizard. It still counts as done, and the KitARPG window opens</td>
+</tr>
+<tr>
+<td><strong>Next</strong></td>
+<td>Goes to step 2</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="step-2-get-ready"><a class="anchor" href="#step-2-get-ready" aria-hidden="true">#</a>Step 2: Get ready</h2>
+<p>The heading reads <strong>Get the project ready</strong>, with &quot;One click sets up everything below. Nothing in your own assets is touched.&quot; A card lists five checks. Each row shows a light: done, to do, or busy while the wizard works.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Checks that</th>
+<th>What <strong>Set everything up</strong> does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Graphics</strong></td>
+<td>The default render pipeline is a URP asset, every quality level uses URP (or none), and the color space is Linear</td>
+<td>Uses the project's URP asset if it has one in <code>Assets</code>. Otherwise creates <code>Assets/Settings/KitARPG_URP.asset</code> and its renderer <code>Assets/Settings/KitARPG_URP_Renderer.asset</code>. Sets it as the default pipeline and on every quality level that used another pipeline, and sets the color space to Linear</td>
+</tr>
+<tr>
+<td><strong>Fonts</strong></td>
+<td>TextMesh Pro's essential resources are in the project</td>
+<td>Imports <strong>TMP Essential Resources</strong></td>
+</tr>
+<tr>
+<td><strong>Sample</strong></td>
+<td><code>Assets/Blunnyn/KitARPG/Samples/Starter/Scenes/Title.unity</code> exists</td>
+<td>Builds the starter sample (<strong>KitARPG &gt; Starter &gt; Build Scenes and Prefabs</strong>)</td>
+</tr>
+<tr>
+<td><strong>Scenes in the build</strong></td>
+<td>The first enabled scene in Build Settings is <code>Title</code></td>
+<td>Replaces the Build Settings list with the starter scenes that exist, in this order: Title, Server, Town, Forest, Crypt</td>
+</tr>
+<tr>
+<td><strong>Scenes up to date</strong></td>
+<td>Every scene's EventSystem uses the UI module of the input the project has on, and no scene overrides Game Settings on its Game Instance</td>
+<td>Switches each EventSystem to <code>InputSystemUIInputModule</code> or <code>StandaloneInputModule</code> as needed, and reverts the Game Instance overrides in each scene so it takes its settings from the prefab</td>
+</tr>
+</tbody>
+</table></div>
+<div class="callout note"><div class="callout-title">注意</div><p>The wizard looks for a URP asset only inside <code>Assets</code>. The URP package carries a read-only asset of its own that can't be edited, so the wizard never uses it.</p>
+</div>
+<h3 id="running-set-everything-up"><a class="anchor" href="#running-set-everything-up" aria-hidden="true">#</a>Running Set everything up</h3>
+<ol>
+<li>Press <strong>Set everything up</strong>. The button changes to <strong>Setting up...</strong> and the rows turn busy. A message says &quot;Setting up... Unity may import and compile for a moment.&quot;</li>
+<li>Unity imports and compiles. The wizard keeps its place through the recompile.</li>
+<li>The TextMesh Pro import finishes on its own a moment later. The wizard waits up to 30 seconds for it.</li>
+<li>The wizard runs <a href="../editor/project-check.html">Project Check</a> and counts the errors.</li>
+<li>The wizard closes. If the sample exists, it asks to save any modified scenes and opens the <strong>Title</strong> scene.</li>
+<li>The KitARPG window opens:
+<ul>
+<li>on <strong>Overview</strong> when Project Check found no errors;</li>
+<li>on <strong>Project Check</strong> when errors are left, so you can fix them.</li>
+</ul>
+</li>
+</ol>
+<p>If you open the wizard again when everything is in place, the heading says &quot;Everything is in place.&quot; and the button reads <strong>Open the sample</strong>, which opens Title and the KitARPG window.</p>
+<h3 id="when-errors-are-left"><a class="anchor" href="#when-errors-are-left" aria-hidden="true">#</a>When errors are left</h3>
+<p>If Project Check finds errors, the card shows a <strong>Project check</strong> row with the count (&quot;N problem(s) left, most with a fix button.&quot;) and a <strong>See them</strong> button. Most problems have a fix button in Project Check. Fix them, then come back and press the button again, or carry on from the KitARPG window.</p>
+<h2 id="what-the-wizard-changes"><a class="anchor" href="#what-the-wizard-changes" aria-hidden="true">#</a>What the wizard changes</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Changed</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game mode</td>
+<td><code>Assets/Settings/Resources/KitARPGSettings.asset</code></td>
+</tr>
+<tr>
+<td>Render pipeline</td>
+<td>Graphics settings and each quality level; possibly new assets in <code>Assets/Settings/</code></td>
+</tr>
+<tr>
+<td>Color space</td>
+<td>Player Settings &gt; Other Settings &gt; Color Space</td>
+</tr>
+<tr>
+<td>TMP Essentials</td>
+<td><code>Assets/TextMesh Pro/</code></td>
+</tr>
+<tr>
+<td>Starter sample</td>
+<td><code>Assets/Blunnyn/KitARPG/Samples/Starter/</code> (only if missing)</td>
+</tr>
+<tr>
+<td>Build Settings scene list</td>
+<td>Replaced with the starter scenes</td>
+</tr>
+<tr>
+<td>Starter scenes</td>
+<td>EventSystem input module and Game Instance overrides</td>
+</tr>
+<tr>
+<td>Done marker</td>
+<td><code>UserSettings/KitARPG/setup-done</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>It never changes your own assets, never rebuilds an existing sample, and doesn't touch the database or servers. MMO servers and the database are set up later in <a href="../editor/play-and-servers.html">Play &amp; Servers</a>.</p>
+<h2 id="after-the-wizard"><a class="anchor" href="#after-the-wizard" aria-hidden="true">#</a>After the wizard</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>You picked</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single player</td>
+<td><a href="quick-start-single-player.html">Quick start: single player</a></td>
+</tr>
+<tr>
+<td>MMO</td>
+<td><a href="quick-start-mmo.html">Quick start: MMO</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>Everything the wizard sets can be changed later: the mode in Play &amp; Servers, the scenes in Build Settings, the render settings in Project Settings.</p>
+<h2 id="common-problems"><a class="anchor" href="#common-problems" aria-hidden="true">#</a>Common problems</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fonts</strong> stays on to do</td>
+<td>The TMP import didn't finish in 30 seconds. Press <strong>Set everything up</strong> again, or use <strong>Window &gt; TextMeshPro &gt; Import TMP Essential Resources</strong></td>
+</tr>
+<tr>
+<td><strong>Graphics</strong> stays on to do</td>
+<td>A quality level still points to a non-URP pipeline you can't change, or the color space couldn't be set. Check <strong>Project Settings &gt; Quality</strong> and <strong>Player &gt; Color Space</strong></td>
+</tr>
+<tr>
+<td>The wizard asks to save scenes</td>
+<td>It is about to open Title. Save or discard your changes; cancelling leaves your current scene open</td>
+</tr>
+<tr>
+<td>Materials are still pink after the wizard</td>
+<td>See <a href="../reference/troubleshooting.html#materials-are-pink">Troubleshooting</a></td>
+</tr>
+<tr>
+<td>You closed the wizard by mistake</td>
+<td>Open <strong>KitARPG &gt; Setup Wizard</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="../editor/overview.html">Overview</a></li>
+<li><a href="../editor/project-check.html">Project Check</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="installation.html"><span>上一页</span>Installation</a><a class="next" href="quick-start-single-player.html"><span>下一页</span>Quick start: single player</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fstart%2Fsetup-wizard.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#where-it-is">Where it is</a></li><li class="l2"><a href="#when-it-opens-by-itself">When it opens by itself</a></li><li class="l2"><a href="#step-1-your-game">Step 1: Your game</a></li><li class="l2"><a href="#step-2-get-ready">Step 2: Get ready</a></li><li class="l3"><a href="#running-set-everything-up">Running Set everything up</a></li><li class="l3"><a href="#when-errors-are-left">When errors are left</a></li><li class="l2"><a href="#what-the-wizard-changes">What the wizard changes</a></li><li class="l2"><a href="#after-the-wizard">After the wizard</a></li><li class="l2"><a href="#common-problems">Common problems</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

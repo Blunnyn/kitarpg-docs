@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keys · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/reference/keys.html">English</option><option value="keys.html" selected>Español</option><option value="../../pt/reference/keys.html">Português</option><option value="../../zh/reference/keys.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section" open><summary>Referencia</summary><ul><li><a href="keys.html" class="on" aria-current="page">Keys</a></li><li><a href="gm-commands.html">GM commands</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Referencia</div><h1>Keys</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>Every default key and mouse action in KitARPG, per control mode, plus the keys that work in windows and where to change each one. Players can't rebind keys in game; you set them on the components in the HUD prefab and the mode components.</p>
+<h2 id="how-keys-work-in-the-kit"><a class="anchor" href="#how-keys-work-in-the-kit" aria-hidden="true">#</a>How keys work in the kit</h2>
+<ul>
+<li>The kit reads keys through <code>KitInput</code>, which uses the Input System package when the project has it on, and the old Input Manager otherwise. Every key below works in both.</li>
+<li>Game keys are ignored while the player types in a text field (chat, search, amounts).</li>
+<li>With Game Settings &gt; <em>Input Layout</em> (<code>inputLayout</code>) set to <strong>Touch</strong>, game keys do nothing; touch controls take over. <strong>Touch And Keys</strong> keeps both. See <a href="../gameplay/touch-controls.html">Touch controls</a>.</li>
+<li><code>Ctrl</code> on Windows is <code>Cmd</code> on Mac wherever a modifier is listed as <code>Ctrl/Cmd</code>.</li>
+</ul>
+<h2 id="keys-in-every-mode"><a class="anchor" href="#keys-in-every-mode" aria-hidden="true">#</a>Keys in every mode</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+<th>Set on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code> to <code>9</code>, <code>0</code></td>
+<td>Use the skill or item on that quick bar slot. An area skill first shows its shape</td>
+<td><code>PlayerHud</code> &gt; <em>Hotbar Keys</em> (<code>hotbarKeys</code>)</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Pick up or talk to what is nearest (within 4 meters by default)</td>
+<td>The mode's input component (<code>interactKey</code>)</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>Open the chat box. In the box, <code>Enter</code> sends</td>
+<td>Chat window</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>Close the top window, cancel aiming, or open the game menu when nothing is open</td>
+<td>Fixed</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>Bag and equipment</td>
+<td><code>InventoryWindow</code> &gt; <em>Toggle Key</em> (<code>toggleKey</code>)</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>Character: attributes and stats</td>
+<td><code>CharacterWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>K</code></td>
+<td>Skills</td>
+<td><code>SkillWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>Quest log</td>
+<td><code>QuestLogWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>World map</td>
+<td><code>WorldMapWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Bestiary</td>
+<td><code>BestiaryWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>Friends</td>
+<td><code>FriendsWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>Guild</td>
+<td><code>GuildWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>Mail</td>
+<td><code>MailWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>In-game shop (MMO only)</td>
+<td><code>CashShopWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td><code>F8</code></td>
+<td>GM panel, for staff accounts only</td>
+<td><code>GmWindow</code> &gt; <code>toggleKey</code></td>
+</tr>
+<tr>
+<td>Mouse wheel</td>
+<td>Zoom the camera, unless the pointer is over the interface</td>
+<td>Mode camera</td>
+</tr>
+</tbody>
+</table></div>
+<p>A window whose module is off in <a href="../editor/modules.html">Modules</a> doesn't open with its key.</p>
+<h2 id="top-down-mode"><a class="anchor" href="#top-down-mode" aria-hidden="true">#</a>Top-down mode</h2>
+<p>The default mode: a fixed camera above the player, Diablo style.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left click on the ground</td>
+<td>Walk there. Hold the button to keep walking toward the pointer</td>
+</tr>
+<tr>
+<td>Left click on a monster</td>
+<td>Walk into range and attack it</td>
+</tr>
+<tr>
+<td>Left click on loot</td>
+<td>Walk to it and pick it up</td>
+</tr>
+<tr>
+<td>Left click on an NPC</td>
+<td>Walk to it and talk</td>
+</tr>
+<tr>
+<td>Right click on another player</td>
+<td>Open the player menu</td>
+</tr>
+<tr>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> or arrow keys</td>
+<td>Walk, relative to the camera</td>
+</tr>
+<tr>
+<td><code>Space</code></td>
+<td>Attack the nearest enemy within 10 meters. Hold to keep attacking</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Pick up or talk to the nearest thing within 4 meters</td>
+</tr>
+<tr>
+<td>Mouse wheel</td>
+<td>Zoom between 5 and 18 meters</td>
+</tr>
+</tbody>
+</table></div>
+<p>Players choose how they walk in <strong>Settings &gt; Controls &gt; Movement</strong>: <strong>Click and keys</strong> (default), <strong>Click only</strong> or <strong>Keys only</strong>.</p>
+<p>Fields on <code>TopDownInput</code>, on each map's camera:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Controls</em> (<code>controls</code>)</td>
+<td>Click and keys, click only, or keys only, when players don't choose</td>
+<td>Click and keys</td>
+</tr>
+<tr>
+<td><em>Player Chooses</em> (<code>playerChooses</code>)</td>
+<td>Adds Movement to Settings &gt; Controls</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Attack Key</em> (<code>attackKey</code>)</td>
+<td>Attacks the nearest enemy</td>
+<td><code>Space</code></td>
+</tr>
+<tr>
+<td><em>Interact Key</em> (<code>interactKey</code>)</td>
+<td>Picks up or talks</td>
+<td><code>F</code></td>
+</tr>
+<tr>
+<td><em>Key Attack Range</em> (<code>keyAttackRange</code>)</td>
+<td>Meters in which the attack key looks for an enemy</td>
+<td>10</td>
+</tr>
+<tr>
+<td><em>Key Interact Range</em> (<code>keyInteractRange</code>)</td>
+<td>Meters in which the interact key finds loot or an NPC</td>
+<td>4</td>
+</tr>
+<tr>
+<td><em>Player Menu Button</em> (<code>playerMenuButton</code>)</td>
+<td>Mouse button for the player menu: 0 left, 1 right, 2 middle</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="free-camera-mode"><a class="anchor" href="#free-camera-mode" aria-hidden="true">#</a>Free camera mode</h2>
+<p>The cursor aims; the camera orbits behind the player.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> or arrow keys</td>
+<td>Walk, relative to the camera</td>
+</tr>
+<tr>
+<td>Left click</td>
+<td>Swing toward the pointer. Hold to keep swinging. Nothing needs a target: the server finds who is hit</td>
+</tr>
+<tr>
+<td>Right button held</td>
+<td>Turn the camera</td>
+</tr>
+<tr>
+<td>Right click without moving the mouse, on another player</td>
+<td>Open the player menu</td>
+</tr>
+<tr>
+<td><code>Space</code></td>
+<td>Dodge</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Pick up or talk to the nearest thing within 4 meters</td>
+</tr>
+<tr>
+<td>Mouse wheel</td>
+<td>Zoom within the camera's range</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="third-person-mode"><a class="anchor" href="#third-person-mode" aria-hidden="true">#</a>Third person mode</h2>
+<p>The cursor is hidden and the camera turns with the mouse; a crosshair aims.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mouse</td>
+<td>Turn the camera</td>
+</tr>
+<tr>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> or arrow keys</td>
+<td>Walk, relative to the camera</td>
+</tr>
+<tr>
+<td>Left click</td>
+<td>Swing at what the crosshair covers. Hold to keep swinging</td>
+</tr>
+<tr>
+<td>Right click on another player</td>
+<td>Open the player menu</td>
+</tr>
+<tr>
+<td><code>Space</code></td>
+<td>Dodge</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Pick up or talk to the nearest thing within 4 meters</td>
+</tr>
+<tr>
+<td>Left <code>Alt</code> held</td>
+<td>Show the cursor, to click the interface</td>
+</tr>
+<tr>
+<td>Mouse wheel</td>
+<td>Zoom within the camera's range</td>
+</tr>
+</tbody>
+</table></div>
+<p>The cursor also comes back by itself while a window, dialog or the game menu is open.</p>
+<p>Players set mouse sensitivity, invert the mouse, and <strong>Turn with the camera</strong> (the player faces where the camera looks) in <strong>Settings &gt; Controls</strong>.</p>
+<p>Fields on the third person components:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ThirdPersonInput</code></td>
+<td><em>Dodge Key</em> (<code>dodgeKey</code>)</td>
+<td>Dodge</td>
+<td><code>Space</code></td>
+</tr>
+<tr>
+<td><code>ThirdPersonInput</code></td>
+<td><em>Interact Key</em> (<code>interactKey</code>)</td>
+<td>Pick up or talk</td>
+<td><code>F</code></td>
+</tr>
+<tr>
+<td><code>ThirdPersonInput</code></td>
+<td><em>Interact Range</em> (<code>interactRange</code>)</td>
+<td>Meters for the interact key</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>ThirdPersonCamera</code></td>
+<td><em>Look Button</em> (<code>lookButton</code>)</td>
+<td>Free camera: mouse button held to turn</td>
+<td>1 (right)</td>
+</tr>
+<tr>
+<td><code>ThirdPersonCamera</code></td>
+<td><em>Free Cursor Key</em> (<code>freeCursorKey</code>)</td>
+<td>Third person: held to get the cursor back</td>
+<td>Left <code>Alt</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="aiming-skills"><a class="anchor" href="#aiming-skills" aria-hidden="true">#</a>Aiming skills</h2>
+<p>In every mode, an area skill shows its circle, cone or line where you aim before it is cast.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left click, or the skill's key again</td>
+<td>Cast</td>
+</tr>
+<tr>
+<td>Right click or <code>Esc</code></td>
+<td>Cancel</td>
+</tr>
+</tbody>
+</table></div>
+<p>Players can turn on <strong>Cast at once</strong> in <strong>Settings &gt; Controls</strong> to skip the preview.</p>
+<h2 id="bag-equipment-and-items"><a class="anchor" href="#bag-equipment-and-items" aria-hidden="true">#</a>Bag, equipment and items</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drag an item</td>
+<td>Move, stack, swap or wear it</td>
+</tr>
+<tr>
+<td>Double click an item in the bag</td>
+<td>Use, wear, or do what the window beside it does (deposit at the bank, offer in a trade, sell)</td>
+</tr>
+<tr>
+<td>Double click a worn item</td>
+<td>Take it off</td>
+</tr>
+<tr>
+<td><code>Shift</code> + double click a stack</td>
+<td>Split the stack in half, into the first free slot</td>
+</tr>
+<tr>
+<td>Right click an item</td>
+<td>Open the item menu</td>
+</tr>
+<tr>
+<td>Hover or click an item</td>
+<td>Show its details, as Game Settings &gt; <em>Item Details On Hover</em> says</td>
+</tr>
+</tbody>
+</table></div>
+<p>When moving part of a stack asks &quot;how many?&quot;:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hold <code>Shift</code> while moving</td>
+<td>Move one, without asking</td>
+</tr>
+<tr>
+<td>Hold <code>Ctrl/Cmd</code> while moving</td>
+<td>Move the whole stack, without asking</td>
+</tr>
+<tr>
+<td><code>Shift</code> on the amount arrows</td>
+<td>Steps of 10 instead of 1</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>Confirm</td>
+</tr>
+<tr>
+<td><code>Esc</code> or a click outside</td>
+<td>Close</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="npc-shops"><a class="anchor" href="#npc-shops" aria-hidden="true">#</a>NPC shops</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Right click an item for sale</td>
+<td>Buy one</td>
+</tr>
+<tr>
+<td><code>Shift</code> + right click, or <code>Shift</code> + the buy button</td>
+<td>Buy a stack</td>
+</tr>
+<tr>
+<td>Right click in the buyback list</td>
+<td>Buy back</td>
+</tr>
+<tr>
+<td><code>Esc</code>, or walking away</td>
+<td>Close</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="character-window"><a class="anchor" href="#character-window" aria-hidden="true">#</a>Character window</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code> next to an attribute</td>
+<td>Add one point. Nothing is sent until you confirm</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>+</code></td>
+<td>Add every point that fits</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="chat"><a class="anchor" href="#chat" aria-hidden="true">#</a>Chat</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td>Open the chat box, or send what you typed</td>
+</tr>
+<tr>
+<td><code>Esc</code> in the box</td>
+<td>Clear and leave the box</td>
+</tr>
+<tr>
+<td>The channel button</td>
+<td>Cycle the default channel</td>
+</tr>
+<tr>
+<td><code>/s</code>, <code>/m</code>, <code>/g</code>, <code>/p</code>, <code>/gu</code>, <code>/al</code> alone</td>
+<td>Switch the default channel to say, map, world, party, guild or alliance</td>
+</tr>
+<tr>
+<td>Right click a player's name</td>
+<td>Open the player menu</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every chat command is in <a href="gm-commands.html#chat-commands-for-every-player">GM commands</a>.</p>
+<h2 id="dialogs-and-other-windows"><a class="anchor" href="#dialogs-and-other-windows" aria-hidden="true">#</a>Dialogs and other windows</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td>Yes, in a confirmation dialog</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>No, or close the window</td>
+</tr>
+<tr>
+<td>Mouse wheel over the minimap</td>
+<td>Zoom the minimap. Its <code>+</code> and <code>-</code> buttons do the same</td>
+</tr>
+<tr>
+<td>Walking away from an NPC, loot or a shop</td>
+<td>Closes its window</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="touch-controls"><a class="anchor" href="#touch-controls" aria-hidden="true">#</a>Touch controls</h2>
+<p>With touch controls on, the screen replaces the keys:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stick on the left</td>
+<td>Walk</td>
+</tr>
+<tr>
+<td><strong>Attack</strong></td>
+<td>Attack (top-down: the nearest enemy; third person: what the crosshair covers or the nearest enemy)</td>
+</tr>
+<tr>
+<td>Skill buttons <strong>1</strong> to <strong>4</strong> around Attack</td>
+<td>Tap to cast at the nearest enemy in range; drag to aim and release to cast; drop on the <strong>X</strong> to cancel</td>
+</tr>
+<tr>
+<td>Button <strong>5</strong> at the top left</td>
+<td>A consumable, such as a potion</td>
+</tr>
+<tr>
+<td>Hold a skill button, or tap an empty one</td>
+<td>Pick what it holds</td>
+</tr>
+<tr>
+<td><strong>Activate</strong> on the right edge</td>
+<td>Appears near loot or an NPC; does what <code>F</code> does</td>
+</tr>
+<tr>
+<td>Drag on the world</td>
+<td>Turn the camera (third person and free camera)</td>
+</tr>
+<tr>
+<td>Pinch</td>
+<td>Zoom</td>
+</tr>
+<tr>
+<td>Tap on the world</td>
+<td>What a click does</td>
+</tr>
+</tbody>
+</table></div>
+<p>There is no dodge button on screen. See <a href="../gameplay/touch-controls.html">Touch controls</a>.</p>
+<h2 id="changing-keys"><a class="anchor" href="#changing-keys" aria-hidden="true">#</a>Changing keys</h2>
+<ol>
+<li>Open the HUD prefab (Game Settings &gt; Interface &gt; <em>Hud Prefab</em>, <code>GameHud.prefab</code> in the sample).</li>
+<li>Find the window under Windows, for example <strong>Inventory Window</strong>, and change <em>Toggle Key</em>.</li>
+<li>For the quick bar, select the <code>PlayerHud</code> and edit <em>Hotbar Keys</em>.</li>
+<li>For movement, attack, dodge and interact keys, edit the mode components on each map's main camera (<code>TopDownInput</code>, <code>ThirdPersonInput</code>, <code>ThirdPersonCamera</code>).</li>
+<li>Save the prefab or scene and rebuild your clients.</li>
+</ol>
+<div class="callout tip"><div class="callout-title">Consejo</div><p>Change the HUD prefab rather than the sample's original so kit updates don't fight your changes. See <a href="../gameplay/hud-and-windows.html">HUD and windows</a>.</p>
+</div>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../gameplay/control-modes.html">Control modes</a></li>
+<li><a href="../gameplay/player-settings.html">Player settings</a></li>
+<li><a href="gm-commands.html">GM commands</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="../devkit/quest-objectives.html"><span>Anterior</span>Quest objectives</a><a class="next" href="gm-commands.html"><span>Siguiente</span>GM commands</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Freference%2Fkeys.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#how-keys-work-in-the-kit">How keys work in the kit</a></li><li class="l2"><a href="#keys-in-every-mode">Keys in every mode</a></li><li class="l2"><a href="#top-down-mode">Top-down mode</a></li><li class="l2"><a href="#free-camera-mode">Free camera mode</a></li><li class="l2"><a href="#third-person-mode">Third person mode</a></li><li class="l2"><a href="#aiming-skills">Aiming skills</a></li><li class="l2"><a href="#bag-equipment-and-items">Bag, equipment and items</a></li><li class="l2"><a href="#npc-shops">NPC shops</a></li><li class="l2"><a href="#character-window">Character window</a></li><li class="l2"><a href="#chat">Chat</a></li><li class="l2"><a href="#dialogs-and-other-windows">Dialogs and other windows</a></li><li class="l2"><a href="#touch-controls">Touch controls</a></li><li class="l2"><a href="#changing-keys">Changing keys</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

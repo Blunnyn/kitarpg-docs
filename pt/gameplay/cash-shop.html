@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cash shop · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/cash-shop.html">English</option><option value="../../es/gameplay/cash-shop.html">Español</option><option value="cash-shop.html" selected>Português</option><option value="../../zh/gameplay/cash-shop.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de jogo</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html" class="on" aria-current="page">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de jogo</div><h1>Cash shop</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>The cash shop, or in-game shop, sells offers for a premium currency (the sample's Gems) that the account holds, not the character. Players open it from anywhere with <code>P</code>, browse categories and a banner, buy for themselves or send gifts. The Shop service, a separate process, owns the catalog, the balances, every purchase and real-money payments. This page covers what players see, how buying works and what the servers check, and how to set up offers with pictures and banners. It works in MMO only.</p>
+<h2 id="for-the-player"><a class="anchor" href="#for-the-player" aria-hidden="true">#</a>For the player</h2>
+<p>Press <code>P</code> or click the shop button in the icon bar at the top right. The button shows in online games, on PC and on touch screens, while the in-game shop module is on.</p>
+<h3 id="the-window"><a class="anchor" href="#the-window" aria-hidden="true">#</a>The window</h3>
+<ul>
+<li><strong>Left side:</strong> a search field and the categories. The first, <strong>Home</strong>, shows every offer with the banner on top. Each other category is one entry, named by the offers' <em>Category</em>.</li>
+<li><strong>Top bar:</strong> sorting (<strong>Relevance</strong>, <strong>Newest</strong>, <strong>Price: low to high</strong>, <strong>Price: high to low</strong>) and your balance with the currency's icon. A <strong>+</strong> next to the balance opens the game's top-up web page, when the game has one.</li>
+<li><strong>Banner:</strong> on Home, wide pictures of the offers that have one take turns every 6 seconds, with arrows and dots to move between them. Clicking it opens the offer.</li>
+<li><strong>Cards:</strong> one per offer, with its picture (or its item's icon), a ribbon in the corner, the name and the price with the currency's icon. Ribbons are the offer's badge (like <strong>New</strong> or <strong>Sale</strong>), or <strong>Limited time</strong> for offers with an end date and no badge.</li>
+</ul>
+<p>While it loads, the window says &quot;Loading the shop...&quot;. If the server has no shop it says &quot;The shop isn't open on this server.&quot;; if the service doesn't answer, &quot;The shop can't be reached right now. Try again in a moment.&quot;</p>
+<h3 id="an-offer-s-page"><a class="anchor" href="#an-offer-s-page" aria-hidden="true">#</a>An offer's page</h3>
+<p>Click a card to open the offer's page: its picture, the price, <strong>Buy</strong> and <strong>Gift</strong>, what it contains as item slots (hover one for its details), its description, and lines such as &quot;It can be bought once per account.&quot;</p>
+<ul>
+<li><strong>Buy</strong> asks &quot;Buy <em>offer</em> for <em>price</em> <em>currency</em>?&quot; and buys on confirm.</li>
+<li><strong>Gift</strong> asks for a character name and sends it to them. Only offers marked giftable can be gifts, and you can't gift yourself.</li>
+<li>An offer bought up to its per-account limit shows <strong>Bought</strong>.</li>
+</ul>
+<h3 id="where-bought-items-go"><a class="anchor" href="#where-bought-items-go" aria-hidden="true">#</a>Where bought items go</h3>
+<p>Bought items and gifts arrive as a letter from the shop, and the map takes them straight into the bag as soon as they arrive. The player reads &quot;<em>subject</em> arrived in your bag.&quot;. If the bag and the account bank have no room, the letter waits in the <a href="mail.html">mail</a> and the player is told once. The game setting <em>Shop Auto Take</em> turns this off, so purchases always wait in the mail.</p>
+<h2 id="how-buying-works"><a class="anchor" href="#how-buying-works" aria-hidden="true">#</a>How buying works</h2>
+<ol>
+<li>The client asks its map server. The client never talks to the Shop service.</li>
+<li>The map checks the offer against its copy of the catalog (on sale, dates, per-account limit, giftable, not gifting yourself) and makes the item copies with their random bonuses.</li>
+<li>The map sends the offer id and the copies to the Shop service with its key.</li>
+<li>The Shop service charges <strong>its own price</strong>, never one from the map, checks the copies against the offer and the item catalog, and in one transaction writes the debit to the account's ledger and a letter with the items. One buy at a time.</li>
+<li>The map asks Central to refresh the buyer's (or the gift's recipient's) mailbox, and takes the letter into the bag.</li>
+</ol>
+<p>Paying and getting the items is one write, so a failure never charges without delivering or delivers without charging. A player waits for one buy to finish before another (&quot;Wait for the last purchase to go through.&quot;).</p>
+<p>Every buy is written to the <a href="game-log-and-reports.html">game log</a> as <code>shop.premium_buy</code> or <code>shop.premium_gift</code>.</p>
+<h3 id="balances"><a class="anchor" href="#balances" aria-hidden="true">#</a>Balances</h3>
+<p>Each change to a balance is a row in <code>currency_ledger</code> (account, currency, change, reason, a unique reference). The balance is their sum. The unique reference makes a repeated payment, grant or webhook count once. A refund can take a balance below zero, and the player can't buy until it is back above the price.</p>
+<h2 id="earning-premium-currency"><a class="anchor" href="#earning-premium-currency" aria-hidden="true">#</a>Earning premium currency</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Playing</td>
+<td>Any reward that gives a premium currency (quest rewards, the Give Currency action) goes to the account through the Shop service. In the sample, the Welcome quest gives 20 gems and the king's quest 100</td>
+</tr>
+<tr>
+<td>GMs</td>
+<td><code>/currency gems 100 Name</code>, which works for offline characters too. See <a href="gm-tools.html">GM tools</a></td>
+</tr>
+<tr>
+<td>Real money</td>
+<td>Payment webhooks from Stripe or your own web shop, with the products listed in the catalog. See <a href="../servers/shop-service.html">Shop service</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="setting-it-up"><a class="anchor" href="#setting-it-up" aria-hidden="true">#</a>Setting it up</h2>
+<h3 id="1-a-premium-currency"><a class="anchor" href="#1-a-premium-currency" aria-hidden="true">#</a>1. A premium currency</h3>
+<p>Tick <em>Premium</em> (<code>premium</code>) on a currency in the Game Database (Currencies). A premium currency is held by the account in a ledger only the servers write. The sample has <strong>Gems</strong>. If your project has none, the Shop page offers a kit update that adds Gems. See <a href="../content/currencies.html">Currencies</a>.</p>
+<p>The player prefabs need the <code>PlayerShop</code> component. The kit update <strong>Shop on the player prefabs</strong> adds it to older projects.</p>
+<h3 id="2-turn-it-on-and-start-the-service"><a class="anchor" href="#2-turn-it-on-and-start-the-service" aria-hidden="true">#</a>2. Turn it on and start the service</h3>
+<p>Open the <strong>Shop</strong> page of the KitARPG window (<strong>KitARPG &gt; Shop</strong>):</p>
+<ol>
+<li>Turn on the switch under <strong>In the game</strong>. It turns on the in-game shop module and the shop in the launcher settings.</li>
+<li>Under <strong>On this computer</strong>, press <strong>Start the shop</strong>. It builds the service if needed and starts it with the launcher in <code>--shop-only</code> mode.</li>
+</ol>
+<p>Details of every button are on the <a href="../editor/shop-page.html">Shop page</a>.</p>
+<h3 id="3-offers"><a class="anchor" href="#3-offers" aria-hidden="true">#</a>3. Offers</h3>
+<p>Each offer has:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em> (<code>id</code>)</td>
+<td>Never changes once players bought it. Up to 64 characters, unique</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Name</em> (<code>name</code>)</td>
+<td>Shown on the card and the page</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Description</em> (<code>description</code>)</td>
+<td>Shown on the page</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Category</em> (<code>category</code>)</td>
+<td>One entry on the left side of the shop per category</td>
+<td>Featured</td>
+</tr>
+<tr>
+<td><em>Icon</em> (<code>icon</code>)</td>
+<td>Item whose icon the card shows when it has no picture. Empty: the first item's</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Currency</em> (<code>currency</code>)</td>
+<td>The currency id it costs</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Price</em> (<code>price</code>)</td>
+<td>Above 0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Items</em> (<code>items</code>)</td>
+<td>Item ids and amounts it gives. At least one</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Starts At</em>, <em>Ends At</em> (<code>startsAt</code>, <code>endsAt</code>)</td>
+<td>UTC, ISO 8601 (<code>2026-12-01T00:00:00Z</code>). Empty is always</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Per Account</em> (<code>perAccount</code>)</td>
+<td>Times one account can buy it. 0 is no limit</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Giftable</em> (<code>giftable</code>)</td>
+<td>Can be sent as a gift</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Hidden</em> (<code>hidden</code>)</td>
+<td>Kept for history but no longer sold</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Badge</em> (<code>badge</code>)</td>
+<td>Ribbon on the card, like New or Sale. Up to 24 characters</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Order</em> (<code>order</code>)</td>
+<td>Lower comes first when sorted by relevance</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Picture</em> (<code>image</code>)</td>
+<td>Key of the card and page picture in the game's Shop Art</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Banner</em> (<code>banner</code>)</td>
+<td>Key of a wide picture; offers with one take turns in the banner</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-pictures-and-banners"><a class="anchor" href="#4-pictures-and-banners" aria-hidden="true">#</a>4. Pictures and banners</h3>
+<p>The catalog is text in the Shop service, so it can't hold sprites. Pictures live in the game, in a <strong>Shop Art</strong> asset (<code>ShopArt</code>, <strong>Create &gt; KitARPG &gt; Shop Art</strong>), as a list of keys and sprites. The offer names the key.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Shop Art</em> (<code>shopArt</code>), Game Settings &gt; Shop</td>
+<td>The Shop Art asset the game uses</td>
+<td>Sample: ShopArt</td>
+</tr>
+<tr>
+<td><em>Pictures</em> (<code>pictures</code>), on the asset</td>
+<td>Key and sprite pairs</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>On the Shop page, pick any sprite for an offer's <em>Picture</em> or <em>Banner</em>: the page adds it to Shop Art under the sprite's name and writes that name in the offer.</p>
+<p>The sample has 13 card pictures and 3 banners, drawn by <code>Art/Tools/make_shop_art.py</code> from the items' icons.</p>
+<div class="callout warning"><div class="callout-title">Atenção</div><p>Pictures ship inside the game build. An offer whose key isn't in the players' Shop Art shows the item's icon instead. Build and ship the game before publishing offers that use new pictures.</p>
+</div>
+<h3 id="step-by-step-a-limited-time-offer-with-a-banner"><a class="anchor" href="#step-by-step-a-limited-time-offer-with-a-banner" aria-hidden="true">#</a>Step by step: a limited-time offer with a banner</h3>
+<ol>
+<li>Draw a card picture and a wide banner and import them as sprites.</li>
+<li>On the Shop page, under <strong>Offers</strong>, add an offer. Give it an id (<code>winter_cloak</code>), a name, a description and the category <strong>Seasonal</strong>.</li>
+<li>Set <em>Currency</em> to <code>gems</code>, a price, and add its items.</li>
+<li>Set <em>Ends At</em> to the last moment in UTC, for example <code>2026-12-31T23:59:59Z</code>. Leave <em>Badge</em> empty to get <strong>Limited time</strong>, or write <strong>Sale</strong>.</li>
+<li>Pick the card sprite in <em>Picture</em> and the wide sprite in <em>Banner</em>. Give it <em>Order</em> 0 to come first.</li>
+<li>Press <strong>Save</strong>. With the shop running on this computer, the offer is live at once: open the shop in Play to see it.</li>
+<li>Build the game client so players have the pictures.</li>
+<li>For the live server, fill <strong>Online server</strong> (address and admin key) and press <strong>Publish to server</strong>. Publishing is all or nothing: if any offer has a problem, nothing changes and the page lists the problems.</li>
+</ol>
+<p>The service reloads its catalog file by itself when it changes, so offers go live without rebuilding the game or restarting servers.</p>
+<h3 id="game-settings"><a class="anchor" href="#game-settings" aria-hidden="true">#</a>Game Settings</h3>
+<p>In <strong>KitARPG &gt; Game Settings</strong>, section <strong>Shop</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Shop Art</em> (<code>shopArt</code>)</td>
+<td>Pictures for cards and the banner, found by the keys offers name</td>
+<td>Empty (sample: ShopArt)</td>
+</tr>
+<tr>
+<td><em>Shop Top Up Url</em> (<code>shopTopUpUrl</code>)</td>
+<td>Page where players buy premium currency, opened by the <strong>+</strong> next to their balance. Empty hides the button</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Shop Auto Take</em> (<code>shopAutoTake</code>)</td>
+<td>Purchases and gifts go straight to the bag when they arrive. Off, or when the bag is full, they wait in the mail</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>On the window itself (<code>CashShopWindow</code> in the HUD prefab): <em>Toggle Key</em> (<code>P</code>), <em>Home Name</em> (&quot;Home&quot;), <em>Banner Seconds</em> (6), <em>Badge Color</em> and <em>Sale Badge Color</em> (a badge containing <em>Sale Word</em>, &quot;sale&quot;, takes the second color).</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>There is no cash shop in single player: the button doesn't appear and <code>P</code> does nothing. Premium currency from quests isn't kept in single player.</p>
+<p>In MMO the Shop service has to run next to Login and Central. Map servers find it with <code>-shop url -shopKey key</code>, or <code>KITARPG_SHOP_URL</code> and <code>KITARPG_SHOP_KEY</code>. In the editor, Play uses the shop the Shop page started. See <a href="../servers/shop-service.html">Shop service</a> for endpoints, keys, payments and deployment.</p>
+<p>The in-game shop module needs the Mail module.</p>
+<h2 id="security"><a class="anchor" href="#security" aria-hidden="true">#</a>Security</h2>
+<ul>
+<li>The client only asks its map. The internal and admin APIs of the Shop service stay off the internet; only payment webhooks are public.</li>
+<li>The Shop service charges from its own catalog and validates every copy, so a modified map or client can't change prices or items.</li>
+<li>Run one Shop service per database.</li>
+</ul>
+<p>See <a href="../servers/security.html">Security</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>No shop button.</strong> The game is single player, the in-game shop module is off, or the map server has no Shop service configured.</li>
+<li><strong>&quot;The shop isn't open on this server.&quot;</strong> The map server started without <code>-shop</code> or <code>KITARPG_SHOP_URL</code>. With Play &amp; Servers, turn on the shop under <strong>In the game</strong>.</li>
+<li><strong>An offer doesn't appear.</strong> It is hidden, out of its dates, has no items, or names an item the database lacks. The service logs and skips bad offers; <strong>KitARPG &gt; Project Check</strong> flags items and currencies the Game Database doesn't have.</li>
+<li><strong>Cards show icons instead of pictures.</strong> The picture keys aren't in the game's Shop Art, or the client build is older than the pictures.</li>
+<li><strong>Bought items aren't in the bag.</strong> The bag and bank were full. They wait in the mail.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../editor/shop-page.html">Shop page</a></li>
+<li><a href="../servers/shop-service.html">Shop service</a></li>
+<li><a href="../content/currencies.html">Currencies</a></li>
+<li><a href="mail.html">Mail</a></li>
+<li><a href="../content/npc-shops.html">NPC shops</a> for shops that sell for gold</li>
+</ul>
+<nav class="pager"><a class="prev" href="bestiary.html"><span>Anterior</span>Bestiary</a><a class="next" href="gm-tools.html"><span>Próximo</span>GM tools</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fgameplay%2Fcash-shop.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#for-the-player">For the player</a></li><li class="l3"><a href="#the-window">The window</a></li><li class="l3"><a href="#an-offer-s-page">An offer&#x27;s page</a></li><li class="l3"><a href="#where-bought-items-go">Where bought items go</a></li><li class="l2"><a href="#how-buying-works">How buying works</a></li><li class="l3"><a href="#balances">Balances</a></li><li class="l2"><a href="#earning-premium-currency">Earning premium currency</a></li><li class="l2"><a href="#setting-it-up">Setting it up</a></li><li class="l3"><a href="#1-a-premium-currency">1. A premium currency</a></li><li class="l3"><a href="#2-turn-it-on-and-start-the-service">2. Turn it on and start the service</a></li><li class="l3"><a href="#3-offers">3. Offers</a></li><li class="l3"><a href="#4-pictures-and-banners">4. Pictures and banners</a></li><li class="l3"><a href="#step-by-step-a-limited-time-offer-with-a-banner">Step by step: a limited-time offer with a banner</a></li><li class="l3"><a href="#game-settings">Game Settings</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#security">Security</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

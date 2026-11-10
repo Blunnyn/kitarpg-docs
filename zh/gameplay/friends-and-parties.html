@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Friends and parties · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/friends-and-parties.html">English</option><option value="../../es/gameplay/friends-and-parties.html">Español</option><option value="../../pt/gameplay/friends-and-parties.html">Português</option><option value="friends-and-parties.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html" class="on" aria-current="page">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏系统</div><h1>Friends and parties</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>Friend lists that show who is online and where, and parties that travel together, share experience and quest kills, and enter the same dungeon copy. This page covers the windows, commands, limits, how experience is split and what changes between single player and MMO.</p>
+<h2 id="what-they-are"><a class="anchor" href="#what-they-are" aria-hidden="true">#</a>What they are</h2>
+<ul>
+<li><strong>Friends</strong> are a list of characters you know. You see whether each one is online, on which map, their level and class, and you can whisper them or invite them to your party from the list. A friendship needs both sides to agree. Friends are saved in Central's database (table <code>friends</code>), so they last.</li>
+<li><strong>Parties</strong> are small groups of players, up to 5 by default. Members share experience from kills near each other, quest kills count for all of them, they have their own chat channel, they enter the same copy of an instanced dungeon, and the map can stop them from hurting each other in PvP. Parties live in Central's memory: they follow members from map to map, but end when Central restarts.</li>
+</ul>
+<p>Both are separate modules: <strong>Friends</strong> (<code>PlayerFriends</code>, <code>FriendsWindow</code>) and <strong>Parties</strong> (<code>PlayerParty</code>, <code>PartyFrames</code>). Both are <strong>MMO only</strong>: Central keeps them. In single player every request answers &quot;Only on an online server.&quot;</p>
+<h2 id="where-they-are-in-the-editor"><a class="anchor" href="#where-they-are-in-the-editor" aria-hidden="true">#</a>Where they are in the editor</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turn them on or off</td>
+<td><strong>KitARPG &gt; Modules</strong>, modules <strong>Friends</strong> and <strong>Parties</strong>. See <a href="../editor/modules.html">Modules</a>.</td>
+</tr>
+<tr>
+<td>Experience share range and bonus</td>
+<td>The <code>PlayerParty</code> component on each player prefab.</td>
+</tr>
+<tr>
+<td>Friend list size, party size</td>
+<td>Central's configuration, section <code>Central</code>. See <a href="../servers/configuration.html">Configuration</a>.</td>
+</tr>
+<tr>
+<td>The friends window</td>
+<td><code>FriendsWindow</code> in the HUD prefab, and the <strong>Friends</strong> button on the HUD toolbar.</td>
+</tr>
+<tr>
+<td>The party frames and the invite panel</td>
+<td><code>PartyFrames</code> in the HUD prefab. See <a href="hud-and-windows.html">HUD and windows</a>.</td>
+</tr>
+<tr>
+<td>The player menu lines</td>
+<td><code>PlayerMenu</code> in the HUD prefab.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
+<h3 id="central-appsettings-json-section-central"><a class="anchor" href="#central-appsettings-json-section-central" aria-hidden="true">#</a>Central (<code>appsettings.json</code>, section <code>Central</code>)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MaxFriends</code></td>
+<td>Friends and pending requests one character may have. Past it: &quot;Your friend list is full.&quot;</td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>MaxPartySize</code></td>
+<td>Members in one party, the leader included.</td>
+<td>5</td>
+</tr>
+</tbody>
+</table></div>
+<p>With environment variables: <code>Central__MaxFriends</code>, <code>Central__MaxPartySize</code>. Restart Central after changing them.</p>
+<h3 id="playerparty-player-prefab"><a class="anchor" href="#playerparty-player-prefab" aria-hidden="true">#</a>PlayerParty (player prefab)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Share Range</em> (<code>shareRange</code>)</td>
+<td>Meters from the monster within which members share experience and quest kills.</td>
+<td>40</td>
+</tr>
+<tr>
+<td><em>Bonus Per Member</em> (<code>bonusPerMember</code>)</td>
+<td>Extra experience for each member past the first, as a share: 0.1 is 10%.</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="partyframes-hud"><a class="anchor" href="#partyframes-hud" aria-hidden="true">#</a>PartyFrames (HUD)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Invite Seconds</em> (<code>inviteSeconds</code>)</td>
+<td>How long the invite panel stays on screen. Central keeps an invite for 60 seconds, so keep this at 60 or less.</td>
+<td>60</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="friendswindow-hud"><a class="anchor" href="#friendswindow-hud" aria-hidden="true">#</a>FriendsWindow (HUD)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Toggle Key</em> (<code>toggleKey</code>)</td>
+<td>Opens and closes the friends window.</td>
+<td><code>O</code></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fixed-values"><a class="anchor" href="#fixed-values" aria-hidden="true">#</a>Fixed values</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A party invite lasts on Central</td>
+<td>60 seconds</td>
+</tr>
+<tr>
+<td>Name length in requests</td>
+<td>32 characters</td>
+</tr>
+<tr>
+<td>Request pace (friends and parties)</td>
+<td>2 a second, bursts of 10, per connection. Faster ones are ignored.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="friends"><a class="anchor" href="#friends" aria-hidden="true">#</a>Friends</h2>
+<h3 id="the-friends-window"><a class="anchor" href="#the-friends-window" aria-hidden="true">#</a>The friends window</h3>
+<p>Press <code>O</code>, or click <strong>Friends</strong> on the HUD toolbar (hint &quot;Friends (O)&quot;). <code>Esc</code> closes it.</p>
+<p>At the top there is a name field and an <strong>Add</strong> button. Below, one row per friend or request, online friends first, then by name. Each row shows the name, level and class, and a status:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Buttons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Online</strong> · map name (green)</td>
+<td><strong>Whisper</strong>, <strong>Invite</strong> (to your party), <strong>Remove</strong></td>
+</tr>
+<tr>
+<td><strong>Offline</strong> (grey)</td>
+<td><strong>Remove</strong></td>
+</tr>
+<tr>
+<td><strong>Wants to be your friend</strong> (gold): they asked you</td>
+<td><strong>Accept</strong>, <strong>Decline</strong></td>
+</tr>
+<tr>
+<td><strong>Request sent</strong> (grey): you asked them</td>
+<td><strong>Cancel</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>If the list is empty, the window shows its empty label.</p>
+<h3 id="adding-a-friend"><a class="anchor" href="#adding-a-friend" aria-hidden="true">#</a>Adding a friend</h3>
+<p>Any of these sends a request by character name (any case):</p>
+<ul>
+<li>Type the name in the friends window and press <strong>Add</strong> or <code>Enter</code>.</li>
+<li>Type <code>/friend Name</code> in the chat.</li>
+<li>Right click the player in the world (top-down) or their name in the chat, then <strong>Add friend</strong>. The line is hidden for players already on your list.</li>
+</ul>
+<p>What happens:</p>
+<ol>
+<li>You read &quot;Friend request sent to Name.&quot; The row shows <strong>Request sent</strong>.</li>
+<li>If they are online, they read &quot;YourName wants to be your friend.&quot; Their row shows <strong>Wants to be your friend</strong>.</li>
+<li>They click <strong>Accept</strong> (or send you a request back, which counts as yes). You read &quot;Name accepted your friend request.&quot;</li>
+<li>Both rows now show the friend with their online status.</li>
+</ol>
+<p>Messages you may see instead:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No character has that name, or it is you</td>
+<td>&quot;There is no one called Name.&quot;</td>
+</tr>
+<tr>
+<td>Already friends</td>
+<td>&quot;Name is already your friend.&quot;</td>
+</tr>
+<tr>
+<td>You already asked</td>
+<td>&quot;You already asked Name.&quot;</td>
+</tr>
+<tr>
+<td>Your list has <code>MaxFriends</code> entries</td>
+<td>&quot;Your friend list is full.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>Requests work even when the other character is offline: they find it on their list when they log in.</p>
+<h3 id="removing-a-friend"><a class="anchor" href="#removing-a-friend" aria-hidden="true">#</a>Removing a friend</h3>
+<p>Click <strong>Remove</strong> on the row, or type <code>/unfriend Name</code>. The friendship goes from both lists. <strong>Decline</strong> and <strong>Cancel</strong> remove a request the same way.</p>
+<h3 id="online-notices"><a class="anchor" href="#online-notices" aria-hidden="true">#</a>Online notices</h3>
+<ul>
+<li>When a friend logs in, you read &quot;Name is online.&quot; This happens once per login, not on every map change.</li>
+<li>When a friend logs out, you read &quot;Name went offline.&quot;</li>
+<li>The list refreshes by itself whenever something changes: a friend logs in or out, changes map, or a request is answered.</li>
+</ul>
+<h2 id="parties"><a class="anchor" href="#parties" aria-hidden="true">#</a>Parties</h2>
+<h3 id="inviting"><a class="anchor" href="#inviting" aria-hidden="true">#</a>Inviting</h3>
+<p>Any of these invites a player by name:</p>
+<ul>
+<li><code>/invite Name</code> in the chat.</li>
+<li>Right click the player, or their name in the chat, then <strong>Invite to party</strong>. The line shows when you have no party or lead one, and the player isn't in it.</li>
+<li><strong>Invite</strong> on an online friend's row in the friends window.</li>
+</ul>
+<p>The player can be on any map. The server checks, in this order:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The player is online</td>
+<td>&quot;Name is not online.&quot;</td>
+</tr>
+<tr>
+<td>The player isn't in a party</td>
+<td>&quot;Name is already in a party.&quot;</td>
+</tr>
+<tr>
+<td>You aren't in a party, or you lead it</td>
+<td>&quot;Only the leader can invite.&quot;</td>
+</tr>
+<tr>
+<td>Your party has room</td>
+<td>&quot;Your party is full.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>If all pass you read &quot;Invited Name to your party.&quot;</p>
+<p>The invited player sees a panel: &quot;<strong>Name</strong> invites you to a party.&quot; with <strong>Accept</strong> and <strong>Decline</strong>. It closes after 60 seconds. A newer invite replaces an older one.</p>
+<ul>
+<li><strong>Accept</strong>: if the inviter had no party, a new one forms with the inviter as leader. &quot;That invite is gone.&quot; if it expired; &quot;Whoever invited you went offline.&quot; if the inviter left; &quot;That party is full.&quot; if it filled meanwhile.</li>
+<li><strong>Decline</strong>: the inviter reads &quot;Name declined your invite.&quot;</li>
+</ul>
+<h3 id="the-party-frames"><a class="anchor" href="#the-party-frames" aria-hidden="true">#</a>The party frames</h3>
+<p>When your party has 2 or more members, the party frames show on the HUD, one row per member:</p>
+<ul>
+<li>Name and level.</li>
+<li><strong>Leader</strong> in gold before the leader's status.</li>
+<li>The member's map name, or <strong>Offline</strong>.</li>
+<li>A health bar, only while that member is close enough for your game to see them. Otherwise the bar hides.</li>
+<li><strong>Lead</strong> (make leader) and <strong>Kick</strong> buttons, for the leader only, on other members. <strong>Lead</strong> shows only for online members.</li>
+<li>A <strong>Leave</strong> button for everyone.</li>
+</ul>
+<p>Party members also show on the minimap and the world map. See <a href="hud-and-windows.html">HUD and windows</a>.</p>
+<h3 id="managing-the-party"><a class="anchor" href="#managing-the-party" aria-hidden="true">#</a>Managing the party</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+<th>Who</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leave</td>
+<td><strong>Leave</strong> on the frames, or <code>/leave</code></td>
+<td>Anyone</td>
+</tr>
+<tr>
+<td>Remove a member</td>
+<td><strong>Kick</strong> on their row, <code>/kick Name</code>, or <strong>Remove from party</strong> in the player menu</td>
+<td>Leader</td>
+</tr>
+<tr>
+<td>Pass the lead</td>
+<td><strong>Lead</strong> on their row, <code>/promote Name</code> (or <code>/lead Name</code>), or <strong>Make leader</strong> in the player menu</td>
+<td>Leader</td>
+</tr>
+<tr>
+<td>Talk</td>
+<td><code>/p text</code>, or make Party your default channel</td>
+<td>Anyone</td>
+</tr>
+</tbody>
+</table></div>
+<p>When you leave or are removed you read &quot;You are no longer in a party.&quot;</p>
+<h3 id="when-members-go-offline-or-leave"><a class="anchor" href="#when-members-go-offline-or-leave" aria-hidden="true">#</a>When members go offline or leave</h3>
+<ul>
+<li>A member who logs out stays in the party and shows <strong>Offline</strong>. When they log back in they are still in it.</li>
+<li>If the leader logs out or leaves, the lead passes to the first member still online.</li>
+<li>A party with fewer than 2 members ends.</li>
+<li>A party with nobody online ends.</li>
+<li>Parties are kept in Central's memory. If Central restarts, every party ends.</li>
+</ul>
+<h2 id="sharing-experience-and-quest-kills"><a class="anchor" href="#sharing-experience-and-quest-kills" aria-hidden="true">#</a>Sharing experience and quest kills</h2>
+<p>When a party member kills a monster, the members who share it are:</p>
+<ul>
+<li>On the same map, in the same scene (the same dungeon copy).</li>
+<li>Alive.</li>
+<li>Within <em>Share Range</em> (40 m) of the monster. The killer always counts.</li>
+</ul>
+<p>Each of them gets the experience the monster gives <strong>at their own level</strong>, times a share:</p>
+<pre class="code"><code class="language-">share = (1 + bonusPerMember × (members − 1)) / members
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Members sharing</th>
+<th>Share each</th>
+<th>Total for the party</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>55%</td>
+<td>110%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>40%</td>
+<td>120%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>32.5%</td>
+<td>130%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>28%</td>
+<td>140%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Then each member's own experience bonus (the <em>Experience Gain</em> stat and the server rates) applies, and a tax collector nearby takes its cut. See <a href="combat.html">Combat</a> for how monster experience depends on level, and <a href="tax-collectors.html">Tax collectors</a>.</p>
+<p>Quest kill objectives count for every member who shares the kill under the same rules (same scene, alive, within <em>Share Range</em>). See <a href="../content/quests.html">Quests</a>.</p>
+<p>Loot is not shared. It goes to the player who gets the kill, the way the game's loot mode says. See <a href="../content/loot.html">Loot</a>.</p>
+<h2 id="other-things-a-party-changes"><a class="anchor" href="#other-things-a-party-changes" aria-hidden="true">#</a>Other things a party changes</h2>
+<ul>
+<li><strong>Dungeons</strong>: members enter the same copy of an instanced map, even if they walk in separately. See <a href="dungeons.html">Dungeons</a>.</li>
+<li><strong>PvP</strong>: with the map's <em>Pvp Spare Party</em> on, members can't hurt each other. See <a href="pvp-and-duels.html">PvP and duels</a>.</li>
+<li><strong>Tax collector fights</strong>: party members near a collector join the fight with you. See <a href="tax-collectors.html">Tax collectors</a>.</li>
+<li><strong>Nameplates</strong>: the party id is visible to everyone, so the HUD can tell party members apart.</li>
+</ul>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Single player</th>
+<th>MMO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Friends</td>
+<td>&quot;Only on an online server.&quot;</td>
+<td>Saved in Central's database.</td>
+</tr>
+<tr>
+<td>Parties</td>
+<td>&quot;Only on an online server.&quot;</td>
+<td>Kept in Central's memory, across maps.</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>The killer gets it all.</td>
+<td>Shared among members near the kill.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
+<h3 id="bigger-parties"><a class="anchor" href="#bigger-parties" aria-hidden="true">#</a>Bigger parties</h3>
+<ol>
+<li>Set <code>Central:MaxPartySize</code>, for example to 8, in <code>appsettings.json</code> or as <code>Central__MaxPartySize</code>.</li>
+<li>Restart Central.</li>
+<li>Check the party frames in the HUD prefab have room for 8 rows.</li>
+</ol>
+<h3 id="reward-grouping-more"><a class="anchor" href="#reward-grouping-more" aria-hidden="true">#</a>Reward grouping more</h3>
+<ol>
+<li>Open each player prefab (PlayerMale, PlayerFemale, PlayerPanda in the sample).</li>
+<li>On <code>PlayerParty</code>, raise <em>Bonus Per Member</em>, for example to 0.2 (a party of 5 then shares 180%).</li>
+<li>Raise <em>Share Range</em> if your maps are large and members spread out.</li>
+</ol>
+<p><code>PlayerParty</code> lives on each player prefab: change all of them the same way.</p>
+<h3 id="change-the-split-rule-in-code"><a class="anchor" href="#change-the-split-rule-in-code" aria-hidden="true">#</a>Change the split rule in code</h3>
+<p>The split is <code>Rewards.ShareExperience</code> on the map server, a <code>virtual</code> method. Override it to give the killer a larger share, add level gap rules or anything else. See <a href="../devkit/overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>&quot;Only on an online server.&quot;</strong> You are testing in single player. Friends and parties need Central; switch to MMO in <strong>Play and Servers</strong>.</li>
+<li><strong>A member got no experience.</strong> They were dead, on another map or dungeon copy, or more than 40 m from the monster.</li>
+<li><strong>The party vanished after a server update.</strong> Restarting Central ends every party.</li>
+<li><strong>The invite panel stays up but Accept says &quot;That invite is gone.&quot;</strong> <em>Invite Seconds</em> on <code>PartyFrames</code> is longer than Central's 60 seconds.</li>
+<li><strong>Different share values per character.</strong> <code>PlayerParty</code> is on each player prefab, and each one can have its own values.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="chat.html">Chat</a>: party chat and the commands.</li>
+<li><a href="guilds.html">Guilds</a>: long-term groups.</li>
+<li><a href="dungeons.html">Dungeons</a></li>
+<li><a href="pvp-and-duels.html">PvP and duels</a></li>
+<li><a href="combat.html">Combat</a>: experience per monster.</li>
+<li><a href="trade.html">Trade</a>: the player menu's Trade line.</li>
+<li><a href="../servers/configuration.html">Configuration</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="chat.html"><span>上一页</span>Chat</a><a class="next" href="guilds.html"><span>下一页</span>Guilds</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Ffriends-and-parties.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-they-are">What they are</a></li><li class="l2"><a href="#where-they-are-in-the-editor">Where they are in the editor</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#central-appsettings-json-section-central">Central (appsettings.json, section Central)</a></li><li class="l3"><a href="#playerparty-player-prefab">PlayerParty (player prefab)</a></li><li class="l3"><a href="#partyframes-hud">PartyFrames (HUD)</a></li><li class="l3"><a href="#friendswindow-hud">FriendsWindow (HUD)</a></li><li class="l3"><a href="#fixed-values">Fixed values</a></li><li class="l2"><a href="#friends">Friends</a></li><li class="l3"><a href="#the-friends-window">The friends window</a></li><li class="l3"><a href="#adding-a-friend">Adding a friend</a></li><li class="l3"><a href="#removing-a-friend">Removing a friend</a></li><li class="l3"><a href="#online-notices">Online notices</a></li><li class="l2"><a href="#parties">Parties</a></li><li class="l3"><a href="#inviting">Inviting</a></li><li class="l3"><a href="#the-party-frames">The party frames</a></li><li class="l3"><a href="#managing-the-party">Managing the party</a></li><li class="l3"><a href="#when-members-go-offline-or-leave">When members go offline or leave</a></li><li class="l2"><a href="#sharing-experience-and-quest-kills">Sharing experience and quest kills</a></li><li class="l2"><a href="#other-things-a-party-changes">Other things a party changes</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#bigger-parties">Bigger parties</a></li><li class="l3"><a href="#reward-grouping-more">Reward grouping more</a></li><li class="l3"><a href="#change-the-split-rule-in-code">Change the split rule in code</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

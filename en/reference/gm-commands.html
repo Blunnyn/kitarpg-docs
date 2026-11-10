@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GM commands · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="gm-commands.html" selected>English</option><option value="../../es/reference/gm-commands.html">Español</option><option value="../../pt/reference/gm-commands.html">Português</option><option value="../../zh/reference/gm-commands.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section" open><summary>Reference</summary><ul><li><a href="keys.html">Keys</a></li><li><a href="gm-commands.html" class="on" aria-current="page">GM commands</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Reference</div><h1>GM commands</h1><p>Every slash command in KitARPG: the chat commands every player has, and the GM commands for moderators, game masters and admins, with their syntax, default level, aliases, limits, answers and examples. GM commands run on the map server; the server checks the account's level on every line.</p>
+<h2 id="how-commands-work"><a class="anchor" href="#how-commands-work" aria-hidden="true">#</a>How commands work</h2>
+<ul>
+<li>Type a command in chat: press <code>Enter</code>, type the line starting with <code>/</code>, press <code>Enter</code>.</li>
+<li>Chat commands (channels, parties, friends) are handled by the client. Everything else goes to the map server, which knows the account's GM level.</li>
+<li><code>/help</code> (or <code>/commands</code>) lists the chat commands and every GM command your level allows, each with its level in brackets.</li>
+<li>A command above your level answers &quot;Unknown command /name. Try /help.&quot;, the same as a command that doesn't exist. Staff commands tried above one's level are still recorded.</li>
+<li>Arguments are separated by spaces. <code>[brackets]</code> mark optional ones. A <code>player</code> argument is a character name.</li>
+<li>Where a <code>[player]</code> is optional, leaving it out targets yourself.</li>
+<li>Unless stated otherwise, the target must be <strong>on the same map</strong> as you; otherwise the answer is &quot;No such player here.&quot;</li>
+<li>A line is cut at 300 characters.</li>
+</ul>
+<h2 id="gm-levels"><a class="anchor" href="#gm-levels" aria-hidden="true">#</a>GM levels</h2>
+<p>Every account has a GM level, stored in <code>accounts.Role</code> in the database.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Who</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Player</td>
+<td>Every new account</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Moderator</td>
+<td>Watches chat and players: who, goto, boot, mute, announce, reports, logs</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Game Master</td>
+<td>Runs the world: summon, teleport, ban, heal, god, statuses, monsters, maps, quests, flags, triggers</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Admin</td>
+<td>Hands out things and manages staff: items, gold, currencies, experience, levels, points, skills, rates, roles, audit</td>
+</tr>
+</tbody>
+</table></div>
+<p>The levels in the tables below are the defaults. Change any command's level in <strong>Game Settings &gt; Commands &gt; Gm Command Levels</strong> (<code>gmCommandLevels</code>): add a row with the command name without the slash (like <code>item</code>) and the level it should ask for. <code>/role</code> always asks for level 4, whatever the setting.</p>
+<h3 id="single-player"><a class="anchor" href="#single-player" aria-hidden="true">#</a>Single player</h3>
+<p>In single player, Game Settings &gt; Commands &gt; <em>Single Player Commands</em> (<code>singlePlayerCommands</code>, on by default) makes the player an admin, so every command works like a cheat. Commands marked <strong>Online only</strong> answer &quot;Only on an online server.&quot;</p>
+<h3 id="setting-the-first-admin"><a class="anchor" href="#setting-the-first-admin" aria-hidden="true">#</a>Setting the first admin</h3>
+<p>New accounts start at level 1. Name the first admin in the database:</p>
+<pre class="code"><code class="language-sql"><span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="ss">&quot;Role&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="ss">&quot;Username&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;yourname&#39;</span><span class="p">;</span>
+</code></pre>
+<p>With the local SQLite database of Play &amp; Servers (stop the services first):</p>
+<pre class="code"><code class="language-bash">sqlite3<span class="w"> </span>UserSettings/KitARPG/data/kitarpg.db<span class="w"> </span><span class="s2">&quot;UPDATE accounts SET \&quot;Role\&quot; = 4 WHERE \&quot;Username\&quot; = &#39;yourname&#39;;&quot;</span>
+</code></pre>
+<p>After that, admins change levels in game with <code>/role</code>. If the player is already on a map, the new level takes effect the next time they enter a map.</p>
+<h2 id="the-audit"><a class="anchor" href="#the-audit" aria-hidden="true">#</a>The audit</h2>
+<p>Every command of level 2 or more is written to the <code>gm_audit</code> table with the account, character, level, command, whole line, target, whether it was allowed and its answer. Commands above the player's level are recorded as refused.</p>
+<p>When the audit can't be written, staff commands don't run: &quot;GM commands are paused: they can't be recorded right now. Try again in a moment.&quot; Entries wait on disk until Central confirms them. Every staff command also goes to the game log as <code>gm.command</code>.</p>
+<p>Admins read the audit with <code>/audit</code>.</p>
+<h2 id="command-list"><a class="anchor" href="#command-list" aria-hidden="true">#</a>Command list</h2>
+<h3 id="level-1-every-player"><a class="anchor" href="#level-1-every-player" aria-hidden="true">#</a>Level 1: every player</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/help</code></td>
+<td>Lists the chat commands and the GM commands you may use</td>
+</tr>
+<tr>
+<td><code>/report player reason</code></td>
+<td>Tells the moderators about a player. Online only</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="level-2-moderator"><a class="anchor" href="#level-2-moderator" aria-hidden="true">#</a>Level 2: Moderator</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/who</code></td>
+<td>Players on this map with their levels</td>
+</tr>
+<tr>
+<td><code>/goto player</code></td>
+<td>Jumps next to a player on this map</td>
+</tr>
+<tr>
+<td><code>/boot player</code></td>
+<td>Disconnects a player on this map</td>
+</tr>
+<tr>
+<td><code>/mute player [minutes]</code></td>
+<td>Silences a player in chat; 0 lifts it</td>
+</tr>
+<tr>
+<td><code>/announce text</code></td>
+<td>A message for everyone online</td>
+</tr>
+<tr>
+<td><code>/reports</code></td>
+<td>Lists the open reports. Online only</td>
+</tr>
+<tr>
+<td><code>/closereport id</code></td>
+<td>Marks a report as handled. Online only</td>
+</tr>
+<tr>
+<td><code>/logs player [kind]</code></td>
+<td>The player's last game log lines. Online only</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="level-3-game-master"><a class="anchor" href="#level-3-game-master" aria-hidden="true">#</a>Level 3: Game Master</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/summon player</code></td>
+<td>Brings a player on this map next to you</td>
+</tr>
+<tr>
+<td><code>/tp x z</code></td>
+<td>Jumps to a point on this map</td>
+</tr>
+<tr>
+<td><code>/ban player hours</code></td>
+<td>Bans the account; 0 lifts it. Online only</td>
+</tr>
+<tr>
+<td><code>/heal [player]</code></td>
+<td>Full health and mana; brings back the dead</td>
+</tr>
+<tr>
+<td><code>/god</code></td>
+<td>Takes no damage, until used again</td>
+</tr>
+<tr>
+<td><code>/status id [seconds] [player]</code></td>
+<td>Puts a status on a player</td>
+</tr>
+<tr>
+<td><code>/spawn monster [count]</code></td>
+<td>Brings monsters in front of you</td>
+</tr>
+<tr>
+<td><code>/killall [meters]</code></td>
+<td>Kills the monsters around you</td>
+</tr>
+<tr>
+<td><code>/map id [x z]</code></td>
+<td>Goes to a map</td>
+</tr>
+<tr>
+<td>`/quest give</td>
+<td>finish</td>
+</tr>
+<tr>
+<td><code>/flag key [value] [player]</code></td>
+<td>Reads or sets a story mark</td>
+</tr>
+<tr>
+<td><code>/trigger id</code></td>
+<td>Sets off a world trigger on this map</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="level-4-admin"><a class="anchor" href="#level-4-admin" aria-hidden="true">#</a>Level 4: Admin</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/item id [amount] [player]</code></td>
+<td>Puts items in a bag</td>
+</tr>
+<tr>
+<td><code>/gold amount [player]</code></td>
+<td>Adds gold; negative takes it</td>
+</tr>
+<tr>
+<td><code>/currency id amount [player]</code></td>
+<td>Adds any currency; premium ones go to the account</td>
+</tr>
+<tr>
+<td><code>/xp amount [player]</code></td>
+<td>Gives experience</td>
+</tr>
+<tr>
+<td><code>/level n [player]</code></td>
+<td>Raises a player to a level</td>
+</tr>
+<tr>
+<td><code>/points attribute skill [player]</code></td>
+<td>Gives attribute and skill points</td>
+</tr>
+<tr>
+<td><code>/skill id [rank] [player]</code></td>
+<td>Teaches a skill</td>
+</tr>
+<tr>
+<td><code>/rates [kind value [minutes]]</code></td>
+<td>Shows the rates or starts a rates event on every map</td>
+</tr>
+<tr>
+<td><code>/role player level</code></td>
+<td>Sets an account's GM level. Online only</td>
+</tr>
+<tr>
+<td><code>/audit [player]</code></td>
+<td>The last GM commands on record. Online only</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="commands-in-detail"><a class="anchor" href="#commands-in-detail" aria-hidden="true">#</a>Commands in detail</h2>
+<h3 id="help"><a class="anchor" href="#help" aria-hidden="true">#</a>/help</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/help</code></td>
+</tr>
+<tr>
+<td>Alias</td>
+<td><code>/commands</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lists the chat commands (<code>/s /m /g /p /gu, /w name, /r, /invite name, /leave, /kick name, /promote name, /friend name, /unfriend name, /trade name, /ginvite name, /report name reason</code>), then one line per GM command you may use: its syntax, description and level, like <code>/item id [amount] [player]: Puts items in a bag. [4]</code>.</p>
+<h3 id="report"><a class="anchor" href="#report" aria-hidden="true">#</a>/report</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/report player reason</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Online only</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sends a report about a player to the moderators, stored in the <code>reports</code> table. Everything after the name is the reason. Moderators list them with <code>/reports</code>. The player menu also has <strong>Report</strong>.</p>
+<pre class="code"><code class="language-">/report Griefer123 spamming the trade channel
+</code></pre>
+<h3 id="who"><a class="anchor" href="#who" aria-hidden="true">#</a>/who</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/who</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lists the players on this map as <code>Name (level)</code>, separated by commas.</p>
+<h3 id="goto"><a class="anchor" href="#goto" aria-hidden="true">#</a>/goto</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/goto player</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Jumps to the side of a player on this map. Answers &quot;No such player here.&quot; if the name isn't on this map or is yours, and &quot;Can't go there.&quot; if there is no walkable ground there.</p>
+<h3 id="boot"><a class="anchor" href="#boot" aria-hidden="true">#</a>/boot</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/boot player</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Disconnects a player on this map. The player sees &quot;Kicked by a moderator.&quot; You can only boot accounts of a lower level than yours (&quot;You can't kick them.&quot;). Answers &quot;Name was kicked.&quot;</p>
+<h3 id="mute"><a class="anchor" href="#mute" aria-hidden="true">#</a>/mute</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/mute player [minutes]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>10 minutes</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>0 to 525.600 minutes (one year)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Silences a player in chat. The player is told &quot;You can't chat for N minutes.&quot; <code>/mute player 0</code> lifts it (&quot;You can chat again.&quot;). The mute is a flag on the character, so it survives map changes and sign outs. You can only mute accounts of a lower level, or yourself.</p>
+<pre class="code"><code class="language-">/mute LoudPlayer 30
+/mute LoudPlayer 0
+</code></pre>
+<h3 id="announce"><a class="anchor" href="#announce" aria-hidden="true">#</a>/announce</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/announce text</code></td>
+</tr>
+<tr>
+<td>Alias</td>
+<td><code>/broadcast</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sends <code>[Announcement] text</code> on the system channel to everyone online, on every map. In single player, to the player.</p>
+<pre class="code"><code class="language-">/announce Server restart in 10 minutes.
+</code></pre>
+<h3 id="reports-and-closereport"><a class="anchor" href="#reports-and-closereport" aria-hidden="true">#</a>/reports and /closereport</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/reports</code>, <code>/closereport id</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Online only</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>/reports</code> lists the open reports with their ids, in your chat. <code>/closereport id</code> marks one as handled.</p>
+<pre class="code"><code class="language-">/reports
+/closereport 17
+</code></pre>
+<h3 id="logs"><a class="anchor" href="#logs" aria-hidden="true">#</a>/logs</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/logs player [kind]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Online only</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>The player's last game log lines, read from the <code>game_logs</code> table. Give a kind to see only one, for example:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>What it records</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item.trade</code></td>
+<td>Trades</td>
+</tr>
+<tr>
+<td><code>item.loot</code></td>
+<td>Loot picked up</td>
+</tr>
+<tr>
+<td><code>item.shop_buy</code>, <code>item.shop_sell</code></td>
+<td>NPC shop buys and sells</td>
+</tr>
+<tr>
+<td><code>item.destroy</code></td>
+<td>Items destroyed</td>
+</tr>
+<tr>
+<td><code>item.forge</code></td>
+<td>Forge use</td>
+</tr>
+<tr>
+<td><code>bank.deposit</code>, <code>bank.withdraw</code></td>
+<td>Bank moves</td>
+</tr>
+<tr>
+<td><code>mail.sent</code>, <code>mail.taken</code></td>
+<td>Mail</td>
+</tr>
+<tr>
+<td><code>market.listed</code>, <code>market.sold</code>, <code>market.cancelled</code>, <code>market.expired</code></td>
+<td>The market</td>
+</tr>
+<tr>
+<td><code>shop.premium_buy</code>, <code>shop.premium_gift</code>, <code>shop.premium_grant</code></td>
+<td>The in-game shop</td>
+</tr>
+<tr>
+<td><code>account.login</code>, <code>account.login_failed</code>, <code>session.enter</code>, <code>session.leave</code></td>
+<td>Sessions</td>
+</tr>
+<tr>
+<td><code>character.level</code>, <code>quest.done</code>, <code>combat.death</code>, <code>combat.pvp_kill</code></td>
+<td>Progress and combat</td>
+</tr>
+<tr>
+<td><code>chat.line</code></td>
+<td>Chat, when Game Settings logs it</td>
+</tr>
+<tr>
+<td><code>gm.command</code>, <code>gm.ban</code></td>
+<td>Staff actions</td>
+</tr>
+</tbody>
+</table></div>
+<pre class="code"><code class="language-">/logs Aria item.trade
+</code></pre>
+<p>See <a href="../gameplay/game-log-and-reports.html">Game log and reports</a> for every kind.</p>
+<h3 id="summon"><a class="anchor" href="#summon" aria-hidden="true">#</a>/summon</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/summon player</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Brings a player on this map to your side. Only accounts of a lower level (&quot;You can't summon them.&quot;). Answers &quot;Can't bring them.&quot; when the spot isn't walkable.</p>
+<h3 id="tp"><a class="anchor" href="#tp" aria-hidden="true">#</a>/tp</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/tp x z</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Jumps to a point on this map, by its x and z coordinates; the height is found from the ground. Answers &quot;Nothing to stand on there.&quot; when no walkable ground is within 4 meters of the point.</p>
+<pre class="code"><code class="language-">/tp 120 -45
+</code></pre>
+<h3 id="ban"><a class="anchor" href="#ban" aria-hidden="true">#</a>/ban</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/ban player hours</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Online only</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bans the character's account for that many hours. The player doesn't have to be on your map. A banned account loses access within seconds and can't sign in (&quot;This account is banned.&quot;). <code>/ban player 0</code> lifts it.</p>
+<pre class="code"><code class="language-">/ban Cheater 72
+/ban Cheater 0
+</code></pre>
+<h3 id="heal"><a class="anchor" href="#heal" aria-hidden="true">#</a>/heal</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/heal [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Restores full health and mana. A dead target is revived first.</p>
+<h3 id="god"><a class="anchor" href="#god" aria-hidden="true">#</a>/god</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/god</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Turns god mode on or off for yourself: you take no damage. Answers &quot;God mode on.&quot; or &quot;God mode off.&quot;</p>
+<h3 id="status"><a class="anchor" href="#status" aria-hidden="true">#</a>/status</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/status id [seconds] [player]</code></td>
+</tr>
+<tr>
+<td>Alias</td>
+<td><code>/buff</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>1 to 3600 seconds</td>
+</tr>
+</tbody>
+</table></div>
+<p>Puts a status from the Game Database on a player, by its id. Answers &quot;No status 'id'.&quot; for an unknown id.</p>
+<pre class="code"><code class="language-">/status stunned 5 Aria
+/buff regeneration 60
+</code></pre>
+<h3 id="spawn"><a class="anchor" href="#spawn" aria-hidden="true">#</a>/spawn</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/spawn monster [count]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>1 to 50</td>
+</tr>
+</tbody>
+</table></div>
+<p>Brings monsters, by their Game Database id, about 4 meters in front of you, scattered a little. They are event monsters: they don't come back after dying.</p>
+<pre class="code"><code class="language-">/spawn slime 5
+/spawn void_herald
+</code></pre>
+<h3 id="killall"><a class="anchor" href="#killall" aria-hidden="true">#</a>/killall</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/killall [meters]</code></td>
+</tr>
+<tr>
+<td>Alias</td>
+<td><code>/kill</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>10 meters</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>1 to 100 meters</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kills every monster around you, except summons. They give their rewards, credited to you. Answers &quot;Killed N.&quot;</p>
+<h3 id="map"><a class="anchor" href="#map" aria-hidden="true">#</a>/map</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/map id [x z]</code></td>
+</tr>
+<tr>
+<td>Alias</td>
+<td><code>/travel</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Goes to a map by its Game Database id, at the point x z of that map (0 0 when left out). Answers &quot;No map 'id'.&quot; for an unknown id and &quot;Can't travel now.&quot; when the move is refused.</p>
+<pre class="code"><code class="language-">/map forest
+/map town 10 25
+</code></pre>
+<h3 id="quest"><a class="anchor" href="#quest" aria-hidden="true">#</a>/quest</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td>`/quest give</td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>What it does</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>give</code></td>
+<td>The player takes the quest, as if from its NPC</td>
+<td>&quot;Taken.&quot;, or why it can't be taken</td>
+</tr>
+<tr>
+<td><code>finish</code></td>
+<td>Fills every objective, so the quest is ready to turn in</td>
+<td>&quot;Ready to turn in.&quot; or &quot;Not taken.&quot;</td>
+</tr>
+<tr>
+<td><code>reset</code></td>
+<td>Forgets the quest, so it can be taken again</td>
+<td>&quot;Forgotten.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<pre class="code"><code class="language-">/quest give slime_trouble
+/quest finish slime_trouble Aria
+</code></pre>
+<h3 id="flag"><a class="anchor" href="#flag" aria-hidden="true">#</a>/flag</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/flag key [value] [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Reads a story mark (a whole number per key on the character), or sets it when a value is given. Answers <code>key = value</code>. Marks drive conditions on quests, dialogues and triggers.</p>
+<pre class="code"><code class="language-">/flag met_the_king
+/flag met_the_king 1
+</code></pre>
+<h3 id="trigger"><a class="anchor" href="#trigger" aria-hidden="true">#</a>/trigger</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/trigger id</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sets off a world trigger on this map, its conditions included, as if you set it off. Answers &quot;Done.&quot; or why it didn't fire. See <a href="../content/world-triggers.html">World triggers</a>.</p>
+<h3 id="item"><a class="anchor" href="#item" aria-hidden="true">#</a>/item</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/item id [amount] [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>1 to 9999</td>
+</tr>
+</tbody>
+</table></div>
+<p>Puts items in a bag, by their Game Database id. Answers &quot;Gave N Item to Name.&quot; and, when the bag is full, &quot;N didn't fit.&quot;</p>
+<pre class="code"><code class="language-">/item health_potion 20
+/item health_potion 5 Aria
+</code></pre>
+<h3 id="gold"><a class="anchor" href="#gold" aria-hidden="true">#</a>/gold</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/gold amount [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>-1.000.000.000 to 1.000.000.000 at a time</td>
+</tr>
+</tbody>
+</table></div>
+<p>Adds gold, or takes it with a negative amount (never below 0). Answers &quot;Name has N gold.&quot;</p>
+<pre class="code"><code class="language-">/gold 10000
+/gold -500 Aria
+</code></pre>
+<h3 id="currency"><a class="anchor" href="#currency" aria-hidden="true">#</a>/currency</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/currency id amount [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>-1.000.000.000 to 1.000.000.000 at a time</td>
+</tr>
+</tbody>
+</table></div>
+<p>Adds any currency by its id, or takes it with a negative amount.</p>
+<ul>
+<li>A normal currency goes to the character, who must be on this map. Answers &quot;Name has N Currency.&quot;</li>
+<li>A <strong>premium</strong> currency goes to the account's balance in the Shop service. The target can be offline or on another map. The map answers &quot;Asking the shop to give N Gems for Name.&quot; and the Shop's answer follows in chat. Needs the Shop service: &quot;This map has no Shop service.&quot; otherwise.</li>
+</ul>
+<pre class="code"><code class="language-">/currency event_tokens 50
+/currency gems 100 Aria
+</code></pre>
+<h3 id="xp"><a class="anchor" href="#xp" aria-hidden="true">#</a>/xp</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/xp amount [player]</code></td>
+</tr>
+<tr>
+<td>Alias</td>
+<td><code>/exp</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>1 to 1.000.000.000</td>
+</tr>
+</tbody>
+</table></div>
+<p>Gives experience, with level ups as normal.</p>
+<h3 id="level"><a class="anchor" href="#level" aria-hidden="true">#</a>/level</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/level n [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Raises a player level by level up to n, with the points and rewards of each level. It never lowers a level. Answers &quot;Name is level N.&quot;</p>
+<h3 id="points"><a class="anchor" href="#points" aria-hidden="true">#</a>/points</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/points attribute skill [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>0 to 1000 each</td>
+</tr>
+</tbody>
+</table></div>
+<p>Gives attribute points and skill points to spend.</p>
+<pre class="code"><code class="language-">/points 10 5
+</code></pre>
+<h3 id="skill"><a class="anchor" href="#skill" aria-hidden="true">#</a>/skill</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/skill id [rank] [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>Rank 1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Teaches a skill by its id, at a rank. Answers &quot;Name knows Skill.&quot; or why it can't be taught.</p>
+<h3 id="rates"><a class="anchor" href="#rates" aria-hidden="true">#</a>/rates</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/rates</code>, <code>/rates kind value [minutes]</code>, <code>/rates off</code></td>
+</tr>
+<tr>
+<td>Aliases</td>
+<td><code>/rate</code>, <code>/event</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>Value 0 to 100</td>
+</tr>
+</tbody>
+</table></div>
+<p>Without arguments, shows the experience, loot and gold rates in effect, with the server rate and the event part, and who started the event and how many minutes are left.</p>
+<p>With a kind and a value, starts or changes a rates event on <strong>every map</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Also accepted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>exp</code></td>
+<td><code>xp</code>, <code>experience</code></td>
+</tr>
+<tr>
+<td><code>loot</code></td>
+<td><code>drop</code>, <code>drops</code></td>
+</tr>
+<tr>
+<td><code>gold</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>all</code></td>
+<td>Sets the three</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>A value of 2 is double. The event multiplies the server rates of Game Settings.</li>
+<li>A new event lasts 60 minutes unless you give minutes. Changing a running event without minutes keeps its end.</li>
+<li><code>/rates off</code> (or <code>reset</code>, <code>end</code>) ends the event.</li>
+<li>Everyone is told when an event starts or changes.</li>
+</ul>
+<pre class="code"><code class="language-">/rates
+/rates exp 2 120
+/rates all 1.5
+/rates off
+</code></pre>
+<h3 id="role"><a class="anchor" href="#role" aria-hidden="true">#</a>/role</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/role player level</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4, always</td>
+</tr>
+<tr>
+<td>Online only</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sets the GM level of a character's account: 1 player, 2 moderator, 3 game master, 4 admin. The player doesn't have to be on your map. The command's own level can't be changed in Game Settings.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done, raising a level</td>
+<td>&quot;Name's account is now Moderator (2). It takes effect the next time they enter a map.&quot;</td>
+</tr>
+<tr>
+<td>Done, lowering a level</td>
+<td>&quot;... They were disconnected to take it.&quot; The player is disconnected at once</td>
+</tr>
+<tr>
+<td>Your own account</td>
+<td>&quot;You can't change your own level.&quot;</td>
+</tr>
+<tr>
+<td>Someone at your level or above</td>
+<td>&quot;You can't change the level of someone at your level or above.&quot;</td>
+</tr>
+<tr>
+<td>A level above yours</td>
+<td>&quot;You can't give a level above your own.&quot;</td>
+</tr>
+<tr>
+<td>A bad level</td>
+<td>&quot;Usage: /role player level (1 to 4)&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>The change and its audit line are saved together.</p>
+<pre class="code"><code class="language-">/role Aria 2
+</code></pre>
+<h3 id="audit"><a class="anchor" href="#audit" aria-hidden="true">#</a>/audit</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>/audit [player]</code></td>
+</tr>
+<tr>
+<td>Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Online only</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>The last GM commands on record, of one player or of everyone.</p>
+<h2 id="chat-commands-for-every-player"><a class="anchor" href="#chat-commands-for-every-player" aria-hidden="true">#</a>Chat commands for every player</h2>
+<p>These are handled by the client and need no GM level. Channel commands alone (with no text) switch the default channel; with text they send once.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Aliases</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/s [text]</code></td>
+<td><code>/say</code></td>
+<td>Say: players nearby</td>
+</tr>
+<tr>
+<td><code>/m [text]</code></td>
+<td><code>/y</code>, <code>/map</code></td>
+<td>Everyone on this map</td>
+</tr>
+<tr>
+<td><code>/g [text]</code></td>
+<td><code>/world</code></td>
+<td>Everyone online</td>
+</tr>
+<tr>
+<td><code>/p [text]</code></td>
+<td><code>/party</code></td>
+<td>Your party</td>
+</tr>
+<tr>
+<td><code>/gu [text]</code></td>
+<td><code>/guild</code></td>
+<td>Your guild</td>
+</tr>
+<tr>
+<td><code>/al [text]</code></td>
+<td><code>/alliance</code></td>
+<td>Your guild's alliance</td>
+</tr>
+<tr>
+<td><code>/w name text</code></td>
+<td><code>/whisper</code>, <code>/tell</code></td>
+<td>A private message</td>
+</tr>
+<tr>
+<td><code>/r text</code></td>
+<td><code>/reply</code></td>
+<td>Answers the last whisper (&quot;Nobody to reply to yet.&quot; if none)</td>
+</tr>
+<tr>
+<td><code>/invite name</code></td>
+<td></td>
+<td>Invites a player to your party</td>
+</tr>
+<tr>
+<td><code>/leave</code></td>
+<td></td>
+<td>Leaves your party</td>
+</tr>
+<tr>
+<td><code>/kick name</code></td>
+<td></td>
+<td>Removes a player from your party</td>
+</tr>
+<tr>
+<td><code>/promote name</code></td>
+<td><code>/lead</code></td>
+<td>Makes a player the party leader</td>
+</tr>
+<tr>
+<td><code>/friend name</code></td>
+<td></td>
+<td>Adds a friend</td>
+</tr>
+<tr>
+<td><code>/unfriend name</code></td>
+<td></td>
+<td>Removes a friend</td>
+</tr>
+<tr>
+<td><code>/trade name</code></td>
+<td></td>
+<td>Asks a player to trade</td>
+</tr>
+<tr>
+<td><code>/ginvite name</code></td>
+<td></td>
+<td>Invites a player to your guild</td>
+</tr>
+<tr>
+<td><code>/gm</code></td>
+<td><code>/panel</code></td>
+<td>Opens the GM panel, for staff only</td>
+</tr>
+</tbody>
+</table></div>
+<p>With the Chat module off, plain text can't be sent (&quot;Chat is off in this game. Commands start with /.&quot;), but commands still work.</p>
+<h2 id="the-gm-panel"><a class="anchor" href="#the-gm-panel" aria-hidden="true">#</a>The GM panel</h2>
+<p><code>F8</code> or <code>/gm</code> opens the GM panel for accounts of level 2 or more. It builds the same command lines as the chat, with buttons; the server still checks the level of each one, so a modified client gains nothing. It has four tabs, each shown only when you may use at least one of its commands:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>Commands behind its buttons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Players</strong></td>
+<td><code>who</code> (refresh the list), <code>goto</code>, <code>summon</code>, <code>boot</code>, <code>mute</code> and unmute, <code>ban</code> and unban (asks first, 24 hours by default), <code>heal</code>, <code>logs</code>, <code>role</code> (asks first)</td>
+</tr>
+<tr>
+<td><strong>Items</strong></td>
+<td><code>item</code>, <code>gold</code>, <code>xp</code>, <code>level</code></td>
+</tr>
+<tr>
+<td><strong>World</strong></td>
+<td><code>rates</code> (show, apply, end), <code>spawn</code>, <code>killall</code>, <code>map</code>, <code>god</code></td>
+</tr>
+<tr>
+<td><strong>Moderation</strong></td>
+<td><code>announce</code>, <code>reports</code>, <code>closereport</code>, <code>logs</code>, <code>audit</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Clicking a player in the list fills the target; an empty target means yourself. See <a href="../gameplay/gm-tools.html">GM tools</a>.</p>
+<h2 id="commands-of-the-devkit-example"><a class="anchor" href="#commands-of-the-devkit-example" aria-hidden="true">#</a>Commands of the DevKit example</h2>
+<p>The bounty board example adds one command when it is in your project:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Level</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>`/bounty reset</td>
+<td>done [player]`</td>
+<td>4</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="adding-your-own-commands"><a class="anchor" href="#adding-your-own-commands" aria-hidden="true">#</a>Adding your own commands</h2>
+<p>GM commands are registered from a server-only assembly with <code>GmCommands.Register</code>, and appear in <code>/help</code> and the audit like the kit's own. See <a href="../devkit/gm-commands-in-code.html">GM commands in code</a>.</p>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../gameplay/gm-tools.html">GM tools</a></li>
+<li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li>
+<li><a href="../gameplay/chat.html">Chat</a></li>
+<li><a href="../editor/game-settings.html">Game Settings</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="keys.html"><span>Previous</span>Keys</a><a class="next" href="troubleshooting.html"><span>Next</span>Troubleshooting</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Freference%2Fgm-commands.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#how-commands-work">How commands work</a></li><li class="l2"><a href="#gm-levels">GM levels</a></li><li class="l3"><a href="#single-player">Single player</a></li><li class="l3"><a href="#setting-the-first-admin">Setting the first admin</a></li><li class="l2"><a href="#the-audit">The audit</a></li><li class="l2"><a href="#command-list">Command list</a></li><li class="l3"><a href="#level-1-every-player">Level 1: every player</a></li><li class="l3"><a href="#level-2-moderator">Level 2: Moderator</a></li><li class="l3"><a href="#level-3-game-master">Level 3: Game Master</a></li><li class="l3"><a href="#level-4-admin">Level 4: Admin</a></li><li class="l2"><a href="#commands-in-detail">Commands in detail</a></li><li class="l3"><a href="#help">/help</a></li><li class="l3"><a href="#report">/report</a></li><li class="l3"><a href="#who">/who</a></li><li class="l3"><a href="#goto">/goto</a></li><li class="l3"><a href="#boot">/boot</a></li><li class="l3"><a href="#mute">/mute</a></li><li class="l3"><a href="#announce">/announce</a></li><li class="l3"><a href="#reports-and-closereport">/reports and /closereport</a></li><li class="l3"><a href="#logs">/logs</a></li><li class="l3"><a href="#summon">/summon</a></li><li class="l3"><a href="#tp">/tp</a></li><li class="l3"><a href="#ban">/ban</a></li><li class="l3"><a href="#heal">/heal</a></li><li class="l3"><a href="#god">/god</a></li><li class="l3"><a href="#status">/status</a></li><li class="l3"><a href="#spawn">/spawn</a></li><li class="l3"><a href="#killall">/killall</a></li><li class="l3"><a href="#map">/map</a></li><li class="l3"><a href="#quest">/quest</a></li><li class="l3"><a href="#flag">/flag</a></li><li class="l3"><a href="#trigger">/trigger</a></li><li class="l3"><a href="#item">/item</a></li><li class="l3"><a href="#gold">/gold</a></li><li class="l3"><a href="#currency">/currency</a></li><li class="l3"><a href="#xp">/xp</a></li><li class="l3"><a href="#level">/level</a></li><li class="l3"><a href="#points">/points</a></li><li class="l3"><a href="#skill">/skill</a></li><li class="l3"><a href="#rates">/rates</a></li><li class="l3"><a href="#role">/role</a></li><li class="l3"><a href="#audit">/audit</a></li><li class="l2"><a href="#chat-commands-for-every-player">Chat commands for every player</a></li><li class="l2"><a href="#the-gm-panel">The GM panel</a></li><li class="l2"><a href="#commands-of-the-devkit-example">Commands of the DevKit example</a></li><li class="l2"><a href="#adding-your-own-commands">Adding your own commands</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Performance · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="performance.html" selected>English</option><option value="../../es/servers/performance.html">Español</option><option value="../../pt/servers/performance.html">Português</option><option value="../../zh/servers/performance.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>Servers and deployment</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html" class="on" aria-current="page">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Servers and deployment</div><h1>Performance</h1><p>The performance targets KitARPG is designed for, what has been measured, the settings that decide how much a map server can carry (tick rate, visibility grid, connections, saves) and how to watch and plan the capacity of your own servers.</p>
+<h2 id="targets"><a class="anchor" href="#targets" aria-hidden="true">#</a>Targets</h2>
+<p>These are the design targets for one map server. Measure your own game against them: your maps, monsters and skills change the numbers.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Players on one open map (a town)</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Players in one dungeon copy</td>
+<td>1 to 4, several copies in the same map server</td>
+</tr>
+<tr>
+<td>Server simulation</td>
+<td>30 ticks per second</td>
+</tr>
+<tr>
+<td>Server upload per player</td>
+<td>Under 10 KB/s on average</td>
+</tr>
+<tr>
+<td>Memory per map server process</td>
+<td>Under 1 GB</td>
+</tr>
+<tr>
+<td>Character saves</td>
+<td>Every 60 seconds, on leaving and on changing maps</td>
+</tr>
+<tr>
+<td>Login response</td>
+<td>Under 300 ms</td>
+</tr>
+<tr>
+<td>Client</td>
+<td>60 FPS on a mid-range PC</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="what-has-been-measured"><a class="anchor" href="#what-has-been-measured" aria-hidden="true">#</a>What has been measured</h2>
+<p>The load test uses a map server with 300 monsters and headless bots that connect, walk at random and use an area skill every few seconds, with the same server build and Mirror settings the kit uses.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Bots</th>
+<th>Ticks per second</th>
+<th>KB/s per player</th>
+<th>Memory</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local, Mac</td>
+<td>50 for 75 s</td>
+<td>30, steady</td>
+<td>0.8 to 0.9</td>
+<td>Bot process: about 175 MB</td>
+<td>Server and bots on the same computer, 300 monsters</td>
+</tr>
+<tr>
+<td>Docker on a Mac (x86 emulated)</td>
+<td>50 for 90 s</td>
+<td>28 to 29</td>
+<td>0.9</td>
+<td>Server: 243 MB</td>
+<td>Checks the image; ticks aren't representative under emulation</td>
+</tr>
+</tbody>
+</table></div>
+<p>The KB/s figures are Mirror's payload, without KCP, UDP and IP headers. Measure real traffic with <code>docker stats</code> or your host's network graphs.</p>
+<h2 id="how-the-work-is-split"><a class="anchor" href="#how-the-work-is-split" aria-hidden="true">#</a>How the work is split</h2>
+<p>Knowing where the load goes tells you what to scale.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Load grows with</th>
+<th>Scales by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Map server</td>
+<td>Players and monsters on that map, how many see each other, skills and effects</td>
+<td>One process per map. Move busy maps to their own machine</td>
+</tr>
+<tr>
+<td>Dungeon copies</td>
+<td>Copies open at once, each a full copy of the scene</td>
+<td>They share their map server's process; an empty copy unloads after <code>emptyMinutes</code> (5)</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>Saves, map changes, chat, guild, mail and market traffic</td>
+<td>One instance. Its database queries are the main cost</td>
+</tr>
+<tr>
+<td>Login</td>
+<td>Sign ins (Argon2id uses 19 MiB and some CPU per attempt)</td>
+<td>Several instances behind the proxy</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Saves from every map, item moves, logs</td>
+<td>PostgreSQL on fast disks; a bigger instance</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="the-server-tick"><a class="anchor" href="#the-server-tick" aria-hidden="true">#</a>The server tick</h2>
+<p>The map server runs Mirror's loop at <em>Send Rate</em> (<code>sendRate</code>) on <code>KitNetworkManager</code>, <strong>30</strong> per second in the kit. A headless server runs one frame per tick, so this is both the simulation rate and the network update rate.</p>
+<ul>
+<li><strong>The sign of overload</strong> is the tick rate dropping below 30. Frame times near 33 ms are normal at 30 ticks: they include the wait for the next tick.</li>
+<li>Raising it makes movement smoother and costs CPU and bandwidth in proportion. Lowering it to 20 saves both at the cost of responsiveness. Keep the client and server on the same value (both read the same prefab).</li>
+</ul>
+<h2 id="interest-management"><a class="anchor" href="#interest-management" aria-hidden="true">#</a>Interest management</h2>
+<p><code>KitInterestManagement</code>, on the <code>KitNetwork</code> prefab, decides what each player receives. It is Mirror's spatial hashing grid with the kit's rules on top:</p>
+<ul>
+<li>the world is split into square cells of half <code>visRange</code> (20 meters with the kit's 40), and each player gets what is in their cell and the eight cells around it;</li>
+<li>invisible enemies (the stealth status) are hidden from their foes;</li>
+<li>event monsters brought for one player are sent to that player only.</li>
+</ul>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Kit value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>visRange</code></td>
+<td>Meters a player sees. The grid's cells are half this size</td>
+<td>40</td>
+</tr>
+<tr>
+<td><code>rebuildInterval</code></td>
+<td>Seconds between visibility rebuilds</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bandwidth grows with how many entities each player sees, not with the players on the map. A town of 200 players spread out costs far less than 200 players in one square.</p>
+<ul>
+<li>Lower <code>visRange</code> to send less in crowded maps. The camera must not show farther than this, or players see things pop in.</li>
+<li>Raise <code>rebuildInterval</code> to spend less CPU on rebuilds; new things then appear a little later.</li>
+</ul>
+<p>The same rules decide what a player can target: the server never accepts a target the connection doesn't see.</p>
+<h2 id="connections-per-map"><a class="anchor" href="#connections-per-map" aria-hidden="true">#</a>Connections per map</h2>
+<p><em>Max Connections</em> (<code>maxConnections</code>) on <code>KitNetworkManager</code> is the most players one map server accepts. The kit ships it at <strong>100</strong>. To reach the 200 player target on a map, raise it on the <code>KitNetwork</code> prefab and rebuild the map servers, then load test.</p>
+<h2 id="transport"><a class="anchor" href="#transport" aria-hidden="true">#</a>Transport</h2>
+<p>The kit uses KCP over UDP with these values on <code>KcpTransport</code>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Kit value</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NoDelay</code></td>
+<td>On</td>
+<td>Sends at once instead of waiting to batch</td>
+</tr>
+<tr>
+<td><code>Interval</code></td>
+<td>10 ms</td>
+<td>KCP's internal update interval</td>
+</tr>
+<tr>
+<td><code>Timeout</code></td>
+<td>10000 ms</td>
+<td>A silent connection is dropped after this</td>
+</tr>
+<tr>
+<td><code>SendWindowSize</code>, <code>ReceiveWindowSize</code></td>
+<td>4096</td>
+<td>Packets in flight; enough for a busy map</td>
+</tr>
+<tr>
+<td><code>MaxRetransmit</code></td>
+<td>40</td>
+<td>Retries before a connection is considered dead</td>
+</tr>
+<tr>
+<td><code>MaximizeSocketBuffers</code></td>
+<td>On</td>
+<td>Asks the OS for large socket buffers</td>
+</tr>
+</tbody>
+</table></div>
+<p>Leave them unless a load test points at them.</p>
+<h2 id="saves"><a class="anchor" href="#saves" aria-hidden="true">#</a>Saves</h2>
+<ul>
+<li>Each player is saved every <em>Save Interval Seconds</em> (<code>saveIntervalSeconds</code> on <code>MapServer</code>), <strong>60</strong>, plus when they leave and when they change maps. Central also writes at once for anything it handles itself: trades, mail, the market, guild storage.</li>
+<li>One save per character is in flight at a time; a newer one waits for it.</li>
+<li>A longer interval lowers database writes; a crash then loses up to that many seconds of progress (experience, loot picked up). A shorter one is safer and costs more writes.</li>
+</ul>
+<h2 id="command-limits"><a class="anchor" href="#command-limits" aria-hidden="true">#</a>Command limits</h2>
+<p>Every client command counts against a budget of 30 per second with bursts of 60; a client far above that is disconnected as flooding. Commands that go on to Central get 2 per second with bursts of 10. These protect the server from modified clients and keep one player from using everyone's CPU. They are fixed in code (<code>CommandPacing</code>).</p>
+<h2 id="planning-capacity"><a class="anchor" href="#planning-capacity" aria-hidden="true">#</a>Planning capacity</h2>
+<p>Concurrent users (CCU) for the whole game are the sum over maps. Work it out map by map:</p>
+<ol>
+<li><strong>List your maps</strong> and where players gather. Towns and event areas hold most players; field maps fewer; dungeons only their parties.</li>
+<li><strong>Load test the busiest map</strong> on the machine you will rent, with your monsters and skills. Raise players until the tick rate drops below 30, then keep a margin below that.</li>
+<li><strong>Add the dungeon load</strong> to its map server: each open copy costs like a small map with its monsters.</li>
+<li><strong>Give each busy map its own machine</strong> when one machine can't hold them all, connected to Central over a private network. See <a href="docker.html#adding-map-servers">Docker</a>.</li>
+<li><strong>Check the database.</strong> With many players, saves every 60 seconds and the game log add up; watch PostgreSQL's CPU and disk.</li>
+</ol>
+<h2 id="watching-your-servers"><a class="anchor" href="#watching-your-servers" aria-hidden="true">#</a>Watching your servers</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Players per map</td>
+<td><code>GET /api/maps</code> on Central: <code>curl http://127.0.0.1:5200/api/maps</code> on the server</td>
+</tr>
+<tr>
+<td>CPU, memory, network per container</td>
+<td><code>docker stats</code></td>
+</tr>
+<tr>
+<td>A map server's log</td>
+<td><code>docker compose logs map-town</code>, or <code>data/logs/map-&lt;id&gt;.log</code> from the launcher</td>
+</tr>
+<tr>
+<td>Service health</td>
+<td><code>GET /health</code> on Login, Central and the Shop</td>
+</tr>
+<tr>
+<td>Slow or failed saves</td>
+<td>Central's log (<code>Save of character ... refused</code>) and the map log (<code>... was not saved</code>)</td>
+</tr>
+<tr>
+<td>Game activity</td>
+<td><code>/logs</code> in game, or the <code>game_logs</code> table</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<ul>
+<li>Load test on the same kind of machine you will run on. A laptop, or x86 emulated on Apple silicon, tells you little about a VPS.</li>
+<li>The Linux map server is built with IL2CPP: native code costs less CPU per tick than Mono.</li>
+<li>Spread NPCs, vendors and spawn points so players don't all stand in one grid cell.</li>
+<li>Many monsters awake far from players cost CPU for nothing; place spawners where players go.</li>
+<li>Keep <code>Logs:Days</code> reasonable on busy servers; the game log grows with every action.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="architecture.html#scaling-model">Architecture</a></li>
+<li><a href="configuration.html#map-server-components">Configuration</a></li>
+<li><a href="docker.html">Docker</a></li>
+<li><a href="../gameplay/dungeons.html">Dungeons</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="shop-service.html"><span>Previous</span>Shop service</a><a class="next" href="../devkit/devkit-overview.html"><span>Next</span>DevKit overview</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fservers%2Fperformance.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#targets">Targets</a></li><li class="l2"><a href="#what-has-been-measured">What has been measured</a></li><li class="l2"><a href="#how-the-work-is-split">How the work is split</a></li><li class="l2"><a href="#the-server-tick">The server tick</a></li><li class="l2"><a href="#interest-management">Interest management</a></li><li class="l2"><a href="#connections-per-map">Connections per map</a></li><li class="l2"><a href="#transport">Transport</a></li><li class="l2"><a href="#saves">Saves</a></li><li class="l2"><a href="#command-limits">Command limits</a></li><li class="l2"><a href="#planning-capacity">Planning capacity</a></li><li class="l2"><a href="#watching-your-servers">Watching your servers</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Item effects · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="item-effects.html" selected>English</option><option value="../../es/devkit/item-effects.html">Español</option><option value="../../pt/devkit/item-effects.html">Português</option><option value="../../zh/devkit/item-effects.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html" class="on" aria-current="page">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Item effects</h1><p>How to write your own effects for consumable items: the <code>ItemEffect</code> base class, the <code>IItemUser</code> interface it works with, how using an item flows on the server, and complete examples.</p>
+<h2 id="what-an-item-effect-is"><a class="anchor" href="#what-an-item-effect-is" aria-hidden="true">#</a>What an item effect is</h2>
+<p>A consumable (<code>ConsumableData</code>: potions, scrolls, food) restores health and mana with its own fields, then runs a list of effects (<code>ConsumableData.effects</code>). The kit ships effects for experience, levels, learning skills, attribute and skill points, resetting attributes, casting a skill, adding a status and traveling. Anything else an item should do is a new effect class.</p>
+<p>Effects are <code>[Serializable]</code> classes held by reference with <code>[SerializeReference, PickType]</code>. Once yours compiles, it shows in the <strong>+</strong> type menu of <em>Effects</em> on every Consumable in <strong>KitARPG &gt; Game Database &gt; Items</strong>.</p>
+<p><strong>Where the file goes:</strong> the <code>Game</code> assembly. Tooltips on the client read the effect too.</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h2>
+<p><code>ItemEffect</code> lives in <code>Blunnyn.KitARPG.Data</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string Summary</code></td>
+<td>Short text in the item editor and the default tooltip line.</td>
+<td>The class name</td>
+</tr>
+<tr>
+<td><code>string Check(IItemUser user)</code></td>
+<td><strong>Server.</strong> Why this user can't use it now, or null. Every effect of the item is checked before any runs.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>void Use(IItemUser user, ItemData item)</code></td>
+<td><strong>Server.</strong> Does the effect. <code>item</code> is what was used, to give back if something fails later. Required.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>void Describe(ItemDescription description, IItemUser viewer)</code></td>
+<td>Lines for the item's tooltip. <code>viewer</code> can be null (a tooltip in the editor, or for another player's item).</td>
+<td>Adds <code>Summary</code></td>
+</tr>
+<tr>
+<td><code>void Visit(Action&lt;GameData&gt; visit)</code></td>
+<td>Hands the game database every asset the effect points at.</td>
+<td>Nothing</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="what-happens-when-a-player-uses-an-item"><a class="anchor" href="#what-happens-when-a-player-uses-an-item" aria-hidden="true">#</a>What happens when a player uses an item</h2>
+<ol>
+<li>The owner's client asks (<code>PlayerInventory.Use(slot)</code>, from the bag, the item menu or a hotbar slot).</li>
+<li>On the server, <code>PlayerInventory</code> checks its own pace, that the slot holds an item, and that the item is usable (<code>IUsable</code>).</li>
+<li>It checks the cooldown of the item's <em>Cooldown Group</em> (<code>cooldownGroup</code>, default <code>potion</code>).</li>
+<li>It calls <code>ConsumableData.CheckUse(player)</code>: dead players can't use items, then every effect's <code>Check</code> runs in order and the first non-null answer stops everything. That answer is shown over the player's head.</li>
+<li>A consumable with no effects is usable only while it would restore something.</li>
+<li><code>ConsumableData.Use</code> restores health and mana, then calls every effect's <code>Use</code> in order.</li>
+<li>The cooldown starts and one item is taken from the stack.</li>
+</ol>
+<p>Because every <code>Check</code> runs before any <code>Use</code>, an item with three effects either does all three or none. Put every reason to refuse in <code>Check</code>. Once <code>Use</code> runs, the item is spent.</p>
+<h2 id="iitemuser"><a class="anchor" href="#iitemuser" aria-hidden="true">#</a>IItemUser</h2>
+<p>The player as items see it. On the server it is the <code>PlayerCharacter</code>; on the client, tooltips get the local player.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it does</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CharacterClass Class</code>, <code>int Level</code></td>
+<td>Class and level.</td>
+<td>Both</td>
+</tr>
+<tr>
+<td><code>IReadOnlyList&lt;string&gt; WornItemIds</code></td>
+<td>Item id at each equipment position, empty where nothing is worn.</td>
+<td>Both</td>
+</tr>
+<tr>
+<td><code>bool IsDead</code>, <code>int Health</code>, <code>int MaxHealth</code>, <code>int Mana</code>, <code>int MaxMana</code></td>
+<td>Current state.</td>
+<td>Both</td>
+</tr>
+<tr>
+<td><code>void RestoreHealth(int)</code>, <code>void RestoreMana(int)</code></td>
+<td>Restores.</td>
+<td>Server</td>
+</tr>
+<tr>
+<td><code>long ExperienceToNext</code></td>
+<td>Experience still needed, 0 at the highest level.</td>
+<td>Both</td>
+</tr>
+<tr>
+<td><code>void GainExperience(long)</code></td>
+<td>Adds experience, with level ups.</td>
+<td>Server</td>
+</tr>
+<tr>
+<td><code>void GainLevel()</code></td>
+<td>One level up, as if the experience had been earned.</td>
+<td>Server</td>
+</tr>
+<tr>
+<td><code>void GainPoints(int attributePoints, int skillPoints)</code></td>
+<td>Adds points to spend.</td>
+<td>Server</td>
+</tr>
+<tr>
+<td><code>int SpentAttributePoints</code></td>
+<td>Points spent so far.</td>
+<td>Both</td>
+</tr>
+<tr>
+<td><code>void ResetAttributes()</code></td>
+<td>Gives back every spent attribute point.</td>
+<td>Server</td>
+</tr>
+<tr>
+<td><code>string CanLearnSkill(SkillData, int rank)</code>, <code>void LearnSkill(SkillData, int rank)</code></td>
+<td>Skill learning within the skill's rules.</td>
+<td>Check both, learn server</td>
+</tr>
+<tr>
+<td><code>string CanCastFromItem(SkillData)</code>, <code>void CastFromItem(SkillData, int rank)</code></td>
+<td>Casts a skill without knowing it, with no mana cost or cooldown.</td>
+<td>Check both, cast server</td>
+</tr>
+<tr>
+<td><code>void AddStatus(StatusData, int level, float seconds)</code></td>
+<td>Adds a status.</td>
+<td>Server</td>
+</tr>
+<tr>
+<td><code>void TravelTo(MapData, Vector3, ItemData refund)</code></td>
+<td>Moves the player to a map; gives <code>refund</code> back if the trip fails.</td>
+<td>Server</td>
+</tr>
+</tbody>
+</table></div>
+<p>For anything not on the interface, cast to <code>PlayerCharacter</code> (namespace <code>Blunnyn.KitARPG.Net</code>) and use its components. The <code>Game</code> assembly references <code>KitARPG.Net</code>, so this works:</p>
+<pre class="code"><code class="language-csharp"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerInventory</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Item Effect</strong> makes an experience effect. See <a href="templates.html#item-effect">Templates</a>.</p>
+<h2 id="example-gold-pouch"><a class="anchor" href="#example-gold-pouch" aria-hidden="true">#</a>Example: gold pouch</h2>
+<p>Opens into a random amount of gold. The purse limit is respected; what doesn't fit goes to the bank.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GoldPouchEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;{min}-{max} gold&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerInventory</span><span class="w"> </span><span class="n">inventory</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nothing happens&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">inventory</span><span class="p">.</span><span class="n">GoldRoom</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Your purse is full&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Use</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">ItemData</span><span class="w"> </span><span class="n">item</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="p">)</span><span class="n">user</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerInventory</span><span class="o">&gt;</span><span class="p">().</span><span class="n">ServerReceiveGold</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="s">$&quot;+{amount:N0} {GameInstance.Database.GoldName}&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.85f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">));</span>
+<span class="w">            </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;mygame.gold_pouch&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">itemId</span><span class="p">:</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="n">gold</span><span class="p">:</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="n">ItemDescription</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">IItemUser</span><span class="w"> </span><span class="n">viewer</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">$&quot;Holds {min:N0} to {max:N0} {GameInstance.Database?.GoldName ?? &quot;</span><span class="n">Gold</span><span class="s">&quot;}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>Check</code> and <code>Use</code> run on the server, so the cast is safe there. <code>Describe</code> never casts the viewer: it may be null.</p>
+<h2 id="example-recall-to-town"><a class="anchor" href="#example-recall-to-town" aria-hidden="true">#</a>Example: recall to town</h2>
+<p>Sends the player to the game's start map. If the trip fails, the scroll comes back.</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">RecallEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Recall to town&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MapData</span><span class="w"> </span><span class="n">town</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">startMap</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">town</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Leads nowhere&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Use</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">ItemData</span><span class="w"> </span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MapData</span><span class="w"> </span><span class="n">town</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">startMap</span><span class="p">;</span>
+<span class="w">        </span><span class="n">user</span><span class="p">.</span><span class="n">TravelTo</span><span class="p">(</span><span class="n">town</span><span class="p">,</span><span class="w"> </span><span class="n">town</span><span class="p">.</span><span class="n">startPosition</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="n">ItemDescription</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">IItemUser</span><span class="w"> </span><span class="n">viewer</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Takes you back to town&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p>The kit's <code>TravelItemEffect</code> does the same for a fixed map and position set in the inspector.</p>
+<h2 id="example-an-elixir-that-grants-a-box-of-items"><a class="anchor" href="#example-an-elixir-that-grants-a-box-of-items" aria-hidden="true">#</a>Example: an elixir that grants a box of items</h2>
+<p>Gives items from a list, only when they all fit. <code>IPlayerActor</code> (the player as actions see it) has <code>RoomFor</code> and <code>GiveItem</code>; get it from <code>PlayerCharacter.Facts</code>.</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BoxEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Entry</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">ItemData</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Entry</span><span class="p">[]</span><span class="w"> </span><span class="n">contents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Entry</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Box of {contents.Length}&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nothing happens&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Entry</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">contents</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">why</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">Facts</span><span class="p">.</span><span class="n">RoomFor</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">amount</span><span class="p">));</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">why</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">why</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Use</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">ItemData</span><span class="w"> </span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">PlayerCharacter</span><span class="p">)</span><span class="n">user</span><span class="p">).</span><span class="n">Facts</span><span class="p">;</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Entry</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">contents</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">GiveItem</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">amount</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="n">ItemDescription</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">IItemUser</span><span class="w"> </span><span class="n">viewer</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Entry</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">contents</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">$&quot;{e.item.DisplayName} x{Mathf.Max(1, e.amount)}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">item</span><span class="p">.</span><span class="n">Icon</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Visit</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GameData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Entry</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">contents</span><span class="p">)</span><span class="w"> </span><span class="n">visit</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">item</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>RoomFor</code> checks each entry on its own against the current bag. Several entries that each fit alone may not fit together; for an exact check, test the whole list with <code>PlayerInventory.ServerRoomFor</code>, or give with <code>GiveOrBank</code> so nothing is ever lost (see <a href="../gameplay/inventory-and-bank.html">Inventory and bank</a>).</p>
+<h2 id="tooltips"><a class="anchor" href="#tooltips" aria-hidden="true">#</a>Tooltips</h2>
+<p><code>Describe</code> builds the tooltip lines. <code>ItemDescription.Add(text, kind, icon)</code> adds a line; the kinds are:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Normal</code></td>
+<td>Plain text.</td>
+</tr>
+<tr>
+<td><code>Heading</code></td>
+<td>A section title.</td>
+</tr>
+<tr>
+<td><code>Effect</code></td>
+<td>What the item does.</td>
+</tr>
+<tr>
+<td><code>Muted</code></td>
+<td>Secondary details, like requirements the viewer meets.</td>
+</tr>
+<tr>
+<td><code>Warning</code></td>
+<td>Requirements the viewer doesn't meet.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use the <code>viewer</code> to color requirements: <code>Warning</code> when the local player can't use it, <code>Muted</code> when they can. Always handle <code>viewer == null</code>.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Runs on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Check</code>, <code>Use</code></td>
+<td>Server. The client never decides whether an item works.</td>
+</tr>
+<tr>
+<td><code>Describe</code>, <code>Summary</code></td>
+<td>Client (tooltips) and editor.</td>
+</tr>
+</tbody>
+</table></div>
+<p>In single player both sides run on the same machine, with the same code.</p>
+<h2 id="other-kinds-of-usable-items"><a class="anchor" href="#other-kinds-of-usable-items" aria-hidden="true">#</a>Other kinds of usable items</h2>
+<p>Effects cover consumables. For a whole new kind of item, subclass <code>ItemData</code> (or <code>ConsumableData</code>) and implement the interfaces that apply (<code>IUsable</code>, <code>IConsumable</code>, <code>IEquippable</code>). <code>ConsumableData.CheckUse</code> and <code>Use</code> are <code>virtual</code>. To step in for every item use, override <code>PlayerInventory.UseItem</code> in a subclass of <code>PlayerInventory</code> (see <a href="overriding-kit-behaviour.html">Overriding kit behaviour</a>).</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Refusing inside <code>Use</code>.</strong> By then the item is spent. Refuse in <code>Check</code>.</li>
+<li><strong>Reading <code>viewer</code> without a null check</strong> in <code>Describe</code>.</li>
+<li><strong>Giving items with <code>Inventory.Add</code> straight on the inventory.</strong> Go through <code>PlayerInventory</code> (<code>Give</code>, <code>GiveOrBank</code>, <code>ServerReceive</code>) or <code>IPlayerActor.GiveItem</code>, so the bag syncs, weight updates and saving stays right.</li>
+<li><strong>Forgetting <code>Visit</code></strong> for items, statuses, maps or skills the effect points at.</li>
+<li><strong>Storing state in fields at runtime.</strong> One effect instance serves every copy of the item for every player.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../content/items.html">Items</a></li>
+<li><a href="skill-effects.html">Skill effects</a></li>
+<li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li>
+<li><a href="templates.html">Templates</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="skill-effects.html"><span>Previous</span>Skill effects</a><a class="next" href="conditions-and-actions-in-code.html"><span>Next</span>Conditions and actions in code</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fdevkit%2Fitem-effects.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#what-an-item-effect-is">What an item effect is</a></li><li class="l2"><a href="#the-base-class">The base class</a></li><li class="l2"><a href="#what-happens-when-a-player-uses-an-item">What happens when a player uses an item</a></li><li class="l2"><a href="#iitemuser">IItemUser</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-gold-pouch">Example: gold pouch</a></li><li class="l2"><a href="#example-recall-to-town">Example: recall to town</a></li><li class="l2"><a href="#example-an-elixir-that-grants-a-box-of-items">Example: an elixir that grants a box of items</a></li><li class="l2"><a href="#tooltips">Tooltips</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#other-kinds-of-usable-items">Other kinds of usable items</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project structure · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/start/project-structure.html">English</option><option value="../../es/start/project-structure.html">Español</option><option value="project-structure.html" selected>Português</option><option value="../../zh/start/project-structure.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section" open><summary>Primeiros passos</summary><ul><li><a href="introduction.html">Introduction</a></li><li><a href="features.html">Features</a></li><li><a href="requirements.html">Requirements</a></li><li><a href="installation.html">Installation</a></li><li><a href="setup-wizard.html">Setup Wizard</a></li><li><a href="quick-start-single-player.html">Quick start: single player</a></li><li><a href="quick-start-mmo.html">Quick start: MMO</a></li><li><a href="project-structure.html" class="on" aria-current="page">Project structure</a></li><li><a href="updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Primeiros passos</div><h1>Project structure</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>Where every part of KitARPG lives in your project and on disk, which folders you may edit, which belong to the kit, and which never leave your computer. Read it before you start adding your own content, so updates never overwrite your work.</p>
+<h2 id="the-big-picture"><a class="anchor" href="#the-big-picture" aria-hidden="true">#</a>The big picture</h2>
+<pre class="code"><code class="language-">YourWorkspace/
+├── YourUnityProject/
+│   ├── Assets/
+│   │   ├── Blunnyn/
+│   │   │   ├── KitARPG/          The kit (read-only for you)
+│   │   │   └── Art/              The kit&#39;s voxel art
+│   │   ├── Mirror/               Networking library
+│   │   ├── ScriptTemplates/      Mirror&#39;s script templates
+│   │   ├── Settings/             URP assets and KitARPGSettings
+│   │   └── Game/                 Your game (you make this folder)
+│   └── UserSettings/
+│       └── KitARPG/              This computer only: keys, local database, logs
+└── Builds/
+    ├── Starter/                  Builds made from the KitARPG menus
+    └── ...
+</code></pre>
+<p>The <code>Builds</code> folder sits <strong>next to</strong> your Unity project folder, not inside it.</p>
+<h2 id="the-kit-assets-blunnyn-kitarpg"><a class="anchor" href="#the-kit-assets-blunnyn-kitarpg" aria-hidden="true">#</a>The kit: <code>Assets/Blunnyn/KitARPG/</code></h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>What is in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Runtime/Shared/</code></td>
+<td>Plain C# without Unity, shared with the .NET services: account and character rules, inventory rules, messages to Central, error codes. Assembly <code>KitARPG.Shared</code></td>
+</tr>
+<tr>
+<td><code>Runtime/Data/</code></td>
+<td>Data assets and their rules: classes, attributes, items, skills, statuses, monsters, quests, conditions, actions, maps, <code>GameDatabase</code>, <code>GameInstance</code>. Assembly <code>KitARPG.Data</code></td>
+</tr>
+<tr>
+<td><code>Runtime/Net/</code></td>
+<td>Everything on the network with Mirror: players, monsters, NPCs, combat, chat, guilds, the game log, the network manager. Assembly <code>KitARPG.Net</code></td>
+</tr>
+<tr>
+<td><code>Runtime/Server/</code></td>
+<td>Map server only: the link to Central, GM commands, instances, rewards, the Shop client. Assembly <code>KitARPG.Server</code>, left out of MMO client builds</td>
+</tr>
+<tr>
+<td><code>Runtime/Local/</code></td>
+<td>The single player save in SQLite. Assembly <code>KitARPG.Local</code>, only in single player builds</td>
+</tr>
+<tr>
+<td><code>Runtime/Client/</code></td>
+<td>Interface, windows, HUD, title screen, session, input (<code>KitInput</code>), touch controls, options. Assembly <code>KitARPG.Client</code></td>
+</tr>
+<tr>
+<td><code>Runtime/Resources/KitARPG/</code></td>
+<td>Resources the kit loads by name, such as the character Animator controller <code>KitCharacter.controller</code></td>
+</tr>
+<tr>
+<td><code>Modes/TopDown/</code></td>
+<td>The top-down mode: <code>Runtime</code> (camera and input) and <code>Server</code> (movement and actions on the server)</td>
+</tr>
+<tr>
+<td><code>Modes/ThirdPerson/</code></td>
+<td>The third person and free camera modes, split the same way</td>
+</tr>
+<tr>
+<td><code>Editor/</code></td>
+<td>The KitARPG window and its pages, the Setup Wizard, Game Database, Project Check, build tools, the starter sample builder and the kit updates. Assembly <code>KitARPG.Editor</code></td>
+</tr>
+<tr>
+<td><code>DevKit/Example/Bounties/</code></td>
+<td>The bounty board example, built as a game would be, with its own assemblies</td>
+</tr>
+<tr>
+<td><code>Samples/Starter/</code></td>
+<td>The starter sample (see below)</td>
+</tr>
+<tr>
+<td><code>Tests/PlayMode/</code></td>
+<td>The kit's Play mode tests. Assembly <code>KitARPG.Tests.PlayMode</code>, never in builds</td>
+</tr>
+<tr>
+<td><code>Plugins/LiteNetLib/</code></td>
+<td>The library map servers use to talk to Central</td>
+</tr>
+<tr>
+<td><code>Plugins/SQLite/</code></td>
+<td>The native SQLite library for macOS, Windows and Linux, used by the single player save</td>
+</tr>
+<tr>
+<td><code>Documentation/</code></td>
+<td><code>GettingStarted.md</code>, <code>DevKit.md</code>, <code>CHANGELOG.md</code>, the API reference in <code>API/</code> and the PDF manual</td>
+</tr>
+<tr>
+<td><code>Services.zip</code></td>
+<td>The .NET services as source, as shipped in the package</td>
+</tr>
+<tr>
+<td><code>Services~/</code></td>
+<td><code>Services.zip</code> unpacked by the editor. Unity doesn't import it</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="assemblies"><a class="anchor" href="#assemblies" aria-hidden="true">#</a>Assemblies</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Assembly</th>
+<th>Goes into</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KitARPG.Shared</code>, <code>KitARPG.Data</code>, <code>KitARPG.Net</code>, <code>KitARPG.Client</code></td>
+<td>Every build</td>
+</tr>
+<tr>
+<td><code>KitARPG.Modes.TopDown</code>, <code>KitARPG.Modes.ThirdPerson</code></td>
+<td>Every build</td>
+</tr>
+<tr>
+<td><code>KitARPG.Server</code>, <code>KitARPG.Modes.TopDown.Server</code>, <code>KitARPG.Modes.ThirdPerson.Server</code></td>
+<td>Map servers and single player games only</td>
+</tr>
+<tr>
+<td><code>KitARPG.Local</code></td>
+<td>Single player games only</td>
+</tr>
+<tr>
+<td><code>KitARPG.Editor</code></td>
+<td>The editor only</td>
+</tr>
+<tr>
+<td><code>KitARPG.Tests.PlayMode</code></td>
+<td>The editor only, with tests on</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>KitARPG &gt; Check Build Separation</strong> shows which code goes into each kind of build. See <a href="../devkit/assemblies.html">Assemblies</a>.</p>
+<h2 id="the-starter-sample-samples-starter"><a class="anchor" href="#the-starter-sample-samples-starter" aria-hidden="true">#</a>The starter sample: <code>Samples/Starter/</code></h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Folder or file</th>
+<th>What is in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Scenes/</code></td>
+<td><code>Title.unity</code>, <code>Server.unity</code>, <code>Town.unity</code>, <code>Forest.unity</code>, <code>Crypt.unity</code>, plus a folder per map scene with its lighting and NavMesh data</td>
+</tr>
+<tr>
+<td><code>Prefabs/</code></td>
+<td><code>KitNetwork.prefab</code> (the network manager with the <code>GameInstance</code> that holds Game Settings), <code>GameHud.prefab</code>, <code>TouchControls.prefab</code>, the player prefabs <code>PlayerMale</code>, <code>PlayerFemale</code> and <code>PlayerPanda</code>, the monster prefabs and <code>UI/</code> with the reusable UI pieces</td>
+</tr>
+<tr>
+<td><code>Data/</code></td>
+<td>Every game data asset: <code>StarterDatabase.asset</code>, <code>Attributes/</code>, <code>Classes/</code>, <code>Currencies/</code>, <code>Elements/</code>, <code>Items/</code>, <code>Skills/</code>, <code>Statuses/</code>, <code>WeaponTypes/</code>, <code>Monsters/</code>, <code>Quests/</code>, <code>Shops/</code>, <code>Maps/</code>, <code>Guilds/</code>, the camera settings, the experience table, guild emblems, shop art and the upper body mask</td>
+</tr>
+<tr>
+<td><code>Effects/</code></td>
+<td>Particle effects for hits, casts, projectiles, areas and statuses</td>
+</tr>
+<tr>
+<td><code>Materials/</code></td>
+<td>Materials of the sample maps</td>
+</tr>
+<tr>
+<td><code>StarterAppearance.asset</code></td>
+<td>The catalog of bodies, hair and gear meshes for the modular characters</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Scene</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title</strong></td>
+<td>Login, character list and creation. Must be first in Build Settings</td>
+</tr>
+<tr>
+<td><strong>Server</strong></td>
+<td>The empty scene a map server starts in before it loads its map. Needed in MMO</td>
+</tr>
+<tr>
+<td><strong>Town</strong></td>
+<td>The start map: shops, quest givers, banker, guild services</td>
+</tr>
+<tr>
+<td><strong>Forest</strong></td>
+<td>Monsters, a boss, day and night spawns</td>
+</tr>
+<tr>
+<td><strong>Crypt</strong></td>
+<td>The Sunken Crypt, an instanced dungeon</td>
+</tr>
+</tbody>
+</table></div>
+<div class="callout warning"><div class="callout-title">Atenção</div><p><strong>Start over</strong> in Overview and <strong>KitARPG &gt; Starter &gt; Build Scenes and Prefabs</strong> build the sample again from the kit's code and lose every change made inside <code>Samples/Starter/</code>. Importing a newer kit can also replace files there. Copy what you want to change into your own folder first. See <a href="updating-the-kit.html">Updating the kit</a>.</p>
+</div>
+<h2 id="the-art-assets-blunnyn-art"><a class="anchor" href="#the-art-assets-blunnyn-art" aria-hidden="true">#</a>The art: <code>Assets/Blunnyn/Art/</code></h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>What is in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>3D/VoxelHero/</code></td>
+<td>Voxel bodies (<code>VoxelMale</code>, <code>VoxelFemale</code>, <code>VoxelPanda</code>), <code>Gear/</code> (hair, hats, chests, backs, gloves, legs, boots, weapons), <code>Monsters/</code>, and the shared <code>VoxelHero.mat</code> with its palette textures</td>
+</tr>
+<tr>
+<td><code>3D/HumanModel/</code></td>
+<td>A second, non-voxel human model with its own gear</td>
+</tr>
+<tr>
+<td><code>Anims/</code></td>
+<td>The humanoid character animations (Little Heroes Mega Pack) and <code>Humanoid.controller</code></td>
+</tr>
+<tr>
+<td><code>Sprites/</code></td>
+<td><code>Icons/</code> for items, skills, elements, stats and categories, guild <code>Emblems/</code>, <code>Shop/</code> art and UI sprites</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="project-settings-the-kit-uses"><a class="anchor" href="#project-settings-the-kit-uses" aria-hidden="true">#</a>Project settings the kit uses</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Assets/Settings/Resources/KitARPGSettings.asset</code></td>
+<td>How the game runs: <code>mode</code> (MMO or single player), <code>loginUrl</code> and <code>centralUrl</code> for builds, <code>saveFile</code> for single player. Created if missing</td>
+</tr>
+<tr>
+<td><code>Assets/Settings/KitARPG_URP.asset</code></td>
+<td>The URP asset the Setup Wizard creates when the project has none</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>KitARPGSettings</code> fields:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Mode</em> (<code>mode</code>)</td>
+<td><code>Online</code> (MMO) or <code>SinglePlayer</code>. Play &amp; Servers and the Setup Wizard set it; builds set it for the kind of build</td>
+<td><code>Online</code></td>
+</tr>
+<tr>
+<td><em>Login Url</em> (<code>loginUrl</code>)</td>
+<td>The Login address MMO clients use</td>
+<td><code>http://127.0.0.1:5100</code></td>
+</tr>
+<tr>
+<td><em>Central Url</em> (<code>centralUrl</code>)</td>
+<td>The Central address MMO clients use</td>
+<td><code>http://127.0.0.1:5200</code></td>
+</tr>
+<tr>
+<td><em>Save File</em> (<code>saveFile</code>)</td>
+<td>The single player save, in the player's persistent data folder</td>
+<td><code>savegame.db</code></td>
+</tr>
+</tbody>
+</table></div>
+<div class="callout danger"><div class="callout-title">Importante</div><p>Before building an MMO client for players, set <strong>Login Url</strong> and <strong>Central Url</strong> to your servers' <code>https://</code> addresses. A release client refuses plain HTTP except to this computer, and the build stops if they aren't HTTPS.</p>
+</div>
+<h2 id="this-computer-only-usersettings-kitarpg"><a class="anchor" href="#this-computer-only-usersettings-kitarpg" aria-hidden="true">#</a>This computer only: <code>UserSettings/KitARPG/</code></h2>
+<p>Unity never puts <code>UserSettings</code> in builds, and version control usually ignores it. Everything here is specific to your computer.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>File or folder</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>setup-done</code></td>
+<td>The Setup Wizard ran</td>
+</tr>
+<tr>
+<td><code>seen-version</code></td>
+<td>The last kit version this project opened, for What's New</td>
+</tr>
+<tr>
+<td><code>launcher.json</code></td>
+<td>The launcher settings Play &amp; Servers uses: ports, database, maps, keys</td>
+</tr>
+<tr>
+<td><code>launcher.pid</code></td>
+<td>The running launcher, so the editor finds it after a restart</td>
+</tr>
+<tr>
+<td><code>services.log</code></td>
+<td>Output of the services started from the editor</td>
+</tr>
+<tr>
+<td><code>data/kitarpg.db</code></td>
+<td>The local SQLite database of the MMO: accounts, characters, items, guilds, mail</td>
+</tr>
+<tr>
+<td><code>data/logs/map-&lt;id&gt;.log</code></td>
+<td>Each map server's log</td>
+</tr>
+<tr>
+<td><code>quickplay.json</code></td>
+<td>Test accounts for Play with two players</td>
+</tr>
+<tr>
+<td><code>shop-conf.json</code></td>
+<td>The local shop catalog</td>
+</tr>
+<tr>
+<td><code>shop.log</code>, <code>shop.pid</code></td>
+<td>The Shop service started from the editor</td>
+</tr>
+<tr>
+<td><code>modules/</code></td>
+<td>Modules for Login (<code>login/</code>) and Central (<code>central/</code>) loaded by the local launcher</td>
+</tr>
+</tbody>
+</table></div>
+<div class="callout danger"><div class="callout-title">Importante</div><p><code>launcher.json</code> holds the signing key and the map key. Don't commit it or share it.</p>
+</div>
+<h2 id="the-services-services"><a class="anchor" href="#the-services-services" aria-hidden="true">#</a>The services: <code>Services~/</code></h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>What is in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Shared/</code></td>
+<td>Compiles <code>Runtime/Shared</code> so the rules exist once</td>
+</tr>
+<tr>
+<td><code>Data/</code></td>
+<td>Database entities, one context per provider (SQLite and PostgreSQL) and their migrations</td>
+</tr>
+<tr>
+<td><code>Hosting/</code></td>
+<td>Settings shared by the services: tokens, bans, game log writer</td>
+</tr>
+<tr>
+<td><code>Modules/</code></td>
+<td>The contract for Login and Central modules</td>
+</tr>
+<tr>
+<td><code>Login/</code></td>
+<td>Accounts and characters</td>
+</tr>
+<tr>
+<td><code>Central/</code></td>
+<td>Sessions, tickets, maps, social systems</td>
+</tr>
+<tr>
+<td><code>Shop/</code></td>
+<td>The optional premium shop service</td>
+</tr>
+<tr>
+<td><code>Launcher/</code></td>
+<td>Starts everything, with a window or headless</td>
+</tr>
+<tr>
+<td><code>Examples/Bounties/</code></td>
+<td>The Central side of the bounty board example</td>
+</tr>
+<tr>
+<td><code>Tests/</code></td>
+<td>Tests of rules, Login and Central</td>
+</tr>
+<tr>
+<td><code>KitARPG.Services.slnx</code></td>
+<td>The solution</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>Endpoints, settings and production security</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../servers/services.html">Services</a>.</p>
+<h2 id="builds-builds-next-to-the-project"><a class="anchor" href="#builds-builds-next-to-the-project" aria-hidden="true">#</a>Builds: <code>Builds/</code> next to the project</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Made by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Builds/Starter/MacSinglePlayer/KitARPG.app</code></td>
+<td><strong>Build Mac Single Player</strong></td>
+</tr>
+<tr>
+<td><code>Builds/Starter/WindowsSinglePlayer/KitARPG.exe</code></td>
+<td><strong>Build Windows Single Player</strong></td>
+</tr>
+<tr>
+<td><code>Builds/Starter/MacClient/KitARPG.app</code></td>
+<td><strong>Build Mac Client</strong></td>
+</tr>
+<tr>
+<td><code>Builds/Starter/WindowsClient/KitARPG.exe</code></td>
+<td><strong>Build Windows Client</strong></td>
+</tr>
+<tr>
+<td><code>Builds/Starter/MacServer/KitARPGServer.app</code></td>
+<td><strong>Build Mac Server</strong></td>
+</tr>
+<tr>
+<td><code>Builds/Starter/WindowsServer/KitARPGServer.exe</code></td>
+<td><strong>Build Windows Server</strong></td>
+</tr>
+<tr>
+<td><code>Builds/Starter/MacTestClient/KitARPGTest.app</code></td>
+<td><strong>Build Mac Test Client</strong></td>
+</tr>
+<tr>
+<td><code>Deploy/builds/starter/KitARPGServer.x86_64</code></td>
+<td><strong>Build Linux Server</strong>, for Docker. <code>Deploy</code> is also next to your Unity project folder</td>
+</tr>
+</tbody>
+</table></div>
+<p>All menus are under <strong>KitARPG &gt; Starter</strong>. See <a href="../servers/builds.html">Builds</a>.</p>
+<h2 id="where-your-game-goes"><a class="anchor" href="#where-your-game-goes" aria-hidden="true">#</a>Where your game goes</h2>
+<p>Keep everything you make outside <code>Assets/Blunnyn</code>:</p>
+<pre class="code"><code class="language-">Assets/Game/
+├── Game.asmdef           Create &gt; KitARPG &gt; Scripts &gt; Game Assembly
+├── Data/                 Your items, skills, monsters, quests, maps
+├── Prefabs/              Your player models, monsters, HUD copy
+├── Scenes/               Your maps
+├── Scripts/              Your code
+└── Editor/               Game Editor Assembly and your tools
+</code></pre>
+<p>Steps:</p>
+<ol>
+<li>Create a folder such as <code>Assets/Game</code>.</li>
+<li>To write code, right click it and pick <strong>Create &gt; KitARPG &gt; Scripts &gt; Game Assembly</strong>. Scripts there see the kit.</li>
+<li>Make new data with the Game Database's <strong>New</strong> buttons, then move the assets into your folder, or duplicate sample assets and move the copies.</li>
+<li>For your own maps, duplicate <code>Forest.unity</code> into your folder and add a map entry. See <a href="../content/maps.html">Maps</a>.</li>
+</ol>
+<p>Ids don't depend on file names or folders once made, so moving assets is safe.</p>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="updating-the-kit.html">Updating the kit</a></li>
+<li><a href="../devkit/assemblies.html">Assemblies</a></li>
+<li><a href="../editor/game-database.html">Game Database</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="quick-start-mmo.html"><span>Anterior</span>Quick start: MMO</a><a class="next" href="updating-the-kit.html"><span>Próximo</span>Updating the kit</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fstart%2Fproject-structure.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#the-big-picture">The big picture</a></li><li class="l2"><a href="#the-kit-assets-blunnyn-kitarpg">The kit: Assets/Blunnyn/KitARPG/</a></li><li class="l3"><a href="#assemblies">Assemblies</a></li><li class="l2"><a href="#the-starter-sample-samples-starter">The starter sample: Samples/Starter/</a></li><li class="l2"><a href="#the-art-assets-blunnyn-art">The art: Assets/Blunnyn/Art/</a></li><li class="l2"><a href="#project-settings-the-kit-uses">Project settings the kit uses</a></li><li class="l2"><a href="#this-computer-only-usersettings-kitarpg">This computer only: UserSettings/KitARPG/</a></li><li class="l2"><a href="#the-services-services">The services: Services~/</a></li><li class="l2"><a href="#builds-builds-next-to-the-project">Builds: Builds/ next to the project</a></li><li class="l2"><a href="#where-your-game-goes">Where your game goes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

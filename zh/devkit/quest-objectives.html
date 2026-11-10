@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quest objectives · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/quest-objectives.html">English</option><option value="../../es/devkit/quest-objectives.html">Español</option><option value="../../pt/devkit/quest-objectives.html">Português</option><option value="quest-objectives.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html" class="on" aria-current="page">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>Quest objectives</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>How to add a new kind of quest goal: the <code>QuestObjective</code> base class, the two ways an objective can count (events or current state), how to advance it with <code>PlayerQuests.ServerAdvance</code>, and complete examples.</p>
+<h2 id="what-an-objective-is"><a class="anchor" href="#what-an-objective-is" aria-hidden="true">#</a>What an objective is</h2>
+<p>A quest has a list of objectives (<code>QuestData.objectives</code>). Each has a text, an optional hint, and a number it must reach. The kit ships five kinds:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Counts</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KillObjective</code></td>
+<td>Kills of one monster, or any</td>
+<td>Event: <code>Monster.ServerKilled</code>, shared with party members nearby</td>
+</tr>
+<tr>
+<td><code>CollectObjective</code></td>
+<td>Items in the bag</td>
+<td>State: reads the bag; can take them on turn in</td>
+</tr>
+<tr>
+<td><code>TalkObjective</code></td>
+<td>Talking to an NPC by id</td>
+<td>Event: the NPC conversation</td>
+</tr>
+<tr>
+<td><code>ExploreObjective</code></td>
+<td>Reaching a point or a zone</td>
+<td>Polled every <em>Explore Interval</em> (<code>exploreInterval</code>, 0.5 s)</td>
+</tr>
+<tr>
+<td><code>TriggerObjective</code></td>
+<td>Setting off a world trigger</td>
+<td>Event: <code>WorldTrigger</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>A new kind is a class plus a piece of server code that advances it. Objectives are <code>[Serializable]</code> and held with <code>[SerializeReference, PickType]</code>, so yours shows in the <strong>+</strong> menu of every quest's <em>Objectives</em> in the Game Database.</p>
+<p><strong>Where the files go:</strong> the <code>Game</code> assembly. The quest log on the client reads the objective's text and icon.</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h2>
+<p><code>QuestObjective</code> lives in <code>Blunnyn.KitARPG.Data</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string text</code></td>
+<td>Inspector field: shown in the quest log. Empty uses <code>DefaultText</code>.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><code>string hint</code></td>
+<td>Inspector field: unfolds under the objective in the quest log.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><code>string Text</code></td>
+<td><code>text</code> or <code>DefaultText</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>abstract string DefaultText { get; }</code></td>
+<td>Your default text, like &quot;Slay Slimes&quot;. Required.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtual int Required</code></td>
+<td>The count to reach.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>virtual Sprite Icon</code></td>
+<td>Icon in the quest log.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>virtual int Current(IPlayerFacts holder)</code></td>
+<td>For state-based objectives: the count right now. Return -1 for objectives counted by events.</td>
+<td><code>-1</code></td>
+</tr>
+<tr>
+<td><code>virtual void Visit(Action&lt;GameData&gt; visit)</code></td>
+<td>Hand over every asset the objective points at.</td>
+<td>Nothing</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="two-ways-to-count"><a class="anchor" href="#two-ways-to-count" aria-hidden="true">#</a>Two ways to count</h2>
+<h3 id="counted-by-events"><a class="anchor" href="#counted-by-events" aria-hidden="true">#</a>Counted by events</h3>
+<p>Most objectives count things as they happen. The quest keeps a counter per objective, saved with the character. Your code calls <code>ServerAdvance</code> when the thing happens:</p>
+<pre class="code"><code class="language-csharp"><span class="c1">// PlayerQuests, server only.</span>
+<span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="n">ServerAdvance</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">match</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QuestObjective</span>
+</code></pre>
+<p>It walks every active quest of that player, finds objectives of type <code>T</code> for which <code>match</code> returns true and that aren't full yet, adds <code>amount</code> (capped at <code>Required</code>), shows &quot;Objective 2/5&quot; over the player's head, says &quot;ready to turn in&quot; when the quest is done, and syncs the log to the owner.</p>
+<h3 id="read-from-the-current-state"><a class="anchor" href="#read-from-the-current-state" aria-hidden="true">#</a>Read from the current state</h3>
+<p>Override <code>Current</code> to return the count from what the character has now, as <code>CollectObjective</code> does with the bag. The quest reads it:</p>
+<ul>
+<li>when the quest is accepted,</li>
+<li>every time the player's bag or gear changes (<code>PlayerInventory.ServerChanged</code>),</li>
+<li>when the player tries to turn the quest in (the final check).</li>
+</ul>
+<p><code>Current</code> overrides the stored counter. If the count can go down (items sold), the objective goes down too.</p>
+<div class="callout note"><div class="callout-title">注意</div><p>Outside bag changes, nothing refreshes a state-based count in the quest log. A <code>Current</code> that reads the level, for example, shows the old number until the bag changes, although turning in works as soon as the level is reached. For state that changes without bag changes, count by events instead.</p>
+</div>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Quest Objective</strong> makes an objective and a counter that advances it on every level up. See <a href="templates.html#quest-objective">Templates</a>, and move its subscription to <code>AfterAssembliesLoaded</code> as noted there.</p>
+<h2 id="example-win-duels"><a class="anchor" href="#example-win-duels" aria-hidden="true">#</a>Example: win duels</h2>
+<p>Counts duels the player wins. <code>PlayerPvp.ServerDefeated</code> gives the killer, the victim and whether it was a duel.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">WinDuelsObjective</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QuestObjective</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">        </span><span class="na">[Tooltip(&quot;Only opponents at this level or above count. 0 counts anyone.&quot;)]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">minOpponentLevel</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Win duels&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Required</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Counts</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">opponent</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">minOpponentLevel</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">opponent</span><span class="p">.</span><span class="n">level</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">minOpponentLevel</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">WinDuelsCounter</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// After the kit cleared its events in SubsystemRegistration.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerPvp</span><span class="p">.</span><span class="n">ServerDefeated</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnDefeated</span><span class="p">;</span>
+<span class="w">            </span><span class="n">PlayerPvp</span><span class="p">.</span><span class="n">ServerDefeated</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnDefeated</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDefeated</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">winner</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">loser</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">duel</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">duel</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">winner</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">loser</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">winner</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerQuests</span><span class="w"> </span><span class="n">quests</span><span class="p">))</span>
+<span class="w">                </span><span class="n">quests</span><span class="p">.</span><span class="n">ServerAdvance</span><span class="o">&lt;</span><span class="n">WinDuelsObjective</span><span class="o">&gt;</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Counts</span><span class="p">(</span><span class="n">loser</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="example-upgrade-gear-at-the-forge"><a class="anchor" href="#example-upgrade-gear-at-the-forge" aria-hidden="true">#</a>Example: upgrade gear at the forge</h2>
+<p><code>PlayerForge.ServerUpgraded</code> gives the player, the item id, whether the step worked and the level it ended at.</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UpgradeObjective</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QuestObjective</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Tooltip(&quot;Upgrades that reach this level or more count.&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">toLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Upgrade gear to +{toLevel}&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Required</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UpgradeCounter</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">PlayerForge</span><span class="p">.</span><span class="n">ServerUpgraded</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnUpgraded</span><span class="p">;</span>
+<span class="w">        </span><span class="n">PlayerForge</span><span class="p">.</span><span class="n">ServerUpgraded</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnUpgraded</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUpgraded</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">itemId</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">success</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerQuests</span><span class="w"> </span><span class="n">quests</span><span class="p">))</span>
+<span class="w">            </span><span class="n">quests</span><span class="p">.</span><span class="n">ServerAdvance</span><span class="o">&lt;</span><span class="n">UpgradeObjective</span><span class="o">&gt;</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">toLevel</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="example-carry-gold-state-based"><a class="anchor" href="#example-carry-gold-state-based" aria-hidden="true">#</a>Example: carry gold (state-based)</h2>
+<p>Reads the purse. It refreshes whenever the bag changes, and the turn in checks it again.</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GoldObjective</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QuestObjective</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">gold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Gather {gold:N0} gold&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Counts are whole numbers; a large target is shown as one step.</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Required</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Current</span><span class="p">(</span><span class="n">IPlayerFacts</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">holder</span><span class="p">.</span><span class="n">Balance</span><span class="p">(</span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">gold</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>The refresh comes from <code>PlayerInventory.ServerChanged</code>, raised when the bag or gear is published. Gold changing alone doesn't raise it, so the log may show 0 until the next bag change, although turning in works. Prefer this pattern for items. For currencies, an event-based objective advanced from your own code is more reliable.</p>
+<h2 id="example-an-objective-advanced-from-your-own-feature"><a class="anchor" href="#example-an-objective-advanced-from-your-own-feature" aria-hidden="true">#</a>Example: an objective advanced from your own feature</h2>
+<p>Any server code can advance objectives. The bounty example could count paid bounties toward a quest:</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BountiesObjective</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QuestObjective</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">MonsterData</span><span class="w"> </span><span class="n">monster</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">$&quot;Finish {monster.DisplayName} bounties&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Finish bounties&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Required</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Sprite</span><span class="w"> </span><span class="n">Icon</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">Icon</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Visit</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GameData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">(</span><span class="n">monster</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Wherever a bounty is paid, on the server:</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerQuests</span><span class="w"> </span><span class="n">quests</span><span class="p">))</span>
+<span class="w">    </span><span class="n">quests</span><span class="p">.</span><span class="n">ServerAdvance</span><span class="o">&lt;</span><span class="n">BountiesObjective</span><span class="o">&gt;</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">monster</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">monster</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">paidFor</span><span class="p">);</span>
+</code></pre>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Runs on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServerAdvance</code>, your counter</td>
+<td>Server only</td>
+</tr>
+<tr>
+<td><code>Current</code></td>
+<td>Server (the count that matters)</td>
+</tr>
+<tr>
+<td><code>Text</code>, <code>hint</code>, <code>Icon</code>, <code>Required</code></td>
+<td>Client, in the quest log and tracker</td>
+</tr>
+</tbody>
+</table></div>
+<p>The counts reach the owner through <code>PlayerQuests.active</code>, a synced list. Saving is automatic: counters are part of the quest progress saved with the character, in single player and online.</p>
+<h2 id="quest-events-you-can-use"><a class="anchor" href="#quest-events-you-can-use" aria-hidden="true">#</a>Quest events you can use</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerQuests.ServerCompleted</code> (<code>PlayerCharacter, QuestData</code>)</td>
+<td>A quest was turned in. Server.</td>
+</tr>
+<tr>
+<td><code>PlayerQuests.Shown</code> (<code>Npc, QuestData</code>)</td>
+<td>The owner's client was shown a quest by an NPC.</td>
+</tr>
+<tr>
+<td><code>PlayerQuests.Changed</code> (instance event)</td>
+<td>The owner's quest list changed. Client.</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>PlayerQuests</code> server methods are <code>virtual</code> (<code>ServerAccept</code>, <code>ServerTurnIn</code>, <code>ServerAbandon</code>, <code>ServerFinishObjectives</code>, <code>ServerForget</code>, <code>ServerTalked</code>, <code>ServerLoad</code>) if you need to change the flow itself. See <a href="overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Subscribing in <code>SubsystemRegistration</code>.</strong> The kit clears its events there; the order is undefined. Use <code>AfterAssembliesLoaded</code>.</li>
+<li><strong>Advancing from the client.</strong> <code>ServerAdvance</code> is server only; a client request must be checked and turned into progress by server code.</li>
+<li><strong>Matching too broadly.</strong> <code>ServerAdvance&lt;T&gt;(o =&gt; true)</code> advances every objective of that type in every active quest. Put the rule in the predicate.</li>
+<li><strong>Keeping per-player counts in the objective's fields.</strong> The quest holds the counters. Fields are designer settings shared by every player.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../content/quests.html">Quests</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li>
+<li><a href="domain-reload.html">Domain reload</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="conditions-and-actions-in-code.html"><span>上一页</span>Conditions and actions in code</a><a class="next" href="../reference/keys.html"><span>下一页</span>Keys</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fquest-objectives.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-an-objective-is">What an objective is</a></li><li class="l2"><a href="#the-base-class">The base class</a></li><li class="l2"><a href="#two-ways-to-count">Two ways to count</a></li><li class="l3"><a href="#counted-by-events">Counted by events</a></li><li class="l3"><a href="#read-from-the-current-state">Read from the current state</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-win-duels">Example: win duels</a></li><li class="l2"><a href="#example-upgrade-gear-at-the-forge">Example: upgrade gear at the forge</a></li><li class="l2"><a href="#example-carry-gold-state-based">Example: carry gold (state-based)</a></li><li class="l2"><a href="#example-an-objective-advanced-from-your-own-feature">Example: an objective advanced from your own feature</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#quest-events-you-can-use">Quest events you can use</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

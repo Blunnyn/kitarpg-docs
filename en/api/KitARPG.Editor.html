@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KitARPG.Editor · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="KitARPG.Editor.html" selected>English</option><option value="../../es/api/KitARPG.Editor.html">Español</option><option value="../../pt/api/KitARPG.Editor.html">Português</option><option value="../../zh/api/KitARPG.Editor.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section" open><summary>API reference</summary><ul><li><a href="index.html">API reference</a></li><li><a href="KitARPG.Client.html">KitARPG.Client</a></li><li><a href="KitARPG.Data.html">KitARPG.Data</a></li><li><a href="KitARPG.Editor.html" class="on" aria-current="page">KitARPG.Editor</a></li><li><a href="KitARPG.Local.html">KitARPG.Local</a></li><li><a href="KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="KitARPG.Net.html">KitARPG.Net</a></li><li><a href="KitARPG.Server.html">KitARPG.Server</a></li><li><a href="KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">API reference</div><h1>KitARPG.Editor</h1><h2 id="blunnyn-kitarpg-editor"><a class="anchor" href="#blunnyn-kitarpg-editor" aria-hidden="true">#</a>Blunnyn.KitARPG.Editor</h2>
+<h3 id="buildcheck-class"><a class="anchor" href="#buildcheck-class" aria-hidden="true">#</a>BuildCheck (class)</h3>
+<p>Runs the validator before every build, without opening scenes, and stops on errors unless turned off.</p>
+<h3 id="buildkind-enum"><a class="anchor" href="#buildkind-enum" aria-hidden="true">#</a>BuildKind (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OnlineClient</code></td>
+<td>A player's game for an online world: no server code, no tools.</td>
+</tr>
+<tr>
+<td><code>OnlineServer</code></td>
+<td>A map server: server code, no single player save.</td>
+</tr>
+<tr>
+<td><code>SinglePlayer</code></td>
+<td>A game that hosts its own world: server code and the local save.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="buildseparation-class"><a class="anchor" href="#buildseparation-class" aria-hidden="true">#</a>BuildSeparation (class)</h3>
+<p>Keeps each build to the code it should carry. Which assemblies go in comes from their define constraints and the build's scripting defines: <code>KITARPG_SERVER</code>: server code (KitARPG.Server, every *.Server assembly), for map servers and single player. <code>KITARPG_SINGLEPLAYER</code>: the local save (KitARPG.Local), for single player only. <code>KITARPG_DEV</code> or a development build: test tools (auto login, smoke test, Sandbox). Every build is checked before it starts, from any menu or build profile, and stops when an assembly is where it shouldn't be. The check can't be turned off.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static readonly string[] ServerAssemblies =</code></td>
+<td>Server-only assemblies of the kit. Any assembly whose name ends in &quot;.Server&quot; counts too.</td>
+</tr>
+<tr>
+<td><code>public static readonly string[] DevAssemblies =</code></td>
+<td>Test tools that only development builds may carry.</td>
+</tr>
+<tr>
+<td><code>public static void Expect(BuildKind kind, string[] extraDefines)</code></td>
+<td>Called by the kit's own build menus, which know what they build and the extra defines they pass. Builds started elsewhere are worked out from the game mode and the defines.</td>
+</tr>
+<tr>
+<td><code>public static HashSet&lt;string&gt; Defines(BuildTarget target, bool serverSubtarget, bool development, IEnumerable&lt;string&gt; extra = null)</code></td>
+<td>The defines a player build compiles with: the project's, the active build profile's and the extra ones.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;string&gt; Check(BuildTarget target, BuildKind kind, HashSet&lt;string&gt; defines, out List&lt;string&gt; warnings)</code></td>
+<td>What's wrong with a build of this kind; empty when it may go ahead.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;string&gt; Included(BuildTarget target, HashSet&lt;string&gt; defines)</code></td>
+<td>The project's assemblies a player build for this target would compile, judged by their platforms and define constraints.</td>
+</tr>
+<tr>
+<td><code>public static bool Holds(string constraint, HashSet&lt;string&gt; defines)</code></td>
+<td>One define constraint, like &quot;UNITY_SERVER || !UNITY_EDITOR&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cardscope-struct"><a class="anchor" href="#cardscope-struct" aria-hidden="true">#</a>CardScope (struct)</h3>
+<h3 id="cashshoplayoutupdate-class"><a class="anchor" href="#cashshoplayoutupdate-class" aria-hidden="true">#</a>CashShopLayoutUpdate (class)</h3>
+<p>Swaps the old single-page shop window for the one with categories, a banner, cards and offer pages.</p>
+<h3 id="characteranimationseditor-class"><a class="anchor" href="#characteranimationseditor-class" aria-hidden="true">#</a>CharacterAnimationsEditor (class)</h3>
+<p>Says which of a character's animations are still empty and what that means in game.</p>
+<h3 id="charactercontrollerbuilder-class"><a class="anchor" href="#charactercontrollerbuilder-class" aria-hidden="true">#</a>CharacterControllerBuilder (class)</h3>
+<p>Makes the one Animator controller every character uses. Its states hold placeholder clips that <code>CharacterAnimations</code> swaps for the character's own, so nobody edits it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static AnimatorController Get()</code></td>
+<td>The controller, made first if it is missing.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterprefabs-class"><a class="anchor" href="#characterprefabs-class" aria-hidden="true">#</a>CharacterPrefabs (class)</h3>
+<p>Makes player and monster prefabs from a model, with every component the kit needs on them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static GameObject Root(string name, GameObject model, out GameObject body, out Animator animator)</code></td>
+<td>The model as a child named Model under a new root. The Animator, if any, plays the kit's controller.</td>
+</tr>
+<tr>
+<td><code>public static NetworkTransformReliable AddNetworkTransform(GameObject root)</code></td>
+<td>Adds a NetworkTransformReliable following the root. Unity runs Mirror's Reset as it is added, before it has a target, which only logs a null reference; that log is held back.</td>
+</tr>
+<tr>
+<td><code>public static Bounds Size(GameObject root)</code></td>
+<td>World bounds of the model's renderers, relative to the root.</td>
+</tr>
+<tr>
+<td><code>public static PlayerCharacter AddPlayerSystems(GameObject root, PlayerModel playerModel, AppearanceCatalog catalog, Bounds size)</code></td>
+<td>Networking, movement and every player system, in the order the kit's own players have them.</td>
+</tr>
+<tr>
+<td><code>public static void AddNameplate(GameObject root, PlayerCharacter player, Bounds size)</code></td>
+<td>The name over the head, just above the model.</td>
+</tr>
+<tr>
+<td><code>public static void CopyAnimations(CharacterAnimations from, CharacterAnimations to)</code></td>
+<td>Every clip, timing, weapon and skill entry and the mask settings, through serialization so nothing is missed.</td>
+</tr>
+<tr>
+<td><code>public static void Rename(GameData data, string displayName)</code></td>
+<td>Sets a data asset's shown name and an id made from it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="content-class"><a class="anchor" href="#content-class" aria-hidden="true">#</a>Content (class)</h3>
+<h3 id="devkittemplates-class"><a class="anchor" href="#devkittemplates-class" aria-hidden="true">#</a>DevKitTemplates (class)</h3>
+<p>Create &gt; KitARPG &gt; Scripts: starting points for code of your own that plugs into the kit without touching it. Put them under a folder with the Game assembly, made from the same menu.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const string GameAssemblyJson</code></td>
+<td>An assembly that sees the kit, for a game's own code. Its scripts get the Game namespace.</td>
+</tr>
+<tr>
+<td><code>public static void WriteAll(string folder, string rootNamespace)</code></td>
+<td>Writes every template into a folder as if made from the menu, to check they still compile.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamedataeditor-class"><a class="anchor" href="#gamedataeditor-class" aria-hidden="true">#</a>GameDataEditor (class)</h3>
+<p>Every game data asset in cards, with its icon, name and id on top.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static bool HideHeader</code></td>
+<td>The database window draws its own header.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamedataexporter-class"><a class="anchor" href="#gamedataexporter-class" aria-hidden="true">#</a>GameDataExporter (class)</h3>
+<p>Writes the gamedata.json the Login service reads: models, classes, start values and the item and skill catalog.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static GameDatabase FindDatabase()</code></td>
+<td>The project's database: the one picked in the database window, else the first one found.</td>
+</tr>
+<tr>
+<td><code>public static void ExportToServices()</code></td>
+<td>Next to the Login service source, so builds and Docker images carry it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamedatarowdrawer-class"><a class="anchor" href="#gamedatarowdrawer-class" aria-hidden="true">#</a>GameDataRowDrawer (class)</h3>
+<p>Draws an entry that points at game data as one row: its icon, name and id, with the entry's other fields small on the right. A click on the name picks another one; dragging one in works too.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>protected abstract string Main</code></td>
+<td>The field holding the game data the row shows.</td>
+</tr>
+<tr>
+<td><code>protected virtual string Label(SerializedProperty field)</code></td>
+<td>Label next to a small field, or null for none.</td>
+</tr>
+<tr>
+<td><code>protected virtual void DrawField(Rect rect, SerializedProperty field)</code></td>
+<td>Draws one of the small fields on the right.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamedatabasewindow-class"><a class="anchor" href="#gamedatabasewindow-class" aria-hidden="true">#</a>GameDatabaseWindow (class)</h3>
+<p>The whole game database: kinds of data on the left, their entries in the middle and the picked one on the right. New entries are created next to the database and added to it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static void Open(Object entry)</code></td>
+<td>Opens the Game Database on an entry, in the first list that holds it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamemodenamedrawer-class"><a class="anchor" href="#gamemodenamedrawer-class" aria-hidden="true">#</a>GameModeNameDrawer (class)</h3>
+<p>Picks a game mode from the ones the kit ships and any the project registered.</p>
+<h3 id="gamesettingspage-class"><a class="anchor" href="#gamesettingspage-class" aria-hidden="true">#</a>GameSettingsPage (class)</h3>
+<p>The GameInstance settings, from the bag and loot to the day length, without hunting for the prefab.</p>
+<h3 id="guildemblemsupdate-class"><a class="anchor" href="#guildemblemsupdate-class" aria-hidden="true">#</a>GuildEmblemsUpdate (class)</h3>
+<h3 id="homepage-class"><a class="anchor" href="#homepage-class" aria-hidden="true">#</a>HomePage (class)</h3>
+<p>The first page: how the game runs, whether it's ready, and the usual next steps.</p>
+<h3 id="hudguildupdate-class"><a class="anchor" href="#hudguildupdate-class" aria-hidden="true">#</a>HudGuildUpdate (class)</h3>
+<h3 id="hudlayout-class"><a class="anchor" href="#hudlayout-class" aria-hidden="true">#</a>HudLayout (class)</h3>
+<p>Tidies a built HUD: every script gets its own object holding the panels it shows, grouped under HUD, Windows, Popups and Overlay, and the rows windows copy become prefabs.</p>
+<h3 id="hudparteditor-class"><a class="anchor" href="#hudparteditor-class" aria-hidden="true">#</a>HudPartEditor (class)</h3>
+<p>Inspector for the HUD's windows and bars: what it is, which parts are still empty, a button to show its panel while editing, the row prefabs it copies, and its fields in cards.</p>
+<h3 id="hudshopupdate-class"><a class="anchor" href="#hudshopupdate-class" aria-hidden="true">#</a>HudShopUpdate (class)</h3>
+<h3 id="issuelevel-enum"><a class="anchor" href="#issuelevel-enum" aria-hidden="true">#</a>IssueLevel (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Error</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Warning</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Info</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemicons-class"><a class="anchor" href="#itemicons-class" aria-hidden="true">#</a>ItemIcons (class)</h3>
+<p>Renders an icon for each item that has a model and none of its own: armor shows just its region, weapons lie diagonally, anything else stands upright. Monsters get a portrait from their prefab. Icons go next to the asset in an Icons folder.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static int RenderMonsters(GameDatabase database, bool replace = false)</code></td>
+<td>A portrait for each monster with a prefab and no icon of its own. Returns how many were made.</td>
+</tr>
+<tr>
+<td><code>public static int Render(GameDatabase database, bool replace = false)</code></td>
+<td>Returns how many icons were made.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitgui-class"><a class="anchor" href="#kitgui-class" aria-hidden="true">#</a>KitGUI (class)</h3>
+<p>The look shared by every KitARPG window: cards, headers, status rows, pills and buttons. Plain IMGUI, so it works in any window or inspector.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Texture Icon(string name)</code></td>
+<td>An editor icon by name, trying the dark skin variant first. Missing icons are null, never an error.</td>
+</tr>
+<tr>
+<td><code>public static void Header(string text, string sub = null, Texture icon = null)</code></td>
+<td>Big page title with a line of explanation under it.</td>
+</tr>
+<tr>
+<td><code>public static Rect BeginCard(string heading = null, string sub = null, Color? stripe = null)</code></td>
+<td>Starts a rounded card. Every BeginCard needs an EndCard.</td>
+</tr>
+<tr>
+<td><code>public static void Pill(string text, Color color, params GUILayoutOption[] options)</code></td>
+<td>A small colored tag, like &quot;Ready&quot; or &quot;3 errors&quot;.</td>
+</tr>
+<tr>
+<td><code>public static void Dot(Rect r, State state)</code></td>
+<td>A round status light with a mark inside.</td>
+</tr>
+<tr>
+<td><code>public static bool Status(State state, string heading, string detail, string button = null, bool primaryButton = false)</code></td>
+<td>One line of a checklist: a light, a title, a line of detail and an optional button. Returns true when the button was pressed.</td>
+</tr>
+<tr>
+<td><code>public static int Segmented(int value, string[] options, float height = 28)</code></td>
+<td>A row of options where one is picked, drawn as a segmented switch.</td>
+</tr>
+<tr>
+<td><code>public static bool Choice(Rect r, bool on, string heading, string detail, Texture icon = null)</code></td>
+<td>A big pickable card with a title and a line of text, for choices like the game mode. Returns true when clicked.</td>
+</tr>
+<tr>
+<td><code>public static bool Switch(Rect r, bool on)</code></td>
+<td>An on/off switch.</td>
+</tr>
+<tr>
+<td><code>public static void Tile(Rect r, string value, string caption, State state)</code></td>
+<td>A small stat box: a big number or word over a caption.</td>
+</tr>
+<tr>
+<td><code>public static void Empty(string heading, string detail)</code></td>
+<td>Text shown in the middle of an empty area.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitinspector-class"><a class="anchor" href="#kitinspector-class" aria-hidden="true">#</a>KitInspector (class)</h3>
+<p>Draws an object's fields in cards, a new card at every [Header], with labels kept to a readable width. Property drawers and the type menus keep working.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static float AvailableWidth</code></td>
+<td>Width the cards get, when it isn't the whole window, like a pane inside a page. 0 uses the window.</td>
+</tr>
+<tr>
+<td><code>public static void Sprite(Rect r, Sprite sprite, Color? empty = null)</code></td>
+<td>Draws a sprite, or nothing, in a rect.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitpage-class"><a class="anchor" href="#kitpage-class" aria-hidden="true">#</a>KitPage (class)</h3>
+<p>One page of the KitARPG window. Subclass it to add your own page; it shows up in the sidebar by itself.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Rect Area</code></td>
+<td>Size of the area the page draws in.</td>
+</tr>
+<tr>
+<td><code>public virtual string Group</code></td>
+<td>Sidebar heading the page sits under.</td>
+</tr>
+<tr>
+<td><code>public virtual int Order</code></td>
+<td>Order inside the sidebar; lower first.</td>
+</tr>
+<tr>
+<td><code>public virtual string IconName</code></td>
+<td>A built-in editor icon name, like &quot;Settings&quot;.</td>
+</tr>
+<tr>
+<td><code>public virtual string Badge</code></td>
+<td>Short text next to the name in the sidebar, like a count of problems.</td>
+</tr>
+<tr>
+<td><code>public virtual bool FullWidth</code></td>
+<td>Pages that lay out their own columns get the whole area, without the centered scroll.</td>
+</tr>
+<tr>
+<td><code>public virtual void Tick()</code></td>
+<td>About ten times a second, while the window is open.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitsettingsasset-class"><a class="anchor" href="#kitsettingsasset-class" aria-hidden="true">#</a>KitSettingsAsset (class)</h3>
+<p>Finds the project's KitARPGSettings asset, creating it in Assets/Settings/Resources if there is none.</p>
+<h3 id="kitstepper-class"><a class="anchor" href="#kitstepper-class" aria-hidden="true">#</a>KitStepper (class)</h3>
+<p>Walks through steps, one at a time, and makes something at the end. The Game Database shows it in place of an entry.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public System.Action&lt;Object&gt; Done</code></td>
+<td>Called with what was made, or null when it was cancelled.</td>
+</tr>
+<tr>
+<td><code>public abstract System.Type Makes</code></td>
+<td>The kind of entry it makes, so the host shows it in the right list.</td>
+</tr>
+<tr>
+<td><code>protected int Step</code></td>
+<td>The step showing, from 0.</td>
+</tr>
+<tr>
+<td><code>protected abstract string Problem(int step)</code></td>
+<td>Why the step can't move on yet, or null.</td>
+</tr>
+<tr>
+<td><code>protected static T Field&lt;T&gt;(string label, T value, System.Func&lt;T, T&gt; draw, string hint = null)</code></td>
+<td>A labeled row for a field, the label in the card's style.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kittests-class"><a class="anchor" href="#kittests-class" aria-hidden="true">#</a>KitTests (class)</h3>
+<p>Runs the kit's Play mode tests and writes the results to Logs/KitARPG-PlayMode-Tests.xml, from the menu or from the command line with -executeMethod Blunnyn.KitARPG.Editor.KitTests.RunPlayMode.</p>
+<h3 id="kitupdate-class"><a class="anchor" href="#kitupdate-class" aria-hidden="true">#</a>KitUpdate (class)</h3>
+<p>Something a newer kit adds to a game made with an older one: a currency, a component on the player, a window in the HUD. An update only adds what is missing and never rebuilds what the game already has, so changes made by hand stay. Subclass it to ship your own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public abstract string Title</code></td>
+<td>One line, like &quot;Shop window in the HUD&quot;.</td>
+</tr>
+<tr>
+<td><code>public abstract string Changes</code></td>
+<td>What Apply will change, named precisely, shown before it runs.</td>
+</tr>
+<tr>
+<td><code>public abstract bool Needed()</code></td>
+<td>The project lacks it. Called every few seconds, so keep it cheap.</td>
+</tr>
+<tr>
+<td><code>public abstract string Apply()</code></td>
+<td>Makes the change and says what it did. Throw to report that it couldn't.</td>
+</tr>
+<tr>
+<td><code>public virtual int Order</code></td>
+<td>Lower runs first, for updates that rely on another.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitupdates-class"><a class="anchor" href="#kitupdates-class" aria-hidden="true">#</a>KitUpdates (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static List&lt;KitUpdate&gt; Pending()</code></td>
+<td>The updates the project still lacks. Windows ask on every repaint, so the answer is kept a couple of seconds.</td>
+</tr>
+<tr>
+<td><code>public static bool Run(KitUpdate update, out string result)</code></td>
+<td>Runs one update; false and a reason when it failed.</td>
+</tr>
+<tr>
+<td><code>public static void ApplyAll(IReadOnlyList&lt;KitUpdate&gt; updates)</code></td>
+<td>Asks once with everything listed, then runs them in order.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitwindow-class"><a class="anchor" href="#kitwindow-class" aria-hidden="true">#</a>KitWindow (class)</h3>
+<p>The kit in one window: an overview, running the game and its servers, the game database, game settings, modules and the project check.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static T Show&lt;T&gt;() where T : KitPage</code></td>
+<td>Opens the window on a page.</td>
+</tr>
+<tr>
+<td><code>public T Page&lt;T&gt;() where T : KitPage</code></td>
+<td>The page of a type, so pages can read each other, like the overview reading the services.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="launcherconfig-class"><a class="anchor" href="#launcherconfig-class" aria-hidden="true">#</a>LauncherConfig (class)</h3>
+<p>Same shape as the launcher's launcher.json.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool ShopEnabled</code></td>
+<td>Map servers get the shop's address and key.</td>
+</tr>
+<tr>
+<td><code>public bool ShopAutoStart</code></td>
+<td>The launcher starts the shop with the other services. The editor runs it on its own instead.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="localpostgres-class"><a class="anchor" href="#localpostgres-class" aria-hidden="true">#</a>LocalPostgres (class)</h3>
+<p>A PostgreSQL for development in Docker: one container, a volume for its data and a password made for this machine. Pressing again reuses the container and gives it a fresh password.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string Status</code></td>
+<td>The last result, for the window to show.</td>
+</tr>
+<tr>
+<td><code>public static void Create(Action&lt;string&gt; done)</code></td>
+<td>Starts or makes the container, then hands back its connection string, or null and why.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mailbadgeupdate-class"><a class="anchor" href="#mailbadgeupdate-class" aria-hidden="true">#</a>MailBadgeUpdate (class)</h3>
+<p>Puts the unread count on the HUD's Mail button.</p>
+<h3 id="mapentry-class"><a class="anchor" href="#mapentry-class" aria-hidden="true">#</a>MapEntry (class)</h3>
+<h3 id="mapmonsters-class"><a class="anchor" href="#mapmonsters-class" aria-hidden="true">#</a>MapMonsters (class)</h3>
+<p>Fills <code>monsters</code> from each map's scene: what its spawners make, and what those call in boss fights. The bestiary shows it as where a monster lives.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static int ReadAll(GameDatabase database)</code></td>
+<td>Reads every map that has a scene. Returns how many changed.</td>
+</tr>
+<tr>
+<td><code>public static bool Read(MapData map)</code></td>
+<td>Reads one map's scene, opening it for a moment if it isn't. Returns whether the list changed.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapscenes-class"><a class="anchor" href="#mapscenes-class" aria-hidden="true">#</a>MapScenes (class)</h3>
+<p>The scenes a game needs, taken from its maps: builds, Build Settings and the project check all read the game database, so a new map only has to name its scene.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string PathOf(string sceneName)</code></td>
+<td>The project path of a scene by its name, or null when there is none.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;string&gt; ForBuild(GameDatabase database, bool server, List&lt;string&gt; missing)</code></td>
+<td>What a build loads: the title (clients) or the server scene (map servers) first, then every map's scene once. <code>missing</code> gets the scenes no file was found for.</td>
+</tr>
+<tr>
+<td><code>public static int AddToBuildSettings(GameDatabase database)</code></td>
+<td>Adds Title, Server and every map's scene that Build Settings lacks, Title first. Returns how many went in.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="moduleswindow-class"><a class="anchor" href="#moduleswindow-class" aria-hidden="true">#</a>ModulesWindow (class)</h3>
+<p>Turns the kit's systems on and off for this game. The choice lives in the GameInstance of the network prefab, so client and server builds agree. Code stays in place; a module that is off refuses its requests on the server and hides its windows, menus and NPC options.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static GameInstance Find()</code></td>
+<td>The GameInstance the game runs with: the one on a prefab, or in the open scene.</td>
+</tr>
+<tr>
+<td><code>public static void Turn(KitModule module, bool on)</code></td>
+<td>Turns a module on or off in the game's GameInstance, with what it needs or what needs it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="monstersetup-class"><a class="anchor" href="#monstersetup-class" aria-hidden="true">#</a>MonsterSetup (class)</h3>
+<p>What a monster prefab needs; the data says how it fights.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CharacterAnimations copyFrom</code></td>
+<td>Its animations are copied from here. Optional.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="namedentrydrawer-class"><a class="anchor" href="#namedentrydrawer-class" aria-hidden="true">#</a>NamedEntryDrawer (class)</h3>
+<p>List entries named after what they are for, instead of &quot;Element 0&quot;.</p>
+<h3 id="networkversionbuild-class"><a class="anchor" href="#networkversionbuild-class" aria-hidden="true">#</a>NetworkVersionBuild (class)</h3>
+<p>Puts <code>NetworkVersion</code> into every build as a resource, so a client and a map server can tell they were built from the same code. The resource only exists while building.</p>
+<h3 id="newmonsterstepper-class"><a class="anchor" href="#newmonsterstepper-class" aria-hidden="true">#</a>NewMonsterStepper (class)</h3>
+<p>Makes a monster from a 3D model in four steps: the model, how it fights, its animations and a last look. The data and the prefab join the game database and open there, ready to spawn.</p>
+<h3 id="newplayerstepper-class"><a class="anchor" href="#newplayerstepper-class" aria-hidden="true">#</a>NewPlayerStepper (class)</h3>
+<p>Makes a playable model from a 3D model in four steps: the model, its classes, its animations, and a last look. The prefab gets every player system, joins the game database and opens there.</p>
+<h3 id="npceditor-class"><a class="anchor" href="#npceditor-class" aria-hidden="true">#</a>NpcEditor (class)</h3>
+<p>The NPC with buttons to add each kind of option, which a SerializeReference list can't do alone.</p>
+<h3 id="picktypedrawer-class"><a class="anchor" href="#picktypedrawer-class" aria-hidden="true">#</a>PickTypeDrawer (class)</h3>
+<p>A type menu next to SerializeReference fields, which the inspector doesn't have, so nested lists can be filled too.</p>
+<h3 id="pipelineguard-class"><a class="anchor" href="#pipelineguard-class" aria-hidden="true">#</a>PipelineGuard (class)</h3>
+<p>The graphics settings swap in a copy of the render pipeline at runtime. If a Play ends without putting the project's asset back, a quality level keeps pointing at a destroyed copy and the next build fails inside URP. This puts back what ProjectSettings has saved.</p>
+<h3 id="playersetup-class"><a class="anchor" href="#playersetup-class" aria-hidden="true">#</a>PlayerSetup (class)</h3>
+<p>What a player prefab needs, beyond its animations.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public PlayerModel copyFrom</code></td>
+<td>Its animations, its own components and their values are copied from here. Optional.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playershopupdate-class"><a class="anchor" href="#playershopupdate-class" aria-hidden="true">#</a>PlayerShopUpdate (class)</h3>
+<h3 id="postgressetupwindow-class"><a class="anchor" href="#postgressetupwindow-class" aria-hidden="true">#</a>PostgresSetupWindow (class)</h3>
+<p>Gets the services a PostgreSQL database: on a server you already run (making the database and user with an admin login, or using ones you have) or in Docker on this computer.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static void Open(string current, Action&lt;string&gt; onPicked)</code></td>
+<td>Opens the window; <code>onPicked</code> gets the connection string that worked.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="premiumcurrencyupdate-class"><a class="anchor" href="#premiumcurrencyupdate-class" aria-hidden="true">#</a>PremiumCurrencyUpdate (class)</h3>
+<h3 id="projectvalidator-class"><a class="anchor" href="#projectvalidator-class" aria-hidden="true">#</a>ProjectValidator (class)</h3>
+<p>Checks a project before it is played or built: game data ids, broken references, missing scripts, prefabs that can't go over the network and scenes the maps need. Add checks of your own to <code>Checks</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static readonly List&lt;Action&lt;List&lt;ValidationIssue&gt;&gt;&gt; Checks</code></td>
+<td>Every check run, in order. Each adds what it finds to the list.</td>
+</tr>
+<tr>
+<td><code>public static bool IncludeScenes</code></td>
+<td>Opening scenes is the slow part; builds skip it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="quickplay-class"><a class="anchor" href="#quickplay-class" aria-hidden="true">#</a>QuickPlay (class)</h3>
+<p>Play with two players in one click: starts the services if they are down, opens a second editor with Multiplayer Play Mode and logs each editor in with its own test account, straight into the world. Maps run from the map server build, or in this editor's place when one is chosen in the Server window.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static bool HasPackage</code></td>
+<td>Whether Unity's Multiplayer Play Mode package is in the project.</td>
+</tr>
+<tr>
+<td><code>public static bool IsMainEditor()</code></td>
+<td>False in the second editor Multiplayer Play Mode opens.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sceneinput-class"><a class="anchor" href="#sceneinput-class" aria-hidden="true">#</a>SceneInput (class)</h3>
+<p>Keeps the game's scenes in step with the project: the EventSystem uses the UI module of the input the project has on, and the Game Instance in a scene takes its settings from the prefab, where Game Settings edits them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Type ModuleType</code></td>
+<td>The UI module new scenes get.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;string&gt; OutdatedModules()</code></td>
+<td>Scenes whose EventSystem has the other input's UI module.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;(string scene, string[] fields)&gt; SettingOverrides()</code></td>
+<td>Scenes that override the Game Instance prefab's settings, which then never see Game Settings.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="scenenamedrawer-class"><a class="anchor" href="#scenenamedrawer-class" aria-hidden="true">#</a>SceneNameDrawer (class)</h3>
+<p>Picks a scene for a name field, and says whether Build Settings lists it.</p>
+<h3 id="serverwindow-class"><a class="anchor" href="#serverwindow-class" aria-hidden="true">#</a>ServerWindow (class)</h3>
+<p>Running the game: pick single player or MMO, see what is missing and fix it, start the services and press Play as client or map server.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public ServiceRunner.LauncherConfig Config</code></td>
+<td>Services as last seen: Login and Central answering, and the maps Central runs. For Overview, which shows the same steps in one list.</td>
+</tr>
+<tr>
+<td><code>public bool NoMapsRegistered</code></td>
+<td>Central answers but no map has registered with it for a while: usually a map server build older than the services.</td>
+</tr>
+<tr>
+<td><code>public bool NeedsMapServer</code></td>
+<td>Some map runs from the map server build rather than in the editor.</td>
+</tr>
+<tr>
+<td><code>public static void ModePicker(KitSettings settings)</code></td>
+<td>The two big single player and MMO cards.</td>
+</tr>
+<tr>
+<td><code>public static void PostgresButton(ServiceRunner.LauncherConfig config)</code></td>
+<td>Opens the PostgreSQL setup, which fills the connection string when it works.</td>
+</tr>
+<tr>
+<td><code>public static string Masked(string connection)</code></td>
+<td>A connection string with its password hidden, for showing on screen.</td>
+</tr>
+<tr>
+<td><code>public void PlayGame()</code></td>
+<td>Plays the game the way the mode needs: single player, or a client of the running services.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="servicerunner-class"><a class="anchor" href="#servicerunner-class" aria-hidden="true">#</a>ServiceRunner (class)</h3>
+<p>Runs the MMO services from the editor through the launcher in headless mode. Output goes to a log file and the process id to the session, so both survive script reloads and Play.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string WorkFolder</code></td>
+<td>Per user and kept out of version control: keys, local database and logs.</td>
+</tr>
+<tr>
+<td><code>public static string ShopFolder</code></td>
+<td>The Shop service's project, when this copy of the kit has it.</td>
+</tr>
+<tr>
+<td><code>public static string Dotnet</code></td>
+<td>The dotnet executable. Unity does not always get the shell's PATH.</td>
+</tr>
+<tr>
+<td><code>public static string Sdks</code></td>
+<td>Installed SDK versions, or empty when dotnet is missing.</td>
+</tr>
+<tr>
+<td><code>public static bool PortTaken(int port)</code></td>
+<td>True when something on this computer already listens on the TCP port.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;int&gt; OtherLaunchers()</code></td>
+<td>Launchers for this project that the editor doesn't know, like ones left by an editor that closed. They hold the ports, so new services can't start. Mac and Linux only.</td>
+</tr>
+<tr>
+<td><code>public static void StopOthers()</code></td>
+<td>Stops the launchers <code>OtherLaunchers</code> found, with their services and maps.</td>
+</tr>
+<tr>
+<td><code>public static bool Stale</code></td>
+<td>True when Login, Central or the map server build changed after the running services started.</td>
+</tr>
+<tr>
+<td><code>public static void BuildServices(Action&lt;bool, string&gt; done)</code></td>
+<td>Runs dotnet build on the services solution and reports when it ends, on the main thread.</td>
+</tr>
+<tr>
+<td><code>public static string Tail(int lines)</code></td>
+<td>The last lines of the services log.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="servicespackage-class"><a class="anchor" href="#servicespackage-class" aria-hidden="true">#</a>ServicesPackage (class)</h3>
+<p>The Asset Store package carries the .NET services as Services.zip, since Unity packages only hold assets. They are unpacked to Services~ next to it, where Unity does not import them, and again when a kit update brings a new zip.</p>
+<h3 id="set-class"><a class="anchor" href="#set-class" aria-hidden="true">#</a>Set (class)</h3>
+<h3 id="setupwizard-class"><a class="anchor" href="#setupwizard-class" aria-hidden="true">#</a>SetupWizard (class)</h3>
+<p>First run after importing the kit: pick how the game runs, then one button gets the project ready (URP, fonts, sample scenes) and opens the title scene with the KitARPG window. Opens by itself once per project.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static void UseStarterScenes()</code></td>
+<td>Puts the starter scenes in Build Settings, Title first. Builds them if needed.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shoppage-class"><a class="anchor" href="#shoppage-class" aria-hidden="true">#</a>ShopPage (class)</h3>
+<p>The in-game shop: turn it on, run the Shop service on this computer, edit what it sells and publish that to the service, here or on the live server. The catalog lives in the service, never in the game's assets.</p>
+<h3 id="shoprunner-class"><a class="anchor" href="#shoprunner-class" aria-hidden="true">#</a>ShopRunner (class)</h3>
+<p>Runs the Shop service on this computer through the launcher's shop-only mode, apart from Login and Central, and talks to any Shop service's admin API.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static int RunningPid</code></td>
+<td>The shop this project started, from this session or an earlier one, or 0.</td>
+</tr>
+<tr>
+<td><code>public static void SeedCatalog(ServiceRunner.LauncherConfig config)</code></td>
+<td>A first catalog for this computer: the sample that comes with the service.</td>
+</tr>
+<tr>
+<td><code>public static void WriteFile(string path, ShopConfig conf)</code></td>
+<td>Writes through a temporary file, so a running shop never reads half a catalog.</td>
+</tr>
+<tr>
+<td><code>public static async Task&lt;ShopPublishResult&gt; Publish(string url, string adminKey, ShopConfig conf)</code></td>
+<td>Replaces the service's whole catalog. Nothing changes there unless every offer passes.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="starterbuilder-class"><a class="anchor" href="#starterbuilder-class" aria-hidden="true">#</a>StarterBuilder (class)</h3>
+<p>Generates the starter sample: player prefabs, the network prefab, the title screen and two maps joined by portals. Everything it makes is a normal asset you can edit afterwards; running it again overwrites them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string MapServerExecutable</code></td>
+<td>Executable of the local map server build for this editor's platform.</td>
+</tr>
+<tr>
+<td><code>public static string MapServerProblem()</code></td>
+<td>Why the local map server build can't be trusted, or null when it's fine: missing, missing a map's scene, or older than the game code or scenes it was built from.</td>
+</tr>
+<tr>
+<td><code>public static void BuildMapServer()</code></td>
+<td>Builds the map server for this editor's platform.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;string&gt; MapServerMissingScenes()</code></td>
+<td>Map scenes the local map server build doesn't have, or null when it can't tell (no build, or an older one).</td>
+</tr>
+<tr>
+<td><code>public static string ClientPath</code></td>
+<td>The client build for this editor's platform, to run next to the editor.</td>
+</tr>
+<tr>
+<td><code>public static void BuildMacServer()</code></td>
+<td>Local map server for the launcher: a normal player build with the server code compiled in, run with -batchmode -nographics. Needs no Dedicated Server module.</td>
+</tr>
+<tr>
+<td><code>public static void BuildMacTestClient()</code></td>
+<td>Client with the test tools (smoke test, auto login) for local checks, never for players: Mono for a fast build, in its own folder so it can't be mistaken for the release client.</td>
+</tr>
+<tr>
+<td><code>public static void BuildMacSinglePlayer()</code></td>
+<td>Single player game: the client hosts its own maps, so the server code goes in.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="starterdata-class"><a class="anchor" href="#starterdata-class" aria-hidden="true">#</a>StarterData (class)</h3>
+<p>Game data of the starter sample: four attributes, three classes with their skills, the voxel weapons and armor sets, potions and the two maps. Running it again updates the assets in place, keeping their ids.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Sprite Icon(string name)</code></td>
+<td>One of the pixel icons made by Art/Tools/make_ui_icons.py, imported as a crisp sprite.</td>
+</tr>
+<tr>
+<td><code>public static GameObject SharedMaterialModel(string path)</code></td>
+<td>Loads a voxel model, pointing its material at the shared palette one first.</td>
+</tr>
+<tr>
+<td><code>public static void Animate(CharacterAnimations animations, Content c)</code></td>
+<td>The sample animations of a humanoid player: moving, reactions, each weapon type and the skills that need their own.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="startereffects-class"><a class="anchor" href="#startereffects-class" aria-hidden="true">#</a>StarterEffects (class)</h3>
+<p>The sample's combat visuals: particle effects made from code (hit spark, cast aura, launch flash, orb, arrow, area burst, heal sparkle) that tint to the element, and access to the animation pack the sample characters use.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static AnimationClip Clip(string name)</code></td>
+<td>A clip from the sample's animation pack, like &quot;Melee Right Attack 01&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="starterguilds-class"><a class="anchor" href="#starterguilds-class" aria-hidden="true">#</a>StarterGuilds (class)</h3>
+<p>The kit's guild emblem pieces, drawn by Art/Tools/make_guild_emblems.py, as a Guild Emblems asset.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static GuildEmblemData MakeEmblems(string path)</code></td>
+<td>Loads the asset at <code>path</code>, or makes it, and fills any empty list with the kit's pieces.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="startermasks-class"><a class="anchor" href="#startermasks-class" aria-hidden="true">#</a>StarterMasks (class)</h3>
+<p>Avatar masks the sample characters use.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static AvatarMask UpperBody(string path = UpperBodyPath)</code></td>
+<td>A humanoid mask with the spine, head and arms, so actions leave the legs walking. Loaded when it exists.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="startershopart-class"><a class="anchor" href="#startershopart-class" aria-hidden="true">#</a>StarterShopArt (class)</h3>
+<p>The sample's shop pictures, drawn by Art/Tools/make_shop_art.py, gathered in a ShopArt asset.</p>
+<h3 id="statrolldrawer-class"><a class="anchor" href="#statrolldrawer-class" aria-hidden="true">#</a>StatRollDrawer (class)</h3>
+<p>A random bonus on one line: what it raises, then min and max. Only the fields that apply are shown.</p>
+<h3 id="state-enum"><a class="anchor" href="#state-enum" aria-hidden="true">#</a>State (enum)</h3>
+<h3 id="tmpessentials-class"><a class="anchor" href="#tmpessentials-class" aria-hidden="true">#</a>TmpEssentials (class)</h3>
+<p>TextMesh Pro's essential resources (its default font and settings), which the kit's UI and sample use.</p>
+<h3 id="touchlayoutupdate-class"><a class="anchor" href="#touchlayoutupdate-class" aria-hidden="true">#</a>TouchLayoutUpdate (class)</h3>
+<p>Puts the touch hotbar in its current order, skills 1 to 4 around Attack and the potion on 5, without the Dodge button.</p>
+<h3 id="touchui-class"><a class="anchor" href="#touchui-class" aria-hidden="true">#</a>TouchUi (class)</h3>
+<p>Makes the sample on-screen controls: a stick, Attack, Activate (only near loot or an NPC), four skills and a consumable around Attack, a cancel button above them, the Chat button and the picker that fills the skill buttons. The pieces are prefabs of their own, so a change to one skill button reaches all five. An existing prefab is kept, edits and all.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static GameObject Build(string folder, bool replace = false)</code></td>
+<td>The prefab at <code>folder</code>/TouchControls.prefab, made if missing or when <code>replace</code>.</td>
+</tr>
+<tr>
+<td><code>public static readonly (string name, int slot, Vector2 offset)[] Places =</code></td>
+<td>Where each hotbar button sits from Attack's center: skills 1 to 4 in an arc from low on the left up to the top, and slot 5, the potion, at the top left.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="upperbodymaskupdate-class"><a class="anchor" href="#upperbodymaskupdate-class" aria-hidden="true">#</a>UpperBodyMaskUpdate (class)</h3>
+<p>Gives humanoid player models an upper body mask, so they attack and cast while their legs keep walking.</p>
+<h3 id="validationissue-class"><a class="anchor" href="#validationissue-class" aria-hidden="true">#</a>ValidationIssue (class)</h3>
+<p>Something the validator found, with what it is about and maybe a fix.</p>
+<h3 id="validatorwindow-class"><a class="anchor" href="#validatorwindow-class" aria-hidden="true">#</a>ValidatorWindow (class)</h3>
+<p>The validator's findings, with a way to jump to each one and fix the simple ones.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public void Queue()</code></td>
+<td>Runs the check on the next editor update, so opening the window stays quick.</td>
+</tr>
+<tr>
+<td><code>public void Run(bool scenes = true)</code></td>
+<td>Checks the project. Scenes are opened to check them only when asked.</td>
+</tr>
+</tbody>
+</table></div>
+<nav class="pager"><a class="prev" href="KitARPG.Data.html"><span>Previous</span>KitARPG.Data</a><a class="next" href="KitARPG.Local.html"><span>Next</span>KitARPG.Local</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fapi%2FKitARPG.Editor.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l3"><a href="#buildcheck-class">BuildCheck (class)</a></li><li class="l3"><a href="#buildkind-enum">BuildKind (enum)</a></li><li class="l3"><a href="#buildseparation-class">BuildSeparation (class)</a></li><li class="l3"><a href="#cardscope-struct">CardScope (struct)</a></li><li class="l3"><a href="#cashshoplayoutupdate-class">CashShopLayoutUpdate (class)</a></li><li class="l3"><a href="#characteranimationseditor-class">CharacterAnimationsEditor (class)</a></li><li class="l3"><a href="#charactercontrollerbuilder-class">CharacterControllerBuilder (class)</a></li><li class="l3"><a href="#characterprefabs-class">CharacterPrefabs (class)</a></li><li class="l3"><a href="#content-class">Content (class)</a></li><li class="l3"><a href="#devkittemplates-class">DevKitTemplates (class)</a></li><li class="l3"><a href="#gamedataeditor-class">GameDataEditor (class)</a></li><li class="l3"><a href="#gamedataexporter-class">GameDataExporter (class)</a></li><li class="l3"><a href="#gamedatarowdrawer-class">GameDataRowDrawer (class)</a></li><li class="l3"><a href="#gamedatabasewindow-class">GameDatabaseWindow (class)</a></li><li class="l3"><a href="#gamemodenamedrawer-class">GameModeNameDrawer (class)</a></li><li class="l3"><a href="#gamesettingspage-class">GameSettingsPage (class)</a></li><li class="l3"><a href="#guildemblemsupdate-class">GuildEmblemsUpdate (class)</a></li><li class="l3"><a href="#homepage-class">HomePage (class)</a></li><li class="l3"><a href="#hudguildupdate-class">HudGuildUpdate (class)</a></li><li class="l3"><a href="#hudlayout-class">HudLayout (class)</a></li><li class="l3"><a href="#hudparteditor-class">HudPartEditor (class)</a></li><li class="l3"><a href="#hudshopupdate-class">HudShopUpdate (class)</a></li><li class="l3"><a href="#issuelevel-enum">IssueLevel (enum)</a></li><li class="l3"><a href="#itemicons-class">ItemIcons (class)</a></li><li class="l3"><a href="#kitgui-class">KitGUI (class)</a></li><li class="l3"><a href="#kitinspector-class">KitInspector (class)</a></li><li class="l3"><a href="#kitpage-class">KitPage (class)</a></li><li class="l3"><a href="#kitsettingsasset-class">KitSettingsAsset (class)</a></li><li class="l3"><a href="#kitstepper-class">KitStepper (class)</a></li><li class="l3"><a href="#kittests-class">KitTests (class)</a></li><li class="l3"><a href="#kitupdate-class">KitUpdate (class)</a></li><li class="l3"><a href="#kitupdates-class">KitUpdates (class)</a></li><li class="l3"><a href="#kitwindow-class">KitWindow (class)</a></li><li class="l3"><a href="#launcherconfig-class">LauncherConfig (class)</a></li><li class="l3"><a href="#localpostgres-class">LocalPostgres (class)</a></li><li class="l3"><a href="#mailbadgeupdate-class">MailBadgeUpdate (class)</a></li><li class="l3"><a href="#mapentry-class">MapEntry (class)</a></li><li class="l3"><a href="#mapmonsters-class">MapMonsters (class)</a></li><li class="l3"><a href="#mapscenes-class">MapScenes (class)</a></li><li class="l3"><a href="#moduleswindow-class">ModulesWindow (class)</a></li><li class="l3"><a href="#monstersetup-class">MonsterSetup (class)</a></li><li class="l3"><a href="#namedentrydrawer-class">NamedEntryDrawer (class)</a></li><li class="l3"><a href="#networkversionbuild-class">NetworkVersionBuild (class)</a></li><li class="l3"><a href="#newmonsterstepper-class">NewMonsterStepper (class)</a></li><li class="l3"><a href="#newplayerstepper-class">NewPlayerStepper (class)</a></li><li class="l3"><a href="#npceditor-class">NpcEditor (class)</a></li><li class="l3"><a href="#picktypedrawer-class">PickTypeDrawer (class)</a></li><li class="l3"><a href="#pipelineguard-class">PipelineGuard (class)</a></li><li class="l3"><a href="#playersetup-class">PlayerSetup (class)</a></li><li class="l3"><a href="#playershopupdate-class">PlayerShopUpdate (class)</a></li><li class="l3"><a href="#postgressetupwindow-class">PostgresSetupWindow (class)</a></li><li class="l3"><a href="#premiumcurrencyupdate-class">PremiumCurrencyUpdate (class)</a></li><li class="l3"><a href="#projectvalidator-class">ProjectValidator (class)</a></li><li class="l3"><a href="#quickplay-class">QuickPlay (class)</a></li><li class="l3"><a href="#sceneinput-class">SceneInput (class)</a></li><li class="l3"><a href="#scenenamedrawer-class">SceneNameDrawer (class)</a></li><li class="l3"><a href="#serverwindow-class">ServerWindow (class)</a></li><li class="l3"><a href="#servicerunner-class">ServiceRunner (class)</a></li><li class="l3"><a href="#servicespackage-class">ServicesPackage (class)</a></li><li class="l3"><a href="#set-class">Set (class)</a></li><li class="l3"><a href="#setupwizard-class">SetupWizard (class)</a></li><li class="l3"><a href="#shoppage-class">ShopPage (class)</a></li><li class="l3"><a href="#shoprunner-class">ShopRunner (class)</a></li><li class="l3"><a href="#starterbuilder-class">StarterBuilder (class)</a></li><li class="l3"><a href="#starterdata-class">StarterData (class)</a></li><li class="l3"><a href="#startereffects-class">StarterEffects (class)</a></li><li class="l3"><a href="#starterguilds-class">StarterGuilds (class)</a></li><li class="l3"><a href="#startermasks-class">StarterMasks (class)</a></li><li class="l3"><a href="#startershopart-class">StarterShopArt (class)</a></li><li class="l3"><a href="#statrolldrawer-class">StatRollDrawer (class)</a></li><li class="l3"><a href="#state-enum">State (enum)</a></li><li class="l3"><a href="#tmpessentials-class">TmpEssentials (class)</a></li><li class="l3"><a href="#touchlayoutupdate-class">TouchLayoutUpdate (class)</a></li><li class="l3"><a href="#touchui-class">TouchUi (class)</a></li><li class="l3"><a href="#upperbodymaskupdate-class">UpperBodyMaskUpdate (class)</a></li><li class="l3"><a href="#validationissue-class">ValidationIssue (class)</a></li><li class="l3"><a href="#validatorwindow-class">ValidatorWindow (class)</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

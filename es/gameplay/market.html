@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Market · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/market.html">English</option><option value="market.html" selected>Español</option><option value="../../pt/gameplay/market.html">Português</option><option value="../../zh/gameplay/market.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de juego</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html" class="on" aria-current="page">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de juego</div><h1>Market</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>The market lets players sell items to each other while the seller is offline: you put a lot up at a market NPC, anyone can buy it, and the gold reaches you by mail. This page covers the window, every limit, the fee, what the server checks and how to set it up.</p>
+<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>What it is</h2>
+<p>The market is an auction house with fixed prices. A seller leaves a lot (one stack or part of one) with the market NPC and names a price for the whole lot. Buyers search every lot on the server, cheapest per unit first, and buy one with a click. The buyer gets the item at once. The seller gets a letter from &quot;Market&quot; with the gold.</p>
+<ul>
+<li>It is the <strong>Market</strong> module (<code>PlayerMarket</code> on the player prefab, <code>MarketOption</code> on an NPC, <code>MarketWindow</code> in the HUD, <code>MarketService</code> in Central).</li>
+<li>It needs the <strong>Mail</strong> module, because the gold and unsold lots travel by mail. See <a href="mail.html">Mail</a>.</li>
+<li>It is <strong>MMO only</strong>. Lots live in Central's database (table <code>market_listings</code>), so a single player world has no market. In single player the NPC answers &quot;Only on an online server.&quot;</li>
+<li>A lot holds the real copy of the item. The copy leaves your bag when you put it up, sits in the listing while it is on sale, and moves to the buyer in the same database transaction that writes your gold letter. It is never in two places at once.</li>
+</ul>
+<p>The market pairs well with <em>Players Sell To Npcs</em> (<code>playersSellToNpcs</code>) off: loot can't be turned into gold at a shop, so players trade it with each other here. See <a href="../content/npc-shops.html">NPC shops</a>.</p>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turn it on or off</td>
+<td><strong>KitARPG &gt; Modules</strong>, module <strong>Market</strong> (needs <strong>Mail</strong>). See <a href="../editor/modules.html">Modules</a>.</td>
+</tr>
+<tr>
+<td>The fee</td>
+<td><strong>KitARPG &gt; Game Settings</strong>, card <strong>Economy</strong>, <em>Market Fee Percent</em> (<code>marketFeePercent</code>). See <a href="../editor/game-settings.html">Game Settings</a>.</td>
+</tr>
+<tr>
+<td>The NPC</td>
+<td>Any <code>Npc</code> in a map scene with a <strong>Market</strong> option (<code>MarketOption</code>) in its options list. See <a href="../content/npcs.html">NPCs</a>.</td>
+</tr>
+<tr>
+<td>Request pace</td>
+<td>The <code>PlayerMarket</code> component on each player prefab.</td>
+</tr>
+<tr>
+<td>Lot limits, days, page size</td>
+<td>Central's configuration, section <code>Central</code>. See <a href="../servers/configuration.html">Configuration</a>.</td>
+</tr>
+<tr>
+<td>The window</td>
+<td><code>MarketWindow</code> in the HUD prefab, group Windows. See <a href="hud-and-windows.html">HUD and windows</a>.</td>
+</tr>
+</tbody>
+</table></div>
+<p>In the starter sample the market NPC is <strong>Ines, the Market Broker</strong>, in Town. She says: &quot;Buy from other adventurers, or leave something with me and I'll find you a buyer. The gold comes by mail.&quot;</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
+<h3 id="game-settings"><a class="anchor" href="#game-settings" aria-hidden="true">#</a>Game Settings</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Market Fee Percent</em> (<code>marketFeePercent</code>)</td>
+<td>Percent of the asking price you pay to put a lot up. Range 0 to 50. The fee is at least 1 gold, even at 0. It leaves the game: nobody receives it.</td>
+<td>2</td>
+</tr>
+<tr>
+<td><em>Players Sell To Npcs</em> (<code>playersSellToNpcs</code>)</td>
+<td>Not a market setting, but it decides whether players need the market to turn loot into gold. Off, no shop buys items.</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table></div>
+<p>The fee is <code>max(1, price × marketFeePercent / 100)</code>, rounded down. At 2%: a lot priced 100 costs 2, one priced 49 costs 1, one priced 10,000 costs 200.</p>
+<h3 id="central-appsettings-json-section-central"><a class="anchor" href="#central-appsettings-json-section-central" aria-hidden="true">#</a>Central (<code>appsettings.json</code>, section <code>Central</code>)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MaxListings</code></td>
+<td>Lots one character may have on sale at once. Past it, the lot and the fee come back.</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>MarketDays</code></td>
+<td>Days a lot stays up before it goes back to the seller by mail. At least 1.</td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>MarketPageSize</code></td>
+<td>Lots per page of search results, 1 to 50.</td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>MailDays</code></td>
+<td>Days the seller's gold letter (and an unsold lot's letter) waits in the mailbox before it expires. Shared with all mail.</td>
+<td>30</td>
+</tr>
+</tbody>
+</table></div>
+<p>With Docker or environment variables, write them as <code>Central__MaxListings</code>, <code>Central__MarketDays</code> and so on. See <a href="../servers/configuration.html">Configuration</a>.</p>
+<h3 id="playermarket-player-prefab"><a class="anchor" href="#playermarket-player-prefab" aria-hidden="true">#</a>PlayerMarket (player prefab)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Burst</em> (<code>burst</code>)</td>
+<td>Market requests a client may send in a row before it has to slow down.</td>
+<td>8</td>
+</tr>
+<tr>
+<td><em>Per Second</em> (<code>perSecond</code>)</td>
+<td>Requests per second it gets back after a burst. Faster ones are ignored without a message.</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Market requests also count against the connection's general command budget (30 a second, bursts of 60). See <a href="../servers/security.html">Security</a>.</p>
+<h3 id="fixed-limits"><a class="anchor" href="#fixed-limits" aria-hidden="true">#</a>Fixed limits</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Highest price for one lot (server)</td>
+<td>1,000,000,000,000</td>
+</tr>
+<tr>
+<td>Highest price you can type in the sample window</td>
+<td>2,147,483,647 (the amount dialog takes a whole number up to the largest <code>int</code>)</td>
+</tr>
+<tr>
+<td>Lowest price</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Search text</td>
+<td>40 characters; longer text is cut</td>
+</tr>
+<tr>
+<td>Category name</td>
+<td>64 characters; longer is ignored</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="using-the-market-as-a-player"><a class="anchor" href="#using-the-market-as-a-player" aria-hidden="true">#</a>Using the market as a player</h2>
+<h3 id="opening-it"><a class="anchor" href="#opening-it" aria-hidden="true">#</a>Opening it</h3>
+<ol>
+<li>Walk to the market NPC and talk to it (click it in top-down, or press <code>F</code> near it). See <a href="control-modes.html">Control modes</a>.</li>
+<li>Pick <strong>Market</strong> (or the option's own label).</li>
+<li>The market window opens on the <strong>Buy</strong> tab, and your bag opens beside it if it was closed.</li>
+</ol>
+<p>You must stay within the NPC's reach: its <em>Talk Range</em> (<code>talkRange</code>, 3 m by default) plus 0.5 m. Every request checks it. If you walk away, the next request closes the window. A dead player can't use the market. Press <code>Esc</code> (while not typing) or the close button to close it; the bag closes too if the market opened it.</p>
+<h3 id="the-buy-tab"><a class="anchor" href="#the-buy-tab" aria-hidden="true">#</a>The Buy tab</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category dropdown</td>
+<td><strong>All</strong>, then every item category in the game database, sorted by name. Quest items and bound items are left out of the list, since they can't be sold. Changing it searches again from page 1.</td>
+</tr>
+<tr>
+<td>Search field</td>
+<td>Part of an item's name, any case. <code>Enter</code> or the search button searches from page 1.</td>
+</tr>
+<tr>
+<td>Lot rows</td>
+<td>The item slot (hover for its tooltip), the name with <code>xN</code> for stacks, the seller's name, the price for one unit when the lot has more than one (<code>Name · 12 each</code>), the lot price, and a button.</td>
+</tr>
+<tr>
+<td>Row button</td>
+<td><strong>Buy</strong>, or <strong>Yours</strong> (greyed out) on your own lots.</td>
+</tr>
+<tr>
+<td>Page arrows and label</td>
+<td><code>1 / 4</code> and so on. The arrows grey out at the ends.</td>
+</tr>
+<tr>
+<td>Message line</td>
+<td>The last answer from the server: &quot;You bought 5 Iron Ore.&quot;, &quot;Someone else got there first.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>Results are sorted by price per unit, lowest first, then by the order they were listed. Expired lots never show.</p>
+<p>To buy:</p>
+<ol>
+<li>Click <strong>Buy</strong> on a row.</li>
+<li>Confirm &quot;Buy 5 Iron Ore for 500 gold?&quot;.</li>
+<li>The gold leaves your purse and the item arrives in your bag. If the bag is full it goes to your bank, and you read &quot;Your bag is full, so it went to your bank.&quot;</li>
+</ol>
+<h3 id="the-my-lots-tab"><a class="anchor" href="#the-my-lots-tab" aria-hidden="true">#</a>The My lots tab</h3>
+<p>Lists every lot you have up, newest first, with &quot;N days left&quot; and a <strong>Take back</strong> button. Taking a lot back returns the item to your bag (or bank) at once. The fee is not returned.</p>
+<h3 id="selling"><a class="anchor" href="#selling" aria-hidden="true">#</a>Selling</h3>
+<p>While the market window is open, your bag sells:</p>
+<ol>
+<li>Right click a bag item and pick <strong>Sell at the market</strong>, or double click it. The item card hint reads &quot;Double click: sell at the market&quot;.</li>
+<li>If it is a stack, pick how many. Hold <code>Shift</code> while clicking to sell one, or <code>Ctrl</code> / <code>Cmd</code> to sell the whole stack without the question.</li>
+<li>Type the price for the whole lot. The dialog suggests the item's shop price times the amount, and reminds you of the fee percent.</li>
+<li>Click <strong>Put up</strong>.</li>
+</ol>
+<p>The item and the fee leave your bag and purse right away. When Central accepts the lot you read &quot;On the market for 500 gold.&quot; and the My lots tab updates. If it refuses (you already have 20 lots, the item isn't in the catalog), the item and the fee come back with the reason.</p>
+<p>You can sell part of a stack: the part becomes a new copy with its own id. A whole stack keeps its id.</p>
+<h3 id="when-your-lot-sells"><a class="anchor" href="#when-your-lot-sells" aria-hidden="true">#</a>When your lot sells</h3>
+<ul>
+<li>The buyer gets the item immediately.</li>
+<li>You get a letter from <strong>Market</strong> with the subject &quot;Sold: Iron Ore&quot; and the text &quot;Buyer bought 5 Iron Ore for 500 gold.&quot;, with the gold attached. Take it from your mailbox. See <a href="mail.html">Mail</a>.</li>
+<li>If you are online anywhere, the chat says &quot;Buyer bought your Iron Ore. The gold is in your mail.&quot; and your mailbox and My lots refresh.</li>
+</ul>
+<h3 id="when-your-lot-doesn-t-sell"><a class="anchor" href="#when-your-lot-doesn-t-sell" aria-hidden="true">#</a>When your lot doesn't sell</h3>
+<p>After <code>MarketDays</code> (14) days the lot goes back to you in a letter from <strong>Market</strong>: &quot;Unsold: Iron Ore&quot;, &quot;Nobody bought it in time, so it comes back to you.&quot;, with the item attached.</p>
+<p>Expiry is swept when someone uses the market: each market request runs the sweep at most once a minute and returns up to 200 expired lots per sweep. On a quiet server a lot can stay in the table a little past its time, but it no longer shows in searches.</p>
+<div class="callout warning"><div class="callout-title">Atención</div><p>Market letters expire like any other letter after <code>MailDays</code> (30 days by default). A letter that expires is deleted with its gold and items. A seller who doesn't log in for more than <code>MarketDays</code> + <code>MailDays</code> days loses an unsold lot.</p>
+</div>
+<h2 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>What the server checks</h2>
+<p>On the map server, before anything reaches Central:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The Market module is on</td>
+<td>&quot;That isn't part of this game.&quot;</td>
+</tr>
+<tr>
+<td>The map works for Central (MMO)</td>
+<td>&quot;Only on an online server.&quot;</td>
+</tr>
+<tr>
+<td>You are alive, near the NPC that opened the market</td>
+<td>The window closes.</td>
+</tr>
+<tr>
+<td>You are within the request pace</td>
+<td>Ignored.</td>
+</tr>
+<tr>
+<td>Selling: the price is 1 to 1,000,000,000,000</td>
+<td>&quot;Set a price first.&quot;</td>
+</tr>
+<tr>
+<td>Selling: the item isn't bound, and isn't a quest item</td>
+<td>&quot;Bound and quest items can't be sold.&quot;</td>
+</tr>
+<tr>
+<td>Selling: you are not in a trade</td>
+<td>&quot;Finish the trade first.&quot;</td>
+</tr>
+<tr>
+<td>Selling: you can pay the fee</td>
+<td>&quot;Putting it up costs 2 gold.&quot;</td>
+</tr>
+<tr>
+<td>Buying: the lot was on the page you were shown, at that price</td>
+<td>Ignored.</td>
+</tr>
+<tr>
+<td>Buying: it isn't your own lot</td>
+<td>&quot;That lot is yours. Take it back from your own lots.&quot;</td>
+</tr>
+<tr>
+<td>Buying: you have the gold</td>
+<td>&quot;You need 500 gold.&quot;</td>
+</tr>
+<tr>
+<td>Buying: your bag or bank has room for it</td>
+<td>&quot;Make room in your bag or bank first.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>In Central, under the item ledger lock and in a database transaction:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The item is valid and in the catalog</td>
+<td>&quot;That can't go on sale.&quot; Item and fee come back.</td>
+</tr>
+<tr>
+<td>You have fewer than <code>MaxListings</code> lots</td>
+<td>&quot;You can have 20 lots on sale at once.&quot; Item and fee come back.</td>
+</tr>
+<tr>
+<td>The copy isn't held by someone else</td>
+<td>Only the fee comes back. The attempt is written to the game log, because that copy shouldn't exist.</td>
+</tr>
+<tr>
+<td>Buying: the lot still exists and hasn't expired</td>
+<td>&quot;Someone else got there first.&quot; Gold comes back.</td>
+</tr>
+<tr>
+<td>Buying: the price didn't change</td>
+<td>&quot;The price changed. Look again.&quot; Gold comes back.</td>
+</tr>
+<tr>
+<td>Cancelling: the lot is still yours</td>
+<td>&quot;That lot is gone.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every action is written to the game log: <code>market.listed</code> (with the fee), <code>market.sold</code> (buyer, seller, item, amount, price), <code>market.cancelled</code> and <code>market.expired</code>. See <a href="game-log-and-reports.html">Game log and reports</a>.</p>
+<p>If the map server stops between Central moving an item to you and the map saving it, nothing is lost: Central marks the copy as a pending delivery and it shows up in your bag the next time you load.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Single player</th>
+<th>MMO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Market NPC</td>
+<td>Answers &quot;Only on an online server.&quot;</td>
+<td>Opens the market.</td>
+</tr>
+<tr>
+<td>Lots</td>
+<td>None.</td>
+<td>Shared by every map server through Central.</td>
+</tr>
+<tr>
+<td>Gold for sales</td>
+<td>None.</td>
+<td>By mail from &quot;Market&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<p>There is no market for single player games. If your game is single player only, turn the Market module off so the NPC option disappears.</p>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
+<h3 id="add-a-market-npc-to-a-map"><a class="anchor" href="#add-a-market-npc-to-a-map" aria-hidden="true">#</a>Add a market NPC to a map</h3>
+<ol>
+<li>Make sure the <strong>Mail</strong> and <strong>Market</strong> modules are on in <strong>KitARPG &gt; Modules</strong>.</li>
+<li>Open the map scene and select an NPC (or create one, see <a href="../content/npcs.html">NPCs</a>).</li>
+<li>In its options list, add a <strong>Market</strong> option (<code>MarketOption</code>). Leave <em>Label</em> empty to show &quot;Market&quot;, or type your own.</li>
+<li>Optional: set <em>Required Level</em> or add <em>Conditions</em> so only some players see it, for example after a quest.</li>
+<li>Save the scene and test in MMO mode from <strong>KitARPG &gt; Play and Servers</strong>.</li>
+</ol>
+<h3 id="make-the-market-a-stronger-gold-sink"><a class="anchor" href="#make-the-market-a-stronger-gold-sink" aria-hidden="true">#</a>Make the market a stronger gold sink</h3>
+<ol>
+<li>Open <strong>KitARPG &gt; Game Settings</strong>, card <strong>Economy</strong>.</li>
+<li>Raise <em>Market Fee Percent</em>. 5 to 10 is common in games that want gold to leave.</li>
+<li>Lower <code>MaxListings</code> in Central's config so players can't flood the market with cheap lots.</li>
+</ol>
+<h3 id="let-lots-stay-up-longer"><a class="anchor" href="#let-lots-stay-up-longer" aria-hidden="true">#</a>Let lots stay up longer</h3>
+<ol>
+<li>Set <code>Central:MarketDays</code> to the days you want, for example 28.</li>
+<li>Restart Central.</li>
+</ol>
+<p>The change applies to new lots. Lots already up keep the end date they were given.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>The Market option doesn't show on the NPC.</strong> The Market module is off, or the Mail module is off (Market needs it), or the option has a level or conditions the player doesn't meet.</li>
+<li><strong>&quot;Only on an online server.&quot;</strong> You are testing in single player. Switch to MMO in <strong>Play and Servers</strong>.</li>
+<li><strong>Sellers say they never got paid.</strong> The gold is in their mailbox, not their purse. They must open the mail (<code>N</code>) and take it before <code>MailDays</code> runs out.</li>
+<li><strong>Players can't put up an item.</strong> It is bound or a quest item, they are in a trade, or they can't pay the fee.</li>
+<li><strong>Clicking Buy does nothing.</strong> The page is stale. Search again; the server only sells lots from the last page it sent you.</li>
+<li><strong>Typing a price above 2,147,483,647.</strong> The sample dialog stops there. The server accepts up to 1,000,000,000,000 if you build your own price field.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="mail.html">Mail</a>: where sale gold and unsold lots arrive.</li>
+<li><a href="inventory-and-bank.html">Inventory and bank</a>: where bought items go when the bag is full.</li>
+<li><a href="trade.html">Trade</a>: swapping face to face.</li>
+<li><a href="../content/npcs.html">NPCs</a> and <a href="../content/npc-shops.html">NPC shops</a>.</li>
+<li><a href="../content/items.html">Items</a>: bound and quest items, categories.</li>
+<li><a href="game-log-and-reports.html">Game log and reports</a>.</li>
+<li><a href="../servers/configuration.html">Configuration</a>: Central settings.</li>
+</ul>
+<nav class="pager"><a class="prev" href="forge.html"><span>Anterior</span>Forge</a><a class="next" href="mail.html"><span>Siguiente</span>Mail</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fgameplay%2Fmarket.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-it-is">What it is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#game-settings">Game Settings</a></li><li class="l3"><a href="#central-appsettings-json-section-central">Central (appsettings.json, section Central)</a></li><li class="l3"><a href="#playermarket-player-prefab">PlayerMarket (player prefab)</a></li><li class="l3"><a href="#fixed-limits">Fixed limits</a></li><li class="l2"><a href="#using-the-market-as-a-player">Using the market as a player</a></li><li class="l3"><a href="#opening-it">Opening it</a></li><li class="l3"><a href="#the-buy-tab">The Buy tab</a></li><li class="l3"><a href="#the-my-lots-tab">The My lots tab</a></li><li class="l3"><a href="#selling">Selling</a></li><li class="l3"><a href="#when-your-lot-sells">When your lot sells</a></li><li class="l3"><a href="#when-your-lot-doesn-t-sell">When your lot doesn&#x27;t sell</a></li><li class="l2"><a href="#what-the-server-checks">What the server checks</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#add-a-market-npc-to-a-map">Add a market NPC to a map</a></li><li class="l3"><a href="#make-the-market-a-stronger-gold-sink">Make the market a stronger gold sink</a></li><li class="l3"><a href="#let-lots-stay-up-longer">Let lots stay up longer</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

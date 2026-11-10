@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Touch controls · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/touch-controls.html">English</option><option value="../../es/gameplay/touch-controls.html">Español</option><option value="touch-controls.html" selected>Português</option><option value="../../zh/gameplay/touch-controls.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de jogo</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html" class="on" aria-current="page">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de jogo</div><h1>Touch controls</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>Phones and tablets play KitARPG with on-screen controls: a stick, an Attack button, skill and potion buttons, an Activate button and touches on the world. This page covers when they appear, how they play in each control mode, every component and field on the prefab, and how to change the layout.</p>
+<h2 id="what-the-touch-controls-are"><a class="anchor" href="#what-the-touch-controls-are" aria-hidden="true">#</a>What the touch controls are</h2>
+<p>The touch controls are a canvas made from a prefab, <code>TouchControls.prefab</code>, created once when the game starts and kept between maps, like the HUD. While they're in use, the control modes read the stick, the buttons and the touches on the world instead of the mouse and keys. They work in all three <a href="control-modes.html">control modes</a>.</p>
+<p>The mouse is ignored while they're in use. On a phone Unity moves a simulated mouse under the first finger, which would otherwise walk the character under the stick.</p>
+<h2 id="turning-them-on"><a class="anchor" href="#turning-them-on" aria-hidden="true">#</a>Turning them on</h2>
+<p>Open <strong>KitARPG &gt; Game Settings</strong>, section <strong>Interface</strong>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Input Layout</em> (<code>inputLayout</code>)</td>
+<td>What the game is played with (table below).</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td><em>Touch Controls Prefab</em> (<code>touchControlsPrefab</code>)</td>
+<td>Canvas with the on-screen controls. Empty: no touch controls.</td>
+<td>Sample: <code>Samples/Starter/Prefabs/TouchControls.prefab</code></td>
+</tr>
+</tbody>
+</table></div>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Input Layout</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auto</strong></td>
+<td>Touch controls on phones and tablets, the Device Simulator included. Mouse and keys everywhere else.</td>
+</tr>
+<tr>
+<td><strong>Mouse And Keys</strong></td>
+<td>Never shows the touch controls.</td>
+</tr>
+<tr>
+<td><strong>Touch</strong></td>
+<td>Always shows the touch controls. The game's keys do nothing: walking, attack, dodge, interact and the hotbar keys.</td>
+</tr>
+<tr>
+<td><strong>Touch And Keys</strong></td>
+<td>Shows the touch controls and keeps the keyboard working. For tablets with a keyboard, and to try the touch controls in the editor.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The layout is decided when the game starts: changing it in Play mode has no effect until the next Play.</p>
+<div class="callout note"><div class="callout-title">Nota</div><p>The touch controls are a client feature. The server checks touch players exactly as it checks mouse players, so single player and MMO behave the same. Server builds never create them.</p>
+</div>
+<h3 id="trying-them-in-the-editor"><a class="anchor" href="#trying-them-in-the-editor" aria-hidden="true">#</a>Trying them in the editor</h3>
+<ol>
+<li>Set <em>Input Layout</em> to <strong>Touch And Keys</strong>.</li>
+<li>Press Play and log in. The controls appear once your character is in the world.</li>
+<li>The mouse acts as a finger: drag the stick, click the buttons, drag on the world.</li>
+</ol>
+<p>Or keep <strong>Auto</strong> and switch the Game view to the <strong>Simulator</strong> with a phone selected: the game then counts as mobile.</p>
+<h2 id="playing-with-touch"><a class="anchor" href="#playing-with-touch" aria-hidden="true">#</a>Playing with touch</h2>
+<h3 id="the-sample-layout"><a class="anchor" href="#the-sample-layout" aria-hidden="true">#</a>The sample layout</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Where</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Move stick</strong></td>
+<td>Bottom left</td>
+<td>Walks. It appears where your thumb lands anywhere in its area and goes home when you let go. Faded while untouched.</td>
+</tr>
+<tr>
+<td><strong>Chat</strong> button</td>
+<td>Left, above the stick</td>
+<td>Shows or puts away the chat. The chat starts put away; a red badge counts lines that came in meanwhile (99+ past 99).</td>
+</tr>
+<tr>
+<td><strong>Attack</strong></td>
+<td>Bottom right, large</td>
+<td>Attacks (see the mode tables below).</td>
+</tr>
+<tr>
+<td><strong>Skill 1 to 4</strong></td>
+<td>In an arc around Attack: 1 low on the left, 2 on the left, 3 and 4 above</td>
+<td>Hotbar slots 1 to 4. They show the skill's icon, the cooldown running down and its seconds. Greyed out when not learned or without mana.</td>
+</tr>
+<tr>
+<td><strong>Consumable</strong></td>
+<td>Top left of the arc</td>
+<td>Hotbar slot 5, for consumables such as a potion. Shows how many are left in the bag.</td>
+</tr>
+<tr>
+<td><strong>Activate</strong></td>
+<td>Right edge, above the arc</td>
+<td>Appears only with loot or an NPC within 4 m. Picks up the nearest loot or talks to the nearest NPC, the same as <code>F</code>.</td>
+</tr>
+<tr>
+<td><strong>X</strong> (cancel area)</td>
+<td>Above skill 4</td>
+<td>Appears only while you drag from a skill button. Letting go over it calls the cast off.</td>
+</tr>
+<tr>
+<td>The world</td>
+<td>Everywhere else</td>
+<td>Touches, drags and pinches (see below).</td>
+</tr>
+</tbody>
+</table></div>
+<p>The controls hide while a window, the chat input, a dialog, the settings, the game menu or the loading screen is open, and come back when it closes. Their canvas sits under the HUD, so game windows cover them.</p>
+<p>There is no dodge button in the sample layout. With <strong>Touch</strong> alone, free camera and third person players can't dodge until you add one (see <a href="#adding-a-button">Adding a button</a>).</p>
+<h3 id="skill-and-consumable-buttons"><a class="anchor" href="#skill-and-consumable-buttons" aria-hidden="true">#</a>Skill and consumable buttons</h3>
+<ul>
+<li><strong>Tap</strong> a skill: casts it at the enemy the crosshair already covers (third person), or else at the nearest enemy within the skill's range plus 2 m. With no enemy around, it goes ahead of the character, up to 4 m. Self and ally skills cast the usual way.</li>
+<li><strong>Drag</strong> from a skill button: aims instead. The drag maps to the ground around the character as the camera sees it; 160 pixels (at 1080p) of drag reach the skill's full range. The skill's area preview follows. Let go to cast there.</li>
+<li><strong>Cancel a drag</strong>: let go over the <strong>X</strong>, or back on the button (less than 24 pixels from where you started).</li>
+<li><strong>Tap</strong> a consumable: uses it. Dragging a consumable shows the X too; letting go elsewhere uses it.</li>
+<li><strong>Hold</strong> a button still for 0.6 seconds, or <strong>tap an empty one</strong>: opens the picker.</li>
+</ul>
+<p>The touch buttons are the same hotbar the keys use on a computer. Slot 1 on a phone is slot 1 on a desktop, so a character keeps its setup across devices. The client checks learned, cooldown, casting and mana before sending, and the server checks everything again (see <a href="../content/skills.html">Skills</a>).</p>
+<h3 id="the-slot-picker"><a class="anchor" href="#the-slot-picker" aria-hidden="true">#</a>The slot picker</h3>
+<p>The picker is a panel over the game with the title &quot;Choose a skill&quot; (or &quot;Choose a consumable&quot;) and a grid of icons:</p>
+<ul>
+<li>Skill buttons list every skill the character can cast: the class skills learned so far plus skills learned outside the class. Passive skills are left out.</li>
+<li>The consumable button lists the consumables in the bag, with the total of each.</li>
+<li>The entry the button holds now has a gold ring.</li>
+<li>Picking an entry that sits on another slot swaps the two, so nothing shows twice.</li>
+<li><strong>Empty this button</strong> clears it. <strong>X</strong> or <code>Escape</code> closes the picker.</li>
+</ul>
+<h3 id="top-down-with-touch"><a class="anchor" href="#top-down-with-touch" aria-hidden="true">#</a>Top-down with touch</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Touch</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stick</td>
+<td>Walks in that direction, relative to the camera, exactly like WASD.</td>
+</tr>
+<tr>
+<td>A finger down on the world</td>
+<td>What a click does: attacks the monster or enemy player there, picks up loot, talks to an NPC, or walks there.</td>
+</tr>
+<tr>
+<td>Keep the finger on the world</td>
+<td>Keeps walking toward it. A second finger stops the walk and turns it into a pinch.</td>
+</tr>
+<tr>
+<td>Touch another player who isn't an enemy</td>
+<td>Opens the player menu (there is no right button).</td>
+</tr>
+<tr>
+<td>Attack</td>
+<td>Attacks the nearest enemy within 10 m. Held, it moves on when the current one falls.</td>
+</tr>
+<tr>
+<td>Pinch</td>
+<td>Zooms.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="free-camera-and-third-person-with-touch"><a class="anchor" href="#free-camera-and-third-person-with-touch" aria-hidden="true">#</a>Free camera and third person with touch</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Touch</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stick</td>
+<td>Walks relative to the camera. Pushed halfway, it walks at half speed.</td>
+</tr>
+<tr>
+<td>Drag one finger on the world</td>
+<td>Turns the camera, within what its Camera Settings allow. In third person the crosshair stays on the whole time.</td>
+</tr>
+<tr>
+<td>Tap the world</td>
+<td>Picks up the loot, talks to the NPC or tax collector there; otherwise opens the menu on the player there.</td>
+</tr>
+<tr>
+<td>Attack</td>
+<td>Swings at what the crosshair covers (third person) or else at the nearest enemy within attack range plus 2 m. Held, it keeps swinging.</td>
+</tr>
+<tr>
+<td>Pinch</td>
+<td>Zooms within the camera's zoom range.</td>
+</tr>
+</tbody>
+</table></div>
+<p>In free camera on a touch screen there is no pointer, so swings and skills find their own aim: the nearest enemy, or ahead.</p>
+<h2 id="the-prefab"><a class="anchor" href="#the-prefab" aria-hidden="true">#</a>The prefab</h2>
+<p><strong>KitARPG &gt; Starter &gt; Build Scenes and Prefabs</strong> creates <code>Samples/Starter/Prefabs/TouchControls.prefab</code> when it's missing and assigns it to <em>Touch Controls Prefab</em> if that field is empty. An existing prefab is never replaced, so your edits survive a rebuild of the sample.</p>
+<p>Its pieces are nested prefabs in <code>Samples/Starter/Prefabs/UI</code>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Prefab</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Touch Stick</code></td>
+<td>The move stick</td>
+</tr>
+<tr>
+<td><code>Touch Button</code></td>
+<td>Attack and Activate</td>
+</tr>
+<tr>
+<td><code>Touch Skill Button</code></td>
+<td>The four skill buttons and the consumable button</td>
+</tr>
+<tr>
+<td><code>Touch Slot Picker</code></td>
+<td>The picker</td>
+</tr>
+</tbody>
+</table></div>
+<p>Change <code>Touch Skill Button</code> once and all five buttons follow. Open <code>TouchControls.prefab</code> to move, resize, restyle or delete any piece.</p>
+<p>The root canvas scales with screen size from a 1920 by 1080 reference, matching width and height half and half, and sorts at order 9, under the HUD.</p>
+<div class="callout tip"><div class="callout-title">Dica</div><p>Prefabs made by older kit versions are rearranged by the kit update <strong>Touch controls: skills 1 to 4 and potion on 5</strong>, listed in Overview. It places skills 1 to 4 and the potion around Attack and removes the old Dodge button. See <a href="../start/updating-the-kit.html">Updating the kit</a>.</p>
+</div>
+<h2 id="components"><a class="anchor" href="#components" aria-hidden="true">#</a>Components</h2>
+<p>All components are in <code>Runtime/Client/Touch</code> (namespace <code>Blunnyn.KitARPG.Client</code>).</p>
+<h3 id="touchcontrols"><a class="anchor" href="#touchcontrols" aria-hidden="true">#</a>TouchControls</h3>
+<p>On the root of the prefab. It collects the input of every piece and fits the desktop HUD around the controls.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Group</em> (<code>group</code>)</td>
+<td>Canvas group that hides the controls while a window, the chat or a dialog is open. Empty: the one on the same object.</td>
+<td>The root's</td>
+</tr>
+<tr>
+<td><em>Look Speed</em> (<code>lookSpeed</code>)</td>
+<td>How fast dragging on the world turns the camera. Multiplied by the camera's sensitivity and the player's mouse sensitivity.</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Pinch Speed</em> (<code>pinchSpeed</code>)</td>
+<td>Meters of zoom per 100 pixels of pinch.</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td><em>Hud Changes</em> (<code>hudChanges</code>)</td>
+<td>How the mouse and keys HUD is fitted around the controls (below).</td>
+<td>Sample list</td>
+</tr>
+</tbody>
+</table></div>
+<p>Each <strong>Hud Change</strong> finds a piece of the HUD by its path under the HUD prefab and changes it while the touch controls are in use. Everything goes back when they're turned off.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Path</em> (<code>path</code>)</td>
+<td>Path under the HUD, such as <code>HUD/Chat Window/Chat</code>. A path that isn't found logs a warning.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Hide</em> (<code>hide</code>)</td>
+<td>Hidden while the touch controls are in use.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Move</em> (<code>move</code>)</td>
+<td>Applies the anchor, pivot, position and scale below.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Anchor</em> (<code>anchor</code>)</td>
+<td>Anchor point of the moved piece.</td>
+<td>(0.5, 0.5)</td>
+</tr>
+<tr>
+<td><em>Pivot</em> (<code>pivot</code>)</td>
+<td>Pivot of the moved piece.</td>
+<td>(0.5, 0.5)</td>
+</tr>
+<tr>
+<td><em>Position</em> (<code>position</code>)</td>
+<td>Anchored position.</td>
+<td>(0, 0)</td>
+</tr>
+<tr>
+<td><em>Scale</em> (<code>scale</code>)</td>
+<td>Scale, at least 0.1.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>The sample list hides the desktop hotbar slots <code>Hotbar 1</code> to <code>Hotbar 10</code> and the <code>Hint</code> line, moves the player HUD to the bottom center at 85 percent, and moves the chat to the left above the Chat button at 75 percent. If you rename or move pieces in your HUD, update these paths. See <a href="hud-and-windows.html">HUD and windows</a>.</p>
+<h3 id="touchstick"><a class="anchor" href="#touchstick" aria-hidden="true">#</a>TouchStick</h3>
+<p>A thumb stick that writes an axis from -1 to 1 on each side.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Axis</em> (<code>axis</code>)</td>
+<td>Axis it writes. The modes walk with <code>Move</code>.</td>
+<td><code>Move</code></td>
+</tr>
+<tr>
+<td><em>Background</em> (<code>background</code>)</td>
+<td>The ring the knob moves in.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Knob</em> (<code>knob</code>)</td>
+<td>The knob.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Radius</em> (<code>radius</code>)</td>
+<td>How far the knob goes from the middle, in canvas units.</td>
+<td>90 (92 in the sample)</td>
+</tr>
+<tr>
+<td><em>Dead Zone</em> (<code>deadZone</code>)</td>
+<td>Share of the radius that counts as no push, 0 to 0.9. Past it the push starts from zero, so a small tilt walks slowly.</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td><em>Floating</em> (<code>floating</code>)</td>
+<td>The stick appears where the thumb lands instead of staying put.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Idle Alpha</em> (<code>idleAlpha</code>)</td>
+<td>Opacity while untouched.</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table></div>
+<p>Touching anywhere inside the stick object's rectangle grabs it. In the sample that area is 560 by 480 at the bottom left.</p>
+<h3 id="touchbutton"><a class="anchor" href="#touchbutton" aria-hidden="true">#</a>TouchButton</h3>
+<p>A button the modes read by its id.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em> (<code>id</code>)</td>
+<td><code>Attack</code>, <code>Dodge</code>, <code>Interact</code>, or an id your own code reads.</td>
+<td><code>Attack</code></td>
+</tr>
+<tr>
+<td><em>Show</em> (<code>show</code>)</td>
+<td><strong>Always</strong>, or <strong>Near Interactable</strong>: only with loot or an NPC within <em>Near Range</em>.</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><em>Near Range</em> (<code>nearRange</code>)</td>
+<td>Meters for Near Interactable.</td>
+<td>4</td>
+</tr>
+<tr>
+<td><em>Face</em> (<code>face</code>)</td>
+<td>The graphic that shrinks while held.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Pressed Scale</em> (<code>pressedScale</code>)</td>
+<td>Scale of the face while held, 0.5 to 1.</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td><em>On Press</em> (<code>onPress</code>)</td>
+<td>Event raised when pressed, for hooking a method without code that reads the id.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>What each id does:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Top-down</th>
+<th>Free camera and third person</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Attack</code></td>
+<td>Attacks the nearest enemy within 10 m; held, moves on to the next</td>
+<td>Swings at the crosshair's enemy or the nearest in reach; held, keeps swinging</td>
+</tr>
+<tr>
+<td><code>Dodge</code></td>
+<td>Nothing</td>
+<td>Dodges</td>
+</tr>
+<tr>
+<td><code>Interact</code></td>
+<td>Picks up or talks to the nearest thing within 4 m</td>
+<td>Same</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchskillbutton"><a class="anchor" href="#touchskillbutton" aria-hidden="true">#</a>TouchSkillButton</h3>
+<p>Casts the skill or uses the item in one hotbar slot.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Slot</em> (<code>slot</code>)</td>
+<td>Hotbar slot, from 0. Slot 0 is the <code>1</code> key on a computer.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Holds</em> (<code>holds</code>)</td>
+<td><strong>Skills</strong>, <strong>Consumables</strong> or <strong>Anything</strong>. Anything else in the slot shows as empty.</td>
+<td>Skills</td>
+</tr>
+<tr>
+<td><em>Icon</em> (<code>icon</code>)</td>
+<td>Image that shows the skill or item.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Cooldown</em> (<code>cooldown</code>)</td>
+<td>Filled image that runs down with the cooldown.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Cooldown Label</em> (<code>cooldownLabel</code>)</td>
+<td>Seconds left: one decimal under 10, whole seconds above.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Amount Label</em> (<code>amountLabel</code>)</td>
+<td>How many of the item are left in the bag.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Cancel Area</em> (<code>cancelArea</code>)</td>
+<td>Shown while dragging; letting go over it does nothing.</td>
+<td>The X in the sample</td>
+</tr>
+<tr>
+<td><em>Face</em> (<code>face</code>)</td>
+<td>The graphic that shrinks while held.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Aim Radius</em> (<code>aimRadius</code>)</td>
+<td>Pixels at 1080p of drag that reach the skill's full range.</td>
+<td>160</td>
+</tr>
+<tr>
+<td><em>Aim Start</em> (<code>aimStart</code>)</td>
+<td>Pixels at 1080p of drag before the touch aims instead of tapping.</td>
+<td>24</td>
+</tr>
+<tr>
+<td><em>Tap Reach</em> (<code>tapReach</code>)</td>
+<td>Meters past the skill's range in which a tap still finds an enemy.</td>
+<td>2</td>
+</tr>
+<tr>
+<td><em>Pick Seconds</em> (<code>pickSeconds</code>)</td>
+<td>Seconds held still that open the picker. 0: only an empty button opens it.</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td><em>Unusable</em> (<code>unusable</code>)</td>
+<td>Icon tint when the skill can't be cast or the item is gone.</td>
+<td>Grey</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchslotpicker"><a class="anchor" href="#touchslotpicker" aria-hidden="true">#</a>TouchSlotPicker</h3>
+<p>The panel that fills skill buttons. Each entry is a copy of the template button.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Panel</em> (<code>panel</code>)</td>
+<td>Shown while choosing. Give it a backdrop so touches don't reach the game.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Title</em> (<code>title</code>)</td>
+<td>&quot;Choose a skill&quot; or &quot;Choose a consumable&quot;.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>List</em> (<code>list</code>)</td>
+<td>Where the entries go, usually a grid.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Entry Template</em> (<code>entryTemplate</code>)</td>
+<td>Button copied per entry. Needs a child <code>Icon</code> image and a <code>Name</code> label; <code>Amount</code> is optional.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Current Color</em> (<code>currentColor</code>)</td>
+<td>Color of the entry the button holds now.</td>
+<td>Gold</td>
+</tr>
+<tr>
+<td><em>Clear Button</em> (<code>clearButton</code>)</td>
+<td>Empties the button.</td>
+<td><strong>Empty this button</strong></td>
+</tr>
+<tr>
+<td><em>Close Button</em> (<code>closeButton</code>)</td>
+<td>Closes the picker.</td>
+<td><strong>X</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchchatbutton"><a class="anchor" href="#touchchatbutton" aria-hidden="true">#</a>TouchChatButton</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Start Hidden</em> (<code>startHidden</code>)</td>
+<td>The chat starts put away.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Badge</em> (<code>badge</code>)</td>
+<td>Shown while there are unread lines.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Badge Label</em> (<code>badgeLabel</code>)</td>
+<td>The count.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Face</em> (<code>face</code>)</td>
+<td>Image that turns lighter while the chat is shown.</td>
+<td>Set in the prefab</td>
+</tr>
+<tr>
+<td><em>Open Color</em> (<code>openColor</code>)</td>
+<td>Face color while the chat is shown.</td>
+<td>Light gold</td>
+</tr>
+</tbody>
+</table></div>
+<p>When the touch controls go away, the chat comes back as on a desktop.</p>
+<h3 id="touchlookarea"><a class="anchor" href="#touchlookarea" aria-hidden="true">#</a>TouchLookArea</h3>
+<p>A transparent image covering the whole screen, behind every other control. It turns touches on the world into input:</p>
+<ul>
+<li>One finger dragging writes the <code>Look</code> axis (turns the camera in free camera and third person).</li>
+<li>Two fingers pinching write the <code>Zoom</code> axis (zoom in every mode).</li>
+<li>A short touch is a tap.</li>
+<li>A finger resting on the world is a press, which top-down walks toward.</li>
+</ul>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Tap Travel</em> (<code>tapTravel</code>)</td>
+<td>Pixels at 1080p a finger may move and still count as a tap.</td>
+<td>18</td>
+</tr>
+<tr>
+<td><em>Tap Seconds</em> (<code>tapSeconds</code>)</td>
+<td>Seconds a touch may last and still count as a tap.</td>
+<td>0.35</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchmodes"><a class="anchor" href="#touchmodes" aria-hidden="true">#</a>TouchModes</h3>
+<p>Keeps a piece only in some control modes. Put it on a button that makes no sense in a mode, such as Dodge in top-down.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Modes</em> (<code>modes</code>)</td>
+<td>Modes that show this piece: <code>TopDown</code>, <code>FreeCamera</code>, <code>ThirdPerson</code>. Empty: all of them.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="changing-the-layout"><a class="anchor" href="#changing-the-layout" aria-hidden="true">#</a>Changing the layout</h2>
+<h3 id="moving-or-resizing-a-button"><a class="anchor" href="#moving-or-resizing-a-button" aria-hidden="true">#</a>Moving or resizing a button</h3>
+<ol>
+<li>Open <code>Samples/Starter/Prefabs/TouchControls.prefab</code>.</li>
+<li>Select the piece under <strong>Actions</strong> (Attack, Activate, the skill buttons, the X) or at the root (Move Stick, Chat Button).</li>
+<li>Move or resize its Rect Transform. Keep buttons at least about 100 units across at the 1920 by 1080 reference so thumbs hit them.</li>
+</ol>
+<h3 id="adding-a-button"><a class="anchor" href="#adding-a-button" aria-hidden="true">#</a>Adding a button</h3>
+<p>To give free camera and third person players a dodge button:</p>
+<ol>
+<li>Open <code>TouchControls.prefab</code>.</li>
+<li>Drag <code>Prefabs/UI/Touch Button</code> under <strong>Actions</strong> and place it.</li>
+<li>Set its <em>Id</em> to <code>Dodge</code> and its label to &quot;Dodge&quot;.</li>
+<li>Add a <code>TouchModes</code> component with <em>Modes</em> <code>FreeCamera</code> and <code>ThirdPerson</code>, so it hides in top-down.</li>
+</ol>
+<h3 id="adding-a-skill-button"><a class="anchor" href="#adding-a-skill-button" aria-hidden="true">#</a>Adding a skill button</h3>
+<ol>
+<li>Duplicate one of the skill buttons under <strong>Actions</strong>.</li>
+<li>Set <em>Slot</em> to the next hotbar slot (5 for the 6th slot) and <em>Holds</em> as you like.</li>
+<li>Set its <em>Cancel Area</em> to the X.</li>
+</ol>
+<h3 id="a-button-for-your-own-code"><a class="anchor" href="#a-button-for-your-own-code" aria-hidden="true">#</a>A button for your own code</h3>
+<p>Give a <code>TouchButton</code> an id of your own and read it, or hook a method to <em>On Press</em>:</p>
+<pre class="code"><code class="language-csharp"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">TouchControls</span><span class="p">.</span><span class="n">Down</span><span class="p">(</span><span class="s">&quot;Jump&quot;</span><span class="p">))</span><span class="w"> </span><span class="n">Jump</span><span class="p">();</span><span class="w">      </span><span class="c1">// pressed this frame</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">TouchControls</span><span class="p">.</span><span class="n">Held</span><span class="p">(</span><span class="s">&quot;Block&quot;</span><span class="p">))</span><span class="w"> </span><span class="n">Block</span><span class="p">();</span><span class="w">    </span><span class="c1">// held</span>
+<span class="n">Vector2</span><span class="w"> </span><span class="n">move</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TouchControls</span><span class="p">.</span><span class="n">Axis</span><span class="p">(</span><span class="s">&quot;Move&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// the stick</span>
+</code></pre>
+<p>Check <code>GameInstance.KeysOn</code> before reading keys of your own, so they stay off with <strong>Touch</strong> alone. See <a href="../devkit/game-modes-in-code.html">Game modes in code</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Touch controls don't show in the editor.</strong> <em>Input Layout</em> is Auto and the Game view isn't the Simulator. Use <strong>Touch And Keys</strong>, or the Simulator.</li>
+<li><strong>Touch controls don't show on a phone.</strong> <em>Touch Controls Prefab</em> is empty, or <em>Input Layout</em> is Mouse And Keys.</li>
+<li><strong>A HUD piece overlaps the controls after you edited the HUD.</strong> A Hud Change path no longer matches. Look for &quot;Touch controls: no ... in the HUD&quot; in the Console and fix the path.</li>
+<li><strong>No way to dodge on a phone.</strong> The sample has no dodge button; add one as shown above.</li>
+<li><strong>Skill buttons stay empty.</strong> They show what the hotbar holds. Hold a button or tap it empty to pick a skill, or put skills on hotbar slots 1 to 4 on a computer first.</li>
+<li><strong>The keyboard stops working.</strong> <em>Input Layout</em> is <strong>Touch</strong>, which turns the game keys off by design. Use <strong>Touch And Keys</strong> for tablets with a keyboard.</li>
+<li><strong>Changing the layout in Play mode.</strong> The layout is read when the game starts. Stop and press Play again.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="control-modes.html">Control modes</a>: what each mode does with mouse and keys.</li>
+<li><a href="hud-and-windows.html">HUD and windows</a>: the HUD the touch controls fit around.</li>
+<li><a href="../content/skills.html">Skills</a>: ranges, areas and targets.</li>
+<li><a href="../editor/game-settings.html">Game Settings</a>: the Interface section.</li>
+<li><a href="player-settings.html">Player settings</a>: mouse sensitivity and invert, which also scale touch turning.</li>
+</ul>
+<nav class="pager"><a class="prev" href="control-modes.html"><span>Anterior</span>Control modes</a><a class="next" href="combat.html"><span>Próximo</span>Combat</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fgameplay%2Ftouch-controls.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-the-touch-controls-are">What the touch controls are</a></li><li class="l2"><a href="#turning-them-on">Turning them on</a></li><li class="l3"><a href="#trying-them-in-the-editor">Trying them in the editor</a></li><li class="l2"><a href="#playing-with-touch">Playing with touch</a></li><li class="l3"><a href="#the-sample-layout">The sample layout</a></li><li class="l3"><a href="#skill-and-consumable-buttons">Skill and consumable buttons</a></li><li class="l3"><a href="#the-slot-picker">The slot picker</a></li><li class="l3"><a href="#top-down-with-touch">Top-down with touch</a></li><li class="l3"><a href="#free-camera-and-third-person-with-touch">Free camera and third person with touch</a></li><li class="l2"><a href="#the-prefab">The prefab</a></li><li class="l2"><a href="#components">Components</a></li><li class="l3"><a href="#touchcontrols">TouchControls</a></li><li class="l3"><a href="#touchstick">TouchStick</a></li><li class="l3"><a href="#touchbutton">TouchButton</a></li><li class="l3"><a href="#touchskillbutton">TouchSkillButton</a></li><li class="l3"><a href="#touchslotpicker">TouchSlotPicker</a></li><li class="l3"><a href="#touchchatbutton">TouchChatButton</a></li><li class="l3"><a href="#touchlookarea">TouchLookArea</a></li><li class="l3"><a href="#touchmodes">TouchModes</a></li><li class="l2"><a href="#changing-the-layout">Changing the layout</a></li><li class="l3"><a href="#moving-or-resizing-a-button">Moving or resizing a button</a></li><li class="l3"><a href="#adding-a-button">Adding a button</a></li><li class="l3"><a href="#adding-a-skill-button">Adding a skill button</a></li><li class="l3"><a href="#a-button-for-your-own-code">A button for your own code</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

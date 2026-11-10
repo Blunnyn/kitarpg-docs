@@ -1,0 +1,4439 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KitARPG.Data · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/api/KitARPG.Data.html">English</option><option value="../../es/api/KitARPG.Data.html">Español</option><option value="../../pt/api/KitARPG.Data.html">Português</option><option value="KitARPG.Data.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section" open><summary>API 参考</summary><ul><li><a href="index.html">API 参考</a></li><li><a href="KitARPG.Client.html">KitARPG.Client</a></li><li><a href="KitARPG.Data.html" class="on" aria-current="page">KitARPG.Data</a></li><li><a href="KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="KitARPG.Local.html">KitARPG.Local</a></li><li><a href="KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="KitARPG.Net.html">KitARPG.Net</a></li><li><a href="KitARPG.Server.html">KitARPG.Server</a></li><li><a href="KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">API 参考</div><h1>KitARPG.Data</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><h2 id="blunnyn-kitarpg-data"><a class="anchor" href="#blunnyn-kitarpg-data" aria-hidden="true">#</a>Blunnyn.KitARPG.Data</h2>
+<h3 id="actionanimation-class"><a class="anchor" href="#actionanimation-class" aria-hidden="true">#</a>ActionAnimation (class)</h3>
+<p>An animation and when it hits. Characters list theirs in <code>CharacterAnimations</code>; the server reads the timing to land damage on the hit frames and clients play the clip. Without a clip nothing plays, but the timing still counts.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public AnimationClip clip</code></td>
+<td>Played on characters with an Animator.</td>
+</tr>
+<tr>
+<td><code>public float duration</code></td>
+<td>Seconds it lasts at normal speed. 0 uses the clip's length.</td>
+</tr>
+<tr>
+<td><code>public float[] hits =</code></td>
+<td>When each hit lands, from 0 (start) to 1 (end). Damage is split between them.</td>
+</tr>
+<tr>
+<td><code>public AudioClip sound</code></td>
+<td>Played when it starts.</td>
+</tr>
+<tr>
+<td><code>public bool fullBody</code></td>
+<td>Plays on the whole body even while moving, for jumps, spins and the like. Only matters with an upper body mask on the character.</td>
+</tr>
+<tr>
+<td><code>public float HitTime(int index)</code></td>
+<td>Seconds from the start to a hit, at normal speed.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="addstatusaction-class"><a class="anchor" href="#addstatusaction-class" aria-hidden="true">#</a>AddStatusAction (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float duration</code></td>
+<td>Seconds.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="aggression-enum"><a class="anchor" href="#aggression-enum" aria-hidden="true">#</a>Aggression (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Passive</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Aggressive</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Pack</code></td>
+<td>Joins in when a monster nearby is attacked.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="allcondition-class"><a class="anchor" href="#allcondition-class" aria-hidden="true">#</a>AllCondition (class)</h3>
+<p>Met when all of its conditions are, for grouping inside an <code>AnyCondition</code>.</p>
+<h3 id="ammodata-class"><a class="anchor" href="#ammodata-class" aria-hidden="true">#</a>AmmoData (class)</h3>
+<p>Arrows, bolts, bullets. Worn in the ammo slot; each basic attack, and each skill that attacks with the weapon, spends one. Its bonuses count while worn, so fire arrows can add fire damage.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public WeaponType[] weaponTypes</code></td>
+<td>Weapon types that shoot it. Empty means any that uses ammo.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="anycondition-class"><a class="anchor" href="#anycondition-class" aria-hidden="true">#</a>AnyCondition (class)</h3>
+<p>Met when at least one of its conditions is.</p>
+<h3 id="applystatuseffect-class"><a class="anchor" href="#applystatuseffect-class" aria-hidden="true">#</a>ApplyStatusEffect (class)</h3>
+<p>Puts a status on each target: poison, burn, stun, slow, shield, regeneration.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public LevelValue duration = new LevelValue(5)</code></td>
+<td>Seconds.</td>
+</tr>
+<tr>
+<td><code>public LevelValue chance = new LevelValue(1)</code></td>
+<td>Chance to land on each target, from 0 to 1.</td>
+</tr>
+<tr>
+<td><code>public int stacks</code></td>
+<td>Stacks added each time it lands.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="areashape-enum"><a class="anchor" href="#areashape-enum" aria-hidden="true">#</a>AreaShape (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Single</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Circle</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Cone</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Line</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="attackeffects-class"><a class="anchor" href="#attackeffects-class" aria-hidden="true">#</a>AttackEffects (class)</h3>
+<p>The effects of a basic attack, for a weapon type or a monster. The animation is the character's.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public EffectSpawn launchEffect</code></td>
+<td>On the attacker at each hit: a swing trail or a flash.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn hitEffect = new EffectSpawn()</code></td>
+<td>On whoever is hit. Empty uses the element's.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="attributebonus-struct"><a class="anchor" href="#attributebonus-struct" aria-hidden="true">#</a>AttributeBonus (struct)</h3>
+<h3 id="attributecondition-class"><a class="anchor" href="#attributecondition-class" aria-hidden="true">#</a>AttributeCondition (class)</h3>
+<h3 id="attributedata-class"><a class="anchor" href="#attributedata-class" aria-hidden="true">#</a>AttributeData (class)</h3>
+<p>A main attribute such as strength. Each point adds its stats to the character.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public StatModifiers perPoint = new StatModifiers()</code></td>
+<td>What one point adds: stats, element damage and resistances. Attributes here are ignored.</td>
+</tr>
+<tr>
+<td><code>public int maxSpent</code></td>
+<td>Most points a player can spend here. 0 means no limit.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bagmode-enum"><a class="anchor" href="#bagmode-enum" aria-hidden="true">#</a>BagMode (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Slots</code></td>
+<td>A fixed number of slots.</td>
+</tr>
+<tr>
+<td><code>Weight</code></td>
+<td>Anything fits up to a weight that grows with the carry weight stat.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bossphase-class"><a class="anchor" href="#bossphase-class" aria-hidden="true">#</a>BossPhase (class)</h3>
+<p>Something a boss does once when its health first drops below <code>belowHealth</code> percent: shout, take a status, cast a skill, call adds, hide behind them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string shout</code></td>
+<td>Said over its head, like &quot;Rise, my children!&quot;</td>
+</tr>
+<tr>
+<td><code>public StatusData status</code></td>
+<td>Put on itself, like an enrage or a shield.</td>
+</tr>
+<tr>
+<td><code>public float statusSeconds</code></td>
+<td>Seconds. 0 lasts until the fight ends.</td>
+</tr>
+<tr>
+<td><code>public SkillData skill</code></td>
+<td>Cast right away, ready or not.</td>
+</tr>
+<tr>
+<td><code>public bool invulnerableWhileSummonsLive</code></td>
+<td>Takes no damage while the monsters it called are alive.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="buff-class"><a class="anchor" href="#buff-class" aria-hidden="true">#</a>Buff (class)</h3>
+<p>Something on a fighter for a while: a status (poison, stun, shield) or plain stat changes from a skill or an item. Lowering ones are debuffs; their modifiers are already negative.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string id</code></td>
+<td>Id of what applied it. A new one with the same id and kind replaces or stacks on the old.</td>
+</tr>
+<tr>
+<td><code>public double ends</code></td>
+<td>Set by whoever holds it, in that holder's clock.</td>
+</tr>
+<tr>
+<td><code>public StatusData status</code></td>
+<td>The status it comes from; null for plain stat changes.</td>
+</tr>
+<tr>
+<td><code>public float shield</code></td>
+<td>Damage it still soaks.</td>
+</tr>
+<tr>
+<td><code>public IFighter source</code></td>
+<td>Who applied it, and their stats then, so its ticks still count after they leave.</td>
+</tr>
+<tr>
+<td><code>public static Buff Of(StatusData status, int level, float duration, IFighter source, int stacks = 1)</code></td>
+<td>A status at a level, cast by <code>source</code> (may be null).</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bufflist-class"><a class="anchor" href="#bufflist-class" aria-hidden="true">#</a>BuffList (class)</h3>
+<p>The buffs on one fighter, with stacking, shields and ticks. Plain rules, so players and monsters share them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public StatusFlags Flags</code></td>
+<td>What the buffs stop the holder from doing; control is dropped while unstoppable.</td>
+</tr>
+<tr>
+<td><code>public bool Add(Buff buff, double now)</code></td>
+<td>False when it didn't take: an unstoppable holder shrugs off control, and some statuses can't land twice.</td>
+</tr>
+<tr>
+<td><code>public bool Expire(double now)</code></td>
+<td>Drops the ones that ran out. True if any did.</td>
+</tr>
+<tr>
+<td><code>public int Absorb(int amount, out bool changed)</code></td>
+<td>Soaks damage with shields, oldest first. Returns what gets through; used up shields end.</td>
+</tr>
+<tr>
+<td><code>public int Remove(Predicate&lt;Buff&gt; match, int max = 0)</code></td>
+<td>Takes off up to <code>max</code> matching buffs, newest first; 0 takes them all. Returns how many.</td>
+</tr>
+<tr>
+<td><code>public void Tick(double now, Action&lt;Buff&gt; tick)</code></td>
+<td>Runs each tick that came due. A tick can kill the holder and clear the list, which is fine.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="camerasettings-class"><a class="anchor" href="#camerasettings-class" aria-hidden="true">#</a>CameraSettings (class)</h3>
+<p>How the camera behind the player frames the game, for the third person and free camera modes. It is part of the game's design, the same for every player. Edit it while playing to try it out: the camera follows at once and the changes stay after Play.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float distance</code></td>
+<td>Back and forth: meters behind the player when the game starts.</td>
+</tr>
+<tr>
+<td><code>public Vector2 zoomRange = new Vector2(2f, 14f)</code></td>
+<td>How close and how far the wheel zooms. The same twice locks the zoom.</td>
+</tr>
+<tr>
+<td><code>public float height</code></td>
+<td>Up and down: meters above the feet the camera looks at. Below zero goes under them.</td>
+</tr>
+<tr>
+<td><code>public float side</code></td>
+<td>Left and right: meters beside the player, right above zero and left below, so the crosshair clears the body.</td>
+</tr>
+<tr>
+<td><code>public CameraTurn turning</code></td>
+<td>Free turns all the way round. Limited stays within Yaw Range of Yaw. Fixed always faces Yaw.</td>
+</tr>
+<tr>
+<td><code>public float yaw</code></td>
+<td>World direction the camera faces when Limited or Fixed, in degrees. 45 gives an isometric look.</td>
+</tr>
+<tr>
+<td><code>public Vector2 yawRange = new Vector2(-45f, 45f)</code></td>
+<td>Limited: degrees it may turn left (below zero) and right of Yaw.</td>
+</tr>
+<tr>
+<td><code>public float pitch</code></td>
+<td>Degrees the camera starts looking down.</td>
+</tr>
+<tr>
+<td><code>public bool lockPitch</code></td>
+<td>Keeps the camera at Pitch, never tilting up or down.</td>
+</tr>
+<tr>
+<td><code>public Vector2 pitchRange = new Vector2(-35f, 75f)</code></td>
+<td>How far it can look up (below zero) and down.</td>
+</tr>
+<tr>
+<td><code>public float sensitivity</code></td>
+<td>Degrees per unit of mouse movement. Each player can scale it in Settings.</td>
+</tr>
+<tr>
+<td><code>public float followSharpness</code></td>
+<td>How quickly it catches up with the player. Higher is tighter.</td>
+</tr>
+<tr>
+<td><code>public bool CanTurn</code></td>
+<td>The mouse can move the camera at all.</td>
+</tr>
+<tr>
+<td><code>public void Limit(ref float cameraYaw, ref float cameraPitch)</code></td>
+<td>Brings a yaw and pitch inside what this framing allows.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cameraturn-enum"><a class="anchor" href="#cameraturn-enum" aria-hidden="true">#</a>CameraTurn (enum)</h3>
+<p>How far a <code>CameraSettings</code> camera turns around the player.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Free</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Limited</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Fixed</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="castskillitemeffect-class"><a class="anchor" href="#castskillitemeffect-class" aria-hidden="true">#</a>CastSkillItemEffect (class)</h3>
+<p>Casts a skill as if the user knew it: on themselves, or at the closest enemy for hostile skills.</p>
+<h3 id="castermove-enum"><a class="anchor" href="#castermove-enum" aria-hidden="true">#</a>CasterMove (enum)</h3>
+<p>How the caster gets to the target or point before the effects land there.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Teleport</code></td>
+<td>Appears there at once.</td>
+</tr>
+<tr>
+<td><code>Dash</code></td>
+<td>Rushes along the ground; walls stop it.</td>
+</tr>
+<tr>
+<td><code>Leap</code></td>
+<td>Jumps in an arc and lands there.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterclass-class"><a class="anchor" href="#characterclass-class" aria-hidden="true">#</a>CharacterClass (class)</h3>
+<p>A playable class: attributes and stats by level, skills it can learn and what a new character starts with. Player models list the classes they can take.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CharacterStats baseStats</code></td>
+<td>Stats at level 1, before attributes.</td>
+</tr>
+<tr>
+<td><code>public CharacterStats statsPerLevel</code></td>
+<td>Added for each level after the first.</td>
+</tr>
+<tr>
+<td><code>public int pointsPerLevel</code></td>
+<td>Points to spend on attributes for each level after the first.</td>
+</tr>
+<tr>
+<td><code>public int skillPointsPerLevel</code></td>
+<td>Skill points for each level after the first. Skills the class unlocks at level 1 start learned.</td>
+</tr>
+<tr>
+<td><code>public ExpTable expTable</code></td>
+<td>Empty uses the database's table.</td>
+</tr>
+<tr>
+<td><code>public StatusDefense statusDefense = new StatusDefense()</code></td>
+<td>Statuses the class shrugs off or that last less on it.</td>
+</tr>
+<tr>
+<td><code>public MapData startMap</code></td>
+<td>Map a new character appears on. Empty uses the game's start map.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterstats-struct"><a class="anchor" href="#characterstats-struct" aria-hidden="true">#</a>CharacterStats (struct)</h3>
+<p>The numbers every character has. Damage and resistances depend on the element, so they live in <code>StatModifiers</code> and <code>StatSheet</code> instead. Also used for &quot;+x&quot; bonuses and for percent bonuses, so every field can be added and scaled.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float healthRegen</code></td>
+<td>Per second.</td>
+</tr>
+<tr>
+<td><code>public float manaRegen</code></td>
+<td>Per second.</td>
+</tr>
+<tr>
+<td><code>public float power</code></td>
+<td>More damage of every element. 0.1 is +10%.</td>
+</tr>
+<tr>
+<td><code>public float critChance</code></td>
+<td>0.05 is 5%.</td>
+</tr>
+<tr>
+<td><code>public float critDamage</code></td>
+<td>Extra damage on a critical hit. 0.5 is +50%.</td>
+</tr>
+<tr>
+<td><code>public float healing</code></td>
+<td>Added to every heal this character casts.</td>
+</tr>
+<tr>
+<td><code>public float healingBonus</code></td>
+<td>More healing cast. 0.1 is +10%.</td>
+</tr>
+<tr>
+<td><code>public float attackSpeed</code></td>
+<td>Attacks per second multiplier, 0.1 is +10%.</td>
+</tr>
+<tr>
+<td><code>public float moveSpeed</code></td>
+<td>Meters per second.</td>
+</tr>
+<tr>
+<td><code>public float carryWeight</code></td>
+<td>Extra weight the character can carry, when bags are limited by weight.</td>
+</tr>
+<tr>
+<td><code>public float experienceGain</code></td>
+<td>More experience from kills and quests. 0.1 is +10%.</td>
+</tr>
+<tr>
+<td><code>public float lootChance</code></td>
+<td>Better odds for every item a kill can drop. 0.1 is +10% of each chance.</td>
+</tr>
+<tr>
+<td><code>public CharacterStats Scaled(CharacterStats percent)</code></td>
+<td>Each field grown by its percent: a 0.1 in <code>percent</code> is +10% of that field.</td>
+</tr>
+<tr>
+<td><code>public CharacterStats Whole(bool percent = false, bool keepSpeed = false)</code></td>
+<td>Every field as a whole number, or a whole percent for the ones shown as percents (all of them when <code>percent</code>). <code>keepSpeed</code> leaves move speed as it is.</td>
+</tr>
+<tr>
+<td><code>public static CharacterStats Only(string id, float value)</code></td>
+<td>Stats with only the field named <code>id</code> set, like &quot;maxHealth&quot;. Unknown ids give zero.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="chargecurrencyaction-class"><a class="anchor" href="#chargecurrencyaction-class" aria-hidden="true">#</a>ChargeCurrencyAction (class)</h3>
+<p>Charges gold or another currency. The line it is on shows the price.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CurrencyData currency</code></td>
+<td>Empty is gold.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="chatfiltermode-enum"><a class="anchor" href="#chatfiltermode-enum" aria-hidden="true">#</a>ChatFilterMode (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Mask</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Block</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="classattribute-struct"><a class="anchor" href="#classattribute-struct" aria-hidden="true">#</a>ClassAttribute (struct)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public LevelValue amount</code></td>
+<td>Points the class gives at each level, before the ones the player spends.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="classcondition-class"><a class="anchor" href="#classcondition-class" aria-hidden="true">#</a>ClassCondition (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool except</code></td>
+<td>Every class but these.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="classskill-struct"><a class="anchor" href="#classskill-struct" aria-hidden="true">#</a>ClassSkill (struct)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int unlockLevel</code></td>
+<td>Character level needed to learn it.</td>
+</tr>
+<tr>
+<td><code>public int maxLevel</code></td>
+<td>0 uses the skill's own max level.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="collectobjective-class"><a class="anchor" href="#collectobjective-class" aria-hidden="true">#</a>CollectObjective (class)</h3>
+<p>Carry some of an item. Taken on turning in when it is a delivery.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool takeOnTurnIn</code></td>
+<td>The giver keeps them when the quest is turned in.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="collectordata-class"><a class="anchor" href="#collectordata-class" aria-hidden="true">#</a>CollectorData (class)</h3>
+<p>The guild tax collector: placed by a guild at a collector spot, it takes a share of the gold and experience of every kill around it and finds items of its own. Other players may attack it; its guild is warned and has a while to come and defend it. Its guild's members collect what it gathered, which sends it home.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public MonsterData monster</code></td>
+<td>What stands and fights: its prefab needs a TaxCollector besides the Monster.</td>
+</tr>
+<tr>
+<td><code>public long costPerPlaced</code></td>
+<td>More for each collector the guild already has out.</td>
+</tr>
+<tr>
+<td><code>public bool taxesItsGuild</code></td>
+<td>Also takes from its own guild's kills.</td>
+</tr>
+<tr>
+<td><code>public int healthPerGuildLevel</code></td>
+<td>Health on top of the monster's, per guild level past the first.</td>
+</tr>
+<tr>
+<td><code>public int attackLevel</code></td>
+<td>Level a player needs to attack one.</td>
+</tr>
+<tr>
+<td><code>public float prepareSeconds</code></td>
+<td>Seconds between the attack being called and the fight, for its guild to come.</td>
+</tr>
+<tr>
+<td><code>public float fightSeconds</code></td>
+<td>Seconds the attackers have to bring it down.</td>
+</tr>
+<tr>
+<td><code>public float saveSeconds</code></td>
+<td>Seconds between saving what it gathered.</td>
+</tr>
+<tr>
+<td><code>public int Stat(CollectorStat stat, Func&lt;string, int&gt; rankOf)</code></td>
+<td>A stat with the guild's upgrades, from the rank of each upgrade id.</td>
+</tr>
+<tr>
+<td><code>public long CostWith(int placed)</code></td>
+<td>Gold to place one more, with this many already out.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="collectorstat-enum"><a class="anchor" href="#collectorstat-enum" aria-hidden="true">#</a>CollectorStat (enum)</h3>
+<p>What a guild's points raise on its tax collectors.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Collectors</code></td>
+<td>How many the guild may have out at once.</td>
+</tr>
+<tr>
+<td><code>Capacity</code></td>
+<td>Items it holds before it stops picking them up.</td>
+</tr>
+<tr>
+<td><code>Prospecting</code></td>
+<td>Percent chance, against each drop of a kill, to get one of its own.</td>
+</tr>
+<tr>
+<td><code>Wisdom</code></td>
+<td>Percent of the experience of a kill it takes for the guild.</td>
+</tr>
+<tr>
+<td><code>Tax</code></td>
+<td>Percent of the gold of a kill it takes.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="collectorupgrade-class"><a class="anchor" href="#collectorupgrade-class" aria-hidden="true">#</a>CollectorUpgrade (class)</h3>
+<p>One upgrade the guild buys with its points, a rank at a time.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string id</code></td>
+<td>Saved with the guild; don't change it once guilds use it.</td>
+</tr>
+<tr>
+<td><code>public int guildLevel</code></td>
+<td>Guild level needed for the first rank.</td>
+</tr>
+<tr>
+<td><code>public int levelsPerRank</code></td>
+<td>More guild levels needed for each rank after the first.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="combatformula-class"><a class="anchor" href="#combatformula-class" aria-hidden="true">#</a>CombatFormula (class)</h3>
+<p>Damage and healing. Each roll is worked out apart for its element: the roll plus the attacker's damage for that element, grown by power, then the defender's flat resistance and percent resistance (up to the element's limit). Critical hits multiply the total. Inherit and set <code>Combat</code> to change the rules; only the server calls it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public virtual float Element(StatSheet attacker, DamageElement element, float roll, StatSheet defender)</code></td>
+<td>One element's share of a hit, after the defender's resistances.</td>
+</tr>
+<tr>
+<td><code>public virtual Hit Tick(StatSheet caster, DamageElement element, float amount, StatSheet holder)</code></td>
+<td>One tick of a damage over time status. Never critical; at least 1.</td>
+</tr>
+<tr>
+<td><code>public virtual int Heal(StatSheet healer, float amount)</code></td>
+<td>A heal cast by <code>healer</code>: its heals stat is added, then its healing bonus.</td>
+</tr>
+<tr>
+<td><code>public virtual float AttackInterval(float attacksPerSecond, StatSheet attacker)</code></td>
+<td>Seconds between basic attacks.</td>
+</tr>
+<tr>
+<td><code>public virtual long Experience(MonsterData monster, int playerLevel)</code></td>
+<td>Experience for a kill, smaller when the monster is far below the player.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="compare-enum"><a class="anchor" href="#compare-enum" aria-hidden="true">#</a>Compare (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Equal</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>NotEqual</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>AtLeast</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>AtMost</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="condition-class"><a class="anchor" href="#condition-class" aria-hidden="true">#</a>Condition (class)</h3>
+<p>A rule a player has to meet: to take a quest, to see a dialog line, to be let through. Inherit to add your own; lists of them show every kind in the inspector.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string failText</code></td>
+<td>Shown when it isn't met. Empty uses the default, like &quot;Needs level 5&quot;.</td>
+</tr>
+<tr>
+<td><code>public static string Check(Condition[] conditions, IPlayerFacts facts)</code></td>
+<td>The first condition not met, as text, or null when all are.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="consumabledata-class"><a class="anchor" href="#consumabledata-class" aria-hidden="true">#</a>ConsumableData (class)</h3>
+<p>Used up on use: potions, scrolls, food.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float cooldown</code></td>
+<td>Seconds before any item of the same cooldown group can be used again.</td>
+</tr>
+<tr>
+<td><code>public ItemEffect[] effects</code></td>
+<td>What else it does: experience, levels, skills, points, casting, statuses, travel.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="currencycondition-class"><a class="anchor" href="#currencycondition-class" aria-hidden="true">#</a>CurrencyCondition (class)</h3>
+<p>Has at least an amount of gold or another currency.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CurrencyData currency</code></td>
+<td>Empty is gold.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="currencydata-class"><a class="anchor" href="#currencydata-class" aria-hidden="true">#</a>CurrencyData (class)</h3>
+<p>Money players hold outside the bag: gold, honor, event tokens. The game database names which one is gold, the money monsters drop and NPCs pay.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long maxAmount</code></td>
+<td>Most a character can hold. 0 means no limit.</td>
+</tr>
+<tr>
+<td><code>public bool showInInventory</code></td>
+<td>Listed under the bag.</td>
+</tr>
+<tr>
+<td><code>public bool premium</code></td>
+<td>Held by the account, not the character, in a ledger only the servers write: bought with real money or earned in play, and spent at the in-game shop.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="currencyreward-struct"><a class="anchor" href="#currencyreward-struct" aria-hidden="true">#</a>CurrencyReward (struct)</h3>
+<h3 id="damageeffect-class"><a class="anchor" href="#damageeffect-class" aria-hidden="true">#</a>DamageEffect (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public DamageElement element</code></td>
+<td>Empty uses the database's default element.</td>
+</tr>
+<tr>
+<td><code>public LevelValue weaponScale = new LevelValue(0)</code></td>
+<td>Adds the weapon's rolls, scaled. 0 ignores the weapon.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="damageelement-class"><a class="anchor" href="#damageelement-class" aria-hidden="true">#</a>DamageElement (class)</h3>
+<p>A kind of damage, like fire or water. Characters deal and resist each element apart, and attributes, gear and buffs can raise any of them. Add one here and it shows up everywhere.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Color color</code></td>
+<td>For damage numbers and tooltips.</td>
+</tr>
+<tr>
+<td><code>public float maxResistance</code></td>
+<td>Highest percent resistance that counts. 0.5 means a hit is never cut by more than half.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn hitEffect = new EffectSpawn()</code></td>
+<td>On whoever takes a hit of this element, unless the skill or weapon has its own.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="discoveraction-class"><a class="anchor" href="#discoveraction-class" aria-hidden="true">#</a>DiscoverAction (class)</h3>
+<p>Marks a map or zone as found, like a guide showing the way.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string zone</code></td>
+<td>A zone's id. Used instead of the map when set.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="discoveredcondition-class"><a class="anchor" href="#discoveredcondition-class" aria-hidden="true">#</a>DiscoveredCondition (class)</h3>
+<p>Has been to a map, or to a zone by its id.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string zone</code></td>
+<td>A zone's id. Used instead of the map when set.</td>
+</tr>
+<tr>
+<td><code>public string placeName</code></td>
+<td>How the text names it.</td>
+</tr>
+<tr>
+<td><code>public bool notYet</code></td>
+<td>Met while it is still undiscovered.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="drop-struct"><a class="anchor" href="#drop-struct" aria-hidden="true">#</a>Drop (struct)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public QuestData quest</code></td>
+<td>Drops only for a killer on this quest who still needs the item.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="dropquestaction-class"><a class="anchor" href="#dropquestaction-class" aria-hidden="true">#</a>DropQuestAction (class)</h3>
+<p>Drops a quest the player has open, as if abandoned.</p>
+<h3 id="effectsocket-enum"><a class="anchor" href="#effectsocket-enum" aria-hidden="true">#</a>EffectSocket (enum)</h3>
+<p>Where on a character an effect appears. Humanoids find hands and head on their own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Body</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Floor</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Head</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>RightHand</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>LeftHand</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="effectspawn-class"><a class="anchor" href="#effectspawn-class" aria-hidden="true">#</a>EffectSpawn (class)</h3>
+<p>A visual effect and where it goes. Only clients spawn it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool follow</code></td>
+<td>Moves with the character; otherwise it stays where it appeared.</td>
+</tr>
+<tr>
+<td><code>public float lifetime</code></td>
+<td>Seconds before it goes away. 0 uses the length of its particles.</td>
+</tr>
+<tr>
+<td><code>public bool tint</code></td>
+<td>Colored like the element of the hit or the skill.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="elementdamage-struct"><a class="anchor" href="#elementdamage-struct" aria-hidden="true">#</a>ElementDamage (struct)</h3>
+<p>A damage roll of one element, like &quot;12 to 16 fire&quot;.</p>
+<h3 id="elementstats-struct"><a class="anchor" href="#elementstats-struct" aria-hidden="true">#</a>ElementStats (struct)</h3>
+<p>A character's numbers for one element.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float damage</code></td>
+<td>Added to every hit of this element the character deals.</td>
+</tr>
+<tr>
+<td><code>public float resistance</code></td>
+<td>Taken off every hit of this element the character receives.</td>
+</tr>
+<tr>
+<td><code>public float resistancePercent</code></td>
+<td>Share of each hit of this element ignored, before the element's limit. 0.1 is 10%.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="elementvalue-struct"><a class="anchor" href="#elementvalue-struct" aria-hidden="true">#</a>ElementValue (struct)</h3>
+<p>An amount for one element. No element means the database's default one.</p>
+<h3 id="entry-class"><a class="anchor" href="#entry-class" aria-hidden="true">#</a>Entry (class)</h3>
+<h3 id="entry-class-2"><a class="anchor" href="#entry-class-2" aria-hidden="true">#</a>Entry (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long price</code></td>
+<td>Price of one. 0 uses the item's buy price.</td>
+</tr>
+<tr>
+<td><code>public int stock</code></td>
+<td>How many it has. 0 never runs out.</td>
+</tr>
+<tr>
+<td><code>public float restockMinutes</code></td>
+<td>Minutes to get one back once some are sold. 0 only refills when the map restarts.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="equipslot-enum"><a class="anchor" href="#equipslot-enum" aria-hidden="true">#</a>EquipSlot (enum)</h3>
+<p>Same numbers as EquipPositions in KitARPG.Shared; add new slots at the end.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Head</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Chest</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Hands</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Legs</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Feet</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>MainHand</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>OffHand</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ring</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Amulet</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ammo</code></td>
+<td>Arrows and the like. Position 9 is the second ring, so it skips to 10.</td>
+</tr>
+<tr>
+<td><code>Back</code></td>
+<td>Capes, packs and wings, worn over whatever else is on.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="equipmentdata-class"><a class="anchor" href="#equipmentdata-class" aria-hidden="true">#</a>EquipmentData (class)</h3>
+<p>Armor or an accessory. Shows on the character through its model.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool cosmetic</code></td>
+<td>Only changes the look. Worn in the cosmetic slot over its region, never gives stats. Any gear can go in a cosmetic slot; these go nowhere else.</td>
+</tr>
+<tr>
+<td><code>public CharacterClass[] classes</code></td>
+<td>Classes that can wear or wield it. Empty means any.</td>
+</tr>
+<tr>
+<td><code>public StatRoll[] randomBonuses</code></td>
+<td>Stats, attributes, damage and resistances. Each copy rolls its own value between min and max when it is made, and keeps it. Same min and max never changes.</td>
+</tr>
+<tr>
+<td><code>public StatModifiers bonuses = new StatModifiers()</code></td>
+<td>Bonuses that never roll, like skill ranks.</td>
+</tr>
+<tr>
+<td><code>public ModelVariant[] modelVariants</code></td>
+<td>Other pieces for player models that need their own fit, by model id.</td>
+</tr>
+<tr>
+<td><code>public bool keepsHair</code></td>
+<td>Head gear that sits over the hair instead of replacing it, like a crown or a headband.</td>
+</tr>
+<tr>
+<td><code>public int maxDurability</code></td>
+<td>0 means it never wears out.</td>
+</tr>
+<tr>
+<td><code>public EquipmentSetData set</code></td>
+<td>Wearing several pieces of the same set adds the set's bonuses.</td>
+</tr>
+<tr>
+<td><code>public UpgradeRules upgrade</code></td>
+<td>Its own upgrade rules. Empty uses the game database's.</td>
+</tr>
+<tr>
+<td><code>public int sockets</code></td>
+<td>Gems it can hold.</td>
+</tr>
+<tr>
+<td><code>public ItemCost[] salvage</code></td>
+<td>What salvaging or breaking it gives. Empty uses the upgrade rules'.</td>
+</tr>
+<tr>
+<td><code>public bool leftHand</code></td>
+<td>Weapons and shields: which hand holds the model.</td>
+</tr>
+<tr>
+<td><code>public Vector3 holdPosition</code></td>
+<td>Offset from the hand bone, in meters.</td>
+</tr>
+<tr>
+<td><code>public GameObject wornEffect</code></td>
+<td>Looping effect while worn. Held gear carries it on the model, and particles shaped as a mesh renderer with none set emit from it; body gear carries it on its region's bone, one per hand or foot.</td>
+</tr>
+<tr>
+<td><code>public virtual int[] Roll(int[] old = null)</code></td>
+<td>Server only. A value for each random bonus. Values from <code>old</code> are kept, pulled into range if the item changed since; only missing ones are rolled.</td>
+</tr>
+<tr>
+<td><code>public UpgradeRules UpgradeRules</code></td>
+<td>The upgrade rules it follows, or null when it can't be upgraded.</td>
+</tr>
+<tr>
+<td><code>public virtual StatModifiers ModifiersWith(int[] rolls, int refine = 0)</code></td>
+<td>What one copy adds while worn: the fixed bonuses plus its rolls, grown by its upgrade level.</td>
+</tr>
+<tr>
+<td><code>public bool IsHeld</code></td>
+<td>Shown as a prop in a hand instead of replacing a body region.</td>
+</tr>
+<tr>
+<td><code>public GameObject ModelFor(string playerModelId)</code></td>
+<td>The piece to show on a player model: its own variant, or the default one.</td>
+</tr>
+<tr>
+<td><code>public virtual string CheckWearer(CharacterClass characterClass, int level)</code></td>
+<td>Why this character can't wear it (an InventoryErrors code), or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="equipmentsetdata-class"><a class="anchor" href="#equipmentsetdata-class" aria-hidden="true">#</a>EquipmentSetData (class)</h3>
+<p>Pieces of gear that reward wearing them together. Each piece points here through its <code>set</code>; every bonus reached adds to the ones below it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public SetBonus[] bonuses</code></td>
+<td>Ordered by pieces. Two pieces, four pieces, the whole set...</td>
+</tr>
+<tr>
+<td><code>public int CountWorn(IEnumerable&lt;string&gt; wornIds, GameDatabase database)</code></td>
+<td>Different pieces of this set among the worn item ids.</td>
+</tr>
+<tr>
+<td><code>public IEnumerable&lt;StatModifiers&gt; Active(int pieces)</code></td>
+<td>The bonuses this many pieces earn.</td>
+</tr>
+<tr>
+<td><code>public List&lt;EquipmentData&gt; Pieces(GameDatabase database)</code></td>
+<td>Every piece in the game data, for tooltips.</td>
+</tr>
+<tr>
+<td><code>public void Describe(ItemDescription description, IItemUser viewer, GameDatabase database)</code></td>
+<td>The set's lines in a tooltip: pieces worn and each bonus, lit when reached.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="equippedcondition-class"><a class="anchor" href="#equippedcondition-class" aria-hidden="true">#</a>EquippedCondition (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool without</code></td>
+<td>Met when it is not worn.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="exptable-class"><a class="anchor" href="#exptable-class" aria-hidden="true">#</a>ExpTable (class)</h3>
+<p>Experience needed for each level. Fill it by hand or generate it with the curve fields.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long firstLevel</code></td>
+<td>Experience to go from level 1 to 2.</td>
+</tr>
+<tr>
+<td><code>public float growth</code></td>
+<td>Each level needs this many times the previous one.</td>
+</tr>
+<tr>
+<td><code>public long[] expToNext</code></td>
+<td>Experience from each level to the next; index 0 is level 1 to 2. Empty uses the curve.</td>
+</tr>
+<tr>
+<td><code>public long ExpToNext(int level)</code></td>
+<td>Experience from this level to the next, or 0 at the cap.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="experienceaction-class"><a class="anchor" href="#experienceaction-class" aria-hidden="true">#</a>ExperienceAction (class)</h3>
+<h3 id="experienceitemeffect-class"><a class="anchor" href="#experienceitemeffect-class" aria-hidden="true">#</a>ExperienceItemEffect (class)</h3>
+<p>Experience: a fixed amount and a share of what the current level needs.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float shareOfLevel</code></td>
+<td>Share of the experience the current level needs, from 0 to 1, added on top.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="exploreobjective-class"><a class="anchor" href="#exploreobjective-class" aria-hidden="true">#</a>ExploreObjective (class)</h3>
+<p>Reach a place: a point on a map and a radius around it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string zone</code></td>
+<td>A zone's id: reached by walking into that zone. Used instead of the point when set.</td>
+</tr>
+<tr>
+<td><code>public string placeName</code></td>
+<td>How the log names it, like &quot;the old ruins&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="firetriggeraction-class"><a class="anchor" href="#firetriggeraction-class" aria-hidden="true">#</a>FireTriggerAction (class)</h3>
+<p>Sets off a world trigger on the player's map: an ambush when a quest is taken, a door that opens after a talk. The trigger's own conditions and scope apply.</p>
+<h3 id="flagcondition-class"><a class="anchor" href="#flagcondition-class" aria-hidden="true">#</a>FlagCondition (class)</h3>
+<p>Reads a story mark set by a <code>SetFlagAction</code>.</p>
+<h3 id="gameaction-class"><a class="anchor" href="#gameaction-class" aria-hidden="true">#</a>GameAction (class)</h3>
+<p>Something done to a player: pay, charge, give or take items, set a story mark, start a quest. Dialog lines and quests run lists of them; every action in a list is checked before any runs. Inherit to add your own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public virtual string Check(IPlayerActor actor)</code></td>
+<td>Why it can't run now, or null.</td>
+</tr>
+<tr>
+<td><code>public virtual string Cost</code></td>
+<td>A price to show next to the line that runs it, like &quot;50 Gold&quot;, or null.</td>
+</tr>
+<tr>
+<td><code>public static string RunAll(GameAction[] actions, IPlayerActor actor)</code></td>
+<td>Checks every action, then runs them all. Returns the first reason it can't, or null.</td>
+</tr>
+<tr>
+<td><code>public static string Costs(GameAction[] actions)</code></td>
+<td>The costs of a list, joined, or null without any.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamedata-class"><a class="anchor" href="#gamedata-class" aria-hidden="true">#</a>GameData (class)</h3>
+<p>Base of every asset in the game database. The id is what saves and network messages use, so it never follows renames: it is filled from the file name once and then kept.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string MakeId(string text)</code></td>
+<td>&quot;Fire Bolt&quot; becomes &quot;fire_bolt&quot;.</td>
+</tr>
+<tr>
+<td><code>public void SetId(string value)</code></td>
+<td>Editor only: sets the id, for tools that create assets.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamedatabase-class"><a class="anchor" href="#gamedatabase-class" aria-hidden="true">#</a>GameDatabase (class)</h3>
+<p>Every piece of game data, looked up by id. List the root assets here (player models, maps, monsters); whatever they reference (classes, skills, items, attributes) is collected on its own, so a class added to a player model is in the game without listing it twice.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject[] playerModels</code></td>
+<td>Player prefabs with a PlayerModel component: the looks offered on character creation.</td>
+</tr>
+<tr>
+<td><code>public MapData startMap</code></td>
+<td>Where new characters appear unless their class says otherwise.</td>
+</tr>
+<tr>
+<td><code>public CurrencyData gold</code></td>
+<td>The money monsters drop and NPCs pay. Saved apart from the other currencies.</td>
+</tr>
+<tr>
+<td><code>public DamageElement[] elements</code></td>
+<td>Kinds of damage, in the order the character window lists them.</td>
+</tr>
+<tr>
+<td><code>public DamageElement defaultElement</code></td>
+<td>Used where no element is set. Empty: the first in the list.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn defaultHitEffect = new EffectSpawn()</code></td>
+<td>On whoever is hit when nothing else gives an effect.</td>
+</tr>
+<tr>
+<td><code>public StatDisplay[] statDisplay</code></td>
+<td>Icons and names of the stats.</td>
+</tr>
+<tr>
+<td><code>public float guildExperienceShare</code></td>
+<td>Share of the experience members earn that also goes to their guild.</td>
+</tr>
+<tr>
+<td><code>public UpgradeRules upgradeRules</code></td>
+<td>How gear is upgraded and salvaged, unless a piece has its own rules.</td>
+</tr>
+<tr>
+<td><code>public CollectorData collector</code></td>
+<td>The guild tax collector. Empty turns collectors off.</td>
+</tr>
+<tr>
+<td><code>public int guildFoundLevel</code></td>
+<td>Lowest character level that can found a guild.</td>
+</tr>
+<tr>
+<td><code>public long guildFoundGold</code></td>
+<td>Gold founding a guild costs. 0 is free.</td>
+</tr>
+<tr>
+<td><code>public ItemData guildFoundItem</code></td>
+<td>Item founding a guild uses up, like a guild charter. Empty: none.</td>
+</tr>
+<tr>
+<td><code>public GuildFoundPlace guildFoundAt</code></td>
+<td>Where guilds are founded: from the guild window anywhere, only at an NPC with a Guild Founding option, or both.</td>
+</tr>
+<tr>
+<td><code>public GuildEmblemData guildEmblems</code></td>
+<td>Shapes, symbols and colors for guild emblems. Empty: guilds have no emblem.</td>
+</tr>
+<tr>
+<td><code>public bool guildEmblemChangeable</code></td>
+<td>Guilds may change their emblem later, by roles with the Emblem permission. Off: it is picked once, when founding.</td>
+</tr>
+<tr>
+<td><code>public long allianceFoundGold</code></td>
+<td>Gold founding an alliance costs, paid by the member who founds it. 0 is free.</td>
+</tr>
+<tr>
+<td><code>public MapData guildHall</code></td>
+<td>The map each guild gets its own copy of once it buys its hall. Must be instanced. Empty: no halls.</td>
+</tr>
+<tr>
+<td><code>public long guildHallPrice</code></td>
+<td>Gold the guild pays from its bank for its hall.</td>
+</tr>
+<tr>
+<td><code>public StatusData bossGuardStatus</code></td>
+<td>Put on a boss while the monsters it called are alive.</td>
+</tr>
+<tr>
+<td><code>public StatusData arrivalStatus</code></td>
+<td>Put on players when they appear in a map or come back to life. Should end on attacking or casting.</td>
+</tr>
+<tr>
+<td><code>public float arrivalSeconds</code></td>
+<td>Seconds the arrival status lasts.</td>
+</tr>
+<tr>
+<td><code>public IReadOnlyList&lt;PlayerModel&gt; Models</code></td>
+<td>Player models in the order they are listed.</td>
+</tr>
+<tr>
+<td><code>public IReadOnlyList&lt;string&gt; Problems</code></td>
+<td>What is wrong with the data: duplicate ids, models without classes, missing scenes.</td>
+</tr>
+<tr>
+<td><code>public void Refresh()</code></td>
+<td>Forgets the lookups; the next query builds them again. Call after changing data at runtime.</td>
+</tr>
+<tr>
+<td><code>public string GoldName</code></td>
+<td>Name of the gold currency, for messages.</td>
+</tr>
+<tr>
+<td><code>public IEnumerable&lt;T&gt; All&lt;T&gt;() where T : GameData</code></td>
+<td>Every asset of a type, the listed ones and the ones found through references.</td>
+</tr>
+<tr>
+<td><code>public int[] RollBonuses(string itemId)</code></td>
+<td>Fresh random bonuses for a new copy of an item, or null when it has none.</td>
+</tr>
+<tr>
+<td><code>public Inventory StartingInventory(CharacterClass characterClass)</code></td>
+<td>A new character's items: the class's start items, worn or in the bag.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gameinstance-class"><a class="anchor" href="#gameinstance-class" aria-hidden="true">#</a>GameInstance (class)</h3>
+<p>Keeps the game database and the rules loaded for the whole run, client and server. Put it on an object in the first scene; it survives scene changes. Code reads <code>Database</code> instead of holding references to data assets.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const string FallbackResource</code></td>
+<td>Loaded from a Resources folder when no GameInstance is in the scene.</td>
+</tr>
+<tr>
+<td><code>public KitModule disabledModules</code></td>
+<td>Systems this game leaves out. Easier to change in KitARPG &gt; Modules.</td>
+</tr>
+<tr>
+<td><code>public string controlMode</code></td>
+<td>How the game is played: top-down (click or keys, Diablo style), free camera (cursor aims, right button turns) or third person (crosshair aims, the mouse turns). Server and clients must match.</td>
+</tr>
+<tr>
+<td><code>public CameraSettings thirdPersonCamera</code></td>
+<td>Camera of the third person mode. Edit it while playing to try it out; the changes stay.</td>
+</tr>
+<tr>
+<td><code>public CameraSettings freeCamera</code></td>
+<td>Camera of the free camera mode. Edit it while playing to try it out; the changes stay.</td>
+</tr>
+<tr>
+<td><code>public GameObject hudPrefab</code></td>
+<td>Canvas with the HUD and the game windows. Made once on clients and kept between maps. Empty: the scenes bring their own.</td>
+</tr>
+<tr>
+<td><code>public InputLayout inputLayout</code></td>
+<td>What the game is played with. Auto: touch on phones and tablets, mouse and keys elsewhere. Touch And Keys shows the touch controls and keeps the keyboard working, for tablets with a keyboard or to try them in the editor.</td>
+</tr>
+<tr>
+<td><code>public GameObject touchControlsPrefab</code></td>
+<td>Canvas with the on-screen controls, kept between maps like the HUD.</td>
+</tr>
+<tr>
+<td><code>public bool itemDetailsOnHover</code></td>
+<td>Pointing at an item shows its stats. Off: click the item to see them.</td>
+</tr>
+<tr>
+<td><code>public AudioClip titleMusic</code></td>
+<td>Loops on the title screen. Each map sets its own in the Game Database.</td>
+</tr>
+<tr>
+<td><code>public int bagSlots</code></td>
+<td>Slots in a bag.</td>
+</tr>
+<tr>
+<td><code>public int weightModeSlots</code></td>
+<td>Weight mode: different stacks a bag can hold, so it can't grow forever.</td>
+</tr>
+<tr>
+<td><code>public int carryWeight</code></td>
+<td>Weight mode: what anyone can carry. Gear and attributes add their carry weight stat.</td>
+</tr>
+<tr>
+<td><code>public int bankSlots</code></td>
+<td>Slots in the bank, which every character of an account shares. It has no weight limit.</td>
+</tr>
+<tr>
+<td><code>public LootMode lootMode</code></td>
+<td>How players get what monsters drop. Only the player who earned the kill sees it.</td>
+</tr>
+<tr>
+<td><code>public bool autoGold</code></td>
+<td>Gold goes straight to the player. Off: it drops like the items, on the ground or in the body.</td>
+</tr>
+<tr>
+<td><code>public bool playersSellToNpcs</code></td>
+<td>Shops buy what players bring. Off, nothing is sold to NPCs: items go between players, to the market or to the forge, and loot never turns into gold. A shop can still refuse on its own.</td>
+</tr>
+<tr>
+<td><code>public int marketFeePercent</code></td>
+<td>Percent of the asking price paid to put a lot on the market, at least 1. It takes gold out of the game.</td>
+</tr>
+<tr>
+<td><code>public ShopArt shopArt</code></td>
+<td>Pictures for the in-game shop's cards and banner, found by the keys the offers name.</td>
+</tr>
+<tr>
+<td><code>public string shopTopUpUrl</code></td>
+<td>Page where players buy premium currency, opened by the + next to their balance. Empty hides the button.</td>
+</tr>
+<tr>
+<td><code>public bool shopAutoTake</code></td>
+<td>Shop purchases and gifts go straight to the bag when they arrive. Off, or when the bag is full, they wait in the mail.</td>
+</tr>
+<tr>
+<td><code>public float experienceRate</code></td>
+<td>Experience from kills and quests is multiplied by this on the whole server. 2 is double.</td>
+</tr>
+<tr>
+<td><code>public float lootRate</code></td>
+<td>Every item's drop chance is multiplied by this. 2 drops twice as often, up to always.</td>
+</tr>
+<tr>
+<td><code>public float goldRate</code></td>
+<td>Gold that monsters drop is multiplied by this.</td>
+</tr>
+<tr>
+<td><code>public SightMode lineOfSight</code></td>
+<td>What stops attacks, skills and monsters from seeing through walls.</td>
+</tr>
+<tr>
+<td><code>public LayerMask sightBlockers</code></td>
+<td>Colliders mode: the layers that block sight. Characters never do.</td>
+</tr>
+<tr>
+<td><code>public float healThreat</code></td>
+<td>Share of a monster's anger that healing someone it fights earns, per point healed.</td>
+</tr>
+<tr>
+<td><code>public float threatSwitch</code></td>
+<td>Another fighter takes a monster's attention once their threat passes the current target's by this factor.</td>
+</tr>
+<tr>
+<td><code>public bool monstersSleepUnseen</code></td>
+<td>Monsters no player can see stop thinking until one comes close. Saves server time on big maps.</td>
+</tr>
+<tr>
+<td><code>public float combatSeconds</code></td>
+<td>Seconds a player stays in combat after the last hit they took or dealt, missed and blocked hits too.</td>
+</tr>
+<tr>
+<td><code>public bool regenInCombat</code></td>
+<td>Health and mana regeneration keeps going in combat. Off, it waits until the fight is over.</td>
+</tr>
+<tr>
+<td><code>public float outOfCombatRegen</code></td>
+<td>Regeneration out of combat is multiplied by this. 3 recovers three times as fast between fights.</td>
+</tr>
+<tr>
+<td><code>public bool levelUpRestoresHealth</code></td>
+<td>Reaching a new level fills health.</td>
+</tr>
+<tr>
+<td><code>public bool levelUpRestoresMana</code></td>
+<td>Reaching a new level fills mana.</td>
+</tr>
+<tr>
+<td><code>public int deathExperienceLoss</code></td>
+<td>Percent of the experience the current level needs that a player loses on coming back at the spawn point. Never takes a level away, and an ally's revive saves it.</td>
+</tr>
+<tr>
+<td><code>public bool pvpDeathCostsExperience</code></td>
+<td>Players killed by other players lose it too. Duels never cost anything.</td>
+</tr>
+<tr>
+<td><code>public int respawnHealth</code></td>
+<td>Percent of health a player comes back with at the spawn point.</td>
+</tr>
+<tr>
+<td><code>public int respawnMana</code></td>
+<td>Percent of mana a player comes back with at the spawn point.</td>
+</tr>
+<tr>
+<td><code>public string[] blockedWords</code></td>
+<td>Words nobody may say, one per entry. End one with * to also catch what starts with it.</td>
+</tr>
+<tr>
+<td><code>public TextAsset blockedWordsFile</code></td>
+<td>More blocked words, one per line, for long lists.</td>
+</tr>
+<tr>
+<td><code>public ChatFilterMode chatFilterMode</code></td>
+<td>Mask hides blocked words with asterisks; Block drops the whole line.</td>
+</tr>
+<tr>
+<td><code>public ItemRarity logLootFrom</code></td>
+<td>Loot of this rarity or better goes to the game log.</td>
+</tr>
+<tr>
+<td><code>public bool logChat</code></td>
+<td>Every chat line goes to the game log too. Reports always carry the lines around them.</td>
+</tr>
+<tr>
+<td><code>public float dayMinutes</code></td>
+<td>Real minutes a whole game day lasts. 0 stops the clock at the fixed hour.</td>
+</tr>
+<tr>
+<td><code>public float dayStartHour</code></td>
+<td>Hour the clock starts at, for shifting days against real time.</td>
+</tr>
+<tr>
+<td><code>public float fixedHour</code></td>
+<td>Hour the clock shows when it doesn't run.</td>
+</tr>
+<tr>
+<td><code>public float nightFrom</code></td>
+<td>Night starts at this hour...</td>
+</tr>
+<tr>
+<td><code>public float nightTo</code></td>
+<td>...and ends at this one.</td>
+</tr>
+<tr>
+<td><code>public bool mailAnywhere</code></td>
+<td>Read and send mail from anywhere. Off: only at an NPC with a mailbox option.</td>
+</tr>
+<tr>
+<td><code>public int mailPostage</code></td>
+<td>Gold to send a letter.</td>
+</tr>
+<tr>
+<td><code>public int mailPostagePerItem</code></td>
+<td>More gold for each item attached.</td>
+</tr>
+<tr>
+<td><code>public int mailItems</code></td>
+<td>Items one letter can carry. Central's MaxMailItems should match.</td>
+</tr>
+<tr>
+<td><code>public bool singlePlayerCommands</code></td>
+<td>In a single player world the player can use every GM command, like cheats. Online, the account's role decides.</td>
+</tr>
+<tr>
+<td><code>public GmCommandLevel[] gmCommandLevels</code></td>
+<td>The GM level each command asks for, when it isn't its default: 1 player, 2 moderator, 3 game master, 4 admin. Changing a role (/role) always needs 4.</td>
+</tr>
+<tr>
+<td><code>public static int CommandLevel(string command)</code></td>
+<td>The level set here for a command, or 0 when it keeps its default.</td>
+</tr>
+<tr>
+<td><code>public static StatFormula Formula</code></td>
+<td>How stats are computed. Replace it with your own subclass to change the rules.</td>
+</tr>
+<tr>
+<td><code>public static CombatFormula Combat</code></td>
+<td>How damage and experience are computed. Replace it with your own subclass to change the rules.</td>
+</tr>
+<tr>
+<td><code>public static LootMode Loot</code></td>
+<td>The loot mode of the running game; Ground when there is no GameInstance.</td>
+</tr>
+<tr>
+<td><code>public static bool Has(KitModule module)</code></td>
+<td>Whether a module is part of this game. Everything is, without a GameInstance.</td>
+</tr>
+<tr>
+<td><code>public static int MaxWeight(float carryWeightStat)</code></td>
+<td>Weight a character can carry with this much carry weight stat, or 0 when bags only count slots.</td>
+</tr>
+<tr>
+<td><code>public static GameObject Hud</code></td>
+<td>The HUD made from <code>hudPrefab</code>, if any.</td>
+</tr>
+<tr>
+<td><code>public static GameObject TouchHud</code></td>
+<td>The on-screen controls made from <code>touchControlsPrefab</code>, when this device uses them.</td>
+</tr>
+<tr>
+<td><code>public InputLayout Layout</code></td>
+<td>What this device plays with, <code>Auto</code> worked out.</td>
+</tr>
+<tr>
+<td><code>public bool WantsTouch</code></td>
+<td>This device plays with the on-screen controls.</td>
+</tr>
+<tr>
+<td><code>public static bool KeysOn</code></td>
+<td>The game's keys (walking, attack, dodge, the hotbar) work. Off only with touch alone.</td>
+</tr>
+<tr>
+<td><code>public static GameDatabase EditorDatabase</code></td>
+<td>Editor only: the database editor tools read, outside Play, for names and icons.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamemodenameattribute-class"><a class="anchor" href="#gamemodenameattribute-class" aria-hidden="true">#</a>GameModeNameAttribute (class)</h3>
+<p>A string field holding a game mode's name. The inspector offers the modes as a list.</p>
+<h3 id="gamerates-class"><a class="anchor" href="#gamerates-class" aria-hidden="true">#</a>GameRates (class)</h3>
+<p>The experience, loot and gold rates in play: the game's own (<code>experienceRate</code> and the rest) times the rates event a GM may have started. Server only; players see the event through its announcement.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static event Action&lt;RatesState&gt; Changed</code></td>
+<td>The event changed, or ended. Gets the new one.</td>
+</tr>
+<tr>
+<td><code>public static RatesState Event</code></td>
+<td>The running event, or null when there is none.</td>
+</tr>
+<tr>
+<td><code>public static void Set(RatesState rates)</code></td>
+<td>Server only. Starts, changes or ends the event on this server.</td>
+</tr>
+<tr>
+<td><code>public static string Times(float rate)</code></td>
+<td>&quot;x2&quot;, &quot;x1.5&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gemdata-class"><a class="anchor" href="#gemdata-class" aria-hidden="true">#</a>GemData (class)</h3>
+<p>Goes into a socket of a piece of gear and adds its bonuses while that piece is worn.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public EquipSlot[] fits</code></td>
+<td>Slots of the gear it fits in. Empty means any.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="givecurrencyaction-class"><a class="anchor" href="#givecurrencyaction-class" aria-hidden="true">#</a>GiveCurrencyAction (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CurrencyData currency</code></td>
+<td>Empty is gold.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="giveitemaction-class"><a class="anchor" href="#giveitemaction-class" aria-hidden="true">#</a>GiveItemAction (class)</h3>
+<h3 id="gmcommandlevel-class"><a class="anchor" href="#gmcommandlevel-class" aria-hidden="true">#</a>GmCommandLevel (class)</h3>
+<p>A GM command and the level it asks for.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string command</code></td>
+<td>The command's name without the slash, like &quot;item&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildemblemdata-class"><a class="anchor" href="#guildemblemdata-class" aria-hidden="true">#</a>GuildEmblemData (class)</h3>
+<p>The pieces guild emblems are made of. Sprites are drawn in white and tinted with the colors the guild picks; the order is what guilds store, so add new ones at the end.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Sprite[] backgrounds</code></td>
+<td>Shapes behind the symbol. Only add at the end: guilds keep the index.</td>
+</tr>
+<tr>
+<td><code>public Sprite[] symbols</code></td>
+<td>Symbols drawn over the shape. Only add at the end: guilds keep the index.</td>
+</tr>
+<tr>
+<td><code>public Color[] palette =</code></td>
+<td>Colors offered when picking. Any color is allowed; these are the swatches.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildfoundplace-enum"><a class="anchor" href="#guildfoundplace-enum" aria-hidden="true">#</a>GuildFoundPlace (enum)</h3>
+<p>Where a guild can be founded.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WindowOrNpc</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Npc</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Window</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="healeffect-class"><a class="anchor" href="#healeffect-class" aria-hidden="true">#</a>HealEffect (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public LevelValue amount = new LevelValue(20, 10)</code></td>
+<td>Before the caster's heals and healing bonus.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hit-struct"><a class="anchor" href="#hit-struct" aria-hidden="true">#</a>Hit (struct)</h3>
+<p>One hit: how much, of which element, and whether it was critical.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public DamageElement element</code></td>
+<td>The element that did most of the damage, for its color.</td>
+</tr>
+<tr>
+<td><code>public GameData source</code></td>
+<td>What dealt it: a skill, a weapon type or a monster. Picks the hit effect.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hitsource-class"><a class="anchor" href="#hitsource-class" aria-hidden="true">#</a>HitSource (class)</h3>
+<p>What caused a hit, sent with it so clients pick the right hit effect.</p>
+<h3 id="iconsumable-interface"><a class="anchor" href="#iconsumable-interface" aria-hidden="true">#</a>IConsumable (interface)</h3>
+<p>Used up: each use takes one from the stack.</p>
+<h3 id="iequippable-interface"><a class="anchor" href="#iequippable-interface" aria-hidden="true">#</a>IEquippable (interface)</h3>
+<p>Worn in an equipment position. Its bonuses count while worn.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string CheckWearer(CharacterClass characterClass, int level)</code></td>
+<td>Why this character can't wear it (an InventoryErrors code), or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="ifighter-interface"><a class="anchor" href="#ifighter-interface" aria-hidden="true">#</a>IFighter (interface)</h3>
+<p>Anything a skill can hurt, heal or buff: players and monsters, on the server.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int Team</code></td>
+<td>Fighters on different teams are enemies. Players are 0, monsters 1.</td>
+</tr>
+<tr>
+<td><code>StatSheet CombatStats</code></td>
+<td>Server only. Stats and elements used for attacking and defending.</td>
+</tr>
+<tr>
+<td><code>void ServerDamage(Hit hit, IFighter source)</code></td>
+<td>Server only.</td>
+</tr>
+<tr>
+<td><code>void ServerHeal(int amount, IFighter source, GameData cause = null)</code></td>
+<td>Server only. The amount is final; the healer's stats were already counted. <code>cause</code> picks the effect clients show.</td>
+</tr>
+<tr>
+<td><code>bool ServerAddBuff(Buff buff)</code></td>
+<td>Server only. False when it didn't take.</td>
+</tr>
+<tr>
+<td><code>int ServerRemoveBuffs(Predicate&lt;Buff&gt; match, int max = 0)</code></td>
+<td>Server only. Takes off up to <code>max</code> matching buffs (0 is all); returns how many.</td>
+</tr>
+<tr>
+<td><code>StatusFlags Status</code></td>
+<td>What its statuses stop it from doing right now.</td>
+</tr>
+<tr>
+<td><code>bool ServerKnock(Vector3 to, float seconds)</code></td>
+<td>Server only. Pushed or pulled to <code>to</code> over <code>seconds</code>, cutting off what it was doing. False when it can't be moved, as while unstoppable.</td>
+</tr>
+<tr>
+<td><code>bool ServerRevive(float health, float mana, IFighter by)</code></td>
+<td>Server only. Brings it back from death with a share of its health and mana. False if it wasn't dead.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iitem-interface"><a class="anchor" href="#iitem-interface" aria-hidden="true">#</a>IItem (interface)</h3>
+<p>Anything that fits in a bag. Inventory, filters, tooltips and the UI work with these interfaces, so a new kind of item only has to implement the ones that apply to it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string Category</code></td>
+<td>Short type name for tooltips, like &quot;Sword&quot; or &quot;Consumable&quot;.</td>
+</tr>
+<tr>
+<td><code>void Describe(ItemDescription description, IItemUser viewer)</code></td>
+<td>Adds what this item does to its tooltip. The viewer can be null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iitemuser-interface"><a class="anchor" href="#iitemuser-interface" aria-hidden="true">#</a>IItemUser (interface)</h3>
+<p>Who uses an item or reads its tooltip. The player character implements it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IReadOnlyList&lt;string&gt; WornItemIds</code></td>
+<td>Item id worn at each equipment position, empty where nothing is.</td>
+</tr>
+<tr>
+<td><code>void RestoreHealth(int amount)</code></td>
+<td>Server only.</td>
+</tr>
+<tr>
+<td><code>void RestoreMana(int amount)</code></td>
+<td>Server only.</td>
+</tr>
+<tr>
+<td><code>long ExperienceToNext</code></td>
+<td>Experience still needed for the next level, 0 at the highest.</td>
+</tr>
+<tr>
+<td><code>void GainExperience(long amount)</code></td>
+<td>Server only.</td>
+</tr>
+<tr>
+<td><code>void GainLevel()</code></td>
+<td>Server only. One level up, as if the experience for it had been earned.</td>
+</tr>
+<tr>
+<td><code>void GainPoints(int attributePoints, int skillPoints)</code></td>
+<td>Server only.</td>
+</tr>
+<tr>
+<td><code>int SpentAttributePoints</code></td>
+<td>Attribute points spent so far. Works on the owner's client too.</td>
+</tr>
+<tr>
+<td><code>void ResetAttributes()</code></td>
+<td>Server only. Gives back every spent attribute point to spend again.</td>
+</tr>
+<tr>
+<td><code>string CanLearnSkill(SkillData skill, int rank)</code></td>
+<td>Why it can't learn this skill up to this rank now, or null. Works on the owner's client too.</td>
+</tr>
+<tr>
+<td><code>void LearnSkill(SkillData skill, int rank)</code></td>
+<td>Server only. Learns it even outside the class pool, within the skill's learning rules.</td>
+</tr>
+<tr>
+<td><code>string CanCastFromItem(SkillData skill)</code></td>
+<td>Why it can't cast this from an item now, or null.</td>
+</tr>
+<tr>
+<td><code>void CastFromItem(SkillData skill, int rank)</code></td>
+<td>Server only. Casts it without knowing it, paying no mana and starting no cooldown.</td>
+</tr>
+<tr>
+<td><code>void AddStatus(StatusData status, int level, float seconds)</code></td>
+<td>Server only.</td>
+</tr>
+<tr>
+<td><code>void TravelTo(MapData map, Vector3 position, ItemData refund)</code></td>
+<td>Server only. Gives <code>refund</code> back if the trip fails.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iplayeractor-interface"><a class="anchor" href="#iplayeractor-interface" aria-hidden="true">#</a>IPlayerActor (interface)</h3>
+<p>What actions can do to a player, on the server.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GameObject Self</code></td>
+<td>The player object, for actions of your own that need its components.</td>
+</tr>
+<tr>
+<td><code>IItemUser User</code></td>
+<td>The player as items see it: experience, levels, points, skills, statuses, travel.</td>
+</tr>
+<tr>
+<td><code>string RoomFor(ItemData item, int amount)</code></td>
+<td>Why these won't fit in the bag, or null.</td>
+</tr>
+<tr>
+<td><code>void AddCurrency(CurrencyData currency, long amount)</code></td>
+<td>Negative takes. Gold for a null currency.</td>
+</tr>
+<tr>
+<td><code>string StartQuest(QuestData quest)</code></td>
+<td>Returns why it can't be taken, or null.</td>
+</tr>
+<tr>
+<td><code>string FireTrigger(string triggerId)</code></td>
+<td>Sets off a trigger on the player's map by id, as if they walked into it. Returns why not, or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iplayerfacts-interface"><a class="anchor" href="#iplayerfacts-interface" aria-hidden="true">#</a>IPlayerFacts (interface)</h3>
+<p>What conditions read about a player. The server and the owner's client both have one, so the client can show what is locked and why.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MapData Map</code></td>
+<td>The map the player is on, if it is in the database.</td>
+</tr>
+<tr>
+<td><code>int CountItem(string itemId)</code></td>
+<td>How many of an item the character carries in the bag.</td>
+</tr>
+<tr>
+<td><code>long Balance(CurrencyData currency)</code></td>
+<td>Gold for a null currency.</td>
+</tr>
+<tr>
+<td><code>int Attribute(AttributeData attribute)</code></td>
+<td>The attribute's total: class, spent points and gear.</td>
+</tr>
+<tr>
+<td><code>bool HasDone(QuestData quest)</code></td>
+<td>Turned in at least once.</td>
+</tr>
+<tr>
+<td><code>bool HasDiscovered(string placeId)</code></td>
+<td>A map or zone id the character has been to.</td>
+</tr>
+<tr>
+<td><code>int Flag(string key)</code></td>
+<td>A story mark set by a dialog or a quest; 0 when never set.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="istatsource-interface"><a class="anchor" href="#istatsource-interface" aria-hidden="true">#</a>IStatSource (interface)</h3>
+<p>Anything that changes a character's numbers while it applies: worn gear, a buff, a passive skill.</p>
+<h3 id="iusable-interface"><a class="anchor" href="#iusable-interface" aria-hidden="true">#</a>IUsable (interface)</h3>
+<p>Does something when used from the bag or a quick slot.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string CooldownGroup</code></td>
+<td>Items in the same group share the cooldown. Empty: the item's own id.</td>
+</tr>
+<tr>
+<td><code>string CheckUse(IItemUser user)</code></td>
+<td>Why this user can't use it now, or null. Checked before anything happens.</td>
+</tr>
+<tr>
+<td><code>bool Use(IItemUser user)</code></td>
+<td>Server only. False means nothing happened, so the item is kept.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iweapon-interface"><a class="anchor" href="#iweapon-interface" aria-hidden="true">#</a>IWeapon (interface)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IReadOnlyList&lt;ElementDamage&gt; Damages</code></td>
+<td>The basic attack's rolls, one per element.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="inputlayout-enum"><a class="anchor" href="#inputlayout-enum" aria-hidden="true">#</a>InputLayout (enum)</h3>
+<p>What the game is played with.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Auto</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>MouseAndKeys</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Touch</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>TouchAndKeys</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemamount-struct"><a class="anchor" href="#itemamount-struct" aria-hidden="true">#</a>ItemAmount (struct)</h3>
+<h3 id="itemcondition-class"><a class="anchor" href="#itemcondition-class" aria-hidden="true">#</a>ItemCondition (class)</h3>
+<p>Carries some of an item, or carries none of it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool without</code></td>
+<td>Met when the player carries fewer than the count.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemcost-struct"><a class="anchor" href="#itemcost-struct" aria-hidden="true">#</a>ItemCost (struct)</h3>
+<h3 id="itemdata-class"><a class="anchor" href="#itemdata-class" aria-hidden="true">#</a>ItemData (class)</h3>
+<p>What an item is. The copies players own only keep this id plus their own values (amount, refine, rolled bonuses), so editing an item here changes every copy.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int maxStack</code></td>
+<td>How many fit in one inventory slot.</td>
+</tr>
+<tr>
+<td><code>public int weight</code></td>
+<td>Weight of one, when bags are limited by weight.</td>
+</tr>
+<tr>
+<td><code>public int sellPrice</code></td>
+<td>Gold an NPC pays for one.</td>
+</tr>
+<tr>
+<td><code>public int buyPrice</code></td>
+<td>Gold a shop asks for one. 0 is four times the sell price.</td>
+</tr>
+<tr>
+<td><code>public bool bound</code></td>
+<td>Can't be traded or dropped.</td>
+</tr>
+<tr>
+<td><code>public GameObject model</code></td>
+<td>For icons and the ground. Gear: the modular piece (meshes named _) or the prop held in hand.</td>
+</tr>
+<tr>
+<td><code>public bool questItem</code></td>
+<td>Only for quests: shown as a quest item and never bought by shops.</td>
+</tr>
+<tr>
+<td><code>public virtual string Category</code></td>
+<td>Short type name for tooltips and the database window.</td>
+</tr>
+<tr>
+<td><code>public virtual void Describe(ItemDescription description, IItemUser viewer)</code></td>
+<td>Override to add what the item does to its tooltip.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemdescription-class"><a class="anchor" href="#itemdescription-class" aria-hidden="true">#</a>ItemDescription (class)</h3>
+<p>Lines an item adds to its tooltip. The UI chooses how each kind looks.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int[] rolls</code></td>
+<td>The random bonuses of the copy being shown, or null to show their ranges.</td>
+</tr>
+<tr>
+<td><code>public int refine</code></td>
+<td>Upgrade level of the copy being shown.</td>
+</tr>
+<tr>
+<td><code>public string[] gems</code></td>
+<td>Gem ids in the copy's sockets, empty where none is.</td>
+</tr>
+<tr>
+<td><code>public bool showRanges</code></td>
+<td>Adds the range a rolled bonus could have had, as in &quot;+3 Vitality (1-6)&quot;.</td>
+</tr>
+<tr>
+<td><code>public void AddStats(CharacterStats stats, Kind kind = Kind.Effect)</code></td>
+<td>One line per stat that isn't zero, like &quot;+12 Armor&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemeffect-class"><a class="anchor" href="#itemeffect-class" aria-hidden="true">#</a>ItemEffect (class)</h3>
+<p>One thing a usable item does: scrolls of experience, level or skill, elixirs, return scrolls. New effects inherit this and show up in the item's inspector on their own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public virtual string Check(IItemUser user)</code></td>
+<td>Server only. Why this user can't use it now, or null. Every effect is checked before any runs.</td>
+</tr>
+<tr>
+<td><code>public abstract void Use(IItemUser user, ItemData item)</code></td>
+<td>Server only. <code>item</code> is what was used, to give back if something fails later.</td>
+</tr>
+<tr>
+<td><code>public virtual void Describe(ItemDescription description, IItemUser viewer)</code></td>
+<td>Lines for the item's tooltip. The viewer can be null.</td>
+</tr>
+<tr>
+<td><code>public virtual void Visit(Action&lt;GameData&gt; visit)</code></td>
+<td>Hands the game database every asset it points at, so they get registered.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemrarity-enum"><a class="anchor" href="#itemrarity-enum" aria-hidden="true">#</a>ItemRarity (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Common</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Magic</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Rare</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Epic</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Legendary</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="killobjective-class"><a class="anchor" href="#killobjective-class" aria-hidden="true">#</a>KillObjective (class)</h3>
+<p>Kill monsters of one kind, or any monster.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public MonsterData monster</code></td>
+<td>Empty counts any monster.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kind-enum"><a class="anchor" href="#kind-enum" aria-hidden="true">#</a>Kind (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Normal</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Heading</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Effect</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Muted</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Warning</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitmodule-enum"><a class="anchor" href="#kitmodule-enum" aria-hidden="true">#</a>KitModule (enum)</h3>
+<p>Systems a game can turn off in <code>disabledModules</code> or KitARPG &gt; Modules.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Chat</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Friends</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Parties</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Guilds</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Collectors</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Trade</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Bank</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Mail</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Pvp</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Quests</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Forge</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>DayNight</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Bestiary</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Market</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>CashShop</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitmoduleinfo-class"><a class="anchor" href="#kitmoduleinfo-class" aria-hidden="true">#</a>KitModuleInfo (class)</h3>
+<p>What each module is, for the editor and for code that lists them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public KitModule needs</code></td>
+<td>Modules this one can't work without.</td>
+</tr>
+<tr>
+<td><code>public const string Off</code></td>
+<td>What a player hears when asking for a module the game left out.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="knockbackeffect-class"><a class="anchor" href="#knockbackeffect-class" aria-hidden="true">#</a>KnockbackEffect (class)</h3>
+<p>Pushes each target away, or pulls it in with a negative distance. Walls stop it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public LevelValue distance = new LevelValue(3)</code></td>
+<td>Meters. Negative pulls toward the caster, stopping in front of it.</td>
+</tr>
+<tr>
+<td><code>public float speed</code></td>
+<td>Meters per second.</td>
+</tr>
+<tr>
+<td><code>public bool fromPoint</code></td>
+<td>Away from where the skill landed instead of from the caster, for blasts on the ground.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="learnskillitemeffect-class"><a class="anchor" href="#learnskillitemeffect-class" aria-hidden="true">#</a>LearnSkillItemEffect (class)</h3>
+<p>Teaches a skill, or raises it, even one the character's class doesn't have. The skill's own learning rules apply: classes it can be taught to, level and the skills it needs first.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int rank</code></td>
+<td>Rank it teaches. A known skill below it is raised to it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="levelcondition-class"><a class="anchor" href="#levelcondition-class" aria-hidden="true">#</a>LevelCondition (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int max</code></td>
+<td>0 means no limit.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="levelitemeffect-class"><a class="anchor" href="#levelitemeffect-class" aria-hidden="true">#</a>LevelItemEffect (class)</h3>
+<p>Whole levels at once, up to a level the scroll stops working at.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int upToLevel</code></td>
+<td>Characters at this level or above can't use it. 0 works up to the highest level.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="levelvalue-struct"><a class="anchor" href="#levelvalue-struct" aria-hidden="true">#</a>LevelValue (struct)</h3>
+<p>A number that grows with level: the level 1 value plus a fixed amount per level after it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float baseValue</code></td>
+<td>Value at level 1.</td>
+</tr>
+<tr>
+<td><code>public float perLevel</code></td>
+<td>Added for each level after the first.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="line-struct"><a class="anchor" href="#line-struct" aria-hidden="true">#</a>Line (struct)</h3>
+<h3 id="lootmode-enum"><a class="anchor" href="#lootmode-enum" aria-hidden="true">#</a>LootMode (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ground</code></td>
+<td>Each item falls on the ground next to the monster.</td>
+</tr>
+<tr>
+<td><code>Corpse</code></td>
+<td>Items stay in the body; clicking it opens a loot window.</td>
+</tr>
+<tr>
+<td><code>Automatic</code></td>
+<td>Items go straight to the bag. What doesn't fit falls on the ground.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="loottable-class"><a class="anchor" href="#loottable-class" aria-hidden="true">#</a>LootTable (class)</h3>
+<p>What a monster can drop. Several monsters can share one table.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int maxDrops</code></td>
+<td>Most items one kill can drop. 0 means no limit.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapcondition-class"><a class="anchor" href="#mapcondition-class" aria-hidden="true">#</a>MapCondition (class)</h3>
+<p>Is on a map right now.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool elsewhere</code></td>
+<td>Met anywhere but this map.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapdata-class"><a class="anchor" href="#mapdata-class" aria-hidden="true">#</a>MapData (class)</h3>
+<p>A map players can be on. The id is what Central and saves use; the scene is what loads. Builds take every map's scene from the game database, so a new map only needs its scene picked here.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string scene</code></td>
+<td>The scene that loads for this map. It needs a SpawnPoint and a NavMesh; builds add it by themselves.</td>
+</tr>
+<tr>
+<td><code>public Vector3 startPosition</code></td>
+<td>Where new characters appear when this is their start map.</td>
+</tr>
+<tr>
+<td><code>public MonsterData[] monsters</code></td>
+<td>Monsters that live here, for the bestiary. Read from the scene's spawners in the Game Database, on the map's card.</td>
+</tr>
+<tr>
+<td><code>public AudioClip music</code></td>
+<td>Loops while players are here. Empty: the music from before keeps playing.</td>
+</tr>
+<tr>
+<td><code>public bool instanced</code></td>
+<td>Each party, or each player alone, gets its own copy: a dungeon. Online only; a single player world is one copy anyway.</td>
+</tr>
+<tr>
+<td><code>public float instanceSpacing</code></td>
+<td>Meters between copies on the map server, so they never see each other.</td>
+</tr>
+<tr>
+<td><code>public float emptyMinutes</code></td>
+<td>Minutes a copy stays after its last player leaves, for those who come back.</td>
+</tr>
+<tr>
+<td><code>public int pvpMinLevel</code></td>
+<td>Players below this level can't fight others, nor be attacked.</td>
+</tr>
+<tr>
+<td><code>public bool pvpSpareParty</code></td>
+<td>Members of the same party never hurt each other.</td>
+</tr>
+<tr>
+<td><code>public bool pvpSpareGuild</code></td>
+<td>Members of the same guild never hurt each other.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="messageaction-class"><a class="anchor" href="#messageaction-class" aria-hidden="true">#</a>MessageAction (class)</h3>
+<p>Text over the player's head.</p>
+<h3 id="modelvariant-struct"><a class="anchor" href="#modelvariant-struct" aria-hidden="true">#</a>ModelVariant (struct)</h3>
+<h3 id="monsterdata-class"><a class="anchor" href="#monsterdata-class" aria-hidden="true">#</a>MonsterData (class)</h3>
+<p>A kind of monster. Its prefab is the body in the world; this is what it is.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public StatModifiers modifiers = new StatModifiers()</code></td>
+<td>Element damage and resistances on top of the stats.</td>
+</tr>
+<tr>
+<td><code>public float sightRange</code></td>
+<td>Meters at which it notices players.</td>
+</tr>
+<tr>
+<td><code>public float leashRange</code></td>
+<td>How far from home it follows a player before giving up and going back.</td>
+</tr>
+<tr>
+<td><code>public float wanderRadius</code></td>
+<td>Meters it walks around home while nobody is near.</td>
+</tr>
+<tr>
+<td><code>public AttackEffects attackEffects = new AttackEffects()</code></td>
+<td>Projectile and effects of its basic attack. The animation is on its prefab.</td>
+</tr>
+<tr>
+<td><code>public ElementDamage[] attack =</code></td>
+<td>Rolls of its basic attack, one per element.</td>
+</tr>
+<tr>
+<td><code>public StatusDefense statusDefense = new StatusDefense()</code></td>
+<td>Statuses it shrugs off or that last less on it.</td>
+</tr>
+<tr>
+<td><code>public BossPhase[] phases</code></td>
+<td>Bosses only. In order of health; each happens once per fight.</td>
+</tr>
+<tr>
+<td><code>public float enrageSeconds</code></td>
+<td>Bosses only. Seconds into a fight before it enrages; 0 never.</td>
+</tr>
+<tr>
+<td><code>public string enrageShout</code></td>
+<td>Said when it enrages.</td>
+</tr>
+<tr>
+<td><code>public float respawnSeconds</code></td>
+<td>Seconds until it comes back after dying.</td>
+</tr>
+<tr>
+<td><code>public bool inBestiary</code></td>
+<td>Listed in the bestiary. Turn off for helpers like tax collectors or summons nobody hunts.</td>
+</tr>
+<tr>
+<td><code>public StatSheet Sheet</code></td>
+<td>Its final numbers. Worked out once; call <code>OnValidate</code> after changing data at runtime.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="monsterrank-enum"><a class="anchor" href="#monsterrank-enum" aria-hidden="true">#</a>MonsterRank (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Normal</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Elite</code></td>
+<td>Tougher than the rest; its name shows it.</td>
+</tr>
+<tr>
+<td><code>Boss</code></td>
+<td>Has a bar at the top of the screen, phases and an enrage timer.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="notcondition-class"><a class="anchor" href="#notcondition-class" aria-hidden="true">#</a>NotCondition (class)</h3>
+<h3 id="picktypeattribute-class"><a class="anchor" href="#picktypeattribute-class" aria-hidden="true">#</a>PickTypeAttribute (class)</h3>
+<p>Puts a type menu on a SerializeReference field or list, so any subclass can be picked in the inspector.</p>
+<h3 id="playermodel-class"><a class="anchor" href="#playermodel-class" aria-hidden="true">#</a>PlayerModel (class)</h3>
+<p>Goes on a player prefab: the look a player picks when creating a character and the classes that look can take. Add the prefab to the game database to make it playable.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string modelId</code></td>
+<td>Saved with characters. Changing it breaks existing saves that use this model.</td>
+</tr>
+<tr>
+<td><code>public CharacterClass[] classes</code></td>
+<td>Classes a character with this model can be. The first one is the default.</td>
+</tr>
+<tr>
+<td><code>public bool ownHairOnly</code></td>
+<td>Keeps the body's own hair, like ears or horns: no hair styles are offered for this model.</td>
+</tr>
+<tr>
+<td><code>public string rightHandBone</code></td>
+<td>Bones that hold weapons and shields.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="pointsaction-class"><a class="anchor" href="#pointsaction-class" aria-hidden="true">#</a>PointsAction (class)</h3>
+<h3 id="pointsitemeffect-class"><a class="anchor" href="#pointsitemeffect-class" aria-hidden="true">#</a>PointsItemEffect (class)</h3>
+<p>Attribute or skill points to spend.</p>
+<h3 id="projectileinfo-class"><a class="anchor" href="#projectileinfo-class" aria-hidden="true">#</a>ProjectileInfo (class)</h3>
+<p>Something that flies from the attacker to the target. Damage lands when it arrives.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float speed</code></td>
+<td>Meters per second.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="pvpmode-enum"><a class="anchor" href="#pvpmode-enum" aria-hidden="true">#</a>PvpMode (enum)</h3>
+<p>Where players may fight each other on a map. Duels work anywhere.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Off</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Zones</code></td>
+<td>Only inside PvP zones, both of them.</td>
+</tr>
+<tr>
+<td><code>Everywhere</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questcheck-enum"><a class="anchor" href="#questcheck-enum" aria-hidden="true">#</a>QuestCheck (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NotStarted</code></td>
+<td>Never taken nor turned in.</td>
+</tr>
+<tr>
+<td><code>Available</code></td>
+<td>Can be taken right now.</td>
+</tr>
+<tr>
+<td><code>Taken</code></td>
+<td>Taken, done or not.</td>
+</tr>
+<tr>
+<td><code>InProgress</code></td>
+<td>Taken and still missing objectives.</td>
+</tr>
+<tr>
+<td><code>Ready</code></td>
+<td>Taken with every objective done.</td>
+</tr>
+<tr>
+<td><code>Done</code></td>
+<td>Turned in at least once.</td>
+</tr>
+<tr>
+<td><code>NotDone</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>NotTaken</code></td>
+<td>Neither taken nor turned in right now.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questcondition-class"><a class="anchor" href="#questcondition-class" aria-hidden="true">#</a>QuestCondition (class)</h3>
+<h3 id="questdata-class"><a class="anchor" href="#questdata-class" aria-hidden="true">#</a>QuestData (class)</h3>
+<p>A task given by an NPC: objectives to finish, then rewards on turning it in. Offered and taken back through a QuestOption on an NPC. Objectives are SerializeReference, so new kinds show up in the inspector on their own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string progressText</code></td>
+<td>What the giver says while it isn't done yet.</td>
+</tr>
+<tr>
+<td><code>public string completeText</code></td>
+<td>What the giver says when it is turned in.</td>
+</tr>
+<tr>
+<td><code>public string category</code></td>
+<td>Groups it in the quest log, like a region or a story arc. Empty goes under General.</td>
+</tr>
+<tr>
+<td><code>public int maxLevel</code></td>
+<td>0 means no limit.</td>
+</tr>
+<tr>
+<td><code>public CharacterClass[] classes</code></td>
+<td>Empty means any class.</td>
+</tr>
+<tr>
+<td><code>public QuestData[] requiredQuests</code></td>
+<td>Quests that must be turned in first: a chain.</td>
+</tr>
+<tr>
+<td><code>public Condition[] conditions</code></td>
+<td>Anything else the player has to meet: an item carried, a place found, a story mark.</td>
+</tr>
+<tr>
+<td><code>public ItemAmount[] startItems</code></td>
+<td>Handed over on accepting, like a letter to deliver. Taken back if the quest is abandoned.</td>
+</tr>
+<tr>
+<td><code>public GameAction[] onAccept</code></td>
+<td>Run on taking it; the quest isn't taken if one can't, like a fee the player can't pay.</td>
+</tr>
+<tr>
+<td><code>public GameAction[] onComplete</code></td>
+<td>Run on turning it in, before the rewards: set a story mark, take an extra item.</td>
+</tr>
+<tr>
+<td><code>public virtual string CheckRequirements(IPlayerFacts holder)</code></td>
+<td>Why this character can't take it now, or null. Doesn't look at whether it is already active or done.</td>
+</tr>
+<tr>
+<td><code>public bool OpenAgain(long last, DateTime utcNow)</code></td>
+<td>Whether a quest last turned in at <code>last</code> (Unix seconds, UTC) can be taken again now.</td>
+</tr>
+<tr>
+<td><code>public void DescribeObjectives(ItemDescription description, int[] counts)</code></td>
+<td>Lines for an objective list, like &quot;Slay Slimes 3/6&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questobjective-class"><a class="anchor" href="#questobjective-class" aria-hidden="true">#</a>QuestObjective (class)</h3>
+<p>One thing a quest asks for. Inherit to add your own; advance it from your code with PlayerQuests.ServerAdvance.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string text</code></td>
+<td>Shown in the quest log. Empty uses the default, like &quot;Slay Slimes&quot;.</td>
+</tr>
+<tr>
+<td><code>public string hint</code></td>
+<td>Unfolds under the objective in the quest log: who to ask, where to look.</td>
+</tr>
+<tr>
+<td><code>public virtual int Current(IPlayerFacts holder)</code></td>
+<td>For objectives that read what the character has now (items in the bag), the count right now; -1 for objectives that count events as they happen.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questrepeat-enum"><a class="anchor" href="#questrepeat-enum" aria-hidden="true">#</a>QuestRepeat (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Once</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Daily</code></td>
+<td>Open again the next day, counted in UTC.</td>
+</tr>
+<tr>
+<td><code>Always</code></td>
+<td>Open again as soon as it is turned in.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questrewards-class"><a class="anchor" href="#questrewards-class" aria-hidden="true">#</a>QuestRewards (class)</h3>
+<p>What turning a quest in gives.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public SkillData skill</code></td>
+<td>Taught as if by a book: the skill's learning rules still apply.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="queststate-enum"><a class="anchor" href="#queststate-enum" aria-hidden="true">#</a>QuestState (enum)</h3>
+<p>Where a quest stands for one character.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Locked</code></td>
+<td>Requirements not met, or done and not repeatable yet.</td>
+</tr>
+<tr>
+<td><code>Available</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Active</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ready</code></td>
+<td>Every objective done; waiting to be turned in.</td>
+</tr>
+<tr>
+<td><code>Done</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="removestatusaction-class"><a class="anchor" href="#removestatusaction-class" aria-hidden="true">#</a>RemoveStatusAction (class)</h3>
+<h3 id="removestatuseffect-class"><a class="anchor" href="#removestatuseffect-class" aria-hidden="true">#</a>RemoveStatusEffect (class)</h3>
+<p>Takes statuses off: debuffs from allies (cleanse) or buffs from enemies (dispel).</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool dispel</code></td>
+<td>Off: cleanses debuffs from allies. On: dispels buffs from enemies.</td>
+</tr>
+<tr>
+<td><code>public StatusData[] only</code></td>
+<td>Only these. Empty takes any removable one.</td>
+</tr>
+<tr>
+<td><code>public StatusFlags withFlags</code></td>
+<td>Only ones that stop the holder like this, such as stuns and roots. None takes any.</td>
+</tr>
+<tr>
+<td><code>public int count</code></td>
+<td>How many come off per target. 0 takes them all.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="resetattributesaction-class"><a class="anchor" href="#resetattributesaction-class" aria-hidden="true">#</a>ResetAttributesAction (class)</h3>
+<p>Gives back every attribute point the player spent, to spend again.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool needsSpentPoints</code></td>
+<td>Refuses to run when nothing was spent, so a one time reset isn't wasted.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="resetattributesitemeffect-class"><a class="anchor" href="#resetattributesitemeffect-class" aria-hidden="true">#</a>ResetAttributesItemEffect (class)</h3>
+<p>Gives back every attribute point spent, to spend again.</p>
+<h3 id="restoreaction-class"><a class="anchor" href="#restoreaction-class" aria-hidden="true">#</a>RestoreAction (class)</h3>
+<p>Restores a share of health and mana: a healer, an inn.</p>
+<h3 id="reviveeffect-class"><a class="anchor" href="#reviveeffect-class" aria-hidden="true">#</a>ReviveEffect (class)</h3>
+<p>Brings fallen allies back. Use it on a skill that targets the dead.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public LevelValue health = new LevelValue(0.3f, 0.1f)</code></td>
+<td>Share of health they come back with, from 0 to 1.</td>
+</tr>
+<tr>
+<td><code>public LevelValue mana = new LevelValue(0.2f)</code></td>
+<td>Share of mana they come back with, from 0 to 1.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rolltarget-enum"><a class="anchor" href="#rolltarget-enum" aria-hidden="true">#</a>RollTarget (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Stat</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>StatPercent</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Damage</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Resistance</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ResistancePercent</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Attribute</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="scenenameattribute-class"><a class="anchor" href="#scenenameattribute-class" aria-hidden="true">#</a>SceneNameAttribute (class)</h3>
+<p>A string field holding a scene's name. The inspector picks the scene instead of typing it.</p>
+<h3 id="setbonus-struct"><a class="anchor" href="#setbonus-struct" aria-hidden="true">#</a>SetBonus (struct)</h3>
+<p>Bonus for wearing at least this many different pieces of a set.</p>
+<h3 id="setflagaction-class"><a class="anchor" href="#setflagaction-class" aria-hidden="true">#</a>SetFlagAction (class)</h3>
+<p>Sets or adds to a story mark that <code>FlagCondition</code> reads.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool add</code></td>
+<td>Adds the value to what is there instead of replacing it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopart-class"><a class="anchor" href="#shopart-class" aria-hidden="true">#</a>ShopArt (class)</h3>
+<p>The in-game shop's pictures. The catalog lives in the Shop service as text, so offers name a key and the client finds the sprite here. The Shop page of the KitARPG window fills it when you pick a picture.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string Put(Sprite sprite)</code></td>
+<td>Adds or replaces the picture under its sprite's name, which becomes its key.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopdata-class"><a class="anchor" href="#shopdata-class" aria-hidden="true">#</a>ShopData (class)</h3>
+<p>What an NPC sells and for how much, and whether it buys from players. NPCs open it with a shop option; several NPCs can share one, each with its own stock.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CurrencyData currency</code></td>
+<td>What it charges in. Empty is gold.</td>
+</tr>
+<tr>
+<td><code>public bool buysItems</code></td>
+<td>Players can sell their items here, for gold. Only when Game Settings lets players sell to NPCs at all.</td>
+</tr>
+<tr>
+<td><code>public int buybackSlots</code></td>
+<td>Last items each player sold, which they can buy back for what they got until they leave the shop. 0 turns it off.</td>
+</tr>
+<tr>
+<td><code>public bool Buys</code></td>
+<td>Whether players can sell here now: this shop buys and the game allows selling to NPCs.</td>
+</tr>
+<tr>
+<td><code>public CurrencyData Currency</code></td>
+<td>The currency it charges in; null means the game's gold.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sightmode-enum"><a class="anchor" href="#sightmode-enum" aria-hidden="true">#</a>SightMode (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Off</code></td>
+<td>Attacks and skills go through anything.</td>
+</tr>
+<tr>
+<td><code>NavMesh</code></td>
+<td>Holes in the NavMesh block: walls, houses, trunks. Needs no colliders.</td>
+</tr>
+<tr>
+<td><code>Colliders</code></td>
+<td>Colliders on the sight blocker layers block.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skillbonus-struct"><a class="anchor" href="#skillbonus-struct" aria-hidden="true">#</a>SkillBonus (struct)</h3>
+<h3 id="skillcast-class"><a class="anchor" href="#skillcast-class" aria-hidden="true">#</a>SkillCast (class)</h3>
+<p>One use of a skill, handed to each of its effects for every target.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public IReadOnlyList&lt;ElementDamage&gt; weapon</code></td>
+<td>Rolls of the caster's weapon, for effects that scale with it. May be empty.</td>
+</tr>
+<tr>
+<td><code>public IFighter target</code></td>
+<td>The target, if the skill has one.</td>
+</tr>
+<tr>
+<td><code>public Vector3 point</code></td>
+<td>Where it was aimed: the target's position or a point on the ground.</td>
+</tr>
+<tr>
+<td><code>public float scale</code></td>
+<td>Share of the damage and healing this landing carries, when an animation hits more than once.</td>
+</tr>
+<tr>
+<td><code>public bool firstHit</code></td>
+<td>False on the later hits of one cast, so buffs go on only once.</td>
+</tr>
+<tr>
+<td><code>public float projectileSpeed</code></td>
+<td>Meters per second of the skill's projectile, 0 without one. Piercing lines hit each target as it passes.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skillcondition-class"><a class="anchor" href="#skillcondition-class" aria-hidden="true">#</a>SkillCondition (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool without</code></td>
+<td>Met when the player doesn't know it at that rank.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skilldata-class"><a class="anchor" href="#skilldata-class" aria-hidden="true">#</a>SkillData (class)</h3>
+<p>A skill is a target, an area and a list of effects. Real-time modes read sizes in meters, turn-based modes in cells. Every number can grow with the skill level.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool passive</code></td>
+<td>Passive skills never get cast; their effects apply while learned.</td>
+</tr>
+<tr>
+<td><code>public LevelValue cooldown = new LevelValue(5)</code></td>
+<td>Seconds.</td>
+</tr>
+<tr>
+<td><code>public LevelValue castTime</code></td>
+<td>Seconds before the effects land. 0 is instant.</td>
+</tr>
+<tr>
+<td><code>public float range</code></td>
+<td>Meters from the caster to the target or point.</td>
+</tr>
+<tr>
+<td><code>public bool targetsDead</code></td>
+<td>Reaches fallen allies only, for revives.</td>
+</tr>
+<tr>
+<td><code>public LevelValue size = new LevelValue(3)</code></td>
+<td>Circle radius, cone length or line length.</td>
+</tr>
+<tr>
+<td><code>public float width</code></td>
+<td>Cone angle in degrees or line width in meters.</td>
+</tr>
+<tr>
+<td><code>public WeaponType[] weapons</code></td>
+<td>Only with one of these weapons in hand. Empty means any.</td>
+</tr>
+<tr>
+<td><code>public int levelsPerRank</code></td>
+<td>Character levels between one rank and the next, counted from the level the class unlocks it.</td>
+</tr>
+<tr>
+<td><code>public SkillRequirement[] requires</code></td>
+<td>Skills needed before learning or raising this one, from any source.</td>
+</tr>
+<tr>
+<td><code>public bool teachable</code></td>
+<td>Scrolls, books and trainers can teach it to characters whose class doesn't have it.</td>
+</tr>
+<tr>
+<td><code>public CharacterClass[] learnableBy</code></td>
+<td>Classes a scroll or trainer can teach it to. Empty is any class.</td>
+</tr>
+<tr>
+<td><code>public int learnLevel</code></td>
+<td>Character level needed to learn it from a scroll or trainer; later ranks follow levels per rank.</td>
+</tr>
+<tr>
+<td><code>public CasterMove movement</code></td>
+<td>The caster moves to the target or point first; the effects land when it gets there, around where it lands.</td>
+</tr>
+<tr>
+<td><code>public float moveSpeed</code></td>
+<td>Meters per second of a dash or leap.</td>
+</tr>
+<tr>
+<td><code>public float leapHeight</code></td>
+<td>Meters a leap rises at its highest.</td>
+</tr>
+<tr>
+<td><code>public float stopShort</code></td>
+<td>Meters short of a target the caster stops, so it lands beside it.</td>
+</tr>
+<tr>
+<td><code>public int bounces</code></td>
+<td>Times it jumps from the first enemy hit to the next closest one, like chain lightning or a ricochet.</td>
+</tr>
+<tr>
+<td><code>public float bounceRange</code></td>
+<td>Meters a bounce reaches.</td>
+</tr>
+<tr>
+<td><code>public float bounceKeep</code></td>
+<td>Share of the damage and healing kept on each jump, from 0 to 1.</td>
+</tr>
+<tr>
+<td><code>public LevelValue zoneTime</code></td>
+<td>Seconds the area stays on the ground, landing again on every tick. 0 lands once.</td>
+</tr>
+<tr>
+<td><code>public float zoneTick</code></td>
+<td>Seconds between the zone's landings.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn zoneEffect</code></td>
+<td>On the ground while the zone lasts, sized to it. Empty shows the area effect instead.</td>
+</tr>
+<tr>
+<td><code>public LevelValue channelTime</code></td>
+<td>Seconds the effects keep landing after the cast, with the cast clip looping. 0 lands them once.</td>
+</tr>
+<tr>
+<td><code>public int channelTicks</code></td>
+<td>Times the effects land over the channel.</td>
+</tr>
+<tr>
+<td><code>public bool useWeaponAttack</code></td>
+<td>The caster plays its weapon attack animation and the weapon's projectile, like a stronger basic attack. Otherwise each character's skill animation plays.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn castEffect</code></td>
+<td>On the caster while casting or channeling.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn launchEffect</code></td>
+<td>On the caster at each hit frame of its animation.</td>
+</tr>
+<tr>
+<td><code>public ProjectileInfo projectile = new ProjectileInfo()</code></td>
+<td>Flies to the target or point; the effects land when it arrives.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn areaEffect</code></td>
+<td>Where the area lands, sized to it. Without one a flat outline of the area is drawn.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn hitEffect = new EffectSpawn()</code></td>
+<td>On each target. Empty uses the element's.</td>
+</tr>
+<tr>
+<td><code>public DamageElement Element</code></td>
+<td>The element of its first damage effect, or null.</td>
+</tr>
+<tr>
+<td><code>public bool Hostile</code></td>
+<td>Aimed at an enemy or the ground, rather than at the caster or an ally.</td>
+</tr>
+<tr>
+<td><code>public bool TeachableTo(CharacterClass characterClass)</code></td>
+<td>Whether a scroll or trainer may teach it to this class at all.</td>
+</tr>
+<tr>
+<td><code>public int RequiredLevel(int unlockLevel, int rank)</code></td>
+<td>Character level needed for a rank, when the class unlocks the skill at <code>unlockLevel</code>.</td>
+</tr>
+<tr>
+<td><code>public virtual void Describe(ItemDescription description, int level, DamageElement fallback)</code></td>
+<td>Cost, timing, reach and every effect at this rank, for the skill's card.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skilleffect-class"><a class="anchor" href="#skilleffect-class" aria-hidden="true">#</a>SkillEffect (class)</h3>
+<p>One thing a skill does to each target. New effects inherit this and show up in the skill editor on their own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public virtual bool Harmful</code></td>
+<td>Lands on enemies when true, on the caster and its allies when false.</td>
+</tr>
+<tr>
+<td><code>public virtual bool OnCaster</code></td>
+<td>Lands once per cast on the caster, whoever the skill reaches, like a summon.</td>
+</tr>
+<tr>
+<td><code>public abstract void Apply(SkillCast cast, IFighter target)</code></td>
+<td>Server only. Called once per target the skill reached.</td>
+</tr>
+<tr>
+<td><code>public virtual void Describe(ItemDescription description, int level, DamageElement fallback)</code></td>
+<td>Lines for the skill's card at this level.</td>
+</tr>
+<tr>
+<td><code>public virtual void Visit(Action&lt;GameData&gt; visit)</code></td>
+<td>Hands the game database every asset it points at, so they get registered.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skillrequirement-struct"><a class="anchor" href="#skillrequirement-struct" aria-hidden="true">#</a>SkillRequirement (struct)</h3>
+<p>A skill that has to be known, at least at this rank, before another can be learned.</p>
+<h3 id="skilltarget-enum"><a class="anchor" href="#skilltarget-enum" aria-hidden="true">#</a>SkillTarget (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Self</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Enemy</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ally</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ground</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="startitem-struct"><a class="anchor" href="#startitem-struct" aria-hidden="true">#</a>StartItem (struct)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool equipped</code></td>
+<td>Equipped on creation instead of going to the bag.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="startquestaction-class"><a class="anchor" href="#startquestaction-class" aria-hidden="true">#</a>StartQuestAction (class)</h3>
+<h3 id="statbuffeffect-class"><a class="anchor" href="#statbuffeffect-class" aria-hidden="true">#</a>StatBuffEffect (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public LevelValue duration = new LevelValue(10)</code></td>
+<td>Seconds.</td>
+</tr>
+<tr>
+<td><code>public bool debuff</code></td>
+<td>Lowers the stats instead, on enemies.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statcollector-class"><a class="anchor" href="#statcollector-class" aria-hidden="true">#</a>StatCollector (class)</h3>
+<p>Adds up modifiers into a <code>StatSheet</code>. Percent bonuses apply when it finishes.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public void AddAttributes(StatModifiers modifiers)</code></td>
+<td>Adds the attribute points a source gives. Do this for every source before <code>Add</code>.</td>
+</tr>
+<tr>
+<td><code>public void Add(StatModifiers modifiers, float times = 1)</code></td>
+<td>Adds stats and elements, <code>times</code> over (an attribute's points). Each source counts in whole numbers and whole percents.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statdisplay-class"><a class="anchor" href="#statdisplay-class" aria-hidden="true">#</a>StatDisplay (class)</h3>
+<p>Icon and name of a stat, set in the database so they can change without code.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string stat</code></td>
+<td>The stat's id, like &quot;power&quot; or &quot;maxHealth&quot;.</td>
+</tr>
+<tr>
+<td><code>public string label</code></td>
+<td>Empty keeps the built-in name.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statformat-enum"><a class="anchor" href="#statformat-enum" aria-hidden="true">#</a>StatFormat (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Number</code></td>
+<td>&quot;12&quot; or &quot;1.5&quot;.</td>
+</tr>
+<tr>
+<td><code>Percent</code></td>
+<td>0.05 shows as &quot;5%&quot;.</td>
+</tr>
+<tr>
+<td><code>PerSecond</code></td>
+<td>Per second: &quot;1.5/s&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statformula-class"><a class="anchor" href="#statformula-class" aria-hidden="true">#</a>StatFormula (class)</h3>
+<p>Turns class, level, attribute points and every stat source (gear, buffs, passives) into a <code>StatSheet</code>. The order is fixed: attribute points first, since attributes add stats; then the class, each attribute, each source; percent bonuses last. Inherit and set <code>Formula</code> to change the rules.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public virtual int PointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>Points to spend that a character has earned by this level.</td>
+</tr>
+<tr>
+<td><code>public virtual int SkillPointsEarned(CharacterClass characterClass, int level)</code></td>
+<td>Skill points a character has earned by this level.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statinfo-class"><a class="anchor" href="#statinfo-class" aria-hidden="true">#</a>StatInfo (class)</h3>
+<p>How a stat is named and shown. Tooltips and the character window read <code>All</code>, so a stat added to <code>CharacterStats</code> only needs a line here to show everywhere. Icons and other names come from the database's stat display list.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public readonly int section</code></td>
+<td>Stats with the same section are grouped together in the character window.</td>
+</tr>
+<tr>
+<td><code>public static StatInfo Find(string id)</code></td>
+<td>The stat with this id, like &quot;maxHealth&quot;, or null.</td>
+</tr>
+<tr>
+<td><code>public static Sprite IconOf(string id)</code></td>
+<td>The icon of a stat by id, or null.</td>
+</tr>
+<tr>
+<td><code>public string FormatBonus(float value)</code></td>
+<td>A bonus, like &quot;+5% Critical&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statmath-class"><a class="anchor" href="#statmath-class" aria-hidden="true">#</a>StatMath (class)</h3>
+<p>Bonuses are whole numbers: a point of health, never half of one. Percents are whole too, kept as fractions (0.07 is 7%).</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static float Round(float value, bool percent)</code></td>
+<td>To the nearest whole number, or whole percent; halves go away from zero.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statmodifiers-class"><a class="anchor" href="#statmodifiers-class" aria-hidden="true">#</a>StatModifiers (class)</h3>
+<p>What a class level, an attribute point, a piece of gear or a buff adds. Every source uses this same bundle, so anything can raise any stat, element or attribute.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CharacterStats stats</code></td>
+<td>Added to the stats.</td>
+</tr>
+<tr>
+<td><code>public CharacterStats statsPercent</code></td>
+<td>Percent of each stat's total. 0.1 is +10%.</td>
+</tr>
+<tr>
+<td><code>public ElementValue[] damage</code></td>
+<td>Flat damage added to every hit of the element.</td>
+</tr>
+<tr>
+<td><code>public ElementValue[] resistance</code></td>
+<td>Flat damage taken off every hit of the element.</td>
+</tr>
+<tr>
+<td><code>public ElementValue[] resistancePercent</code></td>
+<td>Share of every hit of the element ignored. 0.1 is 10%.</td>
+</tr>
+<tr>
+<td><code>public AttributeBonus[] attributes</code></td>
+<td>Points added to attributes. Ignored on attributes themselves.</td>
+</tr>
+<tr>
+<td><code>public SkillBonus[] skills</code></td>
+<td>Ranks added to skills the character has learned, while this counts.</td>
+</tr>
+<tr>
+<td><code>public int allSkills</code></td>
+<td>Ranks added to every skill the character has learned.</td>
+</tr>
+<tr>
+<td><code>public StatModifiers Scaled(float times)</code></td>
+<td>A copy with every number multiplied, like -1 for a debuff, then made whole.</td>
+</tr>
+<tr>
+<td><code>public StatModifiers Plus(StatModifiers other)</code></td>
+<td>Both together in a new one: the same stat, element, attribute or skill adds up into one bonus.</td>
+</tr>
+<tr>
+<td><code>public StatModifiers Whole()</code></td>
+<td>A copy with whole numbers and whole percents, the way every bonus counts.</td>
+</tr>
+<tr>
+<td><code>public void Describe(ItemDescription description, DamageElement fallback, ItemDescription.Kind kind = ItemDescription.Kind.Effect)</code></td>
+<td>One line per bonus, like &quot;+15 Fire damage&quot; or &quot;+10% Earth resistance&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statroll-struct"><a class="anchor" href="#statroll-struct" aria-hidden="true">#</a>StatRoll (struct)</h3>
+<p>A bonus rolled between <code>min</code> and <code>max</code> when a copy of the item is made. The roll stays with that copy, so two swords of the same kind can differ.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string stat</code></td>
+<td>Stat id, like maxHealth or critChance. Only for Stat and StatPercent.</td>
+</tr>
+<tr>
+<td><code>public DamageElement element</code></td>
+<td>Only for damage and resistances. Empty is the default element.</td>
+</tr>
+<tr>
+<td><code>public AttributeData attribute</code></td>
+<td>Only for Attribute.</td>
+</tr>
+<tr>
+<td><code>public int min</code></td>
+<td>Whole numbers. Percents count in points: 5 is 5%.</td>
+</tr>
+<tr>
+<td><code>public bool InPercent</code></td>
+<td>The value counts in percent points rather than whole units.</td>
+</tr>
+<tr>
+<td><code>public void AddTo(StatModifiers into, int value)</code></td>
+<td>The bonus at <code>value</code>, added to <code>into</code>.</td>
+</tr>
+<tr>
+<td><code>public void Describe(ItemDescription description, int? value, DamageElement fallback, ItemDescription.Kind kind = ItemDescription.Kind.Effect)</code></td>
+<td>One tooltip line: &quot;+5 Vitality&quot; for a rolled copy, with &quot;(2-6)&quot; after it when the description asks for ranges, and &quot;+(2-6) Vitality&quot; when <code>value</code> is null, as in a shop.</td>
+</tr>
+<tr>
+<td><code>public static StatRoll[] Ranges(StatModifiers fixedBonuses, float spread, out StatModifiers left)</code></td>
+<td>Turns fixed bonuses into ranges around their values, <code>spread</code> up and down (0.25 makes 8 into 6-10). Skill ranks can't roll, so they stay in <code>left</code>.</td>
+</tr>
+<tr>
+<td><code>public static StatRoll[] Merge(StatRoll[] rolls, StatRoll[] more)</code></td>
+<td>Adds <code>more</code> to <code>rolls</code>: a bonus to the same thing widens the one there, the rest go at the end. Nothing moves, so values saved by index stay with their bonus.</td>
+</tr>
+<tr>
+<td><code>public bool SameAs(StatRoll other)</code></td>
+<td>Raises the same thing: same kind, stat, element or attribute.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statsheet-class"><a class="anchor" href="#statsheet-class" aria-hidden="true">#</a>StatSheet (class)</h3>
+<p>A character's final numbers: stats, attribute totals and every element.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public DamageElement fallback</code></td>
+<td>Where entries without an element go.</td>
+</tr>
+<tr>
+<td><code>public int allSkills</code></td>
+<td>Ranks every learned skill gets from gear and effects.</td>
+</tr>
+<tr>
+<td><code>public int BonusRanks(SkillData skill)</code></td>
+<td>Ranks this skill gets on top of what was learned.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statuscondition-class"><a class="anchor" href="#statuscondition-class" aria-hidden="true">#</a>StatusCondition (class)</h3>
+<p>Has a status on, or doesn't: blessed, cursed, disguised.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool without</code></td>
+<td>Met when the player doesn't have it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statusdata-class"><a class="anchor" href="#statusdata-class" aria-hidden="true">#</a>StatusData (class)</h3>
+<p>A buff or debuff that lasts a while: poison, burn, bleed, stun, slow, shield, regeneration. Defined once and applied by skills, items or anything that calls ServerAddBuff.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool harmful</code></td>
+<td>Debuffs land on enemies and cleanses remove them. Buffs land on allies and dispels remove them.</td>
+</tr>
+<tr>
+<td><code>public string[] tags</code></td>
+<td>Groups it belongs to, like control, slow, poison or magic. Immunities and resistances name these.</td>
+</tr>
+<tr>
+<td><code>public StatModifiers modifiers = new StatModifiers()</code></td>
+<td>Per stack.</td>
+</tr>
+<tr>
+<td><code>public float tickSeconds</code></td>
+<td>Seconds between ticks.</td>
+</tr>
+<tr>
+<td><code>public DamageElement element</code></td>
+<td>Element of the damage ticks. Empty uses the database's default.</td>
+</tr>
+<tr>
+<td><code>public LevelValue damagePerTick</code></td>
+<td>Per tick and stack, grown by the caster's damage and power, less the holder's resistances.</td>
+</tr>
+<tr>
+<td><code>public LevelValue healPerTick</code></td>
+<td>Per tick and stack, grown by the caster's healing.</td>
+</tr>
+<tr>
+<td><code>public LevelValue manaPerTick</code></td>
+<td>Per tick and stack.</td>
+</tr>
+<tr>
+<td><code>public LevelValue shield</code></td>
+<td>Damage soaked before health. The status ends once it is used up.</td>
+</tr>
+<tr>
+<td><code>public bool endsOnDamage</code></td>
+<td>Taking damage ends it, as with sleep or freeze.</td>
+</tr>
+<tr>
+<td><code>public bool endsOnAction</code></td>
+<td>Attacking or casting ends it, as with invisibility.</td>
+</tr>
+<tr>
+<td><code>public bool removable</code></td>
+<td>Cleanse and dispel effects can take it off.</td>
+</tr>
+<tr>
+<td><code>public StatusDefense grants = new StatusDefense()</code></td>
+<td>Immunities and resistances the holder has while it lasts. Statuses it is now immune to come off.</td>
+</tr>
+<tr>
+<td><code>public EffectSpawn effect</code></td>
+<td>On the holder while it lasts.</td>
+</tr>
+<tr>
+<td><code>public static StatusFlags Effective(StatusFlags flags)</code></td>
+<td>Flags that apply to a holder with these other flags: control is dropped while unstoppable.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statusdefense-class"><a class="anchor" href="#statusdefense-class" aria-hidden="true">#</a>StatusDefense (class)</h3>
+<p>What statuses a fighter shrugs off: a boss that can't be stunned, a golem that slows for half as long, a buff that makes its holder immune to poison. Monsters and classes have one, and a status grants one while it lasts.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public StatusFlags immuneTo</code></td>
+<td>Statuses that stop any of these never land.</td>
+</tr>
+<tr>
+<td><code>public string[] immuneTags</code></td>
+<td>Statuses with any of these tags never land.</td>
+</tr>
+<tr>
+<td><code>public int ShorterBy(StatusData status)</code></td>
+<td>Percent the status lands shorter, the strongest resistance that matches; 100 is immune.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statusflags-enum"><a class="anchor" href="#statusflags-enum" aria-hidden="true">#</a>StatusFlags (enum)</h3>
+<p>What a status stops its holder from doing, or shields it from.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Stun</code></td>
+<td>Can't move, attack or cast.</td>
+</tr>
+<tr>
+<td><code>Root</code></td>
+<td>Can't move; can still attack and cast.</td>
+</tr>
+<tr>
+<td><code>Silence</code></td>
+<td>Can't cast skills.</td>
+</tr>
+<tr>
+<td><code>Disarm</code></td>
+<td>Can't use basic attacks.</td>
+</tr>
+<tr>
+<td><code>Invisible</code></td>
+<td>Monsters lose track of it and enemies see little of it.</td>
+</tr>
+<tr>
+<td><code>Invulnerable</code></td>
+<td>Takes no damage.</td>
+</tr>
+<tr>
+<td><code>Unstoppable</code></td>
+<td>Stuns, roots, silences and disarms don't take hold.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statusitemeffect-class"><a class="anchor" href="#statusitemeffect-class" aria-hidden="true">#</a>StatusItemEffect (class)</h3>
+<p>Puts a status on the user: an elixir of regeneration, a shield potion.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float duration</code></td>
+<td>Seconds.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statusresistance-struct"><a class="anchor" href="#statusresistance-struct" aria-hidden="true">#</a>StatusResistance (struct)</h3>
+<p>A status that lands for less time, or not at all: by tag, or one status by name.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string tag</code></td>
+<td>Any status with this tag. Leave empty to name one status instead.</td>
+</tr>
+<tr>
+<td><code>public int percent</code></td>
+<td>Shorter by this percent. 100 is immune.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="statusstacking-enum"><a class="anchor" href="#statusstacking-enum" aria-hidden="true">#</a>StatusStacking (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Refresh</code></td>
+<td>Landing again restarts the timer.</td>
+</tr>
+<tr>
+<td><code>Stack</code></td>
+<td>Landing again adds a stack, up to the limit, and restarts the timer.</td>
+</tr>
+<tr>
+<td><code>Ignore</code></td>
+<td>Can't land again until it ends.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="summoneffect-class"><a class="anchor" href="#summoneffect-class" aria-hidden="true">#</a>SummonEffect (class)</h3>
+<p>Calls up monsters that fight for the caster for a while, around where the skill lands.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Func&lt;SkillCast, SummonEffect, Vector3, IFighter&gt; Spawner</code></td>
+<td>Set by the server: spawns one summon and returns it, or null if it couldn't.</td>
+</tr>
+<tr>
+<td><code>public int count</code></td>
+<td>How many each cast calls.</td>
+</tr>
+<tr>
+<td><code>public int max</code></td>
+<td>How many of this skill's summons the caster can have at once; the oldest goes when a new one comes.</td>
+</tr>
+<tr>
+<td><code>public LevelValue duration = new LevelValue(30, 5)</code></td>
+<td>Seconds they last. 0 lasts until they die or the caster leaves.</td>
+</tr>
+<tr>
+<td><code>public LevelValue level</code></td>
+<td>Their level. 0 uses the monster's own.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="takeitemaction-class"><a class="anchor" href="#takeitemaction-class" aria-hidden="true">#</a>TakeItemAction (class)</h3>
+<p>Takes items from the bag: a delivery, a key used up, a trade-in.</p>
+<h3 id="talkobjective-class"><a class="anchor" href="#talkobjective-class" aria-hidden="true">#</a>TalkObjective (class)</h3>
+<p>Talk to an NPC, by its id on the map.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string npcId</code></td>
+<td>The NPC's id, or its object's name when it has none.</td>
+</tr>
+<tr>
+<td><code>public string npcName</code></td>
+<td>How the log names it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="teachskillaction-class"><a class="anchor" href="#teachskillaction-class" aria-hidden="true">#</a>TeachSkillAction (class)</h3>
+<p>Teaches a skill within its learning rules.</p>
+<h3 id="timecondition-class"><a class="anchor" href="#timecondition-class" aria-hidden="true">#</a>TimeCondition (class)</h3>
+<p>An hour of the game day, like only at night; or real UTC time, like a weekend event.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int toHour</code></td>
+<td>Exclusive. Lower than the start wraps past midnight.</td>
+</tr>
+<tr>
+<td><code>public bool realTime</code></td>
+<td>The game's day and night, or the real time in UTC (for events on real days).</td>
+</tr>
+<tr>
+<td><code>public DayOfWeek[] days</code></td>
+<td>Real time only. Empty means every day.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="travelaction-class"><a class="anchor" href="#travelaction-class" aria-hidden="true">#</a>TravelAction (class)</h3>
+<h3 id="travelitemeffect-class"><a class="anchor" href="#travelitemeffect-class" aria-hidden="true">#</a>TravelItemEffect (class)</h3>
+<p>Takes the user to a map and point: a scroll of return to town. Given back if the trip fails.</p>
+<h3 id="triggerobjective-class"><a class="anchor" href="#triggerobjective-class" aria-hidden="true">#</a>TriggerObjective (class)</h3>
+<p>Set off a world trigger: touch an altar, pull a lever, walk into a marked spot.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string trigger</code></td>
+<td>The trigger's id on its map.</td>
+</tr>
+<tr>
+<td><code>public string targetName</code></td>
+<td>How the log names it, like &quot;the altar&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="upgradefailure-enum"><a class="anchor" href="#upgradefailure-enum" aria-hidden="true">#</a>UpgradeFailure (enum)</h3>
+<p>What happens to a piece when an upgrade step fails.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Keep</code></td>
+<td>Nothing but the cost is lost.</td>
+</tr>
+<tr>
+<td><code>LoseLevel</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Reset</code></td>
+<td>Back to +0.</td>
+</tr>
+<tr>
+<td><code>Break</code></td>
+<td>The piece is destroyed and leaves its salvage behind.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="upgraderules-class"><a class="anchor" href="#upgraderules-class" aria-hidden="true">#</a>UpgradeRules (class)</h3>
+<p>How gear is upgraded one step at a time (+1, +2...), what breaking or salvaging a piece gives back, and what gems cost to take out. The game database has the default rules; a piece may use its own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public UpgradeStep[] steps</code></td>
+<td>The first one takes a piece to +1.</td>
+</tr>
+<tr>
+<td><code>public ItemData protection</code></td>
+<td>When the player chooses to spend one, a failed step keeps the piece as it was.</td>
+</tr>
+<tr>
+<td><code>public ItemCost[] salvage</code></td>
+<td>What salvaging or breaking a piece gives. The first line grows with rarity and level.</td>
+</tr>
+<tr>
+<td><code>public int salvagePerLevel</code></td>
+<td>More of the first salvage line for each upgrade level the piece had.</td>
+</tr>
+<tr>
+<td><code>public int salvagePerRarity</code></td>
+<td>More of the first salvage line for each rarity above common.</td>
+</tr>
+<tr>
+<td><code>public int salvageLevelsPerExtra</code></td>
+<td>One more of the first salvage line for every this many levels the piece needs. 0 turns it off.</td>
+</tr>
+<tr>
+<td><code>public int unsocketGold</code></td>
+<td>Gold to take a gem out of a socket; the gem comes back.</td>
+</tr>
+<tr>
+<td><code>public int BonusPercent(int level)</code></td>
+<td>Whole percent a piece at this level adds to its own bonuses.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="upgradestep-class"><a class="anchor" href="#upgradestep-class" aria-hidden="true">#</a>UpgradeStep (class)</h3>
+<p>One upgrade step, from the level before to this one.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public ItemCost[] materials</code></td>
+<td>Runes, ores, anything in the bag.</td>
+</tr>
+<tr>
+<td><code>public int chance</code></td>
+<td>Chance to succeed, in whole percent.</td>
+</tr>
+<tr>
+<td><code>public int bonusPercent</code></td>
+<td>Whole percent this step adds to the piece's own bonuses and weapon damage.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="weapondata-class"><a class="anchor" href="#weapondata-class" aria-hidden="true">#</a>WeaponData (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public ElementDamage[] damages =</code></td>
+<td>Rolls of a basic attack, one per element. Each one is a hit of its own element.</td>
+</tr>
+<tr>
+<td><code>public ElementDamage[] DamagesAt(int refine)</code></td>
+<td>The damage rolls of a copy at this upgrade level.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="weapontype-class"><a class="anchor" href="#weapontype-class" aria-hidden="true">#</a>WeaponType (class)</h3>
+<p>Sword, bow, staff... Skills may ask for one; each weapon says which classes can use it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool twoHanded</code></td>
+<td>Takes both hands, so nothing goes in the off hand.</td>
+</tr>
+<tr>
+<td><code>public bool dualWield</code></td>
+<td>One-handed weapons of this type can also go in the off hand. Attacks then take turns between both.</td>
+</tr>
+<tr>
+<td><code>public bool usesAmmo</code></td>
+<td>Each attack spends one ammo worn in the ammo slot.</td>
+</tr>
+<tr>
+<td><code>public float attackRange</code></td>
+<td>Distance of the basic attack, in meters.</td>
+</tr>
+<tr>
+<td><code>public float attacksPerSecond</code></td>
+<td>Basic attacks per second before attack speed.</td>
+</tr>
+<tr>
+<td><code>public AttackEffects effects = new AttackEffects()</code></td>
+<td>Projectile and effects of the basic attack. Each character sets its own animation for it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="worldclock-class"><a class="anchor" href="#worldclock-class" aria-hidden="true">#</a>WorldClock (class)</h3>
+<p>The game's time of day. It comes from the real UTC time and the length of a game day in <code>GameInstance</code>, so every map server and every client agree without sending it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static float Shift</code></td>
+<td>Hours the clock is pushed forward, as a test or a GM sets it. Each machine keeps its own.</td>
+</tr>
+<tr>
+<td><code>public static float Hour</code></td>
+<td>Hour of the game day, 0 to 24 with fractions.</td>
+</tr>
+<tr>
+<td><code>public static int Day</code></td>
+<td>Game days since the clock started counting.</td>
+</tr>
+<tr>
+<td><code>public static float Daylight</code></td>
+<td>How much sun there is: 0 at night, 1 halfway through the day.</td>
+</tr>
+<tr>
+<td><code>public static float Progress</code></td>
+<td>How far through the day (0 to 1) or the night, whichever it is now.</td>
+</tr>
+<tr>
+<td><code>public static string Text</code></td>
+<td>&quot;14:30&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<nav class="pager"><a class="prev" href="KitARPG.Client.html"><span>上一页</span>KitARPG.Client</a><a class="next" href="KitARPG.Editor.html"><span>下一页</span>KitARPG.Editor</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fapi%2FKitARPG.Data.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l3"><a href="#actionanimation-class">ActionAnimation (class)</a></li><li class="l3"><a href="#addstatusaction-class">AddStatusAction (class)</a></li><li class="l3"><a href="#aggression-enum">Aggression (enum)</a></li><li class="l3"><a href="#allcondition-class">AllCondition (class)</a></li><li class="l3"><a href="#ammodata-class">AmmoData (class)</a></li><li class="l3"><a href="#anycondition-class">AnyCondition (class)</a></li><li class="l3"><a href="#applystatuseffect-class">ApplyStatusEffect (class)</a></li><li class="l3"><a href="#areashape-enum">AreaShape (enum)</a></li><li class="l3"><a href="#attackeffects-class">AttackEffects (class)</a></li><li class="l3"><a href="#attributebonus-struct">AttributeBonus (struct)</a></li><li class="l3"><a href="#attributecondition-class">AttributeCondition (class)</a></li><li class="l3"><a href="#attributedata-class">AttributeData (class)</a></li><li class="l3"><a href="#bagmode-enum">BagMode (enum)</a></li><li class="l3"><a href="#bossphase-class">BossPhase (class)</a></li><li class="l3"><a href="#buff-class">Buff (class)</a></li><li class="l3"><a href="#bufflist-class">BuffList (class)</a></li><li class="l3"><a href="#camerasettings-class">CameraSettings (class)</a></li><li class="l3"><a href="#cameraturn-enum">CameraTurn (enum)</a></li><li class="l3"><a href="#castskillitemeffect-class">CastSkillItemEffect (class)</a></li><li class="l3"><a href="#castermove-enum">CasterMove (enum)</a></li><li class="l3"><a href="#characterclass-class">CharacterClass (class)</a></li><li class="l3"><a href="#characterstats-struct">CharacterStats (struct)</a></li><li class="l3"><a href="#chargecurrencyaction-class">ChargeCurrencyAction (class)</a></li><li class="l3"><a href="#chatfiltermode-enum">ChatFilterMode (enum)</a></li><li class="l3"><a href="#classattribute-struct">ClassAttribute (struct)</a></li><li class="l3"><a href="#classcondition-class">ClassCondition (class)</a></li><li class="l3"><a href="#classskill-struct">ClassSkill (struct)</a></li><li class="l3"><a href="#collectobjective-class">CollectObjective (class)</a></li><li class="l3"><a href="#collectordata-class">CollectorData (class)</a></li><li class="l3"><a href="#collectorstat-enum">CollectorStat (enum)</a></li><li class="l3"><a href="#collectorupgrade-class">CollectorUpgrade (class)</a></li><li class="l3"><a href="#combatformula-class">CombatFormula (class)</a></li><li class="l3"><a href="#compare-enum">Compare (enum)</a></li><li class="l3"><a href="#condition-class">Condition (class)</a></li><li class="l3"><a href="#consumabledata-class">ConsumableData (class)</a></li><li class="l3"><a href="#currencycondition-class">CurrencyCondition (class)</a></li><li class="l3"><a href="#currencydata-class">CurrencyData (class)</a></li><li class="l3"><a href="#currencyreward-struct">CurrencyReward (struct)</a></li><li class="l3"><a href="#damageeffect-class">DamageEffect (class)</a></li><li class="l3"><a href="#damageelement-class">DamageElement (class)</a></li><li class="l3"><a href="#discoveraction-class">DiscoverAction (class)</a></li><li class="l3"><a href="#discoveredcondition-class">DiscoveredCondition (class)</a></li><li class="l3"><a href="#drop-struct">Drop (struct)</a></li><li class="l3"><a href="#dropquestaction-class">DropQuestAction (class)</a></li><li class="l3"><a href="#effectsocket-enum">EffectSocket (enum)</a></li><li class="l3"><a href="#effectspawn-class">EffectSpawn (class)</a></li><li class="l3"><a href="#elementdamage-struct">ElementDamage (struct)</a></li><li class="l3"><a href="#elementstats-struct">ElementStats (struct)</a></li><li class="l3"><a href="#elementvalue-struct">ElementValue (struct)</a></li><li class="l3"><a href="#entry-class">Entry (class)</a></li><li class="l3"><a href="#entry-class-2">Entry (class)</a></li><li class="l3"><a href="#equipslot-enum">EquipSlot (enum)</a></li><li class="l3"><a href="#equipmentdata-class">EquipmentData (class)</a></li><li class="l3"><a href="#equipmentsetdata-class">EquipmentSetData (class)</a></li><li class="l3"><a href="#equippedcondition-class">EquippedCondition (class)</a></li><li class="l3"><a href="#exptable-class">ExpTable (class)</a></li><li class="l3"><a href="#experienceaction-class">ExperienceAction (class)</a></li><li class="l3"><a href="#experienceitemeffect-class">ExperienceItemEffect (class)</a></li><li class="l3"><a href="#exploreobjective-class">ExploreObjective (class)</a></li><li class="l3"><a href="#firetriggeraction-class">FireTriggerAction (class)</a></li><li class="l3"><a href="#flagcondition-class">FlagCondition (class)</a></li><li class="l3"><a href="#gameaction-class">GameAction (class)</a></li><li class="l3"><a href="#gamedata-class">GameData (class)</a></li><li class="l3"><a href="#gamedatabase-class">GameDatabase (class)</a></li><li class="l3"><a href="#gameinstance-class">GameInstance (class)</a></li><li class="l3"><a href="#gamemodenameattribute-class">GameModeNameAttribute (class)</a></li><li class="l3"><a href="#gamerates-class">GameRates (class)</a></li><li class="l3"><a href="#gemdata-class">GemData (class)</a></li><li class="l3"><a href="#givecurrencyaction-class">GiveCurrencyAction (class)</a></li><li class="l3"><a href="#giveitemaction-class">GiveItemAction (class)</a></li><li class="l3"><a href="#gmcommandlevel-class">GmCommandLevel (class)</a></li><li class="l3"><a href="#guildemblemdata-class">GuildEmblemData (class)</a></li><li class="l3"><a href="#guildfoundplace-enum">GuildFoundPlace (enum)</a></li><li class="l3"><a href="#healeffect-class">HealEffect (class)</a></li><li class="l3"><a href="#hit-struct">Hit (struct)</a></li><li class="l3"><a href="#hitsource-class">HitSource (class)</a></li><li class="l3"><a href="#iconsumable-interface">IConsumable (interface)</a></li><li class="l3"><a href="#iequippable-interface">IEquippable (interface)</a></li><li class="l3"><a href="#ifighter-interface">IFighter (interface)</a></li><li class="l3"><a href="#iitem-interface">IItem (interface)</a></li><li class="l3"><a href="#iitemuser-interface">IItemUser (interface)</a></li><li class="l3"><a href="#iplayeractor-interface">IPlayerActor (interface)</a></li><li class="l3"><a href="#iplayerfacts-interface">IPlayerFacts (interface)</a></li><li class="l3"><a href="#istatsource-interface">IStatSource (interface)</a></li><li class="l3"><a href="#iusable-interface">IUsable (interface)</a></li><li class="l3"><a href="#iweapon-interface">IWeapon (interface)</a></li><li class="l3"><a href="#inputlayout-enum">InputLayout (enum)</a></li><li class="l3"><a href="#itemamount-struct">ItemAmount (struct)</a></li><li class="l3"><a href="#itemcondition-class">ItemCondition (class)</a></li><li class="l3"><a href="#itemcost-struct">ItemCost (struct)</a></li><li class="l3"><a href="#itemdata-class">ItemData (class)</a></li><li class="l3"><a href="#itemdescription-class">ItemDescription (class)</a></li><li class="l3"><a href="#itemeffect-class">ItemEffect (class)</a></li><li class="l3"><a href="#itemrarity-enum">ItemRarity (enum)</a></li><li class="l3"><a href="#killobjective-class">KillObjective (class)</a></li><li class="l3"><a href="#kind-enum">Kind (enum)</a></li><li class="l3"><a href="#kitmodule-enum">KitModule (enum)</a></li><li class="l3"><a href="#kitmoduleinfo-class">KitModuleInfo (class)</a></li><li class="l3"><a href="#knockbackeffect-class">KnockbackEffect (class)</a></li><li class="l3"><a href="#learnskillitemeffect-class">LearnSkillItemEffect (class)</a></li><li class="l3"><a href="#levelcondition-class">LevelCondition (class)</a></li><li class="l3"><a href="#levelitemeffect-class">LevelItemEffect (class)</a></li><li class="l3"><a href="#levelvalue-struct">LevelValue (struct)</a></li><li class="l3"><a href="#line-struct">Line (struct)</a></li><li class="l3"><a href="#lootmode-enum">LootMode (enum)</a></li><li class="l3"><a href="#loottable-class">LootTable (class)</a></li><li class="l3"><a href="#mapcondition-class">MapCondition (class)</a></li><li class="l3"><a href="#mapdata-class">MapData (class)</a></li><li class="l3"><a href="#messageaction-class">MessageAction (class)</a></li><li class="l3"><a href="#modelvariant-struct">ModelVariant (struct)</a></li><li class="l3"><a href="#monsterdata-class">MonsterData (class)</a></li><li class="l3"><a href="#monsterrank-enum">MonsterRank (enum)</a></li><li class="l3"><a href="#notcondition-class">NotCondition (class)</a></li><li class="l3"><a href="#picktypeattribute-class">PickTypeAttribute (class)</a></li><li class="l3"><a href="#playermodel-class">PlayerModel (class)</a></li><li class="l3"><a href="#pointsaction-class">PointsAction (class)</a></li><li class="l3"><a href="#pointsitemeffect-class">PointsItemEffect (class)</a></li><li class="l3"><a href="#projectileinfo-class">ProjectileInfo (class)</a></li><li class="l3"><a href="#pvpmode-enum">PvpMode (enum)</a></li><li class="l3"><a href="#questcheck-enum">QuestCheck (enum)</a></li><li class="l3"><a href="#questcondition-class">QuestCondition (class)</a></li><li class="l3"><a href="#questdata-class">QuestData (class)</a></li><li class="l3"><a href="#questobjective-class">QuestObjective (class)</a></li><li class="l3"><a href="#questrepeat-enum">QuestRepeat (enum)</a></li><li class="l3"><a href="#questrewards-class">QuestRewards (class)</a></li><li class="l3"><a href="#queststate-enum">QuestState (enum)</a></li><li class="l3"><a href="#removestatusaction-class">RemoveStatusAction (class)</a></li><li class="l3"><a href="#removestatuseffect-class">RemoveStatusEffect (class)</a></li><li class="l3"><a href="#resetattributesaction-class">ResetAttributesAction (class)</a></li><li class="l3"><a href="#resetattributesitemeffect-class">ResetAttributesItemEffect (class)</a></li><li class="l3"><a href="#restoreaction-class">RestoreAction (class)</a></li><li class="l3"><a href="#reviveeffect-class">ReviveEffect (class)</a></li><li class="l3"><a href="#rolltarget-enum">RollTarget (enum)</a></li><li class="l3"><a href="#scenenameattribute-class">SceneNameAttribute (class)</a></li><li class="l3"><a href="#setbonus-struct">SetBonus (struct)</a></li><li class="l3"><a href="#setflagaction-class">SetFlagAction (class)</a></li><li class="l3"><a href="#shopart-class">ShopArt (class)</a></li><li class="l3"><a href="#shopdata-class">ShopData (class)</a></li><li class="l3"><a href="#sightmode-enum">SightMode (enum)</a></li><li class="l3"><a href="#skillbonus-struct">SkillBonus (struct)</a></li><li class="l3"><a href="#skillcast-class">SkillCast (class)</a></li><li class="l3"><a href="#skillcondition-class">SkillCondition (class)</a></li><li class="l3"><a href="#skilldata-class">SkillData (class)</a></li><li class="l3"><a href="#skilleffect-class">SkillEffect (class)</a></li><li class="l3"><a href="#skillrequirement-struct">SkillRequirement (struct)</a></li><li class="l3"><a href="#skilltarget-enum">SkillTarget (enum)</a></li><li class="l3"><a href="#startitem-struct">StartItem (struct)</a></li><li class="l3"><a href="#startquestaction-class">StartQuestAction (class)</a></li><li class="l3"><a href="#statbuffeffect-class">StatBuffEffect (class)</a></li><li class="l3"><a href="#statcollector-class">StatCollector (class)</a></li><li class="l3"><a href="#statdisplay-class">StatDisplay (class)</a></li><li class="l3"><a href="#statformat-enum">StatFormat (enum)</a></li><li class="l3"><a href="#statformula-class">StatFormula (class)</a></li><li class="l3"><a href="#statinfo-class">StatInfo (class)</a></li><li class="l3"><a href="#statmath-class">StatMath (class)</a></li><li class="l3"><a href="#statmodifiers-class">StatModifiers (class)</a></li><li class="l3"><a href="#statroll-struct">StatRoll (struct)</a></li><li class="l3"><a href="#statsheet-class">StatSheet (class)</a></li><li class="l3"><a href="#statuscondition-class">StatusCondition (class)</a></li><li class="l3"><a href="#statusdata-class">StatusData (class)</a></li><li class="l3"><a href="#statusdefense-class">StatusDefense (class)</a></li><li class="l3"><a href="#statusflags-enum">StatusFlags (enum)</a></li><li class="l3"><a href="#statusitemeffect-class">StatusItemEffect (class)</a></li><li class="l3"><a href="#statusresistance-struct">StatusResistance (struct)</a></li><li class="l3"><a href="#statusstacking-enum">StatusStacking (enum)</a></li><li class="l3"><a href="#summoneffect-class">SummonEffect (class)</a></li><li class="l3"><a href="#takeitemaction-class">TakeItemAction (class)</a></li><li class="l3"><a href="#talkobjective-class">TalkObjective (class)</a></li><li class="l3"><a href="#teachskillaction-class">TeachSkillAction (class)</a></li><li class="l3"><a href="#timecondition-class">TimeCondition (class)</a></li><li class="l3"><a href="#travelaction-class">TravelAction (class)</a></li><li class="l3"><a href="#travelitemeffect-class">TravelItemEffect (class)</a></li><li class="l3"><a href="#triggerobjective-class">TriggerObjective (class)</a></li><li class="l3"><a href="#upgradefailure-enum">UpgradeFailure (enum)</a></li><li class="l3"><a href="#upgraderules-class">UpgradeRules (class)</a></li><li class="l3"><a href="#upgradestep-class">UpgradeStep (class)</a></li><li class="l3"><a href="#weapondata-class">WeaponData (class)</a></li><li class="l3"><a href="#weapontype-class">WeaponType (class)</a></li><li class="l3"><a href="#worldclock-class">WorldClock (class)</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

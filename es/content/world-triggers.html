@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World triggers · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/world-triggers.html">English</option><option value="world-triggers.html" selected>Español</option><option value="../../pt/content/world-triggers.html">Português</option><option value="../../zh/content/world-triggers.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>Contenido del juego</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html" class="on" aria-current="page">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Contenido del juego</div><h1>World triggers</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>A world trigger makes something happen in the world when a player walks into a spot, or when a dialogue line, a quest or a clicked object sets it off: monsters show up, objects appear or vanish, and actions run on the player. This page covers every field of the <code>WorldTrigger</code> component, personal and shared triggers, how they repeat and reset, and step by step examples.</p>
+<h2 id="what-a-world-trigger-is"><a class="anchor" href="#what-a-world-trigger-is" aria-hidden="true">#</a>What a world trigger is</h2>
+<p>A <code>WorldTrigger</code> is a component on an object in a map scene. Like a portal, it is plain scene data: the client and the server both have it, the server decides when it goes off and tells the clients what to show.</p>
+<p>When it goes off, it can:</p>
+<ul>
+<li>run <a href="conditions-and-actions.html">actions</a> on the player who set it off,</li>
+<li>spawn monsters around it,</li>
+<li>show objects (a portal, a chest, a glowing rune) and hide others (a wall, a sealed door),</li>
+<li>count for quests with a <strong>Trigger</strong> objective naming it.</li>
+</ul>
+<p>It goes off in one of two ways:</p>
+<ul>
+<li><strong>Enter:</strong> a player walks within its radius.</li>
+<li><strong>Manual:</strong> a <strong>Trigger</strong> option on an NPC or object, a <strong>Fire Trigger</strong> action, the GM command <code>/trigger id</code>, or code.</li>
+</ul>
+<p>And it happens for one of two audiences:</p>
+<ul>
+<li><strong>Personal:</strong> only the player who set it off sees what it does. Its monsters are theirs alone.</li>
+<li><strong>Everyone:</strong> it happens for everyone on the map.</li>
+</ul>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<p>Select any object in a map scene and <strong>Add Component &gt; World Trigger</strong>. The scene view draws its radius on the ground: purple for personal triggers, orange for shared ones (a small circle for manual triggers).</p>
+<h2 id="fields"><a class="anchor" href="#fields" aria-hidden="true">#</a>Fields</h2>
+<h3 id="setting-it-off"><a class="anchor" href="#setting-it-off" aria-hidden="true">#</a>Setting it off</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Trigger Id</em> (<code>triggerId</code>)</td>
+<td>Unique on its map. Quests, actions and dialogue lines name it. Empty uses the object's name.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Activation</em> (<code>activation</code>)</td>
+<td><strong>Enter</strong>: walking within the radius. <strong>Manual</strong>: only from a Trigger option, a Fire Trigger action, the GM command or code.</td>
+<td>Enter</td>
+</tr>
+<tr>
+<td><em>Radius</em> (<code>radius</code>)</td>
+<td>Meters around the object, on the ground, for Enter triggers.</td>
+<td>4</td>
+</tr>
+<tr>
+<td><em>Scope</em> (<code>scope</code>)</td>
+<td><strong>Personal</strong>: only the player who set it off sees what it does. <strong>Everyone</strong>: everyone on the map.</td>
+<td>Personal</td>
+</tr>
+<tr>
+<td><em>Conditions</em> (<code>conditions</code>)</td>
+<td>Who can set it off: a quest in progress, an item carried, a class.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Once</em> (<code>once</code>)</td>
+<td>Once per player when personal (it stays done), once while the map runs for everyone. Otherwise again after the cooldown.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Cooldown</em> (<code>cooldown</code>)</td>
+<td>Seconds before it can go off again when not once. For personal triggers, the cooldown is per player.</td>
+<td>30</td>
+</tr>
+<tr>
+<td><em>Reset After</em> (<code>resetAfter</code>)</td>
+<td>Seconds until the objects go back as they were. 0 leaves them. A personal trigger is also armed again for that player.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="what-happens"><a class="anchor" href="#what-happens" aria-hidden="true">#</a>What happens</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Actions</em> (<code>actions</code>)</td>
+<td>Run on the player who set it off. If one can't, nothing happens.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Monsters</em> (<code>monsters</code>)</td>
+<td>Monsters it spawns (below).</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Monster Lifetime</em> (<code>monsterLifetime</code>)</td>
+<td>Seconds the monsters stay; 0 until killed. Personal ones also go when their player leaves.</td>
+<td>120</td>
+</tr>
+<tr>
+<td><em>Show</em> (<code>show</code>)</td>
+<td>Objects shown when it goes off: a portal, a chest, a glowing rune. They start hidden.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Hide</em> (<code>hide</code>)</td>
+<td>Objects hidden when it goes off: a wall, a sealed door.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="each-monster-entry"><a class="anchor" href="#each-monster-entry" aria-hidden="true">#</a>Each monster entry</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Monster</em> (<code>monster</code>)</td>
+<td>The monster.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Count</em> (<code>count</code>)</td>
+<td>How many.</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Offset</em> (<code>offset</code>)</td>
+<td>From the trigger, where they appear.</td>
+<td>0, 0, 0</td>
+</tr>
+<tr>
+<td><em>Spread</em> (<code>spread</code>)</td>
+<td>Meters around that point they scatter.</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="how-it-goes-off"><a class="anchor" href="#how-it-goes-off" aria-hidden="true">#</a>How it goes off</h2>
+<p>On the server, for each attempt:</p>
+<ol>
+<li>A player who is dead or leaving is ignored.</li>
+<li><strong>Conditions</strong> are checked. If one fails, a manual trigger tells the player why (over their head); an Enter trigger stays quiet. Either way the player isn't checked again for 3 seconds, so walking around inside doesn't repeat the refusal.</li>
+<li><strong>Quest progress:</strong> a Trigger objective naming this trigger counts for the player now, even if the trigger is spent.</li>
+<li>If the trigger is <strong>spent</strong> (see below), it stops here.</li>
+<li><strong>Actions</strong> are checked and run. If one can't run, nothing happens and the player is told why (manual triggers).</li>
+<li>The trigger is marked as done, objects are shown and hidden, monsters spawn.</li>
+</ol>
+<p>Enter triggers check the players inside their radius four times a second.</p>
+<h3 id="spent-once-and-cooldown"><a class="anchor" href="#spent-once-and-cooldown" aria-hidden="true">#</a>Spent, once and cooldown</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Scope</th>
+<th><em>Once</em> on</th>
+<th><em>Once</em> off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personal</td>
+<td>Once per player, for good. It is saved as the story mark <code>trigger.&lt;id&gt;</code> on the character.</td>
+<td>Again for that player after <em>Cooldown</em>.</td>
+</tr>
+<tr>
+<td>Everyone</td>
+<td>Once while the map server runs. A restart arms it again.</td>
+<td>Again for anyone after <em>Cooldown</em>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="reset-after"><a class="anchor" href="#reset-after" aria-hidden="true">#</a>Reset After</h3>
+<p>With <em>Reset After</em> above 0:</p>
+<ul>
+<li><strong>Everyone:</strong> after that many seconds, shown objects hide again and hidden ones come back, for everyone.</li>
+<li><strong>Personal:</strong> after that many seconds, the player's <code>trigger.&lt;id&gt;</code> mark is cleared, so the objects go back on their screen and the trigger is armed again for them.</li>
+</ul>
+<h2 id="personal-and-everyone"><a class="anchor" href="#personal-and-everyone" aria-hidden="true">#</a>Personal and everyone</h2>
+<h3 id="personal"><a class="anchor" href="#personal" aria-hidden="true">#</a>Personal</h3>
+<ul>
+<li><strong>Objects</strong> change only on that player's screen. Each client shows what its own player's <code>trigger.&lt;id&gt;</code> mark says, so a rune lit yesterday is still lit when the player comes back.</li>
+<li><strong>Monsters</strong> are event monsters for that player alone: only that player sees them, fights them and can hurt them, with their summons. Other players' attacks don't reach them. They go when the player leaves the map.</li>
+<li>A <strong>Flag</strong> condition with <em>Key</em> <code>trigger.&lt;id&gt;</code> tells whether a player already did it.</li>
+</ul>
+<div class="callout warning"><div class="callout-title">Atención</div><p>On a dedicated map server, a personal trigger's objects change only on the client. The server's NavMesh doesn't change. To really open a passage (a wall that falls), use a trigger for everyone, or make sure the object doesn't block the server's NavMesh.</p>
+</div>
+<h3 id="everyone"><a class="anchor" href="#everyone" aria-hidden="true">#</a>Everyone</h3>
+<ul>
+<li>The server switches the objects and tells every player on the map. A player who arrives later gets the current state when they enter.</li>
+<li>Monsters are event monsters anyone can fight.</li>
+<li>In an <a href="../gameplay/dungeons.html">instanced map</a>, &quot;everyone&quot; is everyone in the same copy. Each copy has its own triggers.</li>
+</ul>
+<h3 id="event-monsters"><a class="anchor" href="#event-monsters" aria-hidden="true">#</a>Event monsters</h3>
+<p>Monsters a trigger spawns:</p>
+<ul>
+<li>don't come back after dying; they go 4 seconds later,</li>
+<li>go after <em>Monster Lifetime</em> seconds (0: only when killed),</li>
+<li>give experience and loot like any other monster.</li>
+</ul>
+<h2 id="make-a-lever-altar-or-chest"><a class="anchor" href="#make-a-lever-altar-or-chest" aria-hidden="true">#</a>Make a lever, altar or chest</h2>
+<p>The sample's <strong>Strange Altar</strong> in the Forest: with the quest &quot;Whispers in the Woods&quot; taken, touching it wakes two mushroom guardians and lights a rune, and only that player sees them.</p>
+<ol>
+<li>Build the object: a stone base and a <strong>Rune</strong> child. Leave the rune active in the editor; the trigger hides objects in <em>Show</em> when the scene starts.</li>
+<li><strong>Add Component &gt; Npc</strong>. <em>Npc Id</em> <code>altar</code>, <em>Display Name</em> &quot;Strange Altar&quot;, <em>Greeting</em> empty, <em>Talk Range</em> 2.5. Give it a collider.</li>
+<li>Under <strong>Add option</strong>, press <strong>Trigger</strong>. <em>Trigger</em> <code>forest_altar</code>, <em>Label</em> &quot;Touch the altar&quot;. With no greeting and one option, clicking the altar fires it at once.</li>
+<li><strong>Add Component &gt; World Trigger</strong> on the same object:
+<ul>
+<li><em>Trigger Id</em> <code>forest_altar</code>, <em>Activation</em> Manual, <em>Scope</em> Personal.</li>
+<li><em>Conditions</em>: <strong>Quest</strong>, <em>Quest</em> Whispers in the Woods, <em>Check</em> Taken, <em>Fail Text</em> &quot;The stone is cold and silent.&quot;</li>
+<li><em>Actions</em>: <strong>Message</strong>, <em>Text</em> &quot;The altar hums. Something stirs!&quot;</li>
+<li><em>Monsters</em>: Mushroom, <em>Count</em> 2, <em>Offset</em> 0, 0, 3, <em>Spread</em> 1.5.</li>
+<li><em>Show</em>: the Rune.</li>
+</ul>
+</li>
+<li>Make the quest: objectives <strong>Trigger</strong> (<em>Trigger</em> <code>forest_altar</code>, <em>Target Name</em> &quot;the altar in the forest&quot;) and <strong>Kill</strong> Mushroom x2 with the text &quot;Defeat what the altar called&quot;. See <a href="quests.html">Quests</a>.</li>
+<li>Give the quest to an NPC with a Quest option.</li>
+</ol>
+<p>Without the quest, clicking the altar shows &quot;The stone is cold and silent.&quot; With it, the rune lights and the guardians come out.</p>
+<h2 id="make-an-area-event-for-everyone"><a class="anchor" href="#make-an-area-event-for-everyone" aria-hidden="true">#</a>Make an area event for everyone</h2>
+<p>The sample's <strong>Slime Swarm</strong> in the middle of the Forest: from level 2, walking in makes 4 slimes pour out for everyone, and it rests 2 minutes.</p>
+<ol>
+<li><strong>GameObject &gt; Create Empty</strong> in the clearing, named <code>Slime Swarm Trigger</code>.</li>
+<li><strong>Add Component &gt; World Trigger</strong>:
+<ul>
+<li><em>Trigger Id</em> <code>slime_swarm</code>, <em>Activation</em> Enter, <em>Radius</em> 3, <em>Scope</em> Everyone.</li>
+<li><em>Once</em> off, <em>Cooldown</em> 120.</li>
+<li><em>Conditions</em>: <strong>Level</strong>, <em>Min</em> 2.</li>
+<li><em>Actions</em>: <strong>Message</strong>, <em>Text</em> &quot;Slimes pour out of the bushes!&quot;, an orange color.</li>
+<li><em>Monsters</em>: Slime, <em>Count</em> 4, <em>Offset</em> 0, 0, 4, <em>Spread</em> 3.</li>
+<li><em>Monster Lifetime</em> 90.</li>
+</ul>
+</li>
+</ol>
+<h2 id="make-an-ambush-when-a-quest-is-taken"><a class="anchor" href="#make-an-ambush-when-a-quest-is-taken" aria-hidden="true">#</a>Make an ambush when a quest is taken</h2>
+<ol>
+<li>Place a manual trigger <code>bandit_ambush</code> with <em>Scope</em> Personal and bandits in <em>Monsters</em>, by the road.</li>
+<li>On the quest, <em>On Accept</em>: <strong>Fire Trigger</strong> <code>bandit_ambush</code>.</li>
+</ol>
+<p>The quest's NPC must be on the same map as the trigger: Fire Trigger sets off a trigger on the player's current map.</p>
+<h2 id="make-a-door-that-opens-after-a-talk"><a class="anchor" href="#make-a-door-that-opens-after-a-talk" aria-hidden="true">#</a>Make a door that opens after a talk</h2>
+<ol>
+<li>A wall object, and a World Trigger <code>old_gate</code> with <em>Activation</em> Manual, <em>Scope</em> Everyone, <em>Hide</em>: the wall, <em>Reset After</em> 300.</li>
+<li>A dialogue line on the gatekeeper with <em>Actions</em>: <strong>Fire Trigger</strong> <code>old_gate</code>.</li>
+</ol>
+<p>Everyone sees the wall go for 5 minutes, then it comes back. See <a href="dialogues.html">Dialogues</a>.</p>
+<h2 id="test-triggers"><a class="anchor" href="#test-triggers" aria-hidden="true">#</a>Test triggers</h2>
+<ul>
+<li><code>/trigger forest_altar</code> sets it off as if you clicked it, conditions included.</li>
+<li><code>/flag trigger.forest_altar 0</code> arms a personal trigger again for you.</li>
+<li>Restarting the map (stopping Play, or the map server) arms triggers for everyone.</li>
+</ul>
+<p>See <a href="../reference/gm-commands.html">GM commands</a>.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<ul>
+<li><strong>Single player:</strong> the game is the host; personal and everyone triggers behave the same, and a personal trigger's objects really change in the one world there is.</li>
+<li><strong>MMO:</strong> the map server decides and tells the clients. Personal monsters are only sent to their player, so no other client, even a modified one, can see them. Everyone triggers that are <em>Once</em> fire once per map server run.</li>
+</ul>
+<h2 id="for-programmers"><a class="anchor" href="#for-programmers" aria-hidden="true">#</a>For programmers</h2>
+<p><code>WorldTrigger.ServerFire(id, player, tell)</code> sets one off from code. <code>WorldTrigger.ServerFired</code> (trigger, player) tells other systems one went off. <code>Monster.ServerMakeEvent(player, seconds)</code> turns a monster you spawn into an event monster. See <a href="../devkit/events.html">Events</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Nothing happens on click.</strong> The Trigger option's id doesn't match the trigger's <em>Trigger Id</em>, or they are on different maps.</li>
+<li><strong>The objects in <em>Show</em> are visible before it fires.</strong> They are hidden when the scene starts; check they are listed in <em>Show</em>, not in <em>Hide</em>.</li>
+<li><strong>It fires once and never again.</strong> <em>Once</em> is on. Turn it off and set a <em>Cooldown</em>.</li>
+<li><strong>Other players walk through a &quot;fallen&quot; wall.</strong> It was a personal trigger. Use Everyone for things that change the path.</li>
+<li><strong>The quest step doesn't count.</strong> The objective's <em>Trigger</em> doesn't match, or the player doesn't meet the trigger's conditions.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="conditions-and-actions.html">Conditions and actions</a></li>
+<li><a href="quests.html">Quests</a>, <a href="dialogues.html">Dialogues</a>, <a href="npcs.html">NPCs</a></li>
+<li><a href="monsters.html">Monsters</a></li>
+<li><a href="../gameplay/dungeons.html">Dungeons</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="dialogues.html"><span>Anterior</span>Dialogues</a><a class="next" href="../gameplay/control-modes.html"><span>Siguiente</span>Control modes</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fcontent%2Fworld-triggers.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#what-a-world-trigger-is">What a world trigger is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#fields">Fields</a></li><li class="l3"><a href="#setting-it-off">Setting it off</a></li><li class="l3"><a href="#what-happens">What happens</a></li><li class="l3"><a href="#each-monster-entry">Each monster entry</a></li><li class="l2"><a href="#how-it-goes-off">How it goes off</a></li><li class="l3"><a href="#spent-once-and-cooldown">Spent, once and cooldown</a></li><li class="l3"><a href="#reset-after">Reset After</a></li><li class="l2"><a href="#personal-and-everyone">Personal and everyone</a></li><li class="l3"><a href="#personal">Personal</a></li><li class="l3"><a href="#everyone">Everyone</a></li><li class="l3"><a href="#event-monsters">Event monsters</a></li><li class="l2"><a href="#make-a-lever-altar-or-chest">Make a lever, altar or chest</a></li><li class="l2"><a href="#make-an-area-event-for-everyone">Make an area event for everyone</a></li><li class="l2"><a href="#make-an-ambush-when-a-quest-is-taken">Make an ambush when a quest is taken</a></li><li class="l2"><a href="#make-a-door-that-opens-after-a-talk">Make a door that opens after a talk</a></li><li class="l2"><a href="#test-triggers">Test triggers</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#for-programmers">For programmers</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

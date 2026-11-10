@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assemblies · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/assemblies.html">English</option><option value="../../es/devkit/assemblies.html">Español</option><option value="../../pt/devkit/assemblies.html">Português</option><option value="assemblies.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html" class="on" aria-current="page">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>Assemblies</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>How the kit's code is split into assemblies, which builds carry each one, and how to set up the assemblies for your own code (Game, Game.Server and Game.Editor).</p>
+<h2 id="what-an-assembly-is-here"><a class="anchor" href="#what-an-assembly-is-here" aria-hidden="true">#</a>What an assembly is here</h2>
+<p>Unity compiles scripts into assemblies defined by <code>.asmdef</code> files. A script belongs to the assembly whose <code>.asmdef</code> sits in its folder or the nearest parent folder. An assembly only sees the assemblies it lists in its references.</p>
+<p>The kit's assemblies are not auto-referenced. Scripts in <code>Assets</code> that have no <code>.asmdef</code> of their own (the default <code>Assembly-CSharp</code>) can't see the kit. That is on purpose: your code gets its own assembly, which keeps compile times short and keeps your code apart from the kit's.</p>
+<h2 id="the-kit-s-assemblies"><a class="anchor" href="#the-kit-s-assemblies" aria-hidden="true">#</a>The kit's assemblies</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Assembly</th>
+<th>References</th>
+<th>Define constraint</th>
+<th>In which builds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KitARPG.Shared</code></td>
+<td>nothing (no engine references)</td>
+<td>none</td>
+<td>All. The .NET services compile the same files.</td>
+</tr>
+<tr>
+<td><code>KitARPG.Data</code></td>
+<td>Shared</td>
+<td>none</td>
+<td>All</td>
+</tr>
+<tr>
+<td><code>KitARPG.Net</code></td>
+<td>Shared, Data, Mirror</td>
+<td>none</td>
+<td>All</td>
+</tr>
+<tr>
+<td><code>KitARPG.Client</code></td>
+<td>Shared, Data, Net, Mirror, UI, TextMeshPro, URP, Input System</td>
+<td>none</td>
+<td>All (map servers carry it but don't show it)</td>
+</tr>
+<tr>
+<td><code>KitARPG.Server</code></td>
+<td>Shared, Data, Net, Mirror, KCP, AI Navigation</td>
+<td><code>UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER</code></td>
+<td>Map servers, single player, editor</td>
+</tr>
+<tr>
+<td><code>KitARPG.Local</code></td>
+<td>Shared, Data, Net, Server, Client</td>
+<td><code>UNITY_EDITOR || KITARPG_SINGLEPLAYER</code></td>
+<td>Single player and editor only</td>
+</tr>
+<tr>
+<td><code>KitARPG.Modes.TopDown</code>, <code>KitARPG.Modes.ThirdPerson</code></td>
+<td>Shared, Data, Net, Client</td>
+<td>none</td>
+<td>All</td>
+</tr>
+<tr>
+<td><code>KitARPG.Modes.TopDown.Server</code>, <code>KitARPG.Modes.ThirdPerson.Server</code></td>
+<td>Shared, Data, Net, Server, the mode</td>
+<td><code>UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER</code></td>
+<td>Map servers, single player, editor</td>
+</tr>
+<tr>
+<td><code>KitARPG.Editor</code></td>
+<td>everything above</td>
+<td>Editor platform only</td>
+<td>Never in a build</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>KitARPG.Shared</code> is also the contract with the services: <code>Services/Shared/KitARPG.Shared.csproj</code> compiles every file under <code>Runtime/Shared</code>, so a message class defined there reads the same in Unity and in Central.</p>
+<h2 id="build-symbols"><a class="anchor" href="#build-symbols" aria-hidden="true">#</a>Build symbols</h2>
+<p>Which assemblies a build carries depends on its scripting define symbols. The kit's build menus set them for you.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Compiles</th>
+<th>Builds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KITARPG_SERVER</code> (or <code>UNITY_SERVER</code>)</td>
+<td><code>KitARPG.Server</code>, every <code>KitARPG.Modes.*.Server</code>, and every assembly whose name ends in <code>.Server</code></td>
+<td>Map server and single player</td>
+</tr>
+<tr>
+<td><code>KITARPG_SINGLEPLAYER</code></td>
+<td><code>KitARPG.Local</code> (the local save)</td>
+<td>Single player only</td>
+</tr>
+<tr>
+<td><code>KITARPG_DEV</code> or a development build</td>
+<td>Test tools (auto login, smoke test, sandbox)</td>
+<td>Editor and development builds</td>
+</tr>
+<tr>
+<td><code>KITARPG_LOADTEST</code></td>
+<td>Load test bots</td>
+<td>Load test builds only; the kit's menus add and remove it</td>
+</tr>
+</tbody>
+</table></div>
+<p>An online client build has none of the server symbols, so it carries no server code at all. A single player build is a client and a server in one, so it has <code>KITARPG_SERVER</code> and <code>KITARPG_SINGLEPLAYER</code>.</p>
+<h3 id="the-build-separation-check"><a class="anchor" href="#the-build-separation-check" aria-hidden="true">#</a>The build separation check</h3>
+<p>Before every build, from any menu or Build Profile, the kit runs <code>BuildSeparation</code>. It reads every assembly in the project, evaluates its define constraints with that build's symbols, and stops the build when:</p>
+<ul>
+<li>an online client would carry server code (any <code>.Server</code> assembly, <code>KitARPG.Server</code>) or the local save,</li>
+<li>a map server would carry the local save,</li>
+<li>a release build would carry test tools,</li>
+<li>a single player build would lack the server.</li>
+</ul>
+<p>It also warns when a client is built with Mono instead of IL2CPP, or as a development build. <strong>KitARPG &gt; Check Build Separation</strong> shows what goes into each kind of build. The check can't be turned off. Your own assemblies are checked the same way: an assembly named <code>Something.Server</code> without the server define constraint stops online client builds.</p>
+<h2 id="your-assemblies"><a class="anchor" href="#your-assemblies" aria-hidden="true">#</a>Your assemblies</h2>
+<p>Make them from <strong>Create &gt; KitARPG &gt; Scripts</strong> with the folder selected in the Project window.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Menu</th>
+<th>File</th>
+<th>For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game Assembly</td>
+<td><code>Game.asmdef</code></td>
+<td>Everything that runs in every build: effects, conditions, actions, objectives, NPC options, player systems, messages, windows, formulas, menu lines, settings.</td>
+</tr>
+<tr>
+<td>Game Server Assembly</td>
+<td><code>Game.Server.asmdef</code></td>
+<td>Code only map servers and single player may carry: GM commands, <code>CentralMessages</code>, anything that uses <code>KitARPG.Server</code>.</td>
+</tr>
+<tr>
+<td>Game Editor Assembly</td>
+<td><code>Game.Editor.asmdef</code></td>
+<td>Editor tools: KitARPG window pages, validator checks, kit updates, setup menus.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="game"><a class="anchor" href="#game" aria-hidden="true">#</a>Game</h3>
+<p>The menu writes this file:</p>
+<pre class="code"><code class="language-json"><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rootNamespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;references&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Shared&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Data&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Net&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Client&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Mirror&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Unity.TextMeshPro&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;UnityEngine.UI&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;autoReferenced&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>rootNamespace</code> is <code>Game</code>, so scripts made from the templates in this folder get <code>namespace Game</code>. Add references when you need them: <code>KitARPG.Modes.TopDown</code> to use the top-down input classes, <code>Unity.InputSystem</code> for the Input System, <code>Unity.AI.Navigation</code> for NavMesh components.</p>
+<h3 id="game-server"><a class="anchor" href="#game-server" aria-hidden="true">#</a>Game.Server</h3>
+<pre class="code"><code class="language-json"><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game.Server&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rootNamespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;references&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Game&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Shared&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Data&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Net&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Server&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Mirror&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;defineConstraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;autoReferenced&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre>
+<p>The define constraint keeps it out of online client builds. It compiles in the editor, in map servers and in single player. Put it in its own folder, for example <code>Assets/Game/Server</code>, so its scripts don't land in <code>Game</code>.</p>
+<h3 id="game-editor"><a class="anchor" href="#game-editor" aria-hidden="true">#</a>Game.Editor</h3>
+<pre class="code"><code class="language-json"><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game.Editor&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rootNamespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;references&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Game&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Shared&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Data&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Net&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;KitARPG.Editor&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;includePlatforms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;Editor&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p>Unity also treats any folder named <code>Editor</code> specially, but with assembly definitions the <code>includePlatforms</code> line is what keeps it out of builds. Put it in <code>Assets/Game/Editor</code>.</p>
+<h3 id="a-suggested-layout"><a class="anchor" href="#a-suggested-layout" aria-hidden="true">#</a>A suggested layout</h3>
+<pre class="code"><code class="language-">Assets/Game/
+    Game.asmdef
+    Effects/          skill and item effects
+    Logic/            conditions, actions, objectives, NPC options
+    Systems/          player systems and network messages
+    UI/               windows and menu lines
+    Data/             your own ScriptableObject types
+    Shared/
+        Game.Shared.asmdef   plain C# shared with your Central module
+        Messages.cs
+    Server/
+        Game.Server.asmdef
+        Commands.cs
+        CentralLink.cs
+    Editor/
+        Game.Editor.asmdef
+        Checks.cs
+        Updates.cs
+</code></pre>
+<h2 id="which-way-references-go"><a class="anchor" href="#which-way-references-go" aria-hidden="true">#</a>Which way references go</h2>
+<p><code>Game.Server</code> references <code>Game</code>, never the other way around. Online clients have <code>Game</code> but not <code>Game.Server</code>, so <code>Game</code> can't depend on anything that only servers have.</p>
+<p>When code in <code>Game</code> needs to hand something to server-only code, raise an event in <code>Game</code> and subscribe from <code>Game.Server</code>. The bounty example does exactly this:</p>
+<pre class="code"><code class="language-csharp"><span class="c1">// In Game.Bounties (every build): raised when a bounty is paid.</span>
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="p">,</span><span class="w"> </span><span class="n">MonsterData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ServerTurnedIn</span><span class="p">;</span>
+
+<span class="c1">// In Game.Bounties.Server (server builds): forwards it to Central.</span>
+<span class="n">Bounties</span><span class="p">.</span><span class="n">ServerTurnedIn</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnTurnedIn</span><span class="p">;</span>
+</code></pre>
+<p>The same applies to <code>KitARPG.Server</code> types such as <code>GmCommands</code> and <code>CentralMessages</code>: only code in a server-only assembly can use them.</p>
+<h2 id="a-plain-c-assembly-for-messages"><a class="anchor" href="#a-plain-c-assembly-for-messages" aria-hidden="true">#</a>A plain C# assembly for messages</h2>
+<p>Messages your map servers exchange with a Central module are compiled twice: by Unity and by the .NET module. Keep them in an assembly with no engine references, so nothing Unity-only slips in:</p>
+<pre class="code"><code class="language-json"><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game.Shared&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rootNamespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Game&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;references&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;noEngineReferences&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;autoReferenced&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre>
+<p>Reference <code>Game.Shared</code> from <code>Game.Server</code> (and from <code>Game</code> if the client needs the types), and link the same <code>.cs</code> file from the module's <code>.csproj</code>. See <a href="talking-to-central.html">Talking to Central</a> and <a href="service-modules.html">Service modules</a>.</p>
+<h2 id="several-feature-assemblies"><a class="anchor" href="#several-feature-assemblies" aria-hidden="true">#</a>Several feature assemblies</h2>
+<p>A large game can split features into their own assemblies, the way the example does with <code>Game.Bounties</code>, <code>Game.Bounties.Server</code>, <code>Game.Bounties.Shared</code> and <code>Game.Bounties.Editor</code>. Each feature then compiles alone and can be deleted by removing its folder. Follow the same naming: a <code>.Server</code> suffix and the server define constraint for server halves, <code>includePlatforms: Editor</code> for editor halves.</p>
+<h2 id="mirror-and-your-assemblies"><a class="anchor" href="#mirror-and-your-assemblies" aria-hidden="true">#</a>Mirror and your assemblies</h2>
+<p>Mirror's weaver processes every assembly that references <code>Mirror</code>, so <code>NetworkBehaviour</code>s, <code>[SyncVar]</code>s, <code>[Command]</code>s and <code>NetworkMessage</code> structs in <code>Game</code> work like the kit's own. Two things follow from it:</p>
+<ul>
+<li><strong>Network version.</strong> The kit hashes every synced field and message type (<code>NetworkVersion</code>), yours included. A client and a map server built from different code get different values, and the map refuses the client with <code>version_mismatch</code>. Rebuild both after changing anything that crosses the network.</li>
+<li><strong>Component order.</strong> Mirror matches <code>NetworkBehaviour</code>s by their index on the object. Client and server must have the same components in the same order on every networked prefab. Never add or remove a <code>NetworkBehaviour</code> only in one kind of build.</li>
+</ul>
+<h2 id="common-problems"><a class="anchor" href="#common-problems" aria-hidden="true">#</a>Common problems</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>The type or namespace 'Blunnyn' could not be found</code></td>
+<td>The script is not under a folder with your assembly, so it compiles in <code>Assembly-CSharp</code>.</td>
+<td>Move it under the folder with <code>Game.asmdef</code>, or make the assembly there.</td>
+</tr>
+<tr>
+<td><code>GmCommands</code> or <code>CentralMessages</code> not found</td>
+<td>The script is in <code>Game</code>, which doesn't reference <code>KitARPG.Server</code>.</td>
+<td>Move it to the <code>Game.Server</code> folder.</td>
+</tr>
+<tr>
+<td>The client build stops with a build separation error naming your assembly</td>
+<td>A <code>.Server</code> assembly lacks the define constraint, or a client assembly references a server one.</td>
+<td>Add <code>UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER</code>, and make the reference go from the server assembly to the client one.</td>
+</tr>
+<tr>
+<td>Your template class doesn't show in the inspector's type menu</td>
+<td>It doesn't compile, it is abstract, or it isn't <code>[Serializable]</code>.</td>
+<td>Fix the Console errors; keep the class public, concrete and <code>[Serializable]</code>.</td>
+</tr>
+<tr>
+<td><code>version_mismatch</code> when joining</td>
+<td>Client and map server were built from different code.</td>
+<td>Rebuild both.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="devkit-overview.html">DevKit overview</a></li>
+<li><a href="templates.html">Templates</a></li>
+<li><a href="security-rules.html">Security rules</a></li>
+<li><a href="../servers/builds.html">Builds</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="devkit-overview.html"><span>上一页</span>DevKit overview</a><a class="next" href="templates.html"><span>下一页</span>Templates</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Fassemblies.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-an-assembly-is-here">What an assembly is here</a></li><li class="l2"><a href="#the-kit-s-assemblies">The kit&#x27;s assemblies</a></li><li class="l2"><a href="#build-symbols">Build symbols</a></li><li class="l3"><a href="#the-build-separation-check">The build separation check</a></li><li class="l2"><a href="#your-assemblies">Your assemblies</a></li><li class="l3"><a href="#game">Game</a></li><li class="l3"><a href="#game-server">Game.Server</a></li><li class="l3"><a href="#game-editor">Game.Editor</a></li><li class="l3"><a href="#a-suggested-layout">A suggested layout</a></li><li class="l2"><a href="#which-way-references-go">Which way references go</a></li><li class="l2"><a href="#a-plain-c-assembly-for-messages">A plain C# assembly for messages</a></li><li class="l2"><a href="#several-feature-assemblies">Several feature assemblies</a></li><li class="l2"><a href="#mirror-and-your-assemblies">Mirror and your assemblies</a></li><li class="l2"><a href="#common-problems">Common problems</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

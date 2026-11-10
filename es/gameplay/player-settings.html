@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Player settings · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/player-settings.html">English</option><option value="player-settings.html" selected>Español</option><option value="../../pt/gameplay/player-settings.html">Português</option><option value="../../zh/gameplay/player-settings.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de juego</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html" class="on" aria-current="page">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de juego</div><h1>Player settings</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>Players change graphics, sound, interface and controls in the Settings window, and leave the world, change character or quit from the game menu. This page covers both, every option with its default, where settings are saved, how sounds and music follow the volume channels, and how to add options of your own.</p>
+<h2 id="game-menu"><a class="anchor" href="#game-menu" aria-hidden="true">#</a>Game menu</h2>
+<p>Press <code>Esc</code> (when no window is open) or click the gear in the icon bar at the top right. The menu has:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resume</strong></td>
+<td>Closes the menu</td>
+</tr>
+<tr>
+<td><strong>Settings</strong></td>
+<td>Opens the Settings window</td>
+</tr>
+<tr>
+<td><strong>Change character</strong></td>
+<td>Leaves the world and goes back to character selection. In single player it reads <strong>Save and leave</strong></td>
+</tr>
+<tr>
+<td><strong>Sign out</strong></td>
+<td>Goes back to the login screen. MMO only</td>
+</tr>
+<tr>
+<td><strong>Quit game</strong></td>
+<td>Closes the game</td>
+</tr>
+</tbody>
+</table></div>
+<p>Leaving, signing out and quitting ask for confirmation (&quot;Leave the world and go back to your characters?&quot;, &quot;Sign out and go back to the login screen?&quot;, &quot;Quit the game?&quot;). When the character is in combat, the question adds &quot;You are in combat.&quot;</p>
+<p><code>Esc</code> closes an open window or popup first, and opens the menu only when nothing was open. It doesn't open the menu while you type in the chat, answer a confirmation or have Settings open. See <a href="hud-and-windows.html#escape">HUD and windows</a>.</p>
+<p>The game menu also shows a frame counter in the top left while <em>Show FPS</em> is on.</p>
+<h2 id="the-settings-window"><a class="anchor" href="#the-settings-window" aria-hidden="true">#</a>The Settings window</h2>
+<p>Open it from the game menu, or with the <strong>Settings</strong> button on the title screen. It has a tab per page: <strong>Graphics</strong>, <strong>Audio</strong>, <strong>Interface</strong>, and <strong>Controls</strong> when the control mode adds options. Changes apply at once. Each tab has a <strong>Reset</strong> button that asks &quot;Put the <em>page</em> settings back as they came?&quot;.</p>
+<h3 id="where-settings-are-saved"><a class="anchor" href="#where-settings-are-saved" aria-hidden="true">#</a>Where settings are saved</h3>
+<p>Settings belong to the computer, not the account: nothing goes to the server. They are saved to <code>PlayerPrefs</code> under the key <code>KitARPG.Options</code> (as JSON) when the window closes or the game quits. Controls options use their own <code>PlayerPrefs</code> keys.</p>
+<h3 id="graphics"><a class="anchor" href="#graphics" aria-hidden="true">#</a>Graphics</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Choices</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Display</td>
+<td>Full screen, exclusive full screen (Windows only), or windowed. Not shown in the editor</td>
+<td>The current mode</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>The screen's resolutions. Not shown in the editor</td>
+<td>The current one</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>The project's quality levels. The lines below adjust it further</td>
+<td>The project's current level</td>
+</tr>
+<tr>
+<td>Vertical sync</td>
+<td>Matches the screen's refresh rate. Stops tearing; the frame limit is ignored</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Frame limit</td>
+<td>30, 60, 120, 144, 240 FPS or Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>Render scale</td>
+<td>50% to 150%, in steps of 5. Lower draws fewer pixels: faster, softer</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Anti-aliasing</td>
+<td>Off, 2x, 4x, 8x (MSAA)</td>
+<td>4x</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>Off, Low, Medium, High (shadow distance and shadow map resolution)</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Textures</td>
+<td>Full, Half, Quarter</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>Post-processing</td>
+<td>Bloom, color grading and the like</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>URP options are applied to a copy of the render pipeline asset made at run time, so your project's asset is never written. In the editor, leaving Play puts the quality level and the pipeline back. Post-processing is turned off per camera, and a camera that already had it off stays off.</p>
+<h3 id="audio"><a class="anchor" href="#audio" aria-hidden="true">#</a>Audio</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Master</td>
+<td>Scales every sound</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>Title and map music</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>Effects</td>
+<td>Combat and world sounds</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>Buttons and alerts</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Ambience</td>
+<td>Fixed sounds in the scene, like a waterfall</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>Mute in background</td>
+<td>No sound while another window has the focus</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>Volumes go from 0 to 100%, in steps of 5.</p>
+<h3 id="interface"><a class="anchor" href="#interface" aria-hidden="true">#</a>Interface</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interface scale</td>
+<td>70% to 150%. Scales every canvas that scales with the screen size</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Damage numbers</td>
+<td>Numbers over whoever takes damage</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Player names</td>
+<td>Names over players. Your own shows only in top-down, because in the modes with the camera behind it would cover the crosshair</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Monster health bars</td>
+<td>Health bars over monsters</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Show FPS</td>
+<td>Frame counter in the top left</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="controls"><a class="anchor" href="#controls" aria-hidden="true">#</a>Controls</h3>
+<p>The control mode adds this tab. See <a href="control-modes.html">Control modes</a>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Mode</th>
+<th>Choices</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Movement</td>
+<td>Top-down</td>
+<td>Click and keys, Click only, Keys only</td>
+<td>The game's choice</td>
+</tr>
+<tr>
+<td>Skills</td>
+<td>All</td>
+<td>Show the area, then click; or Cast at once</td>
+<td>Show the area, then click</td>
+</tr>
+<tr>
+<td>Mouse sensitivity</td>
+<td>Free camera, third person</td>
+<td>20% to 300%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Invert mouse</td>
+<td>Free camera, third person</td>
+<td>On or off</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>Turn with the camera</td>
+<td>Third person</td>
+<td>The character faces where the camera looks, to strafe</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sounds-and-music"><a class="anchor" href="#sounds-and-music" aria-hidden="true">#</a>Sounds and music</h2>
+<h3 id="music"><a class="anchor" href="#music" aria-hidden="true">#</a>Music</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Where</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Title Music</em> (<code>titleMusic</code>)</td>
+<td><strong>Game Settings &gt; Interface</strong></td>
+<td>Loops on the title screen</td>
+</tr>
+<tr>
+<td><em>Music</em> (<code>music</code>)</td>
+<td>Each map in the Game Database</td>
+<td>Loops while players are on the map. Empty: the music from before keeps playing</td>
+</tr>
+</tbody>
+</table></div>
+<p>Music fades between tracks over 1,5 seconds and follows the Music volume.</p>
+<h3 id="sound-effects"><a class="anchor" href="#sound-effects" aria-hidden="true">#</a>Sound effects</h3>
+<p>Everything the kit plays goes through <code>GameAudio</code>, at the volume of its channel times the master volume:</p>
+<ul>
+<li><code>GameAudio.PlayAt(clip, position, channel)</code> for a sound in the world (Effects by default).</li>
+<li><code>GameAudio.Play(clip, channel)</code> for a sound with no place, like a button or a level up (Interface by default).</li>
+</ul>
+<h3 id="ambient-sounds-in-a-scene"><a class="anchor" href="#ambient-sounds-in-a-scene" aria-hidden="true">#</a>Ambient sounds in a scene</h3>
+<p>For a fixed <code>AudioSource</code> in a scene (a fire, a river), add a <code>SoundChannelSource</code> next to it:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Channel</em> (<code>channel</code>)</td>
+<td><strong>Effects</strong>, <strong>Music</strong>, <strong>Interface</strong> or <strong>Ambience</strong></td>
+<td>Ambience</td>
+</tr>
+<tr>
+<td><em>Volume</em> (<code>volume</code>)</td>
+<td>The source's own volume, 0 to 1, before the player's</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>It keeps the source at its channel's volume and follows changes in Settings.</p>
+<h2 id="step-by-step-add-an-option-of-your-own"><a class="anchor" href="#step-by-step-add-an-option-of-your-own" aria-hidden="true">#</a>Step by step: add an option of your own</h2>
+<p>Options are added from code with <code>ClientOptions.Add</code>. The window builds its rows from three templates (a dropdown, a slider and a toggle), so new options need no UI work. A page name that doesn't exist yet adds a tab.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CameraShakeOption</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Pref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Game.CameraShake&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="n">Pref</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ToggleOption</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Interface</span><span class="p">,</span>
+<span class="w">            </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Camera shake&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Shakes the camera on heavy hits.&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">On</span><span class="p">,</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="n">Pref</span><span class="p">,</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">            </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">DeleteKey</span><span class="p">(</span><span class="n">Pref</span><span class="p">),</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ToggleOption</code></td>
+<td><code>get</code>, <code>set</code></td>
+</tr>
+<tr>
+<td><code>SliderOption</code></td>
+<td><code>min</code>, <code>max</code> (100), <code>step</code> (5), <code>get</code>, <code>set</code>, <code>format</code> (adds <code>%</code> by default)</td>
+</tr>
+<tr>
+<td><code>ChoiceOption</code></td>
+<td><code>choices</code>, <code>get</code>, <code>set</code></td>
+</tr>
+<tr>
+<td>All</td>
+<td><code>page</code>, <code>label</code>, <code>hint</code>, <code>available</code> (hides the option when it says no), <code>reset</code> (for the tab's Reset button)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The list of options is cleared at the start of every Play, so a <code>RuntimeInitializeOnLoadMethod</code> like the one above registers it once per run, with or without domain reload. If you add an option from a component's <code>OnEnable</code> instead, check <code>ClientOptions.All.Contains(option)</code> first, as the kit's control modes do, or it is added again on every map. See <a href="../devkit/menus-and-settings-options.html">Menus and settings options</a> and <a href="../devkit/domain-reload.html">Domain reload</a>.</p>
+<h2 id="restyling-the-windows"><a class="anchor" href="#restyling-the-windows" aria-hidden="true">#</a>Restyling the windows</h2>
+<p>The game menu (<code>GameMenu</code>) and the Settings window (<code>SettingsWindow</code>) are in the HUD prefab like the other windows. The Settings window has a <em>Tab Template</em> copied for each page, tab colors (<em>Tab On</em>, <em>Tab Off</em>), and three row templates: a Label, a Hint and a Value dropdown; a Label, a Hint, a Value slider and an Amount label; a Label, a Hint and a Value toggle. Keep those child names when you restyle them. See <a href="hud-and-windows.html#step-by-step-restyle-the-hud">HUD and windows</a>.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>Settings work the same in both. <strong>Sign out</strong> appears only in MMO, and <strong>Change character</strong> reads <strong>Save and leave</strong> in single player.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Graphics settings changed my project's URP asset.</strong> They don't: the game works on a copy. If quality looks wrong in the editor after Play, check the project's quality level in Project Settings.</li>
+<li><strong>A sound ignores the volume sliders.</strong> It is played with a plain <code>AudioSource</code> or <code>PlayClipAtPoint</code>. Use <code>GameAudio</code>, or add a <code>SoundChannelSource</code>.</li>
+<li><strong>My option shows twice.</strong> It is added from a component that runs on every map. Check <code>ClientOptions.All.Contains</code> before adding it.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="hud-and-windows.html">HUD and windows</a></li>
+<li><a href="control-modes.html">Control modes</a></li>
+<li><a href="touch-controls.html">Touch controls</a></li>
+<li><a href="../editor/game-settings.html">Game Settings</a></li>
+<li><a href="../devkit/menus-and-settings-options.html">Menus and settings options</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="hud-and-windows.html"><span>Anterior</span>HUD and windows</a><a class="next" href="../servers/architecture.html"><span>Siguiente</span>Architecture</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fgameplay%2Fplayer-settings.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#game-menu">Game menu</a></li><li class="l2"><a href="#the-settings-window">The Settings window</a></li><li class="l3"><a href="#where-settings-are-saved">Where settings are saved</a></li><li class="l3"><a href="#graphics">Graphics</a></li><li class="l3"><a href="#audio">Audio</a></li><li class="l3"><a href="#interface">Interface</a></li><li class="l3"><a href="#controls">Controls</a></li><li class="l2"><a href="#sounds-and-music">Sounds and music</a></li><li class="l3"><a href="#music">Music</a></li><li class="l3"><a href="#sound-effects">Sound effects</a></li><li class="l3"><a href="#ambient-sounds-in-a-scene">Ambient sounds in a scene</a></li><li class="l2"><a href="#step-by-step-add-an-option-of-your-own">Step by step: add an option of your own</a></li><li class="l2"><a href="#restyling-the-windows">Restyling the windows</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

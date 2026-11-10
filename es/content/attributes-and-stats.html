@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Attributes and stats · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/attributes-and-stats.html">English</option><option value="attributes-and-stats.html" selected>Español</option><option value="../../pt/content/attributes-and-stats.html">Português</option><option value="../../zh/content/attributes-and-stats.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>Contenido del juego</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html" class="on" aria-current="page">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Contenido del juego</div><h1>Attributes and stats</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>Attributes are the points players spend (Strength, Intelligence and the like); stats are the numbers combat reads (health, power, critical chance, move speed). This page lists every stat, explains attributes and damage elements, and shows step by step how the kit adds class, attributes, gear and buffs into a character's final numbers, always in whole numbers.</p>
+<h2 id="the-pieces"><a class="anchor" href="#the-pieces" aria-hidden="true">#</a>The pieces</h2>
+<ul>
+<li><strong>Stats</strong> are a fixed set of numbers every character has: health, mana, regeneration, power, critical hits, healing, attack speed, move speed, carry weight, experience gain and loot chance.</li>
+<li><strong>Damage elements</strong> are kinds of damage, like Fire or Water. Each character has, per element, a flat damage bonus, a flat resistance and a percent resistance.</li>
+<li><strong>Attributes</strong> are assets. Each point of an attribute adds a bundle of stats, element damage and resistances. Classes give attribute points per level, players spend more, and gear can add some.</li>
+<li><strong>Modifiers</strong> (<code>StatModifiers</code>) are that bundle. Class levels, attribute points, gear, sets, gems, statuses, buffs and passive skills all use the same bundle, so any of them can raise any stat, element, attribute or skill rank.</li>
+</ul>
+<h2 id="the-stats"><a class="anchor" href="#the-stats" aria-hidden="true">#</a>The stats</h2>
+<p>The stats live in <code>CharacterStats</code>. Percent stats are stored as fractions: <code>0.05</code> is 5%.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Stat (id)</th>
+<th>Shown as</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health (<code>maxHealth</code>)</td>
+<td>Number</td>
+<td>Maximum health.</td>
+</tr>
+<tr>
+<td>Mana (<code>maxMana</code>)</td>
+<td>Number</td>
+<td>Maximum mana, spent by skills.</td>
+</tr>
+<tr>
+<td>Health regen (<code>healthRegen</code>)</td>
+<td>Per second</td>
+<td>Health recovered each second. See <a href="../gameplay/recovery-and-death.html">Recovery and death</a> for how it behaves in and out of combat.</td>
+</tr>
+<tr>
+<td>Mana regen (<code>manaRegen</code>)</td>
+<td>Per second</td>
+<td>Mana recovered each second.</td>
+</tr>
+<tr>
+<td>Power (<code>power</code>)</td>
+<td>Percent</td>
+<td>More damage of every element. <code>0.1</code> is +10% to every hit, including damage over time.</td>
+</tr>
+<tr>
+<td>Critical (<code>critChance</code>)</td>
+<td>Percent</td>
+<td>Chance that a hit is critical. <code>0.05</code> is 5%.</td>
+</tr>
+<tr>
+<td>Crit damage (<code>critDamage</code>)</td>
+<td>Percent</td>
+<td>Extra damage on a critical hit. <code>0.5</code> means a critical deals 150%.</td>
+</tr>
+<tr>
+<td>Heals (<code>healing</code>)</td>
+<td>Number</td>
+<td>Added to every heal this character casts, before the heal bonus.</td>
+</tr>
+<tr>
+<td>Heal bonus (<code>healingBonus</code>)</td>
+<td>Percent</td>
+<td>More healing on every heal this character casts. <code>0.1</code> is +10%.</td>
+</tr>
+<tr>
+<td>Attack speed (<code>attackSpeed</code>)</td>
+<td>Percent</td>
+<td>Multiplies the weapon's attacks per second. <code>0.1</code> is +10%.</td>
+</tr>
+<tr>
+<td>Move speed (<code>moveSpeed</code>)</td>
+<td>Number</td>
+<td>Meters per second.</td>
+</tr>
+<tr>
+<td>Carry weight (<code>carryWeight</code>)</td>
+<td>Number</td>
+<td>Extra weight the character can carry when bags are limited by weight.</td>
+</tr>
+<tr>
+<td>XP gain (<code>experienceGain</code>)</td>
+<td>Percent</td>
+<td>More experience from kills and quests. <code>0.1</code> is +10%.</td>
+</tr>
+<tr>
+<td>Loot chance (<code>lootChance</code>)</td>
+<td>Percent</td>
+<td>Better odds for every item a kill can drop. <code>0.1</code> is +10% of each chance, so a 20% drop becomes 22%.</td>
+</tr>
+</tbody>
+</table></div>
+<p>There are no armor, physical attack or magic attack stats. Defense comes from per element resistances, and offense from weapon rolls, element damage and power. How a hit is worked out is on <a href="../gameplay/combat.html">Combat</a>.</p>
+<h3 id="stat-names-and-icons"><a class="anchor" href="#stat-names-and-icons" aria-hidden="true">#</a>Stat names and icons</h3>
+<p>The names above are the defaults. To rename a stat or give it an icon, open <strong>Game Database &gt; Settings</strong> and add an entry to <em>Stat Display</em> (<code>statDisplay</code>):</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Stat</em> (<code>stat</code>)</td>
+<td>The stat's id, like <code>power</code> or <code>maxHealth</code>.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Label</em> (<code>label</code>)</td>
+<td>The name players see. Empty keeps the built-in name.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Icon</em> (<code>icon</code>)</td>
+<td>Shown in the Character window, tooltips and item effects.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Character window (<code>C</code>) groups the stats in sections: health and mana; power, critical and attack speed; heals; movement and carry weight; experience and loot.</p>
+<h2 id="damage-elements"><a class="anchor" href="#damage-elements" aria-hidden="true">#</a>Damage elements</h2>
+<p>Elements are in <strong>Game Database &gt; Characters &gt; Elements</strong>. Create one with <strong>Create &gt; KitARPG &gt; Damage Element</strong>. The sample has Neutral, Earth, Fire, Water and Air.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em>, <em>Display Name</em>, <em>Description</em>, <em>Icon</em></td>
+<td>As for every game data asset.</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Color</em> (<code>color</code>)</td>
+<td>Color of damage numbers and tooltip lines of this element. Also tints effects marked <em>Tint</em>.</td>
+<td>White</td>
+</tr>
+<tr>
+<td><em>Max Resistance</em> (<code>maxResistance</code>)</td>
+<td>Highest percent resistance that counts against this element, from 0 to 1. <code>0.5</code> means a hit of this element is never cut by more than half, however much resistance the defender stacks.</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td><em>Hit Effect</em> (<code>hitEffect</code>)</td>
+<td>Effect on whoever takes a hit of this element, unless the skill or weapon has its own.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>In <strong>Game Database &gt; Settings</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Elements</em> (<code>elements</code>)</td>
+<td>The elements, in the order the Character window lists them.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Default Element</em> (<code>defaultElement</code>)</td>
+<td>Used wherever no element is set: a weapon roll, a damage bonus or a resistance with an empty element counts as this one. Empty uses the first in the list.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Default Hit Effect</em> (<code>defaultHitEffect</code>)</td>
+<td>Effect on whoever is hit when nothing else gives one.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>For each element, a character has three numbers:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Number</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Damage</td>
+<td>Added to every hit of this element the character deals, before power.</td>
+</tr>
+<tr>
+<td>Resistance</td>
+<td>Taken off every hit of this element the character receives.</td>
+</tr>
+<tr>
+<td>Resistance %</td>
+<td>Share of each hit of this element ignored, up to the element's <em>Max Resistance</em>.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="attributes"><a class="anchor" href="#attributes" aria-hidden="true">#</a>Attributes</h2>
+<p>Attributes are in <strong>Game Database &gt; Characters &gt; Attributes</strong>. Create one with <strong>Create &gt; KitARPG &gt; Attribute</strong>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em>, <em>Display Name</em>, <em>Description</em>, <em>Icon</em></td>
+<td>As for every game data asset. The id is what saved characters store their spent points under.</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Per Point</em> (<code>perPoint</code>)</td>
+<td>What one point adds: a full modifier bundle (see below). Its <em>Attributes</em> list is ignored here: an attribute can't give points of another attribute.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Max Spent</em> (<code>maxSpent</code>)</td>
+<td>Most points a player can spend in this attribute. Points from the class and from gear don't count toward it. <code>0</code> means no limit.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>The sample has five attributes:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Attribute (id)</th>
+<th>One point gives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vitality (<code>vitality</code>)</td>
+<td>+10 health, +0.2 health regen</td>
+</tr>
+<tr>
+<td>Strength (<code>strength</code>)</td>
+<td>+5 carry weight, +0.5 Earth damage, +0.5 Neutral damage</td>
+</tr>
+<tr>
+<td>Intelligence (<code>intelligence</code>)</td>
+<td>+4 mana, +0.08 mana regen, +0.5 heals, +0.2% XP gain, +0.5 Fire damage</td>
+</tr>
+<tr>
+<td>Luck (<code>luck</code>)</td>
+<td>+0.2% critical, +0.5% loot chance, +0.5 Water damage</td>
+</tr>
+<tr>
+<td>Agility (<code>dexterity</code>)</td>
+<td>+0.6% attack speed, +0.5 Air damage</td>
+</tr>
+</tbody>
+</table></div>
+<p>Agility keeps the id <code>dexterity</code> from when it was called Dexterity, so characters saved before the rename keep their points.</p>
+<p>Fractional values per point are fine. They add up over all points before rounding (see <a href="#whole-numbers">whole numbers</a>), so 7 points of Vitality give <code>0.2 × 7 = 1.4</code>, which counts as 1 health per second.</p>
+<h3 id="spending-points"><a class="anchor" href="#spending-points" aria-hidden="true">#</a>Spending points</h3>
+<p>Players earn <em>Points Per Level</em> attribute points for each level after the first (set on the <a href="classes.html#points-per-level">class</a>). In the Character window (<code>C</code>):</p>
+<ul>
+<li><strong>+</strong> next to an attribute adds one pending point. <code>Shift</code> + <strong>+</strong> adds all that fit.</li>
+<li>Clicking the attribute opens an amount picker with <strong>−</strong>, <strong>+</strong> and <strong>MAX</strong>. What you type is kept between 0 and what fits (free points not already pending elsewhere, and the attribute's <em>Max Spent</em>).</li>
+<li>Pending points show in green on the total, and <strong>Points left</strong> goes down.</li>
+<li>The button turns into <strong>CONFIRM n</strong>. Only then are the points sent to the server. <strong>UNDO</strong>, or closing the window, drops the pending points.</li>
+</ul>
+<p>The server checks every request: the attribute is in the database, the player has the free points, and <em>Max Spent</em> is not passed.</p>
+<p>Spent points are permanent. They come back only through a reset: the <strong>Reset Attributes</strong> game action (for quests and dialogues; the sample's quest <em>Second Thoughts</em> gives one free reset) or a consumable with the <strong>Reset Attributes</strong> item effect (the sample's <em>Scroll of Second Thoughts</em>). See <a href="items.html#item-effects">Item effects</a>.</p>
+<h3 id="the-modifier-bundle"><a class="anchor" href="#the-modifier-bundle" aria-hidden="true">#</a>The modifier bundle</h3>
+<p>Every source of stats uses this bundle (<code>StatModifiers</code>):</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Stats</em> (<code>stats</code>)</td>
+<td>Flat amounts added to stats. Percent stats are written as fractions (<code>0.05</code> for 5%).</td>
+<td>All 0</td>
+</tr>
+<tr>
+<td><em>Stats Percent</em> (<code>statsPercent</code>)</td>
+<td>Percent of each stat's total, as fractions. <code>0.1</code> on Health is +10% of total health. <code>-0.4</code> on Move Speed is 40% slower.</td>
+<td>All 0</td>
+</tr>
+<tr>
+<td><em>Damage</em> (<code>damage</code>)</td>
+<td>Flat damage added to every hit of an element. List of element and amount; an empty element is the default element.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Resistance</em> (<code>resistance</code>)</td>
+<td>Flat damage taken off every hit of an element.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Resistance Percent</em> (<code>resistancePercent</code>)</td>
+<td>Share of every hit of an element ignored. <code>0.1</code> is 10%.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Attributes</em> (<code>attributes</code>)</td>
+<td>Points added to attributes. Ignored on an attribute's <em>Per Point</em>.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Skills</em> (<code>skills</code>)</td>
+<td>Ranks added to specific skills the character has learned, while the source counts.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>All Skills</em> (<code>allSkills</code>)</td>
+<td>Ranks added to every skill the character has learned.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Skill ranks from gear only raise skills the character already knows; they never teach a new one. Learning and raising with points still uses the learned rank. See <a href="skills.html#ranks-from-gear-and-effects">Skill ranks from gear</a>.</p>
+<h2 id="whole-numbers"><a class="anchor" href="#whole-numbers" aria-hidden="true">#</a>Whole numbers</h2>
+<p>Every bonus in the kit counts in whole numbers, and every percent in whole percent points. A piece of gear gives +7 health, never +7.5, and +3% critical, never +3.5%.</p>
+<ul>
+<li>Rounding goes to the nearest whole number or whole percent; halves go away from zero (<code>2.5</code> becomes <code>3</code>, <code>-2.5</code> becomes <code>-3</code>).</li>
+<li>Each source is rounded on its own before it is added. An attribute counts as one source: its <em>Per Point</em> times the points, then rounded. So 3 points of Intelligence at <code>0.5</code> heals each give <code>1.5</code>, which counts as 2.</li>
+<li>Fields that are always percents (power, critical, crit damage, heal bonus, attack speed, XP gain, loot chance) round to a whole percent even in <em>Stats</em>. Luck at 0.2% critical per point: 12 points give 2.4%, which counts as 2%.</li>
+<li>The class's base stats are the only exception: they can keep decimals, like a walk speed of 3.5 meters per second. The final totals are whole again after the percents, except move speed, which keeps its decimals.</li>
+<li>Tooltips show bonuses already rounded, even if the asset has decimals.</li>
+</ul>
+<div class="callout tip"><div class="callout-title">Consejo</div><p>Give speed bonuses as a percent (<em>Stats Percent</em> &gt; <em>Move Speed</em>), not as a flat amount. A flat +1 meter per second is a huge jump, and anything smaller rounds to 0.</p>
+</div>
+<h2 id="how-stats-are-computed"><a class="anchor" href="#how-stats-are-computed" aria-hidden="true">#</a>How stats are computed</h2>
+<p>The server works out a character's stats whenever something changes them: entering a map, leveling up, spending or resetting points, changing gear, a buff landing or ending, a passive skill being learned. The rules are in <code>StatFormula</code>, which you can replace in code (see <a href="../devkit/formulas.html">Formulas</a>). The default order is fixed:</p>
+<ol>
+<li><strong>Class attribute points.</strong> For each entry in the class's <em>Attributes</em>, the amount at the character's level, rounded.</li>
+<li><strong>Spent points.</strong> The points the player spent, per attribute.</li>
+<li><strong>Attribute points from sources.</strong> The <em>Attributes</em> list of every source: worn gear (with its rolled values and upgrade level), gems in that gear, set bonuses reached, statuses and buffs on the character, and passive skills.</li>
+<li><strong>Class stats.</strong> The class's <em>Base Stats</em> plus <em>Stats Per Level</em> × (level − 1). These may keep decimals.</li>
+<li><strong>Attributes.</strong> For each attribute, its <em>Per Point</em> times its total points from steps 1 to 3, rounded as one source.</li>
+<li><strong>Sources.</strong> Every source's flat stats, element damage, resistances and skill ranks, each rounded on its own. Percent bonuses from every source are added together.</li>
+<li><strong>Percents.</strong> Each stat is grown by the sum of its percent bonuses: <code>total × (1 + percent)</code>. Then every stat is rounded to a whole number or whole percent, except move speed.</li>
+</ol>
+<p>Attributes come first because they add stats: a ring with +5 Strength must also give the damage and carry weight of those 5 points.</p>
+<p>Health and mana maximums are the rounded totals (health at least 1). Current health and mana stay where they were, cut down to the new maximum if it shrank.</p>
+<h3 id="a-worked-example"><a class="anchor" href="#a-worked-example" aria-hidden="true">#</a>A worked example</h3>
+<p>A level 10 Warrior with 10 points spent in Strength, wearing a chest piece whose copy rolled +6 Vitality and +30 health, and under War Cry (+15% power). For the sake of the example nothing else is worn.</p>
+<ol>
+<li>Class points at level 10: Vitality <code>7 + 2 × 9 = 25</code>, Strength <code>8 + 2 × 9 = 26</code>, Intelligence <code>2 + 0.5 × 9 = 6.5</code>, rounded to <code>7</code>, Luck <code>3 + 0.5 × 9 = 7.5</code>, rounded to <code>8</code>, Agility <code>4 + 1 × 9 = 13</code>.</li>
+<li>Spent points: Strength <code>26 + 10 = 36</code>.</li>
+<li>Attribute points from sources: the chest piece gives +6 Vitality, so Vitality is <code>25 + 6 = 31</code>.</li>
+<li>Class stats: health <code>90 + 14 × 9 = 216</code>, mana <code>20 + 2 × 9 = 38</code>, move speed <code>3.5</code>, crit damage <code>0.5</code>.</li>
+<li>Attributes, each rounded as one source:
+<ul>
+<li>Vitality 31: health <code>+310</code>, health regen <code>0.2 × 31 = 6.2</code>, counted as <code>6</code>.</li>
+<li>Strength 36: carry weight <code>+180</code>, Earth damage <code>+18</code>, Neutral damage <code>+18</code>.</li>
+<li>Intelligence 7: mana <code>+28</code>, mana regen <code>0.56</code>, counted as <code>1</code>, heals <code>3.5</code>, counted as <code>4</code>, XP gain <code>1.4%</code>, counted as <code>1%</code>, Fire damage <code>3.5</code>, counted as <code>4</code>.</li>
+<li>Luck 8: critical <code>1.6%</code>, counted as <code>2%</code>, loot chance <code>4%</code>, Water damage <code>4</code>.</li>
+<li>Agility 13: attack speed <code>7.8%</code>, counted as <code>8%</code>, Air damage <code>6.5</code>, counted as <code>7</code>.</li>
+</ul>
+</li>
+<li>Sources: the chest piece adds +30 health; War Cry adds +15% power (it is a flat amount on a percent stat, so it adds 0.15 to power).</li>
+<li>Percents: none of the sources has a <em>Stats Percent</em> bonus, so nothing grows. Health ends at <code>216 + 310 + 30 = 556</code>, mana at <code>38 + 28 = 66</code>, power at 15%, critical at 2%, crit damage at 50%.</li>
+</ol>
+<p>If the same character also wore a set bonus of +8% health (<em>Stats Percent</em>), step 7 would make health <code>556 × 1.08 = 600.48</code>, rounded to <code>600</code>.</p>
+<p>The Character window shows the result: attributes with their totals, the stats in sections, and a table of damage, resistance and resistance percent per element.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The rules are the same in both modes and only run on the server: the map server in MMO, the game itself in single player. The client never computes its own stats. After each recalculation the server sends the owner the final stats and the total of each attribute; other players only see health bars.</p>
+<p>Characters save only the points the player spent, as a list of attribute id and amount: in the <code>Attributes</code> column of the database in MMO (<code>jsonb</code> in PostgreSQL), inside the character's JSON in single player. Class points and gear bonuses are never saved; they are worked out again on load. So rebalancing a class or an attribute changes every existing character at once.</p>
+<p>In MMO, Login creates new characters without Unity, so it reads each class's level 1 health and mana from <code>gamedata.json</code>. Export it again after changing base stats (<strong>Play &amp; Servers</strong> does it when starting the services; <strong>KitARPG &gt; Export Game Data for Services</strong> for builds).</p>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<ul>
+<li>Give each attribute one clear job and one element. Players understand &quot;Intelligence is fire and mana&quot; at once.</li>
+<li>Keep <em>Max Spent</em> at 0 unless you want hard caps; caps make some builds impossible.</li>
+<li>Element resistances are strong because they stack with percent resistance. Keep <em>Max Resistance</em> at 0.5 or lower for elements players will fight a lot.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>A bonus of 0.4 does nothing.</strong> It rounds to 0. Use a whole number, or a bigger percent.</li>
+<li><strong>Attack speed of 10 makes attacks absurdly fast.</strong> Percent stats are fractions in <em>Stats</em>: 10% is <code>0.1</code>.</li>
+<li><strong>An attribute was renamed and characters lost their points.</strong> The id changed. Put the old id back; you can rename the <em>Display Name</em> freely.</li>
+<li><strong>Gear raises a skill the character doesn't know, and nothing happens.</strong> Skill ranks from gear only apply to learned skills.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="classes.html">Classes</a></li>
+<li><a href="equipment.html">Equipment</a></li>
+<li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li>
+<li><a href="statuses-and-buffs.html">Statuses and buffs</a></li>
+<li><a href="../gameplay/combat.html">Combat</a></li>
+<li><a href="../devkit/formulas.html">Formulas</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="classes.html"><span>Anterior</span>Classes</a><a class="next" href="player-models.html"><span>Siguiente</span>Player models</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fcontent%2Fattributes-and-stats.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#the-pieces">The pieces</a></li><li class="l2"><a href="#the-stats">The stats</a></li><li class="l3"><a href="#stat-names-and-icons">Stat names and icons</a></li><li class="l2"><a href="#damage-elements">Damage elements</a></li><li class="l2"><a href="#attributes">Attributes</a></li><li class="l3"><a href="#spending-points">Spending points</a></li><li class="l3"><a href="#the-modifier-bundle">The modifier bundle</a></li><li class="l2"><a href="#whole-numbers">Whole numbers</a></li><li class="l2"><a href="#how-stats-are-computed">How stats are computed</a></li><li class="l3"><a href="#a-worked-example">A worked example</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

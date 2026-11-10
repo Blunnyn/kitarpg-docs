@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Templates · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/templates.html">English</option><option value="../../es/devkit/templates.html">Español</option><option value="../../pt/devkit/templates.html">Português</option><option value="templates.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>开发套件</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html" class="on" aria-current="page">Templates</a></li><li><a href="skill-effects.html">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">开发套件</div><h1>Templates</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>Every script template under <strong>Create &gt; KitARPG &gt; Scripts</strong>: what it makes, which assembly folder it goes in, its full code with notes, and what to do next.</p>
+<h2 id="how-templates-work"><a class="anchor" href="#how-templates-work" aria-hidden="true">#</a>How templates work</h2>
+<p>Right click a folder in the Project window and open <strong>Create &gt; KitARPG &gt; Scripts</strong>. The first three entries make assembly definitions; the rest make a script from a template, ask for its file name and use that name as the class name. The class is wrapped in the root namespace of the assembly it lands in (<code>Game</code> for the assemblies made from this menu).</p>
+<p>Templates are plain text files in <code>Assets/Blunnyn/KitARPG/Editor/DevKit/Templates/*.cs.txt</code>. The kit checks that all of them compile on every release by writing each into a test project (<code>DevKitTemplates.WriteAll</code>).</p>
+<div class="callout tip"><div class="callout-title">提示</div><p>Make the script inside the right folder. A template that uses <code>KitARPG.Server</code> only compiles under <code>Game.Server</code>, and the editor templates only under <code>Game.Editor</code>. If you get a &quot;type or namespace not found&quot; error right after creating a script, it is almost always in the wrong folder.</p>
+</div>
+<h2 id="all-templates"><a class="anchor" href="#all-templates" aria-hidden="true">#</a>All templates</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Menu entry</th>
+<th>Default file</th>
+<th>Assembly folder</th>
+<th>Makes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game Assembly</td>
+<td><code>Game.asmdef</code></td>
+<td>your game folder</td>
+<td>The assembly for code in every build</td>
+</tr>
+<tr>
+<td>Game Editor Assembly</td>
+<td><code>Game.Editor.asmdef</code></td>
+<td><code>Editor</code> subfolder</td>
+<td>The assembly for editor tools</td>
+</tr>
+<tr>
+<td>Game Server Assembly</td>
+<td><code>Game.Server.asmdef</code></td>
+<td><code>Server</code> subfolder</td>
+<td>The assembly for server-only code</td>
+</tr>
+<tr>
+<td>Skill Effect</td>
+<td><code>NewSkillEffect.cs</code></td>
+<td>Game</td>
+<td>A <code>SkillEffect</code> subclass</td>
+</tr>
+<tr>
+<td>Item Effect</td>
+<td><code>NewItemEffect.cs</code></td>
+<td>Game</td>
+<td>An <code>ItemEffect</code> subclass</td>
+</tr>
+<tr>
+<td>Condition</td>
+<td><code>NewCondition.cs</code></td>
+<td>Game</td>
+<td>A <code>Condition</code> subclass</td>
+</tr>
+<tr>
+<td>Game Action</td>
+<td><code>NewAction.cs</code></td>
+<td>Game</td>
+<td>A <code>GameAction</code> subclass</td>
+</tr>
+<tr>
+<td>Quest Objective</td>
+<td><code>NewObjective.cs</code></td>
+<td>Game</td>
+<td>A <code>QuestObjective</code> subclass and a counter</td>
+</tr>
+<tr>
+<td>NPC Option</td>
+<td><code>NewNpcOption.cs</code></td>
+<td>Game</td>
+<td>An <code>NpcOption</code> subclass</td>
+</tr>
+<tr>
+<td>Player System</td>
+<td><code>PlayerNewSystem.cs</code></td>
+<td>Game</td>
+<td>A <code>NetworkBehaviour</code> for the player prefab</td>
+</tr>
+<tr>
+<td>Network Message</td>
+<td><code>NewMessage.cs</code></td>
+<td>Game</td>
+<td>A request and a reply message with handlers</td>
+</tr>
+<tr>
+<td>GM Command</td>
+<td><code>MyCommands.cs</code></td>
+<td>Game.Server</td>
+<td>A slash command</td>
+</tr>
+<tr>
+<td>Game Log Listener</td>
+<td><code>MyLogListener.cs</code></td>
+<td>Game</td>
+<td>A listener for every game log line</td>
+</tr>
+<tr>
+<td>Combat Formula</td>
+<td><code>MyCombatFormula.cs</code></td>
+<td>Game</td>
+<td>A <code>CombatFormula</code> subclass installed at startup</td>
+</tr>
+<tr>
+<td>Stat Formula</td>
+<td><code>MyStatFormula.cs</code></td>
+<td>Game</td>
+<td>A <code>StatFormula</code> subclass installed at startup</td>
+</tr>
+<tr>
+<td>Saved Player Data</td>
+<td><code>PlayerCollection.cs</code></td>
+<td>Game</td>
+<td>A component with saved state (<code>IPlayerSave</code>)</td>
+</tr>
+<tr>
+<td>Player System Override</td>
+<td><code>MyPlayerMail.cs</code></td>
+<td>Game</td>
+<td>A subclass of a kit player system</td>
+</tr>
+<tr>
+<td>Item Menu Line</td>
+<td><code>MyItemMenuLines.cs</code></td>
+<td>Game</td>
+<td>A line in the item right-click menu</td>
+</tr>
+<tr>
+<td>Player Menu Line</td>
+<td><code>MyPlayerMenuLines.cs</code></td>
+<td>Game</td>
+<td>A line in the player menu</td>
+</tr>
+<tr>
+<td>Settings Option</td>
+<td><code>MySettings.cs</code></td>
+<td>Game</td>
+<td>An option in the Settings window</td>
+</tr>
+<tr>
+<td>Validator Check (Editor)</td>
+<td><code>MyValidatorCheck.cs</code></td>
+<td>Game.Editor</td>
+<td>A check for Project Check and builds</td>
+</tr>
+<tr>
+<td>KitARPG Window Page (Editor)</td>
+<td><code>MyGamePage.cs</code></td>
+<td>Game.Editor</td>
+<td>A page in the KitARPG window</td>
+</tr>
+<tr>
+<td>Kit Update (Editor)</td>
+<td><code>MyGameUpdate.cs</code></td>
+<td>Game.Editor</td>
+<td>An update shown in Overview</td>
+</tr>
+</tbody>
+</table></div>
+<p>The code below shows each template as it comes out with its default file name in the <code>Game</code> assembly. A few comments were added here to explain lines the template leaves bare; the code is the same.</p>
+<h2 id="assemblies"><a class="anchor" href="#assemblies" aria-hidden="true">#</a>Assemblies</h2>
+<p><strong>Game Assembly</strong>, <strong>Game Editor Assembly</strong> and <strong>Game Server Assembly</strong> write an <code>.asmdef</code> file into the selected folder. Their exact contents and the rules for using them are on the <a href="assemblies.html">Assemblies</a> page. Make them first: every other template needs one of them.</p>
+<h2 id="skill-effect"><a class="anchor" href="#skill-effect" aria-hidden="true">#</a>Skill Effect</h2>
+<p>Makes a skill effect that shows in the effect list of every skill.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A skill effect. It shows up in the effect list of every skill once this compiles.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewSkillEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SkillEffect</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// A number that grows with the skill&#39;s rank: 10 at rank 1, +2 per rank.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// The short text in the skill editor&#39;s effect list.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;NewSkillEffect {amount.baseValue:0}&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// True lands it on enemies; false on the caster and allies.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Harmful</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Server only. Called once per target the skill reached.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Apply</span><span class="p">(</span><span class="n">SkillCast</span><span class="w"> </span><span class="n">cast</span><span class="p">,</span><span class="w"> </span><span class="n">IFighter</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">RoundToInt</span><span class="p">(</span><span class="n">amount</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">));</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Hit</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">skill</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="n">target</span><span class="p">.</span><span class="n">ServerDamage</span><span class="p">(</span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This deals a fixed amount and skips the damage formula (no element, power, resistances or criticals). For damage that follows the game's rules, build the hit with <code>GameInstance.Combat.Attack</code>, as shown on <a href="skill-effects.html">Skill effects</a>.</p>
+<p><strong>Next:</strong> open a skill in the Game Database, press <strong>+</strong> on <em>Effects</em> and pick <code>NewSkillEffect</code>.</p>
+<h2 id="item-effect"><a class="anchor" href="#item-effect" aria-hidden="true">#</a>Item Effect</h2>
+<p>Makes something a consumable does when used.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;What using an item does. Add it to a consumable&#39;s effects in the Game Database.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewItemEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemEffect</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">experience</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// The short text in the item editor and the default tooltip line.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;+{experience} XP&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Every effect of the item is checked before any runs; return why not, or null.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">ExperienceToNext</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;You&#39;re at the highest level&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Server only. The item is used up after this returns.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Use</span><span class="p">(</span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">ItemData</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">GainExperience</span><span class="p">(</span><span class="n">experience</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><strong>Next:</strong> open a Consumable in the Game Database, press <strong>+</strong> on <em>Effects</em> and pick <code>NewItemEffect</code>. See <a href="item-effects.html">Item effects</a>.</p>
+<h2 id="condition"><a class="anchor" href="#condition" aria-hidden="true">#</a>Condition</h2>
+<p>Makes a rule that quests, NPC options, greetings and dialogue lines can require.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A rule quests, dialog lines and NPC options can ask for. Lists of conditions show it on their own.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewCondition</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Condition</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.mark&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">atLeast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Shown when it isn&#39;t met and the designer left Fail Text empty.</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Not yet&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Runs on the server and on the owner&#39;s client, so the client can show what is locked.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Met</span><span class="p">(</span><span class="n">IPlayerFacts</span><span class="w"> </span><span class="n">facts</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">facts</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">atLeast</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><strong>Next:</strong> add it to any <em>Conditions</em> list. See <a href="conditions-and-actions-in-code.html">Conditions and actions in code</a>.</p>
+<h2 id="game-action"><a class="anchor" href="#game-action" aria-hidden="true">#</a>Game Action</h2>
+<p>Makes something done to a player from a dialogue line, a quest's accept or complete list, or any list of actions in your own data.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Something done to a player from a dialog line or a quest reward. Server only.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewAction</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">GameAction</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.mark&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Every action of a list is checked before any runs; return why not, or null.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">IPlayerActor</span><span class="w"> </span><span class="n">actor</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">add</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><strong>Next:</strong> add it to a dialogue line's <em>Actions</em>, or a quest's <em>On Accept</em> or <em>On Complete</em>.</p>
+<h2 id="quest-objective"><a class="anchor" href="#quest-objective" aria-hidden="true">#</a>Quest Objective</h2>
+<p>Makes a new kind of quest goal plus a static class that advances it. Here every level up counts.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A quest objective. Advance it from your own code with PlayerQuests.ServerAdvance.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewObjective</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QuestObjective</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultText</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Do the thing&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// How many times it has to happen.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Required</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Counts the objective. Here every level up does; hook whatever event your game has.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewObjectiveCounter</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">            </span><span class="n">PlayerCharacter</span><span class="p">.</span><span class="n">ServerLeveledUp</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnLevel</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnLevel</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerQuests</span><span class="w"> </span><span class="n">quests</span><span class="p">))</span><span class="w"> </span><span class="n">quests</span><span class="p">.</span><span class="n">ServerAdvance</span><span class="o">&lt;</span><span class="n">NewObjective</span><span class="o">&gt;</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<div class="callout warning"><div class="callout-title">警告</div><p>The counter subscribes in <code>SubsystemRegistration</code>, the same moment <code>PlayerCharacter</code> clears <code>ServerLeveledUp</code>. Unity doesn't define the order between those methods, so with domain reload off the subscription can be wiped. Change <code>SubsystemRegistration</code> to <code>AfterAssembliesLoaded</code> in your copy. See <a href="domain-reload.html">Play without domain reload</a>.</p>
+</div>
+<p><strong>Next:</strong> add the objective to a quest's <em>Objectives</em>. See <a href="quest-objectives.html">Quest objectives</a>.</p>
+<h2 id="npc-option"><a class="anchor" href="#npc-option" aria-hidden="true">#</a>NPC Option</h2>
+<p>Makes a button in an NPC's dialogue. This one heals the player for gold.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A button in an NPC&#39;s dialog. Add it to the NPC&#39;s options in the inspector.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewNpcOption</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NpcOption</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// The button text when the designer leaves Label empty.</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DefaultLabel</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Bless me&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Server only. False hides it from this player.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">AvailableTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Server only. Return a message to show the player, or null.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">Npc</span><span class="w"> </span><span class="n">npc</span><span class="p">,</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerInventory</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inventory</span><span class="p">.</span><span class="n">gold</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;That costs {price} {GameInstance.Database.GoldName}.&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">inventory</span><span class="p">.</span><span class="n">AddGold</span><span class="p">(</span><span class="o">-</span><span class="n">price</span><span class="p">);</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="n">ServerHeal</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">maxHealth</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">);</span>
+<span class="w">            </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;my_game.blessing&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">gold</span><span class="p">:</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">detail</span><span class="p">:</span><span class="w"> </span><span class="n">npc</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<div class="callout note"><div class="callout-title">注意</div><p>The string <code>Run</code> returns goes to <code>PlayerInteraction.ErrorReceived</code> on the owner's client. Of the kit's windows, only the shop window shows it, and only while it is open. To tell the player something from a dialogue, call <code>player.ServerAnnounce(text, color)</code> or <code>PlayerChat.Tell(text)</code> and return null. See <a href="npc-options.html">NPC options</a>.</p>
+</div>
+<p><strong>Next:</strong> select an NPC in the scene, press <strong>+</strong> on its <em>Options</em> and pick <code>NewNpcOption</code>.</p>
+<h2 id="player-system"><a class="anchor" href="#player-system" aria-hidden="true">#</a>Player System</h2>
+<p>Makes a <code>NetworkBehaviour</code> for the player: a synced value, a command the owner sends, a reply only the owner gets, and a static <code>Local</code> for the interface.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// A system of your own on the player. Add it to every player model prefab. The server decides,</span>
+<span class="w">    </span><span class="c1">/// the owner asks with commands; what it keeps between sessions goes in PlayerProgress flags.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[RequireComponent(typeof(PlayerCharacter))]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerNewSystem</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">SavedKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.points&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Synced from the server to clients; the hook runs on clients when it changes.</span>
+<span class="w">        </span><span class="na">[SyncVar(hook = nameof(OnPointsChanged))]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Owner&#39;s client: points changed.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Changed</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// The local player&#39;s copy, for windows.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">PlayerNewSystem</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Statics outlive Play when domain reload is off.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ResetStatics</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">;</span>
+<span class="w">        </span><span class="n">PlayerProgress</span><span class="w"> </span><span class="n">progress</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerCharacter</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="n">progress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">PlayerProgress</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// The character&#39;s flags are loaded before the player spawns, so they can be read here.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStartServer</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">progress</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">progress</span><span class="p">.</span><span class="n">Flag</span><span class="p">(</span><span class="n">SavedKey</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStartAuthority</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnStopAuthority</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="n">Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Owner. Asks the server for a point.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Earn</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">CmdEarn</span><span class="p">();</span>
+
+<span class="w">        </span><span class="na">[Command]</span>
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">CmdEarn</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Check everything here: the client only asks.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">IsDead</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">points</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">progress</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="n">progress</span><span class="p">.</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">SavedKey</span><span class="p">,</span><span class="w"> </span><span class="n">points</span><span class="p">);</span>
+<span class="w">            </span><span class="n">TargetTold</span><span class="p">(</span><span class="s">$&quot;You have {points} points.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="na">[TargetRpc]</span>
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">TargetTold</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">OnPointsChanged</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isOwned</span><span class="p">)</span><span class="w"> </span><span class="n">Changed</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<div class="callout warning"><div class="callout-title">警告</div><p>Every <code>[Command]</code> should spend from the connection's budget, or a modified client can call it as fast as its network allows. Start <code>CmdEarn</code> with <code>if (!CommandPacing.Allow(connectionToClient)) return;</code>. See <a href="player-systems.html">Player systems</a> and <a href="security-rules.html">Security rules</a>.</p>
+</div>
+<p><strong>Next:</strong> add the component to every player model prefab (Game Database &gt; Models). Its <code>points</code> value is saved as a character flag.</p>
+<h2 id="network-message"><a class="anchor" href="#network-message" aria-hidden="true">#</a>Network Message</h2>
+<p>Makes a client-to-server request, a server-to-client reply, and the handlers on both sides. Messages need no component on the player prefab.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Client to server. Messages need no component on the player prefab.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">NewMessageRequest</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Server to client.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">NewMessageReply</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkMessage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Registers the handlers on both sides as the network starts.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NewMessage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">KitNetworkManager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KitNetworkManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// Single player restarts its host on every map change, so this runs on each start.</span>
+<span class="w">            </span><span class="n">manager</span><span class="p">.</span><span class="n">ServerStarted</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkServer</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">NewMessageRequest</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnRequest</span><span class="p">);</span>
+<span class="w">            </span><span class="n">manager</span><span class="p">.</span><span class="n">ClientConnected</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">ReplaceHandler</span><span class="o">&lt;</span><span class="n">NewMessageReply</span><span class="o">&gt;</span><span class="p">(</span><span class="n">OnReply</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Client. Sends a request.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Ask</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NetworkClient</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NewMessageRequest</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="p">});</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnRequest</span><span class="p">(</span><span class="n">NetworkConnectionToClient</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">NewMessageRequest</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// The connection says who sent it; never trust a player id inside the message.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">conn</span><span class="p">.</span><span class="n">identity</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="n">conn</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NewMessageReply</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;{player.characterName} said {message.text}&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnReply</span><span class="p">(</span><span class="n">NewMessageReply</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<div class="callout warning"><div class="callout-title">警告</div><p>Add <code>if (!CommandPacing.Allow(conn)) return;</code> at the top of <code>OnRequest</code>, as the bounty example does. See <a href="network-messages.html">Network messages</a>.</p>
+</div>
+<h2 id="gm-command"><a class="anchor" href="#gm-command" aria-hidden="true">#</a>GM Command</h2>
+<p>Makes a slash command. Goes in the <strong>Game.Server</strong> folder.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Server</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// Slash commands of your own. /help lists them for the ranks that may use them. Keep this file in a</span>
+<span class="w">    </span><span class="c1">/// server-only assembly (references KitARPG.Server, define constraint UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER)</span>
+<span class="w">    </span><span class="c1">/// so client builds don&#39;t carry it.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCommands</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GmCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GmCommand</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;refresh&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GmRank</span><span class="p">.</span><span class="n">Moderator</span><span class="p">,</span><span class="w"> </span><span class="n">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;refresh [player]&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fills a player&#39;s health.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// The player named in the first word, or the one who typed it.</span>
+<span class="w">                    </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Target</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nobody by that name here.&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">target</span><span class="p">.</span><span class="n">ServerHeal</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">maxHealth</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">);</span>
+<span class="w">                    </span><span class="c1">// Shown to the player who typed it.</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Healed {target.characterName}.&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><strong>Next:</strong> type <code>/refresh</code> in the chat. See <a href="gm-commands-in-code.html">GM commands in code</a>.</p>
+<h2 id="game-log-listener"><a class="anchor" href="#game-log-listener" aria-hidden="true">#</a>Game Log Listener</h2>
+<p>Sees every game log line on the map server as it is written.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Central</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// Sees every game log line on the map server as it is written, to send some elsewhere: a chat</span>
+<span class="w">    </span><span class="c1">/// webhook for moderators, analytics. Lines already go to the database without this.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyLogListener</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// The kit clears its events in SubsystemRegistration, so hook in after that.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hook</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Written</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">OnLine</span><span class="p">;</span>
+<span class="w">            </span><span class="n">GameLog</span><span class="p">.</span><span class="n">Written</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">OnLine</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnLine</span><span class="p">(</span><span class="n">GameLogEntry</span><span class="w"> </span><span class="n">line</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LogKinds</span><span class="p">.</span><span class="n">Trade</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">gold</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">100000</span><span class="p">)</span>
+<span class="w">                </span><span class="n">Debug</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">$&quot;Big trade: {line.character} and {line.other}, {line.gold} gold. {line.detail}&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>GameLogEntry</code> fields: <code>time</code> (Unix milliseconds), <code>kind</code>, <code>accountId</code>, <code>characterId</code>, <code>character</code>, <code>otherId</code>, <code>other</code>, <code>itemId</code>, <code>amount</code>, <code>gold</code>, <code>detail</code>, <code>mapId</code>. Kinds the kit writes are constants on <code>LogKinds</code>. See <a href="events.html">Events</a>.</p>
+<h2 id="combat-formula"><a class="anchor" href="#combat-formula" aria-hidden="true">#</a>Combat Formula</h2>
+<p>Replaces the damage, healing, attack speed and experience rules.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Your own experience and damage rules. Set once, before anything fights.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCombatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CombatFormula</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Runs after the kit put its own formula back, before the first scene loads.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCombatFormula</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Override the virtual methods of CombatFormula you want to change, for example:</span>
+<span class="w">        </span><span class="c1">// public override long Experience(MonsterData monster, int playerLevel) =&gt; base.Experience(monster, playerLevel) * 2;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>See <a href="formulas.html">Formulas</a> for every method and examples.</p>
+<h2 id="stat-formula"><a class="anchor" href="#stat-formula" aria-hidden="true">#</a>Stat Formula</h2>
+<p>Replaces how class, level, attributes and gear add up to stats.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Characters</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Your own rules for how class, level, attributes and gear add up to stats.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyStatFormula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StatFormula</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Install</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyStatFormula</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Two attribute points per level instead of the class&#39;s own number.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">PointsEarned</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Start from the kit&#39;s sheet and change what you need. Stats are whole numbers.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">StatSheet</span><span class="w"> </span><span class="nf">Sheet</span><span class="p">(</span><span class="n">CharacterClass</span><span class="w"> </span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">AttributeAmount</span><span class="o">&gt;</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span>
+<span class="w">            </span><span class="n">GameDatabase</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">IStatSource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">base</span><span class="p">.</span><span class="n">Sheet</span><span class="p">(</span><span class="n">characterClass</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">spent</span><span class="p">,</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="n">sources</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="saved-player-data"><a class="anchor" href="#saved-player-data" aria-hidden="true">#</a>Saved Player Data</h2>
+<p>Makes a component that keeps its own state on the character, saved in single player and online, never sent to clients.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Characters</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Mirror</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// State of your own on a character, saved with it in single player and online. Add it to every</span>
+<span class="w">    </span><span class="c1">/// player model prefab. Only the server reads and writes it; clients never see the saved value.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[RequireComponent(typeof(PlayerCharacter))]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerCollection</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span><span class="p">,</span><span class="w"> </span><span class="n">IPlayerSave</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Prefix keys with your game&#39;s name so they never meet the kit&#39;s or another module&#39;s.</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_game.collection&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="na">[Serializable]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Saved</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">Saved</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Saved</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;What the owner&#39;s client sees. Sync only what the interface needs.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="na">[SyncVar]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">foundCount</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// As the character enters a map, before the player spawns.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerLoad</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">Saved</span><span class="o">&gt;</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">);</span>
+<span class="w">            </span><span class="n">foundCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">found</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Before every save.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteTo</span><span class="p">(</span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">CharacterState</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">PlayerData</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">saved</span><span class="p">))</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">$&quot;{player.characterName}: {Key} is too big to save.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">/// &lt;summary&gt;Server. Call it from your own game rules, never straight from a client&#39;s request.&lt;/summary&gt;</span>
+<span class="w">        </span><span class="na">[Server]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">ServerFind</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">found</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">saved</span><span class="p">.</span><span class="n">found</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="w">            </span><span class="n">foundCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saved</span><span class="p">.</span><span class="n">found</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>See <a href="saving-data.html">Saving data</a>.</p>
+<h2 id="player-system-override"><a class="anchor" href="#player-system-override" aria-hidden="true">#</a>Player System Override</h2>
+<p>Makes a subclass of one of the kit's player systems, here <code>PlayerMail</code>.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Shared.Central</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// Changes how one of the kit&#39;s player systems behaves, here the mail, without editing the kit.</span>
+<span class="w">    </span><span class="c1">/// On every player model prefab, remove the kit&#39;s component and add this one in its place</span>
+<span class="w">    </span><span class="c1">/// (Copy Component, then Paste Component Values, keeps the settings).</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyPlayerMail</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayerMail</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Server methods decide for every player; call base for whatever you keep.</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ServerAnnounce</span><span class="p">(</span><span class="n">MailList</span><span class="w"> </span><span class="n">list</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">base</span><span class="p">.</span><span class="n">ServerAnnounce</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Unity methods are protected virtual too.</span>
+<span class="w">        </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">base</span><span class="p">.</span><span class="n">Awake</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>See <a href="overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
+<h2 id="item-menu-line"><a class="anchor" href="#item-menu-line" aria-hidden="true">#</a>Item Menu Line</h2>
+<p>Adds a line to the menu that opens on right click over an item.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A line of your own in the menu that opens on right click over an item in the bag.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyItemMenuLines</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// After the kit filled its own lines, which it does again on every Play.</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ItemMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemMenuEntry</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inspect&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">InBag</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">Item</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">EquipmentData</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// The menu runs on the client: show things here, and ask the server for anything that changes the game.</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&quot;{t.Item.DisplayName} in slot {t.Slot}&quot;</span><span class="p">),</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="player-menu-line"><a class="anchor" href="#player-menu-line" aria-hidden="true">#</a>Player Menu Line</h2>
+<p>Adds a line to the menu that opens on another player, or on a name in the chat.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A line of your own in the menu that opens on another player or on a name in the chat.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyPlayerMenuLines</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PlayerMenu</span><span class="p">.</span><span class="n">Entries</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PlayerMenuEntry</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Wave&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// character is null when the player isn&#39;t on screen, only named in the chat.</span>
+<span class="w">                </span><span class="n">shows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">character</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">                </span><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ChatWindow</span><span class="p">.</span><span class="n">Instance</span><span class="o">?.</span><span class="n">Whisper</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">name</span><span class="p">),</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="settings-option"><a class="anchor" href="#settings-option" aria-hidden="true">#</a>Settings Option</h2>
+<p>Adds an option to the Settings window, kept on the player's computer.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Client</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// An option of your own in the Settings window. Kept on the player&#39;s computer and never sent</span>
+<span class="w">    </span><span class="c1">/// anywhere, so use it for how the game looks and sounds, not for anything the server decides.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MySettings</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyGame.ShowHints&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">ShowHints</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">get</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="na">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ToggleOption</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// A page name the kit doesn&#39;t have becomes a new tab.</span>
+<span class="w">                </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ClientOptions</span><span class="p">.</span><span class="n">Interface</span><span class="p">,</span>
+<span class="w">                </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Show hints&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Short tips the first time something new shows up.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="k">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="p">,</span>
+<span class="w">                </span><span class="k">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">,</span>
+<span class="w">                </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ShowHints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>See <a href="menus-and-settings-options.html">Menus and settings options</a>.</p>
+<h2 id="validator-check-editor"><a class="anchor" href="#validator-check-editor" aria-hidden="true">#</a>Validator Check (Editor)</h2>
+<p>Adds a check to <strong>KitARPG &gt; Project Check</strong> and to the check before builds. Goes in the <strong>Game.Editor</strong> folder.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A check of your own for KitARPG &gt; Project Check and the check before builds. Editor only.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyValidatorCheck</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[InitializeOnLoadMethod]</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Remove first, so a recompile doesn&#39;t add it twice.</span>
+<span class="w">            </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">            </span><span class="n">ProjectValidator</span><span class="p">.</span><span class="n">Checks</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Check</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Check</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ValidationIssue</span><span class="o">&gt;</span><span class="w"> </span><span class="n">issues</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">guid</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">FindAssets</span><span class="p">(</span><span class="s">&quot;t:ItemData&quot;</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">var</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">LoadAssetAtPath</span><span class="o">&lt;</span><span class="n">ItemData</span><span class="o">&gt;</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GUIDToAssetPath</span><span class="p">(</span><span class="n">guid</span><span class="p">));</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">Description</span><span class="p">))</span>
+<span class="w">                    </span><span class="n">issues</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ValidationIssue</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IssueLevel</span><span class="p">.</span><span class="n">Info</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;My game&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$&quot;{item.name} has no description.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">});</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="kitarpg-window-page-editor"><a class="anchor" href="#kitarpg-window-page-editor" aria-hidden="true">#</a>KitARPG Window Page (Editor)</h2>
+<p>Adds a page to the KitARPG window's sidebar. Goes in the <strong>Game.Editor</strong> folder.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;A page of your own in the KitARPG window&#39;s sidebar. Editor only; it shows up by itself.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyGamePage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitPage</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;My Game&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Group</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Game&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Order</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">IconName</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;d_Favorite&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnGUI</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">EditorGUILayout</span><span class="p">.</span><span class="n">LabelField</span><span class="p">(</span><span class="s">&quot;My Game&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">EditorStyles</span><span class="p">.</span><span class="n">boldLabel</span><span class="p">);</span>
+<span class="w">            </span><span class="n">EditorGUILayout</span><span class="p">.</span><span class="n">HelpBox</span><span class="p">(</span><span class="s">&quot;Tools for your own content go here.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MessageType</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GUILayout</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Open the Game Database&quot;</span><span class="p">))</span><span class="w"> </span><span class="n">KitWindow</span><span class="p">.</span><span class="n">Show</span><span class="o">&lt;</span><span class="n">GameDatabaseWindow</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>See <a href="editor-extensions.html">Editor extensions</a>.</p>
+<h2 id="kit-update-editor"><a class="anchor" href="#kit-update-editor" aria-hidden="true">#</a>Kit Update (Editor)</h2>
+<p>Ships a change to games already made with your package. It shows in Overview with <strong>Apply</strong>. Goes in the <strong>Game.Editor</strong> folder.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Editor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// Something your own package adds to games already made with it. It shows in Overview with Apply</span>
+<span class="w">    </span><span class="c1">/// next to the kit&#39;s updates. Only add what is missing; never rebuild what the game changed.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyGameUpdate</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KitUpdate</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;badword&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;My game: chat filter word&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Game Settings &gt; Chat: adds \&quot;{Word}\&quot; to the blocked words.&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Called every few seconds: keep it cheap.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Needed</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GameInstance</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">game</span><span class="p">.</span><span class="n">blockedWords</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">Word</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Apply</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GameInstance</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModulesWindow</span><span class="p">.</span><span class="n">Find</span><span class="p">();</span>
+<span class="w">            </span><span class="n">game</span><span class="p">.</span><span class="n">blockedWords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">game</span><span class="p">.</span><span class="n">blockedWords</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="n">Word</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+<span class="w">            </span><span class="n">EditorUtility</span><span class="p">.</span><span class="n">SetDirty</span><span class="p">(</span><span class="n">game</span><span class="p">);</span>
+<span class="w">            </span><span class="n">AssetDatabase</span><span class="p">.</span><span class="n">SaveAssets</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Added \&quot;{Word}\&quot; to the blocked words.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>See <a href="kit-updates-in-code.html">Kit updates in code</a>.</p>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="assemblies.html">Assemblies</a></li>
+<li><a href="devkit-overview.html">DevKit overview</a></li>
+<li><a href="example-bounty-board.html">Example: bounty board</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="assemblies.html"><span>上一页</span>Assemblies</a><a class="next" href="skill-effects.html"><span>下一页</span>Skill effects</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fdevkit%2Ftemplates.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#how-templates-work">How templates work</a></li><li class="l2"><a href="#all-templates">All templates</a></li><li class="l2"><a href="#assemblies">Assemblies</a></li><li class="l2"><a href="#skill-effect">Skill Effect</a></li><li class="l2"><a href="#item-effect">Item Effect</a></li><li class="l2"><a href="#condition">Condition</a></li><li class="l2"><a href="#game-action">Game Action</a></li><li class="l2"><a href="#quest-objective">Quest Objective</a></li><li class="l2"><a href="#npc-option">NPC Option</a></li><li class="l2"><a href="#player-system">Player System</a></li><li class="l2"><a href="#network-message">Network Message</a></li><li class="l2"><a href="#gm-command">GM Command</a></li><li class="l2"><a href="#game-log-listener">Game Log Listener</a></li><li class="l2"><a href="#combat-formula">Combat Formula</a></li><li class="l2"><a href="#stat-formula">Stat Formula</a></li><li class="l2"><a href="#saved-player-data">Saved Player Data</a></li><li class="l2"><a href="#player-system-override">Player System Override</a></li><li class="l2"><a href="#item-menu-line">Item Menu Line</a></li><li class="l2"><a href="#player-menu-line">Player Menu Line</a></li><li class="l2"><a href="#settings-option">Settings Option</a></li><li class="l2"><a href="#validator-check-editor">Validator Check (Editor)</a></li><li class="l2"><a href="#kitarpg-window-page-editor">KitARPG Window Page (Editor)</a></li><li class="l2"><a href="#kit-update-editor">Kit Update (Editor)</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Classes · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/content/classes.html">English</option><option value="../../es/content/classes.html">Español</option><option value="classes.html" selected>Português</option><option value="../../zh/content/classes.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>Conteúdo do jogo</summary><ul><li><a href="classes.html" class="on" aria-current="page">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Conteúdo do jogo</div><h1>Classes</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>A class is what a character is: the attributes and stats it gets at each level, the skills it can learn, the statuses it shrugs off, the items it starts with and the map it starts on. This page covers every field of a class, the experience table, and how to make a new class step by step.</p>
+<h2 id="what-a-class-is"><a class="anchor" href="#what-a-class-is" aria-hidden="true">#</a>What a class is</h2>
+<p>Every character has exactly one class, picked on the character creation screen and saved with the character as its class id. The class decides:</p>
+<ul>
+<li>The attribute points the character gets for free at each level, before the player spends any.</li>
+<li>The base stats at level 1 and what each level after it adds.</li>
+<li>How many attribute points and skill points the player earns per level.</li>
+<li>Which skills the character can learn with skill points, from which level, and up to which rank.</li>
+<li>Which statuses it is immune to or resists.</li>
+<li>The items a new character starts with, worn or in the bag.</li>
+<li>The map a new character appears on.</li>
+</ul>
+<p>A class does <strong>not</strong> list weapons or armor. Each weapon and piece of gear says which classes can use it (see <a href="equipment.html">Equipment</a>), so adding a new weapon never means editing your classes.</p>
+<p>Which classes a player can pick depends on the look they choose: every <a href="player-models.html">player model</a> lists the classes it can be. The sample has four classes: <strong>Warrior</strong>, <strong>Hunter</strong> and <strong>Mage</strong>, which the male and female bodies can take, and <strong>Monk</strong>, which only the panda body can take.</p>
+<h2 id="where-classes-are-in-the-editor"><a class="anchor" href="#where-classes-are-in-the-editor" aria-hidden="true">#</a>Where classes are in the editor</h2>
+<p>Open the KitARPG window (<strong>KitARPG &gt; Open KitARPG</strong>, <code>Ctrl/Cmd+Shift+K</code>) and go to <strong>Game Database</strong>. Classes are in the <strong>Characters</strong> group, under <strong>Classes</strong>. The list shows each class with its icon, name and id; the panel on the right shows the selected class.</p>
+<p>You can also create a class asset from the Project window with <strong>Create &gt; KitARPG &gt; Character Class</strong>. A class made that way only counts once it is reachable from the game database: list it under <strong>Classes</strong>, or add it to a player model (the database collects classes from the models on its own).</p>
+<div class="callout tip"><div class="callout-title">Dica</div><p>The fastest way to get a new class that plays well is to duplicate an existing one. Select the class in <strong>Game Database</strong> and press <strong>Duplicate</strong>, or use <strong>+ New class</strong> with <strong>copy of</strong> in the new player model wizard.</p>
+</div>
+<h2 id="fields"><a class="anchor" href="#fields" aria-hidden="true">#</a>Fields</h2>
+<p>Every class also has the four fields every game data asset has.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em> (<code>id</code>)</td>
+<td>Saved with characters and sent in network messages. Filled from the file name when the asset is made (<code>Fire Bolt</code> becomes <code>fire_bolt</code>) and never changes after, so renaming the file is safe. Changing it by hand breaks every saved character of this class.</td>
+<td>From the file name</td>
+</tr>
+<tr>
+<td><em>Display Name</em> (<code>displayName</code>)</td>
+<td>The name players see. Empty uses the file name.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Description</em> (<code>description</code>)</td>
+<td>Shown on the character creation screen and in tooltips.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Icon</em> (<code>icon</code>)</td>
+<td>Shown in lists, on the creation screen and in the Game Database.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="attributes"><a class="anchor" href="#attributes" aria-hidden="true">#</a>Attributes</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Attributes</em> (<code>attributes</code>)</td>
+<td>A list of attribute and amount pairs. Each entry gives the character points in that attribute at every level, before the points the player spends.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Attribute</em> (<code>attribute</code>)</td>
+<td>The <a href="attributes-and-stats.html#attributes">attribute</a> the entry raises.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Amount</em> (<code>amount</code>)</td>
+<td>A level value: <em>Base Value</em> (<code>baseValue</code>) is the amount at level 1 and <em>Per Level</em> (<code>perLevel</code>) is added for each level after the first. The result is rounded to a whole number of points.</td>
+<td>0, 0</td>
+</tr>
+</tbody>
+</table></div>
+<p>A level value always works the same way across the kit: value at level <code>L</code> = <code>baseValue + perLevel × (L − 1)</code>.</p>
+<p>For example, the sample Warrior has Strength <code>8</code> base and <code>2</code> per level. At level 10 that is <code>8 + 2 × 9 = 26</code> points of Strength from the class alone. Agility <code>4</code> base and <code>1</code> per level gives <code>13</code> at level 10. Intelligence <code>2</code> base and <code>0.5</code> per level gives <code>6.5</code>, rounded to <code>7</code>.</p>
+<h3 id="stats"><a class="anchor" href="#stats" aria-hidden="true">#</a>Stats</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Base Stats</em> (<code>baseStats</code>)</td>
+<td>The class's stats at level 1, before attributes, gear and buffs. Every <a href="attributes-and-stats.html#the-stats">stat</a> can be set here.</td>
+<td>Max Health 80, Max Mana 30, Move Speed 3.5, Crit Damage 0.5 (50%), everything else 0</td>
+</tr>
+<tr>
+<td><em>Stats Per Level</em> (<code>statsPerLevel</code>)</td>
+<td>Added to the base stats for each level after the first.</td>
+<td>Max Health 12, Max Mana 4, everything else 0</td>
+</tr>
+</tbody>
+</table></div>
+<p>The base stats are the only place where a stat can keep decimals: a walk speed of <code>3.7</code> meters per second is fine. Every bonus from attributes, gear, sets, gems and statuses counts in whole numbers and whole percents (see <a href="attributes-and-stats.html#whole-numbers">whole numbers</a>).</p>
+<p>Percent stats are written as fractions in the base stats: <code>critChance = 0.05</code> is 5%, <code>critDamage = 0.5</code> is +50% damage on a critical hit.</p>
+<h3 id="points-per-level"><a class="anchor" href="#points-per-level" aria-hidden="true">#</a>Points per level</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Points Per Level</em> (<code>pointsPerLevel</code>)</td>
+<td>Attribute points the player earns for each level after the first, to spend in the Character window (<code>C</code>).</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Skill Points Per Level</em> (<code>skillPointsPerLevel</code>)</td>
+<td>Skill points the player earns for each level after the first, to spend in the Skills window (<code>K</code>). Skills this class unlocks at level 1 start learned at rank 1 without spending points.</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Exp Table</em> (<code>expTable</code>)</td>
+<td>The experience needed for each level. Empty uses the game database's table.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>Points are never stored as a free total. The server works out free attribute points as earned minus spent, and free skill points as earned (plus any bonus points from scrolls) minus spent, every time. So if you change <em>Points Per Level</em> later, existing characters get the new amount on their next login.</p>
+<h3 id="skills"><a class="anchor" href="#skills" aria-hidden="true">#</a>Skills</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Skills</em> (<code>skills</code>)</td>
+<td>The skills this class can learn with skill points.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Skill</em> (<code>skill</code>)</td>
+<td>The <a href="skills.html">skill</a>.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Unlock Level</em> (<code>unlockLevel</code>)</td>
+<td>Character level needed for rank 1. Later ranks need more levels: rank <code>n</code> needs <code>unlockLevel + (n − 1) × levelsPerRank</code>, where <em>Levels Per Rank</em> is set on the skill.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Max Level</em> (<code>maxLevel</code>)</td>
+<td>Highest rank this class can raise the skill to. <code>0</code> uses the skill's own <em>Max Level</em>. A value above the skill's own max is capped to it.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Skills with an unlock level of 1 (or 0) start learned at rank 1 for new characters, without spending a point.</p>
+<p>Example: the sample Warrior has Cleave at 1, War Cry at 3, Ground Slam at 5, Unbreakable at 6, Shield Wall at 7, Charge at 9, Leap Strike at 11. Cleave has <em>Levels Per Rank</em> 2, so rank 3 of Cleave needs level <code>1 + 2 × 2 = 5</code>.</p>
+<p>Characters can also learn skills that are not in their class, from books, scrolls and trainer NPCs. That is set on the skill itself; see <a href="skills.html#learning-skills-outside-the-class">Learning outside the class</a>.</p>
+<h3 id="status-defense"><a class="anchor" href="#status-defense" aria-hidden="true">#</a>Status defense</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Status Defense</em> (<code>statusDefense</code>)</td>
+<td>Statuses the class is immune to or that last less on it. Same block as on monsters and on statuses. See <a href="statuses-and-buffs.html#immunities-and-resistances">Immunities and resistances</a>.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>This only stops harmful statuses that enemies put on the character. Buffs from the character itself or its allies always land.</p>
+<h3 id="start-items-and-start-map"><a class="anchor" href="#start-items-and-start-map" aria-hidden="true">#</a>Start items and start map</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Start Items</em> (<code>startItems</code>)</td>
+<td>What a new character of this class gets.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Item</em> (<code>item</code>)</td>
+<td>The <a href="items.html">item</a>.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Amount</em> (<code>amount</code>)</td>
+<td>How many. Values below 1 count as 1.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Equipped</em> (<code>equipped</code>)</td>
+<td>Worn on creation instead of going to the bag. Only works for items that can be worn; if the slot is taken or the character can't wear it, it goes to the bag.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Start Map</em> (<code>startMap</code>)</td>
+<td>The map a new character appears on. Empty uses the game database's <em>Start Map</em>.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>Gear with random bonuses rolls its values for each start item copy, so two new warriors can start with slightly different swords. See <a href="equipment.html#random-bonuses-rolled-per-copy">Random bonuses</a>.</p>
+<p>Example: the sample Hunter starts with the Longbow and the Ranger Armor worn, 200 Arrows worn in the ammo slot, 5 Health Potions and 3 Mana Potions.</p>
+<h2 id="the-experience-table"><a class="anchor" href="#the-experience-table" aria-hidden="true">#</a>The experience table</h2>
+<p>Each class can have its own experience table, or share the one in <strong>Game Database &gt; Settings</strong> (<em>Exp Table</em>). Create one with <strong>Create &gt; KitARPG &gt; Experience Table</strong>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Max Level</em> (<code>maxLevel</code>)</td>
+<td>The level cap. Characters at this level stop gaining levels.</td>
+<td>60</td>
+</tr>
+<tr>
+<td><em>First Level</em> (<code>firstLevel</code>)</td>
+<td>Experience to go from level 1 to 2, when the table uses the curve.</td>
+<td>100</td>
+</tr>
+<tr>
+<td><em>Growth</em> (<code>growth</code>)</td>
+<td>Each level needs this many times the previous one, when the table uses the curve.</td>
+<td>1.15</td>
+</tr>
+<tr>
+<td><em>Exp To Next</em> (<code>expToNext</code>)</td>
+<td>Experience from each level to the next, written by hand. Index 0 is level 1 to 2. Empty uses the curve. Levels past the end of the list also use the curve.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>With the curve, the experience from level <code>L</code> to <code>L + 1</code> is <code>firstLevel × growth^(L − 1)</code>, rounded. With the defaults: 100 to reach level 2, 115 to reach 3, 132 to reach 4, and so on.</p>
+<p>To write the curve's values into the list so you can tweak single levels, right click the table asset's header in the Inspector and pick <strong>Fill table from curve</strong>.</p>
+<h2 id="how-a-class-shapes-a-character-step-by-step"><a class="anchor" href="#how-a-class-shapes-a-character-step-by-step" aria-hidden="true">#</a>How a class shapes a character, step by step</h2>
+<p>When the server works out a character's numbers (on login, on level up, when gear, attributes, buffs or passive skills change), it does this:</p>
+<ol>
+<li>Takes the class's attribute amounts at the character's level.</li>
+<li>Adds the attribute points the player spent.</li>
+<li>Adds attribute points from gear, sets, gems, buffs and passives.</li>
+<li>Adds the class's base stats plus <em>Stats Per Level</em> × (level − 1).</li>
+<li>Adds what each attribute point gives, for every attribute.</li>
+<li>Adds every flat bonus from gear, sets, gems, statuses and passive skills.</li>
+<li>Applies every percent bonus to the totals and rounds.</li>
+</ol>
+<p>The full detail, with a worked example, is in <a href="attributes-and-stats.html#how-stats-are-computed">How stats are computed</a>.</p>
+<h2 id="make-a-new-class"><a class="anchor" href="#make-a-new-class" aria-hidden="true">#</a>Make a new class</h2>
+<p>This example makes a <strong>Paladin</strong>: a melee class with Vitality and Strength, some healing, and resistance to stuns.</p>
+<ol>
+<li>Open <strong>Game Database &gt; Classes</strong> and select <strong>Warrior</strong>. Press <strong>Duplicate</strong>. The copy gets its id from its new file name (something like <code>warrior_1</code>). Since no character uses it yet, type <code>paladin</code> in <em>Id</em> and <code>Paladin</code> in <em>Display Name</em>.</li>
+<li>Write a <em>Description</em>, for example &quot;Holy warrior. Vitality, strength and a few heals.&quot; Set an <em>Icon</em>.</li>
+<li>In <em>Attributes</em>, give it Vitality <code>8</code> base <code>2</code> per level, Strength <code>6</code> base <code>1.5</code> per level, Intelligence <code>4</code> base <code>1</code> per level. Remove Luck and Agility or give them small values.</li>
+<li>In <em>Base Stats</em>, set Max Health <code>100</code>, Max Mana <code>35</code>, Move Speed <code>3.4</code>, Crit Damage <code>0.5</code>. In <em>Stats Per Level</em>, set Max Health <code>15</code>, Max Mana <code>3</code>.</li>
+<li>Leave <em>Points Per Level</em> at <code>5</code> and <em>Skill Points Per Level</em> at <code>1</code>.</li>
+<li>In <em>Skills</em>, keep Cleave at level 1 and Shield Wall at level 7, and add Heal at level 3 and Divine Shield at level 6. Set <em>Max Level</em> on Heal to <code>3</code> if you want paladins to heal less well than mages.</li>
+<li>In <em>Status Defense</em>, open <em>Resistances</em> and add one with <em>Tag</em> <code>control</code> and <em>Percent</em> <code>30</code>: stuns, roots and silences last 30% less on a paladin.</li>
+<li>In <em>Start Items</em>, keep the Sword equipped, replace the Knight Armor with what you want, and keep 5 Health Potions in the bag.</li>
+<li>Add the class to a player model: open <strong>Models</strong>, select the male or female body and add <strong>Paladin</strong> to its <em>Classes</em>. Without this, nobody can pick it.</li>
+<li>For the class to use your new skills from a mace, open each mace in <strong>Items &gt; Weapons</strong> and add Paladin to its <em>Classes</em> (or leave the weapon's <em>Classes</em> empty so any class can use it).</li>
+<li>Press Play from the Title scene and make a character. The class appears in the class list of the bodies you added it to.</li>
+</ol>
+<div class="callout warning"><div class="callout-title">Atenção</div><p>Gear that lists classes in <em>Classes</em> is only usable by those classes. If you duplicated the Warrior, the Knight set still lists only the Warrior. Add the new class to each piece it should wear, or clear the list.</p>
+</div>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The class data is the same in both modes, and the server rules (stats, points, skills) run on the map server in MMO and inside the game in single player.</p>
+<p>In MMO, character creation goes through the <strong>Login</strong> service, which doesn't run Unity. It reads a <code>gamedata.json</code> exported from your game database with, for each class: its id, health and mana at level 1, start map and position, and start items (already placed in the bag or worn). Login also checks that the class is one the chosen model offers, and refuses a class that isn't.</p>
+<ul>
+<li><strong>Play &amp; Servers</strong> exports <code>gamedata.json</code> every time it starts the services, so in the editor this is automatic.</li>
+<li>For builds and Docker, export it with <strong>KitARPG &gt; Export Game Data for Services</strong>, which writes it next to the Login service so the image carries it.</li>
+</ul>
+<p>If you change a class's start items or start map and Login still creates characters the old way, the export is out of date.</p>
+<p>In single player there is no Login service: the game creates the character itself from the class asset.</p>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<ul>
+<li>Give each class one or two attributes that clearly grow faster than the others. Players read the class from those.</li>
+<li>Keep <em>Stats Per Level</em> modest and let attributes do most of the work. Then spending points matters.</li>
+<li>To make a class that can't be picked at creation (for example, one a quest turns you into later), keep it out of every player model. It still exists in the database if something references it.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>The class doesn't appear on the creation screen.</strong> It isn't in any player model's <em>Classes</em>. Add it to a model.</li>
+<li><strong>Saved characters lost their class.</strong> The class id was changed. Put the old id back.</li>
+<li><strong>Login says the class is not allowed.</strong> The <code>gamedata.json</code> Login reads is older than your change. Export again or restart the services from Play &amp; Servers.</li>
+<li><strong>A start item lands in the bag instead of being worn.</strong> The class can't wear it (<em>Classes</em> or <em>Required Level</em> on the item), or two start items want the same slot.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="attributes-and-stats.html">Attributes and stats</a></li>
+<li><a href="player-models.html">Player models</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="equipment.html">Equipment</a></li>
+<li><a href="statuses-and-buffs.html">Statuses and buffs</a></li>
+<li><a href="../editor/game-database.html">Game Database</a></li>
+<li><a href="../devkit/formulas.html">Formulas</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="../editor/menus.html"><span>Anterior</span>Menus</a><a class="next" href="attributes-and-stats.html"><span>Próximo</span>Attributes and stats</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fcontent%2Fclasses.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-a-class-is">What a class is</a></li><li class="l2"><a href="#where-classes-are-in-the-editor">Where classes are in the editor</a></li><li class="l2"><a href="#fields">Fields</a></li><li class="l3"><a href="#attributes">Attributes</a></li><li class="l3"><a href="#stats">Stats</a></li><li class="l3"><a href="#points-per-level">Points per level</a></li><li class="l3"><a href="#skills">Skills</a></li><li class="l3"><a href="#status-defense">Status defense</a></li><li class="l3"><a href="#start-items-and-start-map">Start items and start map</a></li><li class="l2"><a href="#the-experience-table">The experience table</a></li><li class="l2"><a href="#how-a-class-shapes-a-character-step-by-step">How a class shapes a character, step by step</a></li><li class="l2"><a href="#make-a-new-class">Make a new class</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

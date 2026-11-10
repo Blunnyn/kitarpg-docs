@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Builds · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/builds.html">English</option><option value="../../es/servers/builds.html">Español</option><option value="builds.html" selected>Português</option><option value="../../zh/servers/builds.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>Servidores e implantação</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html" class="on" aria-current="page">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Servidores e implantação</div><h1>Builds</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>How to build every part of an online KitARPG game: the client players install, the map servers for your computer and for Linux, the single player game, and the .NET services. It also covers the checks every build goes through and what each build may carry.</p>
+<h2 id="the-build-menus"><a class="anchor" href="#the-build-menus" aria-hidden="true">#</a>The build menus</h2>
+<p>All of them are under <strong>KitARPG &gt; Starter</strong>. Each takes its scenes from the maps in your Game Database, so a new map is in every build without extra steps. Builds go to a <code>Builds/Starter</code> folder next to your Unity project folder (the Linux server goes to <code>Deploy/builds/starter</code>).</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Menu</th>
+<th>What it makes</th>
+<th>Output</th>
+<th>Scripting backend</th>
+<th>Extra defines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Build Mac Client</strong></td>
+<td>The MMO client for macOS</td>
+<td><code>Builds/Starter/MacClient/KitARPG.app</code></td>
+<td>IL2CPP (set by the menu)</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Build Windows Client</strong></td>
+<td>The MMO client for Windows</td>
+<td><code>Builds/Starter/WindowsClient/KitARPG.exe</code></td>
+<td>IL2CPP (set by the menu)</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Build Mac Server</strong></td>
+<td>A map server the launcher runs on a Mac</td>
+<td><code>Builds/Starter/MacServer/KitARPGServer.app</code></td>
+<td>Project setting</td>
+<td><code>KITARPG_SERVER</code></td>
+</tr>
+<tr>
+<td><strong>Build Windows Server</strong></td>
+<td>A map server the launcher runs on Windows</td>
+<td><code>Builds/Starter/WindowsServer/KitARPGServer.exe</code></td>
+<td>Project setting</td>
+<td><code>KITARPG_SERVER</code></td>
+</tr>
+<tr>
+<td><strong>Build Linux Server</strong></td>
+<td>The map server for Docker and Linux hosts (Dedicated Server)</td>
+<td><code>Deploy/builds/starter/KitARPGServer.x86_64</code></td>
+<td>IL2CPP (set by the menu)</td>
+<td>None (Unity adds <code>UNITY_SERVER</code>)</td>
+</tr>
+<tr>
+<td><strong>Build Mac Single Player</strong></td>
+<td>A single player game for macOS</td>
+<td><code>Builds/Starter/MacSinglePlayer/KitARPG.app</code></td>
+<td>Project setting</td>
+<td><code>KITARPG_SERVER</code>, <code>KITARPG_SINGLEPLAYER</code></td>
+</tr>
+<tr>
+<td><strong>Build Windows Single Player</strong></td>
+<td>A single player game for Windows</td>
+<td><code>Builds/Starter/WindowsSinglePlayer/KitARPG.exe</code></td>
+<td>Project setting</td>
+<td><code>KITARPG_SERVER</code>, <code>KITARPG_SINGLEPLAYER</code></td>
+</tr>
+<tr>
+<td><strong>Build Mac Test Client</strong></td>
+<td>A client with the test tools, for your own checks</td>
+<td><code>Builds/Starter/MacTestClient/KitARPGTest.app</code></td>
+<td>Mono (restored after)</td>
+<td><code>KITARPG_DEV</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Next to each build the menu writes <code>KitARPGScenes.txt</code> with the scenes it carries. Play &amp; Servers reads it to tell you when a map server lacks a map's scene.</p>
+<p>The Mac and Windows servers are normal player builds with the server code compiled in, started with <code>-batchmode -nographics</code>. They don't need the Dedicated Server module. The Linux server is a real Dedicated Server build: smaller, no graphics at all.</p>
+<h2 id="what-every-build-checks-first"><a class="anchor" href="#what-every-build-checks-first" aria-hidden="true">#</a>What every build checks first</h2>
+<ol>
+<li><strong>Scenes.</strong> Every map in the Game Database names its scene. If a scene file is missing, the build stops and says which. The Title scene is always first.</li>
+<li><strong>Project Check.</strong> The validator runs before every build and stops it on errors. You can turn that off in Project Check with <strong>Stop builds on errors</strong>. See <a href="../editor/project-check.html">Project Check</a>.</li>
+<li><strong>Build separation.</strong> The kit checks which assemblies the build would compile and stops it when one doesn't belong. This check runs for every build, from the kit's menus, from <strong>File &gt; Build Profiles</strong> or from a script, and can't be turned off.</li>
+<li><strong>Mode.</strong> The build carries <code>KitARPGSettings</code> with the mode it is built for (online or single player). The menu puts your editor's mode back afterwards.</li>
+<li><strong>Network version.</strong> A hash of everything Mirror sends is written into the build. See <a href="#network-version">Network version</a>.</li>
+</ol>
+<h2 id="defines-and-what-goes-where"><a class="anchor" href="#defines-and-what-goes-where" aria-hidden="true">#</a>Defines and what goes where</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Define</th>
+<th>What it compiles</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KITARPG_SERVER</code> (or Unity's <code>UNITY_SERVER</code>)</td>
+<td><code>KitARPG.Server</code>, every <code>KitARPG.Modes.*.Server</code> and every assembly whose name ends in <code>.Server</code>: the map server, the link to Central, GM commands, server-side rules</td>
+<td>Map servers and single player</td>
+</tr>
+<tr>
+<td><code>KITARPG_SINGLEPLAYER</code></td>
+<td><code>KitARPG.Local</code>: the local SQLite save</td>
+<td>Single player only</td>
+</tr>
+<tr>
+<td><code>KITARPG_DEV</code></td>
+<td>Test tools: automatic login, the smoke test, <code>-save</code>, <code>-mode</code>, <code>-login</code>, <code>-centralUrl</code></td>
+<td>The editor and the test client only</td>
+</tr>
+<tr>
+<td><code>KITARPG_LOADTEST</code></td>
+<td>Load test tools</td>
+<td>Load test builds only</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Build</th>
+<th>Carries</th>
+<th>Never carries</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MMO client</td>
+<td>Game, interface, networking</td>
+<td>Server code, GM commands, the local save, test tools, keys, connection strings</td>
+</tr>
+<tr>
+<td>Map server</td>
+<td>Server code</td>
+<td>The local save</td>
+</tr>
+<tr>
+<td>Single player</td>
+<td>Server code and the local save</td>
+<td>Test tools</td>
+</tr>
+</tbody>
+</table></div>
+<p>Build separation stops a build when:</p>
+<ul>
+<li>an MMO client would carry server code or the local save, or is built with <code>KITARPG_SERVER</code> or <code>KITARPG_SINGLEPLAYER</code>;</li>
+<li>an assembly that goes into an MMO client references a server assembly;</li>
+<li>a map server would carry <code>KitARPG.Local</code>;</li>
+<li>a release build would carry test tools;</li>
+<li>an editor or test assembly would go into any build;</li>
+<li>a single player build lacks the server code or the local save;</li>
+<li>an MMO client for release is built with Mono;</li>
+<li>an MMO client for release points at Login or Central over plain HTTP on anything but this computer.</li>
+</ul>
+<p>It warns (and goes on) for a development client or a client built with Mono in development.</p>
+<p><strong>KitARPG &gt; Check Build Separation</strong> shows the table for your project: which assemblies go into each kind of build.</p>
+<p>Your own server-only code goes in an assembly whose name ends in <code>.Server</code>, with the define constraint <code>UNITY_SERVER || UNITY_EDITOR || KITARPG_SERVER</code> (<strong>Create &gt; KitARPG &gt; Scripts &gt; Game Server Assembly</strong> makes one). See <a href="../devkit/assemblies.html">Assemblies</a>.</p>
+<h2 id="building-the-mmo-client"><a class="anchor" href="#building-the-mmo-client" aria-hidden="true">#</a>Building the MMO client</h2>
+<ol>
+<li>Set <em>Login Url</em> and <em>Central Url</em> in <code>Assets/Settings/Resources/KitARPGSettings.asset</code> to your public HTTPS addresses, for example <code>https://login.mygame.com</code> and <code>https://central.mygame.com</code>. See <a href="configuration.html#client-settings">Configuration</a>.</li>
+<li>Pick the same control mode the map servers are built with (Game Settings). A client in another mode is refused with <code>mode_mismatch</code>.</li>
+<li><strong>KitARPG &gt; Starter &gt; Build Mac Client</strong> or <strong>Build Windows Client</strong>.</li>
+<li>Build the map servers from the same code, so the network versions match.</li>
+</ol>
+<p>Release clients are always IL2CPP: their code ships as native code instead of DLLs anyone can read and change. Unity builds a Windows IL2CPP player only on Windows, and a Mac one only on a Mac.</p>
+<p>A release client ignores the <code>-login</code>, <code>-centralUrl</code> and <code>-mode</code> arguments, and talks to Login and Central over HTTPS only.</p>
+<h2 id="building-the-linux-map-server"><a class="anchor" href="#building-the-linux-map-server" aria-hidden="true">#</a>Building the Linux map server</h2>
+<p>The map server that runs in Docker or on a Linux host.</p>
+<p>Before the first build, install in Unity Hub for your editor:</p>
+<ul>
+<li><strong>Linux Dedicated Server Build Support</strong>;</li>
+<li><strong>IL2CPP</strong> for Linux;</li>
+<li>on a Mac, the <code>com.unity.toolchain.macos-arm64-linux</code> package (Package Manager), which lets a Mac compile for Linux.</li>
+</ul>
+<p>Then:</p>
+<ol>
+<li>Save your scenes and apply any pending kit updates (Overview lists them), so the server has them.</li>
+<li><strong>KitARPG &gt; Starter &gt; Build Linux Server</strong>.</li>
+<li>The build lands in <code>Deploy/builds/starter/</code>: <code>KitARPGServer.x86_64</code>, <code>KitARPGServer_Data</code>, <code>GameAssembly.so</code>, <code>UnityPlayer.so</code> and a <code>KitARPGServer_BackUpThisFolder_ButDontShipItWithYourGame</code> folder with IL2CPP debug symbols. Keep the symbols for reading crash reports; the Docker image leaves them out.</li>
+</ol>
+<p>The image is about 72 MB. The server runs headless and reads its map, port and Central address from the command line (see <a href="configuration.html#map-server-command-line">Configuration</a>). One build serves every map; each container runs it with a different <code>-map</code>.</p>
+<h2 id="building-for-your-own-computer"><a class="anchor" href="#building-for-your-own-computer" aria-hidden="true">#</a>Building for your own computer</h2>
+<p><strong>Build Mac Server</strong> or <strong>Build Windows Server</strong> makes the map server the launcher and Play &amp; Servers start. Rebuild it after you change scenes, server code or anything that travels over the network. Play &amp; Servers tells you when it is older than the running services.</p>
+<h2 id="single-player-builds"><a class="anchor" href="#single-player-builds" aria-hidden="true">#</a>Single player builds</h2>
+<p><strong>Build Mac Single Player</strong> and <strong>Build Windows Single Player</strong> make a game that hosts its own world and saves to a file on the player's computer. They need no services. See <a href="../start/quick-start-single-player.html">Quick start: single player</a>.</p>
+<h2 id="the-test-client"><a class="anchor" href="#the-test-client" aria-hidden="true">#</a>The test client</h2>
+<p><strong>Build Mac Test Client</strong> makes a client with the kit's test tools: automatic login, the smoke test and <code>-smoketest systems</code>, where two clients play the social and economy systems against real servers. It uses Mono for a fast build and its own folder so it can't be mistaken for the release client.</p>
+<p><code>KITARPG_DEV</code> is the only way test tools get into a build: a plain development build doesn't carry them. <strong>Never give the test client to players.</strong></p>
+<h2 id="network-version"><a class="anchor" href="#network-version" aria-hidden="true">#</a>Network version</h2>
+<p>Every build carries a short hash of everything that travels over Mirror: synced fields, synced lists and dictionaries, and network messages, with the fields of the types inside them. The client sends it with its ticket, and a map server built from different code refuses it with <code>version_mismatch</code> (&quot;The game and the server are different versions&quot;) instead of failing halfway through reading a component.</p>
+<ul>
+<li>The value is computed when the build starts and stored as a temporary resource in <code>Assets/KitARPGBuild</code>, which is deleted after the build.</li>
+<li>The editor computes it from its own code.</li>
+<li>If either side has no value, they aren't compared. Hand-written serializers aren't part of the hash.</li>
+</ul>
+<p>When you change a synced field or a message, rebuild both the client and the map servers.</p>
+<h2 id="building-from-the-command-line"><a class="anchor" href="#building-from-the-command-line" aria-hidden="true">#</a>Building from the command line</h2>
+<p>Every menu is a static method you can call from a build machine:</p>
+<pre class="code"><code class="language-bash">Unity<span class="w"> </span>-batchmode<span class="w"> </span>-quit<span class="w"> </span>-projectPath<span class="w"> </span>MyGame<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-executeMethod<span class="w"> </span>Blunnyn.KitARPG.Editor.StarterBuilder.BuildLinuxServer
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Menu</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build Mac Client</td>
+<td><code>Blunnyn.KitARPG.Editor.StarterBuilder.BuildMacClient</code></td>
+</tr>
+<tr>
+<td>Build Windows Client</td>
+<td><code>Blunnyn.KitARPG.Editor.StarterBuilder.BuildWindowsClient</code></td>
+</tr>
+<tr>
+<td>Build Mac Server</td>
+<td><code>Blunnyn.KitARPG.Editor.StarterBuilder.BuildMacServer</code></td>
+</tr>
+<tr>
+<td>Build Windows Server</td>
+<td><code>Blunnyn.KitARPG.Editor.StarterBuilder.BuildWindowsServer</code></td>
+</tr>
+<tr>
+<td>Build Linux Server</td>
+<td><code>Blunnyn.KitARPG.Editor.StarterBuilder.BuildLinuxServer</code></td>
+</tr>
+<tr>
+<td>Build Mac Single Player</td>
+<td><code>Blunnyn.KitARPG.Editor.StarterBuilder.BuildMacSinglePlayer</code></td>
+</tr>
+<tr>
+<td>Build Windows Single Player</td>
+<td><code>Blunnyn.KitARPG.Editor.StarterBuilder.BuildWindowsSinglePlayer</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>In batch mode a failed build throws, so Unity exits with an error code and your build machine sees the failure.</p>
+<h2 id="building-the-services"><a class="anchor" href="#building-the-services" aria-hidden="true">#</a>Building the services</h2>
+<p>The .NET services build with the .NET 10 SDK.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Command (from the <code>Services</code> folder)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build everything for the launcher</td>
+<td><code>dotnet build</code></td>
+</tr>
+<tr>
+<td>Run the tests</td>
+<td><code>dotnet test</code></td>
+</tr>
+<tr>
+<td>Publish one service for a server</td>
+<td><code>dotnet publish Login -c Release -o out/Login</code></td>
+</tr>
+<tr>
+<td>Docker images</td>
+<td><code>docker compose build</code> from <code>Deploy</code> (see <a href="docker.html">Docker</a>)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Before you publish Login or build its image, run <strong>KitARPG &gt; Export Game Data for Services</strong>. It writes <code>Services/Login/gamedata.json</code>, which the build copies next to the service. Without it Login can't create characters.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>&quot;KitARPG stopped the OnlineClient build.&quot;</strong> The Console lists each problem with its fix. Usually server code in a client assembly, or a plain HTTP <em>Login Url</em>.</li>
+<li><strong>&quot;The game and the server are different versions.&quot;</strong> The client and the map server were built from different code. Rebuild the one that is older.</li>
+<li><strong>Players who change map land back at the login.</strong> The map server lacks that map's scene. Rebuild it; Play &amp; Servers names the missing scene.</li>
+<li><strong>The Linux build fails on a Mac.</strong> The Linux toolchain package or the Linux Dedicated Server module is missing.</li>
+<li><strong>The Windows client fails to build on a Mac.</strong> IL2CPP for Windows builds only on Windows. Build it on a Windows machine.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="docker.html">Docker</a></li>
+<li><a href="security.html#builds">Security</a></li>
+<li><a href="../editor/project-check.html">Project Check</a></li>
+<li><a href="../devkit/assemblies.html">Assemblies</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="configuration.html"><span>Anterior</span>Configuration</a><a class="next" href="docker.html"><span>Próximo</span>Docker</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fservers%2Fbuilds.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#the-build-menus">The build menus</a></li><li class="l2"><a href="#what-every-build-checks-first">What every build checks first</a></li><li class="l2"><a href="#defines-and-what-goes-where">Defines and what goes where</a></li><li class="l2"><a href="#building-the-mmo-client">Building the MMO client</a></li><li class="l2"><a href="#building-the-linux-map-server">Building the Linux map server</a></li><li class="l2"><a href="#building-for-your-own-computer">Building for your own computer</a></li><li class="l2"><a href="#single-player-builds">Single player builds</a></li><li class="l2"><a href="#the-test-client">The test client</a></li><li class="l2"><a href="#network-version">Network version</a></li><li class="l2"><a href="#building-from-the-command-line">Building from the command line</a></li><li class="l2"><a href="#building-the-services">Building the services</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

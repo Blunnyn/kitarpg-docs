@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skill effects · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/devkit/skill-effects.html">English</option><option value="../../es/devkit/skill-effects.html">Español</option><option value="skill-effects.html" selected>Português</option><option value="../../zh/devkit/skill-effects.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section" open><summary>DevKit</summary><ul><li><a href="devkit-overview.html">DevKit overview</a></li><li><a href="assemblies.html">Assemblies</a></li><li><a href="templates.html">Templates</a></li><li><a href="skill-effects.html" class="on" aria-current="page">Skill effects</a></li><li><a href="item-effects.html">Item effects</a></li><li><a href="conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">DevKit</div><h1>Skill effects</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>How to write your own skill effects: the <code>SkillEffect</code> base class, what a cast hands you, how targets are chosen, and complete examples that follow the game's damage rules.</p>
+<h2 id="what-a-skill-effect-is"><a class="anchor" href="#what-a-skill-effect-is" aria-hidden="true">#</a>What a skill effect is</h2>
+<p>A skill is a target, an area and a list of effects (<code>SkillData.effects</code>). When the skill lands, the server works out who it reached and calls each effect once per target. The kit ships effects for damage, heals, stat buffs, statuses, cleanse and dispel, knockback, revive and summons. Anything else a skill should do is a new effect class.</p>
+<p>Effects are <code>[Serializable]</code> classes held by reference (<code>[SerializeReference, PickType]</code>). Once your class compiles, it appears in the <strong>+</strong> type menu of every skill's <em>Effects</em> list in <strong>KitARPG &gt; Game Database &gt; Skills</strong>. There is nothing to register.</p>
+<p><strong>Where the file goes:</strong> the <code>Game</code> assembly. Effects are data that both builds load (the client shows them in tooltips), even though only the server applies them.</p>
+<h2 id="the-base-class"><a class="anchor" href="#the-base-class" aria-hidden="true">#</a>The base class</h2>
+<p><code>SkillEffect</code> lives in <code>Blunnyn.KitARPG.Data</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string Summary</code></td>
+<td>Short text shown in the skill editor's effect list and used as the default tooltip line.</td>
+<td>The class name</td>
+</tr>
+<tr>
+<td><code>bool Harmful</code></td>
+<td><code>true</code>: the effect lands on enemies the skill reaches. <code>false</code>: on the caster and allies it reaches.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>bool OnCaster</code></td>
+<td><code>true</code>: the effect runs once per cast with the caster as the target, whoever else the skill reaches. Used by summons.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>void Apply(SkillCast cast, IFighter target)</code></td>
+<td><strong>Server only.</strong> Called once per target. Required.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>void Describe(ItemDescription description, int level, DamageElement fallback)</code></td>
+<td>Lines for the skill's card at a rank. Runs on the client. <code>fallback</code> is the element to name when yours is empty.</td>
+<td>Adds <code>Summary</code></td>
+</tr>
+<tr>
+<td><code>void Visit(Action&lt;GameData&gt; visit)</code></td>
+<td>Hands the game database every asset the effect points at, so they get registered.</td>
+<td>Nothing</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="how-targets-are-picked"><a class="anchor" href="#how-targets-are-picked" aria-hidden="true">#</a>How targets are picked</h3>
+<p>The server's <code>SkillRunner</code> gathers enemies and allies in the skill's area, then for each effect in order:</p>
+<ul>
+<li><code>OnCaster</code> effects run once with <code>target</code> set to the caster.</li>
+<li><code>Harmful</code> effects run on every enemy reached; the others run on every ally reached (the caster counts as an ally when the area includes it).</li>
+<li>On skills with <em>Targets Dead</em> set, only dead fighters are reached; otherwise only living ones.</li>
+</ul>
+<p>A skill can land several times in one cast:</p>
+<ul>
+<li><strong>Multi-hit animations</strong> split one cast across several hit moments. Each landing carries a share of the damage in <code>cast.scale</code>, and only the first has <code>cast.firstHit</code> true.</li>
+<li><strong>Zones</strong> left on the ground land again every tick, each tick as a fresh cast with <code>firstHit</code> true.</li>
+<li><strong>Piercing lines</strong> hit each target as the projectile passes.</li>
+<li><strong>Bounces</strong> jump to the next target with <code>cast.scale</code> reduced by the skill's <em>Bounce Keep</em>.</li>
+</ul>
+<p>Two rules follow. Scale damage and healing by <code>cast.scale</code>. Put buffs, statuses and other one-time effects behind <code>if (!cast.firstHit) return;</code> so they go on once per cast.</p>
+<h2 id="what-a-cast-hands-you"><a class="anchor" href="#what-a-cast-hands-you" aria-hidden="true">#</a>What a cast hands you</h2>
+<p><code>SkillCast</code>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IFighter caster</code></td>
+<td>Who cast it: a player or a monster.</td>
+</tr>
+<tr>
+<td><code>SkillData skill</code></td>
+<td>The skill.</td>
+</tr>
+<tr>
+<td><code>int level</code></td>
+<td>The rank it was cast at, gear bonuses included. Use it with <code>LevelValue.At(level)</code>.</td>
+</tr>
+<tr>
+<td><code>IReadOnlyList&lt;ElementDamage&gt; weapon</code></td>
+<td>Rolls of the caster's weapon, for effects that scale with it. May be empty or null.</td>
+</tr>
+<tr>
+<td><code>IFighter target</code></td>
+<td>The aimed target, if the skill has one.</td>
+</tr>
+<tr>
+<td><code>Vector3 point</code></td>
+<td>Where it was aimed: the target's position or a point on the ground.</td>
+</tr>
+<tr>
+<td><code>float scale</code></td>
+<td>Share of damage and healing this landing carries. <code>1</code> for a single landing.</td>
+</tr>
+<tr>
+<td><code>bool firstHit</code></td>
+<td>False on the later landings of one cast.</td>
+</tr>
+<tr>
+<td><code>float projectileSpeed</code></td>
+<td>Meters per second of the skill's projectile, 0 without one.</td>
+</tr>
+<tr>
+<td><code>SkillCast Copy()</code></td>
+<td>A copy, for effects that land later.</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>IFighter</code> is anything a skill can touch, on the server:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Transform transform</code>, <code>bool IsDead</code>, <code>int Level</code></td>
+<td>Position, state, level.</td>
+</tr>
+<tr>
+<td><code>int Team</code></td>
+<td>Players are 0, monsters 1. Different teams are enemies.</td>
+</tr>
+<tr>
+<td><code>StatSheet CombatStats</code></td>
+<td>Stats and elements for attacking and defending. Server only.</td>
+</tr>
+<tr>
+<td><code>void ServerDamage(Hit hit, IFighter source)</code></td>
+<td>Deals a hit. Shields, immunities and death are handled inside.</td>
+</tr>
+<tr>
+<td><code>void ServerHeal(int amount, IFighter source, GameData cause = null)</code></td>
+<td>Heals. The amount is final: the healer's stats are not added again. <code>cause</code> picks the effect clients show.</td>
+</tr>
+<tr>
+<td><code>bool ServerAddBuff(Buff buff)</code></td>
+<td>Adds a buff or status. False when it didn't take (immunity, dead).</td>
+</tr>
+<tr>
+<td><code>int ServerRemoveBuffs(Predicate&lt;Buff&gt; match, int max = 0)</code></td>
+<td>Removes matching buffs, newest first; 0 removes all. Returns how many.</td>
+</tr>
+<tr>
+<td><code>StatusFlags Status</code></td>
+<td>What its statuses stop it from doing now (stunned, rooted, invisible).</td>
+</tr>
+<tr>
+<td><code>bool ServerKnock(Vector3 to, float seconds)</code></td>
+<td>Pushes or pulls it. False when it can't be moved.</td>
+</tr>
+<tr>
+<td><code>bool ServerRevive(float health, float mana, IFighter by)</code></td>
+<td>Brings it back with a share of health and mana.</td>
+</tr>
+</tbody>
+</table></div>
+<p>On the server, players are <code>PlayerCharacter</code> and monsters are <code>Monster</code> (both in <code>Blunnyn.KitARPG.Net</code>). Cast to them when you need something <code>IFighter</code> doesn't have, such as health.</p>
+<h3 id="numbers-that-grow-with-rank"><a class="anchor" href="#numbers-that-grow-with-rank" aria-hidden="true">#</a>Numbers that grow with rank</h3>
+<p><code>LevelValue</code> is a value at rank 1 plus an amount per rank after it:</p>
+<pre class="code"><code class="language-csharp"><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">   </span><span class="c1">// 10 at rank 1, 12 at rank 2, 14 at rank 3</span>
+<span class="kt">float</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">whole</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">AtInt</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">);</span><span class="w">               </span><span class="c1">// rounded</span>
+</code></pre>
+<p>The inspector shows it as <em>Base Value</em> and <em>Per Level</em>.</p>
+<h3 id="hits-and-the-damage-formula"><a class="anchor" href="#hits-and-the-damage-formula" aria-hidden="true">#</a>Hits and the damage formula</h3>
+<p>A <code>Hit</code> is <code>amount</code>, <code>critical</code>, <code>element</code> (the element that did most of it, for its color) and <code>source</code> (the skill, weapon type or monster, which picks the hit effect).</p>
+<p>To follow the game's damage rules (element damage, power, flat and percent resistance, criticals), let the combat formula build the hit:</p>
+<pre class="code"><code class="language-csharp"><span class="kt">var</span><span class="w"> </span><span class="n">rolls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementDamage</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">),</span><span class="w"> </span><span class="n">max</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">))</span><span class="w"> </span><span class="p">};</span>
+<span class="n">Hit</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">scale</span><span class="p">);</span>
+<span class="n">hit</span><span class="p">.</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">skill</span><span class="p">;</span>
+<span class="n">target</span><span class="p">.</span><span class="n">ServerDamage</span><span class="p">(</span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">);</span>
+</code></pre>
+<p>For heals, <code>GameInstance.Combat.Heal(cast.caster.CombatStats, amount)</code> adds the caster's heals stat and healing bonus. A game that swapped the formula (see <a href="formulas.html">Formulas</a>) changes your effects too.</p>
+<h2 id="example-the-template"><a class="anchor" href="#example-the-template" aria-hidden="true">#</a>Example: the template</h2>
+<p><strong>Create &gt; KitARPG &gt; Scripts &gt; Skill Effect</strong> makes a fixed-damage effect. It skips the formula on purpose to stay short. The <a href="templates.html#skill-effect">Templates</a> page shows it.</p>
+<h2 id="example-life-steal"><a class="anchor" href="#example-life-steal" aria-hidden="true">#</a>Example: life steal</h2>
+<p>Damage that heals the caster for a share of what it dealt.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Hits each enemy and heals the caster for a share of the damage.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">LifeStealEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SkillEffect</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[Tooltip(&quot;Empty uses the database&#39;s default element.&quot;)]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">element</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">        </span><span class="na">[Tooltip(&quot;Share of the damage dealt that heals the caster, from 0 to 1.&quot;)]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">steal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mf">0.2f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.02f</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Life steal {min.baseValue:0}-{max.baseValue:0}&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Harmful</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Apply</span><span class="p">(</span><span class="n">SkillCast</span><span class="w"> </span><span class="n">cast</span><span class="p">,</span><span class="w"> </span><span class="n">IFighter</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">rolls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementDamage</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">),</span><span class="w"> </span><span class="n">max</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">))</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="n">Hit</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">scale</span><span class="p">);</span>
+<span class="w">            </span><span class="n">hit</span><span class="p">.</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">skill</span><span class="p">;</span>
+<span class="w">            </span><span class="n">target</span><span class="p">.</span><span class="n">ServerDamage</span><span class="p">(</span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">healed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">RoundToInt</span><span class="p">(</span><span class="n">hit</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp01</span><span class="p">(</span><span class="n">steal</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">)));</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">healed</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">.</span><span class="n">IsDead</span><span class="p">)</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">.</span><span class="n">ServerHeal</span><span class="p">(</span><span class="n">healed</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">skill</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="n">ItemDescription</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">fallback</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">shown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">fallback</span><span class="p">;</span>
+<span class="w">            </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">$&quot;{min.At(level):0} to {max.At(level):0} {(shown != null ? shown.DisplayName : &quot;</span><span class="n">Neutral</span><span class="s">&quot;)} damage&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">,</span><span class="w"> </span><span class="n">shown</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">shown</span><span class="p">.</span><span class="n">Icon</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">);</span>
+<span class="w">            </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">$&quot;Heals you for {steal.At(level) * 100:0}% of the damage&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// The element is an asset: hand it over so the database registers it.</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Visit</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GameData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>The heal uses the hit's amount before shields soaked any of it. If that matters in your game, compare the target's health before and after (see the next example for reading health).</p>
+<h2 id="example-execute"><a class="anchor" href="#example-execute" aria-hidden="true">#</a>Example: execute</h2>
+<p>Extra damage against targets below a share of their health.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Net</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;Hits harder when the target is low on health.&lt;/summary&gt;</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ExecuteEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SkillEffect</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">element</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">        </span><span class="na">[Tooltip(&quot;Below this share of health, from 0 to 1, the bonus applies.&quot;)]</span>
+<span class="w">        </span><span class="na">[Range(0, 1)]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">below</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">;</span>
+<span class="w">        </span><span class="na">[Tooltip(&quot;Extra damage below the threshold: 1 doubles it.&quot;)]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">bonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25f</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Execute below {below * 100:0}%&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Harmful</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Apply</span><span class="p">(</span><span class="n">SkillCast</span><span class="w"> </span><span class="n">cast</span><span class="p">,</span><span class="w"> </span><span class="n">IFighter</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">float</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">scale</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">HealthShare</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">below</span><span class="p">)</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bonus</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">rolls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ElementDamage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementDamage</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">),</span><span class="w"> </span><span class="n">max</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">))</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="n">Hit</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameInstance</span><span class="p">.</span><span class="n">Combat</span><span class="p">.</span><span class="n">Attack</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">rolls</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">CombatStats</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="p">);</span>
+<span class="w">            </span><span class="n">hit</span><span class="p">.</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">skill</span><span class="p">;</span>
+<span class="w">            </span><span class="n">target</span><span class="p">.</span><span class="n">ServerDamage</span><span class="p">(</span><span class="n">hit</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">HealthShare</span><span class="p">(</span><span class="n">IFighter</span><span class="w"> </span><span class="n">fighter</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fighter</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">PlayerCharacter</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">player</span><span class="p">.</span><span class="n">health</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1f</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fighter</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Monster</span><span class="w"> </span><span class="n">monster</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">monster</span><span class="p">.</span><span class="n">health</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="n">maxHealth</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1f</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mf">1f</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="n">ItemDescription</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">fallback</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">$&quot;{min.At(level):0} to {max.At(level):0} damage&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
+<span class="w">            </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">$&quot;+{bonus.At(level) * 100:0}% against targets below {below * 100:0}% health&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Visit</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GameData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="example-mana-refund-on-the-caster"><a class="anchor" href="#example-mana-refund-on-the-caster" aria-hidden="true">#</a>Example: mana refund on the caster</h2>
+<p>An <code>OnCaster</code> effect runs once per cast, with the caster as <code>target</code>. This one gives mana back when the skill reached at least one enemy.</p>
+<pre class="code"><code class="language-csharp"><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Blunnyn.KitARPG.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Game</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ManaRefundEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SkillEffect</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">mana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;Refund {mana.baseValue:0} mana&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">OnCaster</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Apply</span><span class="p">(</span><span class="n">SkillCast</span><span class="w"> </span><span class="n">cast</span><span class="p">,</span><span class="w"> </span><span class="n">IFighter</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">cast</span><span class="p">.</span><span class="n">firstHit</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// Players are item users too, which is how mana is restored from data code.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">IItemUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">RestoreMana</span><span class="p">(</span><span class="n">mana</span><span class="p">.</span><span class="n">AtInt</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="n">ItemDescription</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">DamageElement</span><span class="w"> </span><span class="n">fallback</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="n">description</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">$&quot;Restores {mana.At(level):0} mana when cast&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ItemDescription</span><span class="p">.</span><span class="n">Kind</span><span class="p">.</span><span class="n">Effect</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id="example-a-status-with-a-chance-from-a-field"><a class="anchor" href="#example-a-status-with-a-chance-from-a-field" aria-hidden="true">#</a>Example: a status with a chance, from a field</h2>
+<p>Effects that point at assets (statuses, monsters, items) must hand them to <code>Visit</code>. Without it, an asset only your effect references may be left out of the game database, and the server can't find it by id.</p>
+<pre class="code"><code class="language-csharp"><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MarkForDeathEffect</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SkillEffect</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">StatusData</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">LevelValue</span><span class="w"> </span><span class="n">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelValue</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Summary</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">$&quot;Mark: {status.DisplayName}&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Mark (none)&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Harmful</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Apply</span><span class="p">(</span><span class="n">SkillCast</span><span class="w"> </span><span class="n">cast</span><span class="p">,</span><span class="w"> </span><span class="n">IFighter</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">cast</span><span class="p">.</span><span class="n">firstHit</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="n">target</span><span class="p">.</span><span class="n">ServerAddBuff</span><span class="p">(</span><span class="n">Buff</span><span class="p">.</span><span class="n">Of</span><span class="p">(</span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">seconds</span><span class="p">.</span><span class="n">At</span><span class="p">(</span><span class="n">cast</span><span class="p">.</span><span class="n">level</span><span class="p">),</span><span class="w"> </span><span class="n">cast</span><span class="p">.</span><span class="n">caster</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Visit</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GameData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">visit</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<p>For most statuses the kit's <code>ApplyStatusEffect</code> already does this, with a chance and stacks. Write your own only when the rule differs.</p>
+<h2 id="server-and-client"><a class="anchor" href="#server-and-client" aria-hidden="true">#</a>Server and client</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Runs on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Apply</code></td>
+<td>Server only: the map server online, the host in single player.</td>
+</tr>
+<tr>
+<td><code>Describe</code>, <code>Summary</code></td>
+<td>Wherever a skill card is shown: the client, and the editor.</td>
+</tr>
+<tr>
+<td>Field values</td>
+<td>Both: the asset is the same in both builds.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Clients see the result through the kit's own sync: health bars, damage numbers (<code>CombatEvents.Damaged</code>), buff icons and the skill's effects. Your effect doesn't need to send anything.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>Nothing changes. In single player the host runs the same <code>Apply</code>. Damage between players only lands where PvP or a duel allows it; that check happens before your effect is called, when targets are gathered.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Applying a buff on every landing.</strong> Multi-hit animations and zones call <code>Apply</code> many times. Guard one-time effects with <code>cast.firstHit</code>.</li>
+<li><strong>Ignoring <code>cast.scale</code>.</strong> A three-hit animation then deals three full hits.</li>
+<li><strong>Using <code>UnityEngine.Random</code> in <code>Describe</code>.</strong> Tooltips must be stable; roll only in <code>Apply</code>.</li>
+<li><strong>Keeping per-cast state in fields.</strong> One effect instance is shared by every cast of that skill, by every player. Store nothing in fields at runtime; use locals, or a dictionary keyed by the fighter in a server-side system.</li>
+<li><strong>Forgetting <code>Visit</code>.</strong> Assets only your effect references may be missing from the database.</li>
+<li><strong>Renaming the class.</strong> Skills store your effect by type name. A rename leaves &quot;missing type&quot; entries that the validator lists. Keep the name, or add <code>[UnityEngine.Scripting.APIUpdating.MovedFrom(...)]</code> with the old name.</li>
+<li><strong>Calling <code>ServerHeal</code> with a raw number and then the formula again.</strong> <code>ServerHeal</code> takes a final amount.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../content/skills.html">Skills</a></li>
+<li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li>
+<li><a href="formulas.html">Formulas</a></li>
+<li><a href="item-effects.html">Item effects</a></li>
+<li><a href="templates.html">Templates</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="templates.html"><span>Anterior</span>Templates</a><a class="next" href="item-effects.html"><span>Próximo</span>Item effects</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fdevkit%2Fskill-effects.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#what-a-skill-effect-is">What a skill effect is</a></li><li class="l2"><a href="#the-base-class">The base class</a></li><li class="l3"><a href="#how-targets-are-picked">How targets are picked</a></li><li class="l2"><a href="#what-a-cast-hands-you">What a cast hands you</a></li><li class="l3"><a href="#numbers-that-grow-with-rank">Numbers that grow with rank</a></li><li class="l3"><a href="#hits-and-the-damage-formula">Hits and the damage formula</a></li><li class="l2"><a href="#example-the-template">Example: the template</a></li><li class="l2"><a href="#example-life-steal">Example: life steal</a></li><li class="l2"><a href="#example-execute">Example: execute</a></li><li class="l2"><a href="#example-mana-refund-on-the-caster">Example: mana refund on the caster</a></li><li class="l2"><a href="#example-a-status-with-a-chance-from-a-field">Example: a status with a chance, from a field</a></li><li class="l2"><a href="#server-and-client">Server and client</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

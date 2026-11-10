@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Launcher · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/servers/launcher.html">English</option><option value="../../es/servers/launcher.html">Español</option><option value="../../pt/servers/launcher.html">Português</option><option value="launcher.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section" open><summary>服务器与部署</summary><ul><li><a href="architecture.html">Architecture</a></li><li><a href="services.html">Services</a></li><li><a href="launcher.html" class="on" aria-current="page">Launcher</a></li><li><a href="database.html">Database</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="builds.html">Builds</a></li><li><a href="docker.html">Docker</a></li><li><a href="security.html">Security</a></li><li><a href="shop-service.html">Shop service</a></li><li><a href="performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">服务器与部署</div><h1>Launcher</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>The KitARPG Launcher starts Login, Central, the map servers and, if you want, the Shop with one button or one command. This page covers its window, its command line, every field of <code>launcher.json</code> and how to run it on a server.</p>
+<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>What it is</h2>
+<p>The launcher is a small .NET 10 program in <code>Services/Launcher</code> (inside <code>Assets/Blunnyn/KitARPG/Services~</code> in the Asset Store package), made with Avalonia so its window works on Windows, macOS and Linux. It:</p>
+<ul>
+<li>finds the built services and your map server build;</li>
+<li>makes fresh secret keys for this install on the first run;</li>
+<li>starts Login, then Central (which starts the map servers), and the Shop when asked;</li>
+<li>shows their output and the players on each map;</li>
+<li>stops everything together.</li>
+</ul>
+<p><strong>KitARPG &gt; Play and Servers</strong> uses the same launcher without a window: <strong>Start services</strong> runs it with <code>--headless --config UserSettings/KitARPG/launcher.json</code>. Most of the time you never open the launcher yourself. See <a href="../editor/play-and-servers.html">Play &amp; Servers</a>.</p>
+<h2 id="before-the-first-run"><a class="anchor" href="#before-the-first-run" aria-hidden="true">#</a>Before the first run</h2>
+<ol>
+<li>Build the services: <code>dotnet build</code> in the <code>Services</code> folder, or <strong>Build services</strong> in Play &amp; Servers.</li>
+<li>Build a map server for your computer: <strong>KitARPG &gt; Starter &gt; Build Mac Server</strong> or <strong>Build Windows Server</strong>. See <a href="builds.html">Builds</a>.</li>
+<li>Export the game data so Login can create characters. Play &amp; Servers does it each time it starts the services. Running the launcher yourself, set <code>GameDataFile</code> or use <strong>KitARPG &gt; Export Game Data for Services</strong>.</li>
+</ol>
+<h2 id="the-window"><a class="anchor" href="#the-window" aria-hidden="true">#</a>The window</h2>
+<pre class="code"><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>Services
+dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Launcher
+</code></pre>
+<p>The window shows <strong>KitARPG</strong>, a <strong>Start</strong> button, a status line, the maps with their players, a <strong>Premium shop</strong> check box and the log of every service.</p>
+<ul>
+<li><strong>Start</strong> starts the stack; the button becomes <strong>Stop</strong>.</li>
+<li>The status line says <strong>Running. Open the Title scene or the client build to play.</strong> while it runs.</li>
+<li><strong>Premium shop</strong> turns on <code>ShopEnabled</code> and <code>ShopAutoStart</code> together: the Shop starts and stops with the rest, and the maps Central starts get its address and key.</li>
+</ul>
+<p>Closing the window stops everything.</p>
+<h2 id="command-line"><a class="anchor" href="#command-line" aria-hidden="true">#</a>Command line</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(none)</td>
+<td>Opens the window</td>
+</tr>
+<tr>
+<td><code>--headless</code></td>
+<td>Runs the same stack in the terminal, with every service's output on standard output. Ctrl+C or SIGTERM stops everything</td>
+</tr>
+<tr>
+<td><code>--config &lt;file&gt;</code></td>
+<td>Uses another <code>launcher.json</code> instead of the one next to the launcher. Works with or without <code>--headless</code></td>
+</tr>
+<tr>
+<td><code>--headless --shop-only</code></td>
+<td>Runs only the Shop. The editor's Shop page starts and stops it this way, apart from the rest</td>
+</tr>
+<tr>
+<td><code>--postgres</code></td>
+<td>Checks or creates a PostgreSQL database. Reads one JSON request on standard input and prints one JSON answer. See <a href="#checking-postgresql">Checking PostgreSQL</a></td>
+</tr>
+</tbody>
+</table></div>
+<pre class="code"><code class="language-bash">dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Launcher<span class="w">                                    </span><span class="c1"># window</span>
+dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Launcher<span class="w"> </span>--<span class="w"> </span>--headless<span class="w">                      </span><span class="c1"># terminal</span>
+dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Launcher<span class="w"> </span>--<span class="w"> </span>--headless<span class="w"> </span>--config<span class="w"> </span>my.json<span class="w">     </span><span class="c1"># another settings file</span>
+dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Launcher<span class="w"> </span>--<span class="w"> </span>--headless<span class="w"> </span>--shop-only<span class="w"> </span>--config<span class="w"> </span>my.json
+</code></pre>
+<p>With <code>--headless</code> the launcher first prints every problem it finds, each line starting with <code>!</code>, then starts what it can and prints the Login and Central addresses. With <code>--shop-only</code> a problem stops it with exit code 1.</p>
+<h2 id="launcher-json"><a class="anchor" href="#launcher-json" aria-hidden="true">#</a>launcher.json</h2>
+<p>The launcher reads <code>launcher.json</code> next to itself, or the file given with <code>--config</code>. A missing file is created. Empty fields are filled in and the file is saved again on every start, so you only write what you want to change.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LoginDll</code></td>
+<td>Path to <code>KitARPG.Services.Login.dll</code></td>
+<td>Found: a <code>Login</code> folder next to the launcher, or <code>Login/bin/Debug/net10.0</code> in a parent folder</td>
+</tr>
+<tr>
+<td><code>CentralDll</code></td>
+<td>Path to <code>KitARPG.Services.Central.dll</code></td>
+<td>Found the same way</td>
+</tr>
+<tr>
+<td><code>ShopDll</code></td>
+<td>Path to <code>KitARPG.Services.Shop.dll</code></td>
+<td>Found the same way</td>
+</tr>
+<tr>
+<td><code>MapServerExecutable</code></td>
+<td>Your map server build</td>
+<td>Found in a parent folder: <code>Builds/Starter/MacServer/KitARPGServer.app/Contents/MacOS/Unity</code> on macOS, <code>Builds/Starter/WindowsServer/KitARPGServer.exe</code> on Windows</td>
+</tr>
+<tr>
+<td><code>DataFolder</code></td>
+<td>Where the SQLite database and the map logs go</td>
+<td><code>data</code> next to <code>launcher.json</code></td>
+</tr>
+<tr>
+<td><code>ModulesFolder</code></td>
+<td>Game modules: Login loads <code>login/</code>, Central loads <code>central/</code></td>
+<td><code>modules</code> next to <code>launcher.json</code> (both subfolders are created empty)</td>
+</tr>
+<tr>
+<td><code>DatabaseProvider</code></td>
+<td><code>Sqlite</code> or <code>Postgres</code></td>
+<td><code>Sqlite</code></td>
+</tr>
+<tr>
+<td><code>ConnectionString</code></td>
+<td>PostgreSQL connection, used only with <code>Postgres</code>. With <code>Sqlite</code> the file is <code>DataFolder/kitarpg.db</code></td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><code>Maps</code></td>
+<td>The maps Central knows: <code>Id</code>, <code>Port</code>, <code>AutoStart</code></td>
+<td><code>town</code> 7777 (starts with Central), <code>forest</code> 7778, <code>crypt</code> 7779</td>
+</tr>
+<tr>
+<td><code>ExternalMaps</code></td>
+<td>Map ids run by something else, such as the editor in Play. Central waits for them to register instead of starting them</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><code>GameDataFile</code></td>
+<td>The <code>gamedata.json</code> Login reads</td>
+<td>Empty: the one next to the Login service</td>
+</tr>
+<tr>
+<td><code>LoginPort</code></td>
+<td>Login's HTTP port</td>
+<td>5100</td>
+</tr>
+<tr>
+<td><code>CentralPort</code></td>
+<td>Central's HTTP port</td>
+<td>5200</td>
+</tr>
+<tr>
+<td><code>MapLinkPort</code></td>
+<td>Central's UDP port for map servers</td>
+<td>7700</td>
+</tr>
+<tr>
+<td><code>SigningKey</code></td>
+<td>Token signing key for Login and Central</td>
+<td>64 random hex characters, made on first run</td>
+</tr>
+<tr>
+<td><code>MapKey</code></td>
+<td>Key map servers present to Central</td>
+<td>32 random hex characters, made on first run</td>
+</tr>
+<tr>
+<td><code>ShopPort</code></td>
+<td>The Shop's HTTP port</td>
+<td>5300</td>
+</tr>
+<tr>
+<td><code>ShopMapKey</code></td>
+<td>Key map servers send the Shop as <code>X-Shop-Key</code></td>
+<td>32 random hex characters, made on first run</td>
+</tr>
+<tr>
+<td><code>ShopAdminKey</code></td>
+<td>Key for the Shop's admin API (<code>X-Admin-Key</code>), which the editor publishes the catalog with</td>
+<td>32 random hex characters, made on first run</td>
+</tr>
+<tr>
+<td><code>ShopCatalogFile</code></td>
+<td>The Shop's catalog file. If missing, the sample next to the Shop service is copied there</td>
+<td><code>shop-conf.json</code> next to <code>launcher.json</code></td>
+</tr>
+<tr>
+<td><code>ShopEnabled</code></td>
+<td>Central gets <code>KITARPG_SHOP_URL</code> and <code>KITARPG_SHOP_KEY</code>, and the map servers it starts inherit them</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>ShopAutoStart</code></td>
+<td>The Shop starts and stops with Login and Central</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>A map the sample gained in a kit update (for example <code>crypt</code>) is added to an older file, unless its id or port is already taken.</p>
+<p>Example:</p>
+<pre class="code"><code class="language-json"><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;DatabaseProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Postgres&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Host=localhost;Port=5432;Database=kitarpg;Username=kitarpg;Password=...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Maps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;town&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7777</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;AutoStart&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;forest&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7778</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;AutoStart&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;crypt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7779</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;AutoStart&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;ExternalMaps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;forest&quot;</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;ShopEnabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ShopAutoStart&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+<div class="callout danger"><div class="callout-title">重要</div><p><code>launcher.json</code> holds the signing key, the map key and the Shop keys in plain text. Keep it out of version control and out of builds. The editor keeps its copy in <code>UserSettings/KitARPG/</code>, which Unity never ships.</p>
+</div>
+<h2 id="what-it-starts-and-how"><a class="anchor" href="#what-it-starts-and-how" aria-hidden="true">#</a>What it starts, and how</h2>
+<p>The launcher starts each service with <code>dotnet &lt;dll&gt;</code>, from the dll's folder, and passes settings as environment variables.</p>
+<ol>
+<li><strong>Login</strong> with <code>ASPNETCORE_URLS=http://127.0.0.1:&lt;LoginPort&gt;</code>, the database settings, <code>Auth__SigningKey</code>, <code>Modules__Path=&lt;ModulesFolder&gt;/login</code> and, when set, <code>Characters__GameDataFile</code>.</li>
+<li>A pause of 1.5 seconds, so Login runs the database migrations first.</li>
+<li><strong>Shop</strong>, with <code>ShopAutoStart</code>: <code>ASPNETCORE_URLS=http://127.0.0.1:&lt;ShopPort&gt;</code>, <code>ASPNETCORE_ENVIRONMENT=Production</code>, the database settings, <code>Shop__CatalogPath</code>, <code>Shop__MapKeys__0=&lt;ShopMapKey&gt;</code>, <code>Shop__AdminKey</code>.</li>
+<li><strong>Central</strong> with <code>ASPNETCORE_URLS=http://127.0.0.1:&lt;CentralPort&gt;</code>, the database settings, <code>Auth__SigningKey</code>, <code>Central__MapLinkPort</code>, <code>Central__MapKey</code>, <code>Modules__Path=&lt;ModulesFolder&gt;/central</code> and one <code>Central__Maps__N__*</code> group per map:
+<ul>
+<li><code>Executable</code>: <code>MapServerExecutable</code>, or empty for an external map;</li>
+<li><code>Port</code> and <code>AutoStart</code> (always off for an external map);</li>
+<li><code>Arguments</code>: <code>-batchmode -nographics -map {map} -port {port} -central {central} -logFile &lt;DataFolder&gt;/logs/map-{map}.log</code>.
+With <code>ShopEnabled</code>, Central also gets <code>KITARPG_SHOP_URL</code> and <code>KITARPG_SHOP_KEY</code>, which reach every map it starts.</li>
+</ul>
+</li>
+</ol>
+<p>Central starts the <code>AutoStart</code> maps right away and the others when the first player needs them. The services listen on <code>127.0.0.1</code> only, so nothing the launcher starts is reachable from other computers.</p>
+<p>Every line of output is shown with the service name in brackets, such as <code>[Login]</code> or <code>[Central]</code>. Map servers write to <code>&lt;DataFolder&gt;/logs/map-&lt;id&gt;.log</code>.</p>
+<h2 id="running-a-map-in-the-editor"><a class="anchor" href="#running-a-map-in-the-editor" aria-hidden="true">#</a>Running a map in the editor</h2>
+<p>To debug a map in the Unity editor while the rest runs from the launcher:</p>
+<ol>
+<li>Add the map id to <code>ExternalMaps</code> (Play &amp; Servers does it with <strong>Map in the editor</strong>).</li>
+<li>Start the services. Central waits for that map to register instead of starting the build.</li>
+<li>Play the map server in the editor. It registers with Central like a build would.</li>
+</ol>
+<h2 id="checking-postgresql"><a class="anchor" href="#checking-postgresql" aria-hidden="true">#</a>Checking PostgreSQL</h2>
+<p><code>--postgres</code> is how the editor's <strong>Set up PostgreSQL</strong> window talks to PostgreSQL. It reads one JSON request from standard input:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it is</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td><code>check</code> tests the game's login; <code>create</code> makes the database and user with an admin login</td>
+<td><code>check</code></td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>Server address</td>
+<td><code>localhost</code></td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>Server port</td>
+<td>5432</td>
+</tr>
+<tr>
+<td><code>ssl</code></td>
+<td><code>Prefer</code>, <code>Require</code> or <code>Disable</code></td>
+<td><code>Prefer</code></td>
+</tr>
+<tr>
+<td><code>database</code></td>
+<td>The game's database</td>
+<td><code>kitarpg</code></td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>The game's user</td>
+<td><code>kitarpg</code></td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>The game user's password</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><code>adminUser</code></td>
+<td>Admin login, only for <code>create</code></td>
+<td><code>postgres</code></td>
+</tr>
+<tr>
+<td><code>adminPassword</code></td>
+<td>Admin password, only for <code>create</code>. Never saved</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><code>adminDatabase</code></td>
+<td>Database the admin connects to first</td>
+<td><code>postgres</code></td>
+</tr>
+</tbody>
+</table></div>
+<pre class="code"><code class="language-bash"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;:&quot;check&quot;,&quot;host&quot;:&quot;localhost&quot;,&quot;port&quot;:5432,&quot;database&quot;:&quot;kitarpg&quot;,&quot;user&quot;:&quot;kitarpg&quot;,&quot;password&quot;:&quot;...&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>dotnet<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>Launcher<span class="w"> </span>--<span class="w"> </span>--postgres
+</code></pre>
+<p>It prints <code>{ &quot;Ok&quot;: true|false, &quot;Message&quot;: &quot;...&quot;, &quot;ConnectionString&quot;: &quot;...&quot; }</code>. <code>check</code> also confirms that the user can create tables. <code>create</code> makes the role and the database (owned by that role), grants it everything it needs and works on hosted servers where the admin isn't a superuser. See <a href="database.html#switching-to-postgresql">Database</a>.</p>
+<h2 id="one-computer-only"><a class="anchor" href="#one-computer-only" aria-hidden="true">#</a>One computer only</h2>
+<p>The launcher is made for running everything on one computer:</p>
+<ul>
+<li>Login, Central and the Shop listen on <code>127.0.0.1</code> only.</li>
+<li>The map servers it starts get no <code>-address</code>, so they announce the address Central sees them at, which is <code>127.0.0.1</code>. A player on another computer would be sent there.</li>
+<li>Nothing puts HTTPS in front of the services.</li>
+</ul>
+<p>For a server that players reach over the internet, use Docker Compose, which adds Caddy for HTTPS and gives each map its public address. See <a href="docker.html">Docker</a>.</p>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<ul>
+<li>Use one <code>launcher.json</code> per setup (SQLite for quick tests, PostgreSQL for staging) and switch with <code>--config</code>.</li>
+<li>After you rebuild a service or the map server, restart the launcher. Play &amp; Servers tells you when the running services are older than their builds.</li>
+<li>If ports are taken, another launcher is probably still running. Stop it, or change the ports in <code>launcher.json</code>.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>&quot;Login service not found.&quot;</strong> The services aren't built, or <code>LoginDll</code> points to an old path. Build them, or clear the field so it is found again.</li>
+<li><strong>&quot;Map server not found.&quot;</strong> Build the map server for this computer, or set <code>MapServerExecutable</code>.</li>
+<li><strong>&quot;DatabaseProvider is Postgres but ConnectionString is empty.&quot;</strong> Fill in the connection string or switch back to <code>Sqlite</code>.</li>
+<li><strong>Changing the keys by hand while maps run.</strong> Map servers keep the key they started with. Restart the whole stack after changing keys.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="database.html">Database</a></li>
+<li><a href="shop-service.html">Shop service</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="services.html"><span>上一页</span>Services</a><a class="next" href="database.html"><span>下一页</span>Database</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fservers%2Flauncher.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-it-is">What it is</a></li><li class="l2"><a href="#before-the-first-run">Before the first run</a></li><li class="l2"><a href="#the-window">The window</a></li><li class="l2"><a href="#command-line">Command line</a></li><li class="l2"><a href="#launcher-json">launcher.json</a></li><li class="l2"><a href="#what-it-starts-and-how">What it starts, and how</a></li><li class="l2"><a href="#running-a-map-in-the-editor">Running a map in the editor</a></li><li class="l2"><a href="#checking-postgresql">Checking PostgreSQL</a></li><li class="l2"><a href="#one-computer-only">One computer only</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

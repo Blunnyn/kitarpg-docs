@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quests · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="quests.html" selected>English</option><option value="../../es/content/quests.html">Español</option><option value="../../pt/content/quests.html">Português</option><option value="../../zh/content/quests.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>Game content</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html" class="on" aria-current="page">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Game content</div><h1>Quests</h1><p>A quest is a task an NPC gives: objectives to finish, then rewards when the player turns it in. This page covers every field of a quest, every kind of objective, how quests are offered and turned in, chains, daily and repeatable quests, quest drops, the quest log, and a step by step chain with a daily quest.</p>
+<h2 id="what-a-quest-is"><a class="anchor" href="#what-a-quest-is" aria-hidden="true">#</a>What a quest is</h2>
+<p>A quest is a <code>QuestData</code> asset in the Game Database. It says:</p>
+<ul>
+<li>who can take it (level, class, earlier quests, any other condition),</li>
+<li>what to do (objectives: kill, collect, talk, explore, trigger),</li>
+<li>what it gives (experience, gold, currencies, items, points, a skill),</li>
+<li>what happens on accepting and on turning in (actions),</li>
+<li>whether it can be done again (once, daily, always).</li>
+</ul>
+<p>An NPC offers it and takes it back through a <strong>Quest</strong> option. The giver and the receiver can be different NPCs. The server counts every objective and pays the rewards; the client only asks.</p>
+<p>Quests are a module: turning <strong>Quests</strong> off in <a href="../editor/modules.html">Modules</a> hides every Quest option.</p>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<p><strong>Game Database &gt; World &gt; Quests</strong>. <strong>+ New quest</strong> makes one in a <code>Quests</code> folder next to the database and adds it to the database's <code>quests</code> list. You can also use <strong>Create &gt; KitARPG &gt; Quest</strong>.</p>
+<p>Lists of objectives, conditions and actions have a type menu next to each entry, so you pick <strong>Kill</strong>, <strong>Collect</strong> and so on when you add one.</p>
+<h2 id="fields"><a class="anchor" href="#fields" aria-hidden="true">#</a>Fields</h2>
+<h3 id="texts"><a class="anchor" href="#texts" aria-hidden="true">#</a>Texts</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em> (<code>id</code>)</td>
+<td>Saved with characters. Changing it loses everyone's progress on this quest.</td>
+<td>From the file name</td>
+</tr>
+<tr>
+<td><em>Display Name</em> (<code>displayName</code>)</td>
+<td>The quest's title.</td>
+<td>Empty (asset name)</td>
+</tr>
+<tr>
+<td><em>Description</em> (<code>description</code>)</td>
+<td>What the giver says when offering it. Also in the quest log.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Progress Text</em> (<code>progressText</code>)</td>
+<td>What the giver says while it isn't done yet.</td>
+<td>&quot;Not done yet? Come back when it is.&quot;</td>
+</tr>
+<tr>
+<td><em>Complete Text</em> (<code>completeText</code>)</td>
+<td>What the giver says when it is turned in.</td>
+<td>&quot;Well done.&quot;</td>
+</tr>
+<tr>
+<td><em>Category</em> (<code>category</code>)</td>
+<td>Groups it in the quest log, like a region or a story arc. Empty goes under General.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="who-can-take-it"><a class="anchor" href="#who-can-take-it" aria-hidden="true">#</a>Who can take it</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Required Level</em> (<code>requiredLevel</code>)</td>
+<td>Lowest level.</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Max Level</em> (<code>maxLevel</code>)</td>
+<td>Highest level. 0 means no limit.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Classes</em> (<code>classes</code>)</td>
+<td>Classes that can take it. Empty means any class.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Required Quests</em> (<code>requiredQuests</code>)</td>
+<td>Quests that must be turned in first: a chain.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Repeat</em> (<code>repeat</code>)</td>
+<td>Once, Daily or Always.</td>
+<td>Once</td>
+</tr>
+<tr>
+<td><em>Conditions</em> (<code>conditions</code>)</td>
+<td>Anything else the player has to meet: an item carried, a place found, a story mark. See <a href="conditions-and-actions.html">Conditions and actions</a>.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="what-to-do"><a class="anchor" href="#what-to-do" aria-hidden="true">#</a>What to do</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Objectives</em> (<code>objectives</code>)</td>
+<td>The tasks. All must be done to turn it in.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Start Items</em> (<code>startItems</code>)</td>
+<td>Handed over on accepting, like a letter to deliver. Taken back if the quest is abandoned.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rewards"><a class="anchor" href="#rewards" aria-hidden="true">#</a>Rewards</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Experience</em> (<code>experience</code>)</td>
+<td>Experience. The player's <em>Experience Gain</em> stat and the server's experience rate apply.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Gold</em> (<code>gold</code>)</td>
+<td>Gold.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Currencies</em> (<code>currencies</code>)</td>
+<td>Other currencies, each with an amount.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Items</em> (<code>items</code>)</td>
+<td>Items, each with an amount. What doesn't fit in the bag goes to the bank.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Attribute Points</em> (<code>attributePoints</code>)</td>
+<td>Attribute points to spend.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Skill Points</em> (<code>skillPoints</code>)</td>
+<td>Skill points to spend.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Skill</em> (<code>skill</code>)</td>
+<td>Taught as if by a book: the skill's learning rules still apply. If the player can't learn it, it is skipped.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Skill Rank</em> (<code>skillRank</code>)</td>
+<td>The rank taught.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="actions"><a class="anchor" href="#actions" aria-hidden="true">#</a>Actions</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>On Accept</em> (<code>onAccept</code>)</td>
+<td>Run on taking it. The quest isn't taken if one can't run, like a fee the player can't pay.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>On Complete</em> (<code>onComplete</code>)</td>
+<td>Run on turning it in, before the rewards: set a story mark, take an extra item. If one can't run, the quest isn't turned in.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every action in a list is checked before any runs, so a list never half runs. See <a href="conditions-and-actions.html">Conditions and actions</a>.</p>
+<h2 id="objectives"><a class="anchor" href="#objectives" aria-hidden="true">#</a>Objectives</h2>
+<p>Each objective has two common fields:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Text</em> (<code>text</code>)</td>
+<td>Shown in the quest log. Empty uses the default, like &quot;Slay Slimes&quot;.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Hint</em> (<code>hint</code>)</td>
+<td>Unfolds under the objective in the quest log: who to ask, where to look.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>When an objective needs more than one, the log shows a count, like &quot;Slay Slimes 3/6&quot;. Each step forward is announced over the player, and &quot;&lt;quest&gt;: ready to turn in&quot; when the last one is done.</p>
+<h3 id="kill"><a class="anchor" href="#kill" aria-hidden="true">#</a>Kill</h3>
+<p>Kill monsters of one kind, or any monster.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Monster</em> (<code>monster</code>)</td>
+<td>The monster. Empty counts any monster.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Count</em> (<code>count</code>)</td>
+<td>How many.</td>
+<td>5</td>
+</tr>
+</tbody>
+</table></div>
+<p>Default text: &quot;Slay &lt;monster&gt;&quot; or &quot;Slay monsters&quot;. The kill counts for the player who earned it and for party members nearby with the same quest. Summons don't count.</p>
+<h3 id="collect"><a class="anchor" href="#collect" aria-hidden="true">#</a>Collect</h3>
+<p>Carry some of an item. Counts what is in the bag right now, up and down: selling or dropping the items lowers the count.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Item</em> (<code>item</code>)</td>
+<td>The item.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Count</em> (<code>count</code>)</td>
+<td>How many.</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Take On Turn In</em> (<code>takeOnTurnIn</code>)</td>
+<td>The giver keeps them when the quest is turned in.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>Default text: &quot;Bring &lt;item&gt;&quot;. Items in the bank don't count. Combine it with a <a href="#quest-drops">quest drop</a> so the item only falls while the quest is open.</p>
+<p>A collect objective with <em>Count</em> 1 and a <em>Start Item</em> makes a delivery: the sample's &quot;A Letter for Sela&quot; hands over a sealed letter and asks for it back at Sela, with the text &quot;Give the letter to Sela&quot;.</p>
+<h3 id="talk"><a class="anchor" href="#talk" aria-hidden="true">#</a>Talk</h3>
+<p>Talk to an NPC, by its id on the map.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Npc Id</em> (<code>npcId</code>)</td>
+<td>The NPC's id, or its object's name when it has none.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Npc Name</em> (<code>npcName</code>)</td>
+<td>How the log names it.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>Default text: &quot;Talk to &lt;name&gt;&quot;. It counts when the player starts talking to that NPC, with the quest already open.</p>
+<h3 id="explore"><a class="anchor" href="#explore" aria-hidden="true">#</a>Explore</h3>
+<p>Reach a place: a point on a map and a radius around it, or a discovery zone.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Map</em> (<code>map</code>)</td>
+<td>The map of the point. Empty: any map.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Zone</em> (<code>zone</code>)</td>
+<td>A zone's id: reached by walking into that <code>DiscoveryZone</code>. Used instead of the point when set.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Position</em> (<code>position</code>)</td>
+<td>The point.</td>
+<td>0, 0, 0</td>
+</tr>
+<tr>
+<td><em>Radius</em> (<code>radius</code>)</td>
+<td>Meters around the point, on the ground.</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Place Name</em> (<code>placeName</code>)</td>
+<td>How the log names it, like &quot;the old ruins&quot;.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>Default text: &quot;Find &lt;place&gt;&quot;. The server checks every half second. A zone is the easier choice: place a <code>DiscoveryZone</code> once, and both this objective and conditions can use its id. See <a href="conditions-and-actions.html#discovery-zones">Conditions and actions</a>.</p>
+<h3 id="trigger"><a class="anchor" href="#trigger" aria-hidden="true">#</a>Trigger</h3>
+<p>Set off a world trigger: touch an altar, pull a lever, walk into a marked spot.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Trigger</em> (<code>trigger</code>)</td>
+<td>The trigger's id on its map.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Count</em> (<code>count</code>)</td>
+<td>How many times.</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Target Name</em> (<code>targetName</code>)</td>
+<td>How the log names it, like &quot;the altar&quot;.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>Default text: &quot;Activate &lt;target&gt;&quot;. It counts for any player who sets the trigger off while meeting its conditions, even when a trigger for everyone was already spent. See <a href="world-triggers.html">World triggers</a>.</p>
+<h2 id="quest-states"><a class="anchor" href="#quest-states" aria-hidden="true">#</a>Quest states</h2>
+<p>For each character, a quest is in one of these states:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>State</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Locked</td>
+<td>Requirements not met, or done and not repeatable yet.</td>
+</tr>
+<tr>
+<td>Available</td>
+<td>Can be taken now.</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>Taken, objectives missing.</td>
+</tr>
+<tr>
+<td>Ready</td>
+<td>Every objective done; waiting to be turned in.</td>
+</tr>
+<tr>
+<td>Done</td>
+<td>Turned in, and not open again.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="offering-and-turning-in"><a class="anchor" href="#offering-and-turning-in" aria-hidden="true">#</a>Offering and turning in</h2>
+<p>Put a <strong>Quest</strong> option on the NPC that gives it and the one that takes it back. See <a href="npcs.html#quest">NPCs</a>.</p>
+<ol>
+<li>The option shows only when there is something to do. Its label says where the player stands: yellow &quot;!&quot; to take, yellow &quot;?&quot; and &quot;(complete)&quot; when ready, grey &quot;?&quot; and &quot;(in progress)&quot; while not.</li>
+<li>The NPC's head shows the same marks with <code>NpcQuestMarker</code>.</li>
+<li>Picking the option opens the quest window: the NPC's text (description, progress text or complete text), the objectives, the rewards, and a button to accept or turn in. It closes on Escape or when the player walks away.</li>
+</ol>
+<h3 id="accepting"><a class="anchor" href="#accepting" aria-hidden="true">#</a>Accepting</h3>
+<p>The server checks, in order:</p>
+<ol>
+<li>The quest is Available. Otherwise it answers with the first requirement not met, like &quot;Needs level 3&quot; or &quot;Finish Slime Trouble first&quot;.</li>
+<li>The player has fewer than 20 open quests (<em>Max Active</em> on the player's <code>PlayerQuests</code> component). Otherwise: &quot;Too many quests open&quot;.</li>
+<li>The bag has room for the start items. Otherwise: &quot;Make room in your bag or bank first&quot;.</li>
+<li>The <em>On Accept</em> actions can all run.</li>
+</ol>
+<p>Then it hands over the start items, opens the quest, counts collect objectives against the bag at once, and shows &quot;New quest: &lt;name&gt;&quot;. New quests are tracked on the HUD.</p>
+<h3 id="turning-in"><a class="anchor" href="#turning-in" aria-hidden="true">#</a>Turning in</h3>
+<ol>
+<li>Every objective must be done.</li>
+<li>The rewards must fit: items handed in free their slots first, and what the bag can't take goes to the bank. If neither has room: &quot;Make room in your bag or bank first&quot;.</li>
+<li><em>On Complete</em> actions run.</li>
+<li>Collect objectives with <em>Take On Turn In</em> take their items.</li>
+<li>Rewards are paid: items (bag, then bank), gold, currencies, points, the skill, experience.</li>
+<li>&quot;Quest complete: &lt;name&gt;&quot;.</li>
+</ol>
+<h3 id="abandoning"><a class="anchor" href="#abandoning" aria-hidden="true">#</a>Abandoning</h3>
+<p>From the quest log, <strong>Abandon</strong> (with a confirmation) drops the quest. Its start items are taken back, all or nothing: if some are missing from the bag, the player is told to put them back first. This stops players from taking the quest again for a second set.</p>
+<div class="callout warning"><div class="callout-title">Warning</div><p>Mark start items as quest items (<em>Quest Item</em> on, and bound). Project Check warns about a start item that isn't one: it could be traded or sold, and then the quest can't be given up.</p>
+</div>
+<h2 id="chains-daily-and-repeatable-quests"><a class="anchor" href="#chains-daily-and-repeatable-quests" aria-hidden="true">#</a>Chains, daily and repeatable quests</h2>
+<ul>
+<li><strong>Chain:</strong> list the earlier quests in <em>Required Quests</em>. The next quest is Locked until those are turned in. For more control, use a <code>QuestCondition</code> in <em>Conditions</em>, for example &quot;only while quest X is in progress&quot;.</li>
+<li><strong>Daily:</strong> <em>Repeat</em> Daily. After turning it in, it opens again the next day, counted in UTC (midnight UTC, not the player's local time).</li>
+<li><strong>Always:</strong> <em>Repeat</em> Always. It opens again as soon as it is turned in.</li>
+<li><strong>Once:</strong> the default. Done for good.</li>
+</ul>
+<h2 id="quest-drops"><a class="anchor" href="#quest-drops" aria-hidden="true">#</a>Quest drops</h2>
+<p>A drop in a <a href="loot.html">loot table</a> with its <em>Quest</em> field set falls only for a killer who has that quest open and still carries fewer of the item than the collect objective asks for. Luck and loot rates don't change its chance. Put quest drops first in the table so <em>Max Drops</em> never cuts them.</p>
+<h2 id="the-quest-log-and-tracker"><a class="anchor" href="#the-quest-log-and-tracker" aria-hidden="true">#</a>The quest log and tracker</h2>
+<ul>
+<li><strong>Quest log</strong> (<code>L</code>): tabs <strong>In progress</strong>, <strong>Finished</strong> and <strong>Hidden</strong> with their counts, a search by name or category and a level range. Quests are grouped by <em>Category</em> in groups that fold. Each row shows its kind (once, daily, repeatable, or ready to turn in), level and a pin to track it. The page shows title, level, kind, category and state, the description, the objectives with counts and hints (the first one not done stands out), the rewards, and the <strong>Track</strong>, <strong>Hide</strong> and <strong>Abandon</strong> buttons.</li>
+<li><strong>Tracker:</strong> tracked quests and their objectives on the right of the HUD, up to 5 (<em>Max Quests</em> on <code>QuestTracker</code>). Hiding a quest also stops tracking it. Tracking and hiding are saved with the character.</li>
+</ul>
+<p>See <a href="../gameplay/hud-and-windows.html">HUD and windows</a>.</p>
+<h2 id="make-a-quest-chain-with-a-daily"><a class="anchor" href="#make-a-quest-chain-with-a-daily" aria-hidden="true">#</a>Make a quest chain with a daily</h2>
+<p>This builds a three quest chain at a captain and a daily quest at an alchemist, like the sample's.</p>
+<h3 id="1-the-first-quest-a-kill-quest"><a class="anchor" href="#1-the-first-quest-a-kill-quest" aria-hidden="true">#</a>1. The first quest: a kill quest</h3>
+<ol>
+<li><strong>Quests &gt; + New quest</strong>. Rename it <strong>Slime Trouble</strong>.</li>
+<li><em>Description</em>: &quot;Slimes keep oozing out of the forest toward the gate. Thin them out.&quot; <em>Progress Text</em>: &quot;Still hearing them squelch out there.&quot; <em>Complete Text</em>: &quot;That's quieter. Here, you earned these.&quot;</li>
+<li><em>Category</em>: <code>The Mushroom King</code>.</li>
+<li><em>Required Level</em> 1.</li>
+<li><em>Objectives</em>: add <strong>Kill</strong>. <em>Monster</em> Slime, <em>Count</em> 6, <em>Hint</em> &quot;Out the town gate and into the forest.&quot;</li>
+<li><em>Rewards</em>: <em>Experience</em> 80, <em>Gold</em> 30, <em>Items</em> Health Potion x3.</li>
+</ol>
+<h3 id="2-the-second-quest-collect-with-a-quest-drop"><a class="anchor" href="#2-the-second-quest-collect-with-a-quest-drop" aria-hidden="true">#</a>2. The second quest: collect with a quest drop</h3>
+<ol>
+<li>Make an item <strong>Slime Gel</strong> in <strong>Items &gt; Quest items</strong> (quest item and bound).</li>
+<li>New quest <strong>Sticky Samples</strong>. <em>Required Quests</em>: Slime Trouble. <em>Required Level</em> 2.</li>
+<li><em>Objectives</em>: <strong>Collect</strong>, <em>Item</em> Slime Gel, <em>Count</em> 5, <em>Take On Turn In</em> on, <em>Hint</em> &quot;Slimes drop it while this quest is open.&quot;</li>
+<li>Open <strong>Items &gt; Loot &gt; Slime Loot</strong>. Add a drop at the top: <em>Item</em> Slime Gel, <em>Chance %</em> 60, amounts 1 and 1, <em>Quest</em> Sticky Samples.</li>
+<li><em>Rewards</em>: <em>Experience</em> 120, <em>Gold</em> 40, and an item.</li>
+</ol>
+<h3 id="3-the-third-quest-explore-and-kill"><a class="anchor" href="#3-the-third-quest-explore-and-kill" aria-hidden="true">#</a>3. The third quest: explore and kill</h3>
+<ol>
+<li>In the Forest scene, add a <code>DiscoveryZone</code> on the ruins: <em>Zone Id</em> <code>old_ruins</code>, <em>Display Name</em> &quot;Old Forest Ruins&quot;, <em>Radius</em> 8.</li>
+<li>New quest <strong>The Old Ruins</strong>. <em>Required Quests</em>: Sticky Samples.</li>
+<li><em>Objectives</em>: <strong>Explore</strong>, <em>Map</em> Forest, <em>Zone</em> <code>old_ruins</code>, <em>Place Name</em> &quot;the old ruins in the forest&quot;. Then <strong>Kill</strong>, <em>Monster</em> Giant Slime, <em>Count</em> 1.</li>
+</ol>
+<h3 id="4-give-the-chain-to-the-captain"><a class="anchor" href="#4-give-the-chain-to-the-captain" aria-hidden="true">#</a>4. Give the chain to the captain</h3>
+<ol>
+<li>On the captain's <code>Npc</code>, press <strong>Quest</strong> three times under <strong>Add option</strong> and pick one quest in each.</li>
+<li>Only one shows at a time: the next becomes Available when the one before is turned in.</li>
+<li>Optional: a conditional greeting with a <code>QuestCondition</code> on The Old Ruins set to <em>Taken</em>: &quot;Back from the ruins already?&quot;. See <a href="npcs.html#conditional-greetings">NPCs</a>.</li>
+</ol>
+<h3 id="5-the-daily-quest"><a class="anchor" href="#5-the-daily-quest" aria-hidden="true">#</a>5. The daily quest</h3>
+<ol>
+<li>Make a quest item <strong>Glowing Spore</strong> and add it as a quest drop to the mushroom's loot table, with <em>Quest</em> set to the new quest.</li>
+<li>New quest <strong>Fresh Spores</strong>. <em>Repeat</em> <strong>Daily</strong>. <em>Required Level</em> 3. <em>Category</em> <code>Forest</code>.</li>
+<li><em>Objectives</em>: <strong>Collect</strong> Glowing Spore, <em>Count</em> 4.</li>
+<li><em>Rewards</em>: <em>Experience</em> 60, <em>Gold</em> 50, Fortitude Elixir x2.</li>
+<li>Add a <strong>Quest</strong> option for it on the alchemist.</li>
+</ol>
+<h3 id="6-test"><a class="anchor" href="#6-test" aria-hidden="true">#</a>6. Test</h3>
+<p>Press Play. Useful GM commands: <code>/quest give slime_trouble</code>, <code>/quest finish slime_trouble</code> (fills every objective), <code>/quest reset fresh_spores</code> (forgets it, so a daily can be taken again at once), <code>/spawn slime 6</code>. See <a href="../reference/gm-commands.html">GM commands</a>.</p>
+<h2 id="saving"><a class="anchor" href="#saving" aria-hidden="true">#</a>Saving</h2>
+<ul>
+<li><strong>MMO:</strong> progress and the record of turned in quests are saved by Central in the character's extra data (keys <code>quests</code> and <code>questsDone</code>), with no database migration.</li>
+<li><strong>Single player:</strong> in the character's save on the player's computer.</li>
+<li>If you change a quest's objectives later, progress on the objectives that still match is kept.</li>
+</ul>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The same rules in both. In MMO the map server counts kills, talks, places and items, and validates accepting and turning in against an NPC nearby that has the option. Quest progress follows the character across map servers.</p>
+<h2 id="for-programmers"><a class="anchor" href="#for-programmers" aria-hidden="true">#</a>For programmers</h2>
+<p>Inherit <code>QuestObjective</code> to add your own kind (for example, &quot;craft 3 potions&quot;) and advance it with <code>PlayerQuests.ServerAdvance&lt;T&gt;(match, amount)</code>. <code>PlayerQuests.ServerCompleted</code> tells other systems a quest was turned in. <code>QuestData.CheckRequirements</code> is virtual. See <a href="../devkit/quest-objectives.html">Quest objectives</a> and <a href="../devkit/events.html">Events</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>The quest never shows on the NPC.</strong> A requirement isn't met (level, class, earlier quest, a condition), it is Done and not repeatable, the Quest option has <em>Offers</em> off, or the Quests module is off.</li>
+<li><strong>A collect count drops.</strong> The player sold, dropped or banked the items. Collect counts the bag as it is.</li>
+<li><strong>The quest item doesn't drop.</strong> The drop's <em>Quest</em> isn't the quest being done, the player already has enough, or drops above it fill <em>Max Drops</em>.</li>
+<li><strong>The talk objective doesn't count.</strong> <em>Npc Id</em> doesn't match the NPC's id, or the player talked before taking the quest.</li>
+<li><strong>A daily reopens at a strange hour.</strong> It reopens at midnight UTC.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="npcs.html">NPCs</a>, <a href="dialogues.html">Dialogues</a>, <a href="conditions-and-actions.html">Conditions and actions</a></li>
+<li><a href="loot.html">Loot</a>, <a href="monsters.html">Monsters</a>, <a href="world-triggers.html">World triggers</a></li>
+<li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li>
+<li><a href="../devkit/quest-objectives.html">Quest objectives in code</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="npc-shops.html"><span>Previous</span>NPC shops</a><a class="next" href="conditions-and-actions.html"><span>Next</span>Conditions and actions</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fcontent%2Fquests.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#what-a-quest-is">What a quest is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#fields">Fields</a></li><li class="l3"><a href="#texts">Texts</a></li><li class="l3"><a href="#who-can-take-it">Who can take it</a></li><li class="l3"><a href="#what-to-do">What to do</a></li><li class="l3"><a href="#rewards">Rewards</a></li><li class="l3"><a href="#actions">Actions</a></li><li class="l2"><a href="#objectives">Objectives</a></li><li class="l3"><a href="#kill">Kill</a></li><li class="l3"><a href="#collect">Collect</a></li><li class="l3"><a href="#talk">Talk</a></li><li class="l3"><a href="#explore">Explore</a></li><li class="l3"><a href="#trigger">Trigger</a></li><li class="l2"><a href="#quest-states">Quest states</a></li><li class="l2"><a href="#offering-and-turning-in">Offering and turning in</a></li><li class="l3"><a href="#accepting">Accepting</a></li><li class="l3"><a href="#turning-in">Turning in</a></li><li class="l3"><a href="#abandoning">Abandoning</a></li><li class="l2"><a href="#chains-daily-and-repeatable-quests">Chains, daily and repeatable quests</a></li><li class="l2"><a href="#quest-drops">Quest drops</a></li><li class="l2"><a href="#the-quest-log-and-tracker">The quest log and tracker</a></li><li class="l2"><a href="#make-a-quest-chain-with-a-daily">Make a quest chain with a daily</a></li><li class="l3"><a href="#1-the-first-quest-a-kill-quest">1. The first quest: a kill quest</a></li><li class="l3"><a href="#2-the-second-quest-collect-with-a-quest-drop">2. The second quest: collect with a quest drop</a></li><li class="l3"><a href="#3-the-third-quest-explore-and-kill">3. The third quest: explore and kill</a></li><li class="l3"><a href="#4-give-the-chain-to-the-captain">4. Give the chain to the captain</a></li><li class="l3"><a href="#5-the-daily-quest">5. The daily quest</a></li><li class="l3"><a href="#6-test">6. Test</a></li><li class="l2"><a href="#saving">Saving</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#for-programmers">For programmers</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

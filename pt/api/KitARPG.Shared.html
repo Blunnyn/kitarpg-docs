@@ -1,0 +1,2056 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KitARPG.Shared · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/api/KitARPG.Shared.html">English</option><option value="../../es/api/KitARPG.Shared.html">Español</option><option value="KitARPG.Shared.html" selected>Português</option><option value="../../zh/api/KitARPG.Shared.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section" open><summary>Referência da API</summary><ul><li><a href="index.html">Referência da API</a></li><li><a href="KitARPG.Client.html">KitARPG.Client</a></li><li><a href="KitARPG.Data.html">KitARPG.Data</a></li><li><a href="KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="KitARPG.Local.html">KitARPG.Local</a></li><li><a href="KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="KitARPG.Net.html">KitARPG.Net</a></li><li><a href="KitARPG.Server.html">KitARPG.Server</a></li><li><a href="KitARPG.Shared.html" class="on" aria-current="page">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Referência da API</div><h1>KitARPG.Shared</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><h2 id="blunnyn-kitarpg-shared-accounts"><a class="anchor" href="#blunnyn-kitarpg-shared-accounts" aria-hidden="true">#</a>Blunnyn.KitARPG.Shared.Accounts</h2>
+<h3 id="accountrules-class"><a class="anchor" href="#accountrules-class" aria-hidden="true">#</a>AccountRules (class)</h3>
+<p>Account field rules. The client checks them to give quick feedback, the Login service enforces them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string Validate(RegisterRequest request)</code></td>
+<td>Returns an error code from <code>ErrorCodes</code>, or null when the request is fine.</td>
+</tr>
+<tr>
+<td><code>public static string ValidateEmail(string email)</code></td>
+<td>Email is optional. When given it only has to look like one; proving it is the game's call.</td>
+</tr>
+<tr>
+<td><code>public static string Normalize(string username)</code></td>
+<td>Usernames are unique ignoring case.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="loginrequest-class"><a class="anchor" href="#loginrequest-class" aria-hidden="true">#</a>LoginRequest (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool remember</code></td>
+<td>Asks for a remember token, so this computer can sign in again without the password.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="loginresponse-class"><a class="anchor" href="#loginresponse-class" aria-hidden="true">#</a>LoginResponse (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long expiresAt</code></td>
+<td>Unix time in seconds. Ask for a new token before it runs out.</td>
+</tr>
+<tr>
+<td><code>public string rememberToken</code></td>
+<td>Set when the request asked to be remembered. Each one works once: keep the newest.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="registerrequest-class"><a class="anchor" href="#registerrequest-class" aria-hidden="true">#</a>RegisterRequest (class)</h3>
+<h3 id="rememberrequest-class"><a class="anchor" href="#rememberrequest-class" aria-hidden="true">#</a>RememberRequest (class)</h3>
+<p>Signs in with a remember token instead of a password, or forgets it.</p>
+<h2 id="blunnyn-kitarpg-shared-api"><a class="anchor" href="#blunnyn-kitarpg-shared-api" aria-hidden="true">#</a>Blunnyn.KitARPG.Shared.Api</h2>
+<h3 id="apierror-class"><a class="anchor" href="#apierror-class" aria-hidden="true">#</a>ApiError (class)</h3>
+<p>Error body returned by the services. Clients switch on <code>code</code> to show their own text.</p>
+<h3 id="errorcodes-class"><a class="anchor" href="#errorcodes-class" aria-hidden="true">#</a>ErrorCodes (class)</h3>
+<p>Error codes shared by the services and the client.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const string VersionMismatch</code></td>
+<td>The client and the map server were built from different code.</td>
+</tr>
+<tr>
+<td><code>public const string ModeMismatch</code></td>
+<td>The client and the map server play different game modes.</td>
+</tr>
+<tr>
+<td><code>public const string SessionExpired</code></td>
+<td>The remember token is unknown, used or expired: sign in with the password.</td>
+</tr>
+<tr>
+<td><code>public const string SessionBusy</code></td>
+<td>The character's last session is still saving on its map. Try again in a moment.</td>
+</tr>
+<tr>
+<td><code>public const string LoginLocked</code></td>
+<td>Too many wrong passwords for this username lately. Sent for unknown names too.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="blunnyn-kitarpg-shared-central"><a class="anchor" href="#blunnyn-kitarpg-shared-central" aria-hidden="true">#</a>Blunnyn.KitARPG.Shared.Central</h2>
+<h3 id="allianceaction-enum"><a class="anchor" href="#allianceaction-enum" aria-hidden="true">#</a>AllianceAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Create</code></td>
+<td>Founds an alliance named <code>name</code> with the tag <code>tag</code>.</td>
+</tr>
+<tr>
+<td><code>Invite</code></td>
+<td>Invites the guild whose name is <code>name</code>.</td>
+</tr>
+<tr>
+<td><code>Accept</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Decline</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Leave</code></td>
+<td>Takes the asking character's guild out of its alliance.</td>
+</tr>
+<tr>
+<td><code>Kick</code></td>
+<td>Takes the guild named <code>name</code> out.</td>
+</tr>
+<tr>
+<td><code>Lead</code></td>
+<td>Hands the lead to the guild named <code>name</code>.</td>
+</tr>
+<tr>
+<td><code>Notice</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Disband</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Refresh</code></td>
+<td>Asks for the alliance's state again.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="alliancecommand-class"><a class="anchor" href="#alliancecommand-class" aria-hidden="true">#</a>AllianceCommand (class)</h3>
+<p>Map to Central: an alliance request. Only guild members whose role has <code>Alliance</code> act for their guild; only the leading guild's do so for the alliance.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long amount</code></td>
+<td>When creating, gold the map already took from the founder; given back on a refusal.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="allianceguildinfo-class"><a class="anchor" href="#allianceguildinfo-class" aria-hidden="true">#</a>AllianceGuildInfo (class)</h3>
+<h3 id="allianceinvite-class"><a class="anchor" href="#allianceinvite-class" aria-hidden="true">#</a>AllianceInvite (class)</h3>
+<p>Central to map: an alliance asks this character's guild to join.</p>
+<h3 id="alliancerules-class"><a class="anchor" href="#alliancerules-class" aria-hidden="true">#</a>AllianceRules (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string CheckName(string name, string tag)</code></td>
+<td>Null when fine, or what to tell the player.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="alliancestate-class"><a class="anchor" href="#alliancestate-class" aria-hidden="true">#</a>AllianceState (class)</h3>
+<p>Central to map: the alliance as one of its members sees it. allianceId 0: none.</p>
+<h3 id="banrequest-class"><a class="anchor" href="#banrequest-class" aria-hidden="true">#</a>BanRequest (class)</h3>
+<p>A moderator on a map bans an account by one of its characters' names. Central checks the moderator's role.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int hours</code></td>
+<td>0 lifts a ban.</td>
+</tr>
+<tr>
+<td><code>public int level</code></td>
+<td>The GM level the map server asked for this command. Central checks the account against it too.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterlevel-class"><a class="anchor" href="#characterlevel-class" aria-hidden="true">#</a>CharacterLevel (class)</h3>
+<p>A map tells Central how a character's level changed, for friend and party lists.</p>
+<h3 id="charactersave-class"><a class="anchor" href="#charactersave-class" aria-hidden="true">#</a>CharacterSave (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool leaving</code></td>
+<td>The character left the map; Central closes its session after saving.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="charactersaved-class"><a class="anchor" href="#charactersaved-class" aria-hidden="true">#</a>CharacterSaved (class)</h3>
+<h3 id="chatchannel-enum"><a class="anchor" href="#chatchannel-enum" aria-hidden="true">#</a>ChatChannel (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Say</code></td>
+<td>Players close by.</td>
+</tr>
+<tr>
+<td><code>Map</code></td>
+<td>Everyone on the same map.</td>
+</tr>
+<tr>
+<td><code>World</code></td>
+<td>Everyone online, on every map.</td>
+</tr>
+<tr>
+<td><code>Whisper</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Party</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Guild</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>System</code></td>
+<td>From the game, not a player: someone came online, an invite arrived.</td>
+</tr>
+<tr>
+<td><code>Alliance</code></td>
+<td>Every guild of the alliance.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="chatdeliver-class"><a class="anchor" href="#chatdeliver-class" aria-hidden="true">#</a>ChatDeliver (class)</h3>
+<p>Central hands a line to a map, for the listed characters, or for all of its players when empty.</p>
+<h3 id="chatline-class"><a class="anchor" href="#chatline-class" aria-hidden="true">#</a>ChatLine (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long toId</code></td>
+<td>For whispers: who it goes to.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="chatrelay-class"><a class="anchor" href="#chatrelay-class" aria-hidden="true">#</a>ChatRelay (class)</h3>
+<p>A map asks Central to carry a line past its own players: world, whisper or party.</p>
+<h3 id="collectoraction-enum"><a class="anchor" href="#collectoraction-enum" aria-hidden="true">#</a>CollectorAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Place</code></td>
+<td>A member placed one at <code>spot</code>; <code>cost</code> already left them.</td>
+</tr>
+<tr>
+<td><code>Collect</code></td>
+<td>A member took what it gathered; the snapshot is what it held. It goes home.</td>
+</tr>
+<tr>
+<td><code>Store</code></td>
+<td>The map saves what it gathered so far.</td>
+</tr>
+<tr>
+<td><code>Defeated</code></td>
+<td>Attackers brought it down; its things went to them.</td>
+</tr>
+<tr>
+<td><code>Alert</code></td>
+<td>Tells its guild <code>text</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="collectorcommand-class"><a class="anchor" href="#collectorcommand-class" aria-hidden="true">#</a>CollectorCommand (class)</h3>
+<p>Map to Central about a collector. Gold, experience and items are its whole contents, not what changed.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int maxPlaced</code></td>
+<td>How many the guild may have out, from its upgrades.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="collectorinfo-class"><a class="anchor" href="#collectorinfo-class" aria-hidden="true">#</a>CollectorInfo (class)</h3>
+<p>A guild's tax collector, placed at a spot of a map, and what it gathered.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long placedAt</code></td>
+<td>Unix seconds.</td>
+</tr>
+<tr>
+<td><code>public OwnedItem[] items</code></td>
+<td>Only the item and amount; copies get their bonuses when someone takes them.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="collectorlist-class"><a class="anchor" href="#collectorlist-class" aria-hidden="true">#</a>CollectorList (class)</h3>
+<p>Central to map: every collector on this map, when it registers and whenever one changes.</p>
+<h3 id="friendaction-enum"><a class="anchor" href="#friendaction-enum" aria-hidden="true">#</a>FriendAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List</code></td>
+<td>Just send the list.</td>
+</tr>
+<tr>
+<td><code>Add</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Accept</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Decline</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Remove</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="friendcommand-class"><a class="anchor" href="#friendcommand-class" aria-hidden="true">#</a>FriendCommand (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string name</code></td>
+<td>The other character, by name.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="friendentry-class"><a class="anchor" href="#friendentry-class" aria-hidden="true">#</a>FriendEntry (class)</h3>
+<h3 id="friendlist-class"><a class="anchor" href="#friendlist-class" aria-hidden="true">#</a>FriendList (class)</h3>
+<p>A character's whole friend list, sent to the map it is on whenever something changes.</p>
+<h3 id="friendstate-enum"><a class="anchor" href="#friendstate-enum" aria-hidden="true">#</a>FriendState (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Friend</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Incoming</code></td>
+<td>They asked; waiting for this character to answer.</td>
+</tr>
+<tr>
+<td><code>Outgoing</code></td>
+<td>This character asked; waiting for them.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamelogbatch-class"><a class="anchor" href="#gamelogbatch-class" aria-hidden="true">#</a>GameLogBatch (class)</h3>
+<p>Map to Central: log lines gathered over the last moments.</p>
+<h3 id="gamelogentry-class"><a class="anchor" href="#gamelogentry-class" aria-hidden="true">#</a>GameLogEntry (class)</h3>
+<p>One line of the game log: who did what, with whom, and what moved. Kept in the database (<code>game_logs</code>) for support and to catch cheating. The kind is free text, so games add their own; <code>LogKinds</code> lists the kit's.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long time</code></td>
+<td>Unix milliseconds.</td>
+</tr>
+<tr>
+<td><code>public long otherId</code></td>
+<td>The other side, when there is one: a trade partner, a killer, a reported player.</td>
+</tr>
+<tr>
+<td><code>public long amount</code></td>
+<td>Items moved, experience lost, levels: whatever the kind counts.</td>
+</tr>
+<tr>
+<td><code>public string mapId</code></td>
+<td>Filled by Central from the map that sent it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gmauditack-class"><a class="anchor" href="#gmauditack-class" aria-hidden="true">#</a>GmAuditAck (class)</h3>
+<p>Central to map: these lines are in the database.</p>
+<h3 id="gmauditbatch-class"><a class="anchor" href="#gmauditbatch-class" aria-hidden="true">#</a>GmAuditBatch (class)</h3>
+<h3 id="gmauditentry-class"><a class="anchor" href="#gmauditentry-class" aria-hidden="true">#</a>GmAuditEntry (class)</h3>
+<p>One GM command, run or refused, for the gm_audit table. The map server keeps it, on disk too, until Central says it is stored.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string id</code></td>
+<td>Unique per line, so a batch sent twice is stored once.</td>
+</tr>
+<tr>
+<td><code>public long time</code></td>
+<td>Unix milliseconds.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gmlevels-class"><a class="anchor" href="#gmlevels-class" aria-hidden="true">#</a>GmLevels (class)</h3>
+<p>GM levels of an account, 1 to 4. Each GM command asks for one of them.</p>
+<h3 id="guildaction-enum"><a class="anchor" href="#guildaction-enum" aria-hidden="true">#</a>GuildAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Create</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Invite</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Accept</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Decline</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Leave</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Kick</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Promote</code></td>
+<td>One role up.</td>
+</tr>
+<tr>
+<td><code>Demote</code></td>
+<td>One role down.</td>
+</tr>
+<tr>
+<td><code>Lead</code></td>
+<td>Hands the lead to another member.</td>
+</tr>
+<tr>
+<td><code>Notice</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Disband</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>SetRole</code></td>
+<td>Puts a member in the role <code>value</code>.</td>
+</tr>
+<tr>
+<td><code>EditRoles</code></td>
+<td>Replaces the roles with <code>roles</code>; members keep their role's place, the leader stays last.</td>
+</tr>
+<tr>
+<td><code>Upgrade</code></td>
+<td>Raises the collector upgrade <code>name</code> a rank, up to <code>value</code>.</td>
+</tr>
+<tr>
+<td><code>DepositGold</code></td>
+<td>Gold into the guild bank, already taken from the character.</td>
+</tr>
+<tr>
+<td><code>WithdrawGold</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Emblem</code></td>
+<td>Changes the emblem to <code>emblem</code>.</td>
+</tr>
+<tr>
+<td><code>History</code></td>
+<td>Asks for the guild's recent history.</td>
+</tr>
+<tr>
+<td><code>BuyHall</code></td>
+<td>Buys the guild hall for <code>amount</code> gold from the guild bank.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildcommand-class"><a class="anchor" href="#guildcommand-class" aria-hidden="true">#</a>GuildCommand (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string name</code></td>
+<td>The other character, the guild's name when creating, or an upgrade id.</td>
+</tr>
+<tr>
+<td><code>public string text</code></td>
+<td>The notice text.</td>
+</tr>
+<tr>
+<td><code>public int value</code></td>
+<td>A role index or an upgrade's highest rank.</td>
+</tr>
+<tr>
+<td><code>public long amount</code></td>
+<td>Gold. When creating, what the map already took from the founder; Central gives it back if it refuses.</td>
+</tr>
+<tr>
+<td><code>public GuildEmblem emblem</code></td>
+<td>When creating or changing it.</td>
+</tr>
+<tr>
+<td><code>public Items.OwnedItem item</code></td>
+<td>When creating, the item the map already took from the founder; given back on a refusal.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildemblem-class"><a class="anchor" href="#guildemblem-class" aria-hidden="true">#</a>GuildEmblem (class)</h3>
+<p>A guild's emblem: a background shape and a symbol, each with its color.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int background</code></td>
+<td>Index into the game's emblem backgrounds.</td>
+</tr>
+<tr>
+<td><code>public int symbol</code></td>
+<td>Index into the game's emblem symbols.</td>
+</tr>
+<tr>
+<td><code>public int backgroundColor</code></td>
+<td>RGB as 0xRRGGBB; emblems are never see-through.</td>
+</tr>
+<tr>
+<td><code>public long Pack()</code></td>
+<td>Packed in one number, so the map can sync it with the player's name.</td>
+</tr>
+<tr>
+<td><code>public static bool Valid(GuildEmblem emblem, int backgrounds, int symbols)</code></td>
+<td>Within the game's lists, with plain colors. Central keeps the limits the map sends.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildevent-class"><a class="anchor" href="#guildevent-class" aria-hidden="true">#</a>GuildEvent (class)</h3>
+<p>One line of a guild's history.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long at</code></td>
+<td>Unix seconds.</td>
+</tr>
+<tr>
+<td><code>public string kind</code></td>
+<td>One of <code>GuildEventKinds</code>.</td>
+</tr>
+<tr>
+<td><code>public string actor</code></td>
+<td>The member who did it, if any.</td>
+</tr>
+<tr>
+<td><code>public string target</code></td>
+<td>Who or what it was done to, if any.</td>
+</tr>
+<tr>
+<td><code>public string detail</code></td>
+<td>Free text: an amount, an item, a role.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildeventkinds-class"><a class="anchor" href="#guildeventkinds-class" aria-hidden="true">#</a>GuildEventKinds (class)</h3>
+<p>What guild history lines are about. Free text, so games add their own.</p>
+<h3 id="guildexperience-class"><a class="anchor" href="#guildexperience-class" aria-hidden="true">#</a>GuildExperience (class)</h3>
+<p>Map to Central: experience a member earned for the guild.</p>
+<h3 id="guildgive-class"><a class="anchor" href="#guildgive-class" aria-hidden="true">#</a>GuildGive (class)</h3>
+<p>Central to map: an item or gold the character gets back, from a withdrawal or a deposit that didn't go through. Empty when there is nothing to give.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int delivery</code></td>
+<td>Central's delivery count for the character when it gave this; the map keeps it in <code>delivered</code>.</td>
+</tr>
+<tr>
+<td><code>public Items.OwnedItem[] items</code></td>
+<td>More items at once, as from a collector.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildhistory-class"><a class="anchor" href="#guildhistory-class" aria-hidden="true">#</a>GuildHistory (class)</h3>
+<p>Central to map: the guild's latest history, newest first.</p>
+<h3 id="guildinvite-class"><a class="anchor" href="#guildinvite-class" aria-hidden="true">#</a>GuildInvite (class)</h3>
+<h3 id="guildmemberinfo-class"><a class="anchor" href="#guildmemberinfo-class" aria-hidden="true">#</a>GuildMemberInfo (class)</h3>
+<h3 id="guildpermission-enum"><a class="anchor" href="#guildpermission-enum" aria-hidden="true">#</a>GuildPermission (enum)</h3>
+<p>What a guild role may do. The leader may do everything.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Invite</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Kick</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Notice</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ranks</code></td>
+<td>Move members between the roles below this one.</td>
+</tr>
+<tr>
+<td><code>Roles</code></td>
+<td>Rename roles and change what they may do.</td>
+</tr>
+<tr>
+<td><code>Deposit</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Withdraw</code></td>
+<td>Take items out of the guild storage.</td>
+</tr>
+<tr>
+<td><code>WithdrawGold</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Upgrades</code></td>
+<td>Spend the guild's points on its tax collectors.</td>
+</tr>
+<tr>
+<td><code>Bank</code></td>
+<td>Open the guild bank at its banker and see what it holds.</td>
+</tr>
+<tr>
+<td><code>PlaceCollector</code></td>
+<td>Place a tax collector, paying for it.</td>
+</tr>
+<tr>
+<td><code>Collect</code></td>
+<td>Take what a tax collector gathered, which sends it home.</td>
+</tr>
+<tr>
+<td><code>Emblem</code></td>
+<td>Change the guild's emblem.</td>
+</tr>
+<tr>
+<td><code>Hall</code></td>
+<td>Buy the guild hall and let allies in.</td>
+</tr>
+<tr>
+<td><code>Alliance</code></td>
+<td>Found, join or leave an alliance, and answer its invites.</td>
+</tr>
+<tr>
+<td><code>All</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildrole-class"><a class="anchor" href="#guildrole-class" aria-hidden="true">#</a>GuildRole (class)</h3>
+<h3 id="guildroles-class"><a class="anchor" href="#guildroles-class" aria-hidden="true">#</a>GuildRoles (class)</h3>
+<p>Roles are ordered from the lowest to the leader, who is always the last. A member's rank is the index of its role.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static GuildRole[] Legacy()</code></td>
+<td>The three fixed ranks guilds had before roles: member, officer and leader.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildstate-class"><a class="anchor" href="#guildstate-class" aria-hidden="true">#</a>GuildState (class)</h3>
+<p>A character's guild, sent to its map whenever it changes. Id 0 means none.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long experienceToNext</code></td>
+<td>0 at the highest level.</td>
+</tr>
+<tr>
+<td><code>public int points</code></td>
+<td>Points left to spend on collector upgrades.</td>
+</tr>
+<tr>
+<td><code>public long allianceId</code></td>
+<td>0 when the guild is in no alliance.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildstorageaction-enum"><a class="anchor" href="#guildstorageaction-enum" aria-hidden="true">#</a>GuildStorageAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Deposit</code></td>
+<td><code>item</code> leaves the character's bag first.</td>
+</tr>
+<tr>
+<td><code>Withdraw</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Move</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildstoragecommand-class"><a class="anchor" href="#guildstoragecommand-class" aria-hidden="true">#</a>GuildStorageCommand (class)</h3>
+<h3 id="guildupgraderank-class"><a class="anchor" href="#guildupgraderank-class" aria-hidden="true">#</a>GuildUpgradeRank (class)</h3>
+<h3 id="kickaccount-class"><a class="anchor" href="#kickaccount-class" aria-hidden="true">#</a>KickAccount (class)</h3>
+<p>Central asks a map to drop an account, e.g. because it logged in somewhere else.</p>
+<h3 id="ledgerreasons-class"><a class="anchor" href="#ledgerreasons-class" aria-hidden="true">#</a>LedgerReasons (class)</h3>
+<p>Why the premium balance changed. Free text, so games add their own.</p>
+<h3 id="logkinds-class"><a class="anchor" href="#logkinds-class" aria-hidden="true">#</a>LogKinds (class)</h3>
+<p>The kinds of log line the kit writes.</p>
+<h3 id="logtext-class"><a class="anchor" href="#logtext-class" aria-hidden="true">#</a>LogText (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string Items(IEnumerable&lt;OwnedItem&gt; items)</code></td>
+<td>Items as &quot;iron_sword +3, potion x5&quot;, for a line's detail.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mailaction-enum"><a class="anchor" href="#mailaction-enum" aria-hidden="true">#</a>MailAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List</code></td>
+<td>Asks for the mailbox again.</td>
+</tr>
+<tr>
+<td><code>Read</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Take</code></td>
+<td>Takes the gold and items attached.</td>
+</tr>
+<tr>
+<td><code>Delete</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mailcommand-class"><a class="anchor" href="#mailcommand-class" aria-hidden="true">#</a>MailCommand (class)</h3>
+<h3 id="mailentry-class"><a class="anchor" href="#mailentry-class" aria-hidden="true">#</a>MailEntry (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string kind</code></td>
+<td>One of <code>MailKinds</code>.</td>
+</tr>
+<tr>
+<td><code>public long sentAt</code></td>
+<td>Unix seconds.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mailgive-class"><a class="anchor" href="#mailgive-class" aria-hidden="true">#</a>MailGive (class)</h3>
+<p>Central to map: what a character takes from a letter, or gets back from one that couldn't go.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int delivery</code></td>
+<td>Central's delivery count for the character when it gave this; the map keeps it in <code>delivered</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mailkinds-class"><a class="anchor" href="#mailkinds-class" aria-hidden="true">#</a>MailKinds (class)</h3>
+<p>Where a letter came from, when it matters to the game.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const string Shop</code></td>
+<td>A purchase or gift from the shop. Maps take it for the player as soon as it arrives.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="maillist-class"><a class="anchor" href="#maillist-class" aria-hidden="true">#</a>MailList (class)</h3>
+<p>Central to map: a character's mailbox, newest first.</p>
+<h3 id="mailsend-class"><a class="anchor" href="#mailsend-class" aria-hidden="true">#</a>MailSend (class)</h3>
+<p>Map to Central: a letter to send. The gold, items and postage already left the sender.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long postage</code></td>
+<td>Paid to send it; given back if it can't go.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapheartbeat-class"><a class="anchor" href="#mapheartbeat-class" aria-hidden="true">#</a>MapHeartbeat (class)</h3>
+<h3 id="maplink-class"><a class="anchor" href="#maplink-class" aria-hidden="true">#</a>MapLink (class)</h3>
+<h3 id="mapregister-class"><a class="anchor" href="#mapregister-class" aria-hidden="true">#</a>MapRegister (class)</h3>
+<p>First message a map server sends after connecting.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string address</code></td>
+<td>Address clients should use. Empty means the address Central sees.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapregistered-class"><a class="anchor" href="#mapregistered-class" aria-hidden="true">#</a>MapRegistered (class)</h3>
+<h3 id="marketaction-enum"><a class="anchor" href="#marketaction-enum" aria-hidden="true">#</a>MarketAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Search</code></td>
+<td>Lots for sale, by category and name.</td>
+</tr>
+<tr>
+<td><code>Mine</code></td>
+<td>The character's own lots.</td>
+</tr>
+<tr>
+<td><code>List</code></td>
+<td>Puts a copy on sale. It and the fee already left the seller.</td>
+</tr>
+<tr>
+<td><code>Buy</code></td>
+<td>Buys a lot. The price already left the buyer.</td>
+</tr>
+<tr>
+<td><code>Cancel</code></td>
+<td>Takes one of the character's own lots back.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="marketcommand-class"><a class="anchor" href="#marketcommand-class" aria-hidden="true">#</a>MarketCommand (class)</h3>
+<p>Map to Central: a request at the market.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Items.OwnedItem item</code></td>
+<td>List: the copy for sale.</td>
+</tr>
+<tr>
+<td><code>public long price</code></td>
+<td>List: the asking price for the whole lot. Buy: what the buyer paid, which must still be the price.</td>
+</tr>
+<tr>
+<td><code>public long fee</code></td>
+<td>List: the fee taken, given back if the lot can't go up.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="marketentry-class"><a class="anchor" href="#marketentry-class" aria-hidden="true">#</a>MarketEntry (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long expiresAt</code></td>
+<td>Unix seconds.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="marketgive-class"><a class="anchor" href="#marketgive-class" aria-hidden="true">#</a>MarketGive (class)</h3>
+<p>Central to map: a bought lot, one taken back, or what comes back from a request that failed.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int delivery</code></td>
+<td>Central's delivery count for the character when it gave this; the map keeps it in <code>delivered</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="marketpage-class"><a class="anchor" href="#marketpage-class" aria-hidden="true">#</a>MarketPage (class)</h3>
+<p>Central to map: a page of results, or the character's own lots.</p>
+<h3 id="partyaction-enum"><a class="anchor" href="#partyaction-enum" aria-hidden="true">#</a>PartyAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Invite</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Accept</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Decline</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Leave</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Kick</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Promote</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="partycommand-class"><a class="anchor" href="#partycommand-class" aria-hidden="true">#</a>PartyCommand (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string name</code></td>
+<td>The other character, by name.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="partyinvite-class"><a class="anchor" href="#partyinvite-class" aria-hidden="true">#</a>PartyInvite (class)</h3>
+<h3 id="partymember-class"><a class="anchor" href="#partymember-class" aria-hidden="true">#</a>PartyMember (class)</h3>
+<h3 id="partystate-class"><a class="anchor" href="#partystate-class" aria-hidden="true">#</a>PartyState (class)</h3>
+<p>Where a character's party stands, sent to its map. No members means no party.</p>
+<h3 id="playrequest-class"><a class="anchor" href="#playrequest-class" aria-hidden="true">#</a>PlayRequest (class)</h3>
+<p>Client asks Central where to play a character.</p>
+<h3 id="playresponse-class"><a class="anchor" href="#playresponse-class" aria-hidden="true">#</a>PlayResponse (class)</h3>
+<p>Map server address and a one-use ticket to present when connecting.</p>
+<h3 id="playerreport-class"><a class="anchor" href="#playerreport-class" aria-hidden="true">#</a>PlayerReport (class)</h3>
+<p>Map to Central: a player reports another, with the chat they saw around it.</p>
+<h3 id="rateschange-class"><a class="anchor" href="#rateschange-class" aria-hidden="true">#</a>RatesChange (class)</h3>
+<p>A map server asks Central to change the rates event for every map.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int level</code></td>
+<td>The GM level the map server asked for this command. Central checks the account against it too.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="ratesstate-class"><a class="anchor" href="#ratesstate-class" aria-hidden="true">#</a>RatesState (class)</h3>
+<p>A rates event on top of the game's own rates, like double experience for a weekend. 1 leaves a rate as it is. Central keeps the current one and hands it to every map.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long endsAt</code></td>
+<td>Unix seconds when the event ends; 0 or past means no event.</td>
+</tr>
+<tr>
+<td><code>public string by</code></td>
+<td>Who started it, for the announcement.</td>
+</tr>
+<tr>
+<td><code>public bool announce</code></td>
+<td>The maps tell their players; false when a map only catches up after connecting.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="reportaction-enum"><a class="anchor" href="#reportaction-enum" aria-hidden="true">#</a>ReportAction (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List</code></td>
+<td>The open reports, newest first.</td>
+</tr>
+<tr>
+<td><code>Close</code></td>
+<td>Marks <code>id</code> as handled.</td>
+</tr>
+<tr>
+<td><code>Logs</code></td>
+<td>The last log lines of <code>name</code>, optionally of one kind.</td>
+</tr>
+<tr>
+<td><code>Audit</code></td>
+<td>The last GM commands, of <code>name</code> or everyone's.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="reportcommand-class"><a class="anchor" href="#reportcommand-class" aria-hidden="true">#</a>ReportCommand (class)</h3>
+<p>Map to Central: a moderator works the reports or reads the log. Central answers in chat.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int level</code></td>
+<td>The GM level the map server asked for this command. Central checks the account against it too.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rolechange-class"><a class="anchor" href="#rolechange-class" aria-hidden="true">#</a>RoleChange (class)</h3>
+<p>Map to Central: an admin sets another account's GM level, by one of its characters' names.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int role</code></td>
+<td>1 player to 4 admin.</td>
+</tr>
+<tr>
+<td><code>public int level</code></td>
+<td>The GM level the map server asked for this command. Central checks the account against it too.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopaction-enum"><a class="anchor" href="#shopaction-enum" aria-hidden="true">#</a>ShopAction (enum)</h3>
+<p>Map side: what a player's request becomes on the way to the Shop.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Open</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Buy</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Grant</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopbought-class"><a class="anchor" href="#shopbought-class" aria-hidden="true">#</a>ShopBought (class)</h3>
+<h3 id="shopbuyrequest-class"><a class="anchor" href="#shopbuyrequest-class" aria-hidden="true">#</a>ShopBuyRequest (class)</h3>
+<p>Map to Shop: buys an offer for the character, or as a gift for someone else.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public OwnedItem[] items</code></td>
+<td>The copies the offer gives, made by the map with their random bonuses. The Shop checks them against the offer.</td>
+</tr>
+<tr>
+<td><code>public string giftTo</code></td>
+<td>Name of the character it is a gift for, or empty.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopcatalog-class"><a class="anchor" href="#shopcatalog-class" aria-hidden="true">#</a>ShopCatalog (class)</h3>
+<p>What the Shop service sells right now.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string version</code></td>
+<td>Changes whenever the catalog does, so maps and clients know to fetch it again.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopconfig-class"><a class="anchor" href="#shopconfig-class" aria-hidden="true">#</a>ShopConfig (class)</h3>
+<p>The Shop service's whole catalog file: shop-conf.json, and what the editor publishes.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string mailSender</code></td>
+<td>Who the letters with bought items come from.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopgrantrequest-class"><a class="anchor" href="#shopgrantrequest-class" aria-hidden="true">#</a>ShopGrantRequest (class)</h3>
+<p>Map to Shop: adds or takes premium currency, for a GM or a reward from the game.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long characterId</code></td>
+<td>The character asking, or getting it when there is no target.</td>
+</tr>
+<tr>
+<td><code>public string target</code></td>
+<td>A character name, or empty for the one asking.</td>
+</tr>
+<tr>
+<td><code>public long amount</code></td>
+<td>Negative takes.</td>
+</tr>
+<tr>
+<td><code>public string reason</code></td>
+<td>One of <code>LedgerReasons</code>.</td>
+</tr>
+<tr>
+<td><code>public string reference</code></td>
+<td>Unique, so a retry never counts twice. Empty makes a new one.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopoffer-class"><a class="anchor" href="#shopoffer-class" aria-hidden="true">#</a>ShopOffer (class)</h3>
+<p>One offer of the shop's catalog, as the Shop service keeps it in its catalog file.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string category</code></td>
+<td>The tab it shows under.</td>
+</tr>
+<tr>
+<td><code>public string icon</code></td>
+<td>Item whose icon the card shows. Empty uses the first item's.</td>
+</tr>
+<tr>
+<td><code>public string image</code></td>
+<td>Key of the card and detail picture in the game's shop art. Empty draws the icon instead.</td>
+</tr>
+<tr>
+<td><code>public string banner</code></td>
+<td>Key of a wide picture; offers with one take turns in the banner on top of the shop.</td>
+</tr>
+<tr>
+<td><code>public string badge</code></td>
+<td>Ribbon on the card's corner, such as New or Sale. Empty has none.</td>
+</tr>
+<tr>
+<td><code>public int order</code></td>
+<td>Lower comes first when the shop is sorted by relevance.</td>
+</tr>
+<tr>
+<td><code>public string startsAt</code></td>
+<td>UTC, ISO 8601 (&quot;2026-12-01T00:00:00Z&quot;). Empty is always.</td>
+</tr>
+<tr>
+<td><code>public int perAccount</code></td>
+<td>How many times one account can buy it. 0 is no limit.</td>
+</tr>
+<tr>
+<td><code>public bool hidden</code></td>
+<td>Kept for history but no longer sold.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopofferitem-class"><a class="anchor" href="#shopofferitem-class" aria-hidden="true">#</a>ShopOfferItem (class)</h3>
+<h3 id="shopproduct-class"><a class="anchor" href="#shopproduct-class" aria-hidden="true">#</a>ShopProduct (class)</h3>
+<p>What one unit of a real-money product gives. The id is the one the payment provider sends.</p>
+<h3 id="shoppublishresult-class"><a class="anchor" href="#shoppublishresult-class" aria-hidden="true">#</a>ShopPublishResult (class)</h3>
+<p>Shop service's answer to a publish: nothing is written unless ok.</p>
+<h3 id="shopresult-class"><a class="anchor" href="#shopresult-class" aria-hidden="true">#</a>ShopResult (class)</h3>
+<p>Shop to map: what came of a buy or a grant.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string text</code></td>
+<td>A line for the player who asked.</td>
+</tr>
+<tr>
+<td><code>public long mailedTo</code></td>
+<td>Character that got a letter with the items, or 0.</td>
+</tr>
+<tr>
+<td><code>public long changed</code></td>
+<td>Character whose account balance changed, or 0.</td>
+</tr>
+<tr>
+<td><code>public ShopState state</code></td>
+<td>The asking character's state after the request.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shoprules-class"><a class="anchor" href="#shoprules-class" aria-hidden="true">#</a>ShopRules (class)</h3>
+<p>The checks every buy passes, on the map before asking and again in the Shop service: the offer is on sale, under its limit, paid for, and the copies are exactly what it gives.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const long MaxAmount</code></td>
+<td>Highest price or grant: far above any real balance, low enough that sums never overflow.</td>
+</tr>
+<tr>
+<td><code>public static string Check(ShopOffer offer, OwnedItem[] items, long now, int bought, long balance)</code></td>
+<td>Null when the buy can go ahead, or what to tell the player.</td>
+</tr>
+<tr>
+<td><code>public static long Time(string text)</code></td>
+<td>Unix seconds of an ISO 8601 UTC time; 0 when empty, -1 when unreadable.</td>
+</tr>
+<tr>
+<td><code>public static string Problem(ShopOffer offer)</code></td>
+<td>What is wrong with an offer as written in the catalog, or null.</td>
+</tr>
+<tr>
+<td><code>public static bool Matches(ShopOffer offer, OwnedItem[] items)</code></td>
+<td>The copies add up to the offer's items and amounts, no more and no less.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopstate-class"><a class="anchor" href="#shopstate-class" aria-hidden="true">#</a>ShopState (class)</h3>
+<p>The account's premium balances and what it bought of limited offers.</p>
+<h3 id="shopstaterequest-class"><a class="anchor" href="#shopstaterequest-class" aria-hidden="true">#</a>ShopStateRequest (class)</h3>
+<p>Map to Shop: the account's state for one of its characters.</p>
+<h3 id="socialerrors-class"><a class="anchor" href="#socialerrors-class" aria-hidden="true">#</a>SocialErrors (class)</h3>
+<h3 id="socialnotice-class"><a class="anchor" href="#socialnotice-class" aria-hidden="true">#</a>SocialNotice (class)</h3>
+<p>A system line for one character: an answer, a refusal, a friend coming online.</p>
+<h3 id="ticketcheck-class"><a class="anchor" href="#ticketcheck-class" aria-hidden="true">#</a>TicketCheck (class)</h3>
+<h3 id="ticketresult-class"><a class="anchor" href="#ticketresult-class" aria-hidden="true">#</a>TicketResult (class)</h3>
+<h3 id="transferrequest-class"><a class="anchor" href="#transferrequest-class" aria-hidden="true">#</a>TransferRequest (class)</h3>
+<p>Saves the character at its destination and asks for a ticket to the target map.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string instance</code></td>
+<td>The copy of an instanced map to enter when the map picks it, like a guild's hall. Central checks it; empty lets Central choose.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="transferresult-class"><a class="anchor" href="#transferresult-class" aria-hidden="true">#</a>TransferResult (class)</h3>
+<h2 id="blunnyn-kitarpg-shared-characters"><a class="anchor" href="#blunnyn-kitarpg-shared-characters" aria-hidden="true">#</a>Blunnyn.KitARPG.Shared.Characters</h2>
+<h3 id="attributeamount-class"><a class="anchor" href="#attributeamount-class" aria-hidden="true">#</a>AttributeAmount (class)</h3>
+<p>Points in one attribute (strength, dexterity...), by attribute id.</p>
+<h3 id="characterappearance-class"><a class="anchor" href="#characterappearance-class" aria-hidden="true">#</a>CharacterAppearance (class)</h3>
+<p>What a character looks like before any gear. Stored as JSON, so new fields can be added without a database migration.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string model</code></td>
+<td>Id of the player model (prefab) the character was made with.</td>
+</tr>
+<tr>
+<td><code>public string hair</code></td>
+<td>Hair style id, empty for the model's own hair.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterdata-class"><a class="anchor" href="#characterdata-class" aria-hidden="true">#</a>CharacterData (class)</h3>
+<p>One piece of the game's own data on a character: a key and a JSON value.</p>
+<h3 id="characterdatarules-class"><a class="anchor" href="#characterdatarules-class" aria-hidden="true">#</a>CharacterDataRules (class)</h3>
+<p>Limits on a character's own data, checked by the map when it is set and by Central and the local save when it is stored, so a bad map or a broken save can't grow it without end.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const int MaxBytes</code></td>
+<td>All values together, in UTF-8 bytes.</td>
+</tr>
+<tr>
+<td><code>public static bool ValidKey(string key)</code></td>
+<td>Letters, digits, dots, dashes and underscores. Use your game's prefix, like &quot;mygame.pets&quot;.</td>
+</tr>
+<tr>
+<td><code>public static CharacterData[] Set(CharacterData[] data, string key, string json)</code></td>
+<td>The list with <code>key</code> set to <code>json</code>, or removed when it is empty. Null when it breaks a limit.</td>
+</tr>
+<tr>
+<td><code>public static string Problem(CharacterData[] data)</code></td>
+<td>Why this data can't be stored, or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterflag-class"><a class="anchor" href="#characterflag-class" aria-hidden="true">#</a>CharacterFlag (class)</h3>
+<p>A named number kept per character. Missing reads as 0.</p>
+<h3 id="characterlist-class"><a class="anchor" href="#characterlist-class" aria-hidden="true">#</a>CharacterList (class)</h3>
+<h3 id="characterrules-class"><a class="anchor" href="#characterrules-class" aria-hidden="true">#</a>CharacterRules (class)</h3>
+<p>Character name and appearance rules, shared by the creation screen and the Login service.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string ValidateName(string name)</code></td>
+<td>Letters (any alphabet) and digits, starting with a letter. Returns an error code or null.</td>
+</tr>
+<tr>
+<td><code>public static string ValidateAppearance(CharacterAppearance appearance)</code></td>
+<td>Checks the shape of the ids; whether the model exists is up to the game data.</td>
+</tr>
+<tr>
+<td><code>public static bool IsId(string id)</code></td>
+<td>Game data ids: letters, digits, _ and -, up to 32 characters.</td>
+</tr>
+<tr>
+<td><code>public static string Normalize(string name)</code></td>
+<td>Names are unique ignoring case.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterstate-class"><a class="anchor" href="#characterstate-class" aria-hidden="true">#</a>CharacterState (class)</h3>
+<p>Everything a map server needs to spawn a character and everything it sends back to save it. Map servers never touch the database; Central loads and saves this for them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CurrencyAmount[] currencies</code></td>
+<td>Every currency other than gold.</td>
+</tr>
+<tr>
+<td><code>public AttributeAmount[] attributes</code></td>
+<td>Points the player spent, on top of what the class gives at this level.</td>
+</tr>
+<tr>
+<td><code>public int bonusSkillPoints</code></td>
+<td>Skill points on top of what levels give, from scrolls and rewards.</td>
+</tr>
+<tr>
+<td><code>public SkillRank[] skills</code></td>
+<td>Skills the player raised; the ones a class gives at level 1 are here at rank 1 or more.</td>
+</tr>
+<tr>
+<td><code>public HotbarSlot[] hotbar</code></td>
+<td>One entry per hotbar key. Empty until the server fills the defaults.</td>
+</tr>
+<tr>
+<td><code>public OwnedItem[] items</code></td>
+<td>Bag and worn items.</td>
+</tr>
+<tr>
+<td><code>public QuestProgress[] quests</code></td>
+<td>Quests taken and not turned in yet.</td>
+</tr>
+<tr>
+<td><code>public QuestRecord[] questsDone</code></td>
+<td>Quests turned in, with when and how many times.</td>
+</tr>
+<tr>
+<td><code>public string[] discovered</code></td>
+<td>Maps and zones the character has been to, by id.</td>
+</tr>
+<tr>
+<td><code>public CharacterFlag[] flags</code></td>
+<td>Story marks set by dialogs and quests: a door opened, a choice made.</td>
+</tr>
+<tr>
+<td><code>public CharacterData[] data</code></td>
+<td>The game's own saved data, by key, as JSON. Kept by the server; see <code>CharacterDataRules</code>.</td>
+</tr>
+<tr>
+<td><code>public Items.OwnedItem[] accountItems</code></td>
+<td>Storage every character of the account shares. Saved with the account, not the character.</td>
+</tr>
+<tr>
+<td><code>public long accountGold</code></td>
+<td>Gold the account keeps at the bank.</td>
+</tr>
+<tr>
+<td><code>public int role</code></td>
+<td>The account's role when it entered the map: 0 player, 1 moderator, 2 admin. Never saved.</td>
+</tr>
+<tr>
+<td><code>public string instance</code></td>
+<td>Which copy of an instanced map to enter: the party's, or the character's own. Set by Central, never saved.</td>
+</tr>
+<tr>
+<td><code>public int version</code></td>
+<td>Must match the stored version or the save is refused, so an old copy can't win.</td>
+</tr>
+<tr>
+<td><code>public int delivered</code></td>
+<td>The last delivery from Central (market, mail, guild) the map has applied. Items Central gave after it aren't in the map's save yet, so the save mustn't delete them.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="charactersummary-class"><a class="anchor" href="#charactersummary-class" aria-hidden="true">#</a>CharacterSummary (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string[] gear</code></td>
+<td>Item id worn at each equipment position, empty where nothing is, for the select screen.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="classexport-class"><a class="anchor" href="#classexport-class" aria-hidden="true">#</a>ClassExport (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int health</code></td>
+<td>Health and mana a new character starts with.</td>
+</tr>
+<tr>
+<td><code>public string startMap</code></td>
+<td>Map and position a new character of this class appears at.</td>
+</tr>
+<tr>
+<td><code>public OwnedItem[] startItems</code></td>
+<td>Starting items already laid out in bag and equipment. Login gives each copy its own uid.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="createcharacterrequest-class"><a class="anchor" href="#createcharacterrequest-class" aria-hidden="true">#</a>CreateCharacterRequest (class)</h3>
+<h3 id="gamedataexport-class"><a class="anchor" href="#gamedataexport-class" aria-hidden="true">#</a>GameDataExport (class)</h3>
+<p>The part of the game database the services need: models, the classes each one may take, what a new character starts with, and the item and skill catalog the database keeps. Unity writes it as gamedata.json from the GameDatabase.</p>
+<h3 id="hotbarkind-enum"><a class="anchor" href="#hotbarkind-enum" aria-hidden="true">#</a>HotbarKind (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Empty</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Item</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Skill</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hotbarslot-class"><a class="anchor" href="#hotbarslot-class" aria-hidden="true">#</a>HotbarSlot (class)</h3>
+<p>What one hotbar key does: use the first stack of an item, or cast a skill.</p>
+<h3 id="itemexport-class"><a class="anchor" href="#itemexport-class" aria-hidden="true">#</a>ItemExport (class)</h3>
+<p>One item of the catalog. Copies in the database must point to one of these.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int rarity</code></td>
+<td>ItemRarity: 0 common to 4 legendary.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="modelexport-class"><a class="anchor" href="#modelexport-class" aria-hidden="true">#</a>ModelExport (class)</h3>
+<h3 id="questprogress-class"><a class="anchor" href="#questprogress-class" aria-hidden="true">#</a>QuestProgress (class)</h3>
+<p>A quest the character has taken and not turned in: how far each objective got.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int[] counts</code></td>
+<td>One count per objective, in the quest's order.</td>
+</tr>
+<tr>
+<td><code>public bool untracked</code></td>
+<td>Left out of the on-screen tracker. New quests are tracked.</td>
+</tr>
+<tr>
+<td><code>public bool hidden</code></td>
+<td>Moved to the hidden tab of the quest log.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questrecord-class"><a class="anchor" href="#questrecord-class" aria-hidden="true">#</a>QuestRecord (class)</h3>
+<p>A quest the character has turned in at least once.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public long last</code></td>
+<td>Unix seconds, UTC, of the last turn in. Daily quests open again the next UTC day.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skillexport-class"><a class="anchor" href="#skillexport-class" aria-hidden="true">#</a>SkillExport (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string[] classes</code></td>
+<td>Classes that learn it on their own.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skillrank-class"><a class="anchor" href="#skillrank-class" aria-hidden="true">#</a>SkillRank (class)</h3>
+<p>A learned skill and its rank.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int granted</code></td>
+<td>Ranks given by a scroll or trainer rather than bought with skill points.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="blunnyn-kitarpg-shared-items"><a class="anchor" href="#blunnyn-kitarpg-shared-items" aria-hidden="true">#</a>Blunnyn.KitARPG.Shared.Items</h2>
+<h3 id="currencyamount-class"><a class="anchor" href="#currencyamount-class" aria-hidden="true">#</a>CurrencyAmount (class)</h3>
+<p>How much of a currency a character has. Gold is kept apart, in CharacterState.gold.</p>
+<h3 id="equippositions-class"><a class="anchor" href="#equippositions-class" aria-hidden="true">#</a>EquipPositions (class)</h3>
+<p>Where worn items go. The first nine match the item's own slot; rings fit in two places. Keep in step with EquipSlot in KitARPG.Data.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const int FirstCosmetic</code></td>
+<td>Cosmetic positions follow the gear ones: what is worn there sets the look of its region and gives nothing. They cover the positions in <code>Looks</code>, in that order.</td>
+</tr>
+<tr>
+<td><code>public static int CosmeticOf(int position)</code></td>
+<td>The cosmetic position over a gear position, or -1 when it has none.</td>
+</tr>
+<tr>
+<td><code>public static int LookOf(int position)</code></td>
+<td>The gear position a cosmetic one covers; any other position is its own.</td>
+</tr>
+<tr>
+<td><code>public static bool Accepts(int position, ItemRules rules)</code></td>
+<td>Cosmetic positions take any piece for their region, even gear with stats; cosmetic-only items go nowhere else.</td>
+</tr>
+<tr>
+<td><code>public static string Look(IReadOnlyList&lt;string&gt; gear, int position)</code></td>
+<td>What shows at each gear position: the cosmetic over it when there is one, else the gear.</td>
+</tr>
+<tr>
+<td><code>public static string[] Gear(IEnumerable&lt;OwnedItem&gt; items)</code></td>
+<td>Item id worn at each position, empty where nothing is.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iitemcatalog-interface"><a class="anchor" href="#iitemcatalog-interface" aria-hidden="true">#</a>IItemCatalog (interface)</h3>
+<h3 id="inventory-class"><a class="anchor" href="#inventory-class" aria-hidden="true">#</a>Inventory (class)</h3>
+<p>A character's bag and worn items. Every change either completes or leaves everything as it was, and returns an error code from <code>InventoryErrors</code> or null. The map server runs it; Unity and the services share it so both lay out items the same way.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int MaxWeight</code></td>
+<td>Most weight the character can carry, worn gear included. 0 means only slots limit the bag.</td>
+</tr>
+<tr>
+<td><code>public Func&lt;string, string&gt; CanEquip</code></td>
+<td>Extra rules before an item is worn (level, class). Gets the item id, returns an error code or null.</td>
+</tr>
+<tr>
+<td><code>public Func&lt;string, int[]&gt; Roll</code></td>
+<td>Rolls the random bonuses of a new copy, by item id; null when the item has none. Copies with rolls never stack, each one is its own.</td>
+</tr>
+<tr>
+<td><code>public IEnumerable&lt;OwnedItem&gt; Equipped</code></td>
+<td>Gear worn for its stats. Cosmetics are left out; see <code>Cosmetics</code>.</td>
+</tr>
+<tr>
+<td><code>public int FirstFreeSlot()</code></td>
+<td>First empty bag slot, or -1.</td>
+</tr>
+<tr>
+<td><code>public int Weight</code></td>
+<td>Weight of everything the character has, worn gear included.</td>
+</tr>
+<tr>
+<td><code>public bool Overloaded</code></td>
+<td>Carrying more than <code>MaxWeight</code>, as after picking up loot past it.</td>
+</tr>
+<tr>
+<td><code>public string NoRoomFor(string itemId, bool bound = false)</code></td>
+<td>Why one more of an item doesn't fit: BagFull, TooHeavy, or null when it fits.</td>
+</tr>
+<tr>
+<td><code>public OwnedItem[] ToArray()</code></td>
+<td>A copy of every item, ready to be saved.</td>
+</tr>
+<tr>
+<td><code>public bool CanAdd(string itemId, int amount, bool bound = false)</code></td>
+<td>True if the whole amount fits in the bag.</td>
+</tr>
+<tr>
+<td><code>public int Add(string itemId, int amount, bool bound = false, bool overWeight = false)</code></td>
+<td>Puts items in the bag, topping up stacks first. Returns how many did not fit. With <code>overWeight</code> only the slots limit it, and the bag can end up <code>Overloaded</code>.</td>
+</tr>
+<tr>
+<td><code>public string Restore(OwnedItem copy)</code></td>
+<td>Puts back a copy that left the bag (sold, traded), keeping its own values. Stackables join equal stacks; the rest take a free slot. All of it fits or nothing changes.</td>
+</tr>
+<tr>
+<td><code>public void Hold(OwnedItem copy)</code></td>
+<td>Keeps a copy outside the grid, for when nothing else can take it. It counts and is saved, and takes the first free slot the next time the bag is loaded.</td>
+</tr>
+<tr>
+<td><code>public string Wear(string itemId, bool bound = false, int amount = 1)</code></td>
+<td>Puts an item straight on, for starting gear. Ignores <code>CanEquip</code>.</td>
+</tr>
+<tr>
+<td><code>public int Take(string itemId, int amount)</code></td>
+<td>Takes up to <code>amount</code> of an item from the bag, smallest stacks first. Returns how many it took.</td>
+</tr>
+<tr>
+<td><code>public string Move(ItemContainer fromContainer, int from, ItemContainer toContainer, int to)</code></td>
+<td>Drag and drop: moves, stacks or swaps. Dropping on an equipment position wears the item and whatever was there takes its place.</td>
+</tr>
+<tr>
+<td><code>public string Equip(int bagSlot)</code></td>
+<td>Wears a bag item in its slot (the first free one, for rings).</td>
+</tr>
+<tr>
+<td><code>public string Unequip(int position)</code></td>
+<td>Takes worn gear off into the first free bag slot.</td>
+</tr>
+<tr>
+<td><code>public string Split(int from, int to, int amount)</code></td>
+<td>Takes part of a stack into an empty bag slot.</td>
+</tr>
+<tr>
+<td><code>public void MergeStacks()</code></td>
+<td>Tops up the first stacks of each item from the later ones, leaving the rest where they are. Copies saved apart, like ammo from before it stacked, come together on load.</td>
+</tr>
+<tr>
+<td><code>public void Sort()</code></td>
+<td>Joins stacks and packs the bag from the first slot: gear first, then by item id.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="inventoryerrors-class"><a class="anchor" href="#inventoryerrors-class" aria-hidden="true">#</a>InventoryErrors (class)</h3>
+<h3 id="itemcontainer-enum"><a class="anchor" href="#itemcontainer-enum" aria-hidden="true">#</a>ItemContainer (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Bag</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Equipment</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Bank</code></td>
+<td>Kept in the bank; the slot is the bank slot.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemrules-struct"><a class="anchor" href="#itemrules-struct" aria-hidden="true">#</a>ItemRules (struct)</h3>
+<p>What the inventory needs to know about an item definition.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int equipSlot</code></td>
+<td>Slot it is worn in, or -1 when it can't be worn.</td>
+</tr>
+<tr>
+<td><code>public bool offHand</code></td>
+<td>A one-handed weapon that can also be held in the off hand.</td>
+</tr>
+<tr>
+<td><code>public bool cosmetic</code></td>
+<td>Only changes the look: worn in cosmetic positions, never in gear ones.</td>
+</tr>
+<tr>
+<td><code>public int weight</code></td>
+<td>Weight of one, for bags limited by weight.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemtrade-class"><a class="anchor" href="#itemtrade-class" aria-hidden="true">#</a>ItemTrade (class)</h3>
+<p>Swaps offered bag items between two inventories, all of it or nothing.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static string Swap(Inventory first, IList&lt;TradeItem&gt; fromFirst, Inventory second, IList&lt;TradeItem&gt; fromSecond, IItemCatalog catalog)</code></td>
+<td>Checks every offer against the bags as they are, tries the swap on copies, then does it. Returns null, or OfferChanged, NoRoomFirst or NoRoomSecond. Copies keep their rolls but get new uids, so the same copy can't end up saved twice.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="owneditem-class"><a class="anchor" href="#owneditem-class" aria-hidden="true">#</a>OwnedItem (class)</h3>
+<p>One copy of an item a character owns. The definition (what it is) lives in the game data; this only keeps the id and what belongs to this copy.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string uid</code></td>
+<td>Unique across every player's items, so the same copy can never be saved twice.</td>
+</tr>
+<tr>
+<td><code>public int slot</code></td>
+<td>Bag slot, or equipment position for worn items. -1 is a bag item that had no room.</td>
+</tr>
+<tr>
+<td><code>public int[] rolls</code></td>
+<td>Values of the item's random bonuses, rolled when this copy was made. Null when it has none.</td>
+</tr>
+<tr>
+<td><code>public int refine</code></td>
+<td>Upgrade level, +0 when never upgraded.</td>
+</tr>
+<tr>
+<td><code>public string[] gems</code></td>
+<td>Gem item ids in its sockets, empty where none is. Null when it has none.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="tradeitem-struct"><a class="anchor" href="#tradeitem-struct" aria-hidden="true">#</a>TradeItem (struct)</h3>
+<p>One stack offered from a bag: where it was, which copy, and how many.</p>
+<nav class="pager"><a class="prev" href="KitARPG.Server.html"><span>Anterior</span>KitARPG.Server</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fapi%2FKitARPG.Shared.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l3"><a href="#accountrules-class">AccountRules (class)</a></li><li class="l3"><a href="#loginrequest-class">LoginRequest (class)</a></li><li class="l3"><a href="#loginresponse-class">LoginResponse (class)</a></li><li class="l3"><a href="#registerrequest-class">RegisterRequest (class)</a></li><li class="l3"><a href="#rememberrequest-class">RememberRequest (class)</a></li><li class="l3"><a href="#apierror-class">ApiError (class)</a></li><li class="l3"><a href="#errorcodes-class">ErrorCodes (class)</a></li><li class="l3"><a href="#allianceaction-enum">AllianceAction (enum)</a></li><li class="l3"><a href="#alliancecommand-class">AllianceCommand (class)</a></li><li class="l3"><a href="#allianceguildinfo-class">AllianceGuildInfo (class)</a></li><li class="l3"><a href="#allianceinvite-class">AllianceInvite (class)</a></li><li class="l3"><a href="#alliancerules-class">AllianceRules (class)</a></li><li class="l3"><a href="#alliancestate-class">AllianceState (class)</a></li><li class="l3"><a href="#banrequest-class">BanRequest (class)</a></li><li class="l3"><a href="#characterlevel-class">CharacterLevel (class)</a></li><li class="l3"><a href="#charactersave-class">CharacterSave (class)</a></li><li class="l3"><a href="#charactersaved-class">CharacterSaved (class)</a></li><li class="l3"><a href="#chatchannel-enum">ChatChannel (enum)</a></li><li class="l3"><a href="#chatdeliver-class">ChatDeliver (class)</a></li><li class="l3"><a href="#chatline-class">ChatLine (class)</a></li><li class="l3"><a href="#chatrelay-class">ChatRelay (class)</a></li><li class="l3"><a href="#collectoraction-enum">CollectorAction (enum)</a></li><li class="l3"><a href="#collectorcommand-class">CollectorCommand (class)</a></li><li class="l3"><a href="#collectorinfo-class">CollectorInfo (class)</a></li><li class="l3"><a href="#collectorlist-class">CollectorList (class)</a></li><li class="l3"><a href="#friendaction-enum">FriendAction (enum)</a></li><li class="l3"><a href="#friendcommand-class">FriendCommand (class)</a></li><li class="l3"><a href="#friendentry-class">FriendEntry (class)</a></li><li class="l3"><a href="#friendlist-class">FriendList (class)</a></li><li class="l3"><a href="#friendstate-enum">FriendState (enum)</a></li><li class="l3"><a href="#gamelogbatch-class">GameLogBatch (class)</a></li><li class="l3"><a href="#gamelogentry-class">GameLogEntry (class)</a></li><li class="l3"><a href="#gmauditack-class">GmAuditAck (class)</a></li><li class="l3"><a href="#gmauditbatch-class">GmAuditBatch (class)</a></li><li class="l3"><a href="#gmauditentry-class">GmAuditEntry (class)</a></li><li class="l3"><a href="#gmlevels-class">GmLevels (class)</a></li><li class="l3"><a href="#guildaction-enum">GuildAction (enum)</a></li><li class="l3"><a href="#guildcommand-class">GuildCommand (class)</a></li><li class="l3"><a href="#guildemblem-class">GuildEmblem (class)</a></li><li class="l3"><a href="#guildevent-class">GuildEvent (class)</a></li><li class="l3"><a href="#guildeventkinds-class">GuildEventKinds (class)</a></li><li class="l3"><a href="#guildexperience-class">GuildExperience (class)</a></li><li class="l3"><a href="#guildgive-class">GuildGive (class)</a></li><li class="l3"><a href="#guildhistory-class">GuildHistory (class)</a></li><li class="l3"><a href="#guildinvite-class">GuildInvite (class)</a></li><li class="l3"><a href="#guildmemberinfo-class">GuildMemberInfo (class)</a></li><li class="l3"><a href="#guildpermission-enum">GuildPermission (enum)</a></li><li class="l3"><a href="#guildrole-class">GuildRole (class)</a></li><li class="l3"><a href="#guildroles-class">GuildRoles (class)</a></li><li class="l3"><a href="#guildstate-class">GuildState (class)</a></li><li class="l3"><a href="#guildstorageaction-enum">GuildStorageAction (enum)</a></li><li class="l3"><a href="#guildstoragecommand-class">GuildStorageCommand (class)</a></li><li class="l3"><a href="#guildupgraderank-class">GuildUpgradeRank (class)</a></li><li class="l3"><a href="#kickaccount-class">KickAccount (class)</a></li><li class="l3"><a href="#ledgerreasons-class">LedgerReasons (class)</a></li><li class="l3"><a href="#logkinds-class">LogKinds (class)</a></li><li class="l3"><a href="#logtext-class">LogText (class)</a></li><li class="l3"><a href="#mailaction-enum">MailAction (enum)</a></li><li class="l3"><a href="#mailcommand-class">MailCommand (class)</a></li><li class="l3"><a href="#mailentry-class">MailEntry (class)</a></li><li class="l3"><a href="#mailgive-class">MailGive (class)</a></li><li class="l3"><a href="#mailkinds-class">MailKinds (class)</a></li><li class="l3"><a href="#maillist-class">MailList (class)</a></li><li class="l3"><a href="#mailsend-class">MailSend (class)</a></li><li class="l3"><a href="#mapheartbeat-class">MapHeartbeat (class)</a></li><li class="l3"><a href="#maplink-class">MapLink (class)</a></li><li class="l3"><a href="#mapregister-class">MapRegister (class)</a></li><li class="l3"><a href="#mapregistered-class">MapRegistered (class)</a></li><li class="l3"><a href="#marketaction-enum">MarketAction (enum)</a></li><li class="l3"><a href="#marketcommand-class">MarketCommand (class)</a></li><li class="l3"><a href="#marketentry-class">MarketEntry (class)</a></li><li class="l3"><a href="#marketgive-class">MarketGive (class)</a></li><li class="l3"><a href="#marketpage-class">MarketPage (class)</a></li><li class="l3"><a href="#partyaction-enum">PartyAction (enum)</a></li><li class="l3"><a href="#partycommand-class">PartyCommand (class)</a></li><li class="l3"><a href="#partyinvite-class">PartyInvite (class)</a></li><li class="l3"><a href="#partymember-class">PartyMember (class)</a></li><li class="l3"><a href="#partystate-class">PartyState (class)</a></li><li class="l3"><a href="#playrequest-class">PlayRequest (class)</a></li><li class="l3"><a href="#playresponse-class">PlayResponse (class)</a></li><li class="l3"><a href="#playerreport-class">PlayerReport (class)</a></li><li class="l3"><a href="#rateschange-class">RatesChange (class)</a></li><li class="l3"><a href="#ratesstate-class">RatesState (class)</a></li><li class="l3"><a href="#reportaction-enum">ReportAction (enum)</a></li><li class="l3"><a href="#reportcommand-class">ReportCommand (class)</a></li><li class="l3"><a href="#rolechange-class">RoleChange (class)</a></li><li class="l3"><a href="#shopaction-enum">ShopAction (enum)</a></li><li class="l3"><a href="#shopbought-class">ShopBought (class)</a></li><li class="l3"><a href="#shopbuyrequest-class">ShopBuyRequest (class)</a></li><li class="l3"><a href="#shopcatalog-class">ShopCatalog (class)</a></li><li class="l3"><a href="#shopconfig-class">ShopConfig (class)</a></li><li class="l3"><a href="#shopgrantrequest-class">ShopGrantRequest (class)</a></li><li class="l3"><a href="#shopoffer-class">ShopOffer (class)</a></li><li class="l3"><a href="#shopofferitem-class">ShopOfferItem (class)</a></li><li class="l3"><a href="#shopproduct-class">ShopProduct (class)</a></li><li class="l3"><a href="#shoppublishresult-class">ShopPublishResult (class)</a></li><li class="l3"><a href="#shopresult-class">ShopResult (class)</a></li><li class="l3"><a href="#shoprules-class">ShopRules (class)</a></li><li class="l3"><a href="#shopstate-class">ShopState (class)</a></li><li class="l3"><a href="#shopstaterequest-class">ShopStateRequest (class)</a></li><li class="l3"><a href="#socialerrors-class">SocialErrors (class)</a></li><li class="l3"><a href="#socialnotice-class">SocialNotice (class)</a></li><li class="l3"><a href="#ticketcheck-class">TicketCheck (class)</a></li><li class="l3"><a href="#ticketresult-class">TicketResult (class)</a></li><li class="l3"><a href="#transferrequest-class">TransferRequest (class)</a></li><li class="l3"><a href="#transferresult-class">TransferResult (class)</a></li><li class="l3"><a href="#attributeamount-class">AttributeAmount (class)</a></li><li class="l3"><a href="#characterappearance-class">CharacterAppearance (class)</a></li><li class="l3"><a href="#characterdata-class">CharacterData (class)</a></li><li class="l3"><a href="#characterdatarules-class">CharacterDataRules (class)</a></li><li class="l3"><a href="#characterflag-class">CharacterFlag (class)</a></li><li class="l3"><a href="#characterlist-class">CharacterList (class)</a></li><li class="l3"><a href="#characterrules-class">CharacterRules (class)</a></li><li class="l3"><a href="#characterstate-class">CharacterState (class)</a></li><li class="l3"><a href="#charactersummary-class">CharacterSummary (class)</a></li><li class="l3"><a href="#classexport-class">ClassExport (class)</a></li><li class="l3"><a href="#createcharacterrequest-class">CreateCharacterRequest (class)</a></li><li class="l3"><a href="#gamedataexport-class">GameDataExport (class)</a></li><li class="l3"><a href="#hotbarkind-enum">HotbarKind (enum)</a></li><li class="l3"><a href="#hotbarslot-class">HotbarSlot (class)</a></li><li class="l3"><a href="#itemexport-class">ItemExport (class)</a></li><li class="l3"><a href="#modelexport-class">ModelExport (class)</a></li><li class="l3"><a href="#questprogress-class">QuestProgress (class)</a></li><li class="l3"><a href="#questrecord-class">QuestRecord (class)</a></li><li class="l3"><a href="#skillexport-class">SkillExport (class)</a></li><li class="l3"><a href="#skillrank-class">SkillRank (class)</a></li><li class="l3"><a href="#currencyamount-class">CurrencyAmount (class)</a></li><li class="l3"><a href="#equippositions-class">EquipPositions (class)</a></li><li class="l3"><a href="#iitemcatalog-interface">IItemCatalog (interface)</a></li><li class="l3"><a href="#inventory-class">Inventory (class)</a></li><li class="l3"><a href="#inventoryerrors-class">InventoryErrors (class)</a></li><li class="l3"><a href="#itemcontainer-enum">ItemContainer (enum)</a></li><li class="l3"><a href="#itemrules-struct">ItemRules (struct)</a></li><li class="l3"><a href="#itemtrade-class">ItemTrade (class)</a></li><li class="l3"><a href="#owneditem-class">OwnedItem (class)</a></li><li class="l3"><a href="#tradeitem-struct">TradeItem (struct)</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

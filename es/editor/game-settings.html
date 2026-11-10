@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Settings · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/editor/game-settings.html">English</option><option value="game-settings.html" selected>Español</option><option value="../../pt/editor/game-settings.html">Português</option><option value="../../zh/editor/game-settings.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section" open><summary>El editor</summary><ul><li><a href="kitarpg-window.html">The KitARPG window</a></li><li><a href="overview.html">Overview</a></li><li><a href="play-and-servers.html">Play &amp; Servers</a></li><li><a href="game-database.html">Game Database</a></li><li><a href="game-settings.html" class="on" aria-current="page">Game Settings</a></li><li><a href="modules.html">Modules</a></li><li><a href="shop-page.html">Shop page</a></li><li><a href="project-check.html">Project Check</a></li><li><a href="menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">El editor</div><h1>Game Settings</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><p>Game Settings holds the rules of your game that aren't tied to one item, monster or map: the control mode, the interface, the bag, loot, the economy, the in-game shop, server rates, combat, recovery, death, the chat filter, logs, day and night, mail and GM commands. This page lists every setting with its default.</p>
+<h2 id="where-it-is"><a class="anchor" href="#where-it-is" aria-hidden="true">#</a>Where it is</h2>
+<ul>
+<li><strong>KitARPG &gt; Game Settings</strong>, or</li>
+<li>the <strong>Game Settings</strong> page in the <a href="kitarpg-window.html">KitARPG window</a> (<code>Ctrl/Cmd+Shift+K</code>).</li>
+</ul>
+<h2 id="where-the-settings-live"><a class="anchor" href="#where-the-settings-live" aria-hidden="true">#</a>Where the settings live</h2>
+<p>The settings are the fields of the <strong>Game Instance</strong> component (<code>GameInstance</code>) on the network prefab. In the starter sample that prefab is <code>KitNetwork</code>. Client and server builds both carry it, so they always agree.</p>
+<p>The page finds the prefab by itself. The top line says &quot;Saved in KitNetwork.&quot; (the prefab's name) with two buttons:</p>
+<ul>
+<li><strong>Select prefab</strong> selects and pings the prefab in the Project window.</li>
+<li><strong>Modules</strong> opens the <a href="modules.html">Modules</a> page. The module switches are part of the same component but are edited there.</li>
+</ul>
+<p>Every change saves the prefab at once. There is no Apply button.</p>
+<p>If no Game Instance is found, the page shows <strong>No GameInstance found</strong> (&quot;It sits on the network prefab. Build the starter sample, or add one.&quot;) with <strong>Open the setup wizard</strong>.</p>
+<div class="callout warning"><div class="callout-title">Atención</div><p>Settings can't be changed in Play mode. The fields are greyed out and the page says &quot;Stop Play to change the settings.&quot; Stop Play first.</p>
+</div>
+<div class="callout note"><div class="callout-title">Nota</div><p>A scene that has a Game Instance with overridden values doesn't see the changes you make here. Project Check reports it (&quot;... overrides Game Settings on its Game Instance&quot;) and <strong>Fix scenes</strong> removes the overrides. See <a href="project-check.html">Project Check</a>.</p>
+</div>
+<h2 id="the-settings"><a class="anchor" href="#the-settings" aria-hidden="true">#</a>The settings</h2>
+<p>The page shows the fields in cards, one per group. The defaults below are the values a new Game Instance starts with; the starter sample fills in the prefab and asset fields (HUD, touch controls, cameras, shop art) for you.</p>
+<h3 id="game"><a class="anchor" href="#game" aria-hidden="true">#</a>Game</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Database</em> (<code>database</code>)</td>
+<td>The game database the game reads. See <a href="game-database.html">Game Database</a></td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="game-mode"><a class="anchor" href="#game-mode" aria-hidden="true">#</a>Game mode</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Control Mode</em> (<code>controlMode</code>)</td>
+<td>How the game is played: <strong>Top-down (click or keys)</strong>, Diablo style; <strong>Free camera (cursor, right button turns)</strong>; or <strong>Third person (crosshair aim)</strong>, where the mouse turns. Server and clients must match: a map refuses a client of another mode. Modes your code registers show in the list too</td>
+<td>Top-down</td>
+</tr>
+<tr>
+<td><em>Third Person Camera</em> (<code>thirdPersonCamera</code>)</td>
+<td>Camera Settings asset of the third person mode. Edit it while playing to try it out; the changes stay</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Free Camera</em> (<code>freeCamera</code>)</td>
+<td>Camera Settings asset of the free camera mode. Edit it while playing to try it out; the changes stay</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/control-modes.html">Control modes</a>.</p>
+<h3 id="interface"><a class="anchor" href="#interface" aria-hidden="true">#</a>Interface</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Hud Prefab</em> (<code>hudPrefab</code>)</td>
+<td>Canvas with the HUD and the game windows. Made once on clients and kept between maps. Empty: the scenes bring their own</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Input Layout</em> (<code>inputLayout</code>)</td>
+<td>What the game is played with. <strong>Auto</strong>: touch on phones and tablets, mouse and keys elsewhere. <strong>Mouse And Keys</strong>. <strong>Touch</strong>: on-screen controls only, the game's keys are off. <strong>Touch And Keys</strong>: shows the touch controls and keeps the keyboard working, for tablets with a keyboard or to try them in the editor</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td><em>Touch Controls Prefab</em> (<code>touchControlsPrefab</code>)</td>
+<td>Canvas with the on-screen controls, kept between maps like the HUD</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Item Details On Hover</em> (<code>itemDetailsOnHover</code>)</td>
+<td>Pointing at an item shows its stats. Off: click the item to see them</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Title Music</em> (<code>titleMusic</code>)</td>
+<td>Loops on the title screen. Each map sets its own in the Game Database</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/hud-and-windows.html">HUD and windows</a> and <a href="../gameplay/touch-controls.html">Touch controls</a>.</p>
+<h3 id="bag"><a class="anchor" href="#bag" aria-hidden="true">#</a>Bag</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Bag Mode</em> (<code>bagMode</code>)</td>
+<td><strong>Slots</strong>: a fixed number of slots. <strong>Weight</strong>: anything fits up to a weight that grows with the carry weight stat</td>
+<td>Slots</td>
+</tr>
+<tr>
+<td><em>Bag Slots</em> (<code>bagSlots</code>)</td>
+<td>Slots in a bag, in Slots mode</td>
+<td>40</td>
+</tr>
+<tr>
+<td><em>Weight Mode Slots</em> (<code>weightModeSlots</code>)</td>
+<td>Weight mode: different stacks a bag can hold, so it can't grow forever</td>
+<td>200</td>
+</tr>
+<tr>
+<td><em>Carry Weight</em> (<code>carryWeight</code>)</td>
+<td>Weight mode: what anyone can carry. Gear and attributes add their carry weight stat</td>
+<td>1000</td>
+</tr>
+<tr>
+<td><em>Bank Slots</em> (<code>bankSlots</code>)</td>
+<td>Slots in the bank, which every character of an account shares. It has no weight limit</td>
+<td>80</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/inventory-and-bank.html">Inventory and bank</a>.</p>
+<h3 id="loot"><a class="anchor" href="#loot" aria-hidden="true">#</a>Loot</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Loot Mode</em> (<code>lootMode</code>)</td>
+<td>How players get what monsters drop. <strong>Ground</strong>: each item falls next to the monster. <strong>Corpse</strong>: items stay in the body and clicking it opens a loot window. <strong>Automatic</strong>: items go straight to the bag, and what doesn't fit falls on the ground. Only the player who earned the kill sees it</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td><em>Auto Gold</em> (<code>autoGold</code>)</td>
+<td>Gold goes straight to the player. Off: it drops like the items, on the ground or in the body</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../content/loot.html">Loot</a>.</p>
+<h3 id="economy"><a class="anchor" href="#economy" aria-hidden="true">#</a>Economy</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Players Sell To Npcs</em> (<code>playersSellToNpcs</code>)</td>
+<td>Shops buy what players bring. Off: nothing is sold to NPCs; items go between players, to the market or to the forge, and loot never turns into gold. A shop can still refuse on its own</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Market Fee Percent</em> (<code>marketFeePercent</code>)</td>
+<td>Percent of the asking price paid to put a lot on the market, at least 1. It takes gold out of the game. 0 to 50</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../content/npc-shops.html">NPC shops</a> and <a href="../gameplay/market.html">Market</a>.</p>
+<h3 id="shop"><a class="anchor" href="#shop" aria-hidden="true">#</a>Shop</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Shop Art</em> (<code>shopArt</code>)</td>
+<td>Pictures for the in-game shop's cards and banner, found by the keys the offers name. The Shop page makes one when you first pick a picture</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Shop Top Up Url</em> (<code>shopTopUpUrl</code>)</td>
+<td>Page where players buy premium currency, opened by the <strong>+</strong> next to their balance. Empty hides the button</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Shop Auto Take</em> (<code>shopAutoTake</code>)</td>
+<td>Shop purchases and gifts go straight to the bag when they arrive. Off, or when the bag is full, they wait in the mail</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="shop-page.html">Shop page</a> and <a href="../gameplay/cash-shop.html">Cash shop</a>.</p>
+<h3 id="rates"><a class="anchor" href="#rates" aria-hidden="true">#</a>Rates</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Experience Rate</em> (<code>experienceRate</code>)</td>
+<td>Experience from kills and quests is multiplied by this on the whole server. 2 is double</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Loot Rate</em> (<code>lootRate</code>)</td>
+<td>Every item's drop chance is multiplied by this. 2 drops twice as often, up to always</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Gold Rate</em> (<code>goldRate</code>)</td>
+<td>Gold that monsters drop is multiplied by this</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>None of them can go below 0. GMs can run temporary rate events on top of these with the <code>/rates</code> command. See <a href="../reference/gm-commands.html">GM commands</a>.</p>
+<h3 id="combat"><a class="anchor" href="#combat" aria-hidden="true">#</a>Combat</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Line Of Sight</em> (<code>lineOfSight</code>)</td>
+<td>What stops attacks, skills and monsters from seeing through walls. <strong>Off</strong>: they go through anything. <strong>Nav Mesh</strong>: holes in the NavMesh block (walls, houses, trunks); needs no colliders. <strong>Colliders</strong>: colliders on the sight blocker layers block</td>
+<td>Nav Mesh</td>
+</tr>
+<tr>
+<td><em>Sight Blockers</em> (<code>sightBlockers</code>)</td>
+<td>Colliders mode: the layers that block sight. Characters never do</td>
+<td>Default layer</td>
+</tr>
+<tr>
+<td><em>Heal Threat</em> (<code>healThreat</code>)</td>
+<td>Share of a monster's anger that healing someone it fights earns, per point healed</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td><em>Threat Switch</em> (<code>threatSwitch</code>)</td>
+<td>Another fighter takes a monster's attention once their threat passes the current target's by this factor. Values under 1 count as 1</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td><em>Monsters Sleep Unseen</em> (<code>monstersSleepUnseen</code>)</td>
+<td>Monsters no player can see stop thinking until one comes close. Saves server time on big maps</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/combat.html">Combat</a>.</p>
+<h3 id="recovery"><a class="anchor" href="#recovery" aria-hidden="true">#</a>Recovery</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Combat Seconds</em> (<code>combatSeconds</code>)</td>
+<td>Seconds a player stays in combat after the last hit they took or dealt, missed and blocked hits too</td>
+<td>6</td>
+</tr>
+<tr>
+<td><em>Regen In Combat</em> (<code>regenInCombat</code>)</td>
+<td>Health and mana regeneration keeps going in combat. Off: it waits until the fight is over</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Out Of Combat Regen</em> (<code>outOfCombatRegen</code>)</td>
+<td>Regeneration out of combat is multiplied by this. 3 recovers three times as fast between fights</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Level Up Restores Health</em> (<code>levelUpRestoresHealth</code>)</td>
+<td>Reaching a new level fills health</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Level Up Restores Mana</em> (<code>levelUpRestoresMana</code>)</td>
+<td>Reaching a new level fills mana</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="death"><a class="anchor" href="#death" aria-hidden="true">#</a>Death</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Death Experience Loss</em> (<code>deathExperienceLoss</code>)</td>
+<td>Percent of the experience the current level needs that a player loses on coming back at the spawn point. Never takes a level away, and an ally's revive saves it. 0 to 100</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Pvp Death Costs Experience</em> (<code>pvpDeathCostsExperience</code>)</td>
+<td>Players killed by other players lose it too. Duels never cost anything</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Respawn Health</em> (<code>respawnHealth</code>)</td>
+<td>Percent of health a player comes back with at the spawn point. 1 to 100</td>
+<td>100</td>
+</tr>
+<tr>
+<td><em>Respawn Mana</em> (<code>respawnMana</code>)</td>
+<td>Percent of mana a player comes back with at the spawn point. 0 to 100</td>
+<td>100</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/recovery-and-death.html">Recovery and death</a>.</p>
+<h3 id="chat-filter"><a class="anchor" href="#chat-filter" aria-hidden="true">#</a>Chat filter</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Blocked Words</em> (<code>blockedWords</code>)</td>
+<td>Words nobody may say, one per entry. End one with <code>*</code> to also catch what starts with it</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Blocked Words File</em> (<code>blockedWordsFile</code>)</td>
+<td>More blocked words, one per line, for long lists. A text asset</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Chat Filter Mode</em> (<code>chatFilterMode</code>)</td>
+<td><strong>Mask</strong> hides blocked words with asterisks; <strong>Block</strong> drops the whole line</td>
+<td>Mask</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/chat.html">Chat</a>.</p>
+<h3 id="logs"><a class="anchor" href="#logs" aria-hidden="true">#</a>Logs</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Log Loot From</em> (<code>logLootFrom</code>)</td>
+<td>Loot of this rarity or better goes to the game log: Common, Magic, Rare, Epic or Legendary</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td><em>Log Chat</em> (<code>logChat</code>)</td>
+<td>Every chat line goes to the game log too. Reports always carry the lines around them</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/game-log-and-reports.html">Game log and reports</a>.</p>
+<h3 id="day-and-night"><a class="anchor" href="#day-and-night" aria-hidden="true">#</a>Day and night</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Day Minutes</em> (<code>dayMinutes</code>)</td>
+<td>Real minutes a whole game day lasts. 0 stops the clock at the fixed hour</td>
+<td>48</td>
+</tr>
+<tr>
+<td><em>Day Start Hour</em> (<code>dayStartHour</code>)</td>
+<td>Hour the clock starts at, for shifting days against real time. 0 to 24</td>
+<td>8</td>
+</tr>
+<tr>
+<td><em>Fixed Hour</em> (<code>fixedHour</code>)</td>
+<td>Hour the clock shows when it doesn't run. 0 to 24</td>
+<td>12</td>
+</tr>
+<tr>
+<td><em>Night From</em> (<code>nightFrom</code>)</td>
+<td>Night starts at this hour</td>
+<td>20</td>
+</tr>
+<tr>
+<td><em>Night To</em> (<code>nightTo</code>)</td>
+<td>Night ends at this hour</td>
+<td>6</td>
+</tr>
+</tbody>
+</table></div>
+<p>With the Day and night module off, it is always the fixed hour. See <a href="../gameplay/day-and-night.html">Day and night</a>.</p>
+<h3 id="mail"><a class="anchor" href="#mail" aria-hidden="true">#</a>Mail</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Mail Anywhere</em> (<code>mailAnywhere</code>)</td>
+<td>Read and send mail from anywhere. Off: only at an NPC with a mailbox option</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Mail Postage</em> (<code>mailPostage</code>)</td>
+<td>Gold to send a letter</td>
+<td>10</td>
+</tr>
+<tr>
+<td><em>Mail Postage Per Item</em> (<code>mailPostagePerItem</code>)</td>
+<td>More gold for each item attached</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Mail Items</em> (<code>mailItems</code>)</td>
+<td>Items one letter can carry. Central's <code>MaxMailItems</code> setting should match</td>
+<td>5</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/mail.html">Mail</a>.</p>
+<h3 id="commands"><a class="anchor" href="#commands" aria-hidden="true">#</a>Commands</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Single Player Commands</em> (<code>singlePlayerCommands</code>)</td>
+<td>In a single player world the player can use every GM command, like cheats. Online, the account's role decides</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Gm Command Levels</em> (<code>gmCommandLevels</code>)</td>
+<td>The GM level each command asks for, when it isn't its default. Each entry has <em>Command</em> (the name without the slash, like <code>item</code>) and <em>Level</em>: 1 player, 2 moderator, 3 game master, 4 admin. Changing a role (<code>/role</code>) always needs 4</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/gm-tools.html">GM tools</a>.</p>
+<h2 id="step-by-step-change-a-setting"><a class="anchor" href="#step-by-step-change-a-setting" aria-hidden="true">#</a>Step by step: change a setting</h2>
+<ol>
+<li>Stop Play mode if it is running.</li>
+<li>Open <strong>KitARPG &gt; Game Settings</strong>.</li>
+<li>Find the card and change the field. The prefab saves by itself.</li>
+<li>Single player: press Play; the change is in.</li>
+<li>MMO: rebuild the map server and restart the services from <a href="play-and-servers.html">Play &amp; Servers</a>, because map servers run from their build. Clients you hand out need a new build too.</li>
+</ol>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<ul>
+<li>In single player the game reads these settings directly from the prefab in the build.</li>
+<li>In MMO, the map servers apply the game rules (loot, rates, combat, recovery, death, mail costs) and the clients use the interface settings. Both read the same prefab from their builds, so rebuild both after changing settings. The control mode must match on both sides.</li>
+<li>A few values have a matching setting in the services, such as <em>Mail Items</em> and Central's <code>MaxMailItems</code>. See <a href="../servers/configuration.html">Configuration</a>.</li>
+</ul>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<ul>
+<li>Try rates and recovery values in single player first; it starts in seconds.</li>
+<li>Use <em>Gm Command Levels</em> to let moderators use a command that is admin only by default, without changing code.</li>
+<li>For a hardcore server, set <em>Death Experience Loss</em> high and turn on <em>Pvp Death Costs Experience</em>.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Editing the Game Instance in a scene instead of the prefab.</strong> The scene keeps an override and Game Settings no longer reaches it. Project Check finds it.</li>
+<li><strong>Changing settings and testing an old map server build.</strong> The server still has the old values. Rebuild it.</li>
+<li><strong>A control mode that differs between client and server builds.</strong> The map refuses the client with a mode mismatch.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="modules.html">Modules</a></li>
+<li><a href="game-database.html">Game Database</a></li>
+<li><a href="../gameplay/control-modes.html">Control modes</a></li>
+<li><a href="../gameplay/combat.html">Combat</a></li>
+<li><a href="../devkit/menus-and-settings-options.html">Menus and settings options</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="game-database.html"><span>Anterior</span>Game Database</a><a class="next" href="modules.html"><span>Siguiente</span>Modules</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Feditor%2Fgame-settings.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#where-it-is">Where it is</a></li><li class="l2"><a href="#where-the-settings-live">Where the settings live</a></li><li class="l2"><a href="#the-settings">The settings</a></li><li class="l3"><a href="#game">Game</a></li><li class="l3"><a href="#game-mode">Game mode</a></li><li class="l3"><a href="#interface">Interface</a></li><li class="l3"><a href="#bag">Bag</a></li><li class="l3"><a href="#loot">Loot</a></li><li class="l3"><a href="#economy">Economy</a></li><li class="l3"><a href="#shop">Shop</a></li><li class="l3"><a href="#rates">Rates</a></li><li class="l3"><a href="#combat">Combat</a></li><li class="l3"><a href="#recovery">Recovery</a></li><li class="l3"><a href="#death">Death</a></li><li class="l3"><a href="#chat-filter">Chat filter</a></li><li class="l3"><a href="#logs">Logs</a></li><li class="l3"><a href="#day-and-night">Day and night</a></li><li class="l3"><a href="#mail">Mail</a></li><li class="l3"><a href="#commands">Commands</a></li><li class="l2"><a href="#step-by-step-change-a-setting">Step by step: change a setting</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

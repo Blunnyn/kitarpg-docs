@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monsters · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="monsters.html" selected>English</option><option value="../../es/content/monsters.html">Español</option><option value="../../pt/content/monsters.html">Português</option><option value="../../zh/content/monsters.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section" open><summary>Game content</summary><ul><li><a href="classes.html">Classes</a></li><li><a href="attributes-and-stats.html">Attributes and stats</a></li><li><a href="player-models.html">Player models</a></li><li><a href="items.html">Items</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="currencies.html">Currencies</a></li><li><a href="skills.html">Skills</a></li><li><a href="statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="monsters.html" class="on" aria-current="page">Monsters</a></li><li><a href="bosses.html">Bosses</a></li><li><a href="loot.html">Loot</a></li><li><a href="maps.html">Maps</a></li><li><a href="npcs.html">NPCs</a></li><li><a href="npc-shops.html">NPC shops</a></li><li><a href="quests.html">Quests</a></li><li><a href="conditions-and-actions.html">Conditions and actions</a></li><li><a href="dialogues.html">Dialogues</a></li><li><a href="world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Gameplay systems</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Game content</div><h1>Monsters</h1><p>A monster is a <code>MonsterData</code> asset in the Game Database plus a prefab that is its body in the world. This page covers every field of a monster, the assistant that makes one from any 3D model, monster spawners, how the server runs a monster's behaviour, and how monsters work in single player and MMO.</p>
+<h2 id="what-a-monster-is"><a class="anchor" href="#what-a-monster-is" aria-hidden="true">#</a>What a monster is</h2>
+<p>A monster has two parts:</p>
+<ul>
+<li><strong>The data</strong> (<code>MonsterData</code>, in the Game Database under <strong>World &gt; Monsters</strong>). It says what the monster is: level, stats, attacks, skills, behaviour, rank, rewards and respawn time. Every copy of that monster in the world uses the same data asset.</li>
+<li><strong>The prefab</strong> (<code>MonsterData.prefab</code>). It is the body: the model, networking, a NavMesh agent, a click collider, the <code>Monster</code> component, animations and the name plate. The assistant builds it for you.</li>
+</ul>
+<p>Monsters appear in the world through a <strong>Monster Spawner</strong> in a map scene, a <a href="world-triggers.html">world trigger</a>, a boss phase (as adds), a summon skill, or the GM command <code>/spawn</code>.</p>
+<p>Bosses and elites are monsters with a different rank. Their extra fields are on the <a href="bosses.html">Bosses</a> page. What a monster drops is a <a href="loot.html">loot table</a>.</p>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<p>Open the KitARPG window (<strong>KitARPG &gt; Open KitARPG</strong>, <code>Ctrl/Cmd+Shift+K</code>), go to <strong>Game Database</strong> and pick <strong>Monsters</strong> in the <strong>World</strong> group. The list shows every monster with its icon. Picking one opens its card on the right, with the fields grouped in cards by section.</p>
+<p>At the bottom of the list there are two buttons:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>+ New monster</strong></td>
+<td>Opens the four step assistant in the right panel. Makes the data and the prefab from a 3D model.</td>
+</tr>
+<tr>
+<td><strong>Blank monster data</strong></td>
+<td>Makes only the <code>MonsterData</code> asset, with defaults and no prefab. Use it when you already have a monster prefab.</td>
+</tr>
+</tbody>
+</table></div>
+<p>You can also create the asset from the Project window with <strong>Create &gt; KitARPG &gt; Monster</strong>. An asset made that way is not in the database until you add it to the <code>monsters</code> list.</p>
+<h2 id="make-a-monster-from-a-3d-model"><a class="anchor" href="#make-a-monster-from-a-3d-model" aria-hidden="true">#</a>Make a monster from a 3D model</h2>
+<p>The assistant (<strong>+ New monster</strong>) has four steps: <strong>Model</strong>, <strong>Combat</strong>, <strong>Animations</strong> and <strong>Create</strong>. <strong>Next</strong> stays disabled while a step has a problem, and the problem is written above the button.</p>
+<h3 id="step-1-model"><a class="anchor" href="#step-1-model" aria-hidden="true">#</a>Step 1: Model</h3>
+<ol>
+<li>Drag an FBX or a prefab into the model field. A preview shows it.</li>
+<li>The status line under it says <strong>Animated</strong> when the model has an <code>Animator</code>, or <strong>No Animator</strong> when it has none.
+<ul>
+<li><strong>Animated:</strong> you pick its clips in the Animations step.</li>
+<li><strong>No Animator:</strong> the prefab gets a <code>MonsterBody</code> component. The monster hops as it moves, breathes when still, leans into its attacks, flashes when hit, shrinks away when it dies and grows back out of the ground when it respawns. The sample's slimes, mushrooms and void monsters work like this. Attacks still land on time.</li>
+</ul>
+</li>
+<li>Type the <strong>Display name</strong>. It is filled from the model's name the first time. The line under it shows the id made from it, for example <code>Cave Bat</code> becomes <code>cave_bat</code>.</li>
+</ol>
+<p>The id must be unique among monsters. If another monster has it, the step says so.</p>
+<h3 id="step-2-combat"><a class="anchor" href="#step-2-combat" aria-hidden="true">#</a>Step 2: Combat</h3>
+<ol>
+<li>
+<p><strong>Start from a monster</strong> copies everything another monster has: stats, skills, resistances, phases, loot and the rest. Leave it on <strong>Nothing, start from the defaults</strong> for a fresh monster.</p>
+</li>
+<li>
+<p>Set the numbers under <strong>How it fights</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level</td>
+<td>The monster's level. Experience drops for players more than 3 levels above it.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Rank</td>
+<td>Normal, Elite or Boss. Elites and bosses get a frame on their plate; bosses a bar at the top of the screen.</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Health</td>
+<td>Maximum health.</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Damage</td>
+<td>Minimum to maximum damage of the basic attack, and its element. Empty element uses the database's default element.</td>
+<td>1 to 3</td>
+</tr>
+<tr>
+<td>Attack range (m)</td>
+<td>About 1.4 for melee; farther for monsters that shoot.</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td>Attacks per second</td>
+<td>How often it swings.</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Move speed</td>
+<td>Meters per second.</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Aggression</td>
+<td>Passive, Aggressive or Pack (see <a href="#behaviour">Behaviour</a>).</td>
+<td>Aggressive</td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li>
+<p>Under <strong>Rewards</strong>, set <strong>Experience</strong>, the <strong>Loot table</strong> (empty drops nothing; tables are made in <strong>Items &gt; Loot</strong>) and <strong>Respawn seconds</strong>.</p>
+</li>
+</ol>
+<h3 id="step-3-animations"><a class="anchor" href="#step-3-animations" aria-hidden="true">#</a>Step 3: Animations</h3>
+<p>Only for models with an <code>Animator</code>. Without one the step says there is nothing to pick.</p>
+<ol>
+<li>
+<p><strong>Start from a monster</strong> copies another animated monster's clips and hit timings. Clips you pick below replace those.</p>
+</li>
+<li>
+<p>Pick the clips. Empty ones are skipped: without <strong>Hit</strong> the monster doesn't flinch, without <strong>Death</strong> it doesn't fall.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Clip</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Idle</td>
+<td>Standing still</td>
+</tr>
+<tr>
+<td>Walk</td>
+<td>Moving</td>
+</tr>
+<tr>
+<td>Hit</td>
+<td>Taking a hit</td>
+</tr>
+<tr>
+<td>Death</td>
+<td>Dying</td>
+</tr>
+<tr>
+<td>Attack</td>
+<td>The basic attack</td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li>
+<p>With an attack clip, <strong>Hit lands at</strong> says when the damage lands, from 0 (start of the clip) to 1 (end). The server waits for that moment before applying the hit.</p>
+</li>
+</ol>
+<h3 id="step-4-create"><a class="anchor" href="#step-4-create" aria-hidden="true">#</a>Step 4: Create</h3>
+<ol>
+<li><strong>Prefab folder</strong> defaults to a <code>Prefabs</code> folder next to your database folder. It must be inside <code>Assets</code>. The full prefab path is shown under it; if a prefab already exists there, change the name or the folder.</li>
+<li>Keep <strong>Render its bestiary icon</strong> on to render a portrait for the <a href="../gameplay/bestiary.html">bestiary</a>.</li>
+<li><strong>What will be made</strong> lists the data, the prefab and the database entry.</li>
+<li>Press <strong>Create monster</strong>.</li>
+</ol>
+<p>The data asset goes to a <code>Monsters</code> folder next to the database, joins the database's <code>monsters</code> list and opens in the Game Database. The prefab gets:</p>
+<ul>
+<li><code>NetworkIdentity</code> and a network transform</li>
+<li><code>NavMeshAgent</code>, sized from the model (off on clients; only the server moves monsters)</li>
+<li><code>CapsuleCollider</code>, the area players click</li>
+<li><code>Monster</code>, with <code>FighterStatus</code>, <code>FighterMotion</code> and <code>CombatRelay</code> it needs</li>
+<li><code>CharacterAnimations</code> with the clips you picked</li>
+<li><code>MonsterBody</code> when the model has no Animator</li>
+<li><code>MonsterPlate</code>, the name, level and health over its head</li>
+</ul>
+<p>The network manager registers every monster prefab of the database by itself. You don't add it to Mirror's spawnable prefabs.</p>
+<div class="callout tip"><div class="callout-title">Tip</div><p>To give a monster a ranged attack, raise <em>Attack range</em> and give its <code>attackEffects</code> a projectile in the Game Database. The animation stays on the prefab; the projectile and effects are on the data.</p>
+</div>
+<h2 id="every-field-of-a-monster"><a class="anchor" href="#every-field-of-a-monster" aria-hidden="true">#</a>Every field of a monster</h2>
+<p>The Game Database card shows these fields. The name, description and icon come from <code>GameData</code>, the base of every database asset.</p>
+<h3 id="identity"><a class="anchor" href="#identity" aria-hidden="true">#</a>Identity</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em> (<code>id</code>)</td>
+<td>Saved with characters and sent over the network. Filled from the file name once, then kept. Changing it breaks saves and quests that use this monster.</td>
+<td>From the file name</td>
+</tr>
+<tr>
+<td><em>Display Name</em> (<code>displayName</code>)</td>
+<td>Name shown in game. Empty uses the asset's name.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Description</em> (<code>description</code>)</td>
+<td>Shown in the bestiary.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Icon</em> (<code>icon</code>)</td>
+<td>Portrait for the bestiary and quest objectives. <strong>KitARPG &gt; Render Missing Monster Icons</strong> renders the missing ones.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="body-and-stats"><a class="anchor" href="#body-and-stats" aria-hidden="true">#</a>Body and stats</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Prefab</em> (<code>prefab</code>)</td>
+<td>The body in the world. Needs a <code>Monster</code> component. Project Check reports a monster without a prefab, or with a prefab that has no <code>Monster</code>.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Level</em> (<code>level</code>)</td>
+<td>Its level, shown on the plate. Also used for the experience a player gets (see <a href="#experience">Experience</a>).</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Stats</em> (<code>stats</code>)</td>
+<td>Maximum health and mana, regeneration, power, critical chance and damage, healing, attack speed, move speed and the rest of the <a href="attributes-and-stats.html">stats</a>.</td>
+<td>50 health, 3 move speed</td>
+</tr>
+<tr>
+<td><em>Modifiers</em> (<code>modifiers</code>)</td>
+<td>Element damage and resistances on top of the stats, flat and in percent. The sample's slime resists water by 30% and takes 20% more from air.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Status Defense</em> (<code>statusDefense</code>)</td>
+<td>Statuses it shrugs off or that last less on it: immune flags (stun, root, silence...), immune tags, immune statuses and resistances in whole percent (100 is immune). Only harmful statuses from others are blocked. See <a href="statuses-and-buffs.html">Statuses and buffs</a>.</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="behaviour-and-attack"><a class="anchor" href="#behaviour-and-attack" aria-hidden="true">#</a>Behaviour and attack</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Aggression</em> (<code>aggression</code>)</td>
+<td>Passive, Aggressive or Pack.</td>
+<td>Aggressive</td>
+</tr>
+<tr>
+<td><em>Sight Range</em> (<code>sightRange</code>)</td>
+<td>Meters at which it notices players. Pack monsters also call others within this range.</td>
+<td>8</td>
+</tr>
+<tr>
+<td><em>Leash Range</em> (<code>leashRange</code>)</td>
+<td>How far from home it follows a player before giving up and going back.</td>
+<td>18</td>
+</tr>
+<tr>
+<td><em>Wander Radius</em> (<code>wanderRadius</code>)</td>
+<td>Meters it walks around home while nobody is near.</td>
+<td>4</td>
+</tr>
+<tr>
+<td><em>Attack Range</em> (<code>attackRange</code>)</td>
+<td>Meters at which it hits.</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td><em>Attacks Per Second</em> (<code>attacksPerSecond</code>)</td>
+<td>Base attack rate. Its attack speed stat changes it.</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td><em>Attack Effects</em> (<code>attackEffects</code>)</td>
+<td>Projectile and effects of its basic attack: an effect on the attacker at each hit, a projectile, and an effect on whoever is hit (empty uses the element's). The animation is on its prefab.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Attack</em> (<code>attack</code>)</td>
+<td>Rolls of its basic attack, one per element, each with a minimum and maximum. Several entries make a mixed attack, like 6 to 10 earth plus 2 to 4 fire.</td>
+<td>One entry, 1 to 3, default element</td>
+</tr>
+<tr>
+<td><em>Skills</em> (<code>skills</code>)</td>
+<td>Skills it casts (see <a href="#skills">Skills</a>).</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rank"><a class="anchor" href="#rank" aria-hidden="true">#</a>Rank</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Rank</em> (<code>rank</code>)</td>
+<td>Normal, Elite or Boss.</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td><em>Phases</em> (<code>phases</code>)</td>
+<td>Bosses only. See <a href="bosses.html">Bosses</a>.</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Enrage Seconds</em> (<code>enrageSeconds</code>)</td>
+<td>Bosses only. Seconds into a fight before it enrages; 0 never.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Enrage Status</em> (<code>enrageStatus</code>)</td>
+<td>Bosses only. Put on itself when it enrages.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Enrage Shout</em> (<code>enrageShout</code>)</td>
+<td>Bosses only. Said when it enrages.</td>
+<td>&quot;Enough!&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rewards-and-respawn"><a class="anchor" href="#rewards-and-respawn" aria-hidden="true">#</a>Rewards and respawn</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Experience</em> (<code>experience</code>)</td>
+<td>Base experience for killing it.</td>
+<td>10</td>
+</tr>
+<tr>
+<td><em>Loot</em> (<code>loot</code>)</td>
+<td>Its <a href="loot.html">loot table</a>. Several monsters can share one. Empty drops nothing.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Respawn Seconds</em> (<code>respawnSeconds</code>)</td>
+<td>Seconds until it comes back after dying.</td>
+<td>30</td>
+</tr>
+<tr>
+<td><em>In Bestiary</em> (<code>inBestiary</code>)</td>
+<td>Listed in the bestiary. Turn it off for helpers like tax collectors or summons nobody hunts.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="on-the-prefab-the-monster-component"><a class="anchor" href="#on-the-prefab-the-monster-component" aria-hidden="true">#</a>On the prefab: the Monster component</h3>
+<p>These are on the <code>Monster</code> component of the prefab, not on the data.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Think Interval</em> (<code>thinkInterval</code>)</td>
+<td>Seconds between decisions. Monsters are spread out so a map full of them doesn't think on one frame.</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td><em>Corpse Seconds</em> (<code>corpseSeconds</code>)</td>
+<td>Seconds the body stays where it fell before it is taken home, out of sight, to wait for its respawn.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <code>MonsterBody</code> component (models without an Animator) has <em>Model</em> (<code>model</code>, the child that moves; empty uses the first child), <em>Hop Height</em> (<code>hopHeight</code>, 0.08), <em>Hops Per Meter</em> (<code>hopsPerMeter</code>, 2.5) and <em>Hit Color</em> (<code>hitColor</code>, a light red flash).</p>
+<h2 id="ranks"><a class="anchor" href="#ranks" aria-hidden="true">#</a>Ranks</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>What changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td>Nothing special.</td>
+</tr>
+<tr>
+<td>Elite</td>
+<td>Its name on the plate is gold with an &quot;Elite&quot; tag. The bestiary and the world map color it as elite. Its numbers are whatever you give it: the rank itself adds no stats.</td>
+</tr>
+<tr>
+<td>Boss</td>
+<td>A bar at the top of the screen while it fights, phases, an enrage timer, and a full reset when it goes home. See <a href="bosses.html">Bosses</a>.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="behaviour"><a class="anchor" href="#behaviour" aria-hidden="true">#</a>Behaviour</h2>
+<p>The server runs a small brain for each monster, about five times a second:</p>
+<ol>
+<li><strong>Aggression.</strong>
+<ul>
+<li><strong>Passive:</strong> never starts a fight. It fights back when hit.</li>
+<li><strong>Aggressive:</strong> attacks the closest enemy it can see within <em>Sight Range</em>.</li>
+<li><strong>Pack:</strong> like Passive, but when one is hit, every monster of the same kind within its <em>Sight Range</em> that has no target joins in. The sample's mushrooms work like this.</li>
+</ul>
+</li>
+<li><strong>Sight.</strong> It only notices players it can see, by the game's line of sight rule (<strong>Game Settings &gt; Combat &gt; Line Of Sight</strong>). Behind a wall it walks around instead of hitting through it. Invisible players are not noticed.</li>
+<li><strong>Threat.</strong> Damage dealt to it, and healing given to those it fights (<em>Heal Threat</em> in Game Settings), make it angry at someone. Another fighter takes its attention once their threat passes the current target's by <em>Threat Switch</em> (1.1 by default).</li>
+<li><strong>Leash.</strong> If it goes farther than <em>Leash Range</em> from home, it gives up: forgets its target and threat, heals to full and walks home.</li>
+<li><strong>Wander.</strong> With nobody to fight, it walks to a random point within <em>Wander Radius</em> of home every 3 to 8 seconds.</li>
+<li><strong>Sleep.</strong> With <strong>Monsters Sleep Unseen</strong> on (Game Settings, Combat), a monster no player can see stops thinking until one comes close. It saves server time on big maps.</li>
+</ol>
+<h3 id="skills"><a class="anchor" href="#skills" aria-hidden="true">#</a>Skills</h3>
+<p>A monster uses the first skill in its <em>Skills</em> list that is ready and reaches its target, then waits its attack interval. Monsters cast at rank 1, instantly, with a cooldown of at least 1 second. Passive skills are skipped. A skill aimed at itself with an area waits until the target is inside that area. Skills are made in <strong>Combat &gt; Skills</strong>; see <a href="skills.html">Skills</a>.</p>
+<h3 id="death-and-respawn"><a class="anchor" href="#death-and-respawn" aria-hidden="true">#</a>Death and respawn</h3>
+<ol>
+<li>The kill goes to the player who dealt the most damage, not to the last hit.</li>
+<li>That player gets the experience (shared with party members nearby) and the loot. See <a href="loot.html">Loot</a>.</li>
+<li>The body lies there for <em>Corpse Seconds</em>, then is moved home out of sight.</li>
+<li>After <em>Respawn Seconds</em> it comes back at full health at its home point.</li>
+</ol>
+<p>Monsters brought by an event (world triggers, <code>/spawn</code>) don't come back: they go 4 seconds after dying. Summons go 2 seconds after dying and give no rewards.</p>
+<h3 id="experience"><a class="anchor" href="#experience" aria-hidden="true">#</a>Experience</h3>
+<p>The experience a player gets is the monster's <em>Experience</em>, scaled by level difference: full up to 3 levels above the monster, then 20% less per extra level, never below 10%. A level 10 player killing a level 5 monster (5 levels above) gets 60%. Then the player's <em>Experience Gain</em> stat and the server's experience rate apply. In a party, members nearby split it. See <a href="../gameplay/combat.html">Combat</a> and <a href="../gameplay/friends-and-parties.html">Friends and parties</a>.</p>
+<h2 id="monster-spawners"><a class="anchor" href="#monster-spawners" aria-hidden="true">#</a>Monster spawners</h2>
+<p>A <strong>Monster Spawner</strong> keeps a number of one monster in a circle on a map.</p>
+<h3 id="fields"><a class="anchor" href="#fields" aria-hidden="true">#</a>Fields</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Monster</em> (<code>monster</code>)</td>
+<td>The monster it makes.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Count</em> (<code>count</code>)</td>
+<td>How many it keeps.</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Radius</em> (<code>radius</code>)</td>
+<td>Meters around the spawner where they appear. Each one lands on the NavMesh within 3 m of its random point.</td>
+<td>8</td>
+</tr>
+<tr>
+<td><em>When</em> (<code>when</code>)</td>
+<td>Always, Day (out by day, gone at night) or Night. Uses the game's clock; see <a href="../gameplay/day-and-night.html">Day and night</a>.</td>
+<td>Always</td>
+</tr>
+</tbody>
+</table></div>
+<p>The scene view draws the radius as a red circle.</p>
+<h3 id="set-up-a-spawner"><a class="anchor" href="#set-up-a-spawner" aria-hidden="true">#</a>Set up a spawner</h3>
+<ol>
+<li>Open the map scene.</li>
+<li><strong>GameObject &gt; Create Empty</strong>, name it, for example <code>Bat Spawner</code>.</li>
+<li><strong>Add Component &gt; Monster Spawner</strong>.</li>
+<li>Pick the <strong>Monster</strong>, set <strong>Count</strong> and <strong>Radius</strong>, and move the object where the monsters should live. Keep it on the NavMesh and away from the <code>SpawnPoint</code>, so players coming back after dying are safe.</li>
+<li>Save the scene.</li>
+<li>In the Game Database, on the map's card, press <strong>Read from scene</strong> so the bestiary lists the monster for this map. See <a href="maps.html">Maps</a>.</li>
+</ol>
+<h3 id="how-it-works"><a class="anchor" href="#how-it-works" aria-hidden="true">#</a>How it works</h3>
+<ul>
+<li>It only does anything on the server. On clients it is an empty object.</li>
+<li>It spawns its whole count once, when the map starts. Each monster then respawns by itself at the point where it first appeared, after its <em>Respawn Seconds</em>. The spawner does not top up the count.</li>
+<li>With <em>When</em> set to Day or Night, it checks every 2 seconds. When their time comes, the full count appears. When it is over, they leave, even mid fight.</li>
+<li>A spawner whose monster has no prefab, or a prefab without a <code>Monster</code> component, logs an error and does nothing. Project Check warns about spawners with no monster.</li>
+</ul>
+<div class="callout tip"><div class="callout-title">Tip</div><p>A boss is usually a spawner with <em>Count</em> 1 and <em>Radius</em> 0, so it always stands at the same spot. Give it a small <em>Wander Radius</em> too, as the sample's Mushroom King has (1.5).</p>
+</div>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<ul>
+<li><strong>Single player:</strong> the game is the host. Monsters run on the same machine as the player, with the same brain.</li>
+<li><strong>MMO:</strong> each map runs on its own map server. Monsters exist only on that server; clients receive their position, health and animations. A client can't change a monster.</li>
+<li><strong>Instanced maps:</strong> each copy of a dungeon has its own monsters, made by the copy's own spawners. The first scene the map server loads is a template whose spawners stay idle. See <a href="../gameplay/dungeons.html">Dungeons</a>.</li>
+</ul>
+<h2 id="testing-monsters"><a class="anchor" href="#testing-monsters" aria-hidden="true">#</a>Testing monsters</h2>
+<p>With GM commands (always allowed in single player when <em>Single Player Commands</em> is on):</p>
+<ul>
+<li><code>/spawn monster_id 3</code> brings three in front of you. They don't come back.</li>
+<li><code>/killall 20</code> kills the monsters within 20 m; they give their rewards.</li>
+<li><code>/god</code> makes you take no damage while you watch a fight.</li>
+</ul>
+<p>See <a href="../reference/gm-commands.html">GM commands</a>.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>The monster doesn't appear.</strong> The spawner is off the NavMesh, the monster has no prefab, or the scene isn't the one the map uses.</li>
+<li><strong>It walks through walls to hit.</strong> Line of sight is set to Off, or the walls aren't holes in the NavMesh (NavMesh mode) or aren't on a sight blocker layer (Colliders mode).</li>
+<li><strong>It never attacks.</strong> <em>Aggression</em> is Passive, or <em>Sight Range</em> is smaller than the distance at which players pass.</li>
+<li><strong>It runs back to full health mid fight.</strong> It went past <em>Leash Range</em>. Raise it, or move the spawner away from where players pull it.</li>
+<li><strong>A saved quest or bestiary entry broke after renaming.</strong> You changed the <em>Id</em>. Rename the display name instead.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="bosses.html">Bosses</a>: phases, adds, enrage and the boss bar</li>
+<li><a href="loot.html">Loot</a>: what monsters drop</li>
+<li><a href="maps.html">Maps</a>: putting monsters in a map</li>
+<li><a href="world-triggers.html">World triggers</a>: monsters that appear on events</li>
+<li><a href="../gameplay/combat.html">Combat</a>, <a href="skills.html">Skills</a>, <a href="statuses-and-buffs.html">Statuses and buffs</a></li>
+<li><a href="../gameplay/bestiary.html">Bestiary</a>, <a href="../gameplay/day-and-night.html">Day and night</a>, <a href="../gameplay/dungeons.html">Dungeons</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="statuses-and-buffs.html"><span>Previous</span>Statuses and buffs</a><a class="next" href="bosses.html"><span>Next</span>Bosses</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fcontent%2Fmonsters.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#what-a-monster-is">What a monster is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#make-a-monster-from-a-3d-model">Make a monster from a 3D model</a></li><li class="l3"><a href="#step-1-model">Step 1: Model</a></li><li class="l3"><a href="#step-2-combat">Step 2: Combat</a></li><li class="l3"><a href="#step-3-animations">Step 3: Animations</a></li><li class="l3"><a href="#step-4-create">Step 4: Create</a></li><li class="l2"><a href="#every-field-of-a-monster">Every field of a monster</a></li><li class="l3"><a href="#identity">Identity</a></li><li class="l3"><a href="#body-and-stats">Body and stats</a></li><li class="l3"><a href="#behaviour-and-attack">Behaviour and attack</a></li><li class="l3"><a href="#rank">Rank</a></li><li class="l3"><a href="#rewards-and-respawn">Rewards and respawn</a></li><li class="l3"><a href="#on-the-prefab-the-monster-component">On the prefab: the Monster component</a></li><li class="l2"><a href="#ranks">Ranks</a></li><li class="l2"><a href="#behaviour">Behaviour</a></li><li class="l3"><a href="#skills">Skills</a></li><li class="l3"><a href="#death-and-respawn">Death and respawn</a></li><li class="l3"><a href="#experience">Experience</a></li><li class="l2"><a href="#monster-spawners">Monster spawners</a></li><li class="l3"><a href="#fields">Fields</a></li><li class="l3"><a href="#set-up-a-spawner">Set up a spawner</a></li><li class="l3"><a href="#how-it-works">How it works</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#testing-monsters">Testing monsters</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

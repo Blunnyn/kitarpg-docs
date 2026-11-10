@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recovery and death · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/recovery-and-death.html">English</option><option value="../../es/gameplay/recovery-and-death.html">Español</option><option value="recovery-and-death.html" selected>Português</option><option value="../../zh/gameplay/recovery-and-death.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Sistemas de jogo</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html" class="on" aria-current="page">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Sistemas de jogo</div><h1>Recovery and death</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>How players get health and mana back, when they count as in combat, what happens when they die, how they come back (on their own or revived by an ally) and what it costs. Every rule here is a setting in <strong>KitARPG &gt; Game Settings</strong>, sections Recovery and Death.</p>
+<h2 id="overview"><a class="anchor" href="#overview" aria-hidden="true">#</a>Overview</h2>
+<ul>
+<li>Health and mana regenerate every second from the character's <code>healthRegen</code> and <code>manaRegen</code> stats.</li>
+<li>A player is <strong>in combat</strong> for a few seconds after hitting or being hit. Combat can slow or stop regeneration.</li>
+<li>Reaching a new level can fill health and mana.</li>
+<li>A player who falls lies on the ground waiting for a revive. After a short wait they can press <strong>Respawn</strong>; after 15 seconds they come back on their own at the map's spawn point.</li>
+<li>Coming back at the spawn point costs part of the level's experience. Being revived by an ally costs nothing.</li>
+<li>After coming back, the player is protected for a few seconds.</li>
+</ul>
+<p>All of it runs on the server. Clients only see the result and press the Respawn button, which the server checks.</p>
+<h2 id="in-combat"><a class="anchor" href="#in-combat" aria-hidden="true">#</a>In combat</h2>
+<p>A player enters combat when they:</p>
+<ul>
+<li>take a hit, even one fully absorbed by a shield or stopped by invulnerability;</li>
+<li>deal a hit to anyone, or one of their summons does;</li>
+<li>take a damage over time tick.</li>
+</ul>
+<p>They stay in combat for <em>Combat Seconds</em> (<code>combatSeconds</code>, default 6) after the last of those. Healing someone doesn't put you in combat; it does earn threat with the monsters fighting them (see <a href="combat.html#threat">Combat</a>).</p>
+<p>Combat ends at once on coming back at the spawn point.</p>
+<p>Other systems can read and extend it from code: <code>PlayerCharacter.InCombat</code> on the server, <code>ServerEnterCombat()</code> to put a player in combat and <code>PlayerCharacter.ServerMarkCombat(source)</code> to mark whoever is behind a hit, the owner of a summon included. See <a href="../devkit/player-systems.html">Player systems</a>.</p>
+<h2 id="regeneration"><a class="anchor" href="#regeneration" aria-hidden="true">#</a>Regeneration</h2>
+<p>Every physics step the server adds regeneration to a running total and gives whole points as they build up, so a regeneration of 0.2 per second gives 1 health every 5 seconds.</p>
+<pre class="code"><code class="language-">per second = regen stat × rate
+rate = 1                    in combat, with Regen In Combat on
+       0                    in combat, with Regen In Combat off
+       Out Of Combat Regen  out of combat
+</code></pre>
+<ul>
+<li><code>healthRegen</code> and <code>manaRegen</code> are per second. They come from the class base stats, attributes (in the sample, each Vitality point gives 0.2 health regeneration and each Intelligence point 0.08 mana regeneration), gear and buffs. See <a href="../content/attributes-and-stats.html">Attributes and stats</a>.</li>
+<li>Statuses with healing or mana ticks (Regeneration in the sample) restore on top of this, in or out of combat. See <a href="../content/statuses-and-buffs.html">Statuses and buffs</a>.</li>
+<li>Dead players don't regenerate.</li>
+<li>Monsters don't regenerate. A monster that gives up a chase heals to full when it turns back home.</li>
+</ul>
+<h2 id="level-up"><a class="anchor" href="#level-up" aria-hidden="true">#</a>Level up</h2>
+<p>When experience fills the bar, the player levels up as many times as the experience covers. Each level gives attribute and skill points and recalculates stats. &quot;Level N!&quot; appears over the character in gold. With <em>Level Up Restores Health</em> and <em>Level Up Restores Mana</em> on (the default), health and mana fill up.</p>
+<h2 id="death"><a class="anchor" href="#death" aria-hidden="true">#</a>Death</h2>
+<p>When health reaches 0:</p>
+<ol>
+<li>The character dies: it plays the death animation and lies on the ground.</li>
+<li>The attack and any skill being cast stop. All statuses come off, buffs included.</li>
+<li>Movement stops. Requests to move, attack or cast are ignored while dead.</li>
+<li>The death goes to the game log, and a kill by another player is logged as a PvP kill (see <a href="game-log-and-reports.html">Game log and reports</a>).</li>
+<li>Monsters forget the dead player and pick another target.</li>
+</ol>
+<h3 id="the-death-screen"><a class="anchor" href="#the-death-screen" aria-hidden="true">#</a>The death screen</h3>
+<p>The HUD shows the death message with a countdown:</p>
+<blockquote>
+<p>Waiting for a revive. Respawning in 13s</p>
+</blockquote>
+<p>and a <strong>Respawn</strong> button. The button is grayed out for the first <em>Respawn Choice Seconds</em> (2 by default), then you can press it to come back at the spawn point at once instead of waiting. When the countdown reaches 0 you come back on your own.</p>
+<h3 id="coming-back-at-the-spawn-point"><a class="anchor" href="#coming-back-at-the-spawn-point" aria-hidden="true">#</a>Coming back at the spawn point</h3>
+<p>Respawning, by the button or the countdown:</p>
+<ol>
+<li>Moves the player to the map's spawn point (a <code>SpawnPoint</code> in the map scene, at a random spot within its radius). A map with no spawn point uses one from another loaded scene, or the world origin.</li>
+<li>Takes the experience loss (below).</li>
+<li>Sets health to <em>Respawn Health</em> percent of the maximum (at least 1) and mana to <em>Respawn Mana</em> percent.</li>
+<li>Ends combat.</li>
+<li>Puts on the arrival protection.</li>
+</ol>
+<p>The player stays on the same map. To send players to a town on death, change the spawn point of the map or override the behaviour in code.</p>
+<h3 id="experience-loss"><a class="anchor" href="#experience-loss" aria-hidden="true">#</a>Experience loss</h3>
+<p>On coming back at the spawn point, the player loses <em>Death Experience Loss</em> percent (default 5) of the experience their current level needs:</p>
+<pre class="code"><code class="language-">lost = min(current experience, experience to next level × percent / 100)
+</code></pre>
+<ul>
+<li>It never takes a level away: at most, the bar goes to 0.</li>
+<li>&quot;-1,250 XP&quot; appears over the character in red and the loss goes to the game log.</li>
+<li><strong>Revived by an ally:</strong> no loss.</li>
+<li><strong>Killed by another player</strong> (or by a player's summon): no loss, unless <em>Pvp Death Costs Experience</em> is on.</li>
+<li><strong>Duels</strong> never cost anything: a duel ends when a hit would kill, and the loser stays at 1 health. See <a href="pvp-and-duels.html">PvP and duels</a>.</li>
+<li>Set the percent to 0 to turn the penalty off.</li>
+</ul>
+<h3 id="being-revived"><a class="anchor" href="#being-revived" aria-hidden="true">#</a>Being revived</h3>
+<p>An ally can bring a fallen player back with a skill that has <em>Targets Dead</em> (<code>targetsDead</code>) and a Revive effect (see <a href="../content/skills.html">Skills</a>). In the sample, the mage's Resurrect does this.</p>
+<ul>
+<li>The skill only aims at fallen allies. Single target skills need the fallen ally clicked; area skills reach every fallen ally in the area and in sight.</li>
+<li>The Revive effect sets how much health (default 30% at rank 1, +10% per rank) and mana (default 20%) the player comes back with.</li>
+<li>The player stands up where they fell, with &quot;Revived&quot; over them in green, keeps their experience and gets the arrival protection.</li>
+<li>The countdown stops. A player already back at the spawn point can't be revived.</li>
+</ul>
+<h2 id="protection-after-coming-back"><a class="anchor" href="#protection-after-coming-back" aria-hidden="true">#</a>Protection after coming back</h2>
+<p>On entering a map, respawning or being revived, the player gets the <em>Arrival Status</em> (<code>arrivalStatus</code>) for <em>Arrival Seconds</em> (<code>arrivalSeconds</code>, default 4). Both are on the Game Database asset, section Invulnerability. The sample uses the &quot;Protected&quot; status: invulnerable, glowing, and it ends when the player attacks or casts. Leave <em>Arrival Status</em> empty for no protection.</p>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
+<h3 id="game-settings-recovery"><a class="anchor" href="#game-settings-recovery" aria-hidden="true">#</a>Game Settings, Recovery</h3>
+<p>In <strong>KitARPG &gt; Game Settings</strong> (the <code>GameInstance</code> on the <code>KitNetwork</code> prefab):</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Combat Seconds</em> (<code>combatSeconds</code>)</td>
+<td>Seconds a player stays in combat after the last hit they took or dealt.</td>
+<td>6</td>
+</tr>
+<tr>
+<td><em>Regen In Combat</em> (<code>regenInCombat</code>)</td>
+<td>Health and mana keep regenerating in combat. Off, they wait until the fight is over.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Out Of Combat Regen</em> (<code>outOfCombatRegen</code>)</td>
+<td>Regeneration out of combat is multiplied by this. 3 recovers three times as fast between fights.</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Level Up Restores Health</em> (<code>levelUpRestoresHealth</code>)</td>
+<td>A new level fills health.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Level Up Restores Mana</em> (<code>levelUpRestoresMana</code>)</td>
+<td>A new level fills mana.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="game-settings-death"><a class="anchor" href="#game-settings-death" aria-hidden="true">#</a>Game Settings, Death</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Death Experience Loss</em> (<code>deathExperienceLoss</code>)</td>
+<td>Percent of the current level's experience lost on coming back at the spawn point. 0 to 100.</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Pvp Death Costs Experience</em> (<code>pvpDeathCostsExperience</code>)</td>
+<td>Players killed by other players lose it too.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Respawn Health</em> (<code>respawnHealth</code>)</td>
+<td>Percent of health a player comes back with at the spawn point. 1 to 100.</td>
+<td>100</td>
+</tr>
+<tr>
+<td><em>Respawn Mana</em> (<code>respawnMana</code>)</td>
+<td>Percent of mana a player comes back with at the spawn point. 0 to 100.</td>
+<td>100</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="player-prefab"><a class="anchor" href="#player-prefab" aria-hidden="true">#</a>Player prefab</h3>
+<p>On the <code>PlayerCharacter</code> component of each player prefab (<code>PlayerMale</code>, <code>PlayerFemale</code>, <code>PlayerPanda</code> in the sample). Set the same values on every player prefab.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Respawn Seconds</em> (<code>respawnSeconds</code>)</td>
+<td>Seconds lying down before coming back at the spawn point, unless an ally revives them first.</td>
+<td>15</td>
+</tr>
+<tr>
+<td><em>Respawn Choice Seconds</em> (<code>respawnChoiceSeconds</code>)</td>
+<td>Seconds after dying before the Respawn button works.</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="game-database"><a class="anchor" href="#game-database" aria-hidden="true">#</a>Game Database</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Arrival Status</em> (<code>arrivalStatus</code>)</td>
+<td>Status put on players when they appear in a map or come back to life. Should end on attacking or casting.</td>
+<td>Protected in the sample</td>
+</tr>
+<tr>
+<td><em>Arrival Seconds</em> (<code>arrivalSeconds</code>)</td>
+<td>How long it lasts.</td>
+<td>4</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="map-scene"><a class="anchor" href="#map-scene" aria-hidden="true">#</a>Map scene</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SpawnPoint</code></td>
+<td><em>Radius</em></td>
+<td>Players appear at a random spot within this many meters.</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>What the server checks</h2>
+<ul>
+<li>The Respawn request is refused while the player is alive, before <em>Respawn Choice Seconds</em> have passed, or after the player left the map. It also counts against the per-connection command pacing.</li>
+<li>Revives only work on dead allies, never enemies, and only through a skill the caster can cast.</li>
+<li>Regeneration, combat time and experience loss are only worked out on the server.</li>
+</ul>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The rules are the same. In single player your game is the host and runs these rules itself; the experience you keep after a death is saved with the character in the local save. In MMO, the map server sends the new experience to Central with the rest of the character. With <em>Single Player Commands</em> on (the default), <code>/heal</code> and <code>/god</code> work as cheats in single player (see <a href="gm-tools.html">GM tools</a>).</p>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
+<h3 id="a-forgiving-game"><a class="anchor" href="#a-forgiving-game" aria-hidden="true">#</a>A forgiving game</h3>
+<ol>
+<li>In <strong>Game Settings &gt; Death</strong>, set <em>Death Experience Loss</em> to 0.</li>
+<li>In <strong>Recovery</strong>, set <em>Out Of Combat Regen</em> to 3 so players recover fast between fights.</li>
+<li>On each player prefab, lower <em>Respawn Seconds</em> to 5.</li>
+</ol>
+<h3 id="a-harsher-game"><a class="anchor" href="#a-harsher-game" aria-hidden="true">#</a>A harsher game</h3>
+<ol>
+<li>In <strong>Recovery</strong>, turn <em>Regen In Combat</em> off so potions and heals matter mid-fight.</li>
+<li>In <strong>Death</strong>, raise <em>Death Experience Loss</em> to 10 and set <em>Respawn Health</em> to 30 and <em>Respawn Mana</em> to 0.</li>
+<li>Turn on <em>Pvp Death Costs Experience</em> if PvP should be risky too.</li>
+<li>Turn off <em>Level Up Restores Health</em> and <em>Level Up Restores Mana</em>.</li>
+</ol>
+<h3 id="respawn-in-a-safe-place"><a class="anchor" href="#respawn-in-a-safe-place" aria-hidden="true">#</a>Respawn in a safe place</h3>
+<ol>
+<li>Open the map's scene and select its <code>SpawnPoint</code> (the sample calls it &quot;Spawn&quot;).</li>
+<li>Move it to a safe spot on the NavMesh, away from monster spawners, and set its <em>Radius</em>.</li>
+<li>Keep one <code>SpawnPoint</code> per map scene. Players returning from death and new characters both appear there.</li>
+</ol>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Players respawn at the world origin or in the wrong place.</strong> The map scene has no <code>SpawnPoint</code>. Add one on the NavMesh.</li>
+<li><strong>Players respawn inside a monster pack.</strong> The spawn point is near a spawner. Move one of them.</li>
+<li><strong>Health never regenerates.</strong> The class, attributes and gear give no <code>healthRegen</code>, or <em>Out Of Combat Regen</em> is 0, or <em>Regen In Combat</em> is off and the player is still being hit (a damage over time status keeps them in combat).</li>
+<li><strong>The Respawn button never works.</strong> <em>Respawn Choice Seconds</em> is larger than <em>Respawn Seconds</em>. Keep it smaller.</li>
+<li><strong>Different respawn times per character.</strong> <em>Respawn Seconds</em> is on each player prefab. Set the same value on all of them.</li>
+<li><strong>Players are invulnerable for too long after respawning.</strong> The <em>Arrival Status</em> doesn't end on action, or <em>Arrival Seconds</em> is long. The status needs <em>Ends On Action</em> on.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="combat.html">Combat</a></li>
+<li><a href="../content/skills.html">Skills</a></li>
+<li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li>
+<li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li>
+<li><a href="pvp-and-duels.html">PvP and duels</a></li>
+<li><a href="../editor/game-settings.html">Game settings</a></li>
+<li><a href="../content/maps.html">Maps</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="combat.html"><span>Anterior</span>Combat</a><a class="next" href="inventory-and-bank.html"><span>Próximo</span>Inventory and bank</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fgameplay%2Frecovery-and-death.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#overview">Overview</a></li><li class="l2"><a href="#in-combat">In combat</a></li><li class="l2"><a href="#regeneration">Regeneration</a></li><li class="l2"><a href="#level-up">Level up</a></li><li class="l2"><a href="#death">Death</a></li><li class="l3"><a href="#the-death-screen">The death screen</a></li><li class="l3"><a href="#coming-back-at-the-spawn-point">Coming back at the spawn point</a></li><li class="l3"><a href="#experience-loss">Experience loss</a></li><li class="l3"><a href="#being-revived">Being revived</a></li><li class="l2"><a href="#protection-after-coming-back">Protection after coming back</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#game-settings-recovery">Game Settings, Recovery</a></li><li class="l3"><a href="#game-settings-death">Game Settings, Death</a></li><li class="l3"><a href="#player-prefab">Player prefab</a></li><li class="l3"><a href="#game-database">Game Database</a></li><li class="l3"><a href="#map-scene">Map scene</a></li><li class="l2"><a href="#what-the-server-checks">What the server checks</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#a-forgiving-game">A forgiving game</a></li><li class="l3"><a href="#a-harsher-game">A harsher game</a></li><li class="l3"><a href="#respawn-in-a-safe-place">Respawn in a safe place</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

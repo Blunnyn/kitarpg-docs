@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Database · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/editor/game-database.html">English</option><option value="../../es/editor/game-database.html">Español</option><option value="game-database.html" selected>Português</option><option value="../../zh/editor/game-database.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section" open><summary>O editor</summary><ul><li><a href="kitarpg-window.html">The KitARPG window</a></li><li><a href="overview.html">Overview</a></li><li><a href="play-and-servers.html">Play &amp; Servers</a></li><li><a href="game-database.html" class="on" aria-current="page">Game Database</a></li><li><a href="game-settings.html">Game Settings</a></li><li><a href="modules.html">Modules</a></li><li><a href="shop-page.html">Shop page</a></li><li><a href="project-check.html">Project Check</a></li><li><a href="menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">O editor</div><h1>Game Database</h1><div class="callout note fallback"><p>Esta página ainda não foi traduzida. Ela aparece em inglês.</p></div><p>The Game Database page shows every piece of game data in one place: player models, classes, attributes, skills, items, monsters, loot, shops, quests, maps and the database's own settings. You browse by kind on the left, pick an entry in the middle and edit it on the right. It also has two assistants that make a new player model or a new monster from a 3D model.</p>
+<h2 id="where-it-is"><a class="anchor" href="#where-it-is" aria-hidden="true">#</a>Where it is</h2>
+<ul>
+<li><strong>KitARPG &gt; Game Database</strong>, or</li>
+<li>the <strong>Game Database</strong> page in the <a href="kitarpg-window.html">KitARPG window</a> (<code>Ctrl/Cmd+Shift+K</code>).</li>
+</ul>
+<p>When the data has problems, the sidebar shows their count next to the page.</p>
+<h2 id="what-the-game-database-is"><a class="anchor" href="#what-the-game-database-is" aria-hidden="true">#</a>What the game database is</h2>
+<p>The game database is a <code>GameDatabase</code> asset. The game reads all of its data through it, by id. You list the main entries in it (player models, maps, monsters, items and so on); everything those entries point at (a class's skills, a monster's loot table, a loot table's items) is collected by itself. So a skill added to a class is in the game without listing it twice.</p>
+<p>The database is set on the Game Instance of the network prefab. The starter sample makes one at <code>Assets/Blunnyn/KitARPG/Samples/Starter/Data/StarterDatabase.asset</code>. Login and Central get a copy of it as <code>gamedata.json</code> each time Play &amp; Servers starts the services.</p>
+<h2 id="the-layout"><a class="anchor" href="#the-layout" aria-hidden="true">#</a>The layout</h2>
+<p>The page uses the whole window width, in three columns under a toolbar.</p>
+<h3 id="toolbar"><a class="anchor" href="#toolbar" aria-hidden="true">#</a>Toolbar</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Game Database</strong> field</td>
+<td>The database being edited. Pick another one to switch; the choice is remembered</td>
+</tr>
+<tr>
+<td><strong>N problems</strong> pill</td>
+<td>Shows when the data has problems. The <strong>Settings</strong> page lists them</td>
+</tr>
+<tr>
+<td><strong>Collect referenced</strong></td>
+<td>Writes every entry the database only reaches through references into its own lists, so each list shows everything. Player models aren't touched</td>
+</tr>
+<tr>
+<td><strong>Export for services</strong></td>
+<td>Writes <code>gamedata.json</code> into the <code>Login</code> folder of the services source, for services you run by hand. Same as <strong>KitARPG &gt; Export Game Data for Services</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>When the project has no game database, the page shows <strong>No game database yet</strong> with <strong>Create game database</strong>. Pick where to save it; data you create later goes into folders next to it.</p>
+<h3 id="categories-left"><a class="anchor" href="#categories-left" aria-hidden="true">#</a>Categories (left)</h3>
+<p>The kinds of data, in groups, each with its count. The count includes entries reached through references.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Category</th>
+<th>Holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Characters</td>
+<td>Models</td>
+<td>Player prefabs. A model's classes are the ones a new character with that look can pick</td>
+</tr>
+<tr>
+<td>Characters</td>
+<td>Classes</td>
+<td>What a character is: attributes per level, skills and what it starts with</td>
+</tr>
+<tr>
+<td>Characters</td>
+<td>Attributes</td>
+<td>Strength, intelligence and the rest, and the stats each point gives</td>
+</tr>
+<tr>
+<td>Characters</td>
+<td>Elements</td>
+<td>Kinds of damage, each with its own resistance</td>
+</tr>
+<tr>
+<td>Combat</td>
+<td>Skills</td>
+<td>What players and monsters cast, built from effects</td>
+</tr>
+<tr>
+<td>Combat</td>
+<td>Statuses</td>
+<td>Buffs and debuffs: poison, stun, shields and the like</td>
+</tr>
+<tr>
+<td>Combat</td>
+<td>Weapon Types</td>
+<td>Sword, bow, staff: how each kind attacks and animates</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>Items</td>
+<td>Weapons, gear, potions, scrolls and everything else that fits in a bag</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>Sets</td>
+<td>Pieces that add bonuses when worn together. A piece joins a set from its own page</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>Currencies</td>
+<td>Gold and any other money the game uses</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>Loot</td>
+<td>What monsters drop and how often</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>Shops</td>
+<td>What NPC shops sell and buy</td>
+</tr>
+<tr>
+<td>World</td>
+<td>Monsters</td>
+<td>Stats, skills, loot and behaviour of every monster</td>
+</tr>
+<tr>
+<td>World</td>
+<td>Quests</td>
+<td>Objectives, rewards and who can take them</td>
+</tr>
+<tr>
+<td>World</td>
+<td>Maps</td>
+<td>Scenes players travel between, with their rules</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Settings</td>
+<td>Start map, experience table, gold and the rules every entry shares</td>
+</tr>
+</tbody>
+</table></div>
+<p>When <strong>Items</strong> (or one of its subcategories) is picked, the item subcategories open under it:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Subcategory</th>
+<th>Shows</th>
+<th>A new one is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weapons</td>
+<td>Every weapon</td>
+<td>A weapon; the <strong>+ New</strong> button offers the weapon types of the database</td>
+</tr>
+<tr>
+<td>Shields</td>
+<td>Gear for the off hand</td>
+<td>Equipment in the Off Hand slot</td>
+</tr>
+<tr>
+<td>Hats</td>
+<td>Head gear</td>
+<td>Equipment in the Head slot</td>
+</tr>
+<tr>
+<td>Cloaks</td>
+<td>Back gear: capes, packs, wings</td>
+<td>Equipment in the Back slot</td>
+</tr>
+<tr>
+<td>Amulets</td>
+<td>Necklaces and amulets</td>
+<td>Equipment in the Amulet slot</td>
+</tr>
+<tr>
+<td>Rings</td>
+<td>Rings; a character wears two</td>
+<td>Equipment in the Ring slot</td>
+</tr>
+<tr>
+<td>Chest</td>
+<td>Armor, robes and shirts</td>
+<td>Equipment in the Chest slot</td>
+</tr>
+<tr>
+<td>Gloves</td>
+<td>Gloves, gauntlets and bracers</td>
+<td>Equipment in the Hands slot</td>
+</tr>
+<tr>
+<td>Legs</td>
+<td>Pants, skirts and greaves</td>
+<td>Equipment in the Legs slot</td>
+</tr>
+<tr>
+<td>Boots</td>
+<td>Boots and shoes</td>
+<td>Equipment in the Feet slot</td>
+</tr>
+<tr>
+<td>Cosmetics</td>
+<td>Gear that only changes the look</td>
+<td>Cosmetic equipment, Head slot, not upgradable</td>
+</tr>
+<tr>
+<td>Ammo</td>
+<td>Arrows, bolts and anything a weapon spends</td>
+<td>Ammo</td>
+</tr>
+<tr>
+<td>Consumables</td>
+<td>Potions, food, scrolls and books</td>
+<td>A consumable</td>
+</tr>
+<tr>
+<td>Gems</td>
+<td>Gems set in gear sockets</td>
+<td>A gem</td>
+</tr>
+<tr>
+<td>Resources</td>
+<td>Materials, runes and drops</td>
+<td>A plain item</td>
+</tr>
+<tr>
+<td>Quest items</td>
+<td>Items only for quests; shops never buy them</td>
+<td>A plain item marked quest item and bound</td>
+</tr>
+</tbody>
+</table></div>
+<p>The gear subcategories don't show weapons, ammo or cosmetics. See <a href="../content/items.html">Items</a> and <a href="../content/equipment.html">Equipment</a>.</p>
+<h3 id="entries-middle"><a class="anchor" href="#entries-middle" aria-hidden="true">#</a>Entries (middle)</h3>
+<p>The title and hint of the category, a search field and the list. Each row shows the entry's icon (or its first letter when it has none), its name and a second line: the id, or for items the category and the id, or for models the model id and how many classes it has.</p>
+<ul>
+<li>Type in the search field to filter by name or id.</li>
+<li>Click a row to edit it. Double click also selects the asset in the Project window.</li>
+<li><code>Up</code> and <code>Down</code> arrows move through the list.</li>
+<li>The button at the bottom makes a new entry: <strong>+ New class</strong>, <strong>+ New skill</strong>, <strong>+ New weapon</strong> and so on. When a category can make more than one kind (Items can make a weapon, equipment, a consumable or a plain item), a menu asks which.</li>
+</ul>
+<p>New entries are named &quot;New ...&quot; with an id made from the name, saved in a folder named after the category next to the database asset (for example <code>Data/Skills</code>), added to the database's list and opened. Rename them in their fields.</p>
+<p>The <strong>Models</strong> and <strong>Monsters</strong> categories have their own buttons, described in <a href="#new-player-model">New player model</a> and <a href="#new-monster">New monster</a>.</p>
+<h3 id="entry-page-right"><a class="anchor" href="#entry-page-right" aria-hidden="true">#</a>Entry page (right)</h3>
+<p>The top of the page shows the icon, the name, a pill with the kind (Weapon, Skill, Monster...) and a pill with the id, plus three buttons:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Show file</strong></td>
+<td>Selects the asset in the Project window</td>
+</tr>
+<tr>
+<td><strong>Duplicate</strong></td>
+<td>Copies the asset next to it, with an id made from the copy's name, adds it to the same list and opens it. Not on models</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Asks &quot;Move ... to the trash? Characters that saved its id lose it.&quot; and moves the asset to the trash. On models the button is <strong>Remove</strong>: it takes the model out of the database and keeps the prefab</td>
+</tr>
+</tbody>
+</table></div>
+<p>Under it, the asset path, then the fields in cards, one card per group of fields. The fields are the same you see in the Inspector.</p>
+<p>Some kinds get extra cards above the fields:</p>
+<ul>
+<li><strong>Items</strong>: an <strong>In game</strong> card with the tooltip players see, rarity and category, description, every bonus (rolled bonuses as ranges), the level and classes for gear, the sell and buy price, stacking, weight and whether it is bound, and the item's icon.</li>
+<li><strong>Gear with fixed bonuses</strong>: &quot;N fixed bonuses that never roll. Turn them into min and max ranges, 25% up and down?&quot; with <strong>Make them roll</strong>, which moves the fixed bonuses into random ranges. See <a href="../content/equipment.html">Equipment</a>.</li>
+<li><strong>Models</strong>: a <strong>Look</strong> card with a preview of the prefab (double click it to open the prefab), its classes (the first one marked &quot;(default)&quot;) and how many animations are set. Under the fields, an <strong>Animations</strong> section edits the model's Character Animations: clips for moving, getting hit, dying, attacking with each weapon type and casting each skill. A prefab without that component shows <strong>Add Character Animations</strong>.</li>
+<li><strong>Maps</strong>: an <strong>Adding a map</strong> card with what a map needs and where each part stands. See <a href="../content/maps.html">Maps</a>.</li>
+</ul>
+<h3 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h3>
+<p>The <strong>Settings</strong> category opens the database's own fields. Problems found in the data are listed at the top in an orange box. The lists (models, classes, items...) are left out because the other categories show them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Start Map</em> (<code>startMap</code>)</td>
+<td>Where new characters appear unless their class says otherwise</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Exp Table</em> (<code>expTable</code>)</td>
+<td>Experience needed for each level</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Max Characters Per Account</em> (<code>maxCharactersPerAccount</code>)</td>
+<td>How many characters an account can have</td>
+<td>6</td>
+</tr>
+<tr>
+<td><em>Gold</em> (<code>gold</code>)</td>
+<td>The money monsters drop and NPCs pay. Saved apart from the other currencies</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Default Element</em> (<code>defaultElement</code>)</td>
+<td>Used where no element is set. Empty uses the first in the list</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Default Hit Effect</em> (<code>defaultHitEffect</code>)</td>
+<td>Effect on whoever is hit when nothing else gives one</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Stat Display</em> (<code>statDisplay</code>)</td>
+<td>Icons and names of the stats</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td><em>Guild Experience Share</em> (<code>guildExperienceShare</code>)</td>
+<td>Share of the experience members earn that also goes to their guild, 0 to 1</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td><em>Upgrade Rules</em> (<code>upgradeRules</code>)</td>
+<td>How gear is upgraded and salvaged, unless a piece has its own rules</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Collector</em> (<code>collector</code>)</td>
+<td>The guild tax collector. Empty turns collectors off</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Founding guilds and alliances</strong></p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Guild Found Level</em> (<code>guildFoundLevel</code>)</td>
+<td>Lowest character level that can found a guild</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>Guild Found Gold</em> (<code>guildFoundGold</code>)</td>
+<td>Gold founding a guild costs. 0 is free</td>
+<td>0</td>
+</tr>
+<tr>
+<td><em>Guild Found Item</em> (<code>guildFoundItem</code>)</td>
+<td>Item founding a guild uses up, like a charter. Empty: none</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Guild Found At</em> (<code>guildFoundAt</code>)</td>
+<td>From the guild window, only at an NPC with a Guild Founding option, or both</td>
+<td>Window Or Npc</td>
+</tr>
+<tr>
+<td><em>Guild Emblems</em> (<code>guildEmblems</code>)</td>
+<td>Shapes, symbols and colors for emblems. Empty: guilds have no emblem</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Guild Emblem Changeable</em> (<code>guildEmblemChangeable</code>)</td>
+<td>Guilds may change their emblem later. Off: picked once when founding</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><em>Alliance Found Gold</em> (<code>allianceFoundGold</code>)</td>
+<td>Gold founding an alliance costs. 0 is free</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Guild hall</strong></p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Guild Hall</em> (<code>guildHall</code>)</td>
+<td>The map each guild gets its own copy of once it buys its hall. Must be instanced. Empty: no halls</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Guild Hall Price</em> (<code>guildHallPrice</code>)</td>
+<td>Gold the guild pays from its bank for its hall</td>
+<td>50000</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Invulnerability</strong></p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Boss Guard Status</em> (<code>bossGuardStatus</code>)</td>
+<td>Put on a boss while the monsters it called are alive</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Arrival Status</em> (<code>arrivalStatus</code>)</td>
+<td>Put on players when they appear in a map or come back to life</td>
+<td>None</td>
+</tr>
+<tr>
+<td><em>Arrival Seconds</em> (<code>arrivalSeconds</code>)</td>
+<td>How long the arrival status lasts</td>
+<td>4</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="../gameplay/guilds.html">Guilds</a>, <a href="../content/bosses.html">Bosses</a> and <a href="../content/classes.html">Classes</a>.</p>
+<h2 id="new-player-model"><a class="anchor" href="#new-player-model" aria-hidden="true">#</a>New player model</h2>
+<p>In <strong>Models</strong>, the bottom of the list has:</p>
+<ul>
+<li><strong>+ New player model</strong>, which opens the assistant in the right column.</li>
+<li>&quot;Or add a player prefab you already made&quot;: a prefab field and <strong>Add prefab</strong>. It adds a Player Model component when the prefab has none and lists it in the database. Drag a prefab from the Project window; a scene object is refused.</li>
+</ul>
+<p>The assistant has four steps shown as a bar on top. Steps you passed can be clicked to go back. <strong>Cancel</strong> closes it without making anything, <strong>Back</strong> goes one step back and <strong>Next</strong> goes on; <strong>Next</strong> is greyed out while the step has a problem, shown in an orange line.</p>
+<h3 id="step-1-model"><a class="anchor" href="#step-1-model" aria-hidden="true">#</a>Step 1: Model</h3>
+<ol>
+<li>Drag an FBX or a prefab into the field of <strong>The 3D model</strong>. A preview shows next to it.</li>
+<li>Read the status under it:
+<ul>
+<li><strong>Humanoid rig</strong>: weapons go in its hands and it can share the kit's animations.</li>
+<li><strong>Generic rig</strong>: use animations made for this rig, and set the hand bones on the model afterwards.</li>
+<li><strong>No Animator</strong>: it won't animate. Add an Animator to the model, or set its rig to Humanoid in the import settings.</li>
+<li><strong>No skinned meshes</strong>: gear swaps body parts by skinned mesh, so this model shows without equipment changes.</li>
+</ul>
+</li>
+<li>In <strong>Name</strong>, check <em>Display name</em> (filled from the model's name) and <em>Id</em> (made from the name until you type your own). The id is saved with characters; changing it later breaks the characters made with it.</li>
+<li>Tick <em>Own hair only</em> to keep the body's own hair, ears or horns: no hair styles are offered for it.</li>
+</ol>
+<h3 id="step-2-classes"><a class="anchor" href="#step-2-classes" aria-hidden="true">#</a>Step 2: Classes</h3>
+<ol>
+<li>In <strong>Classes it can be</strong>, tick the classes a character with this look can pick. The first ticked is the default.</li>
+<li>To make classes along with the model, press <strong>+ New class</strong> in <strong>New classes</strong>, type a name and, optionally, pick a class in <em>copy of</em> to start from its attributes, skills and gear. <strong>x</strong> removes a row.</li>
+</ol>
+<p>At least one class is needed. New class names must not match an existing class id.</p>
+<h3 id="step-3-animations"><a class="anchor" href="#step-3-animations" aria-hidden="true">#</a>Step 3: Animations</h3>
+<ol>
+<li><strong>Start from a model</strong>: pick an existing model to copy its animations (clips, hit timings, per weapon and per skill) and its appearance catalog, or <strong>Nothing, start empty</strong>. With a model picked:
+<ul>
+<li><em>Copy its animations</em> (on by default).</li>
+<li><em>Copy the game's own components on it (not the kit's)</em> (on by default): components you added to that model come along with their values.</li>
+<li>A warning shows when one model is humanoid and the other isn't, since copied clips may not play on this rig.</li>
+</ul>
+</li>
+<li><strong>Upper body</strong> (humanoid only): <em>Use an upper body mask</em> (on by default) lets characters attack and cast while walking, the legs still moving. Leave <em>Mask</em> empty to use the kit's mask, or pick your own Avatar Mask.</li>
+</ol>
+<p>With empty animations, drop the clips in the model's Animations card afterwards. Hits still land on time.</p>
+<h3 id="step-4-create"><a class="anchor" href="#step-4-create" aria-hidden="true">#</a>Step 4: Create</h3>
+<ol>
+<li>Check <em>Prefab folder</em>. It defaults to a <code>Prefabs</code> folder next to the database's folder. The full prefab path shows under it. The folder must be inside <code>Assets</code>, and a prefab with that name must not exist.</li>
+<li>Read <strong>What will be made</strong>: the prefab with the Player Model, networking, movement, inventory, stats, skills, quests, chat, friends, party, trade, guild, bank, forge, mail, market, shop, PvP, equipment, appearance, animations and the name over the head; the classes; the animations; the mask; and that it joins the database.</li>
+<li>Press <strong>Create player</strong>.</li>
+</ol>
+<p>The assistant makes the new classes (in <code>Classes</code> next to the database), the prefab, adds both to the database and opens the new model, ready to edit. See <a href="../content/player-models.html">Player models</a>.</p>
+<h2 id="new-monster"><a class="anchor" href="#new-monster" aria-hidden="true">#</a>New monster</h2>
+<p>In <strong>Monsters</strong>, the bottom of the list has:</p>
+<ul>
+<li><strong>+ New monster</strong>, which opens the assistant.</li>
+<li><strong>Blank monster data</strong>, which makes only a Monster data asset, without a prefab.</li>
+</ul>
+<h3 id="step-1-model-2"><a class="anchor" href="#step-1-model-2" aria-hidden="true">#</a>Step 1: Model</h3>
+<ol>
+<li>Drag an FBX or a prefab into <strong>The 3D model</strong>.</li>
+<li>The status says <strong>Animated</strong> (you pick its clips in step 3) or <strong>No Animator</strong> (it hops as it moves and flashes when hit, like the sample's slimes; its attacks still land on time).</li>
+<li>Check <em>Display name</em>. The id made from it shows under the field. No other monster may have that id.</li>
+</ol>
+<h3 id="step-2-combat"><a class="anchor" href="#step-2-combat" aria-hidden="true">#</a>Step 2: Combat</h3>
+<p><strong>Start from a monster</strong> copies everything another monster has: stats, skills, resistances, phases and loot. Pick <strong>Nothing, start from the defaults</strong> to start from a new monster's values. Picking a monster fills the fields below with its values; change what this one does differently.</p>
+<p><strong>How it fights</strong></p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level</td>
+<td>Monster level, at least 1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Rank</td>
+<td>Normal, Elite or Boss. Elites and bosses get a frame on their plate; bosses a bar at the top of the screen</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Health</td>
+<td>Maximum health, at least 1</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Damage</td>
+<td>Minimum and maximum damage of its attack, and the element (empty uses the default element)</td>
+<td>1 to 3</td>
+</tr>
+<tr>
+<td>Attack range (m)</td>
+<td>About 1.4 for melee; farther for monsters that shoot. At least 0.5</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td>Attacks per second</td>
+<td>At least 0.1</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Move speed</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>Aggression</td>
+<td>Passive, Aggressive, or Pack (joins in when a monster nearby is attacked)</td>
+<td>Aggressive</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Rewards</strong></p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experience</td>
+<td>Experience for the kill</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Loot table</td>
+<td>Empty: it drops nothing. Make tables in the Loot category</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Respawn seconds</td>
+<td>Time before it comes back</td>
+<td>30</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="step-3-animations-2"><a class="anchor" href="#step-3-animations-2" aria-hidden="true">#</a>Step 3: Animations</h3>
+<p>Without an Animator, this step only says there is nothing to pick.</p>
+<p>With one:</p>
+<ol>
+<li><strong>Start from a monster</strong> copies the clips and hit timings of an animated monster. <strong>Nothing</strong> starts empty.</li>
+<li><strong>Clips</strong>: <em>Idle</em>, <em>Walk</em>, <em>Hit</em>, <em>Death</em> and <em>Attack</em>. Clips you pick replace the copied ones. Empty ones are skipped: without Hit it doesn't flinch, without Death it doesn't fall.</li>
+<li><em>Hit lands at</em> (shown when there is an attack clip): from 0 (start) to 1 (end) of the attack, when the damage lands. Default 0.5.</li>
+</ol>
+<h3 id="step-4-create-2"><a class="anchor" href="#step-4-create-2" aria-hidden="true">#</a>Step 4: Create</h3>
+<ol>
+<li>Check <em>Prefab folder</em> (a <code>Prefabs</code> folder next to the database's folder by default).</li>
+<li><em>Render its bestiary icon</em> (on by default) draws the monster's portrait after it is made.</li>
+<li>Read <strong>What will be made</strong>: the monster data, the prefab (networking, movement, a click area, the Monster component, its animations and the plate over its head, plus the hopping body without an Animator) and that it joins the database.</li>
+<li>Press <strong>Create monster</strong>.</li>
+</ol>
+<p>The data goes in <code>Monsters</code> next to the database. A copied monster gets a new portrait instead of the original's. The new monster opens in the list. To put it in the world, add a Monster Spawner to a map scene and pick it. See <a href="../content/monsters.html">Monsters</a>.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The data is the same in both. In MMO, Login and Central read a copy (<code>gamedata.json</code>) written when Play &amp; Servers starts the services, so restart them after changing data that Login uses to make characters, such as classes, start items or the start map. Map servers read the database from their build, so rebuild the map server after changing data. See <a href="play-and-servers.html">Play &amp; Servers</a>.</p>
+<h2 id="tips"><a class="anchor" href="#tips" aria-hidden="true">#</a>Tips</h2>
+<ul>
+<li>Keep ids short, lowercase, with letters, digits, <code>-</code> and <code>_</code>. Project Check warns about other characters.</li>
+<li>Never change the id of something players already have. Saves point at ids.</li>
+<li>Use <strong>Duplicate</strong> to make variants, such as a stronger copy of a monster or a recolored item.</li>
+<li><strong>Collect referenced</strong> is useful after importing data made elsewhere, so every list shows what the game really contains.</li>
+</ul>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>Making assets with Create &gt; KitARPG in the Project window and forgetting to list them.</strong> The game only knows what the database reaches. Project Check lists unreachable assets as notes. Making entries from this page lists them by itself.</li>
+<li><strong>A model with no classes.</strong> Nobody can pick it. The database reports &quot;Player model '...' has no classes&quot;.</li>
+<li><strong>Two entries of the same kind with the same id.</strong> Only one is found. Project Check reports it as an error.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="../content/player-models.html">Player models</a></li>
+<li><a href="../content/classes.html">Classes</a></li>
+<li><a href="../content/items.html">Items</a></li>
+<li><a href="../content/monsters.html">Monsters</a></li>
+<li><a href="../content/maps.html">Maps</a></li>
+<li><a href="project-check.html">Project Check</a></li>
+<li><a href="game-settings.html">Game Settings</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="play-and-servers.html"><span>Anterior</span>Play &amp; Servers</a><a class="next" href="game-settings.html"><span>Próximo</span>Game Settings</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Feditor%2Fgame-database.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#where-it-is">Where it is</a></li><li class="l2"><a href="#what-the-game-database-is">What the game database is</a></li><li class="l2"><a href="#the-layout">The layout</a></li><li class="l3"><a href="#toolbar">Toolbar</a></li><li class="l3"><a href="#categories-left">Categories (left)</a></li><li class="l3"><a href="#entries-middle">Entries (middle)</a></li><li class="l3"><a href="#entry-page-right">Entry page (right)</a></li><li class="l3"><a href="#settings">Settings</a></li><li class="l2"><a href="#new-player-model">New player model</a></li><li class="l3"><a href="#step-1-model">Step 1: Model</a></li><li class="l3"><a href="#step-2-classes">Step 2: Classes</a></li><li class="l3"><a href="#step-3-animations">Step 3: Animations</a></li><li class="l3"><a href="#step-4-create">Step 4: Create</a></li><li class="l2"><a href="#new-monster">New monster</a></li><li class="l3"><a href="#step-1-model-2">Step 1: Model</a></li><li class="l3"><a href="#step-2-combat">Step 2: Combat</a></li><li class="l3"><a href="#step-3-animations-2">Step 3: Animations</a></li><li class="l3"><a href="#step-4-create-2">Step 4: Create</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

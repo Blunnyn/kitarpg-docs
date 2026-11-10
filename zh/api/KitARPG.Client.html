@@ -1,0 +1,3099 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KitARPG.Client · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/api/KitARPG.Client.html">English</option><option value="../../es/api/KitARPG.Client.html">Español</option><option value="../../pt/api/KitARPG.Client.html">Português</option><option value="KitARPG.Client.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section" open><summary>API 参考</summary><ul><li><a href="index.html">API 参考</a></li><li><a href="KitARPG.Client.html" class="on" aria-current="page">KitARPG.Client</a></li><li><a href="KitARPG.Data.html">KitARPG.Data</a></li><li><a href="KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="KitARPG.Local.html">KitARPG.Local</a></li><li><a href="KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="KitARPG.Net.html">KitARPG.Net</a></li><li><a href="KitARPG.Server.html">KitARPG.Server</a></li><li><a href="KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">API 参考</div><h1>KitARPG.Client</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><h2 id="blunnyn-kitarpg-client"><a class="anchor" href="#blunnyn-kitarpg-client" aria-hidden="true">#</a>Blunnyn.KitARPG.Client</h2>
+<h3 id="aiminput-class"><a class="anchor" href="#aiminput-class" aria-hidden="true">#</a>AimInput (class)</h3>
+<p>What the player points at, the same way in every mode: the play mode only says where the pointer is (the mouse, or the middle of the screen behind a crosshair). Skills, the attack key and the target marker all read it from here.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static readonly Func&lt;Vector2&gt; Mouse = ()</code></td>
+<td>Aims with the mouse.</td>
+</tr>
+<tr>
+<td><code>public static readonly Func&lt;Vector2&gt; Center = ()</code></td>
+<td>Aims with the middle of the screen, behind a crosshair.</td>
+</tr>
+<tr>
+<td><code>public static Func&lt;Vector2&gt; Pointer</code></td>
+<td>Screen point the player aims with, set by the play mode. Null: nothing aims.</td>
+</tr>
+<tr>
+<td><code>public static Vector3? Point</code></td>
+<td>A point on the ground aimed at directly, such as a skill dragged on a touch screen. Wins over <code>Pointer</code>.</td>
+</tr>
+<tr>
+<td><code>public static float PointPickMeters</code></td>
+<td>Meters from <code>Point</code> at which a body still counts as aimed at.</td>
+</tr>
+<tr>
+<td><code>public static bool WalksIntoRange</code></td>
+<td>The play mode walks into range on its own (top-down), so a far point is not an error.</td>
+</tr>
+<tr>
+<td><code>public static float PickPixels</code></td>
+<td>Pixels at 1080p from a body at which the pointer still picks it.</td>
+</tr>
+<tr>
+<td><code>public static bool HasAim</code></td>
+<td>Something aims now: the pointer or a point.</td>
+</tr>
+<tr>
+<td><code>public static bool GroundPoint(out Vector3 point, float reach = 30f)</code></td>
+<td>Where the aim meets the ground, past monsters, players and drops. Aiming at the sky lands at <code>reach</code> meters, level with the player.</td>
+</tr>
+<tr>
+<td><code>public static ICombatant Enemy(PlayerCharacter player)</code></td>
+<td>The enemy under the aim: a monster the ray hits, or the body nearest the pointer on screen.</td>
+</tr>
+<tr>
+<td><code>public static PlayerCharacter Ally(PlayerCharacter player, bool dead)</code></td>
+<td>The ally under the aim, the player included; for revives only the fallen.</td>
+</tr>
+<tr>
+<td><code>public static PlayerCharacter OtherPlayer(Vector2 pointer)</code></td>
+<td>The other player under the pointer, for the player menu.</td>
+</tr>
+<tr>
+<td><code>public static ICombatant Nearest(PlayerCharacter player, float range)</code></td>
+<td>The living enemy nearest the player within <code>range</code> meters, a little in favor of the one ahead.</td>
+</tr>
+<tr>
+<td><code>public static CastSkillMessage? Skill(SkillData skill)</code></td>
+<td>The cast request for a skill at the aim, or null when it needs a target and none is aimed at.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="alliancewindow-class"><a class="anchor" href="#alliancewindow-class" aria-hidden="true">#</a>AllianceWindow (class)</h3>
+<p>The guild's alliance: found one, or see its guilds, notice and tag; invite, remove or hand the lead to guilds. Members whose role has the Alliance permission act for their guild. Also asks about alliance invites.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public RectTransform rowTemplate</code></td>
+<td>One guild: an Emblem view, Name and Status labels, and buttons A and B, each with a Label.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="autologin-class"><a class="anchor" href="#autologin-class" aria-hidden="true">#</a>AutoLogin (class)</h3>
+<p>Skips the title screen for testing: registers the account if needed, makes the character if it doesn't exist and enters the world. Started by -autoplay -user name -password pass -character Name [-model id] [-class id], as Play with two players does for each editor.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static async Awaitable&lt;string&gt; Enter(GameSession session, string user, string password, string name)</code></td>
+<td>Signs in and enters with that character. Returns why not, or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bankwindow-class"><a class="anchor" href="#bankwindow-class" aria-hidden="true">#</a>BankWindow (class)</h3>
+<p>A bank, opened at its NPC: the account's, shared by all its characters, or the guild's at the guild banker. Store a bag item from its menu or with a double click (a stack asks how many), right click a stored one to take it out, drag to rearrange. Both keep gold. Closes on walking away.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public UIItem slotTemplate</code></td>
+<td>One bank slot, copied for each.</td>
+</tr>
+<tr>
+<td><code>public InventoryWindow inventoryWindow</code></td>
+<td>Opened beside the bank so the bag can store items.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI titleLabel</code></td>
+<td>Says which bank is open.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bestiarywindow-class"><a class="anchor" href="#bestiarywindow-class" aria-hidden="true">#</a>BestiaryWindow (class)</h3>
+<p>Every monster in the game database: search and filter by map or rank, then read its characteristics, where it lives and what it drops, with each item's chance for the player.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Transform rowList</code></td>
+<td>Where the rows go. Empty uses the template's parent.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI countLabel</code></td>
+<td>Like &quot;12 monsters&quot;.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI infoLabel</code></td>
+<td>Level, rank and how it behaves.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI whereLabel</code></td>
+<td>Experience and where it lives.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI lootLabel</code></td>
+<td>Gold and how many items one kill can drop.</td>
+</tr>
+<tr>
+<td><code>public void Show(MonsterData monster)</code></td>
+<td>Opens on one monster.</td>
+</tr>
+<tr>
+<td><code>protected virtual bool Matches(MonsterData monster)</code></td>
+<td>Whether a monster passes the search and filters. Override to add filters of your own.</td>
+</tr>
+<tr>
+<td><code>protected virtual void Characteristics(MonsterData monster, ItemDescription lines)</code></td>
+<td>The characteristics page. Override to show more of your own data.</td>
+</tr>
+<tr>
+<td><code>protected virtual float ChanceFor(LootTable.Drop drop)</code></td>
+<td>The player's chance for a drop: the table's, grown by their loot chance and the server's rate, as kills roll it.</td>
+</tr>
+<tr>
+<td><code>public static string Percent(float chance)</code></td>
+<td>&quot;12%&quot;, &quot;0.5%&quot;, &quot;0.05%&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bossbar-class"><a class="anchor" href="#bossbar-class" aria-hidden="true">#</a>BossBar (class)</h3>
+<p>The bar at the top of the screen for the nearest boss in a fight: name, health, what it has on itself (enraged, invulnerable) and its last shout.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI statusLabel</code></td>
+<td>Buffs the boss has on itself, by name.</td>
+</tr>
+<tr>
+<td><code>public float range</code></td>
+<td>Meters from the player within which a fighting boss shows.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cashshopwindow-class"><a class="anchor" href="#cashshopwindow-class" aria-hidden="true">#</a>CashShopWindow (class)</h3>
+<p>The in-game shop, opened anywhere from the HUD or its key. Offers come from the Shop service through the map. Categories and a search on the left, a banner of featured offers and a grid of cards on the right; a card opens the offer's page with what it contains, Buy and Gift. Pictures come from the game's <code>ShopArt</code> by the keys the offers name; without one a card shows the item's icon.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string homeName</code></td>
+<td>Name of the first category, which shows every offer with the banner on top.</td>
+</tr>
+<tr>
+<td><code>public Button categoryTemplate</code></td>
+<td>One per category, copied from this. Needs a Label and may have an Icon.</td>
+</tr>
+<tr>
+<td><code>public Button topUpButton</code></td>
+<td>Opens the game's top-up page (Game Settings &gt; Shop). Hidden without one.</td>
+</tr>
+<tr>
+<td><code>public Image bannerDotTemplate</code></td>
+<td>One dot per banner offer, copied from this.</td>
+</tr>
+<tr>
+<td><code>public RectTransform offerTemplate</code></td>
+<td>One card per offer, copied from this. Needs Name and Price labels; Art, Icon, Currency and a Badge with a Label are optional. The card itself is the button.</td>
+</tr>
+<tr>
+<td><code>public string saleWord</code></td>
+<td>Badges with this word, such as Sale or Promo, take the second color.</td>
+</tr>
+<tr>
+<td><code>public void Show(string offerId)</code></td>
+<td>Opens the shop on one offer's page.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterpreviewstage-class"><a class="anchor" href="#characterpreviewstage-class" aria-hidden="true">#</a>CharacterPreviewStage (class)</h3>
+<p>Shows a character model on the title screen while the player picks a look.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public RuntimeAnimatorController animatorController</code></td>
+<td>Empty uses the moving clips of the model's CharacterAnimations.</td>
+</tr>
+<tr>
+<td><code>public void Show(CharacterAppearance appearance, string[] gear = null)</code></td>
+<td>The look and, optionally, the gear worn (item id per equipment position).</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterwindow-class"><a class="anchor" href="#characterwindow-class" aria-hidden="true">#</a>CharacterWindow (class)</h3>
+<p>The local player's sheet. A column of attributes on the side; on the first page every stat from <code>All</code> grouped by section, then damage and resistances by element; on the second, experience and a chart of the attributes. &quot;Spend points&quot; shows a &quot;+&quot; on each attribute while there are points left. Rows are made from the prefabs it is given.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI levelLabel</code></td>
+<td>Level and class.</td>
+</tr>
+<tr>
+<td><code>public Button[] pageButtons</code></td>
+<td>One per page.</td>
+</tr>
+<tr>
+<td><code>public UIAttribute attributeTemplate</code></td>
+<td>The UIAttribute prefab each attribute is made from.</td>
+</tr>
+<tr>
+<td><code>public Button spendButton</code></td>
+<td>Turns the &quot;+&quot; buttons on and off.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI pointsLabel</code></td>
+<td>Points left to spend.</td>
+</tr>
+<tr>
+<td><code>public Button undoButton</code></td>
+<td>Optional. Takes back the points picked but not confirmed.</td>
+</tr>
+<tr>
+<td><code>public UIAmountPicker picker</code></td>
+<td>Optional. Opens on a click on an attribute to pick how many points go in.</td>
+</tr>
+<tr>
+<td><code>public RectTransform sectionTemplate</code></td>
+<td>Holds one section's stats; usually a two column grid.</td>
+</tr>
+<tr>
+<td><code>public UIStat statTemplate</code></td>
+<td>The UIStat prefab each stat is made from.</td>
+</tr>
+<tr>
+<td><code>public RectTransform dividerTemplate</code></td>
+<td>Drawn between sections and before the elements.</td>
+</tr>
+<tr>
+<td><code>public RectTransform elementList</code></td>
+<td>Header and rows go in here, after the stats.</td>
+</tr>
+<tr>
+<td><code>public UIElementRow elementTemplate</code></td>
+<td>The UIElementRow prefab each element is made from.</td>
+</tr>
+<tr>
+<td><code>public Image radarIconTemplate</code></td>
+<td>Placed at the end of each spoke with the attribute's icon.</td>
+</tr>
+<tr>
+<td><code>public string[] highlights =</code></td>
+<td>Stats shown under the chart, by id.</td>
+</tr>
+<tr>
+<td><code>public int Pending</code></td>
+<td>Points picked and not confirmed yet.</td>
+</tr>
+<tr>
+<td><code>public void Confirm()</code></td>
+<td>Sends the picked points to the server.</td>
+</tr>
+<tr>
+<td><code>public void Undo()</code></td>
+<td>Takes back every point picked and not confirmed.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="chatwindow-class"><a class="anchor" href="#chatwindow-class" aria-hidden="true">#</a>ChatWindow (class)</h3>
+<p>The chat box. Enter or a click in it starts typing, Enter sends, Escape stops; a line starting with / is a command (/w name, /r, /s, /m, /g, /p, /invite, /friend and more; the rest, like GM commands, go to the server and /help lists them). Click a name to whisper.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject panel</code></td>
+<td>Hidden while no character is in the world: title, character select, loading.</td>
+</tr>
+<tr>
+<td><code>public Button channelButton</code></td>
+<td>Shows the channel plain lines go to; clicking it cycles them.</td>
+</tr>
+<tr>
+<td><code>public Image background</code></td>
+<td>Tinted darker while typing, so it's clear where the keys go.</td>
+</tr>
+<tr>
+<td><code>public bool Hidden</code></td>
+<td>Put away by a button of its own, such as Chat on the touch controls. Lines still arrive.</td>
+</tr>
+<tr>
+<td><code>public void Whisper(string name)</code></td>
+<td>Opens the box ready to whisper someone.</td>
+</tr>
+<tr>
+<td><code>public void Local(string message)</code></td>
+<td>Adds a line only this client sees, like a command's help.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="choiceoption-class"><a class="anchor" href="#choiceoption-class" aria-hidden="true">#</a>ChoiceOption (class)</h3>
+<h3 id="clientoptions-class"><a class="anchor" href="#clientoptions-class" aria-hidden="true">#</a>ClientOptions (class)</h3>
+<p>Graphics, sound and interface settings of this computer: loads them, applies them and lists them for the Settings window. Changes apply at once and are saved when the window closes.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static readonly List&lt;string&gt; Pages</code></td>
+<td>Tabs in order. A page added by an option goes at the end.</td>
+</tr>
+<tr>
+<td><code>public static event Action Changed</code></td>
+<td>Any option changed. Views that read <code>Values</code> listen to this.</td>
+</tr>
+<tr>
+<td><code>public static void ResetPage(string page)</code></td>
+<td>Puts one tab back as it came.</td>
+</tr>
+<tr>
+<td><code>public static float Volume(SoundChannel channel)</code></td>
+<td>Volume of a channel, 0 to 1, before the master volume.</td>
+</tr>
+<tr>
+<td><code>public static void ApplyUiScale()</code></td>
+<td>Scales every canvas that scales with the screen. Call it for a canvas made later.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="clientsmoketest-class"><a class="anchor" href="#clientsmoketest-class" aria-hidden="true">#</a>ClientSmokeTest (class)</h3>
+<p>Headless client that plays the login, map and portal loop end to end and logs what it sees, for CI and local checks. -smoketest enter|portal|systems -user name -password pass -character Name [-model id] [-class id] [-stay seconds] &quot;enter&quot; joins and reports the map, position and other players. &quot;portal&quot; also walks through the first portal and steps a few meters on the other side before leaving. &quot;systems&quot; plays <code>ClientSystemsTest</code> with a second client (-qa lead|partner -partner Name).</p>
+<h3 id="clientsystemstest-class"><a class="anchor" href="#clientsystemstest-class" aria-hidden="true">#</a>ClientSystemsTest (class)</h3>
+<p>Two clients playing the social and economy systems against real servers, for -smoketest systems. The lead (-qa lead) drives with GM commands; the partner (-qa partner) answers invites and trades. Both accounts need the GM role. Each step logs PASS or FAIL and the run goes on. -partner names the other character.</p>
+<h3 id="clocklabel-class"><a class="anchor" href="#clocklabel-class" aria-hidden="true">#</a>ClockLabel (class)</h3>
+<p>The game's day and hour on the HUD.</p>
+<h3 id="combateffectsview-class"><a class="anchor" href="#combateffectsview-class" aria-hidden="true">#</a>CombatEffectsView (class)</h3>
+<p>Spawns the effects of attacks and skills on clients, at the moments the server uses: the cast effect while casting, the launch effect and projectile on each hit frame, the area effect where a skill lands and the hit effect on whoever is hit. The hit effect comes from the skill, then the weapon or monster, then the element, then the database default. Effects are pooled per prefab.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float defaultLifetime</code></td>
+<td>Seconds an effect lives when it sets none and has no particles to time.</td>
+</tr>
+<tr>
+<td><code>protected virtual EffectSpawn HitEffect(GameData source, DamageElement element)</code></td>
+<td>The hit effect for a hit: the skill's, the weapon's or monster's, the element's, or the default.</td>
+</tr>
+<tr>
+<td><code>public static float BodyHeight(Transform character)</code></td>
+<td>Where a socket is on a character. A child named like the socket wins; humanoids use their bones; otherwise it is worked out from the character's height. How tall a character's body is, in meters, from its renderers.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="confirmdialog-class"><a class="anchor" href="#confirmdialog-class" aria-hidden="true">#</a>ConfirmDialog (class)</h3>
+<p>A yes or no question before something that can't be undone, optionally with a line to write or an amount to pick.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TMP_InputField input</code></td>
+<td>Shown only by AskText. The panel grows to fit it.</td>
+</tr>
+<tr>
+<td><code>public RectTransform amountRow</code></td>
+<td>Shown only by AskAmount: &quot;- n + MAX&quot;. Without it the text line takes the number.</td>
+</tr>
+<tr>
+<td><code>public static void Ask(string question, string yesLabel, Action yes)</code></td>
+<td>Asks, and runs <code>yes</code> only if the player agrees. Without a dialog it doesn't run.</td>
+</tr>
+<tr>
+<td><code>public static void AskText(string question, string yesLabel, string hint, int maxLength, Action&lt;string&gt; yes)</code></td>
+<td>Asks for a line of text; <code>yes</code> gets it, trimmed, unless it is empty or cancelled.</td>
+</tr>
+<tr>
+<td><code>public static void HowMany(string verb, string itemName, int stack, Action&lt;int&gt; run)</code></td>
+<td>How many of a stack to move. A stack of one, Shift (one) or Ctrl (all) goes without asking, and so does everything when the HUD has no dialog.</td>
+</tr>
+<tr>
+<td><code>public static void HowMany(string verb, UIItem view, Action&lt;int&gt; run)</code></td>
+<td><code>HowMany(string, string, int, Action{int})</code> for the stack in a slot. If the slot holds something else by the time the player answers, nothing runs.</td>
+</tr>
+<tr>
+<td><code>public static void AskAmount(string question, string yesLabel, int start, int max, Action&lt;int&gt; yes)</code></td>
+<td>Asks for a number from 1 to <code>max</code>, starting at <code>start</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="daynightcycle-class"><a class="anchor" href="#daynightcycle-class" aria-hidden="true">#</a>DayNightCycle (class)</h3>
+<p>Lights a map by the <code>WorldClock</code>: the sun crosses the sky by day, a dim blue moon takes over at night, and the ambient light and the camera's sky follow. One per map scene, pointing at its directional light.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Camera view</code></td>
+<td>Optional. Its background color is the sky.</td>
+</tr>
+<tr>
+<td><code>public float heading</code></td>
+<td>Compass heading the sun rises from.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="floatingtext-class"><a class="anchor" href="#floatingtext-class" aria-hidden="true">#</a>FloatingText (class)</h3>
+<p>Damage numbers and short messages that rise and fade over characters.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Color hurtColor = new Color(1f, 0.4f, 0.35f)</code></td>
+<td>Damage taken by the local player.</td>
+</tr>
+<tr>
+<td><code>public Color shoutColor = new Color(1f, 0.55f, 0.25f)</code></td>
+<td>Bosses shouting.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="forgewindow-class"><a class="anchor" href="#forgewindow-class" aria-hidden="true">#</a>ForgeWindow (class)</h3>
+<p>The smith's forge, opened at its NPC. Right click a piece in the bag, or drag one from the bag or the character, to work on it: upgrade it a step, salvage it, set gems from the bag (right click them) or take them out (right click a socket).</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI stepLabel</code></td>
+<td>Cost, chance and what a failure does.</td>
+</tr>
+<tr>
+<td><code>public Button protectButton</code></td>
+<td>Spends a protection item so a failed step keeps the piece.</td>
+</tr>
+<tr>
+<td><code>public UIItem socketTemplate</code></td>
+<td>One socket, copied for each the piece has.</td>
+</tr>
+<tr>
+<td><code>public RectTransform socketList</code></td>
+<td>Where the socket slots go. Empty: next to the template.</td>
+</tr>
+<tr>
+<td><code>public InventoryWindow inventoryWindow</code></td>
+<td>Opened beside the forge so bag items can be picked.</td>
+</tr>
+<tr>
+<td><code>public static bool IsOpenNow</code></td>
+<td>Whether the forge is open on this client, for item menu lines that only make sense there.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="friendswindow-class"><a class="anchor" href="#friendswindow-class" aria-hidden="true">#</a>FriendsWindow (class)</h3>
+<p>Friends, who is online and where, and requests both ways. Add by name; whisper or invite to the party from a row.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public RectTransform rowTemplate</code></td>
+<td>One friend: Name and Status labels, and buttons A, B and C, each with a Label.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gameaudio-class"><a class="anchor" href="#gameaudio-class" aria-hidden="true">#</a>GameAudio (class)</h3>
+<p>Plays sounds at the volume the player set for their channel.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static void Play(AudioClip clip, SoundChannel channel = SoundChannel.Interface, float volume = 1f)</code></td>
+<td>A sound with no place, like a button or a level up.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamemenu-class"><a class="anchor" href="#gamemenu-class" aria-hidden="true">#</a>GameMenu (class)</h3>
+<p>The menu Escape opens in game: settings, back to the characters, sign out and quit. Escape first closes whatever window is open; only a press that closed nothing opens the menu. Also draws the frame counter when Settings asks for it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI fpsLabel</code></td>
+<td>Frames per second, top left, while Settings &gt; Interface &gt; Show FPS is on.</td>
+</tr>
+<tr>
+<td><code>public Transform[] windowGroups</code></td>
+<td>Groups whose open panels Escape closes before the menu: Windows and Popups.</td>
+</tr>
+<tr>
+<td><code>public static bool PointerNeeded</code></td>
+<td>Some window, menu or dialog is open, or the player is typing: a mode that hides the cursor behind a crosshair gives it back meanwhile.</td>
+</tr>
+<tr>
+<td><code>public static void Toggle()</code></td>
+<td>Opens or closes the menu, for a button of your own.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamemode-enum"><a class="anchor" href="#gamemode-enum" aria-hidden="true">#</a>GameMode (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Online</code></td>
+<td>Login, Central and map servers, many players.</td>
+</tr>
+<tr>
+<td><code>SinglePlayer</code></td>
+<td>The game hosts its own world and saves to a local SQLite file.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gameoption-class"><a class="anchor" href="#gameoption-class" aria-hidden="true">#</a>GameOption (class)</h3>
+<p>A line in the Settings window. Add your own with <code>Add</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string page</code></td>
+<td>The tab it shows on: Graphics, Audio, Interface or a new one.</td>
+</tr>
+<tr>
+<td><code>public Func&lt;bool&gt; available</code></td>
+<td>Hidden when this says no, for options a platform doesn't have.</td>
+</tr>
+<tr>
+<td><code>public Action reset</code></td>
+<td>Puts the value back as it came, for the tab's Reset button. Built-in options don't need it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gamesession-class"><a class="anchor" href="#gamesession-class" aria-hidden="true">#</a>GameSession (class)</h3>
+<p>The player's way through the game: account, chosen character and the connection to whichever map it is on. Lives across scenes; the title scene shows what it holds.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string titleScene</code></td>
+<td>Scene with the login and character screens.</td>
+</tr>
+<tr>
+<td><code>public static System.Func&lt;KitSettings, IGameBackend&gt; LocalBackendFactory</code></td>
+<td>Builds the single player backend. Set by the local server code, which is only compiled into builds that can host (KITARPG_SERVER).</td>
+</tr>
+<tr>
+<td><code>public string LastExitReason</code></td>
+<td>Why the last game connection ended, for the title screen. Cleared once shown.</td>
+</tr>
+<tr>
+<td><code>public SavedLogin Saved</code></td>
+<td>Username, checkboxes and remember token kept on this computer for this server.</td>
+</tr>
+<tr>
+<td><code>public bool AutoSignInTried</code></td>
+<td>Automatic sign-in is tried once per run, not again after signing out.</td>
+</tr>
+<tr>
+<td><code>public async Awaitable&lt;string&gt; SignIn(string username, string password, bool remember = false, bool auto = false)</code></td>
+<td>Signs in with the password. Returns an error code or null.</td>
+</tr>
+<tr>
+<td><code>public async Awaitable&lt;string&gt; SignInSaved(bool remember = true, bool auto = false)</code></td>
+<td>Signs in with the remember token kept on this computer. Returns an error code or null.</td>
+</tr>
+<tr>
+<td><code>public void SignOut()</code></td>
+<td>Signs out and forgets this computer, so it asks for the password next time.</td>
+</tr>
+<tr>
+<td><code>public async Awaitable&lt;string&gt; Play(CharacterSummary character)</code></td>
+<td>Asks Central for the character's map and connects. Returns an error code or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gmpage-enum"><a class="anchor" href="#gmpage-enum" aria-hidden="true">#</a>GmPage (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Players</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Items</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>World</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Moderation</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gmwindow-class"><a class="anchor" href="#gmwindow-class" aria-hidden="true">#</a>GmWindow (class)</h3>
+<p>The panel for moderators and admins: players on the map, items and gold, rates and monsters, reports and logs, with buttons instead of typed commands. It only builds the same command lines the chat takes; the server checks the account's role on each one, so a modified client gains nothing by opening it. Opens with F8 or /gm, for staff only.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI rankLabel</code></td>
+<td>Like &quot;Admin&quot;.</td>
+</tr>
+<tr>
+<td><code>public TMP_InputField targetInput</code></td>
+<td>Who the buttons act on. Clicking a player fills it; empty means yourself.</td>
+</tr>
+<tr>
+<td><code>public TMP_Dropdown roleDropdown</code></td>
+<td>Options are the levels 1 to 4, in order.</td>
+</tr>
+<tr>
+<td><code>public GameObject roleCaption</code></td>
+<td>Caption over the level controls, hidden with them.</td>
+</tr>
+<tr>
+<td><code>public int keepLines</code></td>
+<td>Lines kept in the answer box.</td>
+</tr>
+<tr>
+<td><code>public bool Allowed</code></td>
+<td>Whether this player may open it. Only decides what is drawn; the server decides what runs.</td>
+</tr>
+<tr>
+<td><code>public void Send(string command, params string[] args)</code></td>
+<td>Sends one command line made of words. Every answer lands in the answer box.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildemblempicker-class"><a class="anchor" href="#guildemblempicker-class" aria-hidden="true">#</a>GuildEmblemPicker (class)</h3>
+<p>Founds a guild or changes its emblem: a name (when founding), a shape, a symbol and the two colors, with a preview. Opens from the guild window, or from a Guild Founding NPC where the game asks for one. Every list is filled from the game's Guild Emblems.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject nameArea</code></td>
+<td>Shown only when founding.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI requirementLabel</code></td>
+<td>What founding asks for, and what is missing.</td>
+</tr>
+<tr>
+<td><code>public Button pieceTemplate</code></td>
+<td>One choice: a button with an Icon image. Copied for every shape and symbol.</td>
+</tr>
+<tr>
+<td><code>public Button swatchTemplate</code></td>
+<td>One swatch: a button whose image takes the color.</td>
+</tr>
+<tr>
+<td><code>public static bool Available</code></td>
+<td>The HUD has a picker.</td>
+</tr>
+<tr>
+<td><code>public static bool OpenFor(bool found)</code></td>
+<td>Opens the picker to found a guild, or to change the emblem of the player's guild.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildemblemview-class"><a class="anchor" href="#guildemblemview-class" aria-hidden="true">#</a>GuildEmblemView (class)</h3>
+<p>A guild emblem in the interface: the tinted shape with the tinted symbol on top.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public void Show(GuildEmblem emblem)</code></td>
+<td>Hides the view for null, or when the game has no emblem pieces.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildhistorywindow-class"><a class="anchor" href="#guildhistorywindow-class" aria-hidden="true">#</a>GuildHistoryWindow (class)</h3>
+<p>The guild's recent history, newest first, as Central keeps it: who joined, left, paid in or took out.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public RectTransform rowTemplate</code></td>
+<td>One line: a When and a Text label.</td>
+</tr>
+<tr>
+<td><code>public static Func&lt;GuildEvent, string&gt; Describe</code></td>
+<td>One history line in words. Games with their own kinds can change it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="guildwindow-class"><a class="anchor" href="#guildwindow-class" aria-hidden="true">#</a>GuildWindow (class)</h3>
+<p>The guild: found one, or see its level, notice and members; edit its roles and what each may do; spend its points on its tax collectors and see where they stand. What a player can press follows the permissions of its role. Also asks about guild invites.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI title</code></td>
+<td>The guild's name.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI levelLabel</code></td>
+<td>Level, experience, bank and points.</td>
+</tr>
+<tr>
+<td><code>public GameObject createArea</code></td>
+<td>Shown without a guild.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI createHint</code></td>
+<td>What founding asks for, or where to found one. Optional.</td>
+</tr>
+<tr>
+<td><code>public GuildEmblemView emblemView</code></td>
+<td>The guild's emblem next to its name. Optional.</td>
+</tr>
+<tr>
+<td><code>public Button emblemButton</code></td>
+<td>Opens the emblem picker, for roles allowed to change it. Optional.</td>
+</tr>
+<tr>
+<td><code>public Button historyButton</code></td>
+<td>Opens the guild history. Optional.</td>
+</tr>
+<tr>
+<td><code>public Button allianceButton</code></td>
+<td>Opens the alliance window. Optional.</td>
+</tr>
+<tr>
+<td><code>public GameObject guildArea</code></td>
+<td>Shown in a guild.</td>
+</tr>
+<tr>
+<td><code>public Button[] tabButtons</code></td>
+<td>Members, Roles and Collectors, in that order.</td>
+</tr>
+<tr>
+<td><code>public RectTransform rowTemplate</code></td>
+<td>One member: Name and Status labels, a Role dropdown, and buttons C (hand the lead) and D (remove), each with a Label. Without the dropdown, A and B move them a role up or down.</td>
+</tr>
+<tr>
+<td><code>public RectTransform roleList</code></td>
+<td>The guild's roles, highest first.</td>
+</tr>
+<tr>
+<td><code>public RectTransform roleTemplate</code></td>
+<td>One role in the list: a button with Name and Count labels.</td>
+</tr>
+<tr>
+<td><code>public TMP_InputField roleNameInput</code></td>
+<td>The picked role's name.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI roleInfo</code></td>
+<td>Who the picked role is, or why it can't be changed.</td>
+</tr>
+<tr>
+<td><code>public RectTransform permissionList</code></td>
+<td>What the picked role may do, in groups.</td>
+</tr>
+<tr>
+<td><code>public RectTransform permissionGroupTemplate</code></td>
+<td>A group's title: a label.</td>
+</tr>
+<tr>
+<td><code>public RectTransform permissionTemplate</code></td>
+<td>One permission: a button with a Check box holding a Mark, and Name and Hint labels.</td>
+</tr>
+<tr>
+<td><code>public RectTransform collectorTemplate</code></td>
+<td>One upgrade or collector: Name and Status labels and an A button.</td>
+</tr>
+<tr>
+<td><code>public static (string group, (GuildPermission permission, string name, string hint)[] permissions)[] PermissionGroups =</code></td>
+<td>The permissions the roles tab shows, in groups. Games with their own can change it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="holds-enum"><a class="anchor" href="#holds-enum" aria-hidden="true">#</a>Holds (enum)</h3>
+<p>What a button takes.</p>
+<h3 id="hudbutton-class"><a class="anchor" href="#hudbutton-class" aria-hidden="true">#</a>HudButton (class)</h3>
+<p>A button of the top bar: shows its hint under it while the pointer is over it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string hint</code></td>
+<td>What it opens and its key, like &quot;Bag (I)&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hudchange-class"><a class="anchor" href="#hudchange-class" aria-hidden="true">#</a>HudChange (class)</h3>
+<p>A change to a HUD piece while the touch controls are in use, found by its path under the HUD.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string path</code></td>
+<td>Path under the HUD, such as HUD/Chat Window/Chat.</td>
+</tr>
+<tr>
+<td><code>public bool hide</code></td>
+<td>Hidden while the touch controls are in use.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hudtoolbar-class"><a class="anchor" href="#hudtoolbar-class" aria-hidden="true">#</a>HudToolbar (class)</h3>
+<p>The icon bar at the top right that opens the game's windows. The character, bag and skill buttons are wired by <code>PlayerHud</code>; the rest find their window in the HUD. Buttons of systems turned off in KitARPG &gt; Modules hide.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject mailBadge</code></td>
+<td>Shown on the Mail button while there are unread letters, with how many.</td>
+</tr>
+<tr>
+<td><code>public string newMailText</code></td>
+<td>Floats over the player when a letter comes in. Empty says nothing.</td>
+</tr>
+<tr>
+<td><code>public Button shopButton</code></td>
+<td>Opens the in-game shop (P). Shown in online games while the Shop module is on.</td>
+</tr>
+<tr>
+<td><code>public Button mapButton</code></td>
+<td>Opens the world map (M).</td>
+</tr>
+<tr>
+<td><code>public Button bestiaryButton</code></td>
+<td>Opens the bestiary (B).</td>
+</tr>
+<tr>
+<td><code>public Button menuButton</code></td>
+<td>Opens the game menu (Esc).</td>
+</tr>
+<tr>
+<td><code>public RectTransform hintBox</code></td>
+<td>One label, moved under whichever button the pointer is on.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="igamebackend-interface"><a class="anchor" href="#igamebackend-interface" aria-hidden="true">#</a>IGameBackend (interface)</h3>
+<p>Accounts, characters and the way into a map. <code>ServiceClient</code> talks to the Login and Central services; a single player game uses a local one that hosts the map itself.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool IsLocal</code></td>
+<td>True when there are no accounts to sign in to.</td>
+</tr>
+<tr>
+<td><code>Awaitable&lt;ServiceResult&lt;LoginResponse&gt;&gt; Login(string username, string password, bool remember = false)</code></td>
+<td>Signs in. With <code>remember</code> the answer carries a remember token for this computer.</td>
+</tr>
+<tr>
+<td><code>Awaitable&lt;ServiceResult&lt;LoginResponse&gt;&gt; Resume(string rememberToken)</code></td>
+<td>Signs in with a remember token. The answer carries the next one; the old one is spent.</td>
+</tr>
+<tr>
+<td><code>Awaitable&lt;ServiceResult&lt;object&gt;&gt; Forget(string rememberToken)</code></td>
+<td>Makes a remember token useless, for signing out.</td>
+</tr>
+<tr>
+<td><code>void Connect(KitNetworkManager manager, PlayResponse destination)</code></td>
+<td>Opens the game connection to a map. The ticket is already pending.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iuiitemhandler-interface"><a class="anchor" href="#iuiitemhandler-interface" aria-hidden="true">#</a>IUIItemHandler (interface)</h3>
+<p>What the player does to a <code>UIItem</code>. Windows that show items implement the methods they care about; the rest do nothing.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void OnItemClick(UIItem view)</code></td>
+<td>Left click.</td>
+</tr>
+<tr>
+<td><code>void OnItemActivate(UIItem view)</code></td>
+<td>Double click, and right click where there is no menu.</td>
+</tr>
+<tr>
+<td><code>void OnItemMenu(UIItem view)</code></td>
+<td>Right click. Windows with an item menu open it here.</td>
+</tr>
+<tr>
+<td><code>void OnItemDrop(UIItem target)</code></td>
+<td>Something being dragged was let go over this view.</td>
+</tr>
+<tr>
+<td><code>void OnItemHover(UIItem view, bool inside)</code></td>
+<td>The pointer entered (true) or left (false) the view.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="interactables-class"><a class="anchor" href="#interactables-class" aria-hidden="true">#</a>Interactables (class)</h3>
+<p>What the player can pick up or talk to nearby, for the interact key and the touch Activate button. Loot comes first: it lies at the feet and is gone soon.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static bool Nearest(Vector3 from, float range, out LootDropTag drop, out Npc npc)</code></td>
+<td>The nearest loot or NPC within <code>range</code> meters; one of them, or neither.</td>
+</tr>
+<tr>
+<td><code>public static bool Activate(float range)</code></td>
+<td>Picks up or talks to the nearest thing around the local player. False when there is nothing.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="inventorywindow-class"><a class="anchor" href="#inventorywindow-class" aria-hidden="true">#</a>InventoryWindow (class)</h3>
+<p>Worn gear around the character and the bag next to it, with category tabs, search, sort and type filters, weight and money. Items show their card on hover or on click, as <code>ItemDetailsOnHover</code> says. Drag to move, stack, swap or wear; right click opens the <code>ItemMenu</code>; double click uses, wears or takes off, or does what the window beside it does; shift + double click splits a stack. Every action is a request: the slots change when the server answers.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Image dragIcon</code></td>
+<td>Follows the pointer while dragging.</td>
+</tr>
+<tr>
+<td><code>public UIItem slotTemplate</code></td>
+<td>The UIItem prefab each bag slot is made from.</td>
+</tr>
+<tr>
+<td><code>public int minimumCells</code></td>
+<td>Cells drawn at least when the bag shows only some slots, so it still reads as a grid.</td>
+</tr>
+<tr>
+<td><code>public Button[] filterButtons</code></td>
+<td>One per ItemFilter, in order.</td>
+</tr>
+<tr>
+<td><code>public TMP_Dropdown sortDropdown</code></td>
+<td>Options in ItemSort order.</td>
+</tr>
+<tr>
+<td><code>public TMP_Dropdown typeDropdown</code></td>
+<td>Narrows the tab to one item type. Filled from what is in the bag.</td>
+</tr>
+<tr>
+<td><code>public Button sortButton</code></td>
+<td>Asks the server to tidy the bag.</td>
+</tr>
+<tr>
+<td><code>public Slider capacityBar</code></td>
+<td>Bag weight or used slots.</td>
+</tr>
+<tr>
+<td><code>public RectTransform currencyTemplate</code></td>
+<td>One row per other currency: an Image child named Icon and a text.</td>
+</tr>
+<tr>
+<td><code>public RectTransform currencyList</code></td>
+<td>Where the currency rows go. Empty: next to the template.</td>
+</tr>
+<tr>
+<td><code>public UIItem[] equipmentSlots</code></td>
+<td>One per equipment position, in EquipPositions order; cosmetic ones after the gear.</td>
+</tr>
+<tr>
+<td><code>public Button looksButton</code></td>
+<td>Switches the character slots between gear and cosmetics.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI hintLabel</code></td>
+<td>What the mouse does; changes while a shop takes over right click.</td>
+</tr>
+<tr>
+<td><code>public bool ShowingLooks</code></td>
+<td>The character slots show cosmetics instead of gear.</td>
+</tr>
+<tr>
+<td><code>public Func&lt;UIItem, bool&gt; BagAction</code></td>
+<td>What a window beside the bag does with its items, like a shop selling them: first in the item menu as <code>BagActionLabel</code>, and on double click. Returns true when it handled the item. <code>BagActionHint</code> replaces the hint on the item card.</td>
+</tr>
+<tr>
+<td><code>public string BagActionLabel</code></td>
+<td>The <code>BagAction</code>'s line in the item menu: &quot;Sell&quot;, &quot;Store&quot;.</td>
+</tr>
+<tr>
+<td><code>protected virtual int Compare(int a, int b)</code></td>
+<td>Order of two bag slots under the chosen sort. Override for your own orders.</td>
+</tr>
+<tr>
+<td><code>protected virtual bool Matches(IItem item, ItemSlotState state, ItemFilter filter, string search)</code></td>
+<td>Whether an item shows under a filter and search text. Override for your own categories.</td>
+</tr>
+<tr>
+<td><code>public void Select(UIItem view)</code></td>
+<td>Clicking an item pins its card beside it; clicking it again, or an empty slot, puts it away.</td>
+</tr>
+<tr>
+<td><code>public void ShowRanges(UIItem view)</code></td>
+<td>Pins the item's card with the range each of its random bonuses could have had.</td>
+</tr>
+<tr>
+<td><code>public void Activate(UIItem view)</code></td>
+<td>Double click: use or wear a bag item, take off a worn one.</td>
+</tr>
+<tr>
+<td><code>public void SplitHalf(int bagSlot)</code></td>
+<td>Moves half of a stack to the first free bag slot.</td>
+</tr>
+<tr>
+<td><code>public void AskSplit(int bagSlot)</code></td>
+<td>Asks how many to take off a stack into the first free bag slot, half to start with.</td>
+</tr>
+<tr>
+<td><code>public void Hover(UIItem view)</code></td>
+<td>Shows the card under the pointer when details follow it.</td>
+</tr>
+<tr>
+<td><code>protected virtual string Describe(string code)</code></td>
+<td>Player-facing text for an inventory error code. Override to localize.</td>
+</tr>
+<tr>
+<td><code>public static bool Typing()</code></td>
+<td>True while a text field has the keyboard, so keys don't toggle windows.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemcolors-class"><a class="anchor" href="#itemcolors-class" aria-hidden="true">#</a>ItemColors (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Color Frame(ItemRarity rarity)</code></td>
+<td>Slot background for a rarity. Kept dark so the icon stands out.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemfilter-enum"><a class="anchor" href="#itemfilter-enum" aria-hidden="true">#</a>ItemFilter (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>All</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Equipment</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Consumables</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Resources</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Cosmetics</code></td>
+<td>Items made only to be worn for their look.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemmenu-class"><a class="anchor" href="#itemmenu-class" aria-hidden="true">#</a>ItemMenu (class)</h3>
+<p>Right click on an item in the bag or the gear: wear or take off, use, split, see its set, destroy, and whatever the window open beside it does (sell, store, offer). Add lines to <code>Entries</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button entryTemplate</code></td>
+<td>One line, copied for each entry.</td>
+</tr>
+<tr>
+<td><code>public RectTransform entryList</code></td>
+<td>Where the lines go. Empty: next to the template.</td>
+</tr>
+<tr>
+<td><code>public static readonly List&lt;ItemMenuEntry&gt; Entries = KitEntries()</code></td>
+<td>The lines, in order. Starts with the kit's own.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemmenuentry-class"><a class="anchor" href="#itemmenuentry-class" aria-hidden="true">#</a>ItemMenuEntry (class)</h3>
+<p>One line of the item menu.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Func&lt;ItemMenuTarget, string&gt; labelFor</code></td>
+<td>The text for this item, when it changes; null uses <code>label</code>.</td>
+</tr>
+<tr>
+<td><code>public Func&lt;ItemMenuTarget, bool&gt; shows</code></td>
+<td>Whether the line shows for this item; null shows it always.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemmenutarget-struct"><a class="anchor" href="#itemmenutarget-struct" aria-hidden="true">#</a>ItemMenuTarget (struct)</h3>
+<p>The item a menu was opened on, in the local player's bag or gear.</p>
+<h3 id="itemsort-enum"><a class="anchor" href="#itemsort-enum" aria-hidden="true">#</a>ItemSort (enum)</h3>
+<p>How the bag is listed. Only the view changes; the slots stay where they are.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Slot</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Type</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Rarity</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Weight</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="itemtext-class"><a class="anchor" href="#itemtext-class" aria-hidden="true">#</a>ItemText (class)</h3>
+<p>Tooltip text for items. Each item adds its own lines through <code>Describe</code>; this only frames them. Replace <code>Describe</code> to change or localize it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Describer Details</code></td>
+<td>Everything but the name, for panels that show the name apart.</td>
+</tr>
+<tr>
+<td><code>public static void Stats(StringBuilder sb, CharacterStats s)</code></td>
+<td>One line per stat that isn't zero, like &quot;+12 Armor&quot;.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitinput-class"><a class="anchor" href="#kitinput-class" aria-hidden="true">#</a>KitInput (class)</h3>
+<p>Keys and the mouse for the whole kit, with the same calls as UnityEngine.Input. Reads the Input System package when the project has it on (Active Input Handling set to Input System or Both), and the old Input Manager otherwise, so the kit runs in either kind of project.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public const bool UsesInputSystem</code></td>
+<td>True when the kit reads the Input System package.</td>
+</tr>
+<tr>
+<td><code>public static Vector2 mouseScrollDelta</code></td>
+<td>About one per wheel notch, as UnityEngine.Input gives it.</td>
+</tr>
+<tr>
+<td><code>public static float GetAxis(string axis)</code></td>
+<td>The Input Manager's default axes: Mouse X, Mouse Y, Mouse ScrollWheel, Horizontal and Vertical.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kitsettings-class"><a class="anchor" href="#kitsettings-class" aria-hidden="true">#</a>KitSettings (class)</h3>
+<p>How the game runs and where it connects. Lives in a Resources folder as KitARPGSettings; KitARPG &gt; Play and Servers edits it. Command line, in the editor and KITARPG_DEV builds only: -mode online|single, -login url, -centralUrl url, -save file.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string saveFile</code></td>
+<td>SQLite file in the player's persistent data folder. Classes, models and the start map come from the game database.</td>
+</tr>
+<tr>
+<td><code>public string SavePath</code></td>
+<td>The save file, under the persistent data folder unless the name is a full path.</td>
+</tr>
+<tr>
+<td><code>public static KitSettings Current</code></td>
+<td>The project's settings, or defaults when there is no asset.</td>
+</tr>
+<tr>
+<td><code>public GameMode EffectiveMode</code></td>
+<td>The mode after the -mode command line override.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="loadingscreen-class"><a class="anchor" href="#loadingscreen-class" aria-hidden="true">#</a>LoadingScreen (class)</h3>
+<p>Full screen cover shown while connecting or changing maps. Builds itself on first use.</p>
+<h3 id="lootdropsview-class"><a class="anchor" href="#lootdropsview-class" aria-hidden="true">#</a>LootDropsView (class)</h3>
+<p>Shows the local player's loot: an item's icon bobbing over the ground with its name in its rarity color, a pile of gold, or the grey body of a monster still holding its loot. Clicking one sends the pickup request.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject fallbackModel</code></td>
+<td>Shown for items without an icon. A small box when empty.</td>
+</tr>
+<tr>
+<td><code>public static bool TryGet(int id, out LootDrop drop)</code></td>
+<td>The last known contents of a drop of the local player.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="lootwindow-class"><a class="anchor" href="#lootwindow-class" aria-hidden="true">#</a>LootWindow (class)</h3>
+<p>What a monster's body holds, when loot is left in the body. Click a row to take it, or take everything. Closes when the body is empty or the player walks away.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button rowTemplate</code></td>
+<td>A row: a button with an Image child named Icon and a text.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mailwindow-class"><a class="anchor" href="#mailwindow-class" aria-hidden="true">#</a>MailWindow (class)</h3>
+<p>The mailbox: letters on the left, the open one on the right with its gold and items to take. The Write tab sends one; right click bag items to attach them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button[] tabButtons</code></td>
+<td>Inbox and Write, in that order.</td>
+</tr>
+<tr>
+<td><code>public RectTransform rowTemplate</code></td>
+<td>One letter: a Button with Name and Status labels.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mappoint-struct"><a class="anchor" href="#mappoint-struct" aria-hidden="true">#</a>MapPoint (struct)</h3>
+<p>Something worth a mark on the minimap or the world map.</p>
+<h3 id="mappointkind-enum"><a class="anchor" href="#mappointkind-enum" aria-hidden="true">#</a>MapPointKind (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Npc</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Portal</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Monster</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Elite</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Boss</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Party</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Player</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mappoints-class"><a class="anchor" href="#mappoints-class" aria-hidden="true">#</a>MapPoints (class)</h3>
+<p>What the maps show and how they look at the world. Looks for NPCs, portals, monsters and the party now and then rather than every frame. Add your own points with <code>Extra</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static System.Action&lt;List&lt;MapPoint&gt;&gt; Extra</code></td>
+<td>More points for the maps, like a quest target. Runs with every refresh.</td>
+</tr>
+<tr>
+<td><code>public static MapData CurrentMap()</code></td>
+<td>The map the player is on, by its scene.</td>
+</tr>
+<tr>
+<td><code>public static float CameraYaw</code></td>
+<td>Which way the game camera looks, so the maps turn the same way the screen does.</td>
+</tr>
+<tr>
+<td><code>public static Camera MakeCamera(string name, int resolution, Transform parent)</code></td>
+<td>A camera looking straight down into a texture, for the maps.</td>
+</tr>
+<tr>
+<td><code>public static Vector2 ToMap(Vector3 world, Vector3 center, float yaw, float halfSize)</code></td>
+<td>Where a world point falls on a map seen from <code>center</code>, turned by <code>yaw</code>: -1 to 1 across, -1 to 1 up, for <code>halfSize</code> meters each way.</td>
+</tr>
+<tr>
+<td><code>public static Vector3 ToWorld(Vector2 map, Vector3 center, float yaw, float halfSize)</code></td>
+<td>The world point under a spot of the map, the reverse of <code>ToMap</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapstyle-class"><a class="anchor" href="#mapstyle-class" aria-hidden="true">#</a>MapStyle (class)</h3>
+<p>How each kind of point looks on a map.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Sprite dot</code></td>
+<td>For points without an icon of their own.</td>
+</tr>
+<tr>
+<td><code>public float size</code></td>
+<td>Size of a dot, in pixels. Portals and bosses are bigger.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="marketwindow-class"><a class="anchor" href="#marketwindow-class" aria-hidden="true">#</a>MarketWindow (class)</h3>
+<p>The market, opened at its NPC. The Buy tab searches lots by category and name, cheapest first; My lots shows what the player has up and takes it back. While it is open the bag sells: right click an item, pick how many and the price.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button[] tabButtons</code></td>
+<td>Buy and My lots, in that order.</td>
+</tr>
+<tr>
+<td><code>public RectTransform rowTemplate</code></td>
+<td>One lot: an Item slot, Name, Detail and Price labels, and an Action button.</td>
+</tr>
+<tr>
+<td><code>public InventoryWindow inventoryWindow</code></td>
+<td>Opened beside the market so the bag can sell.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="minimap-class"><a class="anchor" href="#minimap-class" aria-hidden="true">#</a>Minimap (class)</h3>
+<p>A small map around the player, turned like the game camera, with NPCs, portals, monsters and the party. A click opens the world map; the buttons or the wheel zoom.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public RawImage view</code></td>
+<td>Shows what the map camera sees.</td>
+</tr>
+<tr>
+<td><code>public RectTransform markerArea</code></td>
+<td>Where the marks go: the same size as the view, centered on it.</td>
+</tr>
+<tr>
+<td><code>public RectTransform playerArrow</code></td>
+<td>The player, in the middle. Points up when facing where the camera looks.</td>
+</tr>
+<tr>
+<td><code>public float radius</code></td>
+<td>Meters from the player to the edge.</td>
+</tr>
+<tr>
+<td><code>public float height</code></td>
+<td>Height of the map camera over the player.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="monsterbody-class"><a class="anchor" href="#monsterbody-class" aria-hidden="true">#</a>MonsterBody (class)</h3>
+<p>Brings a rigless monster model to life: it bobs as it moves, breathes when still, lunges to attack, squashes and flashes when hit, shrinks away when it dies and grows back out of the ground when it respawns. Put it on the monster with the model as a child.</p>
+<h3 id="monsterplate-class"><a class="anchor" href="#monsterplate-class" aria-hidden="true">#</a>MonsterPlate (class)</h3>
+<p>Name, level, health bar and status icons floating over a monster. Builds itself.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Color allyBarColor = new Color(0.35f, 0.8f, 0.35f)</code></td>
+<td>Bar of summons on the viewer's side.</td>
+</tr>
+<tr>
+<td><code>public int maxIcons</code></td>
+<td>Status icons shown under the bar, at most.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="musicplayer-class"><a class="anchor" href="#musicplayer-class" aria-hidden="true">#</a>MusicPlayer (class)</h3>
+<p>Plays the title's music, then each map's (<code>music</code>), fading between them. A map without music keeps the one playing.</p>
+<h3 id="nightlight-class"><a class="anchor" href="#nightlight-class" aria-hidden="true">#</a>NightLight (class)</h3>
+<p>Turns its lights and glowing parts on at night: street lamps, windows, torches.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject[] glow</code></td>
+<td>Shown only at night, like a lit window.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="npcdialogwindow-class"><a class="anchor" href="#npcdialogwindow-class" aria-hidden="true">#</a>NpcDialogWindow (class)</h3>
+<p>What an NPC says and the options it offers this player. Picking one asks the server to run it. Closes on Escape, on picking, or when the player walks away.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button optionTemplate</code></td>
+<td>One option: a button with a text.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="npcquestmarker-class"><a class="anchor" href="#npcquestmarker-class" aria-hidden="true">#</a>NpcQuestMarker (class)</h3>
+<p>The mark over an NPC's head for the local player: a yellow ! for a quest to take, a yellow ? for one to turn in, a grey ? for one in progress. Builds its own label.</p>
+<h3 id="optionvalues-class"><a class="anchor" href="#optionvalues-class" aria-hidden="true">#</a>OptionValues (class)</h3>
+<p>What a player picked in Settings. Kept on this computer, never sent anywhere.</p>
+<h3 id="partyframes-class"><a class="anchor" href="#partyframes-class" aria-hidden="true">#</a>PartyFrames (class)</h3>
+<p>The party on the HUD: one frame per member with health when they are near enough to be seen, or where they are otherwise. The leader can promote and kick; anyone can leave. Also asks about party invites.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public RectTransform rowTemplate</code></td>
+<td>One member: Name and Status labels, a Health slider, and Lead and Kick buttons.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playerhud-class"><a class="anchor" href="#playerhud-class" aria-hidden="true">#</a>PlayerHud (class)</h3>
+<p>Health, mana and experience of the local player, buffs, the cast bar and the hotbar. Each hotbar key holds an item or a skill: drag them in from the bag or the skill window, drag them between keys, or drop them outside to clear the key.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject deathMessage</code></td>
+<td>Shown while the player is dead.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI respawnLabel</code></td>
+<td>Seconds until respawning on their own, while dead.</td>
+</tr>
+<tr>
+<td><code>public Button respawnButton</code></td>
+<td>Comes back at the spawn point now instead of waiting for a revive.</td>
+</tr>
+<tr>
+<td><code>public UIItem[] hotbar</code></td>
+<td>One per key, in order.</td>
+</tr>
+<tr>
+<td><code>public Image dragIcon</code></td>
+<td>Follows the pointer while dragging a hotbar key.</td>
+</tr>
+<tr>
+<td><code>public Slider castBar</code></td>
+<td>Shown while a skill is being cast.</td>
+</tr>
+<tr>
+<td><code>public GameObject pointsBadge</code></td>
+<td>Shown while there are attribute points to spend.</td>
+</tr>
+<tr>
+<td><code>public GameObject skillPointsBadge</code></td>
+<td>Shown while there are skill points to spend.</td>
+</tr>
+<tr>
+<td><code>public void Use(int index)</code></td>
+<td>Uses what a hotbar key holds: the first stack of the item, or the skill.</td>
+</tr>
+<tr>
+<td><code>public static void Fill(Slider bar, float ratio)</code></td>
+<td>Sets a bar to a 0 to 1 ratio of its range.</td>
+</tr>
+<tr>
+<td><code>public static int FindInBag(PlayerInventory inventory, string itemId, out int total)</code></td>
+<td>The first bag slot holding the item, or -1, and how many there are in all.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playermenu-class"><a class="anchor" href="#playermenu-class" aria-hidden="true">#</a>PlayerMenu (class)</h3>
+<p>What can be done with another player: whisper, trade, invite to the party, add as a friend, invite to the guild, duel. Duel challenges are answered here too. Each mode opens it its own way (top-down on right click); chat names open it too. Add lines to <code>Entries</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button entryTemplate</code></td>
+<td>One line, copied for each entry.</td>
+</tr>
+<tr>
+<td><code>public RectTransform entryList</code></td>
+<td>Where the lines go. Empty: next to the template.</td>
+</tr>
+<tr>
+<td><code>public static readonly List&lt;PlayerMenuEntry&gt; Entries = KitEntries()</code></td>
+<td>The lines, in order. Starts with the kit's own.</td>
+</tr>
+<tr>
+<td><code>public void Open(PlayerCharacter character, Vector2 screenPoint)</code></td>
+<td>Opens the menu for a player seen in the world, at a screen point.</td>
+</tr>
+<tr>
+<td><code>public void Open(string name, Vector2 screenPoint)</code></td>
+<td>Opens the menu for a player by name, as from chat or a list.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playermenuentry-class"><a class="anchor" href="#playermenuentry-class" aria-hidden="true">#</a>PlayerMenuEntry (class)</h3>
+<p>One line of the player menu.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Func&lt;PlayerMenuTarget, bool&gt; shows</code></td>
+<td>Whether the line shows for this player; null shows it always.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playermenutarget-struct"><a class="anchor" href="#playermenutarget-struct" aria-hidden="true">#</a>PlayerMenuTarget (struct)</h3>
+<p>Who the player menu is about. <code>character</code> is null when they aren't on screen.</p>
+<h3 id="playerportrait-class"><a class="anchor" href="#playerportrait-class" aria-hidden="true">#</a>PlayerPortrait (class)</h3>
+<p>The local player, look and gear, drawn into a RawImage. A copy of the model stands far below the map with its own camera, which only renders while the image is visible. It has its own light and ambient, so night and dark maps don't reach it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Vector3 stagePosition = new Vector3(0, -2000, 0)</code></td>
+<td>Where the copy stands, out of sight of the game camera.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="popup-class"><a class="anchor" href="#popup-class" aria-hidden="true">#</a>Popup (class)</h3>
+<p>Placement and closing shared by the right click menus.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static void Place(RectTransform panel, Vector2 screenPoint)</code></td>
+<td>Puts the panel's top left corner at the pointer, kept inside its parent.</td>
+</tr>
+<tr>
+<td><code>public static bool PressedOutside(RectTransform panel, int openedFrame)</code></td>
+<td>A mouse press outside the panel, other than the one that opened it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questdialogwindow-class"><a class="anchor" href="#questdialogwindow-class" aria-hidden="true">#</a>QuestDialogWindow (class)</h3>
+<p>A quest an NPC offers or waits for: what it says, the objectives and the rewards, with a button to accept it or turn it in. Closes on Escape or when the player walks away.</p>
+<h3 id="questlogtab-enum"><a class="anchor" href="#questlogtab-enum" aria-hidden="true">#</a>QuestLogTab (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Active</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Done</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Hidden</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questlogwindow-class"><a class="anchor" href="#questlogwindow-class" aria-hidden="true">#</a>QuestLogWindow (class)</h3>
+<p>The quest log: quests in progress, finished and hidden, grouped by category. Search and filter by level, track a quest to see it on screen, read its objectives with their hints.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Transform rowList</code></td>
+<td>Where the headers and rows go. Empty uses the row template's parent.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI emptyLabel</code></td>
+<td>Shown when the tab has nothing to list.</td>
+</tr>
+<tr>
+<td><code>public GameObject detail</code></td>
+<td>The right side. Hidden when no quest is picked.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI info</code></td>
+<td>Level, kind, category and where it stands.</td>
+</tr>
+<tr>
+<td><code>public Sprite readyIcon</code></td>
+<td>A quest whose objectives are all done, waiting to be turned in.</td>
+</tr>
+<tr>
+<td><code>public static string GeneralCategory</code></td>
+<td>Category used for quests that have none.</td>
+</tr>
+<tr>
+<td><code>public void Show(QuestData quest)</code></td>
+<td>Opens on one quest, in whichever tab has it.</td>
+</tr>
+<tr>
+<td><code>protected virtual void Collect(QuestLogTab which, List&lt;QuestData&gt; into)</code></td>
+<td>Quests listed in a tab, before the search and level filters.</td>
+</tr>
+<tr>
+<td><code>protected virtual bool Matches(QuestData quest)</code></td>
+<td>Whether a quest passes the search and the level range. Override to add filters of your own.</td>
+</tr>
+<tr>
+<td><code>public static string Levels(QuestData quest)</code></td>
+<td>&quot;Lv. 3&quot;, or &quot;Lv. 3-10&quot; when the quest has a top level.</td>
+</tr>
+<tr>
+<td><code>protected virtual string Info(QuestData quest, bool active, QuestView view)</code></td>
+<td>The line under the title. Override to show more.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questtext-class"><a class="anchor" href="#questtext-class" aria-hidden="true">#</a>QuestText (class)</h3>
+<p>Rich text for quest windows. Replace the delegates to change or localize it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Builder Objectives</code></td>
+<td>The objectives, with counts once the quest is taken.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="questtracker-class"><a class="anchor" href="#questtracker-class" aria-hidden="true">#</a>QuestTracker (class)</h3>
+<p>Tracked quests and their objectives along the side of the screen. The quest log picks which.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int maxQuests</code></td>
+<td>Quests listed at most.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="savedlogin-class"><a class="anchor" href="#savedlogin-class" aria-hidden="true">#</a>SavedLogin (class)</h3>
+<p>What the title screen keeps on this computer for one login server: the last username, the two checkboxes and, with &quot;Remember me&quot;, a remember token. Never the password.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string token</code></td>
+<td>Works once; the server answers each use with the next one.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="serviceclient-class"><a class="anchor" href="#serviceclient-class" aria-hidden="true">#</a>ServiceClient (class)</h3>
+<p>HTTP calls to the Login and Central services, with the shared contracts.</p>
+<h3 id="serviceresult-struct"><a class="anchor" href="#serviceresult-struct" aria-hidden="true">#</a>ServiceResult (struct)</h3>
+<h3 id="setwindow-class"><a class="anchor" href="#setwindow-class" aria-hidden="true">#</a>SetWindow (class)</h3>
+<p>An equipment set: its pieces in a row, the worn ones lit and marked; the picked piece with its effects and conditions; and what each number of pieces gives, every bonus up to it added together.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Transform pieceList</code></td>
+<td>Where the pieces go. Empty uses the template's parent.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI wornLabel</code></td>
+<td>Like &quot;2 of 5 worn&quot;.</td>
+</tr>
+<tr>
+<td><code>public Sprite wornMark</code></td>
+<td>Shown in the corner of the pieces the character has on.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI pickedInfo</code></td>
+<td>Category and level.</td>
+</tr>
+<tr>
+<td><code>public Color pickedColor = new Color(0.96f, 0.84f, 0.5f, 0.45f)</code></td>
+<td>Behind the picked piece, so it doesn't hide the worn mark.</td>
+</tr>
+<tr>
+<td><code>public void Show(EquipmentSetData set, EquipmentData piece = null)</code></td>
+<td>Opens on a set, with <code>piece</code> picked, or the first worn one.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="settingswindow-class"><a class="anchor" href="#settingswindow-class" aria-hidden="true">#</a>SettingsWindow (class)</h3>
+<p>Graphics, sound and interface settings, one tab per page of <code>ClientOptions</code>. Rows are made from three templates, so options added by code show up on their own.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button tabTemplate</code></td>
+<td>Copied for each page.</td>
+</tr>
+<tr>
+<td><code>public RectTransform tabBar</code></td>
+<td>Where the tabs go. Empty: the template's parent, or a child named Tabs.</td>
+</tr>
+<tr>
+<td><code>public RectTransform choiceTemplate</code></td>
+<td>A Label, a Hint and a Value dropdown.</td>
+</tr>
+<tr>
+<td><code>public RectTransform sliderTemplate</code></td>
+<td>A Label, a Hint, a Value slider and an Amount label.</td>
+</tr>
+<tr>
+<td><code>public RectTransform toggleTemplate</code></td>
+<td>A Label, a Hint and a Value toggle.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopwindow-class"><a class="anchor" href="#shopwindow-class" aria-hidden="true">#</a>ShopWindow (class)</h3>
+<p>An NPC's shop. Buy with the button or a right click (shift buys a stack). If the shop buys and the game lets players sell to NPCs, the bag sells while it is open: right click an item, or drag it onto the shop. What was sold waits in the buyback row until the shop closes. Opens the bag beside it and closes when the player walks away.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public UIItem[] buybackSlots</code></td>
+<td>Slots for the items the player sold, newest first.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI hintLabel</code></td>
+<td>Optional. How to sell, hidden when the shop doesn't buy.</td>
+</tr>
+<tr>
+<td><code>public UIDropArea dropArea</code></td>
+<td>Bag items dropped here are sold.</td>
+</tr>
+<tr>
+<td><code>public InventoryWindow inventoryWindow</code></td>
+<td>Opened next to the shop so the bag can sell.</td>
+</tr>
+<tr>
+<td><code>protected virtual string Describe(string code)</code></td>
+<td>Player-facing text for a shop or inventory error code. Override to localize.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="showing-enum"><a class="anchor" href="#showing-enum" aria-hidden="true">#</a>Showing (enum)</h3>
+<p>When the button is on screen.</p>
+<h3 id="skillaiming-class"><a class="anchor" href="#skillaiming-class" aria-hidden="true">#</a>SkillAiming (class)</h3>
+<p>Shows where an area or ground skill will land before it goes: its circle, cone or line follows the aim (<code>AimInput</code>) with the skill's range around the player. A click or the same key again casts it; the right button or Escape lets it go. Out of the aim, a ring marks the enemy an attack or skill would hit.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static bool IsAiming</code></td>
+<td>A skill's area is being shown and waits for the click.</td>
+</tr>
+<tr>
+<td><code>public static bool Busy</code></td>
+<td>The pointer belongs to the aiming this frame: modes skip their own click.</td>
+</tr>
+<tr>
+<td><code>public static bool Begin(SkillData skill)</code></td>
+<td>Starts showing the skill's area, or casts it when it is already shown. False: cast it at once.</td>
+</tr>
+<tr>
+<td><code>public static void Show(SkillData skill)</code></td>
+<td>Shows the skill's area at the aim without waiting for a click; whoever shows it casts it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skilleffectsview-class"><a class="anchor" href="#skilleffectsview-class" aria-hidden="true">#</a>SkillEffectsView (class)</h3>
+<p>Shows where a skill without an area effect landed: its area drawn flat on the ground (circle, cone or line), or a streak to a single target, tinted by its element, fading out.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float streakWidth</code></td>
+<td>Width in meters of the streak to a single target.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skillinput-class"><a class="anchor" href="#skillinput-class" aria-hidden="true">#</a>SkillInput (class)</h3>
+<p>Sends a cast request for the local player. The play mode decides what the skill is aimed at (<code>Aim</code>); the hotbar and the skill window only say which skill.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static Func&lt;SkillData, CastSkillMessage?&gt; Aim</code></td>
+<td>A play mode's own aiming, when <code>AimInput</code> isn't enough: the request for a skill aimed at what the player points at, or null when there is nothing to aim at.</td>
+</tr>
+<tr>
+<td><code>public static void Cast(SkillData skill)</code></td>
+<td>Checks what the client can know (rank, cooldown, mana) and asks the server. Area and ground skills first show where they land (<code>SkillAiming</code>) unless the player picked quick cast; the second press or a click sends them.</td>
+</tr>
+<tr>
+<td><code>public static void Fire(SkillData skill)</code></td>
+<td>Sends the skill at what the player aims at now, without showing its area first.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skillwindow-class"><a class="anchor" href="#skillwindow-class" aria-hidden="true">#</a>SkillWindow (class)</h3>
+<p>The skills of the local player's class: rank, what the next rank needs, and a &quot;+&quot; to raise it with skill points. Drag a skill onto the hotbar to use it; click to cast it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public UISkill rowTemplate</code></td>
+<td>The UISkill prefab each skill is made from.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI pointsLabel</code></td>
+<td>Skill points left to spend.</td>
+</tr>
+<tr>
+<td><code>public Image dragIcon</code></td>
+<td>Follows the pointer while dragging a skill.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="slideroption-class"><a class="anchor" href="#slideroption-class" aria-hidden="true">#</a>SliderOption (class)</h3>
+<h3 id="sort-enum"><a class="anchor" href="#sort-enum" aria-hidden="true">#</a>Sort (enum)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Relevance</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Newest</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>PriceLow</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>PriceHigh</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="soundchannel-enum"><a class="anchor" href="#soundchannel-enum" aria-hidden="true">#</a>SoundChannel (enum)</h3>
+<p>Volume groups in Settings. The master volume scales them all.</p>
+<h3 id="soundchannelsource-class"><a class="anchor" href="#soundchannelsource-class" aria-hidden="true">#</a>SoundChannelSource (class)</h3>
+<p>Keeps an AudioSource in the scene, like a waterfall or a fire, at its channel's volume.</p>
+<h3 id="titlescreen-class"><a class="anchor" href="#titlescreen-class" aria-hidden="true">#</a>TitleScreen (class)</h3>
+<p>Login, register, character select and character creation.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Toggle rememberToggle</code></td>
+<td>Keeps this computer signed in (a remember token from Login, never the password).</td>
+</tr>
+<tr>
+<td><code>public Toggle autoToggle</code></td>
+<td>Signs in with the remembered account as soon as the game opens.</td>
+</tr>
+<tr>
+<td><code>public GameObject sidePanel</code></td>
+<td>Hidden while the login screen shows; holds character select and creation.</td>
+</tr>
+<tr>
+<td><code>public Button settingsButton</code></td>
+<td>Opens the Settings window of the HUD.</td>
+</tr>
+<tr>
+<td><code>public RectTransform modelList</code></td>
+<td>Row that gets one button per player model in the game database.</td>
+</tr>
+<tr>
+<td><code>public TMP_Dropdown classDropdown</code></td>
+<td>Lists the classes of the selected model.</td>
+</tr>
+<tr>
+<td><code>protected virtual string Describe(string code)</code></td>
+<td>Player-facing text for an error code. Swap this out to localize.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="toggleoption-class"><a class="anchor" href="#toggleoption-class" aria-hidden="true">#</a>ToggleOption (class)</h3>
+<h3 id="touchbutton-class"><a class="anchor" href="#touchbutton-class" aria-hidden="true">#</a>TouchButton (class)</h3>
+<p>An on-screen button the modes read by id (<code>Down</code>, <code>Held</code>): Attack, Dodge and Interact out of the box. For anything else, give it an id of your own or hook a method to On Press.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string id</code></td>
+<td>Attack, Dodge, Interact, or an id your own code reads.</td>
+</tr>
+<tr>
+<td><code>public Showing show</code></td>
+<td>Near Interactable: only with loot or an NPC within Near Range, like Activate.</td>
+</tr>
+<tr>
+<td><code>public RectTransform face</code></td>
+<td>Shrinks while held.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchchatbutton-class"><a class="anchor" href="#touchchatbutton-class" aria-hidden="true">#</a>TouchChatButton (class)</h3>
+<p>Shows and puts away the chat on a touch screen, where it would cover the game. It starts put away; a badge counts the lines that came in meanwhile.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public bool startHidden</code></td>
+<td>The chat starts put away.</td>
+</tr>
+<tr>
+<td><code>public GameObject badge</code></td>
+<td>Shown while there are unread lines.</td>
+</tr>
+<tr>
+<td><code>public UnityEngine.UI.Image face</code></td>
+<td>Lighter while the chat is shown.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchcontrols-class"><a class="anchor" href="#touchcontrols-class" aria-hidden="true">#</a>TouchControls (class)</h3>
+<p>On-screen controls for phones and tablets. The play modes read sticks, buttons and the touches on the world from here instead of the mouse and keys while it is <code>Active</code>. Every piece is a component on the prefab (<code>TouchStick</code>, <code>TouchButton</code>, <code>TouchSkillButton</code>, <code>TouchLookArea</code>), so the layout is yours to change.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public CanvasGroup group</code></td>
+<td>Hides the controls while a window, the chat or a dialog is open.</td>
+</tr>
+<tr>
+<td><code>public float lookSpeed</code></td>
+<td>How fast dragging on the world turns the camera.</td>
+</tr>
+<tr>
+<td><code>public float pinchSpeed</code></td>
+<td>Meters of zoom per 100 pixels of pinch.</td>
+</tr>
+<tr>
+<td><code>public List&lt;HudChange&gt; hudChanges = new List&lt;HudChange&gt;()</code></td>
+<td>How the HUD made for mouse and keys is fitted around the controls.</td>
+</tr>
+<tr>
+<td><code>public static bool Active</code></td>
+<td>The touch controls are in use: modes read them and leave the mouse alone.</td>
+</tr>
+<tr>
+<td><code>public static bool Shown</code></td>
+<td>The controls are on screen now, not hidden behind a window.</td>
+</tr>
+<tr>
+<td><code>public static bool Tapped</code></td>
+<td>The world was tapped this frame at this screen point.</td>
+</tr>
+<tr>
+<td><code>public static bool Pressing</code></td>
+<td>A finger rests on the world, outside every control. Top-down walks toward it.</td>
+</tr>
+<tr>
+<td><code>public static bool PressBegan</code></td>
+<td>The finger on the world went down this frame.</td>
+</tr>
+<tr>
+<td><code>public static Vector2 Axis(string name)</code></td>
+<td>A stick or the drag on the world, by name: Move, Look, Zoom, or one of your own.</td>
+</tr>
+<tr>
+<td><code>public static bool Down(string id)</code></td>
+<td>The button with this id went down this frame.</td>
+</tr>
+<tr>
+<td><code>public static bool Held(string id)</code></td>
+<td>The button with this id is held.</td>
+</tr>
+<tr>
+<td><code>public static void AddAxis(string name, Vector2 delta)</code></td>
+<td>Adds to an axis that resets every frame, like a drag or a pinch.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchlookarea-class"><a class="anchor" href="#touchlookarea-class" aria-hidden="true">#</a>TouchLookArea (class)</h3>
+<p>The touches on the world, behind every control: one finger dragging turns the camera (the Look axis), two pinch to zoom (Zoom), a short touch is a tap, and a resting finger is a press that top-down walks toward. Give it a transparent image covering the screen.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float tapTravel</code></td>
+<td>Pixels at 1080p a finger may travel and still count as a tap.</td>
+</tr>
+<tr>
+<td><code>public float tapSeconds</code></td>
+<td>Seconds a touch may last and still count as a tap.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchmodes-class"><a class="anchor" href="#touchmodes-class" aria-hidden="true">#</a>TouchModes (class)</h3>
+<p>Keeps a piece of the touch controls only in some play modes, such as Dodge outside top-down.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string[] modes</code></td>
+<td>Modes that show this: TopDown, FreeCamera, ThirdPerson. Empty: all of them.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchskillbutton-class"><a class="anchor" href="#touchskillbutton-class" aria-hidden="true">#</a>TouchSkillButton (class)</h3>
+<p>Casts or uses what a hotbar slot holds. A tap casts at the nearest enemy, or ahead; dragging off the button aims instead, showing the skill's area, and letting go casts it there. Any drag can be called off: letting go over the cancel area, or back on the button, does nothing. Holding the button still, or tapping it empty, opens <code>TouchSlotPicker</code> to choose what it holds.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int slot</code></td>
+<td>Hotbar slot, from 0. It is the same hotbar the keys use on a computer.</td>
+</tr>
+<tr>
+<td><code>public Holds holds</code></td>
+<td>What this button takes; anything else in its slot shows as empty.</td>
+</tr>
+<tr>
+<td><code>public Image cooldown</code></td>
+<td>Filled image that runs down with the cooldown.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI amountLabel</code></td>
+<td>How many of the item are left.</td>
+</tr>
+<tr>
+<td><code>public RectTransform cancelArea</code></td>
+<td>Shown while dragging; letting go over it does nothing.</td>
+</tr>
+<tr>
+<td><code>public RectTransform face</code></td>
+<td>Shrinks while held.</td>
+</tr>
+<tr>
+<td><code>public float aimRadius</code></td>
+<td>Pixels at 1080p of drag that reach the skill's full range.</td>
+</tr>
+<tr>
+<td><code>public float aimStart</code></td>
+<td>Pixels at 1080p of drag before the touch aims instead of tapping.</td>
+</tr>
+<tr>
+<td><code>public float tapReach</code></td>
+<td>Meters past its range in which a tap still finds an enemy.</td>
+</tr>
+<tr>
+<td><code>public float pickSeconds</code></td>
+<td>Seconds held still that open the picker. 0: only an empty button opens it.</td>
+</tr>
+<tr>
+<td><code>public HotbarEntry Entry</code></td>
+<td>What the slot holds, if this button takes it.</td>
+</tr>
+<tr>
+<td><code>public bool Takes(HotbarKind kind, string id)</code></td>
+<td>This button takes the skill or item.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchslotpicker-class"><a class="anchor" href="#touchslotpicker-class" aria-hidden="true">#</a>TouchSlotPicker (class)</h3>
+<p>Chooses what a touch skill button holds: the skills the player can cast, or the consumables in the bag, as a grid of icons. Picking one already on another button swaps the two. Each entry is a copy of the template, which needs an Icon image and a Name label; Amount is optional.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject panel</code></td>
+<td>Shown while choosing. Give it a backdrop so touches don't reach the game behind.</td>
+</tr>
+<tr>
+<td><code>public RectTransform list</code></td>
+<td>Where the entries go, usually a grid.</td>
+</tr>
+<tr>
+<td><code>public Color currentColor = new Color(0.96f, 0.84f, 0.5f, 1f)</code></td>
+<td>Ring on the entry the button holds now.</td>
+</tr>
+<tr>
+<td><code>public static void Open(TouchSkillButton button)</code></td>
+<td>Opens the picker for a button.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="touchstick-class"><a class="anchor" href="#touchstick-class" aria-hidden="true">#</a>TouchStick (class)</h3>
+<p>A thumb stick. Touching anywhere on this object's rect grabs it; when floating, the stick jumps under the thumb and goes home when let go. Writes a <code>Axis</code> from -1 to 1 on each side.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string axis</code></td>
+<td>Axis it writes. The modes walk with Move.</td>
+</tr>
+<tr>
+<td><code>public RectTransform background</code></td>
+<td>The ring the knob moves in.</td>
+</tr>
+<tr>
+<td><code>public float radius</code></td>
+<td>How far the knob goes from the middle, in the canvas' units.</td>
+</tr>
+<tr>
+<td><code>public bool floating</code></td>
+<td>The stick appears where the thumb lands instead of staying put.</td>
+</tr>
+<tr>
+<td><code>public float idleAlpha</code></td>
+<td>Faded while untouched.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="tradewindow-class"><a class="anchor" href="#tradewindow-class" aria-hidden="true">#</a>TradeWindow (class)</h3>
+<p>A trade with another player: right click bag items to offer them (a stack asks how many), right click an offered item to take it back, set the gold, lock, then trade. Also asks about trade requests.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public InventoryWindow inventoryWindow</code></td>
+<td>Opened beside the trade so the bag can offer items.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiamountpicker-class"><a class="anchor" href="#uiamountpicker-class" aria-hidden="true">#</a>UIAmountPicker (class)</h3>
+<p>A small &quot;- n +&quot; box at the pointer for picking an amount between 0 and a limit. Typing more than the limit gives the limit. Shift on - or + moves by 10. A click outside or Escape closes it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button maxButton</code></td>
+<td>Optional. Jumps to the limit.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI hintLabel</code></td>
+<td>Optional. Shows the limit, like &quot;Up to 12&quot;.</td>
+</tr>
+<tr>
+<td><code>public void Open(string title, int current, int limit, Vector2 screenPoint, Action&lt;int&gt; onChanged)</code></td>
+<td>Opens at the pointer with <code>current</code>; <code>onChanged</code> hears every change.</td>
+</tr>
+<tr>
+<td><code>public void SetLimit(int limit)</code></td>
+<td>The limit changed while open, like when other points were taken back.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiattribute-class"><a class="anchor" href="#uiattribute-class" aria-hidden="true">#</a>UIAttribute (class)</h3>
+<p>One attribute: name, total, where it comes from, points about to go in and a button to add one.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI spentLabel</code></td>
+<td>Optional. The points spent, like &quot;(+12)&quot;.</td>
+</tr>
+<tr>
+<td><code>public Button tileButton</code></td>
+<td>Optional. The whole tile, to pick how many points go in.</td>
+</tr>
+<tr>
+<td><code>public Color pendingColor = new Color(0.6f, 0.85f, 0.35f)</code></td>
+<td>The value while points wait to be confirmed.</td>
+</tr>
+<tr>
+<td><code>public event Action&lt;UIAttribute, bool&gt; AddClicked</code></td>
+<td>Clicked &quot;+&quot;. Shift adds all the points that fit.</td>
+</tr>
+<tr>
+<td><code>public event Action&lt;UIAttribute&gt; Clicked</code></td>
+<td>Clicked the tile itself.</td>
+</tr>
+<tr>
+<td><code>public void Show(AttributeData attribute, int total, int spent, int pending, bool canAdd)</code></td>
+<td><code>pending</code> points are picked but not confirmed yet: they show in the total, in another color.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uibestiaryrow-class"><a class="anchor" href="#uibestiaryrow-class" aria-hidden="true">#</a>UIBestiaryRow (class)</h3>
+<p>One monster in the bestiary list: icon, name, where it lives and level.</p>
+<h3 id="uibuff-class"><a class="anchor" href="#uibuff-class" aria-hidden="true">#</a>UIBuff (class)</h3>
+<p>One buff or debuff over the hotbar: its icon, a frame by kind and the seconds left.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI countLabel</code></td>
+<td>Stacks, or the shield left.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uidroparea-class"><a class="anchor" href="#uidroparea-class" aria-hidden="true">#</a>UIDropArea (class)</h3>
+<p>Tells its window when something dragged is let go over it, like a bag item over a shop.</p>
+<h3 id="uidroprow-class"><a class="anchor" href="#uidroprow-class" aria-hidden="true">#</a>UIDropRow (class)</h3>
+<p>One item a monster drops: the item, its chance for the player and how many.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI chanceLabel</code></td>
+<td>Like &quot;12%&quot;.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI detailLabel</code></td>
+<td>Amount, the table's own chance when the player's differs, and the quest it needs.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uielementrow-class"><a class="anchor" href="#uielementrow-class" aria-hidden="true">#</a>UIElementRow (class)</h3>
+<p>One element in the character window: damage, flat resistance and percent resistance.</p>
+<h3 id="uigmitemrow-class"><a class="anchor" href="#uigmitemrow-class" aria-hidden="true">#</a>UIGmItemRow (class)</h3>
+<p>One item in the GM panel's list, with its id for typed commands.</p>
+<h3 id="uigmplayerrow-class"><a class="anchor" href="#uigmplayerrow-class" aria-hidden="true">#</a>UIGmPlayerRow (class)</h3>
+<p>One player in the GM panel: name, level, class and anything a moderator should see.</p>
+<h3 id="uiiconline-class"><a class="anchor" href="#uiiconline-class" aria-hidden="true">#</a>UIIconLine (class)</h3>
+<p>One line of effects with its icon, like &quot;+12 Vitality&quot;. The colors follow the line's kind.</p>
+<h3 id="uiitem-class"><a class="anchor" href="#uiitem-class" aria-hidden="true">#</a>UIItem (class)</h3>
+<p>One item or skill on screen: icon, amount, rarity frame, cooldown and selection. The same prefab serves bag slots, equipment positions, the hotbar and the skill list; whoever owns it sets <code>Handler</code> and where the item lives (<code>Container</code> and <code>Slot</code>).</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI nameLabel</code></td>
+<td>Item name, shown when the item has no icon.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI emptyLabel</code></td>
+<td>Shown while empty, like &quot;Head&quot; on an equipment position.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI cornerLabel</code></td>
+<td>Top left corner, like the key of a quick slot.</td>
+</tr>
+<tr>
+<td><code>public Image selection</code></td>
+<td>Shown on the selected item.</td>
+</tr>
+<tr>
+<td><code>public bool alwaysShowAmount</code></td>
+<td>Shows the amount even when it is 0 or 1, and fades the icon at 0. For quick slots that count what is left.</td>
+</tr>
+<tr>
+<td><code>public Image cooldown</code></td>
+<td>Filled image over the icon while a skill recharges.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI cooldownLabel</code></td>
+<td>Seconds left of the cooldown.</td>
+</tr>
+<tr>
+<td><code>public static UIItem Dragging</code></td>
+<td>The view being dragged right now, from any window.</td>
+</tr>
+<tr>
+<td><code>public void Show(IItem item, int amount)</code></td>
+<td>Shows an item that isn't in a slot, like a quick slot showing how many are left.</td>
+</tr>
+<tr>
+<td><code>public void Show(SkillData skill, bool usable = true)</code></td>
+<td>Shows a skill. Faded when it can't be used now.</td>
+</tr>
+<tr>
+<td><code>public void SetCooldown(float ratio, float seconds)</code></td>
+<td>How much of the cooldown is left, 0 to 1, and its seconds.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiitemtooltip-class"><a class="anchor" href="#uiitemtooltip-class" aria-hidden="true">#</a>UIItemTooltip (class)</h3>
+<p>The full card of an item or a skill: header with icon, name and type, then the lines it writes about itself (<code>Describe</code>, <code>Describe</code>) in sections, then weight, price and description. Any window can show it next to the pointer or next to a slot.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI typeLabel</code></td>
+<td>&quot;Level 12 · Sword&quot;.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI extraLabel</code></td>
+<td>Rarity, or anything else worth a line under the type.</td>
+</tr>
+<tr>
+<td><code>public RectTransform body</code></td>
+<td>Sections and lines are made in here, in order.</td>
+</tr>
+<tr>
+<td><code>public RectTransform sectionTemplate</code></td>
+<td>A section title bar with a text in it.</td>
+</tr>
+<tr>
+<td><code>public RectTransform lineTemplate</code></td>
+<td>A line: an Image child named Icon and a text.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI hintLabel</code></td>
+<td>What the player can do with the item, at the bottom.</td>
+</tr>
+<tr>
+<td><code>public virtual void Show(IItem item, ItemSlotState state, IItemUser viewer, string hint = null, bool ranges = false)</code></td>
+<td>Fills the card. <code>ranges</code> adds the range each random bonus could have had.</td>
+</tr>
+<tr>
+<td><code>public virtual void ShowSkill(SkillData skill, int rank, int maxRank, string hint = null)</code></td>
+<td>A skill at a rank; rank 0 shows it as not learned yet, with its first rank's numbers.</td>
+</tr>
+<tr>
+<td><code>public void PlaceAt(Vector2 screenPoint, float gap = 18)</code></td>
+<td>Next to a screen point, flipped so it stays on screen.</td>
+</tr>
+<tr>
+<td><code>public void PlaceBeside(RectTransform target)</code></td>
+<td>Beside a slot, on whichever side has room.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uimapmarker-class"><a class="anchor" href="#uimapmarker-class" aria-hidden="true">#</a>UIMapMarker (class)</h3>
+<p>One mark on a map: an icon, and a name where the map shows names.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI label</code></td>
+<td>Optional.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiquestgrouprow-class"><a class="anchor" href="#uiquestgrouprow-class" aria-hidden="true">#</a>UIQuestGroupRow (class)</h3>
+<p>A category header in the quest log. Clicking it folds or unfolds its quests.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI foldLabel</code></td>
+<td>&quot;+&quot; when folded, &quot;-&quot; when open.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiquestobjectiverow-class"><a class="anchor" href="#uiquestobjectiverow-class" aria-hidden="true">#</a>UIQuestObjectiveRow (class)</h3>
+<p>One objective in the quest log, with its hint folded under it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button hintButton</code></td>
+<td>Folds or unfolds the hint. Hidden when the objective has none.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiquestrow-class"><a class="anchor" href="#uiquestrow-class" aria-hidden="true">#</a>UIQuestRow (class)</h3>
+<p>One quest in the quest log: its kind, name, level and a pin to track it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Button trackButton</code></td>
+<td>Tracks or untracks the quest. Hidden on finished quests.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiradarchart-class"><a class="anchor" href="#uiradarchart-class" aria-hidden="true">#</a>UIRadarChart (class)</h3>
+<p>A polygon chart: one spoke per value (0 to 1), with guide rings behind.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Vector2 Spoke(int index, float scale = 1)</code></td>
+<td>Where a spoke ends, in local space, at <code>scale</code> of the radius.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uishopentry-class"><a class="anchor" href="#uishopentry-class" aria-hidden="true">#</a>UIShopEntry (class)</h3>
+<p>One line of a shop: the item, its price and how many are left.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public virtual void Show(ItemData item, long price, string currency, bool affordable, int left)</code></td>
+<td><code>left</code> is -1 when it never runs out.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uiskill-class"><a class="anchor" href="#uiskill-class" aria-hidden="true">#</a>UISkill (class)</h3>
+<p>A row of the skill window: the skill as a draggable <code>UIItem</code>, its name, rank and a button to raise it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI infoLabel</code></td>
+<td>What it needs next, or that it is at its highest rank.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uistat-class"><a class="anchor" href="#uistat-class" aria-hidden="true">#</a>UIStat (class)</h3>
+<p>One stat as icon, label and value, like &quot;Power 25%&quot;.</p>
+<h3 id="uitemplate-class"><a class="anchor" href="#uitemplate-class" aria-hidden="true">#</a>UITemplate (class)</h3>
+<p>Rows and slots a window copies come from a template: a prefab, or an object in the window kept hidden. Prefabs are never touched, so the asset stays as it is.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static void Hide(Component template)</code></td>
+<td>Hides a template that sits in the scene. Prefabs are left alone.</td>
+</tr>
+<tr>
+<td><code>public static Transform Container(Transform list, Component template)</code></td>
+<td>Where copies go: the given list, or the template's own parent when it lives in the window.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="worldmapwindow-class"><a class="anchor" href="#worldmapwindow-class" aria-hidden="true">#</a>WorldMapWindow (class)</h3>
+<p>The whole map seen from above (M), with the player, the party, NPCs by name and where each portal leads. A click on the map walks there.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public RectTransform markerArea</code></td>
+<td>Where the marks go: the same size as the view, centered on it.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI legend</code></td>
+<td>Optional. What each color means.</td>
+</tr>
+<tr>
+<td><code>public bool showMonsters</code></td>
+<td>Show monsters too, not only people and places.</td>
+</tr>
+<tr>
+<td><code>public void OnPointerClick(PointerEventData e)</code></td>
+<td>Left click on the map: walk to that spot. The server finds the way, or says there is none.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="blunnyn-kitarpg-client-appearance"><a class="anchor" href="#blunnyn-kitarpg-client-appearance" aria-hidden="true">#</a>Blunnyn.KitARPG.Client.Appearance</h2>
+<h3 id="appearancecatalog-class"><a class="anchor" href="#appearancecatalog-class" aria-hidden="true">#</a>AppearanceCatalog (class)</h3>
+<p>The hair styles a player can pick. Ids are what gets saved, so renaming one changes the look of existing characters. Models and classes live in the game database.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public void Apply(ModularCharacter character, CharacterAppearance appearance)</code></td>
+<td>Puts the chosen hair on a character, or its body's own hair when there is none.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="appearanceslot-enum"><a class="anchor" href="#appearanceslot-enum" aria-hidden="true">#</a>AppearanceSlot (enum)</h3>
+<p>Body regions of a modular character. Each one is a separate skinned mesh that armor replaces. The body has nothing on its back, so a back piece only adds.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Head</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Chest</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Hands</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Legs</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Feet</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Hair</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Back</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="characterappearanceview-class"><a class="anchor" href="#characterappearanceview-class" aria-hidden="true">#</a>CharacterAppearanceView (class)</h3>
+<p>Shows a networked character the way its owner made it.</p>
+<h3 id="characteroutfit-class"><a class="anchor" href="#characteroutfit-class" aria-hidden="true">#</a>CharacterOutfit (class)</h3>
+<p>Fixed clothes for a character that never changes gear, like an NPC: each outfit model's pieces go on the <code>ModularCharacter</code> when it starts.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject[] outfits</code></td>
+<td>Models with pieces named _, like an armor set or a hair style.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="equipmentview-class"><a class="anchor" href="#equipmentview-class" aria-hidden="true">#</a>EquipmentView (class)</h3>
+<p>Shows worn gear: armor replaces its body region, weapons and shields hang from the hand bones. On a player it follows <code>gear</code>; anywhere else call <code>Show</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string modelId</code></td>
+<td>Player model id, for gear with a fit per model. Taken from the PlayerModel above when empty.</td>
+</tr>
+<tr>
+<td><code>public void Use(PlayerModel model)</code></td>
+<td>Takes the model id and hand bones from a player model.</td>
+</tr>
+<tr>
+<td><code>public void Show(IReadOnlyList&lt;string&gt; gear)</code></td>
+<td>Item id per equipment position, as in <code>gear</code>.</td>
+</tr>
+<tr>
+<td><code>public static SkinnedMeshRenderer FindPiece(GameObject model, AppearanceSlot region)</code></td>
+<td>The mesh for one region inside a gear model: a whole set (Knight_Male) or a single piece.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hairstyle-class"><a class="anchor" href="#hairstyle-class" aria-hidden="true">#</a>HairStyle (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GameObject model</code></td>
+<td>Model whose mesh is named _Hair.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="modularcharacter-class"><a class="anchor" href="#modularcharacter-class" aria-hidden="true">#</a>ModularCharacter (class)</h3>
+<p>Character made of one skinned mesh per body region. Equipping a piece swaps the mesh of its region, so the body under the armor is never drawn, and all regions can be baked into one mesh.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public void Equip(AppearanceSlot slot, SkinnedMeshRenderer piece)</code></td>
+<td>Wears a piece whose skeleton uses the same bone names as this character.</td>
+</tr>
+<tr>
+<td><code>public void Equip(AppearanceSlot slot, SkinnedMeshRenderer piece, bool keepsHair)</code></td>
+<td>Same, and for head gear, whether the hair stays visible under it.</td>
+</tr>
+<tr>
+<td><code>public void EquipOutfit(GameObject outfit)</code></td>
+<td>Equips every skinned mesh in an outfit model, matched by the name suffix (Knight_Chest goes to Chest).</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="nameplate-class"><a class="anchor" href="#nameplate-class" aria-hidden="true">#</a>Nameplate (class)</h3>
+<p>Character name floating over the head, always facing the camera. Without a player it keeps the label's own text, as NPCs do.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Color partyColor = new Color(0.55f, 0.85f, 1f)</code></td>
+<td>Players in the local player's party.</td>
+</tr>
+<tr>
+<td><code>public Color hostileColor = new Color(1f, 0.38f, 0.32f)</code></td>
+<td>Players the local player may fight: PvP or a duel.</td>
+</tr>
+<tr>
+<td><code>public SpriteRenderer emblemBackground</code></td>
+<td>The guild emblem's shape and symbol, left of the name. Made at runtime when empty.</td>
+</tr>
+<tr>
+<td><code>public float emblemSize</code></td>
+<td>Height of the emblem in meters.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="part-struct"><a class="anchor" href="#part-struct" aria-hidden="true">#</a>Part (struct)</h3>
+<h3 id="result-class"><a class="anchor" href="#result-class" aria-hidden="true">#</a>Result (class)</h3>
+<h3 id="skinnedmeshcombiner-class"><a class="anchor" href="#skinnedmeshcombiner-class" aria-hidden="true">#</a>SkinnedMeshCombiner (class)</h3>
+<p>Bakes several skinned meshes that share a skeleton into one, keeping their mesh LODs. Results are cached by outfit, so players wearing the same gear share the mesh.</p>
+<nav class="pager"><a class="prev" href="index.html"><span>上一页</span>API 参考</a><a class="next" href="KitARPG.Data.html"><span>下一页</span>KitARPG.Data</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fapi%2FKitARPG.Client.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l3"><a href="#aiminput-class">AimInput (class)</a></li><li class="l3"><a href="#alliancewindow-class">AllianceWindow (class)</a></li><li class="l3"><a href="#autologin-class">AutoLogin (class)</a></li><li class="l3"><a href="#bankwindow-class">BankWindow (class)</a></li><li class="l3"><a href="#bestiarywindow-class">BestiaryWindow (class)</a></li><li class="l3"><a href="#bossbar-class">BossBar (class)</a></li><li class="l3"><a href="#cashshopwindow-class">CashShopWindow (class)</a></li><li class="l3"><a href="#characterpreviewstage-class">CharacterPreviewStage (class)</a></li><li class="l3"><a href="#characterwindow-class">CharacterWindow (class)</a></li><li class="l3"><a href="#chatwindow-class">ChatWindow (class)</a></li><li class="l3"><a href="#choiceoption-class">ChoiceOption (class)</a></li><li class="l3"><a href="#clientoptions-class">ClientOptions (class)</a></li><li class="l3"><a href="#clientsmoketest-class">ClientSmokeTest (class)</a></li><li class="l3"><a href="#clientsystemstest-class">ClientSystemsTest (class)</a></li><li class="l3"><a href="#clocklabel-class">ClockLabel (class)</a></li><li class="l3"><a href="#combateffectsview-class">CombatEffectsView (class)</a></li><li class="l3"><a href="#confirmdialog-class">ConfirmDialog (class)</a></li><li class="l3"><a href="#daynightcycle-class">DayNightCycle (class)</a></li><li class="l3"><a href="#floatingtext-class">FloatingText (class)</a></li><li class="l3"><a href="#forgewindow-class">ForgeWindow (class)</a></li><li class="l3"><a href="#friendswindow-class">FriendsWindow (class)</a></li><li class="l3"><a href="#gameaudio-class">GameAudio (class)</a></li><li class="l3"><a href="#gamemenu-class">GameMenu (class)</a></li><li class="l3"><a href="#gamemode-enum">GameMode (enum)</a></li><li class="l3"><a href="#gameoption-class">GameOption (class)</a></li><li class="l3"><a href="#gamesession-class">GameSession (class)</a></li><li class="l3"><a href="#gmpage-enum">GmPage (enum)</a></li><li class="l3"><a href="#gmwindow-class">GmWindow (class)</a></li><li class="l3"><a href="#guildemblempicker-class">GuildEmblemPicker (class)</a></li><li class="l3"><a href="#guildemblemview-class">GuildEmblemView (class)</a></li><li class="l3"><a href="#guildhistorywindow-class">GuildHistoryWindow (class)</a></li><li class="l3"><a href="#guildwindow-class">GuildWindow (class)</a></li><li class="l3"><a href="#holds-enum">Holds (enum)</a></li><li class="l3"><a href="#hudbutton-class">HudButton (class)</a></li><li class="l3"><a href="#hudchange-class">HudChange (class)</a></li><li class="l3"><a href="#hudtoolbar-class">HudToolbar (class)</a></li><li class="l3"><a href="#igamebackend-interface">IGameBackend (interface)</a></li><li class="l3"><a href="#iuiitemhandler-interface">IUIItemHandler (interface)</a></li><li class="l3"><a href="#interactables-class">Interactables (class)</a></li><li class="l3"><a href="#inventorywindow-class">InventoryWindow (class)</a></li><li class="l3"><a href="#itemcolors-class">ItemColors (class)</a></li><li class="l3"><a href="#itemfilter-enum">ItemFilter (enum)</a></li><li class="l3"><a href="#itemmenu-class">ItemMenu (class)</a></li><li class="l3"><a href="#itemmenuentry-class">ItemMenuEntry (class)</a></li><li class="l3"><a href="#itemmenutarget-struct">ItemMenuTarget (struct)</a></li><li class="l3"><a href="#itemsort-enum">ItemSort (enum)</a></li><li class="l3"><a href="#itemtext-class">ItemText (class)</a></li><li class="l3"><a href="#kitinput-class">KitInput (class)</a></li><li class="l3"><a href="#kitsettings-class">KitSettings (class)</a></li><li class="l3"><a href="#loadingscreen-class">LoadingScreen (class)</a></li><li class="l3"><a href="#lootdropsview-class">LootDropsView (class)</a></li><li class="l3"><a href="#lootwindow-class">LootWindow (class)</a></li><li class="l3"><a href="#mailwindow-class">MailWindow (class)</a></li><li class="l3"><a href="#mappoint-struct">MapPoint (struct)</a></li><li class="l3"><a href="#mappointkind-enum">MapPointKind (enum)</a></li><li class="l3"><a href="#mappoints-class">MapPoints (class)</a></li><li class="l3"><a href="#mapstyle-class">MapStyle (class)</a></li><li class="l3"><a href="#marketwindow-class">MarketWindow (class)</a></li><li class="l3"><a href="#minimap-class">Minimap (class)</a></li><li class="l3"><a href="#monsterbody-class">MonsterBody (class)</a></li><li class="l3"><a href="#monsterplate-class">MonsterPlate (class)</a></li><li class="l3"><a href="#musicplayer-class">MusicPlayer (class)</a></li><li class="l3"><a href="#nightlight-class">NightLight (class)</a></li><li class="l3"><a href="#npcdialogwindow-class">NpcDialogWindow (class)</a></li><li class="l3"><a href="#npcquestmarker-class">NpcQuestMarker (class)</a></li><li class="l3"><a href="#optionvalues-class">OptionValues (class)</a></li><li class="l3"><a href="#partyframes-class">PartyFrames (class)</a></li><li class="l3"><a href="#playerhud-class">PlayerHud (class)</a></li><li class="l3"><a href="#playermenu-class">PlayerMenu (class)</a></li><li class="l3"><a href="#playermenuentry-class">PlayerMenuEntry (class)</a></li><li class="l3"><a href="#playermenutarget-struct">PlayerMenuTarget (struct)</a></li><li class="l3"><a href="#playerportrait-class">PlayerPortrait (class)</a></li><li class="l3"><a href="#popup-class">Popup (class)</a></li><li class="l3"><a href="#questdialogwindow-class">QuestDialogWindow (class)</a></li><li class="l3"><a href="#questlogtab-enum">QuestLogTab (enum)</a></li><li class="l3"><a href="#questlogwindow-class">QuestLogWindow (class)</a></li><li class="l3"><a href="#questtext-class">QuestText (class)</a></li><li class="l3"><a href="#questtracker-class">QuestTracker (class)</a></li><li class="l3"><a href="#savedlogin-class">SavedLogin (class)</a></li><li class="l3"><a href="#serviceclient-class">ServiceClient (class)</a></li><li class="l3"><a href="#serviceresult-struct">ServiceResult (struct)</a></li><li class="l3"><a href="#setwindow-class">SetWindow (class)</a></li><li class="l3"><a href="#settingswindow-class">SettingsWindow (class)</a></li><li class="l3"><a href="#shopwindow-class">ShopWindow (class)</a></li><li class="l3"><a href="#showing-enum">Showing (enum)</a></li><li class="l3"><a href="#skillaiming-class">SkillAiming (class)</a></li><li class="l3"><a href="#skilleffectsview-class">SkillEffectsView (class)</a></li><li class="l3"><a href="#skillinput-class">SkillInput (class)</a></li><li class="l3"><a href="#skillwindow-class">SkillWindow (class)</a></li><li class="l3"><a href="#slideroption-class">SliderOption (class)</a></li><li class="l3"><a href="#sort-enum">Sort (enum)</a></li><li class="l3"><a href="#soundchannel-enum">SoundChannel (enum)</a></li><li class="l3"><a href="#soundchannelsource-class">SoundChannelSource (class)</a></li><li class="l3"><a href="#titlescreen-class">TitleScreen (class)</a></li><li class="l3"><a href="#toggleoption-class">ToggleOption (class)</a></li><li class="l3"><a href="#touchbutton-class">TouchButton (class)</a></li><li class="l3"><a href="#touchchatbutton-class">TouchChatButton (class)</a></li><li class="l3"><a href="#touchcontrols-class">TouchControls (class)</a></li><li class="l3"><a href="#touchlookarea-class">TouchLookArea (class)</a></li><li class="l3"><a href="#touchmodes-class">TouchModes (class)</a></li><li class="l3"><a href="#touchskillbutton-class">TouchSkillButton (class)</a></li><li class="l3"><a href="#touchslotpicker-class">TouchSlotPicker (class)</a></li><li class="l3"><a href="#touchstick-class">TouchStick (class)</a></li><li class="l3"><a href="#tradewindow-class">TradeWindow (class)</a></li><li class="l3"><a href="#uiamountpicker-class">UIAmountPicker (class)</a></li><li class="l3"><a href="#uiattribute-class">UIAttribute (class)</a></li><li class="l3"><a href="#uibestiaryrow-class">UIBestiaryRow (class)</a></li><li class="l3"><a href="#uibuff-class">UIBuff (class)</a></li><li class="l3"><a href="#uidroparea-class">UIDropArea (class)</a></li><li class="l3"><a href="#uidroprow-class">UIDropRow (class)</a></li><li class="l3"><a href="#uielementrow-class">UIElementRow (class)</a></li><li class="l3"><a href="#uigmitemrow-class">UIGmItemRow (class)</a></li><li class="l3"><a href="#uigmplayerrow-class">UIGmPlayerRow (class)</a></li><li class="l3"><a href="#uiiconline-class">UIIconLine (class)</a></li><li class="l3"><a href="#uiitem-class">UIItem (class)</a></li><li class="l3"><a href="#uiitemtooltip-class">UIItemTooltip (class)</a></li><li class="l3"><a href="#uimapmarker-class">UIMapMarker (class)</a></li><li class="l3"><a href="#uiquestgrouprow-class">UIQuestGroupRow (class)</a></li><li class="l3"><a href="#uiquestobjectiverow-class">UIQuestObjectiveRow (class)</a></li><li class="l3"><a href="#uiquestrow-class">UIQuestRow (class)</a></li><li class="l3"><a href="#uiradarchart-class">UIRadarChart (class)</a></li><li class="l3"><a href="#uishopentry-class">UIShopEntry (class)</a></li><li class="l3"><a href="#uiskill-class">UISkill (class)</a></li><li class="l3"><a href="#uistat-class">UIStat (class)</a></li><li class="l3"><a href="#uitemplate-class">UITemplate (class)</a></li><li class="l3"><a href="#worldmapwindow-class">WorldMapWindow (class)</a></li><li class="l3"><a href="#appearancecatalog-class">AppearanceCatalog (class)</a></li><li class="l3"><a href="#appearanceslot-enum">AppearanceSlot (enum)</a></li><li class="l3"><a href="#characterappearanceview-class">CharacterAppearanceView (class)</a></li><li class="l3"><a href="#characteroutfit-class">CharacterOutfit (class)</a></li><li class="l3"><a href="#equipmentview-class">EquipmentView (class)</a></li><li class="l3"><a href="#hairstyle-class">HairStyle (class)</a></li><li class="l3"><a href="#modularcharacter-class">ModularCharacter (class)</a></li><li class="l3"><a href="#nameplate-class">Nameplate (class)</a></li><li class="l3"><a href="#part-struct">Part (struct)</a></li><li class="l3"><a href="#result-class">Result (class)</a></li><li class="l3"><a href="#skinnedmeshcombiner-class">SkinnedMeshCombiner (class)</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KitARPG.Server · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/api/KitARPG.Server.html">English</option><option value="KitARPG.Server.html" selected>Español</option><option value="../../pt/api/KitARPG.Server.html">Português</option><option value="../../zh/api/KitARPG.Server.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Control modes</a></li><li><a href="../gameplay/touch-controls.html">Touch controls</a></li><li><a href="../gameplay/combat.html">Combat</a></li><li><a href="../gameplay/recovery-and-death.html">Recovery and death</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventory and bank</a></li><li><a href="../gameplay/trade.html">Trade</a></li><li><a href="../gameplay/forge.html">Forge</a></li><li><a href="../gameplay/market.html">Market</a></li><li><a href="../gameplay/mail.html">Mail</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Friends and parties</a></li><li><a href="../gameplay/guilds.html">Guilds</a></li><li><a href="../gameplay/tax-collectors.html">Tax collectors</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP and duels</a></li><li><a href="../gameplay/dungeons.html">Dungeons</a></li><li><a href="../gameplay/day-and-night.html">Day and night</a></li><li><a href="../gameplay/bestiary.html">Bestiary</a></li><li><a href="../gameplay/cash-shop.html">Cash shop</a></li><li><a href="../gameplay/gm-tools.html">GM tools</a></li><li><a href="../gameplay/game-log-and-reports.html">Game log and reports</a></li><li><a href="../gameplay/hud-and-windows.html">HUD and windows</a></li><li><a href="../gameplay/player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section" open><summary>Referencia de la API</summary><ul><li><a href="index.html">Referencia de la API</a></li><li><a href="KitARPG.Client.html">KitARPG.Client</a></li><li><a href="KitARPG.Data.html">KitARPG.Data</a></li><li><a href="KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="KitARPG.Local.html">KitARPG.Local</a></li><li><a href="KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="KitARPG.Net.html">KitARPG.Net</a></li><li><a href="KitARPG.Server.html" class="on" aria-current="page">KitARPG.Server</a></li><li><a href="KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Referencia de la API</div><h1>KitARPG.Server</h1><div class="callout note fallback"><p>Esta página aún no está traducida. Se muestra en inglés.</p></div><h2 id="blunnyn-kitarpg-server"><a class="anchor" href="#blunnyn-kitarpg-server" aria-hidden="true">#</a>Blunnyn.KitARPG.Server</h2>
+<h3 id="centrallink-class"><a class="anchor" href="#centrallink-class" aria-hidden="true">#</a>CentralLink (class)</h3>
+<p>The map server's line to Central over LiteNetLib. Registers the map, keeps it alive and turns request/reply messages into callbacks, which always run on the main thread.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float logSeconds</code></td>
+<td>Log lines go to Central in batches this often.</td>
+</tr>
+<tr>
+<td><code>public int maxUnconfirmedAudit</code></td>
+<td>GM commands stop running once this many lines wait for Central.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="centralmessages-class"><a class="anchor" href="#centralmessages-class" aria-hidden="true">#</a>CentralMessages (class)</h3>
+<p>The game's own messages between this map server and its modules in Central. Messages are [Serializable] classes with public fields, sent as their type name and JSON, so the module reads them with the same file. Server only: clients never see these.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static bool Online</code></td>
+<td>The map is registered with Central. False in single player and while Central is away.</td>
+</tr>
+<tr>
+<td><code>public static bool Send&lt;T&gt;(T message) where T : class</code></td>
+<td>Sends a message to Central's modules. False when Central can't be reached; nothing is queued.</td>
+</tr>
+<tr>
+<td><code>public static void On&lt;T&gt;(Action&lt;T&gt; handler) where T : class</code></td>
+<td>Calls <code>handler</code>, on the main thread, for each Central sends. Register once, for example in a [RuntimeInitializeOnLoadMethod]; a second handler for the same type replaces the first.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="copy-class"><a class="anchor" href="#copy-class" aria-hidden="true">#</a>Copy (class)</h3>
+<h3 id="gmaudit-class"><a class="anchor" href="#gmaudit-class" aria-hidden="true">#</a>GmAudit (class)</h3>
+<p>The GM audit: every GM command, run or refused, ends up in the database. Server only. The sink is set by the map server; without one, staff commands don't run at all.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static event Action&lt;GmAuditEntry&gt; Recorded</code></td>
+<td>Server only. Every line, as it is recorded.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gmcommand-class"><a class="anchor" href="#gmcommand-class" aria-hidden="true">#</a>GmCommand (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public GmRank rank</code></td>
+<td>The GM level it asks for by default. Game Settings can change it per command (GameInstance.gmCommandLevels).</td>
+</tr>
+<tr>
+<td><code>public string usage</code></td>
+<td>Like &quot;item id [amount] [player]&quot;.</td>
+</tr>
+<tr>
+<td><code>public Func&lt;GmContext, string&gt; run</code></td>
+<td>Returns the answer to show, or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gmcommands-class"><a class="anchor" href="#gmcommands-class" aria-hidden="true">#</a>GmCommands (class)</h3>
+<p>Slash commands for moderators and admins, run on the map server and only compiled into server builds. The account's role comes from Central; in a single player world <code>EveryoneRank</code> can make the player an admin. Add your own with <code>Register</code> from a server-only assembly. Every use is logged.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static GmRank EveryoneRank</code></td>
+<td>The rank every player has at least. Set by the map server: admin for single player cheats, player online.</td>
+</tr>
+<tr>
+<td><code>public static event Action&lt;PlayerCharacter, string&gt; ServerUsed</code></td>
+<td>Server only. A command ran: who, and the whole line.</td>
+</tr>
+<tr>
+<td><code>public static GmRank LevelOf(GmCommand command)</code></td>
+<td>The level a command asks for now: the Game Settings one when set, its default otherwise. /role always asks for admin.</td>
+</tr>
+<tr>
+<td><code>public static string[] AllowedFor(PlayerCharacter player)</code></td>
+<td>The commands a player may use, by name.</td>
+</tr>
+<tr>
+<td><code>public static string Run(PlayerCharacter player, string line)</code></td>
+<td>Server only. Runs a line like &quot;/item health_potion 5&quot; and returns the answer for the player. Every staff command, run or refused for its level, goes to the GM audit; when the audit can't reach the database the command doesn't run.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gmcontext-class"><a class="anchor" href="#gmcontext-class" aria-hidden="true">#</a>GmContext (class)</h3>
+<p>What a command gets: who typed it and the words after its name.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string rest</code></td>
+<td>Everything after the command name, as typed.</td>
+</tr>
+<tr>
+<td><code>public int level</code></td>
+<td>The level this command asks for, sent along to Central so it checks the same.</td>
+</tr>
+<tr>
+<td><code>public PlayerCharacter Target(int i)</code></td>
+<td>The player named at <code>i</code>, on this map; the one who typed it when there is no name.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="igmauditsink-interface"><a class="anchor" href="#igmauditsink-interface" aria-hidden="true">#</a>IGmAuditSink (interface)</h3>
+<p>Where GM lines are stored: Central's gm_audit table, or the single player save.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool Ready</code></td>
+<td>Whether a line written now is sure to reach the database. GM commands refuse to run when it isn't.</td>
+</tr>
+<tr>
+<td><code>string ChangeRole(RoleChange change)</code></td>
+<td>Asks for another account's GM level to change. Returns why not, or null when it went.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="iworldbackend-interface"><a class="anchor" href="#iworldbackend-interface" aria-hidden="true">#</a>IWorldBackend (interface)</h3>
+<p>Where a map server checks tickets and saves characters. Central over the network for an MMO, or the game itself when it hosts a single player world. Callbacks may run later.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void Transfer(CharacterState character, string targetMap, Vector3 target, Action&lt;TransferResult&gt; done, string instance = null)</code></td>
+<td>Moves a character to another map. <code>instance</code> picks the copy of an instanced map, like a guild's hall; the backend checks it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapinstances-class"><a class="anchor" href="#mapinstances-class" aria-hidden="true">#</a>MapInstances (class)</h3>
+<p>Copies of an instanced map on one map server: one per party, or per player alone. Each is the map's scene loaded again, moved far from the others so they never see or reach each other, and unloaded a while after its last player leaves. The scene the server starts with is only the template; its spawners stay idle.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static event Action&lt;string, bool&gt; ServerChanged</code></td>
+<td>Raised on the server when a copy is made or let go, with its key.</td>
+</tr>
+<tr>
+<td><code>public void Get(string key, Action&lt;Copy&gt; ready)</code></td>
+<td>The copy for this key, made if needed; <code>ready</code> runs once it is loaded.</td>
+</tr>
+<tr>
+<td><code>public void Tick()</code></td>
+<td>Lets go of copies that stayed empty long enough. Call now and then.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapserver-class"><a class="anchor" href="#mapserver-class" aria-hidden="true">#</a>MapServer (class)</h3>
+<p>Runs one map: lets players in with their ticket, spawns their characters, saves them and moves them through portals. As a dedicated server it works for Central; a single player game hosts it through <code>Host</code> with its own backend. Command line: -map town -port 7777 -central 127.0.0.1:7700 -centralKey key [-address public.ip]; the key can come from KITARPG_CENTRAL_KEY instead. The in-game shop needs -shop url -shopKey key (or KITARPG_SHOP_URL and KITARPG_SHOP_KEY); see <code>ShopClient</code>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string mapId</code></td>
+<td>Map from the game database to run when started without -map.</td>
+</tr>
+<tr>
+<td><code>public string publicAddress</code></td>
+<td>Address clients should connect to. Empty lets Central use the address it sees.</td>
+</tr>
+<tr>
+<td><code>public bool startInEditor</code></td>
+<td>Start the server when entering Play mode in the editor.</td>
+</tr>
+<tr>
+<td><code>public CentralLink Link</code></td>
+<td>Central's link when running as a dedicated server, otherwise null.</td>
+</tr>
+<tr>
+<td><code>public void Host(string map, IWorldBackend worldBackend)</code></td>
+<td>Runs a map inside this game for a single player: starts a host with its own backend.</td>
+</tr>
+<tr>
+<td><code>public bool SendTo(PlayerCharacter player, string map, Vector3 position, Action failed = null, string instance = null)</code></td>
+<td>Server only. Moves a player to another map; <code>failed</code> runs if that map can't take them.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rewards-class"><a class="anchor" href="#rewards-class" aria-hidden="true">#</a>Rewards (class)</h3>
+<p>Pays out kills: experience, gold and loot. How loot reaches the player follows <code>lootMode</code>: on the ground, in the monster's body or straight to the bag. A guild tax collector nearby takes its share first; one that falls pays its takers. Loot is only for the killer, so nobody can take it from them; it lives here on the server and the owner is told where it is.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public float scatter</code></td>
+<td>Ground drops land within this many meters of the monster.</td>
+</tr>
+<tr>
+<td><code>protected virtual void OnKilled(Monster monster, PlayerCharacter killer)</code></td>
+<td>What a kill gives. Override to share with a party or change the payout.</td>
+</tr>
+<tr>
+<td><code>protected virtual float DropChance(LootTable.Drop entry, float luck)</code></td>
+<td>A drop's chance for this kill: the table's, grown by the killer's loot chance and the server's loot rate. Quest items keep theirs, so a quest never gets easier with luck.</td>
+</tr>
+<tr>
+<td><code>protected virtual void ShareExperience(Monster monster, PlayerCharacter killer)</code></td>
+<td>Party members close by split the experience, each by their own level, with a bonus for every extra member. Alone, the killer gets it all.</td>
+</tr>
+<tr>
+<td><code>protected long Taxed(long experience)</code></td>
+<td>Experience after the share a tax collector nearby takes.</td>
+</tr>
+<tr>
+<td><code>protected virtual void PayCollector(TaxCollector collector, PlayerCharacter killer)</code></td>
+<td>A tax collector fell: whoever hit it hardest gets everything it gathered.</td>
+</tr>
+<tr>
+<td><code>public void Pay(PlayerCharacter owner, PlayerInventory inventory, List&lt;LootEntry&gt; items, long gold, Monster from)</code></td>
+<td>Server only. Hands items and gold to a player the way the game's loot mode says.</td>
+</tr>
+<tr>
+<td><code>public void Place(PlayerCharacter owner, PlayerInventory inventory, ItemData item, int amount, Vector3 near)</code></td>
+<td>Server only. Puts one item on the ground for one player.</td>
+</tr>
+<tr>
+<td><code>public const string Overloaded</code></td>
+<td>Said when loot puts a character over its weight limit.</td>
+</tr>
+<tr>
+<td><code>public bool TryFind(PlayerCharacter player, int id, out Vector3 position)</code></td>
+<td>Where a player's drop is, if it is theirs and still there.</td>
+</tr>
+<tr>
+<td><code>public string Pickup(PlayerCharacter player, int id)</code></td>
+<td>Server only. The player reached a drop: a body opens its loot window, anything else goes to the bag. Returns an InventoryErrors code or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shopclient-class"><a class="anchor" href="#shopclient-class" aria-hidden="true">#</a>ShopClient (class)</h3>
+<p>The map server's line to the Shop service over HTTP. The key goes in X-Shop-Key and never leaves the server; players only reach the shop through their map. Command line: -shop http://shop:5300 -shopKey key, or KITARPG_SHOP_URL and KITARPG_SHOP_KEY.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static ShopClient FromEnvironment()</code></td>
+<td>The configured Shop service, or null when the game runs without one.</td>
+</tr>
+</tbody>
+</table></div>
+<nav class="pager"><a class="prev" href="KitARPG.Net.html"><span>Anterior</span>KitARPG.Net</a><a class="next" href="KitARPG.Shared.html"><span>Siguiente</span>KitARPG.Shared</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fapi%2FKitARPG.Server.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l3"><a href="#centrallink-class">CentralLink (class)</a></li><li class="l3"><a href="#centralmessages-class">CentralMessages (class)</a></li><li class="l3"><a href="#copy-class">Copy (class)</a></li><li class="l3"><a href="#gmaudit-class">GmAudit (class)</a></li><li class="l3"><a href="#gmcommand-class">GmCommand (class)</a></li><li class="l3"><a href="#gmcommands-class">GmCommands (class)</a></li><li class="l3"><a href="#gmcontext-class">GmContext (class)</a></li><li class="l3"><a href="#igmauditsink-interface">IGmAuditSink (interface)</a></li><li class="l3"><a href="#iworldbackend-interface">IWorldBackend (interface)</a></li><li class="l3"><a href="#mapinstances-class">MapInstances (class)</a></li><li class="l3"><a href="#mapserver-class">MapServer (class)</a></li><li class="l3"><a href="#rewards-class">Rewards (class)</a></li><li class="l3"><a href="#shopclient-class">ShopClient (class)</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

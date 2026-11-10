@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HUD and windows · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Search the docs" autocomplete="off" aria-label="Search the docs"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="hud-and-windows.html" selected>English</option><option value="../../es/gameplay/hud-and-windows.html">Español</option><option value="../../pt/gameplay/hud-and-windows.html">Português</option><option value="../../zh/gameplay/hud-and-windows.html">中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Light or dark" aria-label="Light or dark" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Getting started</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>The editor</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Game content</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>Gameplay systems</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html" class="on" aria-current="page">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>Servers and deployment</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>Reference</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API reference</summary><ul><li><a href="../api/index.html">API reference</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Gameplay systems</div><h1>HUD and windows</h1><p>The HUD is everything on screen while playing: the bars, the quick bar, the chat, the icon bar, the minimap and every game window. It is one prefab you can restyle, rearrange and extend. This page covers what the player sees and the keys, how the HUD prefab is organized, its inspector, and how to restyle it or move a window.</p>
+<h2 id="for-the-player"><a class="anchor" href="#for-the-player" aria-hidden="true">#</a>For the player</h2>
+<p>The layout keeps the middle of the screen free and puts everything on the edges.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Where</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bottom left</td>
+<td><strong>Chat</strong> (500 × 270), with a &quot;CHAT&quot; strip</td>
+</tr>
+<tr>
+<td>Bottom, centered in the space the chat leaves</td>
+<td><strong>Bottom bar</strong>: health, mana, level, experience and the 10 quick bar slots, with buffs</td>
+</tr>
+<tr>
+<td>Top right</td>
+<td><strong>Icon bar</strong>: one button per window, plus the shop, the world map, the bestiary and the game menu</td>
+</tr>
+<tr>
+<td>Left of the icon bar</td>
+<td><strong>Clock</strong>: day or night and the hour</td>
+</tr>
+<tr>
+<td>Under the icon bar</td>
+<td><strong>Minimap</strong>, then the <strong>quest tracker</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>The <strong>boss bar</strong> appears when a boss or elite is close, and the <strong>party frames</strong> list your party members with their health.</p>
+<h3 id="the-icon-bar"><a class="anchor" href="#the-icon-bar" aria-hidden="true">#</a>The icon bar</h3>
+<p>Hovering a button shows the window's name and key. Unspent attribute or skill points show as a small badge on their button, and unread mail as a count on the Mail button. When a letter arrives, &quot;New mail&quot; floats over the player. Buttons of modules your game turned off don't appear, and the shop button only shows in online games.</p>
+<h3 id="keys"><a class="anchor" href="#keys" aria-hidden="true">#</a>Keys</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>I</code></td>
+<td>Bag</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>Character</td>
+</tr>
+<tr>
+<td><code>K</code></td>
+<td>Skills</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>Quest log</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>World map</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Bestiary</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>Friends</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>Guild</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>Mail</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>Cash shop</td>
+</tr>
+<tr>
+<td><code>F8</code></td>
+<td>GM panel (moderators and up)</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>Write in the chat</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>Close the open window, or open the game menu</td>
+</tr>
+</tbody>
+</table></div>
+<p>Each window's key is a field on its script in the HUD prefab (<em>Toggle Key</em>), so you can change it. The full list of keys is in <a href="../reference/keys.html">Keys</a>.</p>
+<h3 id="chat"><a class="anchor" href="#chat" aria-hidden="true">#</a>Chat</h3>
+<p>Press <code>Enter</code> or click anywhere in the chat box to type. <code>Enter</code> sends and lets go of the keyboard, <code>Esc</code> cancels. The box darkens while you type. See <a href="chat.html">Chat</a>.</p>
+<h3 id="escape"><a class="anchor" href="#escape" aria-hidden="true">#</a>Escape</h3>
+<p><code>Esc</code> first closes whatever window or popup is open. Only when nothing was open does it open the <a href="player-settings.html#game-menu">game menu</a>. While you type in the chat, answer a confirmation or have Settings open, <code>Esc</code> doesn't open the menu.</p>
+<h3 id="minimap"><a class="anchor" href="#minimap" aria-hidden="true">#</a>Minimap</h3>
+<p>The round minimap shows the map name on top and the area around you. A camera looks down from above and turns with the game camera, so up on the minimap is up on screen. Portals, party members and bosses stay on the edge when they are far. Zoom with the <strong>+</strong> and <strong>−</strong> buttons or the mouse wheel. Click it to open the world map. At night it looks dark, like the scene.</p>
+<h3 id="world-map"><a class="anchor" href="#world-map" aria-hidden="true">#</a>World map</h3>
+<p><code>M</code> opens a view from above of the whole map, with the names of NPCs, bosses and party members, and where each portal leads. Clicking a point sends your character walking there; the server finds the path. It also works inside dungeon copies.</p>
+<p>The marks are NPCs, portals, monsters (normal, elite and boss), other players and your party, refreshed every 0,4 seconds.</p>
+<h3 id="item-and-player-menus"><a class="anchor" href="#item-and-player-menus" aria-hidden="true">#</a>Item and player menus</h3>
+<ul>
+<li>Right click an item in the bag or the equipment for the <a href="inventory-and-bank.html">item menu</a>.</li>
+<li>Right click another player (in top-down), or their name in chat, for the player menu: Whisper, Trade, Invite to party, Add friend, Invite to guild, Duel and Report.</li>
+</ul>
+<h2 id="the-hud-prefab"><a class="anchor" href="#the-hud-prefab" aria-hidden="true">#</a>The HUD prefab</h2>
+<p>The HUD is the prefab in <strong>Game Settings &gt; Interface &gt; Hud Prefab</strong> (<code>hudPrefab</code>). The sample's is <code>Samples/Starter/Prefabs/GameHud.prefab</code>. It is made once on each client when the game starts and kept between maps. A server without graphics doesn't make it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Hud Prefab</em> (<code>hudPrefab</code>)</td>
+<td>Canvas with the HUD and the game windows. Empty: the scenes bring their own</td>
+<td>Sample: GameHud</td>
+</tr>
+<tr>
+<td><em>Item Details On Hover</em> (<code>itemDetailsOnHover</code>)</td>
+<td>Pointing at an item shows its stats. Off: click the item to see them</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table></div>
+<p>The canvas scales with the screen from a reference of 1920 × 1080. Players scale it further with <em>Interface scale</em> in <a href="player-settings.html#interface">Settings</a>.</p>
+<h3 id="how-it-is-organized"><a class="anchor" href="#how-it-is-organized" aria-hidden="true">#</a>How it is organized</h3>
+<p>The root of the prefab has four groups, drawn in this order (later ones on top):</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HUD</strong></td>
+<td>Bottom bar, boss bar, quest tracker, icon bar, clock, chat, party frames, minimap</td>
+</tr>
+<tr>
+<td><strong>Windows</strong></td>
+<td>Bag, character, skills, loot, NPC dialogs, quests, friends, guild and its alliance, emblem and history windows, trade, bank, forge, NPC shop, mail, sets, market, bestiary, world map, cash shop, GM panel, settings</td>
+</tr>
+<tr>
+<td><strong>Popups</strong></td>
+<td>Player menu, item menu and the confirmation dialog</td>
+</tr>
+<tr>
+<td><strong>Overlay</strong></td>
+<td>The item tooltip and the dragged item icon, shared by many windows</td>
+</tr>
+</tbody>
+</table></div>
+<p>Inside each group, <strong>every script has its own object</strong>, stretched to the whole screen and with no image, holding the panels it shows and hides. The panel is a child of that object, so the script keeps running while its panel is closed (that is how window keys work).</p>
+<p>The set window and the confirmation dialog move their own object to the top when they open, so they cover other windows.</p>
+<h3 id="rows-are-prefabs"><a class="anchor" href="#rows-are-prefabs" aria-hidden="true">#</a>Rows are prefabs</h3>
+<p>Windows that show lists (guild members, mail, bank slots, quest rows, shop cards) copy a row for each entry. Those rows are prefabs in <code>Samples/Starter/Prefabs/UI</code>, such as <code>Guild Row</code>, <code>Mail Row</code>, <code>Bank Slot</code>, <code>Cash Shop Offer</code> or <code>Bestiary Row</code>. Edit the prefab once and every row changes. Rows that are instances of another prefab, like the item slot (<code>UIItem</code>), are prefab variants.</p>
+<p>Each window's fields ending in <em>Template</em> point at these rows. A row template can also sit inside the window, hidden; the window then puts copies next to it.</p>
+<h3 id="the-inspector-of-a-hud-piece"><a class="anchor" href="#the-inspector-of-a-hud-piece" aria-hidden="true">#</a>The inspector of a HUD piece</h3>
+<p>Select any HUD script's object and its inspector shows:</p>
+<ul>
+<li>What the piece does, and which of its parts are still empty (&quot;All parts set&quot; or &quot;3 empty&quot;). Some parts are optional; the tooltips say which.</li>
+<li><strong>Select panel</strong> and <strong>Show panel</strong> / <strong>Hide panel</strong>, to see a closed window while you edit it.</li>
+<li><strong>Rows it copies</strong>: each row prefab with <strong>Open</strong>, or <strong>Select</strong> when the row lives in the window.</li>
+<li>The fields in cards, by section.</li>
+</ul>
+<h2 id="step-by-step-restyle-the-hud"><a class="anchor" href="#step-by-step-restyle-the-hud" aria-hidden="true">#</a>Step by step: restyle the HUD</h2>
+<ol>
+<li><strong>Work on your own copy.</strong> Duplicate <code>GameHud.prefab</code> into your game's folder (<code>Ctrl/Cmd+D</code>, then move it). Set <em>Hud Prefab</em> in <strong>Game Settings &gt; Interface</strong> to the copy. Rebuilding the sample starts it from scratch, so never edit the sample's prefab for your game.</li>
+<li><strong>Open the prefab</strong> (double click). Expand <strong>Windows</strong> and select the window you want, for example <strong>Inventory Window</strong>.</li>
+<li>Press <strong>Show panel</strong> in its inspector to see it.</li>
+<li>Change images, colors, fonts (TextMeshPro) and sizes on its panel's children like any uGUI. Keep the names of children a window looks up by name (the tooltips list them, such as <code>Name</code>, <code>Status</code>, <code>Label</code>, <code>Art</code>, <code>Badge</code>).</li>
+<li>For list rows, press <strong>Open</strong> next to the row under <strong>Rows it copies</strong> and edit the row prefab.</li>
+<li>Press <strong>Hide panel</strong>, save the prefab and press Play.</li>
+</ol>
+<div class="callout tip"><div class="callout-title">Tip</div><p>Colors that change with state, such as tab colors, row highlight, the chat's typing color or badge colors, are fields on the window's script, not on the images. Look in the script's cards.</p>
+</div>
+<h2 id="step-by-step-move-a-window"><a class="anchor" href="#step-by-step-move-a-window" aria-hidden="true">#</a>Step by step: move a window</h2>
+<ol>
+<li>Open your HUD prefab and select the window's panel (its object's inspector has <strong>Select panel</strong>).</li>
+<li>In the Rect Transform, change the anchors and position. For example, to put the bag on the left: anchor preset middle left, pivot (0, 0.5), position X 20.</li>
+<li>Keep the panel under its script's object, so the script keeps running while the panel is closed and kit updates find it.</li>
+<li>Save and press Play.</li>
+</ol>
+<p>To move a whole HUD piece, such as the minimap or the icon bar, move its panel the same way inside the <strong>HUD</strong> group.</p>
+<h2 id="step-by-step-change-a-window-key"><a class="anchor" href="#step-by-step-change-a-window-key" aria-hidden="true">#</a>Step by step: change a window key</h2>
+<ol>
+<li>Select the window's script object in the HUD prefab, for example <strong>Bestiary Window</strong>.</li>
+<li>Change <em>Toggle Key</em>.</li>
+<li>Update the hint on its icon bar button if you show the key there.</li>
+</ol>
+<h2 id="removing-a-piece"><a class="anchor" href="#removing-a-piece" aria-hidden="true">#</a>Removing a piece</h2>
+<p>Turn off a module in <a href="../editor/modules.html">Modules</a> instead of deleting its window: buttons and keys of modules that are off go away by themselves. To drop a piece the game doesn't need, such as the clock, delete its object from the HUD group. Most links between pieces are optional, and the inspector shows what each piece still has empty.</p>
+<h2 id="kit-updates-and-your-hud"><a class="anchor" href="#kit-updates-and-your-hud" aria-hidden="true">#</a>Kit updates and your HUD</h2>
+<p>When a newer kit version adds windows or buttons, it does so with kit updates that work on the prefab in <em>Hud Prefab</em>, adding what is missing without rebuilding the rest. Examples: <strong>Guild roles, emblem, history and alliance windows in the HUD</strong>, <strong>Shop window in the HUD</strong>, <strong>New shop window: categories, banner and offer pages</strong>. Overview lists the ones your project needs with <strong>Apply</strong>. See <a href="../start/updating-the-kit.html">Updating the kit</a>.</p>
+<h2 id="touch-screens"><a class="anchor" href="#touch-screens" aria-hidden="true">#</a>Touch screens</h2>
+<p>On phones and tablets the touch controls sit on their own canvas next to the HUD, and fit the HUD around them. See <a href="touch-controls.html">Touch controls</a>.</p>
+<h2 id="in-code"><a class="anchor" href="#in-code" aria-hidden="true">#</a>In code</h2>
+<p>Every window is a <code>MonoBehaviour</code> with virtual methods, so you can subclass one and swap it in the prefab. <code>MapPoints.Extra</code> adds marks of your own to the minimap and world map. The item and player menus take extra lines through <code>ItemMenu.Entries</code> and <code>PlayerMenu.Entries</code>. See <a href="../devkit/overriding-kit-behaviour.html">Overriding kit behaviour</a>.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<p>The HUD is the same in both. Windows of online-only systems (guild, mail, market, cash shop) show messages such as &quot;Only on an online server.&quot; or don't open in single player.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>My changes to the HUD are gone.</strong> You edited the sample's <code>GameHud.prefab</code> and rebuilt the sample. Work on a copy.</li>
+<li><strong>A window doesn't open with its key.</strong> Its module is off, its <em>Toggle Key</em> changed, or its script's object was disabled. Disable the panel, never the object holding the script.</li>
+<li><strong>Rows show empty.</strong> A child the window looks up by name was renamed. Check the <em>Template</em> field's tooltip for the names.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="player-settings.html">Player settings</a></li>
+<li><a href="chat.html">Chat</a></li>
+<li><a href="inventory-and-bank.html">Inventory and bank</a></li>
+<li><a href="touch-controls.html">Touch controls</a></li>
+<li><a href="../reference/keys.html">Keys</a></li>
+<li><a href="../devkit/editor-extensions.html">Editor extensions</a></li>
+</ul>
+<nav class="pager"><a class="prev" href="game-log-and-reports.html"><span>Previous</span>Game log and reports</a><a class="next" href="player-settings.html"><span>Next</span>Player settings</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fen%2Fgameplay%2Fhud-and-windows.html">Report a problem with this page</a></div></main>
+  <aside class="toc"><div class="toc-title">On this page</div><ul><li class="l2"><a href="#for-the-player">For the player</a></li><li class="l3"><a href="#the-icon-bar">The icon bar</a></li><li class="l3"><a href="#keys">Keys</a></li><li class="l3"><a href="#chat">Chat</a></li><li class="l3"><a href="#escape">Escape</a></li><li class="l3"><a href="#minimap">Minimap</a></li><li class="l3"><a href="#world-map">World map</a></li><li class="l3"><a href="#item-and-player-menus">Item and player menus</a></li><li class="l2"><a href="#the-hud-prefab">The HUD prefab</a></li><li class="l3"><a href="#how-it-is-organized">How it is organized</a></li><li class="l3"><a href="#rows-are-prefabs">Rows are prefabs</a></li><li class="l3"><a href="#the-inspector-of-a-hud-piece">The inspector of a HUD piece</a></li><li class="l2"><a href="#step-by-step-restyle-the-hud">Step by step: restyle the HUD</a></li><li class="l2"><a href="#step-by-step-move-a-window">Step by step: move a window</a></li><li class="l2"><a href="#step-by-step-change-a-window-key">Step by step: change a window key</a></li><li class="l2"><a href="#removing-a-piece">Removing a piece</a></li><li class="l2"><a href="#kit-updates-and-your-hud">Kit updates and your HUD</a></li><li class="l2"><a href="#touch-screens">Touch screens</a></li><li class="l2"><a href="#in-code">In code</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="en";window.KIT_NONE="Nothing found";</script>
+<script src="../../assets/search-en.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

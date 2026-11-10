@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mail · KitARPG</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">K</span>KitARPG<span class="brand-version">1.0.0-rc.1</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/gameplay/mail.html">English</option><option value="../../es/gameplay/mail.html">Español</option><option value="../../pt/gameplay/mail.html">Português</option><option value="mail.html" selected>中文</option></select>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">Introduction</a></li><li><a href="../start/features.html">Features</a></li><li><a href="../start/requirements.html">Requirements</a></li><li><a href="../start/installation.html">Installation</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Quick start: single player</a></li><li><a href="../start/quick-start-mmo.html">Quick start: MMO</a></li><li><a href="../start/project-structure.html">Project structure</a></li><li><a href="../start/updating-the-kit.html">Updating the kit</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">The KitARPG window</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop page</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Attributes and stats</a></li><li><a href="../content/player-models.html">Player models</a></li><li><a href="../content/items.html">Items</a></li><li><a href="../content/equipment.html">Equipment</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, upgrades and sockets</a></li><li><a href="../content/currencies.html">Currencies</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Statuses and buffs</a></li><li><a href="../content/monsters.html">Monsters</a></li><li><a href="../content/bosses.html">Bosses</a></li><li><a href="../content/loot.html">Loot</a></li><li><a href="../content/maps.html">Maps</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">NPC shops</a></li><li><a href="../content/quests.html">Quests</a></li><li><a href="../content/conditions-and-actions.html">Conditions and actions</a></li><li><a href="../content/dialogues.html">Dialogues</a></li><li><a href="../content/world-triggers.html">World triggers</a></li></ul></details><details class="nav-section" open><summary>游戏系统</summary><ul><li><a href="control-modes.html">Control modes</a></li><li><a href="touch-controls.html">Touch controls</a></li><li><a href="combat.html">Combat</a></li><li><a href="recovery-and-death.html">Recovery and death</a></li><li><a href="inventory-and-bank.html">Inventory and bank</a></li><li><a href="trade.html">Trade</a></li><li><a href="forge.html">Forge</a></li><li><a href="market.html">Market</a></li><li><a href="mail.html" class="on" aria-current="page">Mail</a></li><li><a href="chat.html">Chat</a></li><li><a href="friends-and-parties.html">Friends and parties</a></li><li><a href="guilds.html">Guilds</a></li><li><a href="tax-collectors.html">Tax collectors</a></li><li><a href="pvp-and-duels.html">PvP and duels</a></li><li><a href="dungeons.html">Dungeons</a></li><li><a href="day-and-night.html">Day and night</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="cash-shop.html">Cash shop</a></li><li><a href="gm-tools.html">GM tools</a></li><li><a href="game-log-and-reports.html">Game log and reports</a></li><li><a href="hud-and-windows.html">HUD and windows</a></li><li><a href="player-settings.html">Player settings</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">Architecture</a></li><li><a href="../servers/services.html">Services</a></li><li><a href="../servers/launcher.html">Launcher</a></li><li><a href="../servers/database.html">Database</a></li><li><a href="../servers/configuration.html">Configuration</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Security</a></li><li><a href="../servers/shop-service.html">Shop service</a></li><li><a href="../servers/performance.html">Performance</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit overview</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Skill effects</a></li><li><a href="../devkit/item-effects.html">Item effects</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Conditions and actions in code</a></li><li><a href="../devkit/quest-objectives.html">Quest objectives</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">Keys</a></li><li><a href="../reference/gm-commands.html">GM commands</a></li><li><a href="../reference/troubleshooting.html">Troubleshooting</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">游戏系统</div><h1>Mail</h1><div class="callout note fallback"><p>此页面尚未翻译，以英文显示。</p></div><p>Letters between characters, online or not, with gold and up to five items attached. This page covers the mail window, postage, every limit, how long letters last, the letters the game sends by itself (market sales, shop purchases, rewards) and what the server checks.</p>
+<h2 id="what-it-is"><a class="anchor" href="#what-it-is" aria-hidden="true">#</a>What it is</h2>
+<p>Every character has a mailbox kept by Central. You write to another character by name; the letter waits in their mailbox until they read it, take what is attached and delete it, or until it expires.</p>
+<ul>
+<li>It is the <strong>Mail</strong> module (<code>PlayerMail</code> on the player prefab, <code>MailWindow</code> in the HUD, <code>MailService</code> in Central, table <code>mails</code>).</li>
+<li>It is <strong>MMO only</strong>. Letters live in Central's database. In single player every mail request answers &quot;Only on an online server.&quot;</li>
+<li>Attachments are real item copies. They leave your bag when you send, belong to the letter while it travels, and become the receiver's when they take them. A copy is never in two places at once.</li>
+<li>Other systems use mail to deliver things: the <a href="market.html">Market</a> pays sellers and returns unsold lots by mail, the <a href="cash-shop.html">cash shop</a> delivers purchases by mail, and server code can send letters from the game.</li>
+</ul>
+<h2 id="where-it-is-in-the-editor"><a class="anchor" href="#where-it-is-in-the-editor" aria-hidden="true">#</a>Where it is in the editor</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turn it on or off</td>
+<td><strong>KitARPG &gt; Modules</strong>, module <strong>Mail</strong>. The Market and the in-game shop need it. See <a href="../editor/modules.html">Modules</a>.</td>
+</tr>
+<tr>
+<td>Postage, items per letter, mail anywhere, shop auto take</td>
+<td><strong>KitARPG &gt; Game Settings</strong>, cards <strong>Mail</strong> and <strong>Shop</strong>. See <a href="../editor/game-settings.html">Game Settings</a>.</td>
+</tr>
+<tr>
+<td>A mailbox NPC</td>
+<td>An <code>Npc</code> with a <strong>Mail</strong> option (<code>MailOption</code>). Only needed when <em>Mail Anywhere</em> is off. See <a href="../content/npcs.html">NPCs</a>.</td>
+</tr>
+<tr>
+<td>Days, mailbox size, items per letter on the server</td>
+<td>Central's configuration, section <code>Central</code>. See <a href="../servers/configuration.html">Configuration</a>.</td>
+</tr>
+<tr>
+<td>The window</td>
+<td><code>MailWindow</code> in the HUD prefab. The <strong>Mail</strong> button on the HUD toolbar (top right). See <a href="hud-and-windows.html">HUD and windows</a>.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="settings"><a class="anchor" href="#settings" aria-hidden="true">#</a>Settings</h2>
+<h3 id="game-settings-card-mail"><a class="anchor" href="#game-settings-card-mail" aria-hidden="true">#</a>Game Settings, card Mail</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Mail Anywhere</em> (<code>mailAnywhere</code>)</td>
+<td>On, players read and send mail from anywhere with <code>N</code>. Off, only at an NPC with a <strong>Mail</strong> option, and <code>N</code> does nothing.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><em>Mail Postage</em> (<code>mailPostage</code>)</td>
+<td>Gold it costs to send a letter.</td>
+<td>10</td>
+</tr>
+<tr>
+<td><em>Mail Postage Per Item</em> (<code>mailPostagePerItem</code>)</td>
+<td>More gold for each item attached.</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>Mail Items</em> (<code>mailItems</code>)</td>
+<td>Items one letter can carry. Central's <code>MaxMailItems</code> should match.</td>
+<td>5</td>
+</tr>
+</tbody>
+</table></div>
+<p>Postage is <code>mailPostage + mailPostagePerItem × items</code>. With the defaults: a letter with no items costs 10, with 3 items 25, with 5 items 35. The gold you attach is extra.</p>
+<h3 id="game-settings-card-shop"><a class="anchor" href="#game-settings-card-shop" aria-hidden="true">#</a>Game Settings, card Shop</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Shop Auto Take</em> (<code>shopAutoTake</code>)</td>
+<td>Shop purchases and gifts go straight to the bag when they arrive. Off, or when there is no room, they wait in the mail.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="central-appsettings-json-section-central"><a class="anchor" href="#central-appsettings-json-section-central" aria-hidden="true">#</a>Central (<code>appsettings.json</code>, section <code>Central</code>)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MailDays</code></td>
+<td>Days a letter lasts. After that it is deleted with whatever is still attached.</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>MaxMailItems</code></td>
+<td>Items one letter may carry. A letter with more bounces back whole.</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>MaxMailbox</code></td>
+<td>Letters one mailbox holds. Past it, new player letters bounce.</td>
+<td>100</td>
+</tr>
+</tbody>
+</table></div>
+<p>With environment variables: <code>Central__MailDays</code>, <code>Central__MaxMailItems</code>, <code>Central__MaxMailbox</code>. See <a href="../servers/configuration.html">Configuration</a>.</p>
+<h3 id="hud-toolbar"><a class="anchor" href="#hud-toolbar" aria-hidden="true">#</a>HUD toolbar</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Mail Badge</em> (<code>mailBadge</code>)</td>
+<td>Shown on the Mail button while there are unread letters, with how many (99+ past 99).</td>
+<td>Set in the sample HUD</td>
+</tr>
+<tr>
+<td><em>New Mail Text</em> (<code>newMailText</code>)</td>
+<td>Floats over your character when a letter comes in. Empty says nothing.</td>
+<td>&quot;New mail&quot;</td>
+</tr>
+<tr>
+<td><em>New Mail Color</em> (<code>newMailColor</code>)</td>
+<td>Color of that text.</td>
+<td>Light gold</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mailwindow"><a class="anchor" href="#mailwindow" aria-hidden="true">#</a>MailWindow</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Toggle Key</em> (<code>toggleKey</code>)</td>
+<td>Opens and closes the mailbox, when <em>Mail Anywhere</em> is on.</td>
+<td><code>N</code></td>
+</tr>
+<tr>
+<td><em>Attached Slots</em> (<code>attachedSlots</code>)</td>
+<td>Slots that show a received letter's items.</td>
+<td>5 in the sample</td>
+</tr>
+<tr>
+<td><em>Attach Slots</em> (<code>attachSlots</code>)</td>
+<td>Slots for items on the Write tab. You can't attach more items than there are slots.</td>
+<td>5 in the sample</td>
+</tr>
+</tbody>
+</table></div>
+<p>If you raise <em>Mail Items</em>, add slots to the window and raise <code>MaxMailItems</code> in Central too.</p>
+<h3 id="fixed-limits"><a class="anchor" href="#fixed-limits" aria-hidden="true">#</a>Fixed limits</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recipient name</td>
+<td>32 characters</td>
+</tr>
+<tr>
+<td>Subject</td>
+<td>60 characters</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>500 characters; line breaks are kept</td>
+</tr>
+<tr>
+<td>Gold in one letter</td>
+<td>1,000,000,000,000,000</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="using-the-mailbox-as-a-player"><a class="anchor" href="#using-the-mailbox-as-a-player" aria-hidden="true">#</a>Using the mailbox as a player</h2>
+<h3 id="opening-it"><a class="anchor" href="#opening-it" aria-hidden="true">#</a>Opening it</h3>
+<ul>
+<li>Press <code>N</code>, or click <strong>Mail</strong> on the HUD toolbar (hint &quot;Mail (N)&quot;).</li>
+<li>With <em>Mail Anywhere</em> off, talk to an NPC with a <strong>Mail</strong> option and pick it.</li>
+</ul>
+<p>The window has two tabs: <strong>Inbox</strong> and <strong>Write</strong>. <code>Esc</code> closes it while you aren't typing.</p>
+<h3 id="knowing-you-have-mail"><a class="anchor" href="#knowing-you-have-mail" aria-hidden="true">#</a>Knowing you have mail</h3>
+<ul>
+<li>When you enter the world, the chat says &quot;You have an unread letter.&quot; or &quot;You have 3 unread letters.&quot;</li>
+<li>When a letter arrives while you play, the chat says &quot;You have a letter from Name.&quot;, &quot;New mail&quot; floats over your character, and the Mail button gets a red badge with the unread count.</li>
+<li>The Inbox tab reads &quot;Inbox (3)&quot; while there are unread letters.</li>
+</ul>
+<p>Shop letters that are taken for you at once don't count as unread and don't trigger &quot;New mail&quot;.</p>
+<h3 id="the-inbox-tab"><a class="anchor" href="#the-inbox-tab" aria-hidden="true">#</a>The Inbox tab</h3>
+<p>On the left, the letters, newest first:</p>
+<ul>
+<li>Unread letters have the sender's name in bold and a lighter row.</li>
+<li>A gold <code>+</code> after the name means the letter carries gold or items.</li>
+<li>The second line is the subject, or &quot;(no subject)&quot;.</li>
+</ul>
+<p>Click a letter to open it on the right. Opening an unread letter marks it read. You see:</p>
+<ul>
+<li>The subject, then &quot;From Name, date. Expires in N days.&quot;</li>
+<li>The text.</li>
+<li>The gold, if any, in gold color.</li>
+<li>The attached items in the slots below. Hover one for its tooltip.</li>
+</ul>
+<p>Buttons:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Take</strong></td>
+<td>Shown when the letter has gold or items. Takes all of it at once: gold to your purse, items to your bag.</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Deletes the letter. Only works once nothing is attached; otherwise the chat says &quot;Take what's attached first.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>Where taken things go:</p>
+<ul>
+<li>Items go to the bag. If the bag is full they go to your bank: &quot;Your bag is full, so one item went to your bank.&quot;</li>
+<li>If the bag and the bank are both full, the item is held for you: &quot;Your bag and bank are full. Free a bag slot to see the rest.&quot; Nothing is lost. See <a href="inventory-and-bank.html">Inventory and bank</a>.</li>
+<li>If your purse would go over its limit, the rest of the gold goes to your bank: &quot;Your purse was full, so the rest of the gold went to your bank.&quot;</li>
+<li>Before asking Central, the server checks there is room in your bag or bank for the items. If not: &quot;Make room in your bag or bank first.&quot;</li>
+</ul>
+<h3 id="the-write-tab"><a class="anchor" href="#the-write-tab" aria-hidden="true">#</a>The Write tab</h3>
+<ol>
+<li>Click <strong>Write</strong>. Your bag opens next to the mailbox.</li>
+<li>Type the recipient's character name (any case), a subject and the text.</li>
+<li>Type an amount in the gold field if you want to send gold.</li>
+<li>Attach items: right click a bag item and pick <strong>Attach to the letter</strong>, or double click it. For a stack you pick how many; hold <code>Shift</code> to attach one, or <code>Ctrl</code> / <code>Cmd</code> to attach the whole stack. Attaching the same stack again changes its amount.</li>
+<li>To remove an attachment, right click it in the attach slots.</li>
+<li>Check the line under the slots: &quot;Postage 25 · Total 525 gold&quot;.</li>
+<li>Click <strong>Send</strong>. The form clears.</li>
+</ol>
+<p>The gold, the postage and the items leave you right away. When Central delivers the letter you read &quot;Letter sent to Name.&quot; If the receiver is online they read &quot;You have a letter from YourName.&quot;</p>
+<p>If the letter can't be delivered, everything comes back to you, postage included, with the reason:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Reason</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No character has that name</td>
+<td>&quot;There is no one called Name.&quot;</td>
+</tr>
+<tr>
+<td>You wrote to yourself</td>
+<td>&quot;You can't write to yourself.&quot;</td>
+</tr>
+<tr>
+<td>Their mailbox has <code>MaxMailbox</code> letters</td>
+<td>&quot;Name's mailbox is full.&quot;</td>
+</tr>
+<tr>
+<td>More items than Central's <code>MaxMailItems</code></td>
+<td>&quot;Too much in one letter.&quot;</td>
+</tr>
+<tr>
+<td>An item isn't in the catalog</td>
+<td>&quot;That item can't be mailed.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>Subjects and texts pass through the chat word filter, which always masks blocked words with asterisks for mail (it never drops a letter). Rich text tags typed by players show as plain text. See <a href="chat.html#word-filter">Chat</a>.</p>
+<h2 id="letters-the-game-sends"><a class="anchor" href="#letters-the-game-sends" aria-hidden="true">#</a>Letters the game sends</h2>
+<p>Some letters don't come from a player:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>From</th>
+<th>Subject</th>
+<th>What it carries</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Market</td>
+<td>&quot;Sold: Item&quot;</td>
+<td>The gold of a sale.</td>
+<td>See <a href="market.html">Market</a>.</td>
+</tr>
+<tr>
+<td>Market</td>
+<td>&quot;Unsold: Item&quot;</td>
+<td>A lot nobody bought in time.</td>
+<td></td>
+</tr>
+<tr>
+<td>The shop</td>
+<td>The purchase's name</td>
+<td>Items from the in-game shop or a gift.</td>
+<td>Taken for you at once (see below).</td>
+</tr>
+<tr>
+<td>Your game's code</td>
+<td>Anything</td>
+<td>Gold and items: rewards, compensation, a GM's note.</td>
+<td>Sent with <code>MailService.SendFromGame</code> in Central.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Letters from the game skip the mailbox size check, so they always arrive. Shop letters are written by the Shop service and expire after its own <code>MailDays</code> setting, not Central's. See <a href="../servers/shop-service.html">Shop service</a>. Items in a letter from <code>SendFromGame</code> get fresh ids. An item the catalog doesn't know is left out and Central logs an error.</p>
+<h3 id="shop-letters-are-taken-for-you"><a class="anchor" href="#shop-letters-are-taken-for-you" aria-hidden="true">#</a>Shop letters are taken for you</h3>
+<p>With <em>Shop Auto Take</em> on, the map server takes every shop letter (<code>Kind</code> = <code>shop</code>) as soon as it sees it:</p>
+<ul>
+<li>If there is room in your bag or bank, the items go in and the chat says &quot;Gem Pack arrived in your bag.&quot; The letter is deleted once taken: it was only the way the purchase traveled.</li>
+<li>If there is no room, you read &quot;Gem Pack is waiting in your mail. Make room in your bag or bank and take it from there.&quot; and it counts as a new letter. Take it by hand later.</li>
+</ul>
+<p>With <em>Shop Auto Take</em> off, shop letters stay in the mailbox like any other. See <a href="cash-shop.html">Cash shop</a>.</p>
+<h2 id="how-long-letters-last"><a class="anchor" href="#how-long-letters-last" aria-hidden="true">#</a>How long letters last</h2>
+<ul>
+<li>A letter expires <code>MailDays</code> (30) days after it was sent. The window shows &quot;Expires in N days.&quot;</li>
+<li>Expired letters are removed when the mailbox is next listed, which happens when the owner enters a map or changes the mailbox.</li>
+</ul>
+<div class="callout danger"><div class="callout-title">重要</div><p>An expired letter is deleted with everything still attached: gold and items are gone for good. This includes market sales and unsold lots. Tell players to take their mail, or raise <code>MailDays</code> if your players log in rarely.</p>
+</div>
+<h2 id="what-the-server-checks"><a class="anchor" href="#what-the-server-checks" aria-hidden="true">#</a>What the server checks</h2>
+<p>On the map server:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The Mail module is on, and you are alive</td>
+<td>Ignored.</td>
+</tr>
+<tr>
+<td>The map works for Central (MMO)</td>
+<td>&quot;Only on an online server.&quot;</td>
+</tr>
+<tr>
+<td><em>Mail Anywhere</em> is on, or you are in reach of the NPC that opened the mailbox</td>
+<td>&quot;Find a mailbox first.&quot;</td>
+</tr>
+<tr>
+<td>Request pace: commands that reach Central get 2 a second, bursts of 10, per connection</td>
+<td>Ignored.</td>
+</tr>
+<tr>
+<td>Name, subject and text within their lengths, gold not negative</td>
+<td>Ignored.</td>
+</tr>
+<tr>
+<td>No more items than <em>Mail Items</em>, each bag slot only once</td>
+<td>Ignored.</td>
+</tr>
+<tr>
+<td>You aren't writing to yourself</td>
+<td>&quot;You can't write to yourself.&quot;</td>
+</tr>
+<tr>
+<td>You have the gold plus postage</td>
+<td>&quot;You need 535 gold, postage included.&quot;</td>
+</tr>
+<tr>
+<td>No bound or quest items</td>
+<td>&quot;Bound and quest items can't be mailed.&quot;</td>
+</tr>
+<tr>
+<td>Taking: room in bag or bank</td>
+<td>&quot;Make room in your bag or bank first.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>In Central, sending runs under the item ledger lock and in one database transaction: the letter is written and the items move from your character to the letter together. If a copy turns out to be held by someone else, the letter is rolled back, the attempt is logged, and that copy isn't returned, because it shouldn't exist.</p>
+<p>Taking runs one request at a time across the whole server, so an attachment is handed out exactly once. The items become yours in the same save that empties the letter. Until the map saves you, they wait as a pending delivery, so a crash loses nothing.</p>
+<p>Sending and taking are written to the game log as <code>mail.sent</code> and <code>mail.taken</code>, with the gold and the items. See <a href="game-log-and-reports.html">Game log and reports</a>.</p>
+<h2 id="single-player-and-mmo"><a class="anchor" href="#single-player-and-mmo" aria-hidden="true">#</a>Single player and MMO</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>Single player</th>
+<th>MMO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mailbox</td>
+<td>&quot;Only on an online server.&quot;</td>
+<td>Kept by Central for each character.</td>
+</tr>
+<tr>
+<td>Shop letters</td>
+<td>No in-game shop in single player.</td>
+<td>Taken for you by default.</td>
+</tr>
+<tr>
+<td>Market letters</td>
+<td>No market.</td>
+<td>Gold for sales, unsold lots.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="step-by-step"><a class="anchor" href="#step-by-step" aria-hidden="true">#</a>Step by step</h2>
+<h3 id="mail-only-at-mailboxes"><a class="anchor" href="#mail-only-at-mailboxes" aria-hidden="true">#</a>Mail only at mailboxes</h3>
+<ol>
+<li>Open <strong>KitARPG &gt; Game Settings</strong>, card <strong>Mail</strong>, and turn <em>Mail Anywhere</em> off.</li>
+<li>In each town scene, select an NPC (or a mailbox object with an <code>Npc</code> component) and add a <strong>Mail</strong> option.</li>
+<li>Save the scenes and test in MMO. <code>N</code> no longer opens the mailbox; talking to the mailbox does.</li>
+</ol>
+<p>The HUD <strong>Mail</strong> button still opens the window anywhere, but every request answers &quot;Find a mailbox first.&quot; until you are at a mailbox. Hide the button (<code>mailButton</code> on <code>HudToolbar</code>) if that confuses your players.</p>
+<h3 id="allow-more-items-per-letter"><a class="anchor" href="#allow-more-items-per-letter" aria-hidden="true">#</a>Allow more items per letter</h3>
+<ol>
+<li>Set <em>Mail Items</em> in Game Settings, for example to 8.</li>
+<li>Set <code>Central:MaxMailItems</code> to the same number and restart Central.</li>
+<li>In the HUD prefab, select the mail window and add slots to <em>Attach Slots</em> and <em>Attached Slots</em> so 8 fit.</li>
+</ol>
+<h3 id="make-mail-a-gold-sink"><a class="anchor" href="#make-mail-a-gold-sink" aria-hidden="true">#</a>Make mail a gold sink</h3>
+<p>Raise <em>Mail Postage</em> and <em>Mail Postage Per Item</em>. Postage leaves the game.</p>
+<h2 id="common-mistakes"><a class="anchor" href="#common-mistakes" aria-hidden="true">#</a>Common mistakes</h2>
+<ul>
+<li><strong>&quot;Too much in one letter.&quot;</strong> <em>Mail Items</em> in Game Settings is higher than <code>MaxMailItems</code> in Central.</li>
+<li><strong>Attachments vanished.</strong> The letter expired. Expired letters take their attachments with them.</li>
+<li><strong>A player can't delete a letter.</strong> It still has gold or items. Take them first.</li>
+<li><strong>&quot;Only on an online server.&quot;</strong> You are testing in single player.</li>
+<li><strong>The <code>N</code> key does nothing.</strong> <em>Mail Anywhere</em> is off, or the Mail module is off, or the cursor is in a text field.</li>
+<li><strong>A letter to a friend bounces with &quot;mailbox is full&quot;.</strong> They have <code>MaxMailbox</code> (100) letters. They need to delete some.</li>
+</ul>
+<h2 id="related-pages"><a class="anchor" href="#related-pages" aria-hidden="true">#</a>Related pages</h2>
+<ul>
+<li><a href="market.html">Market</a>: sale gold and unsold lots arrive by mail.</li>
+<li><a href="cash-shop.html">Cash shop</a>: purchases travel as shop letters.</li>
+<li><a href="inventory-and-bank.html">Inventory and bank</a>: where taken items go when the bag is full.</li>
+<li><a href="chat.html">Chat</a>: the word filter used on letters.</li>
+<li><a href="game-log-and-reports.html">Game log and reports</a>.</li>
+<li><a href="../devkit/talking-to-central.html">Talking to Central</a>: sending your own letters from server code.</li>
+<li><a href="../servers/configuration.html">Configuration</a>.</li>
+</ul>
+<nav class="pager"><a class="prev" href="market.html"><span>上一页</span>Market</a><a class="next" href="chat.html"><span>下一页</span>Chat</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fgameplay%2Fmail.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#what-it-is">What it is</a></li><li class="l2"><a href="#where-it-is-in-the-editor">Where it is in the editor</a></li><li class="l2"><a href="#settings">Settings</a></li><li class="l3"><a href="#game-settings-card-mail">Game Settings, card Mail</a></li><li class="l3"><a href="#game-settings-card-shop">Game Settings, card Shop</a></li><li class="l3"><a href="#central-appsettings-json-section-central">Central (appsettings.json, section Central)</a></li><li class="l3"><a href="#hud-toolbar">HUD toolbar</a></li><li class="l3"><a href="#mailwindow">MailWindow</a></li><li class="l3"><a href="#fixed-limits">Fixed limits</a></li><li class="l2"><a href="#using-the-mailbox-as-a-player">Using the mailbox as a player</a></li><li class="l3"><a href="#opening-it">Opening it</a></li><li class="l3"><a href="#knowing-you-have-mail">Knowing you have mail</a></li><li class="l3"><a href="#the-inbox-tab">The Inbox tab</a></li><li class="l3"><a href="#the-write-tab">The Write tab</a></li><li class="l2"><a href="#letters-the-game-sends">Letters the game sends</a></li><li class="l3"><a href="#shop-letters-are-taken-for-you">Shop letters are taken for you</a></li><li class="l2"><a href="#how-long-letters-last">How long letters last</a></li><li class="l2"><a href="#what-the-server-checks">What the server checks</a></li><li class="l2"><a href="#single-player-and-mmo">Single player and MMO</a></li><li class="l2"><a href="#step-by-step">Step by step</a></li><li class="l3"><a href="#mail-only-at-mailboxes">Mail only at mailboxes</a></li><li class="l3"><a href="#allow-more-items-per-letter">Allow more items per letter</a></li><li class="l3"><a href="#make-mail-a-gold-sink">Make mail a gold sink</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#related-pages">Related pages</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

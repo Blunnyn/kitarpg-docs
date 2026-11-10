@@ -1,0 +1,90 @@
+name: Bug report
+description: Something in KitARPG doesn't work as the documentation says.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Issues are public: never paste passwords, keys, connection strings or invoice numbers. Replace them with `***`.
+        Before writing, run **KitARPG > Project Check** and look at [Troubleshooting](https://blunnyn.github.io/kitarpg-docs/en/reference/troubleshooting.html).
+  - type: input
+    id: kit
+    attributes:
+      label: KitARPG version
+      description: Shown in the KitARPG window, under Overview.
+      placeholder: 1.0.0-rc.1
+    validations:
+      required: true
+  - type: input
+    id: unity
+    attributes:
+      label: Unity version
+      placeholder: 6000.6.0f1
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: How the game runs
+      options:
+        - Single player
+        - MMO on my computer
+        - MMO on a server (Docker or VPS)
+        - Doesn't matter
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Import and setup
+        - Editor windows (KitARPG window, Game Database, Game Settings)
+        - Gameplay (combat, skills, items, quests)
+        - Social (chat, guilds, trade, mail, market)
+        - In-game shop
+        - Services (Login, Central, Shop, launcher, database)
+        - Builds and deployment
+        - DevKit and code
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system and build target
+      placeholder: Windows 11, Windows build / macOS 15, Linux server
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What you see, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: From a fresh import with the sample if you can.
+      placeholder: |
+        1. Open the Title scene
+        2. Press Play
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console and logs
+      description: Errors from the Unity Console, or the service logs from Play & Servers. Remove anything private.
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before sending
+      options:
+        - label: I searched the existing issues.
+          required: true
+        - label: I removed passwords, keys and other private data.
+          required: true
