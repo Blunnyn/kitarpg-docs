@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KitARPG.Addons.Professions · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/api/KitARPG.Addons.Professions.html">English</option><option value="../../es/api/KitARPG.Addons.Professions.html">Español</option><option value="KitARPG.Addons.Professions.html" selected>Português</option><option value="../../zh/api/KitARPG.Addons.Professions.html">中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">Novidades</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section"><summary>Guias passo a passo</summary><ul><li><a href="../guides/step-by-step.html">Guias passo a passo</a></li><li><a href="../guides/make-a-potion.html">Fazer uma poção</a></li><li><a href="../guides/make-a-hat.html">Fazer um chapéu</a></li><li><a href="../guides/make-a-monster.html">Fazer um monstro</a></li><li><a href="../guides/make-a-skill.html">Fazer uma habilidade</a></li><li><a href="../guides/make-a-quest.html">Fazer uma missão</a></li><li><a href="../guides/draw-the-world-map.html">Desenhar o mapa do mundo</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/professions.html">Profissões</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Visão geral do DevKit</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/add-ons.html">Add-ons</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Efeitos de habilidades</a></li><li><a href="../devkit/item-effects.html">Efeitos de itens</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de missão</a></li><li><a href="../devkit/npc-options.html">Opções de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas do jogador</a></li><li><a href="../devkit/network-messages.html">Mensagens de rede</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Salvando dados</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="../devkit/editor-extensions.html">Extensões do editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="../devkit/talking-to-central.html">Falando com o Central</a></li><li><a href="../devkit/service-modules.html">Módulos de serviço</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="../devkit/example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sem domain reload</a></li><li><a href="../devkit/security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section" open><summary>Referência da API</summary><ul><li><a href="index.html">Referência da API</a></li><li><a href="KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="KitARPG.Addons.Professions.Editor.html">KitARPG.Addons.Professions.Editor</a></li><li><a href="KitARPG.Addons.Professions.html" class="on" aria-current="page">KitARPG.Addons.Professions</a></li><li><a href="KitARPG.Client.html">KitARPG.Client</a></li><li><a href="KitARPG.Data.html">KitARPG.Data</a></li><li><a href="KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="KitARPG.Local.html">KitARPG.Local</a></li><li><a href="KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="KitARPG.Net.html">KitARPG.Net</a></li><li><a href="KitARPG.Server.html">KitARPG.Server</a></li><li><a href="KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Referência da API</div><h1>KitARPG.Addons.Professions</h1><p class="untranslated">Esta página ainda não foi traduzida. Ela aparece em inglês.</p><h2 id="blunnyn-kitarpg-addons-professions"><a class="anchor" href="#blunnyn-kitarpg-addons-professions" aria-hidden="true">#</a>Blunnyn.KitARPG.Addons.Professions</h2>
+<h3 id="craftobjective-class"><a class="anchor" href="#craftobjective-class" aria-hidden="true">#</a>CraftObjective (class)</h3>
+<p>Craft pieces of an item, or anything a profession makes.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public ItemData item</code></td>
+<td>Empty counts anything the profession below makes.</td>
+</tr>
+<tr>
+<td><code>public ProfessionData profession</code></td>
+<td>Empty counts any profession.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="craftoption-class"><a class="anchor" href="#craftoption-class" aria-hidden="true">#</a>CraftOption (class)</h3>
+<p>Makes an NPC a crafting station: a forge, a loom, a cauldron. Its recipes are the ones whose station kind matches. Leave the NPC's greeting empty so a click opens the table.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string station</code></td>
+<td>Recipes with this station kind are made here, like forge or loom.</td>
+</tr>
+<tr>
+<td><code>public ProfessionData profession</code></td>
+<td>The profession shown at the top of the table.</td>
+</tr>
+<tr>
+<td><code>public AnimationClip animation</code></td>
+<td>Played while crafting here. Empty uses the profession's.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="craftservicesmoketest-class"><a class="anchor" href="#craftservicesmoketest-class" aria-hidden="true">#</a>CraftServiceSmokeTest (class)</h3>
+<p>Two clients crafting for each other against real servers, for -smoketest crafting. The lead (-qa lead) is the crafter: it raises Blacksmith, takes the ingredients and invites; the partner (-qa partner) accepts, sets a fee and receives a sword. Both accounts need the GM role.</p>
+<h3 id="craftserviceview-struct"><a class="anchor" href="#craftserviceview-struct" aria-hidden="true">#</a>CraftServiceView (struct)</h3>
+<p>What both sides of a crafting session see.</p>
+<h3 id="craftingwindow-class"><a class="anchor" href="#craftingwindow-class" aria-hidden="true">#</a>CraftingWindow (class)</h3>
+<p>A station's table, Dofus style: put ingredients on it from the bag (or pick a recipe to fill it) and what they make shows on the right. Slots past the profession's level stay locked. In a crafting session with another player it shows the terms both sides lock.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI professionLabel</code></td>
+<td>Profession, level and how many ingredients it may use.</td>
+</tr>
+<tr>
+<td><code>public UIItem[] slots</code></td>
+<td>Eight slots; the ones past the level are shown locked.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI[] slotLocks</code></td>
+<td>Over each slot, the level that unlocks it.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI infoLabel</code></td>
+<td>Time, experience and gold per piece.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="drop-class"><a class="anchor" href="#drop-class" aria-hidden="true">#</a>Drop (class)</h3>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int chance</code></td>
+<td>Percent. Each drop rolls on its own.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gathernode-class"><a class="anchor" href="#gathernode-class" aria-hidden="true">#</a>GatherNode (class)</h3>
+<p>A tree, vein or fishing spot in the world. Needs an <code>Npc</code> with a <code>GatherOption</code> on the same object, so players click it like an NPC. One player at a time; once gathered it hides and grows back.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string gatherable</code></td>
+<td>Which of the profession's gatherables this is.</td>
+</tr>
+<tr>
+<td><code>public float respawnSeconds</code></td>
+<td>Seconds before it can be gathered again.</td>
+</tr>
+<tr>
+<td><code>public GameObject model</code></td>
+<td>Hidden while it grows back. Empty hides the first child.</td>
+</tr>
+<tr>
+<td><code>public bool TakenByOther(PlayerCharacter player)</code></td>
+<td>Server only. Whether another player is already at it.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gatherobjective-class"><a class="anchor" href="#gatherobjective-class" aria-hidden="true">#</a>GatherObjective (class)</h3>
+<p>Gather from nodes of one kind, or any node of a profession.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string gatherable</code></td>
+<td>The gatherable's id, like oak. Empty counts any of the profession's.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="gatheroption-class"><a class="anchor" href="#gatheroption-class" aria-hidden="true">#</a>GatherOption (class)</h3>
+<p>Gathers from the <code>GatherNode</code> on the same object. Leave the NPC's greeting empty.</p>
+<h3 id="gatherable-class"><a class="anchor" href="#gatherable-class" aria-hidden="true">#</a>Gatherable (class)</h3>
+<p>Something this profession gathers: a tree, an ore vein, a fishing spot.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string id</code></td>
+<td>Nodes in the world name it by this. Don't change it once nodes use it.</td>
+</tr>
+<tr>
+<td><code>public Sprite icon</code></td>
+<td>Empty uses the icon of the first drop.</td>
+</tr>
+<tr>
+<td><code>public float seconds</code></td>
+<td>Seconds it takes at the level it unlocks.</td>
+</tr>
+<tr>
+<td><code>public float fastestSeconds</code></td>
+<td>Seconds it takes at the top level of the profession.</td>
+</tr>
+<tr>
+<td><code>public int characterExperience</code></td>
+<td>Character experience on top. 0 gives none.</td>
+</tr>
+<tr>
+<td><code>public float Seconds(ProfessionData profession, int level)</code></td>
+<td>Seconds it takes at this level, from its own unlock level to the profession's top.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playercraftservice-class"><a class="anchor" href="#playercraftservice-class" aria-hidden="true">#</a>PlayerCraftService (class)</h3>
+<p>Crafting for another player at a station, for a fee. The crafter brings the profession level; the ingredients come from whichever side the crafter picks. The client sets the fee, both lock the terms, and any change to them unlocks both. The crafter makes pieces one at a time; the server takes the ingredients, hands the result to the client and pays the fee with the first piece, so nobody holds the other's items or gold at any point.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static event Action&lt;CraftServiceView&gt; SessionChanged</code></td>
+<td>Owner's client: the session as it stands; inactive when there is none.</td>
+</tr>
+<tr>
+<td><code>public static event Action&lt;string, string, bool&gt; Invited</code></td>
+<td>Owner's client: someone invites this player (false) or asks this player to craft (true).</td>
+</tr>
+<tr>
+<td><code>public static Npc StationNear(Vector3 position)</code></td>
+<td>A crafting station whose reach covers this point, or null.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playerprofessions-class"><a class="anchor" href="#playerprofessions-class" aria-hidden="true">#</a>PlayerProfessions (class)</h3>
+<p>A player's professions: their levels and experience, gathering at <code>GatherNode</code>s and crafting at stations. Every rule runs on the server; the owner sees its own progress.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static event Action&lt;string&gt; StationOpened</code></td>
+<td>Owner's client: a station opened (its NPC id), or closed (null).</td>
+</tr>
+<tr>
+<td><code>public static event Action&lt;string, int, int&gt; CraftProgress</code></td>
+<td>Owner's client: pieces made so far out of the ones asked for, of a recipe. Total 0 means it stopped.</td>
+</tr>
+<tr>
+<td><code>public static event Action&lt;string, bool&gt; Message</code></td>
+<td>Owner's client: something to tell the player, and whether it went well.</td>
+</tr>
+<tr>
+<td><code>public static event Action&lt;ProfessionData, int&gt; Leveled</code></td>
+<td>Owner's client: a profession went up to a level.</td>
+</tr>
+<tr>
+<td><code>public static event Action Changed</code></td>
+<td>Owner's client: levels or experience changed.</td>
+</tr>
+<tr>
+<td><code>public static event Action&lt;PlayerCharacter, RecipeData, int&gt; ServerCrafted</code></td>
+<td>Server only. A player made pieces of a recipe, for others or themselves.</td>
+</tr>
+<tr>
+<td><code>public static event Action&lt;PlayerCharacter, ProfessionData, ProfessionData.Gatherable&gt; ServerGathered</code></td>
+<td>Server only. A player gathered from a node.</td>
+</tr>
+<tr>
+<td><code>public int ServerAddExperience(ProfessionData profession, int amount)</code></td>
+<td>Server only. Adds profession experience and levels up as often as it reaches; returns the levels gained.</td>
+</tr>
+<tr>
+<td><code>public int ServerAddLevels(ProfessionData profession, int levels)</code></td>
+<td>Server only. Experience to reach <code>levels</code> more levels, keeping what the current level has.</td>
+</tr>
+<tr>
+<td><code>public void ServerSetLevel(ProfessionData profession, int level)</code></td>
+<td>Server only. Sets a level outright, for GM commands.</td>
+</tr>
+<tr>
+<td><code>public virtual void ServerGather(GatherNode node, Npc npc)</code></td>
+<td>Server only. Starts gathering from a node the player clicked.</td>
+</tr>
+<tr>
+<td><code>public virtual void ServerOpenStation(Npc npc)</code></td>
+<td>Server only. A station's NPC opens its table for this player.</td>
+</tr>
+<tr>
+<td><code>public void Craft(string npcId, IReadOnlyList&lt;ItemCost&gt; table, int times)</code></td>
+<td>Crafts what the table holds at the open station, <code>times</code> times in a row.</td>
+</tr>
+<tr>
+<td><code>public float Seconds(RecipeData recipe)</code></td>
+<td>Seconds a piece of the recipe takes at this player's level.</td>
+</tr>
+<tr>
+<td><code>public static string Cant(RecipeData recipe, PlayerProfessions crafter, PlayerInventory materials, PlayerInventory receiver)</code></td>
+<td>Server only. Why <code>crafter</code> can't make one piece of the recipe now, taking the ingredients and gold from <code>materials</code> and giving the result to <code>receiver</code>; null when it can.</td>
+</tr>
+<tr>
+<td><code>public static void Make(RecipeData recipe, PlayerProfessions crafter, PlayerInventory materials, PlayerInventory receiver)</code></td>
+<td>Server only. Makes one piece; call after <code>Cant</code> said nothing.</td>
+</tr>
+<tr>
+<td><code>public void Tell(string text, bool good)</code></td>
+<td>Server only. Tells the owner, in the chat and on the table.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="playerwork-class"><a class="anchor" href="#playerwork-class" aria-hidden="true">#</a>PlayerWork (class)</h3>
+<p>Work a player does standing still, seen by everyone around: gathering, crafting. The server runs the timer and stops it when the player moves, dies or the work can't go on; clients loop the activity's animation.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static event Action&lt;PlayerWork&gt; Changed</code></td>
+<td>Clients: someone started or stopped working.</td>
+</tr>
+<tr>
+<td><code>public float moveTolerance</code></td>
+<td>Meters a player may drift before the work stops.</td>
+</tr>
+<tr>
+<td><code>public string Activity</code></td>
+<td>&quot;gather:miner&quot; or &quot;craft:Town Forge&quot;: what the player is doing, empty when nothing.</td>
+</tr>
+<tr>
+<td><code>public void ServerBegin(string what, float duration, Action finished, Func&lt;string&gt; keepGoing = null, Action&lt;string&gt; ended = null)</code></td>
+<td>Server only. Starts work that ends after <code>duration</code> seconds and then calls <code>finished</code>. <code>keepGoing</code> is asked every frame and stops it with its answer; <code>ended</code> hears why it stopped early.</td>
+</tr>
+<tr>
+<td><code>public void ServerStop(string why)</code></td>
+<td>Server only. Stops whatever is going on; <code>why</code> goes to its ended callback.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="professioncatalog-class"><a class="anchor" href="#professioncatalog-class" aria-hidden="true">#</a>ProfessionCatalog (class)</h3>
+<p>The professions and recipes of the game database, and lookups between them.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public static IEnumerable&lt;RecipeData&gt; RecipesAt(string station)</code></td>
+<td>Recipes made at a kind of station; empty station kind means the ones made anywhere.</td>
+</tr>
+<tr>
+<td><code>public static RecipeData Match(string station, IReadOnlyList&lt;ItemCost&gt; table)</code></td>
+<td>The recipe at this station whose ingredients are exactly the table's, or null.</td>
+</tr>
+<tr>
+<td><code>public static AnimationClip ClipFor(string activity)</code></td>
+<td>The animation for a <code>Activity</code>: a profession's gathering, or a station's crafting.</td>
+</tr>
+<tr>
+<td><code>public static CraftOption StationOf(Npc npc)</code></td>
+<td>The crafting station an NPC offers, or null.</td>
+</tr>
+<tr>
+<td><code>public static string StationName(string station)</code></td>
+<td>What players call a kind of station: the name of one in this map, or the kind itself.</td>
+</tr>
+<tr>
+<td><code>public static List&lt;ItemCost&gt; Table(string[] items, int[] amounts)</code></td>
+<td>Items as table slots: one per different item, amounts added up.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="professiondata-class"><a class="anchor" href="#professiondata-class" aria-hidden="true">#</a>ProfessionData (class)</h3>
+<p>A profession, like Blacksmith or Miner, with its own level. Every character has each one from level 1. The level unlocks how many ingredients a recipe may use, the way Dofus does it, and makes gathering and crafting faster.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public int baseExperience</code></td>
+<td>Experience from level 1 to 2. Each level after asks for this times the level to the power of Growth.</td>
+</tr>
+<tr>
+<td><code>public Rank[] ranks =</code></td>
+<td>Titles by level, shown in the professions window.</td>
+</tr>
+<tr>
+<td><code>public SlotUnlock[] slots =</code></td>
+<td>How many ingredients a recipe may use from each level. A recipe asks for the level that unlocks its count, unless it sets its own.</td>
+</tr>
+<tr>
+<td><code>public float craftTimeAtStart</code></td>
+<td>Share of a recipe's time it takes at level 1.</td>
+</tr>
+<tr>
+<td><code>public float craftTimeAtTop</code></td>
+<td>Share of a recipe's time it takes at the top level.</td>
+</tr>
+<tr>
+<td><code>public int experiencePerIngredient</code></td>
+<td>Experience per ingredient of a crafted recipe, when the recipe sets none.</td>
+</tr>
+<tr>
+<td><code>public int serviceLevel</code></td>
+<td>Lowest level that may craft for other players. 0 lets anyone; above the top level it is the top level.</td>
+</tr>
+<tr>
+<td><code>public AnimationClip craftAnimation</code></td>
+<td>Played while crafting at a station that sets none.</td>
+</tr>
+<tr>
+<td><code>public AnimationClip gatherAnimation</code></td>
+<td>Played over and over while gathering.</td>
+</tr>
+<tr>
+<td><code>public Gatherable[] gatherables</code></td>
+<td>What it gathers and from which level. Nodes in the world point at these by id.</td>
+</tr>
+<tr>
+<td><code>public Color color = new Color(0.85f, 0.7f, 0.35f)</code></td>
+<td>Of its experience bar and name.</td>
+</tr>
+<tr>
+<td><code>public int IngredientsAt(int level)</code></td>
+<td>Most ingredients a recipe may use at this level. No table means no limit.</td>
+</tr>
+<tr>
+<td><code>public int LevelForIngredients(int count)</code></td>
+<td>The lowest level that allows a recipe with this many ingredients.</td>
+</tr>
+<tr>
+<td><code>public float CraftTimeRate(int level)</code></td>
+<td>Share of a recipe's time it takes at this level.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="professionexperienceitemeffect-class"><a class="anchor" href="#professionexperienceitemeffect-class" aria-hidden="true">#</a>ProfessionExperienceItemEffect (class)</h3>
+<p>Profession experience, for one profession or every one. Not used up when none can take it.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public ProfessionData profession</code></td>
+<td>Empty gives it to every profession.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="professionlevelitemeffect-class"><a class="anchor" href="#professionlevelitemeffect-class" aria-hidden="true">#</a>ProfessionLevelItemEffect (class)</h3>
+<p>Whole profession levels, keeping the experience the current level has.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public ProfessionData profession</code></td>
+<td>Empty raises every profession.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="professionprogress-struct"><a class="anchor" href="#professionprogress-struct" aria-hidden="true">#</a>ProfessionProgress (struct)</h3>
+<h3 id="professionsaddon-class"><a class="anchor" href="#professionsaddon-class" aria-hidden="true">#</a>ProfessionsAddon (class)</h3>
+<h3 id="professionswindow-class"><a class="anchor" href="#professionswindow-class" aria-hidden="true">#</a>ProfessionsWindow (class)</h3>
+<p>Every profession with its level and experience. The picked one shows its recipes, with what goes in and the level each needs, and what it gathers from which level.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Transform professionList</code></td>
+<td>Where the rows go. Empty uses the template's parent.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI levelLabel</code></td>
+<td>Level and rank.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI slotsLabel</code></td>
+<td>How many ingredients its recipes may have now, and when the next one comes.</td>
+</tr>
+<tr>
+<td><code>public TextMeshProUGUI emptyLabel</code></td>
+<td>Shown when the list is empty.</td>
+</tr>
+<tr>
+<td><code>public void Show(ProfessionData profession)</code></td>
+<td>Opens on one profession.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rank-class"><a class="anchor" href="#rank-class" aria-hidden="true">#</a>Rank (class)</h3>
+<h3 id="recipedata-class"><a class="anchor" href="#recipedata-class" aria-hidden="true">#</a>RecipeData (class)</h3>
+<p>What a profession makes from what. The ingredients placed on a station's table pick the recipe, so a player who knows the mix can make it without looking it up.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public string station</code></td>
+<td>The kind of station it is made at, like forge or loom. Empty: anywhere, from the professions window.</td>
+</tr>
+<tr>
+<td><code>public ItemCost[] ingredients</code></td>
+<td>Up to 8 different items. How many there are sets the level, unless Level is set.</td>
+</tr>
+<tr>
+<td><code>public int level</code></td>
+<td>Profession level it needs. 0 uses the level that unlocks its number of ingredients.</td>
+</tr>
+<tr>
+<td><code>public int experience</code></td>
+<td>Profession experience per piece. 0 uses the profession's experience per ingredient.</td>
+</tr>
+<tr>
+<td><code>public float seconds</code></td>
+<td>Seconds per piece at level 1; higher levels are faster.</td>
+</tr>
+<tr>
+<td><code>public long gold</code></td>
+<td>Gold per piece, paid by whoever puts the ingredients.</td>
+</tr>
+<tr>
+<td><code>public bool Matches(IReadOnlyList&lt;ItemCost&gt; table)</code></td>
+<td>True when the table holds exactly these ingredients, in any order.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="slotunlock-class"><a class="anchor" href="#slotunlock-class" aria-hidden="true">#</a>SlotUnlock (class)</h3>
+<h3 id="uiprofessionrow-class"><a class="anchor" href="#uiprofessionrow-class" aria-hidden="true">#</a>UIProfessionRow (class)</h3>
+<p>A profession in the list: icon, name, level and how far into the next one.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public Image experienceBar</code></td>
+<td>A filled image; its fill shows the experience.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="uireciperow-class"><a class="anchor" href="#uireciperow-class" aria-hidden="true">#</a>UIRecipeRow (class)</h3>
+<p>A line with an icon, a name, what goes into it and the level it needs: a recipe or a gatherable.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public TextMeshProUGUI detailLabel</code></td>
+<td>Ingredients, or what a node drops.</td>
+</tr>
+<tr>
+<td><code>public CanvasGroup group</code></td>
+<td>Dims the row when the player can't make it yet.</td>
+</tr>
+</tbody>
+</table></div>
+<nav class="pager"><a class="prev" href="KitARPG.Addons.Professions.Editor.html"><span>Anterior</span>KitARPG.Addons.Professions.Editor</a><a class="next" href="KitARPG.Client.html"><span>Próximo</span>KitARPG.Client</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fapi%2FKitARPG.Addons.Professions.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l3"><a href="#craftobjective-class">CraftObjective (class)</a></li><li class="l3"><a href="#craftoption-class">CraftOption (class)</a></li><li class="l3"><a href="#craftservicesmoketest-class">CraftServiceSmokeTest (class)</a></li><li class="l3"><a href="#craftserviceview-struct">CraftServiceView (struct)</a></li><li class="l3"><a href="#craftingwindow-class">CraftingWindow (class)</a></li><li class="l3"><a href="#drop-class">Drop (class)</a></li><li class="l3"><a href="#gathernode-class">GatherNode (class)</a></li><li class="l3"><a href="#gatherobjective-class">GatherObjective (class)</a></li><li class="l3"><a href="#gatheroption-class">GatherOption (class)</a></li><li class="l3"><a href="#gatherable-class">Gatherable (class)</a></li><li class="l3"><a href="#playercraftservice-class">PlayerCraftService (class)</a></li><li class="l3"><a href="#playerprofessions-class">PlayerProfessions (class)</a></li><li class="l3"><a href="#playerwork-class">PlayerWork (class)</a></li><li class="l3"><a href="#professioncatalog-class">ProfessionCatalog (class)</a></li><li class="l3"><a href="#professiondata-class">ProfessionData (class)</a></li><li class="l3"><a href="#professionexperienceitemeffect-class">ProfessionExperienceItemEffect (class)</a></li><li class="l3"><a href="#professionlevelitemeffect-class">ProfessionLevelItemEffect (class)</a></li><li class="l3"><a href="#professionprogress-struct">ProfessionProgress (struct)</a></li><li class="l3"><a href="#professionsaddon-class">ProfessionsAddon (class)</a></li><li class="l3"><a href="#professionswindow-class">ProfessionsWindow (class)</a></li><li class="l3"><a href="#rank-class">Rank (class)</a></li><li class="l3"><a href="#recipedata-class">RecipeData (class)</a></li><li class="l3"><a href="#slotunlock-class">SlotUnlock (class)</a></li><li class="l3"><a href="#uiprofessionrow-class">UIProfessionRow (class)</a></li><li class="l3"><a href="#uireciperow-class">UIRecipeRow (class)</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>
