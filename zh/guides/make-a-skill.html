@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>制作技能 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/guides/make-a-skill.html">English</option><option value="../../es/guides/make-a-skill.html">Español</option><option value="../../pt/guides/make-a-skill.html">Português</option><option value="make-a-skill.html" selected>中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">更新日志</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section" open><summary>分步指南</summary><ul><li><a href="step-by-step.html">分步指南</a></li><li><a href="make-a-potion.html">制作药水</a></li><li><a href="make-a-hat.html">制作帽子</a></li><li><a href="make-a-monster.html">制作怪物</a></li><li><a href="make-a-skill.html" class="on" aria-current="page">制作技能</a></li><li><a href="make-a-quest.html">制作任务</a></li><li><a href="draw-the-world-map.html">绘制世界地图</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/add-ons.html">扩展</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="../api/KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">分步指南</div><h1>制作技能</h1><p>本指南制作 <strong>Frost Wave</strong>：施法者前方的一道冰锥，造成水属性伤害，使每个被击中的敌人减速，并在地面停留两秒。然后把它交给战士。</p>
+<figure class="shot"><a href="../../assets/img/guides/skill-cast.gif" target="_blank"><img src="../../assets/img/guides/skill-cast.gif" alt="" loading="lazy"></a><figcaption>对一群史莱姆施放 Frost Wave。</figcaption></figure>
+<h2 id="1-make-the-skill"><a class="anchor" href="#1-make-the-skill" aria-hidden="true">#</a>1. 创建技能</h2>
+<ol>
+<li>在 <strong>Game Database</strong> 中打开 <strong>Combat &gt; Skills</strong>，按 <strong>+ New skill</strong>。</li>
+<li>在 <strong>General</strong> 中设置 <em>Id</em> <code>frost_wave</code>、<em>Display Name</em> <code>Frost Wave</code>、一段 <em>Description</em> 和一个 <em>Icon</em>。</li>
+<li>设置基础项：</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Max Level</em></td>
+<td>5</td>
+<td>玩家可以学习的等级数。</td>
+</tr>
+<tr>
+<td><em>Target</em></td>
+<td>Enemy</td>
+<td>对敌人施放。</td>
+</tr>
+<tr>
+<td><em>Mana Cost</em></td>
+<td>20，每级 3</td>
+<td>每个数值都有一个基础值和每级的变化。</td>
+</tr>
+<tr>
+<td><em>Cooldown</em></td>
+<td>8，每级 -0.5</td>
+<td>每升一级都更快。</td>
+</tr>
+<tr>
+<td><em>Cast Time</em></td>
+<td>0.4</td>
+<td>生效前的秒数。</td>
+</tr>
+<tr>
+<td><em>Range</em></td>
+<td>8</td>
+<td>到目标的米数。</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="shot"><a href="../../assets/img/guides/skill-new.png" target="_blank"><img src="../../assets/img/guides/skill-new.png" alt="" loading="lazy"></a><figcaption>基础项和范围。</figcaption></figure>
+<h2 id="2-its-area"><a class="anchor" href="#2-its-area" aria-hidden="true">#</a>2. 范围</h2>
+<p>在 <strong>Area</strong> 中，将 <em>Shape</em> 设为 <strong>Cone</strong>，<em>Size</em> 设为 5（每级 0.5），<em>Width</em> 设为 70 度。范围内的每个敌人都会被击中。其他形状有 Circle、Line 和 Single。</p>
+<p>在 <strong>Zone</strong> 中，将 <em>Zone Time</em> 设为 2，<em>Zone Tick</em> 设为 1：冰锥会停留在施放的位置，每秒再次命中。</p>
+<h2 id="3-what-it-does"><a class="anchor" href="#3-what-it-does" aria-hidden="true">#</a>3. 它的作用</h2>
+<p><strong>Effects</strong> 卡片列出对每个目标发生的事情。</p>
+<ol>
+<li>按 <strong>+</strong>，然后 <strong>Pick a type</strong> &gt; <strong>Damage</strong>。将 <em>Element</em> 设为 Water，<em>Min</em> 设为 10（每级 4），<em>Max</em> 设为 15（每级 5）。</li>
+<li>再按一次 <strong>+</strong> 并选择 <strong>Apply Status</strong>。将 <em>Status</em> 设为 Slowed，<em>Duration</em> 设为 3（每级 0.5）。</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/skill-effects.png" target="_blank"><img src="../../assets/img/guides/skill-effects.png" alt="" loading="lazy"></a><figcaption>两个效果：水属性伤害，然后 Slowed。</figcaption></figure>
+<p><strong>Look</strong> 卡片设置粒子：<em>Cast Effect</em> 在施法者身上，<em>Area Effect</em> 在地面上，<em>Hit Effect</em> 在每个目标身上。没有 <em>Area Effect</em> 时，范围会以元素颜色的平面轮廓绘制。本指南使用示例中的 Frost Nova 效果。</p>
+<h2 id="4-give-it-to-a-class"><a class="anchor" href="#4-give-it-to-a-class" aria-hidden="true">#</a>4. 交给职业</h2>
+<ol>
+<li>打开 <strong>Characters &gt; Classes &gt; Warrior</strong>。</li>
+<li>打开 <em>Skills</em>，按 <strong>+</strong> 并选择 Frost Wave。将 <em>Level</em> 设为 8：战士从 8 级起可以学习它。</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/skill-class.png" target="_blank"><img src="../../assets/img/guides/skill-class.png" alt="" loading="lazy"></a><figcaption>战士技能中的 Frost Wave。</figcaption></figure>
+<p>如果想让其他职业通过训练师或书来学习它，参见<a href="../content/skills.html#learning-skills-outside-the-class">在职业之外学习技能</a>。</p>
+<h2 id="5-try-it"><a class="anchor" href="#5-try-it" aria-hidden="true">#</a>5. 试一试</h2>
+<ol>
+<li>按 Play，用战士进入游戏。如果等级不到 8，输入 <code>/level 8</code>。</li>
+<li>打开 Skills 窗口（<code>K</code>），学习 Frost Wave 并把它拖到快捷栏。作为 GM，<code>/skill frost_wave 1</code> 会立即教会它。</li>
+<li>找一群史莱姆（<code>/spawn slime 4</code>）并按它的键。当 <strong>Settings &gt; Controls</strong> 中的 <em>Cast at once</em> 关闭时，会先显示冰锥，点击后施放。</li>
+</ol>
+<h2 id="next-steps"><a class="anchor" href="#next-steps" aria-hidden="true">#</a>下一步</h2>
+<ul>
+<li>所有形状、效果和字段：<a href="../content/skills.html">技能</a>。</li>
+<li>增益和减益：<a href="../content/statuses-and-buffs.html">状态与增益</a>。</li>
+<li>技能的动画：玩家模型上的 Character Animations &gt; <em>Skills</em>。参见<a href="../content/player-models.html">玩家模型</a>。</li>
+</ul>
+<nav class="pager"><a class="prev" href="make-a-monster.html"><span>上一页</span>制作怪物</a><a class="next" href="make-a-quest.html"><span>下一页</span>制作任务</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fguides%2Fmake-a-skill.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#1-make-the-skill">1. 创建技能</a></li><li class="l2"><a href="#2-its-area">2. 范围</a></li><li class="l2"><a href="#3-what-it-does">3. 它的作用</a></li><li class="l2"><a href="#4-give-it-to-a-class">4. 交给职业</a></li><li class="l2"><a href="#5-try-it">5. 试一试</a></li><li class="l2"><a href="#next-steps">下一步</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

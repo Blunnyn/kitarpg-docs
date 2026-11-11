@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hacer una poción · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/guides/make-a-potion.html">English</option><option value="make-a-potion.html" selected>Español</option><option value="../../pt/guides/make-a-potion.html">Português</option><option value="../../zh/guides/make-a-potion.html">中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">Novedades</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section" open><summary>Guías paso a paso</summary><ul><li><a href="step-by-step.html">Guías paso a paso</a></li><li><a href="make-a-potion.html" class="on" aria-current="page">Hacer una poción</a></li><li><a href="make-a-hat.html">Hacer un sombrero</a></li><li><a href="make-a-monster.html">Hacer un monstruo</a></li><li><a href="make-a-skill.html">Hacer un skill</a></li><li><a href="make-a-quest.html">Hacer una misión</a></li><li><a href="draw-the-world-map.html">Dibujar el mapa del mundo</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Introducción al DevKit</a></li><li><a href="../devkit/assemblies.html">Ensamblados</a></li><li><a href="../devkit/add-ons.html">Addons</a></li><li><a href="../devkit/templates.html">Plantillas</a></li><li><a href="../devkit/skill-effects.html">Efectos de skills</a></li><li><a href="../devkit/item-effects.html">Efectos de ítems</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de misión</a></li><li><a href="../devkit/npc-options.html">Opciones de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas del jugador</a></li><li><a href="../devkit/network-messages.html">Mensajes de red</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Guardar datos</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="../devkit/editor-extensions.html">Extensiones del editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="../devkit/talking-to-central.html">Hablar con Central</a></li><li><a href="../devkit/service-modules.html">Módulos de servicios</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de juego en código</a></li><li><a href="../devkit/example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sin recarga de dominio</a></li><li><a href="../devkit/security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="../api/KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Guías paso a paso</div><h1>Hacer una poción</h1><p>Esta guía hace una <strong>Greater Health Potion</strong>: cura 150 de golpe, luego sigue curando durante 20 segundos, y Mira, la alquimista, la vende en el pueblo.</p>
+<figure class="shot"><a href="../../assets/img/guides/potion-drink.gif" target="_blank"><img src="../../assets/img/guides/potion-drink.gif" alt="" loading="lazy"></a><figcaption>La poción en el juego: 150 de vida de golpe, y después Regeneration.</figcaption></figure>
+<h2 id="1-open-the-consumables"><a class="anchor" href="#1-open-the-consumables" aria-hidden="true">#</a>1. Abre los consumibles</h2>
+<ol>
+<li>Abre la ventana KitARPG con <strong>KitARPG &gt; Open KitARPG</strong> (<code>Ctrl/Cmd+Shift+K</code>) y ve a <strong>Game Database</strong>.</li>
+<li>En <strong>Items</strong>, haz clic en <strong>Items</strong> y luego en <strong>Consumables</strong>. La lista muestra cada poción, pergamino y libro del juego.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/potion-list.png" target="_blank"><img src="../../assets/img/guides/potion-list.png" alt="" loading="lazy"></a><figcaption>Game Database &gt; Items &gt; Consumables.</figcaption></figure>
+<h2 id="2-make-the-item"><a class="anchor" href="#2-make-the-item" aria-hidden="true">#</a>2. Haz el ítem</h2>
+<p>Pulsa <strong>+ New consumable</strong> abajo de la lista. El kit crea el asset junto a los demás, lo agrega a la base de datos y lo abre.</p>
+<figure class="shot"><a href="../../assets/img/guides/potion-new.png" target="_blank"><img src="../../assets/img/guides/potion-new.png" alt="" loading="lazy"></a><figcaption>Un consumible nuevo, listo para llenar.</figcaption></figure>
+<p>La página empieza con <strong>In game</strong>: el tooltip tal como lo verán los jugadores. Se actualiza mientras escribes.</p>
+<h2 id="3-fill-it-in"><a class="anchor" href="#3-fill-it-in" aria-hidden="true">#</a>3. Llénalo</h2>
+<p>En <strong>General</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+<th>Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em></td>
+<td><code>greater_health_potion</code></td>
+<td>Se guarda con cada copia que tienen los jugadores. Ponlo ahora y no lo cambies después.</td>
+</tr>
+<tr>
+<td><em>Display Name</em></td>
+<td><code>Greater Health Potion</code></td>
+<td></td>
+</tr>
+<tr>
+<td><em>Description</em></td>
+<td><code>Restores a lot of health, then keeps healing for a while.</code></td>
+<td>Última línea del tooltip.</td>
+</tr>
+<tr>
+<td><em>Icon</em></td>
+<td>Cualquier sprite</td>
+<td>Los íconos de pociones de la muestra están en <code>Art/Sprites/Icons</code>.</td>
+</tr>
+<tr>
+<td><em>Rarity</em></td>
+<td>Magic</td>
+<td>Pinta el nombre de azul.</td>
+</tr>
+<tr>
+<td><em>Max Stack</em></td>
+<td>20</td>
+<td>Caben 20 en una casilla de la bolsa.</td>
+</tr>
+<tr>
+<td><em>Sell Price</em></td>
+<td>15</td>
+<td>Las tiendas piden cuatro veces esto salvo que pongas <em>Buy Price</em>.</td>
+</tr>
+<tr>
+<td><em>Restore Health</em></td>
+<td>150</td>
+<td>Se cura de golpe.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Para cambiar también el nombre del archivo, usa <strong>Show file</strong> y renómbralo en la ventana Project. El id no cambia.</p>
+<figure class="shot"><a href="../../assets/img/guides/potion-filled.png" target="_blank"><img src="../../assets/img/guides/potion-filled.png" alt="" loading="lazy"></a><figcaption>La poción llena. El tooltip de arriba ya muestra &quot;Restores 150 health&quot;.</figcaption></figure>
+<h2 id="4-add-an-effect"><a class="anchor" href="#4-add-an-effect" aria-hidden="true">#</a>4. Agrega un efecto</h2>
+<p><em>Effects</em> agrega cualquier cosa más allá de curar: experiencia, niveles, un skill, un estado, un viaje a casa.</p>
+<ol>
+<li>Abre <em>Effects</em> y pulsa <strong>+</strong>.</li>
+<li>Pulsa <strong>Pick a type</strong> en la línea nueva y elige <strong>Status</strong>.</li>
+<li>Pon <em>Status</em> en <strong>Regeneration</strong>, <em>Duration</em> en 20 y <em>Level</em> en 1.</li>
+</ol>
+<p>El tooltip ahora agrega &quot;Regeneration for 20s&quot; y lo que hace. Cada tipo de efecto está en <a href="../content/items.html#item-effects">Ítems</a>.</p>
+<h2 id="5-sell-it-at-a-shop"><a class="anchor" href="#5-sell-it-at-a-shop" aria-hidden="true">#</a>5. Véndela en una tienda</h2>
+<ol>
+<li>En la Game Database, abre <strong>Items &gt; Shops</strong> y elige <strong>Alchemist</strong>.</li>
+<li>Abre <em>Items</em>, pulsa <strong>+</strong> abajo y elige la Greater Health Potion.</li>
+<li>Pon <em>Price</em> en 60. Deja <em>Stock</em> en 0 para que no se acabe nunca.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/potion-shop-entry.png" target="_blank"><img src="../../assets/img/guides/potion-shop-entry.png" alt="" loading="lazy"></a><figcaption>La poción al final de la lista de Alchemist.</figcaption></figure>
+<p>Mira usa esta tienda, así que no hace falta nada más. Para vender desde un NPC nuevo, consulta <a href="../content/npc-shops.html#place-an-npc-with-a-shop">Tiendas de NPC</a>.</p>
+<h2 id="6-try-it"><a class="anchor" href="#6-try-it" aria-hidden="true">#</a>6. Pruébala</h2>
+<ol>
+<li>Abre la escena <code>Title</code> y pulsa Play. Entra al juego en un jugador.</li>
+<li>Camina hasta Mira, la alquimista del centro del pueblo, y haz clic en ella. La poción es la última de su lista.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/potion-shop-game.png" target="_blank"><img src="../../assets/img/guides/potion-shop-game.png" alt="" loading="lazy"></a><figcaption>La tienda de Mira en el juego.</figcaption></figure>
+<ol start="3">
+<li>Compra una, o escribe <code>/item greater_health_potion 5</code> en el chat.</li>
+<li>Úsala desde la bolsa (doble clic) o arrástrala a la barra rápida y pulsa su tecla.</li>
+</ol>
+<p>Una poción que solo cura no se puede usar con la vida llena. Esta tiene también Regeneration, así que sí se puede.</p>
+<h2 id="next-steps"><a class="anchor" href="#next-steps" aria-hidden="true">#</a>Próximos pasos</h2>
+<ul>
+<li>Haz que una misión la dé como recompensa: <a href="make-a-quest.html">Hacer una misión</a>.</li>
+<li>Cada campo de los ítems: <a href="../content/items.html">Ítems</a>.</li>
+</ul>
+<nav class="pager"><a class="prev" href="step-by-step.html"><span>Anterior</span>Guías paso a paso</a><a class="next" href="make-a-hat.html"><span>Siguiente</span>Hacer un sombrero</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fguides%2Fmake-a-potion.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#1-open-the-consumables">1. Abre los consumibles</a></li><li class="l2"><a href="#2-make-the-item">2. Haz el ítem</a></li><li class="l2"><a href="#3-fill-it-in">3. Llénalo</a></li><li class="l2"><a href="#4-add-an-effect">4. Agrega un efecto</a></li><li class="l2"><a href="#5-sell-it-at-a-shop">5. Véndela en una tienda</a></li><li class="l2"><a href="#6-try-it">6. Pruébala</a></li><li class="l2"><a href="#next-steps">Próximos pasos</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

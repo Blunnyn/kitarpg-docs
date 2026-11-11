@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fazer um chapéu · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Pesquisar na documentação" autocomplete="off" aria-label="Pesquisar na documentação"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/guides/make-a-hat.html">English</option><option value="../../es/guides/make-a-hat.html">Español</option><option value="make-a-hat.html" selected>Português</option><option value="../../zh/guides/make-a-hat.html">中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">Novidades</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro ou escuro" aria-label="Claro ou escuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeiros passos</summary><ul><li><a href="../start/introduction.html">Introdução</a></li><li><a href="../start/features.html">Recursos</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalação</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Início rápido: um jogador</a></li><li><a href="../start/quick-start-mmo.html">Início rápido: MMO</a></li><li><a href="../start/project-structure.html">Estrutura do projeto</a></li><li><a href="../start/updating-the-kit.html">Atualizar o kit</a></li></ul></details><details class="nav-section" open><summary>Guias passo a passo</summary><ul><li><a href="step-by-step.html">Guias passo a passo</a></li><li><a href="make-a-potion.html">Fazer uma poção</a></li><li><a href="make-a-hat.html" class="on" aria-current="page">Fazer um chapéu</a></li><li><a href="make-a-monster.html">Fazer um monstro</a></li><li><a href="make-a-skill.html">Fazer uma habilidade</a></li><li><a href="make-a-quest.html">Fazer uma missão</a></li><li><a href="draw-the-world-map.html">Desenhar o mapa do mundo</a></li></ul></details><details class="nav-section"><summary>O editor</summary><ul><li><a href="../editor/kitarpg-window.html">A janela KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menus</a></li></ul></details><details class="nav-section"><summary>Conteúdo do jogo</summary><ul><li><a href="../content/classes.html">Classes</a></li><li><a href="../content/attributes-and-stats.html">Atributos e stats</a></li><li><a href="../content/player-models.html">Modelos de jogador</a></li><li><a href="../content/items.html">Itens</a></li><li><a href="../content/equipment.html">Equipamento</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Conjuntos, aprimoramentos e engastes</a></li><li><a href="../content/currencies.html">Moedas</a></li><li><a href="../content/skills.html">Habilidades</a></li><li><a href="../content/statuses-and-buffs.html">Estados e buffs</a></li><li><a href="../content/monsters.html">Monstros</a></li><li><a href="../content/bosses.html">Chefes</a></li><li><a href="../content/loot.html">Saque</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Lojas de NPC</a></li><li><a href="../content/quests.html">Missões</a></li><li><a href="../content/conditions-and-actions.html">Condições e ações</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Gatilhos do mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de jogo</summary><ul><li><a href="../gameplay/control-modes.html">Modos de controle</a></li><li><a href="../gameplay/touch-controls.html">Controles de toque</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperação e morte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventário e banco</a></li><li><a href="../gameplay/trade.html">Troca</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correio</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos e grupos</a></li><li><a href="../gameplay/guilds.html">Guildas</a></li><li><a href="../gameplay/tax-collectors.html">Coletores de impostos</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP e duelos</a></li><li><a href="../gameplay/dungeons.html">Masmorras</a></li><li><a href="../gameplay/day-and-night.html">Dia e noite</a></li><li><a href="../gameplay/bestiary.html">Bestiário</a></li><li><a href="../gameplay/cash-shop.html">Loja premium</a></li><li><a href="../gameplay/gm-tools.html">Ferramentas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro do jogo e denúncias</a></li><li><a href="../gameplay/hud-and-windows.html">HUD e janelas</a></li><li><a href="../gameplay/player-settings.html">Configurações do jogador</a></li></ul></details><details class="nav-section"><summary>Servidores e implantação</summary><ul><li><a href="../servers/architecture.html">Arquitetura</a></li><li><a href="../servers/services.html">Serviços</a></li><li><a href="../servers/launcher.html">Lançador</a></li><li><a href="../servers/database.html">Banco de dados</a></li><li><a href="../servers/configuration.html">Configuração</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Segurança</a></li><li><a href="../servers/shop-service.html">Serviço Shop</a></li><li><a href="../servers/performance.html">Desempenho</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Visão geral do DevKit</a></li><li><a href="../devkit/assemblies.html">Assemblies</a></li><li><a href="../devkit/add-ons.html">Add-ons</a></li><li><a href="../devkit/templates.html">Templates</a></li><li><a href="../devkit/skill-effects.html">Efeitos de habilidades</a></li><li><a href="../devkit/item-effects.html">Efeitos de itens</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condições e ações em código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de missão</a></li><li><a href="../devkit/npc-options.html">Opções de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas do jogador</a></li><li><a href="../devkit/network-messages.html">Mensagens de rede</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM em código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Salvando dados</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Sobrescrevendo o comportamento do kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Menus e opções de configuração</a></li><li><a href="../devkit/editor-extensions.html">Extensões do editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Atualizações do kit em código</a></li><li><a href="../devkit/talking-to-central.html">Falando com o Central</a></li><li><a href="../devkit/service-modules.html">Módulos de serviço</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de jogo em código</a></li><li><a href="../devkit/example-bounty-board.html">Exemplo: quadro de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sem domain reload</a></li><li><a href="../devkit/security-rules.html">Regras de segurança</a></li></ul></details><details class="nav-section"><summary>Referência</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Perguntas frequentes</a></li><li><a href="../reference/troubleshooting.html">Solução de problemas</a></li><li><a href="../reference/glossary.html">Glossário</a></li><li><a href="../reference/changelog.html">Changelog</a></li></ul></details><details class="nav-section"><summary>Referência da API</summary><ul><li><a href="../api/index.html">Referência da API</a></li><li><a href="../api/KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="../api/KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Guias passo a passo</div><h1>Fazer um chapéu</h1><p>Este guia faz duas peças de cabeça: um <strong>Festival Hat</strong> que toma o lugar do equipamento da cabeça em todos os corpos, e um <strong>Slime Buddy</strong>, um modelo de monstro que senta na cabeça do personagem sem ter rig.</p>
+<figure class="shot"><a href="../../assets/img/guides/hat-tryon.gif" target="_blank"><img src="../../assets/img/guides/hat-tryon.gif" alt="" loading="lazy"></a><figcaption>O Festival Hat no Try on, no homem, na mulher e no panda.</figcaption></figure>
+<h2 id="how-gear-shows-on-a-character"><a class="anchor" href="#how-gear-shows-on-a-character" aria-hidden="true">#</a>Como o equipamento aparece em um personagem</h2>
+<p>Os personagens de jogador são feitos de regiões: cabeça, cabelo, peito, mãos, pernas, pés e costas. Uma peça de equipamento diz como aparece com <em>Look</em>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Look</th>
+<th>O que faz</th>
+<th>Para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Replace</strong></td>
+<td>A malha com skin dela toma o lugar da região.</td>
+<td>Equipamento com rig feito para o esqueleto dos seus corpos.</td>
+</tr>
+<tr>
+<td><strong>Add</strong></td>
+<td>A malha com skin dela é desenhada sobre a região, que continua.</td>
+<td>Camadas com rig: um cachecol, um cinto.</td>
+</tr>
+<tr>
+<td><strong>Attach</strong></td>
+<td>O modelo fica preso a um osso do jeito que é.</td>
+<td>Qualquer modelo sem rig: objetos, monstros, coroas da Asset Store.</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td>Nada aparece.</td>
+<td>Anéis, ou equipamento só de atributos.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Mais sobre regiões e nomes em <a href="../content/player-models.html">Modelos de jogador</a>.</p>
+<h2 id="part-1-a-rigged-hat"><a class="anchor" href="#part-1-a-rigged-hat" aria-hidden="true">#</a>Parte 1: um chapéu com rig</h2>
+<h3 id="1-make-the-item"><a class="anchor" href="#1-make-the-item" aria-hidden="true">#</a>1. Faça o item</h3>
+<ol>
+<li>No <strong>Game Database</strong>, abra <strong>Items &gt; Items &gt; Hats</strong>.</li>
+<li>Pressione <strong>+ New hat</strong>. O item novo já está no espaço Head.</li>
+<li>Defina <em>Id</em> <code>festival_hat</code>, <em>Display Name</em> <code>Festival Hat</code> e uma <em>Description</em>.</li>
+<li>Defina <em>Model</em> como o FBX do chapéu. Os chapéus do exemplo ficam em <code>Art/3D/VoxelHero/Gear/Hats</code>; este guia usa <code>JesterHat</code>.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/hat-new.png" target="_blank"><img src="../../assets/img/guides/hat-new.png" alt="" loading="lazy"></a><figcaption>Um chapéu novo com o modelo definido.</figcaption></figure>
+<h3 id="2-set-how-it-looks"><a class="anchor" href="#2-set-how-it-looks" aria-hidden="true">#</a>2. Defina a aparência</h3>
+<p>Role até <strong>Look and wear</strong>:</p>
+<ul>
+<li><em>Look</em>: <strong>Replace</strong>.</li>
+<li><em>Piece</em>: <strong>Auto</strong> escolhe a malha com o nome da região (como <code>Knight_Head</code>) ou a única que houver. Se o seu modelo nomeia as malhas de outro jeito, escolha a certa na lista.</li>
+<li><em>Hides</em>: regiões que não são desenhadas enquanto a peça está vestida. O equipamento de cabeça esconde o cabelo sozinho; ligue <em>Keeps Hair</em> para coroas e tiaras.</li>
+<li><em>Model Variants</em>: um modelo para outro corpo. A cabeça do panda é maior, então adicione uma variante com <em>Model Id</em> <code>voxel_panda</code> e <em>Model</em> <code>JesterHat_Panda</code>.</li>
+</ul>
+<figure class="shot"><a href="../../assets/img/guides/hat-look.png" target="_blank"><img src="../../assets/img/guides/hat-look.png" alt="" loading="lazy"></a><figcaption>Look and wear para uma peça Replace. Os campos de Attach só aparecem quando Look é Attach.</figcaption></figure>
+<h3 id="3-check-it-in-try-on"><a class="anchor" href="#3-check-it-in-try-on" aria-hidden="true">#</a>3. Confira no Try on</h3>
+<p>No fim da página, <strong>Try on</strong> mostra a peça em um modelo de jogador com o próprio código do jogo. Escolha um modelo na lista, ligue <strong>Close up</strong>, arraste para girar e role para dar zoom. Se ela não puder aparecer nesse modelo, uma mensagem diz por quê, por exemplo um nome de malha que falta.</p>
+<p>Faça o ícone com <strong>KitARPG &gt; Render Missing Item Icons</strong>: ele fotografa cada item que tem modelo e não tem ícone.</p>
+<h2 id="part-2-a-model-that-isn-t-rigged"><a class="anchor" href="#part-2-a-model-that-isn-t-rigged" aria-hidden="true">#</a>Parte 2: um modelo sem rig</h2>
+<h3 id="1-make-the-item-2"><a class="anchor" href="#1-make-the-item-2" aria-hidden="true">#</a>1. Faça o item</h3>
+<p>Faça outro chapéu como acima: <em>Id</em> <code>slime_buddy</code>, <em>Display Name</em> <code>Slime Buddy</code>, <em>Model</em> <code>Art/3D/VoxelHero/Monsters/Slime</code>.</p>
+<h3 id="2-attach-it"><a class="anchor" href="#2-attach-it" aria-hidden="true">#</a>2. Prenda-o</h3>
+<p>Em <strong>Look and wear</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+<th>O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Look</em></td>
+<td>Attach</td>
+<td>Prende o modelo a um osso.</td>
+</tr>
+<tr>
+<td><em>Keeps Hair</em></td>
+<td>Ligado</td>
+<td>O slime senta sobre o cabelo.</td>
+</tr>
+<tr>
+<td><em>Attach Bone</em></td>
+<td>O osso da região</td>
+<td>A cabeça, para um chapéu. Escolha qualquer outro osso humanoide se quiser, como uma mão ou a coluna.</td>
+</tr>
+<tr>
+<td><em>Attach Position</em></td>
+<td>Y 0.235</td>
+<td>Metros a partir do osso. Para cima, aqui.</td>
+</tr>
+<tr>
+<td><em>Attach Scale</em></td>
+<td>0.5, 0.5, 0.5</td>
+<td>Metade do tamanho.</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Attach Both Sides</em> coloca uma cópia espelhada do outro lado, para luvas, botas e ombreiras.</p>
+<figure class="shot"><a href="../../assets/img/guides/hat-attach-fields.png" target="_blank"><img src="../../assets/img/guides/hat-attach-fields.png" alt="" loading="lazy"></a><figcaption>Os campos de Attach.</figcaption></figure>
+<p>Observe o <strong>Try on</strong> enquanto muda os números: ele se atualiza na hora.</p>
+<figure class="shot"><a href="../../assets/img/guides/hat-attach-tryon.png" target="_blank"><img src="../../assets/img/guides/hat-attach-tryon.png" alt="" loading="lazy"></a><figcaption>O slime na cabeça no Try on.</figcaption></figure>
+<h2 id="3-try-them"><a class="anchor" href="#3-try-them" aria-hidden="true">#</a>3. Teste</h2>
+<ol>
+<li>Pressione Play e entre no jogo.</li>
+<li>Digite <code>/item festival_hat 1</code> e <code>/item slime_buddy 1</code> no chat.</li>
+<li>Abra a bolsa (<code>I</code>) e dê um clique duplo em cada um para vesti-lo. O retrato mostra.</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Festival Hat</th>
+<th>Slime Buddy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img loading="lazy" src="../../assets/img/guides/hat-game.png" alt="" /></td>
+<td><img loading="lazy" src="../../assets/img/guides/hat-attach-game.png" alt="" /></td>
+</tr>
+</tbody>
+</table></div>
+<p>Os outros jogadores veem o mesmo: eles só recebem o id do item de cada espaço e o desenham com as mesmas regras.</p>
+<h2 id="if-it-doesn-t-show"><a class="anchor" href="#if-it-doesn-t-show" aria-hidden="true">#</a>Se não aparecer</h2>
+<p>O <strong>Project Check</strong> lista cada peça de equipamento que não aparece em algum modelo de jogador, e por quê. Causas comuns:</p>
+<ul>
+<li>O modelo não tem uma malha com skin com o nome da região, e <em>Piece</em> está em Auto: escolha a malha em <em>Piece</em>.</li>
+<li>O modelo não tem rig e <em>Look</em> é Replace: defina <em>Look</em> como Attach.</li>
+<li>O modelo tem rig para outro esqueleto: faça o rig para o esqueleto dos seus corpos, ou use Attach.</li>
+</ul>
+<h2 id="next-steps"><a class="anchor" href="#next-steps" aria-hidden="true">#</a>Próximos passos</h2>
+<ul>
+<li>Cada campo de equipamento, conjuntos e bônus aleatórios: <a href="../content/equipment.html">Equipamento</a>.</li>
+<li>Armas na mão usam <em>Hold Position</em> e <em>Hold Rotation</em>: <a href="../content/equipment.html#make-a-weapon">Fazer uma arma</a>.</li>
+</ul>
+<nav class="pager"><a class="prev" href="make-a-potion.html"><span>Anterior</span>Fazer uma poção</a><a class="next" href="make-a-monster.html"><span>Próximo</span>Fazer um monstro</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fpt%2Fguides%2Fmake-a-hat.html">Relatar um problema nesta página</a></div></main>
+  <aside class="toc"><div class="toc-title">Nesta página</div><ul><li class="l2"><a href="#how-gear-shows-on-a-character">Como o equipamento aparece em um personagem</a></li><li class="l2"><a href="#part-1-a-rigged-hat">Parte 1: um chapéu com rig</a></li><li class="l3"><a href="#1-make-the-item">1. Faça o item</a></li><li class="l3"><a href="#2-set-how-it-looks">2. Defina a aparência</a></li><li class="l3"><a href="#3-check-it-in-try-on">3. Confira no Try on</a></li><li class="l2"><a href="#part-2-a-model-that-isn-t-rigged">Parte 2: um modelo sem rig</a></li><li class="l3"><a href="#1-make-the-item-2">1. Faça o item</a></li><li class="l3"><a href="#2-attach-it">2. Prenda-o</a></li><li class="l2"><a href="#3-try-them">3. Teste</a></li><li class="l2"><a href="#if-it-doesn-t-show">Se não aparecer</a></li><li class="l2"><a href="#next-steps">Próximos passos</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="pt";window.KIT_NONE="Nada encontrado";</script>
+<script src="../../assets/search-pt.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

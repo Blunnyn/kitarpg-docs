@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>制作任务 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/guides/make-a-quest.html">English</option><option value="../../es/guides/make-a-quest.html">Español</option><option value="../../pt/guides/make-a-quest.html">Português</option><option value="make-a-quest.html" selected>中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">更新日志</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section" open><summary>分步指南</summary><ul><li><a href="step-by-step.html">分步指南</a></li><li><a href="make-a-potion.html">制作药水</a></li><li><a href="make-a-hat.html">制作帽子</a></li><li><a href="make-a-monster.html">制作怪物</a></li><li><a href="make-a-skill.html">制作技能</a></li><li><a href="make-a-quest.html" class="on" aria-current="page">制作任务</a></li><li><a href="draw-the-world-map.html">绘制世界地图</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/add-ons.html">扩展</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="../api/KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">分步指南</div><h1>制作任务</h1><p>本指南制作 <strong>Golem Trouble</strong>：城镇中的 Captain Hale 要求击败三只 Moss Golem，并以经验、金币和两瓶 Greater Health Potion 作为报酬。它使用<a href="make-a-monster.html">制作怪物</a>中的怪物和<a href="make-a-potion.html">制作药水</a>中的药水；换成任何怪物和物品也一样。</p>
+<h2 id="1-make-the-quest"><a class="anchor" href="#1-make-the-quest" aria-hidden="true">#</a>1. 创建任务</h2>
+<ol>
+<li>在 <strong>Game Database</strong> 中打开 <strong>World &gt; Quests</strong>，按 <strong>+ New quest</strong>。</li>
+<li>填写文本。每一段都是 NPC 在任务某个时刻说的话：</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em></td>
+<td><code>golem_trouble</code></td>
+</tr>
+<tr>
+<td><em>Display Name</em></td>
+<td><code>Golem Trouble</code></td>
+</tr>
+<tr>
+<td><em>Description</em></td>
+<td><code>Moss golems woke up east of the forest path. Knock three of them back to sleep.</code>（发布任务时）</td>
+</tr>
+<tr>
+<td><em>Progress Text</em></td>
+<td><code>Still hearing rocks walking around out there.</code>（任务完成前对话时）</td>
+</tr>
+<tr>
+<td><em>Complete Text</em></td>
+<td><code>Quiet again. Take these, you will need them.</code>（交付任务时）</td>
+</tr>
+<tr>
+<td><em>Category</em></td>
+<td><code>Forest</code>（它在任务日志中的分组）</td>
+</tr>
+</tbody>
+</table></div>
+<ol start="3">
+<li>在 <strong>Who can take it</strong> 中，将 <em>Required Level</em> 设为 3。<em>Repeat</em> 保持为 Once。</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-new.png" target="_blank"><img src="../../assets/img/guides/quest-new.png" alt="" loading="lazy"></a><figcaption>一个新任务。</figcaption></figure>
+<h2 id="2-what-to-do-and-the-rewards"><a class="anchor" href="#2-what-to-do-and-the-rewards" aria-hidden="true">#</a>2. 目标和奖励</h2>
+<ol>
+<li>在 <strong>What to do</strong> 中打开 <em>Objectives</em>，按 <strong>+</strong> 并 <strong>Pick a type</strong> &gt; <strong>Kill</strong>。将 <em>Monster</em> 设为 Moss Golem，<em>Count</em> 设为 3，并设置 <em>Hint</em>：<code>East of the forest path, past the clearing.</code> 提示会显示在任务日志中的目标下方。</li>
+<li>在 <strong>Rewards</strong> 中，将 <em>Experience</em> 设为 150，<em>Gold</em> 设为 40。打开 <em>Items</em>，按 <strong>+</strong> 并选择 Greater Health Potion，数量 2。</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-objectives.png" target="_blank"><img src="../../assets/img/guides/quest-objectives.png" alt="" loading="lazy"></a><figcaption>目标和奖励。</figcaption></figure>
+<p>其他目标有 Collect、Talk、Explore 和 Trigger；参见<a href="../content/quests.html#objectives">任务</a>。</p>
+<h2 id="3-give-it-to-an-npc"><a class="anchor" href="#3-give-it-to-an-npc" aria-hidden="true">#</a>3. 交给 NPC</h2>
+<ol>
+<li>打开 <code>Town</code> 场景，在 Hierarchy 中选择 <strong>Captain</strong>。</li>
+<li>在它的 <strong>Npc</strong> 组件上，于 <strong>Add option</strong> 下按 <strong>Quest</strong>。选项中会出现新的一行。</li>
+<li>在其 <em>Quest</em> 字段中选择 Golem Trouble。默认情况下，同一个 NPC 发布并接收该任务。</li>
+<li>保存场景。</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-npc-option.png" target="_blank"><img src="../../assets/img/guides/quest-npc-option.png" alt="" loading="lazy"></a><figcaption>队长的选项，Golem Trouble 在最后。</figcaption></figure>
+<h2 id="4-try-it"><a class="anchor" href="#4-try-it" aria-hidden="true">#</a>4. 试一试</h2>
+<ol>
+<li>按 Play，用 3 级或以上的角色进入游戏。</li>
+<li>与 Captain Hale 对话。任务前的黄色 &quot;!&quot; 表示可以接取。</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>队长的选项</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img loading="lazy" src="../../assets/img/guides/quest-talk.png" alt="" /></td>
+<td><img loading="lazy" src="../../assets/img/guides/quest-window.png" alt="" /></td>
+</tr>
+</tbody>
+</table></div>
+<ol start="3">
+<li>选择它并按 <strong>Accept</strong>。小地图下方的追踪器显示目标。</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-tracker.png" target="_blank"><img src="../../assets/img/guides/quest-tracker.png" alt="" loading="lazy"></a><figcaption>追踪器：Slay Moss Golem 0/3。</figcaption></figure>
+<ol start="4">
+<li>在森林中击杀三只魔像，回来交付任务。任务可交付时 &quot;?&quot; 会变成黄色。</li>
+</ol>
+<p>用于测试的 GM 命令：<code>/quest give golem_trouble</code> 接取任务，<code>/quest finish golem_trouble</code> 完成所有目标，<code>/quest reset golem_trouble</code> 清除该任务。</p>
+<h2 id="next-steps"><a class="anchor" href="#next-steps" aria-hidden="true">#</a>下一步</h2>
+<ul>
+<li>任务链、每日任务和任务掉落：<a href="../content/quests.html#make-a-quest-chain-with-a-daily">任务</a>。</li>
+<li>带选项的对话：<a href="../content/dialogues.html">对话</a>。</li>
+<li>在接取或完成时执行的条件和动作：<a href="../content/conditions-and-actions.html">条件与动作</a>。</li>
+</ul>
+<nav class="pager"><a class="prev" href="make-a-skill.html"><span>上一页</span>制作技能</a><a class="next" href="draw-the-world-map.html"><span>下一页</span>绘制世界地图</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fguides%2Fmake-a-quest.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#1-make-the-quest">1. 创建任务</a></li><li class="l2"><a href="#2-what-to-do-and-the-rewards">2. 目标和奖励</a></li><li class="l2"><a href="#3-give-it-to-an-npc">3. 交给 NPC</a></li><li class="l2"><a href="#4-try-it">4. 试一试</a></li><li class="l2"><a href="#next-steps">下一步</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

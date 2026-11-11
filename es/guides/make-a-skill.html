@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hacer un skill · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/guides/make-a-skill.html">English</option><option value="make-a-skill.html" selected>Español</option><option value="../../pt/guides/make-a-skill.html">Português</option><option value="../../zh/guides/make-a-skill.html">中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">Novedades</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section" open><summary>Guías paso a paso</summary><ul><li><a href="step-by-step.html">Guías paso a paso</a></li><li><a href="make-a-potion.html">Hacer una poción</a></li><li><a href="make-a-hat.html">Hacer un sombrero</a></li><li><a href="make-a-monster.html">Hacer un monstruo</a></li><li><a href="make-a-skill.html" class="on" aria-current="page">Hacer un skill</a></li><li><a href="make-a-quest.html">Hacer una misión</a></li><li><a href="draw-the-world-map.html">Dibujar el mapa del mundo</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Introducción al DevKit</a></li><li><a href="../devkit/assemblies.html">Ensamblados</a></li><li><a href="../devkit/add-ons.html">Addons</a></li><li><a href="../devkit/templates.html">Plantillas</a></li><li><a href="../devkit/skill-effects.html">Efectos de skills</a></li><li><a href="../devkit/item-effects.html">Efectos de ítems</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de misión</a></li><li><a href="../devkit/npc-options.html">Opciones de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas del jugador</a></li><li><a href="../devkit/network-messages.html">Mensajes de red</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Guardar datos</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="../devkit/editor-extensions.html">Extensiones del editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="../devkit/talking-to-central.html">Hablar con Central</a></li><li><a href="../devkit/service-modules.html">Módulos de servicios</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de juego en código</a></li><li><a href="../devkit/example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sin recarga de dominio</a></li><li><a href="../devkit/security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="../api/KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Guías paso a paso</div><h1>Hacer un skill</h1><p>Esta guía hace <strong>Frost Wave</strong>: un cono de hielo frente al lanzador que hace daño de agua, ralentiza a cada enemigo que golpea y se queda en el suelo dos segundos. Después se lo da al guerrero.</p>
+<figure class="shot"><a href="../../assets/img/guides/skill-cast.gif" target="_blank"><img src="../../assets/img/guides/skill-cast.gif" alt="" loading="lazy"></a><figcaption>Frost Wave lanzado sobre un grupo de slimes.</figcaption></figure>
+<h2 id="1-make-the-skill"><a class="anchor" href="#1-make-the-skill" aria-hidden="true">#</a>1. Haz el skill</h2>
+<ol>
+<li>En <strong>Game Database</strong>, abre <strong>Combat &gt; Skills</strong> y pulsa <strong>+ New skill</strong>.</li>
+<li>En <strong>General</strong>, pon <em>Id</em> <code>frost_wave</code>, <em>Display Name</em> <code>Frost Wave</code>, una <em>Description</em> y un <em>Icon</em>.</li>
+<li>Pon lo básico:</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Max Level</em></td>
+<td>5</td>
+<td>Rangos que puede aprender un jugador.</td>
+</tr>
+<tr>
+<td><em>Target</em></td>
+<td>Enemy</td>
+<td>Se lanza sobre un enemigo.</td>
+</tr>
+<tr>
+<td><em>Mana Cost</em></td>
+<td>20, 3 por nivel</td>
+<td>Cada valor tiene una base y un cambio por rango.</td>
+</tr>
+<tr>
+<td><em>Cooldown</em></td>
+<td>8, -0,5 por nivel</td>
+<td>Más rápido con cada rango.</td>
+</tr>
+<tr>
+<td><em>Cast Time</em></td>
+<td>0.4</td>
+<td>Segundos antes de que salga.</td>
+</tr>
+<tr>
+<td><em>Range</em></td>
+<td>8</td>
+<td>Metros hasta el objetivo.</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="shot"><a href="../../assets/img/guides/skill-new.png" target="_blank"><img src="../../assets/img/guides/skill-new.png" alt="" loading="lazy"></a><figcaption>Lo básico y el área.</figcaption></figure>
+<h2 id="2-its-area"><a class="anchor" href="#2-its-area" aria-hidden="true">#</a>2. Su área</h2>
+<p>En <strong>Area</strong>, pon <em>Shape</em> en <strong>Cone</strong>, <em>Size</em> en 5 (0,5 por nivel) y <em>Width</em> en 70 grados. Cada enemigo dentro recibe el golpe. Circle, Line y Single son las otras formas.</p>
+<p>En <strong>Zone</strong>, pon <em>Zone Time</em> en 2 y <em>Zone Tick</em> en 1: el cono se queda donde se lanzó y vuelve a golpear cada segundo.</p>
+<h2 id="3-what-it-does"><a class="anchor" href="#3-what-it-does" aria-hidden="true">#</a>3. Qué hace</h2>
+<p>La tarjeta <strong>Effects</strong> es la lista de lo que le pasa a cada objetivo.</p>
+<ol>
+<li>Pulsa <strong>+</strong> y luego <strong>Pick a type</strong> &gt; <strong>Damage</strong>. Pon <em>Element</em> en Water, <em>Min</em> en 10 (4 por nivel) y <em>Max</em> en 15 (5 por nivel).</li>
+<li>Pulsa <strong>+</strong> otra vez y elige <strong>Apply Status</strong>. Pon <em>Status</em> en Slowed y <em>Duration</em> en 3 (0,5 por nivel).</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/skill-effects.png" target="_blank"><img src="../../assets/img/guides/skill-effects.png" alt="" loading="lazy"></a><figcaption>Dos efectos: daño de agua, luego Slowed.</figcaption></figure>
+<p>La tarjeta <strong>Look</strong> define las partículas: <em>Cast Effect</em> en el lanzador, <em>Area Effect</em> en el suelo, <em>Hit Effect</em> en cada objetivo. Sin <em>Area Effect</em>, el área se dibuja como un contorno plano del color del elemento. Esta guía usa los efectos Frost Nova de la muestra.</p>
+<h2 id="4-give-it-to-a-class"><a class="anchor" href="#4-give-it-to-a-class" aria-hidden="true">#</a>4. Dáselo a una clase</h2>
+<ol>
+<li>Abre <strong>Characters &gt; Classes &gt; Warrior</strong>.</li>
+<li>Abre <em>Skills</em>, pulsa <strong>+</strong> y elige Frost Wave. Pon <em>Level</em> en 8: los guerreros pueden aprenderlo desde el nivel 8.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/skill-class.png" target="_blank"><img src="../../assets/img/guides/skill-class.png" alt="" loading="lazy"></a><figcaption>Frost Wave en los skills del guerrero.</figcaption></figure>
+<p>Para que otras clases lo aprendan con un maestro o un libro, consulta <a href="../content/skills.html#learning-skills-outside-the-class">Aprender skills fuera de la clase</a>.</p>
+<h2 id="5-try-it"><a class="anchor" href="#5-try-it" aria-hidden="true">#</a>5. Pruébalo</h2>
+<ol>
+<li>Pulsa Play y entra al juego con un guerrero. Escribe <code>/level 8</code> si tiene menos nivel.</li>
+<li>Abre la ventana Skills (<code>K</code>), aprende Frost Wave y arrástralo a la barra rápida. Como GM, <code>/skill frost_wave 1</code> lo enseña al instante.</li>
+<li>Busca un grupo de slimes (<code>/spawn slime 4</code>) y pulsa su tecla. Con <em>Cast at once</em> apagado en <strong>Settings &gt; Controls</strong>, primero se ve el cono y un clic lo lanza.</li>
+</ol>
+<h2 id="next-steps"><a class="anchor" href="#next-steps" aria-hidden="true">#</a>Próximos pasos</h2>
+<ul>
+<li>Cada forma, efecto y campo: <a href="../content/skills.html">Skills</a>.</li>
+<li>Buffs y debuffs: <a href="../content/statuses-and-buffs.html">Estados y buffs</a>.</li>
+<li>Una animación para el skill: Character Animations &gt; <em>Skills</em> en el modelo de jugador. Consulta <a href="../content/player-models.html">Modelos de jugador</a>.</li>
+</ul>
+<nav class="pager"><a class="prev" href="make-a-monster.html"><span>Anterior</span>Hacer un monstruo</a><a class="next" href="make-a-quest.html"><span>Siguiente</span>Hacer una misión</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fguides%2Fmake-a-skill.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#1-make-the-skill">1. Haz el skill</a></li><li class="l2"><a href="#2-its-area">2. Su área</a></li><li class="l2"><a href="#3-what-it-does">3. Qué hace</a></li><li class="l2"><a href="#4-give-it-to-a-class">4. Dáselo a una clase</a></li><li class="l2"><a href="#5-try-it">5. Pruébalo</a></li><li class="l2"><a href="#next-steps">Próximos pasos</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>制作帽子 · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="菜单" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="搜索文档" autocomplete="off" aria-label="搜索文档"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/guides/make-a-hat.html">English</option><option value="../../es/guides/make-a-hat.html">Español</option><option value="../../pt/guides/make-a-hat.html">Português</option><option value="make-a-hat.html" selected>中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">更新日志</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">问题反馈</a>
+  <button class="theme" title="浅色或深色" aria-label="浅色或深色" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>入门</summary><ul><li><a href="../start/introduction.html">简介</a></li><li><a href="../start/features.html">功能</a></li><li><a href="../start/requirements.html">系统要求</a></li><li><a href="../start/installation.html">安装</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">快速入门：单人模式</a></li><li><a href="../start/quick-start-mmo.html">快速入门：MMO</a></li><li><a href="../start/project-structure.html">项目结构</a></li><li><a href="../start/updating-the-kit.html">更新套件</a></li></ul></details><details class="nav-section" open><summary>分步指南</summary><ul><li><a href="step-by-step.html">分步指南</a></li><li><a href="make-a-potion.html">制作药水</a></li><li><a href="make-a-hat.html" class="on" aria-current="page">制作帽子</a></li><li><a href="make-a-monster.html">制作怪物</a></li><li><a href="make-a-skill.html">制作技能</a></li><li><a href="make-a-quest.html">制作任务</a></li><li><a href="draw-the-world-map.html">绘制世界地图</a></li></ul></details><details class="nav-section"><summary>编辑器</summary><ul><li><a href="../editor/kitarpg-window.html">KitARPG 窗口</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Shop 页面</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">菜单</a></li></ul></details><details class="nav-section"><summary>游戏内容</summary><ul><li><a href="../content/classes.html">职业</a></li><li><a href="../content/attributes-and-stats.html">属性与数值</a></li><li><a href="../content/player-models.html">玩家模型</a></li><li><a href="../content/items.html">物品</a></li><li><a href="../content/equipment.html">装备</a></li><li><a href="../content/sets-upgrades-and-sockets.html">套装、强化与镶孔</a></li><li><a href="../content/currencies.html">货币</a></li><li><a href="../content/skills.html">技能</a></li><li><a href="../content/statuses-and-buffs.html">状态与增益</a></li><li><a href="../content/monsters.html">怪物</a></li><li><a href="../content/bosses.html">首领</a></li><li><a href="../content/loot.html">掉落</a></li><li><a href="../content/maps.html">地图</a></li><li><a href="../content/npcs.html">NPC</a></li><li><a href="../content/npc-shops.html">NPC 商店</a></li><li><a href="../content/quests.html">任务</a></li><li><a href="../content/conditions-and-actions.html">条件与动作</a></li><li><a href="../content/dialogues.html">对话</a></li><li><a href="../content/world-triggers.html">世界触发器</a></li></ul></details><details class="nav-section"><summary>游戏系统</summary><ul><li><a href="../gameplay/control-modes.html">操作模式</a></li><li><a href="../gameplay/touch-controls.html">触控操作</a></li><li><a href="../gameplay/combat.html">战斗</a></li><li><a href="../gameplay/recovery-and-death.html">恢复与死亡</a></li><li><a href="../gameplay/inventory-and-bank.html">背包与银行</a></li><li><a href="../gameplay/trade.html">交易</a></li><li><a href="../gameplay/forge.html">锻造</a></li><li><a href="../gameplay/market.html">市场</a></li><li><a href="../gameplay/mail.html">邮件</a></li><li><a href="../gameplay/chat.html">聊天</a></li><li><a href="../gameplay/friends-and-parties.html">好友与队伍</a></li><li><a href="../gameplay/guilds.html">公会</a></li><li><a href="../gameplay/tax-collectors.html">收税官</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP 与决斗</a></li><li><a href="../gameplay/dungeons.html">地下城</a></li><li><a href="../gameplay/day-and-night.html">昼夜</a></li><li><a href="../gameplay/bestiary.html">怪物图鉴</a></li><li><a href="../gameplay/cash-shop.html">商城</a></li><li><a href="../gameplay/gm-tools.html">GM 工具</a></li><li><a href="../gameplay/game-log-and-reports.html">游戏日志与举报</a></li><li><a href="../gameplay/hud-and-windows.html">HUD 与窗口</a></li><li><a href="../gameplay/player-settings.html">玩家设置</a></li></ul></details><details class="nav-section"><summary>服务器与部署</summary><ul><li><a href="../servers/architecture.html">架构</a></li><li><a href="../servers/services.html">服务</a></li><li><a href="../servers/launcher.html">启动器</a></li><li><a href="../servers/database.html">数据库</a></li><li><a href="../servers/configuration.html">配置</a></li><li><a href="../servers/builds.html">构建</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">安全</a></li><li><a href="../servers/shop-service.html">Shop 服务</a></li><li><a href="../servers/performance.html">性能</a></li></ul></details><details class="nav-section"><summary>开发套件</summary><ul><li><a href="../devkit/devkit-overview.html">DevKit 概览</a></li><li><a href="../devkit/assemblies.html">程序集</a></li><li><a href="../devkit/add-ons.html">扩展</a></li><li><a href="../devkit/templates.html">模板</a></li><li><a href="../devkit/skill-effects.html">技能效果</a></li><li><a href="../devkit/item-effects.html">代码中的物品效果</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">代码中的条件和动作</a></li><li><a href="../devkit/quest-objectives.html">任务目标</a></li><li><a href="../devkit/npc-options.html">NPC 选项</a></li><li><a href="../devkit/player-systems.html">玩家系统</a></li><li><a href="../devkit/network-messages.html">网络消息</a></li><li><a href="../devkit/gm-commands-in-code.html">代码中的 GM 命令</a></li><li><a href="../devkit/formulas.html">公式</a></li><li><a href="../devkit/saving-data.html">保存数据</a></li><li><a href="../devkit/events.html">事件</a></li><li><a href="../devkit/overriding-kit-behaviour.html">重写套件的行为</a></li><li><a href="../devkit/menus-and-settings-options.html">菜单和设置选项</a></li><li><a href="../devkit/editor-extensions.html">编辑器扩展</a></li><li><a href="../devkit/kit-updates-in-code.html">代码中的套件更新</a></li><li><a href="../devkit/talking-to-central.html">与 Central 通信</a></li><li><a href="../devkit/service-modules.html">服务模块</a></li><li><a href="../devkit/game-modes-in-code.html">代码中的游戏模式</a></li><li><a href="../devkit/example-bounty-board.html">示例：悬赏板</a></li><li><a href="../devkit/domain-reload.html">不重新加载域的 Play</a></li><li><a href="../devkit/security-rules.html">安全规则</a></li></ul></details><details class="nav-section"><summary>参考</summary><ul><li><a href="../reference/keys.html">按键</a></li><li><a href="../reference/gm-commands.html">GM 命令</a></li><li><a href="../reference/faq.html">常见问题</a></li><li><a href="../reference/troubleshooting.html">故障排除</a></li><li><a href="../reference/glossary.html">术语表</a></li><li><a href="../reference/changelog.html">更新日志</a></li></ul></details><details class="nav-section"><summary>API 参考</summary><ul><li><a href="../api/index.html">API 参考</a></li><li><a href="../api/KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="../api/KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">分步指南</div><h1>制作帽子</h1><p>本指南制作两件头部装备：一顶 <strong>Festival Hat</strong>，在每种身体上替换头部装备的位置；以及一只 <strong>Slime Buddy</strong>，一个无需绑定骨骼就能坐在角色头上的怪物模型。</p>
+<figure class="shot"><a href="../../assets/img/guides/hat-tryon.gif" target="_blank"><img src="../../assets/img/guides/hat-tryon.gif" alt="" loading="lazy"></a><figcaption>Try on 中的 Festival Hat，分别戴在男性、女性和熊猫身上。</figcaption></figure>
+<h2 id="how-gear-shows-on-a-character"><a class="anchor" href="#how-gear-shows-on-a-character" aria-hidden="true">#</a>装备如何显示在角色上</h2>
+<p>玩家角色由多个区域组成：头部、头发、胸部、手、腿、脚和背部。一件装备通过 <em>Look</em> 说明它如何显示：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Look</th>
+<th>作用</th>
+<th>适用于</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Replace</strong></td>
+<td>它的蒙皮网格取代该区域。</td>
+<td>为你的身体骨架绑定的装备。</td>
+</tr>
+<tr>
+<td><strong>Add</strong></td>
+<td>它的蒙皮网格绘制在该区域之上，区域本身保留。</td>
+<td>绑定骨骼的叠加层：围巾、腰带。</td>
+</tr>
+<tr>
+<td><strong>Attach</strong></td>
+<td>它的模型原样挂在一根骨骼上。</td>
+<td>任何未绑定骨骼的模型：道具、怪物、Asset Store 中的王冠。</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td>不显示任何东西。</td>
+<td>戒指，或只提供属性的装备。</td>
+</tr>
+</tbody>
+</table></div>
+<p>有关区域和命名的更多内容见<a href="../content/player-models.html">玩家模型</a>。</p>
+<h2 id="part-1-a-rigged-hat"><a class="anchor" href="#part-1-a-rigged-hat" aria-hidden="true">#</a>第 1 部分：绑定骨骼的帽子</h2>
+<h3 id="1-make-the-item"><a class="anchor" href="#1-make-the-item" aria-hidden="true">#</a>1. 创建物品</h3>
+<ol>
+<li>在 <strong>Game Database</strong> 中打开 <strong>Items &gt; Items &gt; Hats</strong>。</li>
+<li>按 <strong>+ New hat</strong>。新物品已经位于 Head 栏位。</li>
+<li>设置 <em>Id</em> <code>festival_hat</code>、<em>Display Name</em> <code>Festival Hat</code> 和一段 <em>Description</em>。</li>
+<li>将 <em>Model</em> 设为帽子的 FBX。示例的帽子位于 <code>Art/3D/VoxelHero/Gear/Hats</code>；本指南使用 <code>JesterHat</code>。</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/hat-new.png" target="_blank"><img src="../../assets/img/guides/hat-new.png" alt="" loading="lazy"></a><figcaption>设置好模型的新帽子。</figcaption></figure>
+<h3 id="2-set-how-it-looks"><a class="anchor" href="#2-set-how-it-looks" aria-hidden="true">#</a>2. 设置外观</h3>
+<p>滚动到 <strong>Look and wear</strong>：</p>
+<ul>
+<li><em>Look</em>：<strong>Replace</strong>。</li>
+<li><em>Piece</em>：<strong>Auto</strong> 会选择以区域命名的网格（如 <code>Knight_Head</code>）或唯一的网格。如果你的模型用其他方式命名网格，从列表中选择正确的那个。</li>
+<li><em>Hides</em>：穿戴时不绘制的区域。头部装备会自动隐藏头发；王冠和发带请开启 <em>Keeps Hair</em>。</li>
+<li><em>Model Variants</em>：用于其他身体的模型。熊猫的头更大，因此添加一个变体，<em>Model Id</em> 为 <code>voxel_panda</code>，<em>Model</em> 为 <code>JesterHat_Panda</code>。</li>
+</ul>
+<figure class="shot"><a href="../../assets/img/guides/hat-look.png" target="_blank"><img src="../../assets/img/guides/hat-look.png" alt="" loading="lazy"></a><figcaption>Replace 部件的 Look and wear。Attach 字段只在 Look 为 Attach 时显示。</figcaption></figure>
+<h3 id="3-check-it-in-try-on"><a class="anchor" href="#3-check-it-in-try-on" aria-hidden="true">#</a>3. 在 Try on 中检查</h3>
+<p>在页面底部，<strong>Try on</strong> 使用游戏本身的代码在玩家模型上显示该部件。在列表中选择一个模型，开启 <strong>Close up</strong>，拖动来旋转，滚动来缩放。如果它无法在该模型上显示，会有一条消息说明原因，例如缺少网格名称。</p>
+<p>用 <strong>KitARPG &gt; Render Missing Item Icons</strong> 生成它的图标：它会为每个有模型但没有图标的物品拍照。</p>
+<h2 id="part-2-a-model-that-isn-t-rigged"><a class="anchor" href="#part-2-a-model-that-isn-t-rigged" aria-hidden="true">#</a>第 2 部分：未绑定骨骼的模型</h2>
+<h3 id="1-make-the-item-2"><a class="anchor" href="#1-make-the-item-2" aria-hidden="true">#</a>1. 创建物品</h3>
+<p>按上面的方法再做一顶帽子：<em>Id</em> <code>slime_buddy</code>，<em>Display Name</em> <code>Slime Buddy</code>，<em>Model</em> <code>Art/3D/VoxelHero/Monsters/Slime</code>。</p>
+<h3 id="2-attach-it"><a class="anchor" href="#2-attach-it" aria-hidden="true">#</a>2. 挂载它</h3>
+<p>在 <strong>Look and wear</strong> 中：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Look</em></td>
+<td>Attach</td>
+<td>把模型挂在一根骨骼上。</td>
+</tr>
+<tr>
+<td><em>Keeps Hair</em></td>
+<td>开启</td>
+<td>史莱姆坐在头发上。</td>
+</tr>
+<tr>
+<td><em>Attach Bone</em></td>
+<td>其区域的骨骼</td>
+<td>帽子对应头部。也可以选择任意其他人形骨骼，如手或脊柱。</td>
+</tr>
+<tr>
+<td><em>Attach Position</em></td>
+<td>Y 0.235</td>
+<td>距骨骼的米数。这里是向上。</td>
+</tr>
+<tr>
+<td><em>Attach Scale</em></td>
+<td>0.5, 0.5, 0.5</td>
+<td>一半大小。</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Attach Both Sides</em> 会在另一侧放一个镜像副本，用于手套、靴子和护肩。</p>
+<figure class="shot"><a href="../../assets/img/guides/hat-attach-fields.png" target="_blank"><img src="../../assets/img/guides/hat-attach-fields.png" alt="" loading="lazy"></a><figcaption>Attach 字段。</figcaption></figure>
+<p>修改数值时观察 <strong>Try on</strong>：它会立即更新。</p>
+<figure class="shot"><a href="../../assets/img/guides/hat-attach-tryon.png" target="_blank"><img src="../../assets/img/guides/hat-attach-tryon.png" alt="" loading="lazy"></a><figcaption>Try on 中头上的史莱姆。</figcaption></figure>
+<h2 id="3-try-them"><a class="anchor" href="#3-try-them" aria-hidden="true">#</a>3. 试一试</h2>
+<ol>
+<li>按 Play 进入游戏。</li>
+<li>在聊天框中输入 <code>/item festival_hat 1</code> 和 <code>/item slime_buddy 1</code>。</li>
+<li>打开背包（<code>I</code>），双击每一件来穿戴。头像会显示出来。</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Festival Hat</th>
+<th>Slime Buddy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img loading="lazy" src="../../assets/img/guides/hat-game.png" alt="" /></td>
+<td><img loading="lazy" src="../../assets/img/guides/hat-attach-game.png" alt="" /></td>
+</tr>
+</tbody>
+</table></div>
+<p>其他玩家看到的也一样：他们只接收每个栏位的物品 id，并用相同的规则绘制。</p>
+<h2 id="if-it-doesn-t-show"><a class="anchor" href="#if-it-doesn-t-show" aria-hidden="true">#</a>如果没有显示</h2>
+<p><strong>Project Check</strong> 会列出在某个玩家模型上无法显示的每件装备及其原因。常见原因：</p>
+<ul>
+<li>模型中没有以区域命名的蒙皮网格，而 <em>Piece</em> 为 Auto：在 <em>Piece</em> 中选择网格。</li>
+<li>模型未绑定骨骼而 <em>Look</em> 为 Replace：将 <em>Look</em> 设为 Attach。</li>
+<li>模型绑定到了另一套骨架：把它绑定到你的身体骨架，或使用 Attach。</li>
+</ul>
+<h2 id="next-steps"><a class="anchor" href="#next-steps" aria-hidden="true">#</a>下一步</h2>
+<ul>
+<li>装备的所有字段、套装和随机加成：<a href="../content/equipment.html">装备</a>。</li>
+<li>手中的武器使用 <em>Hold Position</em> 和 <em>Hold Rotation</em>：<a href="../content/equipment.html#make-a-weapon">制作武器</a>。</li>
+</ul>
+<nav class="pager"><a class="prev" href="make-a-potion.html"><span>上一页</span>制作药水</a><a class="next" href="make-a-monster.html"><span>下一页</span>制作怪物</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fzh%2Fguides%2Fmake-a-hat.html">报告此页面的问题</a></div></main>
+  <aside class="toc"><div class="toc-title">本页内容</div><ul><li class="l2"><a href="#how-gear-shows-on-a-character">装备如何显示在角色上</a></li><li class="l2"><a href="#part-1-a-rigged-hat">第 1 部分：绑定骨骼的帽子</a></li><li class="l3"><a href="#1-make-the-item">1. 创建物品</a></li><li class="l3"><a href="#2-set-how-it-looks">2. 设置外观</a></li><li class="l3"><a href="#3-check-it-in-try-on">3. 在 Try on 中检查</a></li><li class="l2"><a href="#part-2-a-model-that-isn-t-rigged">第 2 部分：未绑定骨骼的模型</a></li><li class="l3"><a href="#1-make-the-item-2">1. 创建物品</a></li><li class="l3"><a href="#2-attach-it">2. 挂载它</a></li><li class="l2"><a href="#3-try-them">3. 试一试</a></li><li class="l2"><a href="#if-it-doesn-t-show">如果没有显示</a></li><li class="l2"><a href="#next-steps">下一步</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="zh";window.KIT_NONE="未找到结果";</script>
+<script src="../../assets/search-zh.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

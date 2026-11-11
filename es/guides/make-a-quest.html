@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hacer una misión · KitARPG</title>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/code.css">
+<script>try{var t=localStorage.getItem("kitarpg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body>
+<header class="top">
+  <button class="menu-button" aria-label="Menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="../index.html"><img src="../../assets/logo.svg" alt=""><span class="brand-name">KitARPG</span><span class="brand-version">1.0.0</span></a>
+  <div class="search"><input type="search" id="search" placeholder="Buscar en la documentación" autocomplete="off" aria-label="Buscar en la documentación"><div id="results" class="results" hidden></div></div>
+  <select class="lang" aria-label="Language" onchange="location.href=this.value"><option value="../../en/guides/make-a-quest.html">English</option><option value="make-a-quest.html" selected>Español</option><option value="../../pt/guides/make-a-quest.html">Português</option><option value="../../zh/guides/make-a-quest.html">中文</option></select>
+  <a class="issues-link" href="../reference/changelog.html">Novedades</a>
+  <a class="issues-link" href="https://github.com/Blunnyn/kitarpg-docs/issues" target="_blank" rel="noopener">Issues</a>
+  <button class="theme" title="Claro u oscuro" aria-label="Claro u oscuro" onclick="kitTheme()">◐</button>
+</header>
+<div class="layout">
+  <nav class="side"><details class="nav-section"><summary>Primeros pasos</summary><ul><li><a href="../start/introduction.html">Introducción</a></li><li><a href="../start/features.html">Funciones</a></li><li><a href="../start/requirements.html">Requisitos</a></li><li><a href="../start/installation.html">Instalación</a></li><li><a href="../start/setup-wizard.html">Setup Wizard</a></li><li><a href="../start/quick-start-single-player.html">Inicio rápido: un jugador</a></li><li><a href="../start/quick-start-mmo.html">Inicio rápido: MMO</a></li><li><a href="../start/project-structure.html">Estructura del proyecto</a></li><li><a href="../start/updating-the-kit.html">Actualizar el kit</a></li></ul></details><details class="nav-section" open><summary>Guías paso a paso</summary><ul><li><a href="step-by-step.html">Guías paso a paso</a></li><li><a href="make-a-potion.html">Hacer una poción</a></li><li><a href="make-a-hat.html">Hacer un sombrero</a></li><li><a href="make-a-monster.html">Hacer un monstruo</a></li><li><a href="make-a-skill.html">Hacer un skill</a></li><li><a href="make-a-quest.html" class="on" aria-current="page">Hacer una misión</a></li><li><a href="draw-the-world-map.html">Dibujar el mapa del mundo</a></li></ul></details><details class="nav-section"><summary>El editor</summary><ul><li><a href="../editor/kitarpg-window.html">La ventana KitARPG</a></li><li><a href="../editor/overview.html">Overview</a></li><li><a href="../editor/play-and-servers.html">Play &amp; Servers</a></li><li><a href="../editor/game-database.html">Game Database</a></li><li><a href="../editor/game-settings.html">Game Settings</a></li><li><a href="../editor/modules.html">Modules</a></li><li><a href="../editor/shop-page.html">Página Shop</a></li><li><a href="../editor/project-check.html">Project Check</a></li><li><a href="../editor/menus.html">Menús</a></li></ul></details><details class="nav-section"><summary>Contenido del juego</summary><ul><li><a href="../content/classes.html">Clases</a></li><li><a href="../content/attributes-and-stats.html">Atributos y stats</a></li><li><a href="../content/player-models.html">Modelos de jugador</a></li><li><a href="../content/items.html">Ítems</a></li><li><a href="../content/equipment.html">Equipo</a></li><li><a href="../content/sets-upgrades-and-sockets.html">Sets, mejoras y engarces</a></li><li><a href="../content/currencies.html">Monedas</a></li><li><a href="../content/skills.html">Skills</a></li><li><a href="../content/statuses-and-buffs.html">Estados y buffs</a></li><li><a href="../content/monsters.html">Monstruos</a></li><li><a href="../content/bosses.html">Jefes</a></li><li><a href="../content/loot.html">Botín</a></li><li><a href="../content/maps.html">Mapas</a></li><li><a href="../content/npcs.html">NPCs</a></li><li><a href="../content/npc-shops.html">Tiendas de NPC</a></li><li><a href="../content/quests.html">Misiones</a></li><li><a href="../content/conditions-and-actions.html">Condiciones y acciones</a></li><li><a href="../content/dialogues.html">Diálogos</a></li><li><a href="../content/world-triggers.html">Disparadores del mundo</a></li></ul></details><details class="nav-section"><summary>Sistemas de juego</summary><ul><li><a href="../gameplay/control-modes.html">Modos de control</a></li><li><a href="../gameplay/touch-controls.html">Controles táctiles</a></li><li><a href="../gameplay/combat.html">Combate</a></li><li><a href="../gameplay/recovery-and-death.html">Recuperación y muerte</a></li><li><a href="../gameplay/inventory-and-bank.html">Inventario y banco</a></li><li><a href="../gameplay/trade.html">Intercambio</a></li><li><a href="../gameplay/forge.html">Forja</a></li><li><a href="../gameplay/market.html">Mercado</a></li><li><a href="../gameplay/mail.html">Correo</a></li><li><a href="../gameplay/chat.html">Chat</a></li><li><a href="../gameplay/friends-and-parties.html">Amigos y grupos</a></li><li><a href="../gameplay/guilds.html">Gremios</a></li><li><a href="../gameplay/tax-collectors.html">Recaudadores</a></li><li><a href="../gameplay/pvp-and-duels.html">PvP y duelos</a></li><li><a href="../gameplay/dungeons.html">Mazmorras</a></li><li><a href="../gameplay/day-and-night.html">Día y noche</a></li><li><a href="../gameplay/bestiary.html">Bestiario</a></li><li><a href="../gameplay/cash-shop.html">Tienda del juego</a></li><li><a href="../gameplay/gm-tools.html">Herramientas de GM</a></li><li><a href="../gameplay/game-log-and-reports.html">Registro del juego y reportes</a></li><li><a href="../gameplay/hud-and-windows.html">HUD y ventanas</a></li><li><a href="../gameplay/player-settings.html">Ajustes del jugador</a></li></ul></details><details class="nav-section"><summary>Servidores y despliegue</summary><ul><li><a href="../servers/architecture.html">Arquitectura</a></li><li><a href="../servers/services.html">Servicios</a></li><li><a href="../servers/launcher.html">Lanzador</a></li><li><a href="../servers/database.html">Base de datos</a></li><li><a href="../servers/configuration.html">Configuración</a></li><li><a href="../servers/builds.html">Builds</a></li><li><a href="../servers/docker.html">Docker</a></li><li><a href="../servers/security.html">Seguridad</a></li><li><a href="../servers/shop-service.html">Servicio Shop</a></li><li><a href="../servers/performance.html">Rendimiento</a></li></ul></details><details class="nav-section"><summary>DevKit</summary><ul><li><a href="../devkit/devkit-overview.html">Introducción al DevKit</a></li><li><a href="../devkit/assemblies.html">Ensamblados</a></li><li><a href="../devkit/add-ons.html">Addons</a></li><li><a href="../devkit/templates.html">Plantillas</a></li><li><a href="../devkit/skill-effects.html">Efectos de skills</a></li><li><a href="../devkit/item-effects.html">Efectos de ítems</a></li><li><a href="../devkit/conditions-and-actions-in-code.html">Condiciones y acciones en código</a></li><li><a href="../devkit/quest-objectives.html">Objetivos de misión</a></li><li><a href="../devkit/npc-options.html">Opciones de NPC</a></li><li><a href="../devkit/player-systems.html">Sistemas del jugador</a></li><li><a href="../devkit/network-messages.html">Mensajes de red</a></li><li><a href="../devkit/gm-commands-in-code.html">Comandos de GM en código</a></li><li><a href="../devkit/formulas.html">Fórmulas</a></li><li><a href="../devkit/saving-data.html">Guardar datos</a></li><li><a href="../devkit/events.html">Eventos</a></li><li><a href="../devkit/overriding-kit-behaviour.html">Cambiar el comportamiento del kit</a></li><li><a href="../devkit/menus-and-settings-options.html">Opciones de menús y ajustes</a></li><li><a href="../devkit/editor-extensions.html">Extensiones del editor</a></li><li><a href="../devkit/kit-updates-in-code.html">Actualizaciones del kit en código</a></li><li><a href="../devkit/talking-to-central.html">Hablar con Central</a></li><li><a href="../devkit/service-modules.html">Módulos de servicios</a></li><li><a href="../devkit/game-modes-in-code.html">Modos de juego en código</a></li><li><a href="../devkit/example-bounty-board.html">Ejemplo: tablero de recompensas</a></li><li><a href="../devkit/domain-reload.html">Play sin recarga de dominio</a></li><li><a href="../devkit/security-rules.html">Reglas de seguridad</a></li></ul></details><details class="nav-section"><summary>Referencia</summary><ul><li><a href="../reference/keys.html">Teclas</a></li><li><a href="../reference/gm-commands.html">Comandos de GM</a></li><li><a href="../reference/faq.html">Preguntas frecuentes</a></li><li><a href="../reference/troubleshooting.html">Solución de problemas</a></li><li><a href="../reference/glossary.html">Glosario</a></li><li><a href="../reference/changelog.html">Registro de cambios</a></li></ul></details><details class="nav-section"><summary>Referencia de la API</summary><ul><li><a href="../api/index.html">Referencia de la API</a></li><li><a href="../api/KitARPG.Addons.Bestiary.Editor.html">KitARPG.Addons.Bestiary.Editor</a></li><li><a href="../api/KitARPG.Addons.Bestiary.html">KitARPG.Addons.Bestiary</a></li><li><a href="../api/KitARPG.Client.html">KitARPG.Client</a></li><li><a href="../api/KitARPG.Data.html">KitARPG.Data</a></li><li><a href="../api/KitARPG.Editor.html">KitARPG.Editor</a></li><li><a href="../api/KitARPG.Local.html">KitARPG.Local</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.Server.html">KitARPG.Modes.ThirdPerson.Server</a></li><li><a href="../api/KitARPG.Modes.ThirdPerson.html">KitARPG.Modes.ThirdPerson</a></li><li><a href="../api/KitARPG.Modes.TopDown.Server.html">KitARPG.Modes.TopDown.Server</a></li><li><a href="../api/KitARPG.Modes.TopDown.html">KitARPG.Modes.TopDown</a></li><li><a href="../api/KitARPG.Net.html">KitARPG.Net</a></li><li><a href="../api/KitARPG.Server.html">KitARPG.Server</a></li><li><a href="../api/KitARPG.Shared.html">KitARPG.Shared</a></li></ul></details></nav>
+  <main class="content"><div class="crumb">Guías paso a paso</div><h1>Hacer una misión</h1><p>Esta guía hace <strong>Golem Trouble</strong>: Captain Hale, en el pueblo, pide tres Moss Golems y paga con experiencia, oro y dos Greater Health Potions. Usa el monstruo de <a href="make-a-monster.html">Hacer un monstruo</a> y la poción de <a href="make-a-potion.html">Hacer una poción</a>; cualquier monstruo e ítem funcionan igual.</p>
+<h2 id="1-make-the-quest"><a class="anchor" href="#1-make-the-quest" aria-hidden="true">#</a>1. Haz la misión</h2>
+<ol>
+<li>En <strong>Game Database</strong>, abre <strong>World &gt; Quests</strong> y pulsa <strong>+ New quest</strong>.</li>
+<li>Llena los textos. Cada uno es lo que dice el NPC en un momento de la misión:</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Id</em></td>
+<td><code>golem_trouble</code></td>
+</tr>
+<tr>
+<td><em>Display Name</em></td>
+<td><code>Golem Trouble</code></td>
+</tr>
+<tr>
+<td><em>Description</em></td>
+<td><code>Moss golems woke up east of the forest path. Knock three of them back to sleep.</code> (cuando la ofrece)</td>
+</tr>
+<tr>
+<td><em>Progress Text</em></td>
+<td><code>Still hearing rocks walking around out there.</code> (cuando le hablas antes de terminarla)</td>
+</tr>
+<tr>
+<td><em>Complete Text</em></td>
+<td><code>Quiet again. Take these, you will need them.</code> (cuando la entregas)</td>
+</tr>
+<tr>
+<td><em>Category</em></td>
+<td><code>Forest</code> (su grupo en el registro de misiones)</td>
+</tr>
+</tbody>
+</table></div>
+<ol start="3">
+<li>En <strong>Who can take it</strong>, pon <em>Required Level</em> en 3. Deja <em>Repeat</em> en Once.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-new.png" target="_blank"><img src="../../assets/img/guides/quest-new.png" alt="" loading="lazy"></a><figcaption>Una misión nueva.</figcaption></figure>
+<h2 id="2-what-to-do-and-the-rewards"><a class="anchor" href="#2-what-to-do-and-the-rewards" aria-hidden="true">#</a>2. Qué hacer y las recompensas</h2>
+<ol>
+<li>En <strong>What to do</strong>, abre <em>Objectives</em>, pulsa <strong>+</strong> y <strong>Pick a type</strong> &gt; <strong>Kill</strong>. Pon <em>Monster</em> en Moss Golem, <em>Count</em> en 3 y una <em>Hint</em>: <code>East of the forest path, past the clearing.</code> La pista se muestra en el registro de misiones bajo el objetivo.</li>
+<li>En <strong>Rewards</strong>, pon <em>Experience</em> en 150 y <em>Gold</em> en 40. Abre <em>Items</em>, pulsa <strong>+</strong> y elige la Greater Health Potion, cantidad 2.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-objectives.png" target="_blank"><img src="../../assets/img/guides/quest-objectives.png" alt="" loading="lazy"></a><figcaption>El objetivo y las recompensas.</figcaption></figure>
+<p>Collect, Talk, Explore y Trigger son los otros objetivos; consulta <a href="../content/quests.html#objectives">Misiones</a>.</p>
+<h2 id="3-give-it-to-an-npc"><a class="anchor" href="#3-give-it-to-an-npc" aria-hidden="true">#</a>3. Dásela a un NPC</h2>
+<ol>
+<li>Abre la escena <code>Town</code> y selecciona <strong>Captain</strong> en la Hierarchy.</li>
+<li>En su componente <strong>Npc</strong>, bajo <strong>Add option</strong>, pulsa <strong>Quest</strong>. Aparece una línea nueva en las opciones.</li>
+<li>Elige Golem Trouble en su campo <em>Quest</em>. Por defecto, el mismo NPC la ofrece y la recibe.</li>
+<li>Guarda la escena.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-npc-option.png" target="_blank"><img src="../../assets/img/guides/quest-npc-option.png" alt="" loading="lazy"></a><figcaption>Las opciones del capitán, con Golem Trouble al final.</figcaption></figure>
+<h2 id="4-try-it"><a class="anchor" href="#4-try-it" aria-hidden="true">#</a>4. Pruébala</h2>
+<ol>
+<li>Pulsa Play y entra al juego con un personaje de nivel 3 o más.</li>
+<li>Habla con Captain Hale. Un &quot;!&quot; amarillo antes de la misión significa que se puede tomar.</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Las opciones del capitán</th>
+<th>La misión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img loading="lazy" src="../../assets/img/guides/quest-talk.png" alt="" /></td>
+<td><img loading="lazy" src="../../assets/img/guides/quest-window.png" alt="" /></td>
+</tr>
+</tbody>
+</table></div>
+<ol start="3">
+<li>Elígela y pulsa <strong>Accept</strong>. El seguimiento bajo el minimapa muestra el objetivo.</li>
+</ol>
+<figure class="shot"><a href="../../assets/img/guides/quest-tracker.png" target="_blank"><img src="../../assets/img/guides/quest-tracker.png" alt="" loading="lazy"></a><figcaption>El seguimiento: Slay Moss Golem 0/3.</figcaption></figure>
+<ol start="4">
+<li>Mata tres golems en el bosque, vuelve y entrégala. El &quot;?&quot; se pone amarillo cuando está lista.</li>
+</ol>
+<p>Comandos de GM para probar: <code>/quest give golem_trouble</code> la toma, <code>/quest finish golem_trouble</code> completa cada objetivo, <code>/quest reset golem_trouble</code> la olvida.</p>
+<h2 id="next-steps"><a class="anchor" href="#next-steps" aria-hidden="true">#</a>Próximos pasos</h2>
+<ul>
+<li>Cadenas, diarias y botín de misión: <a href="../content/quests.html#make-a-quest-chain-with-a-daily">Misiones</a>.</li>
+<li>Charlas con opciones: <a href="../content/dialogues.html">Diálogos</a>.</li>
+<li>Requisitos y acciones que corren al aceptar o al completar: <a href="../content/conditions-and-actions.html">Condiciones y acciones</a>.</li>
+</ul>
+<nav class="pager"><a class="prev" href="make-a-skill.html"><span>Anterior</span>Hacer un skill</a><a class="next" href="draw-the-world-map.html"><span>Siguiente</span>Dibujar el mapa del mundo</a></nav><div class="report"><a target="_blank" rel="noopener" href="https://github.com/Blunnyn/kitarpg-docs/issues/new?template=docs.yml&page=https%3A%2F%2Fblunnyn.github.io%2Fkitarpg-docs%2Fes%2Fguides%2Fmake-a-quest.html">Reportar un problema en esta página</a></div></main>
+  <aside class="toc"><div class="toc-title">En esta página</div><ul><li class="l2"><a href="#1-make-the-quest">1. Haz la misión</a></li><li class="l2"><a href="#2-what-to-do-and-the-rewards">2. Qué hacer y las recompensas</a></li><li class="l2"><a href="#3-give-it-to-an-npc">3. Dásela a un NPC</a></li><li class="l2"><a href="#4-try-it">4. Pruébala</a></li><li class="l2"><a href="#next-steps">Próximos pasos</a></li></ul></aside>
+</div>
+<script>window.KIT_ROOT="../../";window.KIT_LANG="es";window.KIT_NONE="Sin resultados";</script>
+<script src="../../assets/search-es.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>
